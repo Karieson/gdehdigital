@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDEH CBO</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#fff;
+  color:#000;
+  font-size:13px;
+}h2{ color:orange; font-size:20px; }
+
+/* Logo */ .logo { display:flex; align-items:center; justify-content:flex-start; padding:10px 15px; } .logo img{ width:120px; } .logo img{ width:120px; }
+
+/* Hero Slider */ .hero { margin-top:80px; overflow:hidden; } .slider { display:flex; width:300%; animation:slide 12s infinite; } .slider img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+
+@keyframes slide{ 0%{transform:translateX(0);} 33%{transform:translateX(-100%);} 66%{transform:translateX(-200%);} 100%{transform:translateX(0);} }
+
+.container{ padding:20px; text-align:center; }
+
+button{ background:orange; border:none; padding:6px 14px; cursor:pointer; display:block; margin:10px auto; font-size:12px; }
+
+/* Sections hidden */ .hidden{ display:none; }
+
+footer {
+  background: transparent;   /* removes background */
+  color: rgba(255, 165, 0, 0.5); /* light orange watermark effect */
+  text-align: center;
+  font-size: 11px;
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  pointer-events: none; /* makes it non-clickable like watermark */
+}
+ </style>
+
+</head>
+<body><div class="logo">
+  <img src="gdeh_logo.png" alt="logo">
+</div><!-- HERO --><div class="hero">
+  <div class="slider">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+  </div>
+</div><!-- INTRO --><div class="container" id="home">
+  <h2>About GDEH</h2>
+  <p>Garissa Digital Empowerment Hub (GDEH) is a community-based organization committed to bridging the digital divide in Garissa County. The organization focuses on equipping youth, women, and the wider community with practical digital and entrepreneurial skills that improve livelihoods and promote self-reliance.</p>
+  <button onclick="showPage('about')">Explore More</button>
+</div><!-- ABOUT PAGE --><div class="container hidden" id="about">
+  <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); text-align:left; font-size:12px; color:#000; position:relative;">
+    <span onclick="showPage('home')" style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:16px;">✖</span>
+  <h2>About GDEH</h2>
+  <p>GDEH was established in 2026 by a dedicated group of 10 founding members, including a Chairperson and Board Members. The founders shared a common vision of transforming Garissa into a digitally empowered community by providing accessible, affordable, and relevant training programs.</p>
+  <p>The organization operates with a strong commitment to community development, inclusivity, and innovation, ensuring that no one is left behind in the digital era.</p>  <h2>Mission</h2>
+  <p>To empower individuals in Garissa County with digital knowledge and practical skills for employment, entrepreneurship, and personal development.</p>  <h2>Vision</h2>
+  <p>To become a leading hub for digital empowerment and innovation in Northern Kenya.</p>  <h2>Courses Offered</h2>
+  <p><b>Smartphone Literacy</b> - Basic phone use, internet, social media, mobile money.</p>
+  <p><b>Computer Literacy</b> - Microsoft Office, typing, email, file management.</p>
+  <p><b>Agro-Entrepreneurship</b> - Farming techniques, agribusiness, marketing.</p>
+  <p><b>ICT Short Courses</b> - Graphic design, digital marketing, web basics.</p>  <h2>Why Train With Us</h2>
+  <p>Community-focused, affordable, practical training with mentorship.</p><button onclick="showPage('form')">Apply</button>
+
+  </div>
+</div><!-- FORM --><div class="container hidden" id="form">
+  <div style="position:relative;">
+    <span onclick="showPage('home')" style="position:absolute; top:0; right:10px; cursor:pointer; font-size:16px;">✖</span>
+  <h2>Application Form</h2>
+  <input placeholder="First Name"><br><br>
+  <input placeholder="Last Name"><br><br>
+  <select>
+    <option>Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select><br><br>
+  <select>
+    <option>Marital Status</option>
+    <option>Single</option>
+    <option>Married</option>
+  </select><br><br>
+  <input placeholder="Phone Number"><br><br>
+  <input placeholder="Email"><br><br>  <select>
+    <option>Course</option>
+    <option>Smartphone Literacy</option>
+    <option>Computer Literacy</option>
+    <option>Agro-Entrepreneurship</option>
+    <option>ICT Short Courses</option>
+  </select><br><br>  <select>
+    <option>Where did you hear about us</option>
+    <option>Social Media</option>
+    <option>Friend</option>
+    <option>Website</option>
+  </select><br><br><button>Submit</button>
+
+  </div>
+</div><footer>
+  ©2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
+</footer><div class="container">
+  <p>Contacts</p>
+  <p>gdehcbo2026@gmail.com</p>
+ <p> +254728428431</p>
+  <p>+254705299600</p>
+  <p> Along Jamia Mosque RD Garissa Township, Kenya</p>
+</div><script>
+function showPage(page){
+  document.getElementById('home').style.display='none';
+  document.getElementById('about').style.display='none';
+  document.getElementById('form').style.display='none';
+
+  document.getElementById(page).style.display='block';
+}
+</script></body>
+</html>
