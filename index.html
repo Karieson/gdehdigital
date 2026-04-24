@@ -10,18 +10,39 @@ body {
   font-family:'Poppins', sans-serif;
   background:#fff;
   color:#000;
-  font-size:13px;
-}h2{ color:orange; font-size:20px; }
+  font-size:12px;
+}h2{ color:orange; font-size:14px; }
 
 /* Logo */ .logo { display:flex; align-items:center; justify-content:flex-start; padding:10px 15px; } .logo img{ width:120px; } .logo img{ width:120px; }
 
-/* Hero Slider */ .hero { margin-top:80px; overflow:hidden; } .slider { display:flex; width:300%; animation:slide 12s infinite; } .slider img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+.hero {
+  margin-top: 40px;   /* reduced from 80px */
+  overflow: hidden;
+  max-height: 250px;  /* limits overall slider height */
+}
+
+.slider {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+  height: 250px;      /* locks slider height */
+}
+
+.slider img {
+  width: 100%;
+  height: 250px;      /* forces smaller image height */
+  object-fit: cover;
+}
 
 @keyframes slide{ 0%{transform:translateX(0);} 33%{transform:translateX(-100%);} 66%{transform:translateX(-200%);} 100%{transform:translateX(0);} }
 
 .container{ padding:20px; text-align:center; }
 
 button{ background:orange; border:none; padding:6px 14px; cursor:pointer; display:block; margin:10px auto; font-size:12px; }
+.hero img {
+  width: 90%;   /* reduce size */
+  height: auto;
+}
 
 /* Sections hidden */ .hidden{ display:none; }
 
@@ -35,6 +56,18 @@ footer {
   width: 100%;
   pointer-events: none; /* makes it non-clickable like watermark */
 }
+.intro {
+  position: relative;
+  transform: translateY(-10px);
+}
+h1 {
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+}
+
  </style>
 
 </head>
@@ -42,30 +75,305 @@ footer {
   <img src="gdeh_logo.png" alt="logo">
 </div><!-- HERO --><div class="hero">
   <div class="slider">
-    <img src="img1.jpeg">
-    <img src="img2.jpeg">
-    <img src="img3.jpeg">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
   </div>
 </div><!-- INTRO --><div class="container" id="home">
   <h2>About GDEH</h2>
   <p>Garissa Digital Empowerment Hub (GDEH) is a community-based organization committed to bridging the digital divide in Garissa County. The organization focuses on equipping youth, women, and the wider community with practical digital and entrepreneurial skills that improve livelihoods and promote self-reliance.</p>
-  <button onclick="showPage('about')">Explore More</button>
+ <a href="landing.html" 
+   style="background: orange; color: white; padding: 10px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 14px;">
+  Support & Partnerships
+</a>
+ <button onclick="showPage('about')">Explore More</button>
 </div><!-- ABOUT PAGE --><div class="container hidden" id="about">
   <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); text-align:left; font-size:12px; color:#000; position:relative;">
-    <span onclick="showPage('home')" style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:16px;">✖</span>
-  <h2>About GDEH</h2>
-  <p>GDEH was established in 2026 by a dedicated group of 10 founding members, including a Chairperson and Board Members. The founders shared a common vision of transforming Garissa into a digitally empowered community by providing accessible, affordable, and relevant training programs.</p>
-  <p>The organization operates with a strong commitment to community development, inclusivity, and innovation, ensuring that no one is left behind in the digital era.</p>  <h2>Mission</h2>
-  <p>To empower individuals in Garissa County with digital knowledge and practical skills for employment, entrepreneurship, and personal development.</p>  <h2>Vision</h2>
-  <p>To become a leading hub for digital empowerment and innovation in Northern Kenya.</p>  <h2>Courses Offered</h2>
-  <p><b>Smartphone Literacy</b> - Basic phone use, internet, social media, mobile money.</p>
-  <p><b>Computer Literacy</b> - Microsoft Office, typing, email, file management.</p>
-  <p><b>Agro-Entrepreneurship</b> - Farming techniques, agribusiness, marketing.</p>
-  <p><b>ICT Short Courses</b> - Graphic design, digital marketing, web basics.</p>  <h2>Why Train With Us</h2>
-  <p>Community-focused, affordable, practical training with mentorship.</p><button onclick="showPage('form')">Apply</button>
+    <span onclick="showPage('home')" style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:12px;">✖</span>
+  <div class="card-container">
+
+  <div class="card">
+    <h2>Formation of Garissa Digital Empowerment Hub (GDEH) CBO</h2>
+    <p>The Garissa Digital Empowerment Hub (GDEH) Community-Based Organization (CBO) was formally conceptualized and formed in early 2026 in Garissa Township, Garissa County, Kenya. It was established as a response to the growing digital inequality affecting youth, women, and persons with disabilities (PWDs) across Garissa and the wider Northern Kenya region.</p>
+  </div>
+
+  <div class="card">
+    <h2>Reason for Formation</h2>
+    <p>The CBO was created after recognizing several critical challenges in the region:</p>
+    <p><strong>a) Digital Divide</strong><br>
+    Many young people in Garissa County lacked:<br>
+    Basic computer literacy<br>
+    Access to digital learning opportunities<br>
+    Exposure to modern ICT tools and platforms<br>
+    This created a widening gap between urban digital development and rural communities.</p>
+
+    <p><strong>b) Economic Challenges</strong><br>
+    High youth unemployment<br>
+    Limited access to online job markets and digital entrepreneurship opportunities<br>
+    Dependence on informal and low-income economic activities</p>
+
+    <p><strong>c) Low Technological Awareness</strong><br>
+    Limited awareness of ICT as a career path<br>
+    Lack of structured training centers for digital skills<br>
+    Minimal integration of technology in daily community activities</p>
+
+    <p><strong>d) Social Inclusion Gaps</strong><br>
+    Persons with disabilities had even fewer opportunities to access ICT training<br>
+    Women and marginalized youth were underrepresented in digital programs</p>
+  </div>
+
+  <div class="card">
+    <h2>Vision of GDEH CBO</h2>
+    <p>The organization was established with a long-term vision to:<br>
+    Bridge the digital divide in Garissa County and Northern Kenya<br>
+    Equip youth with practical ICT and entrepreneurial skills<br>
+    Promote digital literacy and innovation<br>
+    Enhance socio-economic development through technology<br>
+    Foster inclusive growth for all community groups</p>
+  </div>
+
+  <div class="card">
+    <h2>Conclusion</h2>
+    <p>The Garissa Digital Empowerment Hub (GDEH) CBO was born out of a real and urgent need to address digital inequality, unemployment, and lack of ICT awareness in Garissa County. Driven by a group of passionate young leaders led by Abdullahi Sheikh Aden Karie and Samira Abdi Maalim, the organization stands as a community-based solution aimed at transforming lives through digital skills, empowerment, and inclusive development across Northern Kenya.</p>
+  </div>
+
+  <div class="card">
+    <h2>Founding Members and Leadership</h2>
+    <p>The initiative was founded by a group of 10 committed members, led by:</p>
+
+    <p><strong>Abdullahi Sheikh Aden Karie</strong><br>
+    IT Diploma Graduate<br>
+    Undergraduate student at Mount Kenya University<br>
+    IT Support Technician with diverse ICT experience<br>
+    Trained in leadership through the YALI Network<br>
+    Completed Humanitarian Aid training via Coursera<br>
+    He was driven by firsthand experience of the digital gap in Garissa County, where he observed:<br>
+    Lack of access to ICT infrastructure<br>
+    Low digital literacy among youth<br>
+    Slow economic growth due to limited technology adoption<br>
+    His vision was to create a community-driven platform that empowers youth through practical digital skills and entrepreneurship training.</p>
+
+    <p><strong>Samira Abdi Maalim</strong><br>
+    Young female leader passionate about socio-economic development<br>
+    Holder of a Certificate in Accounting and Accountability short course training<br>
+    Advocate for youth and women empowerment<br>
+    Strong supporter of inclusive education and community growth<br>
+    She played a key role in promoting gender inclusion, accountability, and community engagement within the CBO.</p>
+
+    <p><strong>Other Founding Members</strong><br>
+    The organization was also supported by 8 additional co-founders, each contributing skills in:<br>
+    Community mobilization<br>
+    ICT awareness<br>
+    Youth mentorship<br>
+    Administration and coordination<br>
+    Local development initiatives</p>
+  </div>
+
+  <div class="card">
+    <h2>Key Factors Influencing Formation</h2>
+    <p>Several factors influenced the establishment of GDEH CBO:</p>
+
+    <p><strong>a) Regional Digital Inequality</strong><br>
+    Northern Kenya, particularly Garissa Township, had limited ICT infrastructure compared to other parts of the country.</p>
+
+    <p><strong>b) Youth Unemployment Crisis</strong><br>
+    A large number of educated and semi-educated youth lacked employable digital skills.</p>
+
+    <p><strong>c) Desire for Community Transformation</strong><br>
+    The founders aimed to shift the community from dependency to self-reliance through technology and innovation.</p>
+
+    <p><strong>d) Leadership and Exposure</strong><br>
+    The founding members had exposure to:<br>
+    ICT training and certifications<br>
+    Leadership programs (such as YALI)<br>
+    Online learning platforms (Coursera and others)<br>
+    This exposure motivated them to replicate similar opportunities locally.</p>
+
+    <p><strong>e) Inclusion of Marginalized Groups</strong><br>
+    A strong motivation was to ensure:<br>
+    Youth inclusion<br>
+    Women empowerment<br>
+    Accessibility for Persons with Disabilities (PWDs)</p>
+  </div>
+
+  <div class="card">
+    <h2>JOIN GDEH CBO DIGITAL EMPOWERMENT PROGRAMS</h2> 
+<p>YOUR FUTURE STARTS HERE!</p>
+    <p>Below are the GDEH CBO training courses, explained clearly with their advantages and the skills participants gain.</p>
+  </div>
+
+  <div class="card">
+    <h2>1. Digital Literacy</h2>
+    <p><strong>What it is:</strong><br>
+    Digital literacy is the foundation course that introduces learners to the basic use of digital devices, the internet, and online tools.</p>
+
+    <p><strong>What you will learn:</strong><br>
+    How to use a computer (basic operations)<br>
+    Internet browsing and safe online practices<br>
+    Email creation and communication<br>
+    Using digital platforms (Google tools, social media, online forms)<br>
+    Basic cybersecurity awareness</p>
+
+    <p><strong>Advantages:</strong><br>
+    Helps you confidently use modern technology<br>
+    Opens doors to online learning and jobs<br>
+    Improves communication and information access<br>
+    Builds independence in digital environments</p>
+
+    <p><strong>Skills gained:</strong><br>
+    Computer operation skills<br>
+    Online communication skills<br>
+    Digital safety awareness<br>
+    Basic internet research skills</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Agro Entrepreneurship</h2>
+    <p><strong>What it is:</strong><br>
+    This course teaches how to use agriculture as a business opportunity, combining farming knowledge with entrepreneurship skills.</p>
+
+    <p><strong>What you will learn:</strong><br>
+    Agribusiness planning and management<br>
+    Crop and livestock value chains<br>
+    Market identification and pricing<br>
+    Record keeping in farming business<br>
+    Modern farming techniques and innovation</p>
+
+    <p><strong>Advantages:</strong><br>
+    Encourages self-employment through agriculture<br>
+    Increases food security and income generation<br>
+    Helps youth turn farming into a profitable business<br>
+    Reduces unemployment in rural communities</p>
+
+    <p><strong>Skills gained:</strong><br>
+    Business planning and entrepreneurship skills<br>
+    Agricultural management skills<br>
+    Financial and record-keeping skills<br>
+    Market analysis and negotiation skills</p>
+  </div>
+
+  <div class="card">
+    <h2>3. ICT Short Courses</h2>
+    <p><strong>What it is:</strong><br>
+    These are practical technical courses designed to give learners hands-on ICT knowledge for employment and digital careers.</p>
+
+    <p><strong>What you will learn:</strong><br>
+    Basic programming concepts<br>
+    Introduction to web design and development<br>
+    Computer maintenance and troubleshooting<br>
+    Networking fundamentals<br>
+    Software installation and usage</p>
+
+    <p><strong>Advantages:</strong><br>
+    Prepares you for ICT-related jobs<br>
+    Builds technical problem-solving abilities<br>
+    Helps in freelancing and remote work opportunities<br>
+    Strengthens your career in the digital economy</p>
+
+    <p><strong>Skills gained:</strong><br>
+    Basic coding and programming skills<br>
+    Website design skills<br>
+    IT support and troubleshooting skills<br>
+    Networking and system maintenance skills</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Smartphone Literacy Training</h2>
+    <p><strong>What it is:</strong><br>
+    A practical course focused on helping learners fully understand and utilize smartphones for productivity and income generation.</p>
+
+    <p><strong>What you will learn:</strong><br>
+    Smartphone settings and usage<br>
+    Mobile internet navigation<br>
+    Using apps for business and learning<br>
+    Mobile photography and content creation<br>
+    Mobile money services (digital finance tools)</p>
+
+    <p><strong>Advantages:</strong><br>
+    Turns your phone into a business tool<br>
+    Helps you access online jobs and opportunities<br>
+    Improves digital communication skills<br>
+    Enhances personal productivity</p>
+
+    <p><strong>Skills gained:</strong><br>
+    Mobile digital skills<br>
+    Content creation basics<br>
+    Online communication skills<br>
+    Digital financial transaction skills</p>
+  </div>
+
+  <div class="card">
+    <h2>5. Computer Literacy (Advanced Practical)</h2>
+    <p><strong>What it is:</strong><br>
+    A hands-on course that builds strong computer operation and productivity skills for office and professional environments.</p>
+
+    <p><strong>What you will learn:</strong><br>
+    Microsoft Word, Excel, and PowerPoint<br>
+    File management and data storage<br>
+    Typing and document formatting<br>
+    Office productivity tools<br>
+    Printing and scanning operations</p>
+
+    <p><strong>Advantages:</strong><br>
+    Prepares you for office jobs<br>
+    Improves academic and professional performance<br>
+    Essential for administrative careers<br>
+    Builds confidence in digital workplaces</p>
+
+    <p><strong>Skills gained:</strong><br>
+    Document creation and editing<br>
+    Data entry and analysis skills<br>
+    Presentation design skills<br>
+    Office administration skills</p>
+  </div>
+
+  <div class="card">
+    <h2>Final Message</h2>
+    <p>All these courses are designed to empower youth, women, and PWDs with practical skills that lead to:<br>
+    Employment<br>
+    Self-employment<br>
+    Digital independence<br>
+    Community development<br>
+    At GDEH CBO, the goal is simple:<br>
+    Turn potential into skills, and skills into opportunity.</p>
+  </div>
+
+  <div class="card">
+    <h2>Join GDEH CBO Programs</h2>
+    <p>Are you a young person, a person with disability (PWD), or part of our vibrant community looking for a better future?<br>
+    The Garissa Digital Empowerment Hub (GDEH) CBO is here for YOU!</p>
+
+    <p>We are offering FREE practical training in:<br>
+    Digital Literacy<br>
+    Agro Entrepreneurship<br>
+    ICT Short Courses<br>
+    Smartphone & Computer Skills</p>
+
+    <p>This is your chance to gain real, life-changing digital skills that can open doors to jobs, business opportunities, and self-reliance.</p>
+
+    <p><strong>Why Join Us?</strong><br>
+    Learn from experienced trainers<br>
+    Gain hands-on ICT skills<br>
+    Improve your employability and business skills<br>
+    Be part of a growing digital community in Northern Kenya<br>
+    Inclusive training for youth, women, and PWDs</p>
+
+    <p><strong>Affordable Participation Contribution:</strong><br>
+    Maintenance Fee: Ksh 500<br>
+    Certificate of Completion Fee: Ksh 700</p>
+
+    <p>Upon completion, you will receive a recognized certificate to boost your CV and opportunities.</p>
+
+    <p><strong>Don’t miss this opportunity to transform your future!<br>
+    Join us today and be part of the digital revolution in Garissa and beyond.</strong></p>
+  </div>
+
+</div>
+<button onclick="showPage('form')">Apply</button>
 
   </div>
-</div><!-- FORM --><div class="container hidden" id="form">
+</div>
+<!-- FORM --><div class="container hidden" id="form">
   <div style="position:relative;">
     <span onclick="showPage('home')" style="position:absolute; top:0; right:10px; cursor:pointer; font-size:16px;">✖</span>
   <h2>Application Form</h2>
