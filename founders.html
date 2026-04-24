@@ -1,0 +1,178 @@
+<style>
+
+
+.founder-card {
+  padding: 15px;
+}
+
+/* Circle Image */
+.founder-card img {
+  width: 200px;   /* increased from 160px */
+  height: 200px;  /* increased from 160px */
+  border-radius: 70%;
+  object-fit: cover;
+  border: 2px solid orange;
+  transition: 0.3s;
+}
+
+.founder-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Name */
+.founder-card h3 {
+  margin-top: 12px;
+  font-size: 18px;
+}
+
+/* Role */
+.founder-card .role {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Description */
+.founder-card .desc {
+  font-size: 13px;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* Section text */
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  color: gray;
+}
+
+
+.founders {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all cards */
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* CARD */
+.founder-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+
+  /*  KEY: center everything inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 360px; /* consistent card size */
+}
+
+/* Hover effect */
+.founder-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* TEXT */
+.founder-card h3 {
+  margin: 10px 0 5px;
+}
+
+.founder-card .role {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+}
+
+.founder-card .desc {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: gray;
+  margin-top: 40px;
+  padding: 10px;
+  border-top: 1px solid #eee; /* separation line */
+}
+
+</style>
+
+
+<h2 style="text-align:center;">Our Founders</h2>
+
+<p class="intro">
+Meet the dedicated team behind GDEH. Each member below plays a vital role in driving the mission of empowering communities through digital skills, innovation, and opportunity.
+</p>
+
+<div class="founders">
+
+  <div class="founder-card">
+    <img src="images/abdullahi.jpg">
+    <h3>Abdullahi Sheikh Aden</h3>
+    <p class="role">Chairperson | Founder</p>
+    <p class="desc">Provides leadership and strategic direction, guiding partnerships and organizational growth.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/samira.jpg">
+    <h3>Samira Abdi Maalim</h3>
+    <p class="role">Treasurer | Co-Founder</p>
+    <p class="desc">Manages financial planning, accountability, and sustainability of programs.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/hassan.jpg">
+    <h3>Hassan Hillow Ahmed</h3>
+    <p class="role">Secretary</p>
+    <p class="desc">Coordinates operations, manages records, and supports organizational communication.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/abdirahman.jpg">
+    <h3>Abdirahman Adan Nur</h3>
+    <p class="role">Agro-Entrepreneurship Trainer</p>
+    <p class="desc">Trains participants in agriculture-based business and income generation skills.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/mohamed.jpg">
+    <h3>Mohamed Abdullahi Omar</h3>
+    <p class="role">ICT Programme Trainer</p>
+    <p class="desc">Delivers ICT training to build digital skills and improve employability.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/habon.jpg">
+    <h3>Habon Ali Mohamed</h3>
+    <p class="role">Digital Marketer</p>
+    <p class="desc">Promotes programs online and manages digital communication channels.</p>
+  </div>
+
+  <div class="founder-card">
+    <img src="images/halima.jpg">
+    <h3>Halima Hassan Abdi</h3>
+    <p class="role">Community Engagement Officer</p>
+    <p class="desc">Leads outreach and ensures strong community participation and inclusion.</p>
+  </div>
+
+</div>
+<footer style="text-align:center; margin-top:30px; font-size:12px; color:gray;">
+  <p>
+    Dedicated to the youth, women, and community members striving for empowerment through digital transformation.
+  </p>
+
+  <p>
+    With sincere gratitude and thanksgiving from the GDEH fraternity for the continuous support, collaboration, and shared vision in building a stronger and more empowered community.
+  </p>
+</footer>
