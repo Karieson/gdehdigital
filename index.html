@@ -76,7 +76,9 @@ body {
 .welcome span:nth-child(17) { color: #ff453a; }
 .welcome span:nth-child(18) { color: #64d2ff; }
 .welcome span:nth-child(19) { color: #ff375f; }
-  } 
+
+
+}
 .hero {
   margin-top: 40px;   /* reduced from 80px */
   overflow: hidden;
@@ -102,7 +104,7 @@ body {
 
 button{ background:orange; border:none; padding:6px 14px; cursor:pointer; display:block; margin:10px auto; font-size:12px; }
 .hero img {
-  width: 100%;   /* reduce size */
+  width: 90%;   /* reduce size */
   height: auto;
 }
 
@@ -130,13 +132,63 @@ h2 {
   font-weight: 400;
 }
 
- </style>
+
+/* Container */
+.landing-button-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Container */
+.landing-button-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE BUTTON */
+.team-btn,
+.landing-btn {
+  background: orange;
+  color: white;
+
+  width: 60%;          /* 60% width */
+  max-width: 250px;    /* prevents it becoming too large */
+  
+  padding: 8px 10px;   /* controls height naturally */
+  font-size: 12px;
+
+  text-decoration: none;
+  border-radius: 6px;
+
+  display: inline-block;
+  margin: 5px auto;
+
+  transition: 0.2s;
+  text-align: center;
+}
+
+/* Hover */
+.team-btn:hover,
+.landing-btn:hover {
+  background: darkorange;
+  transform: scale(1.03);
+}
+
+/* Mobile tweak */
+@media (max-width: 200px) {
+  .team-btn,
+  .landing-btn {
+    width: 60%;
+    font-size: 11px;
+  }
+
+</style>
 
 </head>
 <body><div class="logo">
   <img src="gdeh_logo.png" alt="logo">
 </div><!-- HERO --><div class="hero">
-  <div class="welcome">
+<div class="welcome">
   <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
   <span>&nbsp;</span>
   <span>T</span><span>O</span>
@@ -144,21 +196,33 @@ h2 {
   <span>G</span><span>D</span><span>E</span><span>H</span>
   <span>&nbsp;</span>
   <span>C</span><span>B</span><span>O</span>
-  </div>
+</div>
   <div class="slider">
-    <img src="img1.jpeg">
-    <img src="img2.jpeg">
-    <img src="img3.jpeg">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
   </div>
 </div><!-- INTRO --><div class="container" id="home">
   <h2>About GDEH</h2>
   <p>Garissa Digital Empowerment Hub (GDEH) is a community-based organization committed to bridging the digital divide in Garissa County. The organization focuses on equipping youth, women, and the wider community with practical digital and entrepreneurial skills that improve livelihoods and promote self-reliance.</p>
- <a href="landing.html" 
-   style="background: orange; color: white; padding: 10px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 14px;">
-  Support & Partnerships
-</a>
+<div style="text-align:center; margin-top:20px;">
+  <div class="landing-button-container">
+
+  <a href="founders.html" class="landing-btn">
+    Meet Our Team
+  </a>
+
+  <a href="landing.html" class="landing-btn">
+    Support & Partnerships
+  </a>
+
+</div>
+</div>
+
  <button onclick="showPage('about')">Explore More</button>
-</div><!-- ABOUT PAGE --><div class="container hidden" id="about">
+ 
+</div>
+<!-- ABOUT PAGE --><div class="container hidden" id="about">
   <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); text-align:left; font-size:12px; color:#000; position:relative;">
     <span onclick="showPage('home')" style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:12px;">✖</span>
   <div class="card-container">
@@ -492,4 +556,4 @@ function showPage(page){
   document.getElementById(page).style.display='block';
 }
 </script></body>
-</html>
+                                     </html>
