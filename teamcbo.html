@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet GDEH Team</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* PAGE BACKGROUND */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #d9d9d9;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -40px;
+}
+
+/* CONTAINER */
+.container {
+  height: 100vh;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 25px;
+  padding: 20px 0;
+
+  scroll-snap-type: y mandatory;
+}
+
+/* CARD */
+.card {
+  scroll-snap-align: center;
+
+  width: 90%;
+  max-width: 380px;
+
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.9);
+}
+
+/* IMAGE */
+.card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ICON CONTAINER */
+.card-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* ICON BUTTON */
+.card-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: white;
+  border: 1px solid rgba(0, 123, 255, 0.3);
+  border-radius: 50%;
+
+  color: #007bff;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.card-icons a:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="gdeh_logo.png" class="logo">
+</div>
+
+<!-- TITLE -->
+<div class="title">Meet GDEH Team</div>
+
+<!-- CARDS -->
+<div class="container">
+
+  <!-- CARD 1 -->
+  <div class="card">
+    <img src="founder1.jpg">
+    <h3>Abdullahi Sheikh Aden</h3>
+    <p><strong>
+Founder Garissa Digital Empowerment Hub CBO.</strong></p>
+<p style="text-align: left;">
+An IT Support Associate and skilled writer with a strong passion for technology, communication, and problem-solving. Experienced in providing technical assistance, creating clear written content, and supporting users to ensure smooth digital operations. Additionally trained in leadership through the program, demonstrating commitment to personal growth, teamwork, and community impact.
+</p>
+    
+    <div class="card-icons">
+      <a href="tel:+254728428431"><i class="fas fa-phone"></i></a>
+      <a href="https://wa.me/254705299600"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:sonfkarie@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  
+    <div class="card">
+    <img src="founder3.jpg">
+    <h3>Hassan Hillow Ahmed</h3>
+<p>
+<strong>Co-Founder & Member</strong></p>
+<p><strong>Secretary:</strong></p>
+<p style="text-align: left;">
+A highly motivated high school graduate with a solid foundation in communication and organizational skills, complemented by a short course in secretarial duties. Skilled in office administration, document preparation, scheduling, and professional correspondence, with proficiency in basic computer applications. Committed to supporting organizational operations efficiently while maintaining professionalism and attention to detail.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder2.jpg">
+    <h3>Samira Abdi Maalim</h3>
+<p><strong>Co-Founder & Member:</strong></p>
+<p style="text-align: left;">
+A dedicated high school graduate with practical experience in accounting and accountability, demonstrating strong numerical and organizational skills. She is proficient in basic bookkeeping, record management, and maintaining accurate financial reports with integrity. Committed to transparency and responsibility, she supports efficient financial operations while upholding high ethical standards.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder4.jpg">
+    <h3>Ahmed Hassan Bulle</h3>
+<p><strong>Member & Digital Empowerment Trainer:</strong></p>
+<p style="text-align: left;">
+A knowledgeable professional with a Diploma in Information and Communication Technology, serving as a Digital Literacy Trainer. He is skilled in teaching essential computer skills, guiding learners in the use of digital tools, and promoting safe and effective technology use. Committed to empowering individuals with practical ICT knowledge to enhance productivity and access to opportunities.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder5.jpg">
+    <h3>Mohamed Abdullahi Omar</h3>
+<p><strong>Member & Agro-Entrepreneurship Trainer:</strong></p>
+<p style="text-align: left;">
+A knowledgeable professional with strong skills in agriculture and technical training, equipped to deliver practical and impactful learning. He serves as a trainer in agro-entrepreneurship, guiding individuals on modern farming practices, agribusiness management, and value addition. Committed to empowering communities with sustainable agricultural skills and income-generating opportunities.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder6.jpg">
+    <h3>Abdirahman Adan Nur</h3>
+
+<p><strong>Member:</strong> Smartphone Literacy Trainer</p>
+
+<p style="text-align: left;">
+A tech-savvy individual with strong knowledge in smartphone literacy, skilled in guiding others on effective use of mobile devices. Experienced in teaching essential skills such as app usage, internet browsing, digital communication, and mobile safety. Committed to empowering individuals to confidently use smartphones for learning, work, and daily life.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder7.jpg">
+    <h3>Habon Ali Muhumed</h3>
+
+<p><strong>Member: Community Outreach Officer</strong></p>
+
+<p style="text-align: left;">
+A committed lady with strong knowledge in community outreach, skilled in engaging diverse groups and building lasting community relationships. She is experienced in organizing outreach programs, raising awareness on key social issues, and encouraging active participation in community development. Dedicated to empowering others and fostering positive change through collaboration and service.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder8.png">
+    <h3>Amina Hassan Jama</h3>
+
+<p><strong>Member & Digital Marketer</strong></p>
+
+<p style="text-align: left;">
+A skilled lady working as a digital marketer at the organization, with strong expertise in online branding and social media management. She is experienced in creating engaging content, managing digital campaigns, and increasing online visibility for the organization. Committed to driving growth and impact through effective use of digital marketing strategies.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder9.jpg">
+    <h3>Abdiaziz Ali Hassan</h3>
+
+<p><strong>Member</strong></p>
+
+<p style="text-align: left;">
+A young man with extensive knowledge of social media platforms and strong skills in digital engagement and content strategy. He is responsible for managing online presence and ensuring the organization achieves top ranking in search engine optimization (SEO). Committed to increasing visibility, traffic, and brand growth through effective use of digital marketing techniques.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="founder10.jpg">
+    <h3>Halima Hassan Abdi</h3>
+
+<p><strong>Member</strong></p>
+
+<p style="text-align: left;">
+A dedicated lady with knowledge in community outreach and strong experience in engaging and supporting community initiatives. She is an active member of the organization, always on standby and ready to participate in programs, mobilization activities, and outreach work when needed. Committed to service and teamwork, she contributes positively to strengthening community impact and organizational goals.
+</p>
+<div class="card-icons">
+    <a href="tel:+254746172963">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/254746172963" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+   <a href="mailto:cdehassan26@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </div>
+
+  
+</div>
+
+<!-- FOOTER OUTSIDE -->
+<div class="footer">
+  © GDEH Fraternity | Empowering Communities Through Digital Skills
+</div>
+
+</body>
+</html>
