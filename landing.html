@@ -14,29 +14,59 @@ body {
   color: #333;
 }
 
-/* ====== HEADER ====== */
 .header {
-  background: #B8860B;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  background: #b8860b; /* dark gold */
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.header img {
-  width: 60px;
-  height: 60px;
+/* LOGO TOP CENTER */
+.logo img {
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  background: white;
+  background: black;
   padding: 5px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.header h1 {
-  margin: 10px 0 5px;
+/* TITLE */
+.title {
+  text-align: center;
 }
 
-.header p {
-  font-size: 14px;
+.title h1 {
   margin: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.title p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #f5f5f5;
+}
+
+/* CENTER TEXT */
+.title {
+  text-align: center;
+  color: white;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.title p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #f5f5f5;
 }
 
 /* ====== FORM CONTAINER ====== */
@@ -148,9 +178,16 @@ label {
 
 <!-- ===== HEADER ===== -->
 <div class="header">
-  <img src="gdeh_logo.jpg" alt="CBO Logo">
-  <h1>Garissa Digital Empowerment Hub</h1>
-  <p>Empowering youth through digital literacy and innovation</p>
+  
+  <div class="logo">
+    <img src="/gdeh_logo.png" alt="GDEH Logo">
+  </div>
+
+  <div class="title">
+    <h1>Garissa Digital Empowerment Hub</h1>
+    <p>Empowering youth through digital literacy and innovation</p>
+  </div>
+
 </div>
 
 <!-- ===== FORM ===== -->
