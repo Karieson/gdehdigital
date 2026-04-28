@@ -123,16 +123,23 @@ button{ background:orange; border:none; padding:6px 14px; cursor:pointer; displa
 
 /* Sections hidden */ .hidden{ display:none; }
 
-footer {
-  background: transparent;   /* removes background */
-  color: rgba(255, 165, 0, 0.5); /* light orange watermark effect */
+.footer {
+watermark-footer {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.4);/* light watermark effect */
+  font-weight: bold;
+  font-size: 10px;
   text-align: center;
-  font-size: 11px;
+
   position: fixed;
-  bottom: 5px;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  pointer-events: none; /* makes it non-clickable like watermark */
-}
+
+  padding: 6px 5px;
+  pointer-events: none; /* IMPORTANT: does NOT block buttons */
+  z-index: 1; /* keeps it behind interactive elements */
+  }
 .intro {
   position: relative;
   transform: translateY(-10px);
@@ -552,15 +559,12 @@ h2 {
   </select><br><br><button>Submit</button>
 
   </div>
-</div><footer>
-  ©2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
-</footer><div class="container">
-  <p>Contacts</p>
-  <p>gdehcbo2026@gmail.com</p>
- <p> +254728428431</p>
-  <p>+254705299600</p>
-  <p> Along Jamia Mosque RD Garissa Township, Kenya</p>
 </div>
+  <footer class="watermark-footer">
+  ©2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
+  <br>
+  <span>Contacts: gdehcbo2026@gmail.com | +254728428431 | +254705299600 | Jamia Mosque RD, Garissa</span>
+</footer>
   <script>
 function showPage(page){
   document.getElementById('home').style.display='none';
