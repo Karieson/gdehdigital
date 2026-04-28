@@ -2,10 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon -->
-  <link rel="icon" href="gdeh.png" type="image/png">
-  <!-- Title -->
-  <title>Garissa Digital Empowerment Hub | Digital Training Kenya</title>
+<link rel="icon" href="gdeh.png" type="image/png">
+<title>Garissa Digital Empowerment Hub | Digital Training Kenya</title>
 
   <!-- SEO Description -->
   <meta name="description" content="Garissa Digital Empowerment Hub empowers youth through digital literacy, ICT training, Computer Literacy, Agro-Entrepreneurship, and CBO programs in Kenya.">
@@ -15,9 +13,10 @@
 
   <!-- Author -->
   <meta name="author" content="Garissa Digital Empowerment Hub">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-  <style>
+<style>
 body {
   margin:0;
   font-family:'Poppins', sans-serif;
@@ -123,8 +122,7 @@ button{ background:orange; border:none; padding:6px 14px; cursor:pointer; displa
 
 /* Sections hidden */ .hidden{ display:none; }
 
-.footer {
-watermark-footer {
+.watermark-footer {
   background: transparent;
   color: rgba(0, 0, 0, 0.4);/* light watermark effect */
   font-weight: bold;
@@ -139,7 +137,7 @@ watermark-footer {
   padding: 6px 5px;
   pointer-events: none; /* IMPORTANT: does NOT block buttons */
   z-index: 1; /* keeps it behind interactive elements */
-  }
+}
 .intro {
   position: relative;
   transform: translateY(-10px);
@@ -218,9 +216,9 @@ h2 {
   <span>C</span><span>B</span><span>O</span>
 </div>
   <div class="slider">
-    <img src="img1.jpeg">
-    <img src="img2.jpeg">
-    <img src="img3.jpeg">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
   </div>
 </div><!-- INTRO --><div class="container" id="home">
   <h2>About GDEH</h2>
@@ -228,9 +226,9 @@ h2 {
 <div style="text-align:center; margin-top:20px;">
   <div class="landing-button-container">
 
-    <a href="teamcbo.html" class="landing-btn">Meet Our Team</a>
-  </div>
-
+  <a href="founders.html" class="landing-btn">
+    Meet Our Team
+  </a>
 
   <a href="landing.html" class="landing-btn">
     Support & Partnerships
@@ -560,21 +558,12 @@ h2 {
 
   </div>
 </div>
-  <footer class="watermark-footer">
+<footer class="watermark-footer">
   ©2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
   <br>
   <span>Contacts: gdehcbo2026@gmail.com | +254728428431 | +254705299600 | Jamia Mosque RD, Garissa</span>
 </footer>
-  <script>
-function showPage(page){
-  document.getElementById('home').style.display='none';
-  document.getElementById('about').style.display='none';
-  document.getElementById('form').style.display='none';
-
-  document.getElementById(page).style.display='block';
-}
-  </script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
@@ -589,7 +578,16 @@ function showPage(page){
     "ICT Training",
     "Digital Skills"
   ]
-  }
+}
 </script>
-</body>
+<script>
+function showPage(page){
+  document.getElementById('home').style.display='none';
+  document.getElementById('about').style.display='none';
+  document.getElementById('form').style.display='none';
+
+  document.getElementById(page).style.display='block';
+}
+
+</script></body>
 </html>
