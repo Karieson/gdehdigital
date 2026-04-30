@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDEH Registration Form</title>
+
+<!-- Calligraphy Font -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BODY ===== */
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:white;
+  color:black;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#b8860b;
+  text-align:center;
+  padding:20px;
+}
+
+.title{
+  font-size:22px;
+  font-weight:bold;
+  color:black;
+}
+
+.subtitle{
+  font-size:16px;
+  font-family:'Great Vibes', cursive;
+  color:#2b2b2b;
+  margin-top:5px;
+}
+
+/* ===== FORM ===== */
+.container{
+  max-width:700px;
+  margin:30px auto;
+  padding:20px;
+}
+
+/* ===== GOLD SECTIONS ===== */
+.section{
+  background:#fff;
+  border:2px solid #b8860b;
+  border-radius:10px;
+  padding:15px;
+  margin-top:20px;
+  box-shadow:0 0 8px rgba(184,134,11,0.2);
+}
+
+.section h3{
+  margin-top:0;
+  background:#b8860b;
+  color:white;
+  padding:8px 15px;
+  border:1px solid #8b6508; /* medium border */
+  border-radius:3px;
+  font-size:16px;
+  text-align:center;
+
+  display:inline-block;   /* allows centering properly */
+}
+/* INPUTS */
+label{
+  display:block;
+  margin-top:12px;
+  font-weight: normal;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+/* ===== BUTTON ===== */
+.btn-pay{
+  margin:25px auto 0 auto;
+  display:block;
+  padding:8px 18px;
+  background:#b8860b;
+  border:none;
+  color:white;
+  font-size:14px;
+  border-radius:25px;
+  cursor:pointer;
+  transition:0.3s ease;
+  box-shadow:0 0 6px rgba(184,134,11,0.6);
+}
+
+.btn-pay:hover{
+  background:#a07409;
+  transform:scale(1.05);
+  box-shadow:0 0 12px rgba(184,134,11,0.9),
+             0 0 25px rgba(184,134,11,0.5);
+}
+
+/* ===== CONSENT ===== */
+.consent{
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:black;
+  color:white;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="title">GDEH Membership / Students Registration Form</div>
+  <div class="subtitle">(Empowering youth through digital literacy and innovation)</div>
+</header>
+
+<div class="container">
+
+<!-- PERSONAL INFORMATION -->
+<div class="section">
+  <h3>Personal Information</h3>
+
+  <label>Full Name</label>
+  <input type="text">
+
+  <label>ID Number</label>
+  <input type="text">
+
+  <label>Gender</label>
+  <select>
+    <option>Select</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <label>Phone Number</label>
+  <input type="text">
+
+  <label>County</label>
+  <input type="text">
+
+  <label>Sub County</label>
+  <input type="text">
+</div>
+
+<!-- MEMBERSHIP DETAILS -->
+<div class="section">
+  <h3>Course / Membership Details</h3>
+
+  <label>Membership Type</label>
+  <select>
+    <option>Student</option>
+    <option>Member</option>
+    <option>Volunteer</option>
+    <option>ICT Training</option>
+  </select>
+
+  <label>Area of Interest</label>
+  <textarea rows="3"></textarea>
+</div>
+
+<!-- EMERGENCY CONTACT -->
+<div class="section">
+  <h3>Emergency Contact</h3>
+
+  <label>Full Name</label>
+  <input type="text">
+
+  <label>Relationship</label>
+  <input type="text">
+
+  <label>Phone Number</label>
+  <input type="text">
+</div>
+
+<!-- CONSENT -->
+<div class="section">
+  <h3>Consent</h3>
+
+  <label class="consent">
+    <input type="checkbox">
+    I confirm that all information provided is true and I agree to the terms and conditions.
+  </label>
+</div>
+
+<!-- BUTTON -->
+<button class="btn-pay">PAY & SUBMIT</button>
+
+</div>
+
+<footer>
+  © 2026 GDEH Registration System | All Rights Reserved
+</footer>
+
+</body>
+</html>

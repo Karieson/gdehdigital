@@ -1,594 +1,264 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="gdeh.png" type="image/png">
-<meta name="google-site-verification" content="8n-tP1QcWQuhSUFSrRJwJRwgp4CZtZaEnAP9i8vWb2A" />
-  <title>Garissa Digital Empowerment Hub | Digital Training Kenya</title>
 
-  <!-- SEO Description -->
-  <meta name="description" content="Garissa Digital Empowerment Hub empowers youth through digital literacy, ICT training, Computer Literacy, Agro-Entrepreneurship, and CBO programs in Kenya.">
+<title>Garissa Digital Empowerment Hub</title>
 
-  <!-- Keywords -->
-  <meta name="keywords" content="Garissa Digital, ICT Training Kenya, Digital Skills, Youth Empowerment, GDEH, Computer Literacy, Agro Entrepreneurship, CBO Training Kenya">
-
-  <!-- Author -->
-  <meta name="author" content="Garissa Digital Empowerment Hub">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
 <style>
 body {
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#fff;
-  color:#000;
-  font-size:12px;
-}h2{ color:orange; font-size:14px; }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2; /* light grey */
+}
 
-/* Logo */ .logo { display:flex; align-items:center; justify-content:flex-start; padding:10px 15px; } .logo img{ width:120px; } .logo img{ width:120px; }
-.welcome {
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 60px;
+}
+
+/* HERO */
+.gdeh-title {
   text-align: center;
-  font-size: 20px;
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  margin-top: 30px;
+  margin-top: 20px;
+  font-size: 2.1em;
+  font-weight: normal;
 }
 
-/* Each letter */
-.welcome span {
+.gdeh-title span {
   display: inline-block;
-  opacity: 0;
-  transform: scale(0.2) rotate(-20deg);
-  animation: tvReveal 1s forwards;
-  animation-delay: calc(var(--i, 0) * 0.08s);
-  text-shadow: 0 0 10px rgba(0,0,0,0.2);
+  animation: fly 40s infinite;
 }
 
-/* TV style animation */
-@keyframes tvReveal {
+/* COLORS */
+.gdeh-title span:nth-child(1) { color: #e63946; }
+.gdeh-title span:nth-child(2) { color: #f4a261; }
+.gdeh-title span:nth-child(3) { color: #2a9d8f; }
+.gdeh-title span:nth-child(4) { color: #457b9d; }
+.gdeh-title span:nth-child(5) { color: #8d99ae; }
+.gdeh-title span:nth-child(6) { color: #ffbe0b; }
+.gdeh-title span:nth-child(7) { color: #8338ec; }
+
+.gdeh-title span:nth-child(9) { color: #fb5607; }
+.gdeh-title span:nth-child(10){ color: #3a86ff; }
+
+.gdeh-title span:nth-child(12){ color: #06d6a0; }
+.gdeh-title span:nth-child(13){ color: #e63946; }
+.gdeh-title span:nth-child(14){ color: #f4a261; }
+.gdeh-title span:nth-child(15){ color: #2a9d8f; }
+
+.gdeh-title span:nth-child(17){ color: #457b9d; }
+.gdeh-title span:nth-child(18){ color: #8d99ae; }
+.gdeh-title span:nth-child(19){ color: #ffbe0b; }
+
+/* DELAYS */
+.gdeh-title span:nth-child(1) { animation-delay: 0s; }
+.gdeh-title span:nth-child(2) { animation-delay: 0.2s; }
+.gdeh-title span:nth-child(3) { animation-delay: 0.4s; }
+.gdeh-title span:nth-child(4) { animation-delay: 0.6s; }
+.gdeh-title span:nth-child(5) { animation-delay: 0.8s; }
+.gdeh-title span:nth-child(6) { animation-delay: 1s; }
+.gdeh-title span:nth-child(7) { animation-delay: 1.2s; }
+
+.gdeh-title span:nth-child(9) { animation-delay: 1.4s; }
+.gdeh-title span:nth-child(10){ animation-delay: 1.6s; }
+
+.gdeh-title span:nth-child(12){ animation-delay: 1.8s; }
+.gdeh-title span:nth-child(13){ animation-delay: 2s; }
+.gdeh-title span:nth-child(14){ animation-delay: 2.2s; }
+.gdeh-title span:nth-child(15){ animation-delay: 2.4s; }
+
+.gdeh-title span:nth-child(17){ animation-delay: 2.6s; }
+.gdeh-title span:nth-child(18){ animation-delay: 2.8s; }
+.gdeh-title span:nth-child(19){ animation-delay: 3s; }
+
+/* ANIMATION */
+@keyframes fly {
   0% {
+    transform: translateY(-200px);
     opacity: 0;
-    transform: scale(0.2) rotate(-30deg);
-    filter: blur(8px);
   }
-
-  60% {
+  10% {
+    transform: translateY(0);
     opacity: 1;
-    transform: scale(1.3) rotate(10deg);
-    filter: blur(0px);
   }
-
   80% {
-    transform: scale(0.9) rotate(-5deg);
+    transform: translateY(0);
+    opacity: 1; /* pause */
   }
-
   100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: translateY(200px);
+    opacity: 0;
   }
-}
-
-/* Color paint per letter */
-.welcome span:nth-child(1) { color: #ff3b30; }
-.welcome span:nth-child(2) { color: #ff9500; }
-.welcome span:nth-child(3) { color: #ffcc00; }
-.welcome span:nth-child(4) { color: #34c759; }
-.welcome span:nth-child(5) { color: #007aff; }
-.welcome span:nth-child(6) { color: #5856d6; }
-.welcome span:nth-child(7) { color: #af52de; }
-
-.welcome span:nth-child(9) { color: #ff2d55; }
-.welcome span:nth-child(10) { color: #30b0c7; }
-
-.welcome span:nth-child(12) { color: #ff9f0a; }
-.welcome span:nth-child(13) { color: #32d74b; }
-.welcome span:nth-child(14) { color: #0a84ff; }
-.welcome span:nth-child(15) { color: #bf5af2; }
-
-.welcome span:nth-child(17) { color: #ff453a; }
-.welcome span:nth-child(18) { color: #64d2ff; }
-.welcome span:nth-child(19) { color: #ff375f; }
-
 
 }
-.hero {
-  margin-top: 40px;   /* reduced from 80px */
-  overflow: hidden;
-  max-height: 250px;  /* limits overall slider height */
-}
 
+/* SLIDER */
 .slider {
+  width: 90%;
+  max-width: 800px;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slides {
   display: flex;
   width: 300%;
   animation: slide 12s infinite;
-  height: 250px;      /* locks slider height */
 }
 
-.slider img {
+.slides img {
   width: 100%;
-  height: 250px;      /* forces smaller image height */
+  height: 250px;
   object-fit: cover;
 }
 
-@keyframes slide{ 0%{transform:translateX(0);} 33%{transform:translateX(-100%);} 66%{transform:translateX(-200%);} 100%{transform:translateX(0);} }
-
-.container{ padding:20px; text-align:center; }
-
-button{ background:orange; border:none; padding:6px 14px; cursor:pointer; display:block; margin:10px auto; font-size:12px; }
-.hero img {
-  width: 90%;   /* reduce size */
-  height: auto;
+/* SLIDE ANIMATION */
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100%);}
+  66% {transform: translateX(-200%);}
+  100% {transform: translateX(0);}
 }
 
-/* Sections hidden */ .hidden{ display:none; }
+/* INTRO */
+.intro {
+  text-align: left;
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+}
 
-.watermark-footer {
-  background: transparent;
-  color: rgba(0, 0, 0, 0.4);/* light watermark effect */
-  font-weight: bold;
-  font-size: 10px;
+/* BUTTONS */
+.buttons {
   text-align: center;
+  margin-bottom: 40px;
+}
 
+.buttons {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;      /* center horizontally */
+  gap: 10px;                /* space between buttons */
+}
+
+.buttons a {
+  display: block;
+  width: fit-content;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  background: #b8860b;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+}
+
+/* Glow effect on hover */
+.buttons a:hover {
+  box-shadow: 0 0 10px #b8860b,
+              0 0 20px #b8860b,
+              0 0 30px #b8860b;
+  transform: scale(1.05);
+}
+
+/* Optional: soft glow always */
+.buttons a {
+  box-shadow: 0 0 5px rgba(184,134,11,0.6);
+}
+
+/* FOOTER */
+.footer {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-
-  padding: 6px 5px;
-  pointer-events: none; /* IMPORTANT: does NOT block buttons */
-  z-index: 1; /* keeps it behind interactive elements */
-}
-.intro {
-  position: relative;
-  transform: translateY(-10px);
-}
-h1 {
-  font-weight: 500;
-}
-
-h2 {
-  font-weight: 400;
-}
-
-
-/* Container */
-.landing-button-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Container */
-.landing-button-container {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* RESPONSIVE BUTTON */
-.team-btn,
-.landing-btn {
-  background: orange;
+  background: #000;
   color: white;
-
-  width: 60%;          /* 60% width */
-  max-width: 250px;    /* prevents it becoming too large */
-  
-  padding: 8px 10px;   /* controls height naturally */
-  font-size: 12px;
-
-  text-decoration: none;
-  border-radius: 6px;
-
-  display: inline-block;
-  margin: 5px auto;
-
-  transition: 0.2s;
   text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }
-
-/* Hover */
-.team-btn:hover,
-.landing-btn:hover {
-  background: darkorange;
-  transform: scale(1.03);
-}
-
-/* Mobile tweak */
-@media (max-width: 200px) {
-  .team-btn,
-  .landing-btn {
-    width: 60%;
-    font-size: 11px;
-  }
-
 </style>
 
 </head>
-<body><div class="logo">
-  <img src="gdeh_logo.png" alt="logo">
-</div><!-- HERO --><div class="hero">
-<div class="welcome">
-  <span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span>
-  <span>&nbsp;</span>
-  <span>T</span><span>O</span>
-  <span>&nbsp;</span>
-  <span>G</span><span>D</span><span>E</span><span>H</span>
-  <span>&nbsp;</span>
-  <span>C</span><span>B</span><span>O</span>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <img src="gdeh_logo.png" class="logo" alt="GDEH Logo">
 </div>
+
+<!-- HERO -->
+<div class="hero">
+<div class="gdeh-title">
+
+  <span>W</span>
+  <span>e</span>
+  <span>l</span>
+  <span>c</span>
+  <span>o</span>
+  <span>m</span>
+  <span>e</span>
+
+  <span class="space">&nbsp;</span>
+
+  <span>t</span>
+  <span>o</span>
+
+  <span class="space">&nbsp;</span>
+
+  <span>G</span>
+  <span>D</span>
+  <span>E</span>
+  <span>H</span>
+
+  <span class="space">&nbsp;</span>
+
+  <span>C</span>
+  <span>B</span>
+  <span>O</span>
+
+</div>
+
   <div class="slider">
-    <img src="img1.jpeg">
-    <img src="img2.jpeg">
-    <img src="img3.jpeg">
-  </div>
-</div><!-- INTRO --><div class="container" id="home">
-  <h2>About GDEH</h2>
-  <p>Garissa Digital Empowerment Hub (GDEH) is a community-based organization committed to bridging the digital divide in Garissa County. The organization focuses on equipping youth, women, and the wider community with practical digital and entrepreneurial skills that improve livelihoods and promote self-reliance.</p>
-<div style="text-align:center; margin-top:20px;">
-  <div class="landing-button-container">
-
-  <a href="teamcbo.html" class="landing-btn">
-    Meet Gdeh Team
-  </a>
-
-  <a href="landing.html" class="landing-btn">
-    Support & Partnerships
-  </a>
-
-</div>
-</div>
-
- <button onclick="showPage('about')">Explore More</button>
- 
-</div>
-<!-- ABOUT PAGE --><div class="container hidden" id="about">
-  <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.1); text-align:left; font-size:12px; color:#000; position:relative;">
-    <span onclick="showPage('home')" style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:12px;">✖</span>
-  <div class="card-container">
-
-  <div class="card">
-    <h2>Formation of Garissa Digital Empowerment Hub (GDEH) CBO</h2>
-    <p>The Garissa Digital Empowerment Hub (GDEH) Community-Based Organization (CBO) was formally conceptualized and formed in early 2026 in Garissa Township, Garissa County, Kenya. It was established as a response to the growing digital inequality affecting youth, women, and persons with disabilities (PWDs) across Garissa and the wider Northern Kenya region.</p>
-  </div>
-
-  <div class="card">
-    <h2>Reason for Formation</h2>
-    <p>The CBO was created after recognizing several critical challenges in the region:</p>
-    <p><strong>a) Digital Divide</strong><br>
-    Many young people in Garissa County lacked:<br>
-    Basic computer literacy<br>
-    Access to digital learning opportunities<br>
-    Exposure to modern ICT tools and platforms<br>
-    This created a widening gap between urban digital development and rural communities.</p>
-
-    <p><strong>b) Economic Challenges</strong><br>
-    High youth unemployment<br>
-    Limited access to online job markets and digital entrepreneurship opportunities<br>
-    Dependence on informal and low-income economic activities</p>
-
-    <p><strong>c) Low Technological Awareness</strong><br>
-    Limited awareness of ICT as a career path<br>
-    Lack of structured training centers for digital skills<br>
-    Minimal integration of technology in daily community activities</p>
-
-    <p><strong>d) Social Inclusion Gaps</strong><br>
-    Persons with disabilities had even fewer opportunities to access ICT training<br>
-    Women and marginalized youth were underrepresented in digital programs</p>
-  </div>
-
-  <div class="card">
-    <h2>Vision of GDEH CBO</h2>
-    <p>The organization was established with a long-term vision to:<br>
-    Bridge the digital divide in Garissa County and Northern Kenya<br>
-    Equip youth with practical ICT and entrepreneurial skills<br>
-    Promote digital literacy and innovation<br>
-    Enhance socio-economic development through technology<br>
-    Foster inclusive growth for all community groups</p>
-  </div>
-
-  <div class="card">
-    <h2>Conclusion</h2>
-    <p>The Garissa Digital Empowerment Hub (GDEH) CBO was born out of a real and urgent need to address digital inequality, unemployment, and lack of ICT awareness in Garissa County. Driven by a group of passionate young leaders led by Abdullahi Sheikh Aden Karie and Samira Abdi Maalim, the organization stands as a community-based solution aimed at transforming lives through digital skills, empowerment, and inclusive development across Northern Kenya.</p>
-  </div>
-
-  <div class="card">
-    <h2>Founding Members and Leadership</h2>
-    <p>The initiative was founded by a group of 10 committed members, led by:</p>
-
-    <p><strong>Abdullahi Sheikh Aden Karie</strong><br>
-    IT Diploma Graduate<br>
-    Undergraduate student at Mount Kenya University<br>
-    IT Support Technician with diverse ICT experience<br>
-    Trained in leadership through the YALI Network<br>
-    Completed Humanitarian Aid training via Coursera<br>
-    He was driven by firsthand experience of the digital gap in Garissa County, where he observed:<br>
-    Lack of access to ICT infrastructure<br>
-    Low digital literacy among youth<br>
-    Slow economic growth due to limited technology adoption<br>
-    His vision was to create a community-driven platform that empowers youth through practical digital skills and entrepreneurship training.</p>
-
-    <p><strong>Samira Abdi Maalim</strong><br>
-    Young female leader passionate about socio-economic development<br>
-    Holder of a Certificate in Accounting and Accountability short course training<br>
-    Advocate for youth and women empowerment<br>
-    Strong supporter of inclusive education and community growth<br>
-    She played a key role in promoting gender inclusion, accountability, and community engagement within the CBO.</p>
-
-    <p><strong>Other Founding Members</strong><br>
-    The organization was also supported by 8 additional co-founders, each contributing skills in:<br>
-    Community mobilization<br>
-    ICT awareness<br>
-    Youth mentorship<br>
-    Administration and coordination<br>
-    Local development initiatives</p>
-  </div>
-
-  <div class="card">
-    <h2>Key Factors Influencing Formation</h2>
-    <p>Several factors influenced the establishment of GDEH CBO:</p>
-
-    <p><strong>a) Regional Digital Inequality</strong><br>
-    Northern Kenya, particularly Garissa Township, had limited ICT infrastructure compared to other parts of the country.</p>
-
-    <p><strong>b) Youth Unemployment Crisis</strong><br>
-    A large number of educated and semi-educated youth lacked employable digital skills.</p>
-
-    <p><strong>c) Desire for Community Transformation</strong><br>
-    The founders aimed to shift the community from dependency to self-reliance through technology and innovation.</p>
-
-    <p><strong>d) Leadership and Exposure</strong><br>
-    The founding members had exposure to:<br>
-    ICT training and certifications<br>
-    Leadership programs (such as YALI)<br>
-    Online learning platforms (Coursera and others)<br>
-    This exposure motivated them to replicate similar opportunities locally.</p>
-
-    <p><strong>e) Inclusion of Marginalized Groups</strong><br>
-    A strong motivation was to ensure:<br>
-    Youth inclusion<br>
-    Women empowerment<br>
-    Accessibility for Persons with Disabilities (PWDs)</p>
-  </div>
-
-  <div class="card">
-    <h2>JOIN GDEH CBO DIGITAL EMPOWERMENT PROGRAMS</h2> 
-<p>YOUR FUTURE STARTS HERE!</p>
-    <p>Below are the GDEH CBO training courses, explained clearly with their advantages and the skills participants gain.</p>
-  </div>
-
-  <div class="card">
-    <h2>1. Digital Literacy</h2>
-    <p><strong>What it is:</strong><br>
-    Digital literacy is the foundation course that introduces learners to the basic use of digital devices, the internet, and online tools.</p>
-
-    <p><strong>What you will learn:</strong><br>
-    How to use a computer (basic operations)<br>
-    Internet browsing and safe online practices<br>
-    Email creation and communication<br>
-    Using digital platforms (Google tools, social media, online forms)<br>
-    Basic cybersecurity awareness</p>
-
-    <p><strong>Advantages:</strong><br>
-    Helps you confidently use modern technology<br>
-    Opens doors to online learning and jobs<br>
-    Improves communication and information access<br>
-    Builds independence in digital environments</p>
-
-    <p><strong>Skills gained:</strong><br>
-    Computer operation skills<br>
-    Online communication skills<br>
-    Digital safety awareness<br>
-    Basic internet research skills</p>
-  </div>
-
-  <div class="card">
-    <h2>2. Agro Entrepreneurship</h2>
-    <p><strong>What it is:</strong><br>
-    This course teaches how to use agriculture as a business opportunity, combining farming knowledge with entrepreneurship skills.</p>
-
-    <p><strong>What you will learn:</strong><br>
-    Agribusiness planning and management<br>
-    Crop and livestock value chains<br>
-    Market identification and pricing<br>
-    Record keeping in farming business<br>
-    Modern farming techniques and innovation</p>
-
-    <p><strong>Advantages:</strong><br>
-    Encourages self-employment through agriculture<br>
-    Increases food security and income generation<br>
-    Helps youth turn farming into a profitable business<br>
-    Reduces unemployment in rural communities</p>
-
-    <p><strong>Skills gained:</strong><br>
-    Business planning and entrepreneurship skills<br>
-    Agricultural management skills<br>
-    Financial and record-keeping skills<br>
-    Market analysis and negotiation skills</p>
-  </div>
-
-  <div class="card">
-    <h2>3. ICT Short Courses</h2>
-    <p><strong>What it is:</strong><br>
-    These are practical technical courses designed to give learners hands-on ICT knowledge for employment and digital careers.</p>
-
-    <p><strong>What you will learn:</strong><br>
-    Basic programming concepts<br>
-    Introduction to web design and development<br>
-    Computer maintenance and troubleshooting<br>
-    Networking fundamentals<br>
-    Software installation and usage</p>
-
-    <p><strong>Advantages:</strong><br>
-    Prepares you for ICT-related jobs<br>
-    Builds technical problem-solving abilities<br>
-    Helps in freelancing and remote work opportunities<br>
-    Strengthens your career in the digital economy</p>
-
-    <p><strong>Skills gained:</strong><br>
-    Basic coding and programming skills<br>
-    Website design skills<br>
-    IT support and troubleshooting skills<br>
-    Networking and system maintenance skills</p>
-  </div>
-
-  <div class="card">
-    <h2>4. Smartphone Literacy Training</h2>
-    <p><strong>What it is:</strong><br>
-    A practical course focused on helping learners fully understand and utilize smartphones for productivity and income generation.</p>
-
-    <p><strong>What you will learn:</strong><br>
-    Smartphone settings and usage<br>
-    Mobile internet navigation<br>
-    Using apps for business and learning<br>
-    Mobile photography and content creation<br>
-    Mobile money services (digital finance tools)</p>
-
-    <p><strong>Advantages:</strong><br>
-    Turns your phone into a business tool<br>
-    Helps you access online jobs and opportunities<br>
-    Improves digital communication skills<br>
-    Enhances personal productivity</p>
-
-    <p><strong>Skills gained:</strong><br>
-    Mobile digital skills<br>
-    Content creation basics<br>
-    Online communication skills<br>
-    Digital financial transaction skills</p>
-  </div>
-
-  <div class="card">
-    <h2>5. Computer Literacy (Advanced Practical)</h2>
-    <p><strong>What it is:</strong><br>
-    A hands-on course that builds strong computer operation and productivity skills for office and professional environments.</p>
-
-    <p><strong>What you will learn:</strong><br>
-    Microsoft Word, Excel, and PowerPoint<br>
-    File management and data storage<br>
-    Typing and document formatting<br>
-    Office productivity tools<br>
-    Printing and scanning operations</p>
-
-    <p><strong>Advantages:</strong><br>
-    Prepares you for office jobs<br>
-    Improves academic and professional performance<br>
-    Essential for administrative careers<br>
-    Builds confidence in digital workplaces</p>
-
-    <p><strong>Skills gained:</strong><br>
-    Document creation and editing<br>
-    Data entry and analysis skills<br>
-    Presentation design skills<br>
-    Office administration skills</p>
-  </div>
-
-  <div class="card">
-    <h2>Final Message</h2>
-    <p>All these courses are designed to empower youth, women, and PWDs with practical skills that lead to:<br>
-    Employment<br>
-    Self-employment<br>
-    Digital independence<br>
-    Community development<br>
-    At GDEH CBO, the goal is simple:<br>
-    Turn potential into skills, and skills into opportunity.</p>
-  </div>
-
-  <div class="card">
-    <h2>Join GDEH CBO Programs</h2>
-    <p>Are you a young person, a person with disability (PWD), or part of our vibrant community looking for a better future?<br>
-    The Garissa Digital Empowerment Hub (GDEH) CBO is here for YOU!</p>
-
-    <p>We are offering FREE practical training in:<br>
-    Digital Literacy<br>
-    Agro Entrepreneurship<br>
-    ICT Short Courses<br>
-    Smartphone & Computer Skills</p>
-
-    <p>This is your chance to gain real, life-changing digital skills that can open doors to jobs, business opportunities, and self-reliance.</p>
-
-    <p><strong>Why Join Us?</strong><br>
-    Learn from experienced trainers<br>
-    Gain hands-on ICT skills<br>
-    Improve your employability and business skills<br>
-    Be part of a growing digital community in Northern Kenya<br>
-    Inclusive training for youth, women, and PWDs</p>
-
-    <p><strong>Affordable Participation Contribution:</strong><br>
-    Maintenance Fee: Ksh 500<br>
-    Certificate of Completion Fee: Ksh 700</p>
-
-    <p>Upon completion, you will receive a recognized certificate to boost your CV and opportunities.</p>
-
-    <p><strong>Don’t miss this opportunity to transform your future!<br>
-    Join us today and be part of the digital revolution in Garissa and beyond.</strong></p>
-  </div>
-
-</div>
-<button onclick="showPage('form')">Apply</button>
-
+    <div class="slides">
+      <img src="img1.jpeg">
+      <img src="img2.jpeg">
+      <img src="img3.jpeg">
+    </div>
   </div>
 </div>
-<!-- FORM --><div class="container hidden" id="form">
-  <div style="position:relative;">
-    <span onclick="showPage('home')" style="position:absolute; top:0; right:10px; cursor:pointer; font-size:16px;">✖</span>
-  <h2>Application Form</h2>
-  <input placeholder="First Name"><br><br>
-  <input placeholder="Last Name"><br><br>
-  <select>
-    <option>Gender</option>
-    <option>Male</option>
-    <option>Female</option>
-  </select><br><br>
-  <select>
-    <option>Marital Status</option>
-    <option>Single</option>
-    <option>Married</option>
-  </select><br><br>
-  <input placeholder="Phone Number"><br><br>
-  <input placeholder="Email"><br><br>  <select>
-    <option>Course</option>
-    <option>Smartphone Literacy</option>
-    <option>Computer Literacy</option>
-    <option>Agro-Entrepreneurship</option>
-    <option>ICT Short Courses</option>
-  </select><br><br>  <select>
-    <option>Where did you hear about us</option>
-    <option>Social Media</option>
-    <option>Friend</option>
-    <option>Website</option>
-  </select><br><br><button>Submit</button>
 
-  </div>
+<!-- INTRO -->
+<div class="intro">
+  <p>
+    Garissa Digital Empowerment Hub is a CBO dedicated to empowering youth and communities 
+    through digital skills, innovation, and access to technology. We aim to bridge the digital 
+    divide and create opportunities for growth, learning, and development.
+  </p>
 </div>
-<footer class="watermark-footer">
-  ©2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
-  <br>
-  <span>Contacts: gdehcbo2026@gmail.com | +254728428431 | +254705299600 | Jamia Mosque RD, Garissa</span>
-</footer>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Garissa Digital Empowerment Hub",
-  "url": "https://garissadigitaltraining.onrender.com",
-  "logo": "https://garissadigitaltraining.onrender.com/gdeh.png",
-  "description": "A training hub offering Computer Literacy, Agro-Entrepreneurship, and CBO capacity building programs in Garissa, Kenya.",
-  "knowsAbout": [
-    "Computer Literacy",
-    "Agro-Entrepreneurship",
-    "Community-Based Organizations (CBO)",
-    "ICT Training",
-    "Digital Skills"
-  ]
-}
-</script>
-<script>
-function showPage(page){
-  document.getElementById('home').style.display='none';
-  document.getElementById('about').style.display='none';
-  document.getElementById('form').style.display='none';
 
-  document.getElementById(page).style.display='block';
-}
+<!-- BUTTONS -->
+<div class="buttons">
+  <a href="teamcbo.html">Meet Our Team</a>
+  <a href="landing.html">Support & Partnerships</a>
+  <a href="explore.html">Explore More</a>
+</div>
 
-</script></body>
+<!-- FOOTER -->
+<div class="footer">
+  © Garissa Digital Empowerment Hub. All rights reserved.
+</div>
+
+</body>
 </html>
