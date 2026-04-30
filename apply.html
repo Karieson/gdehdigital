@@ -193,13 +193,28 @@ footer{
 
 <!-- CONSENT -->
 <div class="section">
-  <h3>Consent</h3>
+  <h3 style="text-align:center; border-bottom:2px solid #b8860b; padding-bottom:5px;">
+    Consent
+  </h3>
 
-  <label class="consent">
-    <input type="checkbox">
-    I confirm that all information provided is true and I agree to the terms and conditions.
+  <p style="font-size:11px; margin-bottom:8px;">
+    By continuing, you agree to the 
+    <a href="privacy_terms.html" target="_blank" style="color:#b8860b;">
+      Privacy Policy & Terms and Conditions
+    </a> of Garissa Digital Empowerment Hub CBO.
+  </p>
+
+  <label for="consentCheck" style="font-size:11px; display:block;">
+    <input type="checkbox" id="consentCheck" name="consent" required>
+    I confirm that I have read and agree to the Privacy Policy and Terms & Conditions, and consent to the use of my information for communication and partnership purposes.
   </label>
 </div>
+
+<button type="submit" class="submit-btn">
+  Submit Form
+</button>
+
+</form>
 
 <!-- BUTTON -->
 <button class="btn-pay">PAY & SUBMIT</button>
