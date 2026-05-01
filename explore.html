@@ -3,178 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Explore GDEH</title>
+<title>Garissa Digital Empowerment Hub CBO</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: #f2f2f2;
-  min-height: 100vh;
-
-  /* center card */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    font-family: Arial, sans-serif;
+    background: white;
+    margin: 0;
+    padding-bottom: 80px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.home-link {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    color: orange;
+    text-decoration: underline;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 1000;
+    transition: 0.3s;
 }
 
-/* CONTAINER */
-.container {
-  width: 100%;
-  max-width: 900px;
-  padding: 20px;
+.home-link:hover {
+    color: darkorange;
 }
 
-/* CARD */
+.logo {
+    width: 90px;   /* adjust size if needed */
+    height: auto;
+}
+
+/* Headings styled like links */
+.link-heading {
+    color: orange;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 15px;
+    display: block;
+    font-size: 14px;
+}
+
+/* Card style */
 .card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
+    display: none;
+    background: white;
+    border: 2px solid orange;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 15px;
+    box-shadow: 0 0 15px orange;
+    animation: glow 1.5s infinite alternate;
 }
 
-/* GLOW EFFECT */
-.card:hover {
-  box-shadow: 0 0 10px #b8860b,
-              0 0 20px #b8860b,
-              0 0 30px rgba(184,134,11,0.6);
-  transform: translateY(-5px);
+/* Glow effect */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px orange;
+    }
+    to {
+        box-shadow: 0 0 25px orange;
+    }
 }
 
-/* HEADINGS */
-.card h2,
-.card h3 {
-  color: #ff8800;
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-/* TEXT */
-.card p {
-  color: #000;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.apply-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 13px;
-  color: white;
-  background: #b8860b;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 0 5px rgba(184,134,11,0.6);
-
-  margin: 20px auto;
-  display: block;
-  width: fit-content;
-}
-
-.apply-btn:hover {
-  box-shadow: 0 0 10px #b8860b,
-              0 0 20px #b8860b,
-              0 0 30px #b8860b;
-  transform: scale(1.05);
-}
-
-/* FOOTER */
-.footer {
-  width: 100%;
-  text-align: center;
-  background: #000;
-  color: white;
-  padding: 12px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  font-size: 12px;
-
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: orange;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
 }
 </style>
 
+<script>
+function toggleCard(id) {
+    let card = document.getElementById(id);
+    card.style.display = (card.style.display === "block") ? "none" : "block";
+}
+</script>
+
 </head>
+
 <body>
 
-<div class="container">
-  <div class="card">
-
-    <h2>What is Garissa Digital Empowerment Hub?</h2>
-    <p>
-      Garissa Digital Empowerment Hub (GDEH) is a Community-Based Organization (CBO) 
-      dedicated to empowering youth and the wider community through digital skills, 
-      innovation, and access to modern technology.
-    </p>
-
-    <h2>Why was it formed?</h2>
-    <p>
-      GDEH was formed to bridge the digital gap in Garissa by equipping individuals 
-      with essential skills needed in today’s digital world, improving livelihoods, 
-      and creating new opportunities.
-    </p>
-
-    <h2>When was it formed?</h2>
-    <p>GDEH was officially established in the year 2026.</p>
-
-    <h2>Reasons for the formation of GDEH CBO</h2>
-    <p>
-      The organization was formed to address unemployment, lack of digital skills, 
-      limited access to technology, and to promote innovation, entrepreneurship, 
-      and self-reliance among youth and communities.
-    </p>
-
-    <h2>Who formed GDEH?</h2>
-    <p>
-      GDEH was formed by 10 dedicated members committed to community development 
-      and empowerment. (See the <strong>Meet Our Team</strong> page for full details.)
-    </p>
-
-    <h2>Courses offered at GDEH</h2>
-
-    <h3><strong>1:</strong>  Smartphone Literacy</h3>
-    <p>Learn smartphone usage, internet access, and digital safety. Builds confidence in mobile technology use.</p>
-
-    <h3><strong>2:</strong>Computer Literacy</h3>
-    <p>Basic computer skills including typing, Microsoft Office, and internet use for education and jobs.</p>
-
-    <h3> <strong>3:</strong> Agro-Entrepreneurship Literacy</h3>
-    <p>Combines farming with business skills to create income-generating agricultural ventures.</p>
-
-    <h3><strong>4:</strong>  Short ICT Courses</h3>
-    <p>Includes coding, digital marketing, and graphic design for modern online job opportunities.</p>
-
-    <div style="margin-top:20px; padding:15px; background:#fff7e6; border-left:5px solid #b8860b; border-radius:8px;">
-
-  <p style="font-size:13px; color:#000; line-height:1.6;">
-    Are you a person with a disability (PWD), a woman, or a youth looking for empowerment opportunities?  
-    Your future starts here.
-  </p>
-
-  <p style="font-size:13px; color:#000; line-height:1.6;">
-    Join Garissa Digital Empowerment Hub (GDEH) and access life-changing digital and entrepreneurship skills.  
-    A small maintenance fee of <strong>Ksh 500</strong> is required for registration, and <strong>Ksh 700</strong> for the certificate of completion.
-  </p>
-
+<div class="header">
+    <img src="Gdeh_logo.png" alt="GDEH Logo" class="logo">
+</div>
+<a href="index.html" class="home-link">Back to Home</a>
+<span class="link-heading" onclick="toggleCard('about')">About Us</span>
+<div id="about" class="card">
+<p>
+Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world. By creating opportunities for learning, innovation, and access to digital tools, the hub plays a key role in building a more inclusive and digitally skilled community in Northern Kenya.
+</p>
 </div>
 
-<!-- APPLY BUTTON -->
-<a href="apply.html" class="apply-btn">
-  🚀 Apply Now
-</a>
-
-  </div>
+<span class="link-heading" onclick="toggleCard('why')">Why It Was Formed</span>
+<div id="why" class="card">
+<p>
+The organization was formed to address the growing gap in digital knowledge and access to technology among youth in Garissa and the wider Northern Kenya region. Many young people lack the skills required to compete in the modern job market, and this initiative aims to change that by providing affordable and accessible training. It also seeks to reduce unemployment, promote innovation, and empower individuals to use digital tools for education, entrepreneurship, and personal development.
+</p>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  © Garissa Digital Empowerment Hub. All rights reserved.
+<span class="link-heading" onclick="toggleCard('when')">When It Was Formed</span>
+<div id="when" class="card">
+<p>
+Garissa Digital Empowerment Hub CBO was established in early 2026 as a response to the urgent need for digital empowerment in the region. Since its formation, it has been committed to delivering impactful programs that support community growth and digital transformation.
+</p>
 </div>
+
+<span class="link-heading" onclick="toggleCard('who')">Who Formed It</span>
+<div id="who" class="card">
+<p>
+The organization was founded by ten dedicated youth members who strongly believe in gender equality and inclusive development. These founders came together with a shared vision of transforming their community by providing equal opportunities for all individuals, regardless of gender or background, to access digital education and skills.
+</p>
+</div>
+
+<span class="link-heading" onclick="toggleCard('where')">Where It Operates</span>
+<div id="where" class="card">
+<p>
+Garissa Digital Empowerment Hub operates primarily within Garissa Township. However, its programs and opportunities are open to youth, women, and persons with disabilities across the wider Northern Kenya region. The hub aims to expand its reach and impact by welcoming participants from different areas who are eager to improve their digital skills.
+</p>
+</div>
+
+<span class="link-heading" onclick="toggleCard('how')">How It Operates</span>
+<div id="how" class="card">
+<p>
+The hub operates from Monday to Friday between 8:00 AM and 4:00 PM, offering structured training sessions that include both theoretical and practical lessons. In addition, it conducts workshop training sessions every Saturday of the month, following a six-month program structure. These workshops are designed to provide intensive hands-on experience and real-world application of digital skills. Upon successful completion of any program or workshop, participants are awarded a certificate of completion.
+</p>
+</div>
+
+<span class="link-heading" onclick="toggleCard('eligibility')">Eligibility</span>
+<div id="eligibility" class="card">
+<p>
+Any individual with a passion for digital literacy is eligible to join Garissa Digital Empowerment Hub either as a member or a student. The organization encourages participation from youth, women, and persons with disabilities, ensuring inclusivity and equal opportunity for all who wish to learn and grow in the digital space.
+</p>
+</div>
+
+<span class="link-heading" onclick="toggleCard('cost')">Cost of Training & Membership</span>
+<div id="cost" class="card">
+<p>
+The hub offers affordable access to digital training. For students, training is provided free of charge, with only a small maintenance fee of Ksh 500 required for registration and Ksh 700 for certificate processing upon completion. Membership registration costs Ksh 2,000, with an annual renewal fee of Ksh 3,000. For those interested in workshop training only, a fee of Ksh 1,000 is applicable. These fees are structured to ensure sustainability while keeping opportunities accessible to the community.
+</p>
+</div>
+
+<footer>
+<p>Garissa Digital Empowerment Hub CBO. All rights reserved</p>
+<p><a href="privacy_terms.html" style="color:orange;">Privacy Policy and Terms & Conditions</a></p>
+</footer>
 
 </body>
 </html>
