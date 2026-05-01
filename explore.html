@@ -140,6 +140,22 @@ footer {
     padding: 5px;
     font-size: 12px;
 }
+.top-center {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .link-text {
+    color: orange;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .link-text:hover {
+    text-decoration: underline;
+  }
 </style>
 
 <script>
@@ -154,11 +170,18 @@ function toggleCard(id) {
 <body>
 
 <div class="header">
-    <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+    <img src="Gdeh_logo.png" alt="GDEH Logo" class="logo">
 </div>
+
 <a href="index.html" class="home-link">Back to Home</a>
+
+<div class="top-center">
+  <a href="#" class="link-text" onclick="toggleAll(event)">Expand / Collapse All</a>
+</div>
+
 <span class="link-heading" onclick="toggleCard('about')">About Us</span>
 <div id="about" class="card">
+
 <p>
 Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world. By creating opportunities for learning, innovation, and access to digital tools, the hub plays a key role in building a more inclusive and digitally skilled community in Northern Kenya.
 </p>
@@ -297,5 +320,26 @@ Learners gain practical ICT skills for jobs and freelancing.
 <p><a href="privacy_terms.html" style="color:orange;">Privacy Policy and Terms & Conditions</a></p>
 </footer>
 
+
+
+
+
+<script>
+function toggleCard(id) {
+  let card = document.getElementById(id);
+  card.style.display = (card.style.display === "block") ? "none" : "block";
+}
+
+function toggleAll(event) {
+  event.preventDefault();
+  let cards = document.querySelectorAll(".card");
+
+  let anyOpen = Array.from(cards).some(c => c.style.display === "block");
+
+  cards.forEach(c => {
+    c.style.display = anyOpen ? "none" : "block";
+  });
+}
+</script>
 </body>
 </html>
