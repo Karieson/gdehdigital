@@ -141,137 +141,204 @@
         <h1>Online Application Form</h1>
     </div>
 
-    <form>
+    <        <form id="admissionForm"
+      enctype="multipart/form-data">
 
-        <!-- Personal Information -->
-        <h2 class="full-width">Personal Information</h2>
+    <!-- Personal Information -->
+    <h2 class="full-width">Personal Information</h2>
 
-        <div>
-            <label>First Name</label>
-            <input type="text" required>
-        </div>
+    <div>
+        <label>First Name</label>
+        <input
+            type="text"
+            name="first_name"
+            required>
+    </div>
 
-        <div>
-            <label>Last Name</label>
-            <input type="text" required>
-        </div>
+    <div>
+        <label>Last Name</label>
+        <input
+            type="text"
+            name="last_name"
+            required>
+    </div>
 
-        <div>
-            <label>Gender</label>
-            <select required>
-                <option value="">Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-            </select>
-        </div>
+    <div>
+        <label>Gender</label>
+        <select
+            name="gender"
+            required>
 
-        <div>
-            <label>Phone Number</label>
-            <input type="tel" required>
-        </div>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
 
-        <div class="full-width">
-            <label>Email</label>
-            <input type="email" required>
-        </div>
+        </select>
+    </div>
 
-        <!-- Address -->
-        <h2 class="full-width">Address</h2>
+    <div>
+        <label>Phone Number</label>
+        <input
+            type="tel"
+            name="phone"
+            required>
+    </div>
 
-        <div class="full-width">
-            <label>Current Address</label>
-            <textarea></textarea>
-        </div>
+    <div class="full-width">
+        <label>Email</label>
+        <input
+            type="email"
+            name="email"
+            required>
+    </div>
 
-        <div class="full-width">
-            <label>Permanent Address</label>
-            <textarea></textarea>
-        </div>
+    <!-- Address -->
+    <h2 class="full-width">Address</h2>
 
-        <!-- Location -->
-        <h2 class="full-width">Location</h2>
+    <div class="full-width">
+        <label>Current Address</label>
+        <textarea
+            name="address"></textarea>
+    </div>
 
-        <div>
-            <label>County</label>
-            <select id="county" onchange="loadSubCounties()">
-                <option value="">Select County</option>
-                <option value="Garissa">Garissa</option>
-                <option value="Wajir">Wajir</option>
-                <option value="Mandera">Mandera</option>
-            </select>
-        </div>
+    <!-- Location -->
+    <h2 class="full-width">Location</h2>
 
-        <div>
-            <label>Sub County</label>
-            <select id="subcounty" onchange="loadWards()">
-                <option value="">Select Sub County</option>
-            </select>
-        </div>
+    <div>
+        <label>County</label>
 
-        <div class="full-width">
-            <label>Ward</label>
-            <select id="ward">
-                <option value="">Select Ward</option>
-            </select>
-        </div>
+        <select
+            id="county"
+            name="county"
+            onchange="loadSubCounties()">
 
-        <!-- Academic -->
-        <h2 class="full-width">Academic</h2>
+            <option value="">Select County</option>
 
-        <div>
-            <label>Course Applying</label>
-            <select>
-                <option>Smart Phone Literacy</option>
-                <option>Agro-entrepreneurship</option>
-                <option>Computer Literacy</option>
-            </select>
-        </div>
+            <option value="Garissa">Garissa</option>
+            <option value="Wajir">Wajir</option>
+            <option value="Mandera">Mandera</option>
 
-        <div>
-            <label>Intake</label>
-            <select>
-                <option>January Intake</option>
-                <option>May Intake</option>
-                <option>September Intake</option>
-            </select>
-        </div>
+        </select>
+    </div>
 
-        <div class="full-width">
-            <label>Mode</label>
-            <select>
-                <option>Online</option>
-                <option>Physical</option>
-                <option>Hybrid</option>
-            </select>
-        </div>
+    <div>
+        <label>Sub County</label>
 
-        <!-- Emergency Contact -->
-        <h2 class="full-width">Emergency Contact</h2>
+        <select
+            id="subcounty"
+            name="sub_county"
+            onchange="loadWards()">
 
-        <div>
-            <label>Full Name</label>
-            <input type="text">
-        </div>
+            <option value="">Select Sub County</option>
 
-        <div>
-            <label>Phone Number</label>
-            <input type="tel">
-        </div>
+        </select>
+    </div>
 
-        <!-- Upload -->
-        <h2 class="full-width">Upload</h2>
+    <div class="full-width">
+        <label>Ward</label>
 
-        <div class="full-width">
-            <label>Upload Profile Photo (jpeg, jpg, png)</label>
-            <input type="file" accept=".jpeg,.jpg,.png">
-        </div>
+        <select
+            id="ward"
+            name="ward">
 
-        <!-- Submit -->
-        <div class="full-width" style="text-align:center; margin-top:10px;">
-            <button type="submit" class="submit-btn">Submit</button>
-        </div>
+            <option value="">Select Ward</option>
 
-    </form>
+        </select>
+    </div>
+
+    <!-- Academic -->
+    <h2 class="full-width">Academic</h2>
+
+    <div>
+        <label>Course Applying</label>
+
+        <select
+            name="course">
+
+            <option>Smart Phone Literacy</option>
+            <option>Agro-entrepreneurship</option>
+            <option>Computer Literacy</option>
+
+        </select>
+    </div>
+
+    <div>
+        <label>Intake</label>
+
+        <select
+            name="intake">
+
+            <option>January Intake</option>
+            <option>May Intake</option>
+            <option>September Intake</option>
+
+        </select>
+    </div>
+
+    <div class="full-width">
+        <label>Mode</label>
+
+        <select
+            name="mode_of_study">
+
+            <option>Online</option>
+            <option>Physical</option>
+            <option>Hybrid</option>
+
+        </select>
+    </div>
+
+    <!-- Emergency Contact -->
+    <h2 class="full-width">Emergency Contact</h2>
+
+    <div>
+        <label>Full Name</label>
+
+        <input
+            type="text"
+            name="emergency_contact_name">
+    </div>
+
+    <div>
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            name="emergency_contact_phone">
+    </div>
+
+    <!-- Upload -->
+    <h2 class="full-width">Upload</h2>
+
+    <div class="full-width">
+
+        <label>
+            Upload Profile Photo
+        </label>
+
+        <input
+            type="file"
+            name="photo"
+            accept=".jpeg,.jpg,.png">
+
+    </div>
+
+    <!-- Submit -->
+
+    <div class="full-width"
+         style="text-align:center; margin-top:10px;">
+
+        <button
+            type="submit"
+            class="submit-btn">
+
+            Submit
+
+        </button>
+
+    </div>
+
+   </form>   
 
     <footer class="footer">
   <p>© Gdeh Online Application — All Rights Reserved</p>
@@ -330,7 +397,54 @@
             });
         }
     }
+   
 </script>
+   <script>
+
+const form =
+document.getElementById("admissionForm");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const formData =
+        new FormData(form);
+
+    try {
+
+        const response = await fetch(
+
+            "http://localhost:3000/api/admission",
+
+            {
+
+                method: "POST",
+
+                body: formData
+
+            }
+
+        );
+
+        const data =
+            await response.json();
+
+        alert(data.message);
+
+        form.reset();
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Submission failed");
+
+    }
+
+});
+
+   </script>
 
 </body>
 </html>
