@@ -141,7 +141,9 @@
         <h1>Online Application Form</h1>
     </div>
 
-    <        <form id="admissionForm"
+         <form id="admissionForm"
+      action="https://gdeh-database.onrender.com/api/admission"
+      method="POST"
       enctype="multipart/form-data">
 
     <!-- Personal Information -->
@@ -401,34 +403,25 @@
 </script>
    <script>
 
-const form =
-document.getElementById("admissionForm");
+const form = document.getElementById("admissionForm");
 
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const formData =
-        new FormData(form);
+    const formData = new FormData(form);
 
     try {
 
         const response = await fetch(
-
-            "http://localhost:3000/api/admission",
-
+            "https://gdeh-database.onrender.com/api/admission",
             {
-
                 method: "POST",
-
                 body: formData
-
             }
-
         );
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
         alert(data.message);
 
@@ -439,12 +432,11 @@ form.addEventListener("submit", async (e) => {
         console.log(error);
 
         alert("Submission failed");
-
     }
 
 });
 
-   </script>
+</script>
 
 </body>
 </html>
