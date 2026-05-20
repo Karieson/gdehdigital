@@ -2,279 +2,479 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-<title>Garissa Digital Empowerment Hub</title>
+<title>GDEH CBO</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2; /* light grey */
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
+body{
+  background:#0d0d0d;
+  color:white;
+  font-size:11px;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
 }
 
-.logo {
-  width: 90px;
-  height: auto;
+/* =========================
+   HEADER
+========================= */
+
+.header{
+  width:100%;
+  background:#000;
+  border-bottom:1px solid #222;
+
+  padding:8px 15px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-/* HERO */
-.gdeh-title {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 2.1em;
-  font-weight: normal;
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
 }
 
-.gdeh-title span {
-  display: inline-block;
-  animation: fly 40s infinite;
+.logo{
+  width:35px;
+  height:35px;
+  object-fit:contain;
 }
 
-/* COLORS */
-.gdeh-title span:nth-child(1) { color: #e63946; }
-.gdeh-title span:nth-child(2) { color: #f4a261; }
-.gdeh-title span:nth-child(3) { color: #2a9d8f; }
-.gdeh-title span:nth-child(4) { color: #457b9d; }
-.gdeh-title span:nth-child(5) { color: #8d99ae; }
-.gdeh-title span:nth-child(6) { color: #ffbe0b; }
-.gdeh-title span:nth-child(7) { color: #8338ec; }
+.brand-name{
+  color:orange;
+  font-size:12px;
+  font-weight:bold;
+}
 
-.gdeh-title span:nth-child(9) { color: #fb5607; }
-.gdeh-title span:nth-child(10){ color: #3a86ff; }
+/* =========================
+   NAVIGATION
+========================= */
 
-.gdeh-title span:nth-child(12){ color: #06d6a0; }
-.gdeh-title span:nth-child(13){ color: #e63946; }
-.gdeh-title span:nth-child(14){ color: #f4a261; }
-.gdeh-title span:nth-child(15){ color: #2a9d8f; }
+.nav-links{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
-.gdeh-title span:nth-child(17){ color: #457b9d; }
-.gdeh-title span:nth-child(18){ color: #8d99ae; }
-.gdeh-title span:nth-child(19){ color: #ffbe0b; }
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:11px;
+  transition:0.2s;
+}
 
-/* DELAYS */
-.gdeh-title span:nth-child(1) { animation-delay: 0s; }
-.gdeh-title span:nth-child(2) { animation-delay: 0.2s; }
-.gdeh-title span:nth-child(3) { animation-delay: 0.4s; }
-.gdeh-title span:nth-child(4) { animation-delay: 0.6s; }
-.gdeh-title span:nth-child(5) { animation-delay: 0.8s; }
-.gdeh-title span:nth-child(6) { animation-delay: 1s; }
-.gdeh-title span:nth-child(7) { animation-delay: 1.2s; }
+.nav-links a:hover{
+  color:orange;
+}
 
-.gdeh-title span:nth-child(9) { animation-delay: 1.4s; }
-.gdeh-title span:nth-child(10){ animation-delay: 1.6s; }
+/* =========================
+   HERO SECTION
+========================= */
 
-.gdeh-title span:nth-child(12){ animation-delay: 1.8s; }
-.gdeh-title span:nth-child(13){ animation-delay: 2s; }
-.gdeh-title span:nth-child(14){ animation-delay: 2.2s; }
-.gdeh-title span:nth-child(15){ animation-delay: 2.4s; }
+.hero-section{
+  padding:15px;
+}
 
-.gdeh-title span:nth-child(17){ animation-delay: 2.6s; }
-.gdeh-title span:nth-child(18){ animation-delay: 2.8s; }
-.gdeh-title span:nth-child(19){ animation-delay: 3s; }
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
 
-/* ANIMATION */
-@keyframes fly {
-  0% {
-    transform: translateY(-200px);
-    opacity: 0;
+/* HERO CARD */
+
+.hero-card{
+  background:#151515;
+  border:1px solid #222;
+  border-radius:18px;
+  padding:20px;
+
+  display:flex;
+  align-items:center;
+
+  min-height:220px;
+}
+
+.welcome-title{
+  color:orange;
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.hero-text{
+  color:#bbb;
+  line-height:1.8;
+  font-size:11px;
+}
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider-card{
+  background:#151515;
+  border:1px solid #222;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.slider{
+  width:100%;
+  height:220px;
+  overflow:hidden;
+}
+
+.slides{
+  display:flex;
+  width:300%;
+  height:100%;
+  animation:slide 12s infinite;
+}
+
+.slides img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+@keyframes slide{
+
+  0%{
+    transform:translateX(0);
   }
-  10% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(0);
-    opacity: 1; /* pause */
-  }
-  100% {
-    transform: translateY(200px);
-    opacity: 0;
+
+  30%{
+    transform:translateX(0);
   }
 
+  35%{
+    transform:translateX(-100%);
+  }
+
+  65%{
+    transform:translateX(-100%);
+  }
+
+  70%{
+    transform:translateX(-200%);
+  }
+
+  95%{
+    transform:translateX(-200%);
+  }
+
+  100%{
+    transform:translateX(0);
+  }
+
 }
 
-/* SLIDER */
-.slider {
-  width: 90%;
-  max-width: 800px;
-  height: 250px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 10px;
+/* =========================
+   BENTO GRID
+========================= */
+
+.bento{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  padding:0 15px 20px;
 }
 
-.slides {
-  display: flex;
-  width: 300%;
-  animation: slide 12s infinite;
+.widget{
+  background:#151515;
+  border:1px solid #222;
+  border-radius:18px;
+  padding:18px;
 }
 
-.slides img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.section-title{
+  color:orange;
+  font-size:12px;
+  margin-bottom:12px;
+  font-weight:bold;
 }
 
-/* SLIDE ANIMATION */
-@keyframes slide {
-  0% {transform: translateX(0);}
-  33% {transform: translateX(-100%);}
-  66% {transform: translateX(-200%);}
-  100% {transform: translateX(0);}
+.widget-text{
+  color:#bbb;
+  line-height:1.8;
+  margin-bottom:12px;
 }
 
-/* INTRO */
-.intro {
-  text-align: left;
-  padding: 30px 20px;
-  max-width: 800px;
-  margin: auto;
+.text-link{
+  text-decoration:none;
+  color:orange;
+  font-size:11px;
 }
 
-/* BUTTONS */
-.buttons {
-  text-align: center;
-  margin-bottom: 40px;
+.text-link:hover{
+  text-decoration:underline;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: column;   /* stack vertically */
-  align-items: center;      /* center horizontally */
-  gap: 10px;                /* space between buttons */
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  width:100%;
+  background:#000;
+  border-top:1px solid #222;
+
+  color:orange;
+
+  text-align:center;
+
+  padding:10px;
+
+  font-size:10px;
+
+  margin-top:auto;
+
+  position:sticky;
+  bottom:0;
 }
 
-.buttons a {
-  display: block;
-  width: fit-content;
-  padding: 8px 16px;
-  font-size: 14px;
-  text-decoration: none;
-  color: white;
-  background: #b8860b;
-  border-radius: 20px;
-  transition: 0.3s ease;
-}
+.footer a{
+  color:white;
+  text-decoration:none;
 }
 
-/* Glow effect on hover */
-.buttons a:hover {
-  box-shadow: 0 0 10px #b8860b,
-              0 0 20px #b8860b,
-              0 0 30px #b8860b;
-  transform: scale(1.05);
+.footer a:hover{
+  color:orange;
 }
 
-/* Optional: soft glow always */
-.buttons a {
-  box-shadow: 0 0 5px rgba(184,134,11,0.6);
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bento{
+    grid-template-columns:1fr;
+  }
+
+  .header{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .nav-links{
+    justify-content:center;
+  }
+
 }
 
-/* FOOTER */
-.site-footer {
-  position: fixed;       /* makes it sticky */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #000;      /* black background */
-  color: orange;         /* orange text */
-  text-align: center;
-  font-size: 12px;       /* small text */
-  padding: 8px 5px;
-  z-index: 1000;
-}
-
-.site-footer a {
-  color: orange;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
 </style>
-
 </head>
+
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <img src="gdeh_logo.png" class="logo" alt="GDEH Logo">
-</div>
+<!-- =========================
+     HEADER
+========================= -->
 
-<!-- HERO -->
-<div class="hero">
-<div class="gdeh-title">
+<header class="header">
 
-  <span>W</span>
-  <span>e</span>
-  <span>l</span>
-  <span>c</span>
-  <span>o</span>
-  <span>m</span>
-  <span>e</span>
+  <div class="logo-box">
 
-  <span class="space">&nbsp;</span>
+    <img src="gdeh_logo.png"
+         class="logo">
 
-  <span>t</span>
-  <span>o</span>
-
-  <span class="space">&nbsp;</span>
-
-  <span>G</span>
-  <span>D</span>
-  <span>E</span>
-  <span>H</span>
-
-  <span class="space">&nbsp;</span>
-
-  <span>C</span>
-  <span>B</span>
-  <span>O</span>
-
-</div>
-
-  <div class="slider">
-    <div class="slides">
-      <img src="img1.jpeg">
-      <img src="img2.jpeg">
-      <img src="img3.jpeg">
+    <div class="brand-name">
+      GDEH CBO
     </div>
+
   </div>
-</div>
 
-<!-- INTRO -->
-<div class="intro">
-  <p>
-    Garissa Digital Empowerment Hub is a CBO dedicated to empowering youth and communities 
-    through digital skills, innovation, and access to technology. We aim to bridge the digital 
-    divide and create opportunities for growth, learning, and development.
-  </p>
-</div>
+  <nav class="nav-links">
 
-<!-- BUTTONS -->
-<div class="buttons">
-  <a href="teamcbo.html">Meet Our Team</a>
-  <a href="landing.html">Support & Partnerships</a>
-  <a href="explore.html">Explore More</a>
-</div>
+    <a href="index.html">Home</a>
+    <a href="teamcbo.html">Team</a>
+    <a href="landing.html">Partnerships</a>
+    <a href="explore.html">Explore</a>
+    <a href="contact.html">Contact</a>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <p>
-    © 2026 Garissa Digital Empowerment Hub CBO. All rights reserved</p>
-    <a href="privacy_terms.html" target="_blank">
-      Privacy Policy | Terms & Conditions
+  </nav>
+
+</header>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero-section">
+
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+
+    <div class="hero-card">
+
+      <div>
+
+        <h1 class="welcome-title">
+          Welcome To GDEH CBO
+        </h1>
+
+        <p class="hero-text">
+
+          Garissa Digital Empowerment Hub empowers youth and communities
+          through digital innovation, entrepreneurship,
+          technology access and modern skills development.
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="slider-card">
+
+      <div class="slider">
+
+        <div class="slides">
+
+          <img src="img1.jpeg">
+          <img src="img2.jpeg">
+          <img src="img3.jpeg">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     BENTO GRID
+========================= -->
+
+<section class="bento">
+
+  <!-- TEAM -->
+
+  <div class="widget">
+
+    <div class="section-title">
+      Meet Our Team
+    </div>
+
+    <p class="widget-text">
+
+      Learn more about our leadership,
+      trainers and community innovators.
+
+    </p>
+
+    <a href="teamcbo.html"
+       class="text-link">
+
+       View Team →
+
     </a>
-  
+
+  </div>
+
+  <!-- PARTNERS -->
+
+  <div class="widget">
+
+    <div class="section-title">
+      Partnerships
+    </div>
+
+    <p class="widget-text">
+
+      Support our mission through collaborations,
+      sponsorships and youth empowerment projects.
+
+    </p>
+
+    <a href="landing.html"
+       class="text-link">
+
+       Learn More →
+
+    </a>
+
+  </div>
+
+  <!-- EXPLORE -->
+
+  <div class="widget">
+
+    <div class="section-title">
+      Explore Programs
+    </div>
+
+    <p class="widget-text">
+
+      Discover digital skills training,
+      ICT workshops and innovation opportunities.
+
+    </p>
+
+    <a href="explore.html"
+       class="text-link">
+
+       Explore →
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+  © GDEH CBO |
+  Digital Empowerment &
+  Innovation Hub
+
+  <br><br>
+
+  <a href="privacy_terms.html">
+
+    Privacy Policy |
+    Terms & Conditions
+
+  </a>
+
 </footer>
+
 </body>
 </html>
