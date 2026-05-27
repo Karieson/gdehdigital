@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDEH Units</title><style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#222;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  font-size:13px;
+}
+
+header{
+  background:transparent;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+}
+
+header img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.hero{
+  text-align:center;
+  padding:20px 15px 10px;
+}
+
+.hero h2{
+  font-size:15px;
+  color:#000;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.hero p{
+  font-size:12px;
+  color:#000;
+  line-height:1.7;
+  max-width:700px;
+  margin:auto;
+}
+
+.container{
+  flex:1;
+  width:100%;
+  max-width:1000px;
+  margin:auto;
+  padding:18px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+}
+
+.card h3{
+  color:#000;
+  font-size:14px;
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.card ul{
+  list-style:none;
+}
+
+.card ul li{
+  font-size:12px;
+  color:#000;
+  line-height:1.9;
+  border-bottom:1px solid #f1f1f1;
+  padding:6px 0;
+}
+
+footer{
+  color:darkorange;
+  text-align:center;
+  padding:18px;
+  margin-top:auto;
+  width:100%;
+  font-size:12px;
+  font-weight:500;
+  background:transparent;
+  border-top:1px solid #e5e5e5;
+}
+
+@media(max-width:768px){
+
+  .hero h2{
+    font-size:14px;
+  }
+
+  .hero p{
+    font-size:11px;
+  }
+
+  .container{
+    padding:14px;
+  }
+}
+</style></head>
+<body><header>
+  <img src="gdeh_logo.png" alt="GDEH Logo">
+</header><section class="hero">
+  <h2>Overview of GDEH CBO Course Units</h2>
+  <p>
+    Browse all available units offered under GDEH CBO training programmes.
+  </p>
+</section><section class="container">  <div class="card">
+    <h3>Computer Packages</h3><ul>
+  <li>CP101 - Introduction to Computers</li>
+  <li>CP102 - Microsoft Word</li>
+  <li>CP103 - Microsoft Excel</li>
+  <li>CP104 - Microsoft PowerPoint</li>
+  <li>CP105 - Internet & Email Applications</li>
+  <li>CP106 - Computer Operating Systems</li>
+  <li>CP107 - Data Entry & Typing Skills</li>
+  <li>CP108 - Computer Maintenance Basics</li>
+</ul>
+
+  </div>  <div class="card">
+    <h3>Agro Entrepreneurship</h3><ul>
+  <li>AE101 - Introduction to Agriculture</li>
+  <li>AE102 - Agribusiness Management</li>
+  <li>AE103 - Farm Record Keeping</li>
+  <li>AE104 - Crop Production Techniques</li>
+  <li>AE105 - Livestock Management</li>
+  <li>AE106 - Agricultural Marketing</li>
+  <li>AE107 - Financial Management for Farmers</li>
+  <li>AE108 - Sustainable Farming Practices</li>
+</ul>
+
+  </div>  <div class="card">
+    <h3>Smartphone Literacy</h3><ul>
+  <li>SL101 - Introduction to Smartphones</li>
+  <li>SL102 - Android Phone Basics</li>
+  <li>SL103 - Internet Browsing & Google Services</li>
+  <li>SL104 - Social Media Applications</li>
+  <li>SL105 - Mobile Money & Digital Payments</li>
+  <li>SL106 - Smartphone Security & Privacy</li>
+  <li>SL107 - Photography & Video Basics</li>
+  <li>SL108 - Online Communication Skills</li>
+</ul>
+
+  </div>  <div class="card">
+    <h3>ICT Short Courses</h3><ul>
+  <li>ICT101 - Introduction to ICT</li>
+  <li>ICT102 - Networking Fundamentals</li>
+  <li>ICT103 - Web Design Basics</li>
+  <li>ICT104 - Graphic Design Essentials</li>
+  <li>ICT105 - Database Management</li>
+  <li>ICT106 - Cybersecurity Basics</li>
+  <li>ICT107 - Programming Fundamentals</li>
+  <li>ICT108 - Digital Marketing</li>
+</ul>
+
+  </div></section><footer>
+  <p>© GDEH CBO COURSED All right reserved</p>
+</footer>
+<script src="courses.js"></script>
+</body>
+</html>
