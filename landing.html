@@ -6,151 +6,208 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ====== GLOBAL STYLE ====== */
-body {
-  margin: 0;
+
+/* ===== GLOBAL STYLE ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  color: #333;
 }
 
-.header {
-  background: #b8860b; /* gold */
-  color: white;
-  height: 10vh;  /* makes it large like a hero section */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+body{
+  background:#fff;
+  color:#333;
+  padding:20px;
 }
 
-/* Content spacing */
-.content {
-  max-width: 700px;
+/* ===== HEADER ===== */
+.header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
 }
 
-/* Title */
-.header h1 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+.logo{
+  width:80px;
+  height:auto;
 }
 
-/* Small calligraphy subtitle */
-.header p {
-  margin-top: 10px;
-  font-size: 13px;
-  font-style: italic;
-  font-family: "Brush Script MT", cursive;
-  opacity: 0.95;
-  font-weight: bold;
+.header-content h1{
+  font-size:22px;
+  color:#B8860B;
+  margin-bottom:5px;
+  font-weight:600;
 }
 
-
-/* ====== FORM CONTAINER ====== */
-.container {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+.header-content p{
+  font-size:12px;
+  font-style:italic;
+  color:#666;
 }
 
-/* ====== SECTION TITLE ====== */
-.section-title {
-  border-left: 4px solid #C49A00;
-  padding-left: 10px;
-  margin-top: 20px;
-
-  font-weight: normal;   /* removes bold */
-  font-size: 12px;
-  color: #003366;
-
+/* ===== FORM CONTAINER ===== */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-/* ====== INPUT FIELDS ====== */
-input, select, textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 12px;
+/* ===== SECTION TITLE ===== */
+.section-title{
+  border-left:4px solid #C49A00;
+  padding-left:10px;
+  margin-top:25px;
+  margin-bottom:15px;
+
+  font-size:12px;
+  color:#003366;
+  font-weight:600;
 }
 
-label {
-  font-weight: normal;
-  font-size: 12px;
+/* ===== LABEL ===== */
+label{
+  display:block;
+  margin-bottom:5px;
+  font-size:11px;
+  color:#444;
 }
 
-/* ====== CHECKBOX GROUP ====== */
-.checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+/* ===== REQUIRED ===== */
+.required{
+  color:red;
 }
 
-.checkbox-group label {
-  font-weight: normal;
+/* ===== INPUTS ===== */
+input,
+select,
+textarea{
+  width:100%;
+  padding:9px;
+  margin-top:6px;
+  margin-bottom:15px;
+
+  border:1px solid #ddd;
+  border-radius:6px;
+
+  font-size:12px;
+  background:#fff;
 }
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline:none;
+  border:1px solid #B8860B;
+  box-shadow:0 0 5px rgba(184,134,11,0.3);
+}
+
+/* ===== CHECKBOX GROUP ===== */
+.checkbox-group{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:10px;
+}
+
+.checkbox-group label{
+  font-size:11px;
+}
+
+/* ===== BUTTONS ===== */
 .donate-btn,
-.submit-btn {
-  width: auto;              /* remove full width */
-  min-width: 160px;         /* small but readable */
-  padding: 10px 18px;       /* smaller size */
-  border: none;
-  border-radius: 8px;
+.submit-btn{
+  width:auto;
+  min-width:160px;
 
-  font-size: 14px;
-  cursor: pointer;
-  color: #fff;
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
 
-  background: #B8860B;
-  box-shadow: 0 0 10px rgba(184, 134, 11, 0.6);
+  font-size:13px;
+  cursor:pointer;
+  color:#fff;
 
-  display: block;
+  background:#B8860B;
 
-  margin: 15px auto;        /* THIS centers the button */
+  display:block;
+  margin:18px auto;
 
-  transition: all 0.3s ease;
+  transition:0.3s ease;
 }
 
-/* hover */
 .donate-btn:hover,
-.submit-btn:hover {
-  background: #C49A00;
-  box-shadow: 0 0 18px rgba(196, 154, 0, 0.9);
-  transform: translateY(-2px);
+.submit-btn:hover{
+  background:#C49A00;
+  transform:translateY(-2px);
 }
 
-/* click */
 .donate-btn:active,
-.submit-btn:active {
-  transform: scale(0.96);
-}
-.file-upload::file-selector-button {
-  background: #B8860B;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+.submit-btn:active{
+  transform:scale(0.96);
 }
 
-
-/* ====== FOOTER ====== */
-.footer {
-  text-align: center;
-  padding: 15px;
-  background: #000;
-  color: #C49A00;
-  margin-top: 30px;
-  font-size: 13px;
+/* ===== FILE BUTTON ===== */
+.file-upload::file-selector-button{
+  background:#B8860B;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:5px;
+  cursor:pointer;
 }
+
+/* ===== CONSENT ===== */
+.consent-section{
+  margin-top:15px;
+}
+
+.consent-section p{
+  font-size:11px;
+  margin-bottom:10px;
+  line-height:1.6;
+}
+
+.consent-section a{
+  color:#B8860B;
+  text-decoration:none;
+}
+
+.consent-section a:hover{
+  text-decoration:underline;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;
+  padding:15px;
+  margin-top:30px;
+
+  border-top:1px solid #eee;
+
+  font-size:12px;
+  color:#B8860B;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+
+  .header{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .logo{
+    width:70px;
+  }
+
+  .header-content h1{
+    font-size:18px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -158,327 +215,254 @@ label {
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-  <div class="content">
-    <h1>Garissa Digital Empowerment Hub</h1>
-    <p>Empowering youth through digital literacy and innovation</p>
+
+  <img src="gdeh_logo.png"
+       alt="GDEH Logo"
+       class="logo">
+
+  <div class="header-content">
+
+    <h1>
+      Garissa Digital Empowerment Hub
+    </h1>
+
+    <p>
+      Empowering youth through digital literacy and innovation
+    </p>
+
   </div>
+
 </header>
 
 <!-- ===== FORM ===== -->
 <div class="container">
 
-  <form>
+<form>
 
-    <!-- SECTION A -->
-    <div class="section-title">A. Donor / Partner Information</div>
+<!-- SECTION A -->
+<div class="section-title">
+A. Donor / Partner Information
+</div>
 
-    <label>Full Name / Organization Name</label>
-    <input type="text" placeholder="Enter full name or organization">
+<label>
+Full Name / Organization Name
+<span class="required">*</span>
+</label>
 
-    <label>Email Address</label>
-    <input type="email" placeholder="Enter email">
+<input type="text"
+       placeholder="Enter full name or organization"
+       required>
 
-    <label>Phone Number</label>
-    <input type="tel" placeholder="Enter phone number">
+<label>
+Email Address
+<span class="required">*</span>
+</label>
 
-    <label>Country</label>
-<select>
-  <option value="">Select Country</option>
+<input type="email"
+       placeholder="Enter email"
+       required>
 
-  <option>Afghanistan</option>
-  <option>Albania</option>
-  <option>Algeria</option>
-  <option>Andorra</option>
-  <option>Angola</option>
-  <option>Antigua and Barbuda</option>
-  <option>Argentina</option>
-  <option>Armenia</option>
-  <option>Australia</option>
-  <option>Austria</option>
-  <option>Azerbaijan</option>
+<label>
+Phone Number
+<span class="required">*</span>
+</label>
 
-  <option>Bahamas</option>
-  <option>Bahrain</option>
-  <option>Bangladesh</option>
-  <option>Barbados</option>
-  <option>Belarus</option>
-  <option>Belgium</option>
-  <option>Belize</option>
-  <option>Benin</option>
-  <option>Bhutan</option>
-  <option>Bolivia</option>
-  <option>Bosnia and Herzegovina</option>
-  <option>Botswana</option>
-  <option>Brazil</option>
-  <option>Brunei</option>
-  <option>Bulgaria</option>
-  <option>Burkina Faso</option>
-  <option>Burundi</option>
+<input type="tel"
+       placeholder="Enter phone number"
+       required>
 
-  <option>Cabo Verde</option>
-  <option>Cambodia</option>
-  <option>Cameroon</option>
-  <option>Canada</option>
-  <option>Central African Republic</option>
-  <option>Chad</option>
-  <option>Chile</option>
-  <option>China</option>
-  <option>Colombia</option>
-  <option>Comoros</option>
-  <option>Congo (Congo-Brazzaville)</option>
-  <option>Costa Rica</option>
-  <option>Croatia</option>
-  <option>Cuba</option>
-  <option>Cyprus</option>
-  <option>Czech Republic</option>
+<label>
+Country
+<span class="required">*</span>
+</label>
 
-  <option>Democratic Republic of the Congo</option>
-  <option>Denmark</option>
-  <option>Djibouti</option>
-  <option>Dominica</option>
-  <option>Dominican Republic</option>
+<select required>
 
-  <option>Ecuador</option>
-  <option>Egypt</option>
-  <option>El Salvador</option>
-  <option>Equatorial Guinea</option>
-  <option>Eritrea</option>
-  <option>Estonia</option>
-  <option>Eswatini</option>
-  <option>Ethiopia</option>
+<option value="">
+Select Country
+</option>
 
-  <option>Fiji</option>
-  <option>Finland</option>
-  <option>France</option>
-
-  <option>Gabon</option>
-  <option>Gambia</option>
-  <option>Georgia</option>
-  <option>Germany</option>
-  <option>Ghana</option>
-  <option>Greece</option>
-  <option>Grenada</option>
-  <option>Guatemala</option>
-  <option>Guinea</option>
-  <option>Guinea-Bissau</option>
-  <option>Guyana</option>
-
-  <option>Haiti</option>
-  <option>Honduras</option>
-  <option>Hungary</option>
-
-  <option>Iceland</option>
-  <option>India</option>
-  <option>Indonesia</option>
-  <option>Iran</option>
-  <option>Iraq</option>
-  <option>Ireland</option>
-  <option>Israel</option>
-  <option>Italy</option>
-
-  <option>Jamaica</option>
-  <option>Japan</option>
-  <option>Jordan</option>
-
-  <option>Kazakhstan</option>
-  <option>Kenya</option>
-  <option>Kiribati</option>
-  <option>Kuwait</option>
-  <option>Kyrgyzstan</option>
-
-  <option>Laos</option>
-  <option>Latvia</option>
-  <option>Lebanon</option>
-  <option>Lesotho</option>
-  <option>Liberia</option>
-  <option>Libya</option>
-  <option>Liechtenstein</option>
-  <option>Lithuania</option>
-  <option>Luxembourg</option>
-
-  <option>Madagascar</option>
-  <option>Malawi</option>
-  <option>Malaysia</option>
-  <option>Maldives</option>
-  <option>Mali</option>
-  <option>Malta</option>
-  <option>Marshall Islands</option>
-  <option>Mauritania</option>
-  <option>Mauritius</option>
-  <option>Mexico</option>
-  <option>Micronesia</option>
-  <option>Moldova</option>
-  <option>Monaco</option>
-  <option>Mongolia</option>
-  <option>Montenegro</option>
-  <option>Morocco</option>
-  <option>Mozambique</option>
-  <option>Myanmar</option>
-
-  <option>Namibia</option>
-  <option>Nauru</option>
-  <option>Nepal</option>
-  <option>Netherlands</option>
-  <option>New Zealand</option>
-  <option>Nicaragua</option>
-  <option>Niger</option>
-  <option>Nigeria</option>
-  <option>North Korea</option>
-  <option>North Macedonia</option>
-  <option>Norway</option>
-
-  <option>Oman</option>
-
-  <option>Pakistan</option>
-  <option>Palau</option>
-  <option>Palestine</option>
-  <option>Panama</option>
-  <option>Papua New Guinea</option>
-  <option>Paraguay</option>
-  <option>Peru</option>
-  <option>Philippines</option>
-  <option>Poland</option>
-  <option>Portugal</option>
-
-  <option>Qatar</option>
-
-  <option>Romania</option>
-  <option>Russia</option>
-  <option>Rwanda</option>
-
-  <option>Saint Kitts and Nevis</option>
-  <option>Saint Lucia</option>
-  <option>Saint Vincent and the Grenadines</option>
-  <option>Samoa</option>
-  <option>San Marino</option>
-  <option>Sao Tome and Principe</option>
-  <option>Saudi Arabia</option>
-  <option>Senegal</option>
-  <option>Serbia</option>
-  <option>Seychelles</option>
-  <option>Sierra Leone</option>
-  <option>Singapore</option>
-  <option>Slovakia</option>
-  <option>Slovenia</option>
-  <option>Solomon Islands</option>
-  <option>Somalia</option>
-  <option>South Africa</option>
-  <option>South Korea</option>
-  <option>South Sudan</option>
-  <option>Spain</option>
-  <option>Sri Lanka</option>
-  <option>Sudan</option>
-  <option>Suriname</option>
-  <option>Sweden</option>
-  <option>Switzerland</option>
-  <option>Syria</option>
-
-  <option>Taiwan</option>
-  <option>Tajikistan</option>
-  <option>Tanzania</option>
-  <option>Thailand</option>
-  <option>Timor-Leste</option>
-  <option>Togo</option>
-  <option>Tonga</option>
-  <option>Trinidad and Tobago</option>
-  <option>Tunisia</option>
-  <option>Turkey</option>
-  <option>Turkmenistan</option>
-  <option>Tuvalu</option>
-
-  <option>Uganda</option>
-  <option>Ukraine</option>
-  <option>United Arab Emirates</option>
-  <option>United Kingdom</option>
-  <option>United States</option>
-  <option>Uruguay</option>
-  <option>Uzbekistan</option>
-
-  <option>Vanuatu</option>
-  <option>Vatican City</option>
-  <option>Venezuela</option>
-  <option>Vietnam</option>
-
-  <option>Yemen</option>
-
-  <option>Zambia</option>
-  <option>Zimbabwe</option>
+<option>Kenya</option>
+<option>Somalia</option>
+<option>Uganda</option>
+<option>Tanzania</option>
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Canada</option>
+<option>Germany</option>
+<option>Qatar</option>
+<option>United Arab Emirates</option>
 
 </select>
 
-    <label>Preferred Contact Method</label>
-    <select>
-      <option>Email</option>
-      <option>Phone</option>
-      <option>WhatsApp</option>
-    </select>
+<label>
+Preferred Contact Method
+<span class="required">*</span>
+</label>
 
-    <!-- SECTION B -->
-    <div class="section-title">B. Type of Support</div>
+<select required>
 
-    <div class="checkbox-group">
-      <label><input type="checkbox"> Financial Donation</label>
-      <label><input type="checkbox"> Equipment / Devices</label>
-      <label><input type="checkbox"> Training / Mentorship</label>
-      <label><input type="checkbox"> Partnership / Sponsorship</label>
-      <label><input type="checkbox"> Volunteer Support</label>
-    </div>
+<option>Email</option>
+<option>Phone</option>
+<option>WhatsApp</option>
 
-    <!-- SECTION C -->
-    <div class="section-title">C. Contribution Details</div>
+</select>
 
-    <label>Amount / Type of Donation</label>
-    <input type="text">
-
-    <label>Frequency</label>
-    <select>
-      <option>One-time</option>
-      <option>Monthly</option>
-      <option>Annual</option>
-    </select>
-
-    <button type="button" class="donate-btn" onclick="payNow()">
-  Donate Now
-</button>
-    <label>Upload Proof (optional)</label>
-    <input type="file">
-
-    <!-- SECTION D -->
-    <div class="section-title">D. Collaboration Proposal</div>
-
-    <label>Organization Background</label>
-    <textarea rows="3"></textarea>
-
-    <label>Proposed Area of Collaboration</label>
-    <textarea rows="3"></textarea>
-
-    <label>Expected Outcomes</label>
-    <textarea rows="3"></textarea>
-
-    <label>Duration / Commitment Level</label>
-    <input type="text">
-    <label>Attach Proposal Document (Optional)</label>
-<input type="file" class="file-upload" accept=".pdf,.doc,.docx">
-
-    <!-- SECTION E -->
-<div class="section-title">E. Consent & Acknowledgment</div>
-
-<div class="consent-section">
-  <p style="font-size:11px; margin-bottom:5px;">
-    By continuing, you agree to the 
-    <a href="privacy_terms.html" target="_blank">
-      Privacy Policy & Terms and Conditions
-    </a> of Garissa Digital Empowerment Hub CBO.
-  </p>
-
-  <label style="font-size:11px;">
-    <input type="checkbox" id="consentCheck" required>
-    I confirm that I have read and agree to the Privacy Policy and Terms & Conditions, and consent to the use of my information for communication and partnership purposes.
-  </label>
+<!-- SECTION B -->
+<div class="section-title">
+B. Type of Support
 </div>
 
-<button type="submit" class="submit-btn">
-  Submit Form
+<div class="checkbox-group">
+
+<label>
+<input type="checkbox" required>
+Financial Donation
+</label>
+
+<label>
+<input type="checkbox">
+Equipment / Devices
+</label>
+
+<label>
+<input type="checkbox">
+Training / Mentorship
+</label>
+
+<label>
+<input type="checkbox">
+Partnership / Sponsorship
+</label>
+
+<label>
+<input type="checkbox">
+Volunteer Support
+</label>
+
+</div>
+
+<!-- SECTION C -->
+<div class="section-title">
+C. Contribution Details
+</div>
+
+<label>
+Amount / Type of Donation
+<span class="required">*</span>
+</label>
+
+<input type="text"
+       required>
+
+<label>
+Frequency
+<span class="required">*</span>
+</label>
+
+<select required>
+
+<option>One-time</option>
+<option>Monthly</option>
+<option>Annual</option>
+
+</select>
+
+<button type="button"
+        class="donate-btn"
+        onclick="payNow()">
+
+Donate Now
+
+</button>
+
+<label>
+Upload Proof (Optional)
+</label>
+
+<input type="file"
+       class="file-upload">
+
+<!-- SECTION D -->
+<div class="section-title">
+D. Collaboration Proposal
+</div>
+
+<label>
+Organization Background
+<span class="required">*</span>
+</label>
+
+<textarea rows="3"
+          required></textarea>
+
+<label>
+Proposed Area of Collaboration
+<span class="required">*</span>
+</label>
+
+<textarea rows="3"
+          required></textarea>
+
+<label>
+Expected Outcomes
+<span class="required">*</span>
+</label>
+
+<textarea rows="3"
+          required></textarea>
+
+<label>
+Duration / Commitment Level
+<span class="required">*</span>
+</label>
+
+<input type="text"
+       required>
+
+<label>
+Attach Proposal Document (Optional)
+</label>
+
+<input type="file"
+       class="file-upload"
+       accept=".pdf,.doc,.docx">
+
+<!-- SECTION E -->
+<div class="section-title">
+E. Consent & Acknowledgment
+</div>
+
+<div class="consent-section">
+
+<p>
+By continuing, you agree to the
+<a href="privacy_terms.html"
+   target="_blank">
+
+Privacy Policy & Terms and Conditions
+
+</a>
+of Garissa Digital Empowerment Hub CBO.
+</p>
+
+<label>
+
+<input type="checkbox"
+       id="consentCheck"
+       required>
+
+I confirm that I have read and agree to the Privacy Policy and Terms & Conditions, and consent to the use of my information for communication and partnership purposes.
+
+</label>
+
+</div>
+
+<button type="submit"
+        class="submit-btn">
+
+Submit Form
+
 </button>
 
 </form>
@@ -487,22 +471,40 @@ label {
 
 <!-- ===== FOOTER ===== -->
 <div class="footer">
-  © 2026 Garissa Digital Empowerment Hub | All Rights Reserved
+
+© 2026 Garissa Digital Empowerment Hub |
+All Rights Reserved
+
 </div>
 
-
 <script>
-function payNow() {
-  const consent = document.getElementById("consentCheck");
 
-  if (!consent.checked) {
-    alert("Please agree to the consent before donating.");
-    consent.scrollIntoView({ behavior: "smooth", block: "center" });
-    return;
-  }
+function payNow(){
 
-  window.location.href = "https://www.pesapal.com/checkout/YOUR_UNIQUE_LINK";
+const consent =
+document.getElementById("consentCheck");
+
+if(!consent.checked){
+
+alert(
+"Please agree to the consent before donating."
+);
+
+consent.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+return;
+
 }
+
+window.location.href =
+"https://www.pesapal.com/checkout/YOUR_UNIQUE_LINK";
+
+}
+
 </script>
+
 </body>
 </html>
