@@ -419,22 +419,57 @@ D. Collaboration Proposal
   <input type="file" class="file-upload" accept=".pdf,.doc,.docx">
 
 <!-- CAPTCHA BOX -->
-<div id="captchaBox" style="text-align:center; margin-top:20px;">
-    <canvas id="captchaCanvas" width="220" height="80"
-            style="border:1px solid #ccc; border-radius:5px;"></canvas>
+<div id="captchaBox">
+
+    <img
+        id="captchaImage"
+        alt="CAPTCHA"
+        width="220"
+        height="80"
+        style="
+            border:1px solid #ccc;
+            border-radius:8px;
+            display:block;
+            margin:auto;
+            background:#f5f5f5;
+        "
+    >
+
+    <br>
+
+    <label>Enter CAPTCHA:</label>
+
+    <input
+        type="text"
+        id="captchaInput"
+        placeholder="Enter CAPTCHA"
+        style="
+            padding:10px;
+            margin-top:10px;
+            width:220px;
+            border:1px solid #ccc;
+            border-radius:6px;
+        "
+    >
 
     <br><br>
 
-    <label>Enter CAPTCHA:</label><br>
-    <input id="captchaInput" placeholder="Enter 6 letters" style="padding:8px; margin-top:10px; width:200px;">
-
-    <br><br>
-
-    <button type="button"
-            onclick="verifyCaptcha()"
-            style="padding:8px 14px; cursor:pointer; background:#B8860B; color:white; border:none; border-radius:6px;">
-        Verify
+    <button
+        type="button"
+        onclick="verifyCaptcha()"
+        style="
+            padding:10px 18px;
+            cursor:pointer;
+            background:#a84f00;
+            color:white;
+            border:none;
+            border-radius:6px;
+            font-weight:bold;
+        "
+    >
+        Verify CAPTCHA
     </button>
+
 </div>
 
 <!-- SUBMIT BUTTON -->
@@ -479,69 +514,7 @@ window.location.href =
 }
 
 </script>
-  <script>
-const API = "https://captchabackend.onrender.com"; // replace with your render backend
-let captchaText = "";
-let captchaVerified = false;
-
-// Draw CAPTCHA on canvas
-function drawCaptcha(text){
-    const canvas = document.getElementById("captchaCanvas");
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,220,80);
-    ctx.fillStyle = `hsl(${Math.random()*360},70%,85%)`;
-    ctx.fillRect(0,0,220,80);
-    for(let i=0;i<120;i++){
-        ctx.fillStyle="#777";
-        ctx.fillRect(Math.random()*220,Math.random()*80,2,2);
-    }
-    for(let i=0;i<text.length;i++){
-        ctx.save();
-        ctx.font="30px Arial";
-        ctx.fillStyle=`hsl(${Math.random()*360},100%,40%)`;
-        const x = 20 + i*30;
-        const y = 50;
-        ctx.translate(x,y);
-        ctx.rotate((Math.random()-0.5)*0.7);
-        ctx.fillText(text[i],0,0);
-        ctx.restore();
-    }
-}
-
-// Open CAPTCHA by fetching from backend
-async function openCaptcha(){
-    const res = await fetch(`${API}/captcha`);
-    const data = await res.json();
-    captchaText = data.captcha;
-    drawCaptcha(captchaText);
-}
-
-// Verify CAPTCHA input
-async function verifyCaptcha(){
-    const input = document.getElementById("captchaInput").value;
-    const res = await fetch(`${API}/verify`, {
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({code:input})
-    });
-    const data = await res.json();
-    if(data.success){
-        captchaVerified = true;
-        alert("CAPTCHA verified! You can submit now.");
-    }else{
-        alert("Wrong CAPTCHA. Try again.");
-        openCaptcha();
-    }
-}
-
-// Form submit interceptor
-document.getElementById("collabForm").addEventListener("submit", function(e){
-    if(!captchaVerified){
-        e.preventDefault();
-        openCaptcha();
-    }
-});
-  </script>
+  <script src="captcha.js"></script>
 
 </body>
 </html>
