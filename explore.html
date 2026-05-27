@@ -6,163 +6,165 @@
 <title>Garissa Digital Empowerment Hub CBO</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: white;
-    margin: 0;
-    padding-bottom: 80px;
-}
-.header {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-}
-.home-link {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    color: orange;
-    text-decoration: underline;
-    font-size: 10px;
-    font-weight: bold;
-    z-index: 1000;
-    transition: 0.3s;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.home-link:hover {
-    color: darkorange;
+body{
+    background:#ffffff;
+    color:#000;
+    font-size:12px;
+    line-height:1.8;
+    min-height:100vh;
 }
 
-.logo {
-    width: 90px;   /* adjust size if needed */
-    height: auto;
+/* HEADER */
+.header{
+    display:flex;
+    align-items:center;
+    padding:12px 18px;
+    background:transparent;
 }
 
-/* Headings styled like links */
-.link-heading {
-    color: orange;
-    cursor: pointer;
-    text-decoration: underline;
-    margin: 15px;
-    display: block;
-    font-size: 14px;
+.logo{
+    width:65px;
+    height:auto;
 }
 
-/* Card styling */
-.card {
-    display: none;
-    background: white;
-    border: 2px solid orange;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px 15px;
-    box-shadow: 0 0 15px orange;
-    animation: glow 1.5s infinite alternate;
+/* HOME LINK */
+.home-link{
+    position:fixed;
+    top:15px;
+    right:18px;
+    color:darkorange;
+    text-decoration:none;
+    font-size:10px;
+    transition:0.3s;
 }
 
-/* Glow */
-@keyframes glow {
-    from {
-        box-shadow: 0 0 10px orange;
-    }
-    to {
-        box-shadow: 0 0 25px orange;
-    }
+.home-link:hover{
+    text-decoration:underline;
 }
 
-/* Headings orange */
-h2, h3 {
-    color: orange;
+/* TOP CENTER */
+.top-center{
+    text-align:center;
+    margin-top:10px;
 }
 
-/* Body text small black */
-.card p {
-    color: black;
-    font-size: 13px;
-    line-height: 1.5;
+.link-text{
+    color:darkorange;
+    font-size:10px;
+    text-decoration:none;
 }
 
-/* Clickable link */
-.link-heading {
-    color: orange;
-    cursor: pointer;
-    text-decoration: underline;
-    display: block;
-    margin: 10px;
-}
-/* Center section */
-.apply-section {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
+.link-text:hover{
+    text-decoration:underline;
 }
 
-/* Text styling */
-.apply-text {
-    color: black;
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
+/* SECTION TITLES */
+.link-heading{
+    color:#000;
+    cursor:pointer;
+    margin:14px 15px;
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    transition:0.3s;
 }
 
-/* Apply button */
-.apply-btn {
-    display: inline-block;
-    background: gold;
-    color: black;
-    padding: 10px 18px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-
-    /* glowing effect */
-    box-shadow: 0 0 10px gold;
-    transition: 0.3s ease;
+.link-heading:hover{
+    color:darkorange;
 }
 
-/* hover glow stronger */
-.apply-btn:hover {
-    box-shadow: 0 0 20px gold, 0 0 30px orange;
-    transform: scale(1.05);
+/* SIMPLE WHITE BOX */
+.card{
+    display:none;
+    background:#ffffff;
+    border:1px solid #f1f1f1;
+    border-radius:10px;
+    padding:18px;
+    margin:10px 15px;
 }
 
-/* Footer */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: black;
-    color: orange;
-    text-align: center;
-    padding: 5px;
-    font-size: 12px;
+/* HEADINGS */
+h2,h3{
+    color:#000;
+    font-size:13px;
+    margin-bottom:10px;
 }
-.top-center {
-    text-align: center;
-    margin-top: 20px;
-  }
 
-  .link-text {
-    color: orange;
-    font-size: 10px;
-    text-decoration: none;
-    font-weight: normal;
-    cursor: pointer;
-  }
+/* TEXT */
+.card p{
+    color:#000;
+    font-size:11px;
+    line-height:1.8;
+    margin-bottom:12px;
+}
 
-  .link-text:hover {
-    text-decoration: underline;
-  }
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:18px;
+    margin-top:30px;
+    border-top:1px solid #ececec;
+    background:transparent;
+}
+
+footer p{
+    color:darkorange;
+    font-size:11px;
+    margin:4px 0;
+}
+
+footer a{
+    color:darkorange;
+    text-decoration:none;
+    font-size:11px;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
 </style>
 
 <script>
-function toggleCard(id) {
+
+function toggleCard(id){
+
     let card = document.getElementById(id);
-    card.style.display = (card.style.display === "block") ? "none" : "block";
+
+    card.style.display =
+    (card.style.display === "block")
+    ? "none"
+    : "block";
 }
+
+function toggleAll(event){
+
+    event.preventDefault();
+
+    let cards =
+    document.querySelectorAll(".card");
+
+    let anyOpen =
+    Array.from(cards).some(
+    c => c.style.display === "block"
+    );
+
+    cards.forEach(c => {
+
+        c.style.display =
+        anyOpen ? "none" : "block";
+
+    });
+}
+
 </script>
 
 </head>
@@ -170,176 +172,178 @@ function toggleCard(id) {
 <body>
 
 <div class="header">
-    <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+
+    <img src="gdeh_logo.png"
+    alt="GDEH Logo"
+    class="logo">
+
 </div>
 
-<a href="index.html" class="home-link">Back to Home</a>
+<a href="index.html"
+class="home-link">
+Back to Home
+</a>
 
 <div class="top-center">
-  <a href="#" class="link-text" onclick="toggleAll(event)">Expand / Collapse All</a>
+
+<a href="#"
+class="link-text"
+onclick="toggleAll(event)">
+Expand / Collapse All
+</a>
+
 </div>
 
-<span class="link-heading" onclick="toggleCard('about')">About Us</span>
+<!-- ABOUT -->
+
+<span class="link-heading"
+onclick="toggleCard('about')">
+About Us
+</span>
+
 <div id="about" class="card">
 
 <p>
-Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world. By creating opportunities for learning, innovation, and access to digital tools, the hub plays a key role in building a more inclusive and digitally skilled community in Northern Kenya.
+Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world.
 </p>
+
+<p>
+The Hub creates opportunities for learning, innovation, entrepreneurship, and access to digital tools that support education, employment, and community development across Northern Kenya.
+</p>
+
 </div>
 
-<span class="link-heading" onclick="toggleCard('why')">Why It Was Formed</span>
-<div id="why" class="card">
-<p>
-The organization was formed to address the growing gap in digital knowledge and access to technology among youth in Garissa and the wider Northern Kenya region. Many young people lack the skills required to compete in the modern job market, and this initiative aims to change that by providing affordable and accessible training. It also seeks to reduce unemployment, promote innovation, and empower individuals to use digital tools for education, entrepreneurship, and personal development.
-</p>
-</div>
+<!-- WHY -->
 
-<span class="link-heading" onclick="toggleCard('when')">When It Was Formed</span>
-<div id="when" class="card">
-<p>
-Garissa Digital Empowerment Hub CBO was established in early 2026 as a response to the urgent need for digital empowerment in the region. Since its formation, it has been committed to delivering impactful programs that support community growth and digital transformation.
-</p>
-</div>
-
-<span class="link-heading" onclick="toggleCard('who')">Who Formed It</span>
-<div id="who" class="card">
-<p>
-The organization was founded by ten dedicated youth members who strongly believe in gender equality and inclusive development. These founders came together with a shared vision of transforming their community by providing equal opportunities for all individuals, regardless of gender or background, to access digital education and skills.
-</p>
-</div>
-
-<span class="link-heading" onclick="toggleCard('where')">Where It Operates</span>
-<div id="where" class="card">
-<p>
-Garissa Digital Empowerment Hub operates primarily within Garissa Township. However, its programs and opportunities are open to youth, women, and persons with disabilities across the wider Northern Kenya region. The hub aims to expand its reach and impact by welcoming participants from different areas who are eager to improve their digital skills.
-</p>
-</div>
-
-<span class="link-heading" onclick="toggleCard('how')">How It Operates</span>
-<div id="how" class="card">
-<p>
-The hub operates from Monday to Friday between 8:00 AM and 4:00 PM, offering structured training sessions that include both theoretical and practical lessons. In addition, it conducts workshop training sessions every Saturday of the month, following a six-month program structure. These workshops are designed to provide intensive hands-on experience and real-world application of digital skills. Upon successful completion of any program or workshop, participants are awarded a certificate of completion.
-</p>
-</div>
-
-<span class="link-heading" onclick="toggleCard('eligibility')">Eligibility</span>
-<div id="eligibility" class="card">
-<p>
-Any individual with a passion for digital literacy is eligible to join Garissa Digital Empowerment Hub either as a member or a student. The organization encourages participation from youth, women, and persons with disabilities, ensuring inclusivity and equal opportunity for all who wish to learn and grow in the digital space.
-</p>
-</div>
-
-<span class="link-heading" onclick="toggleCard('cost')">Cost of Training & Membership</span>
-<div id="cost" class="card">
-<p>
-The hub offers affordable access to digital training. For students, training is provided free of charge, with only a small maintenance fee of Ksh 500 required for registration and Ksh 700 for certificate processing upon completion. Membership registration costs Ksh 2,000, with an annual renewal fee of Ksh 3,000. For those interested in workshop training only, a fee of Ksh 1,000 is applicable. These fees are structured to ensure sustainability while keeping opportunities accessible to the community.
-</p>
-</div>
-<span class="link-heading" onclick="toggleCard('courses')">
-Courses Offered at GDEH
+<span class="link-heading"
+onclick="toggleCard('why')">
+Why It Was Formed
 </span>
 
-<div id="courses" class="card">
+<div id="why" class="card">
 
-<h2>Courses Offered at GDEH</h2>
-
-<!-- 1 -->
-<h3>1. Digital Literacy</h3>
-
-<p><strong>What it is:</strong><br>
-Training on basic computer skills such as Microsoft Office, internet use, email, and online safety.
+<p>
+The organization was established to address the growing gap in digital skills and access to technology among youth and vulnerable groups in Garissa and Northern Kenya.
 </p>
 
-<p><strong>Advantages:</strong><br>
-Improves job readiness, communication, and access to online services.
-</p>
-
-<p><strong>Outcomes:</strong><br>
-Learners become confident in using computers for education, business, and daily tasks.
-</p>
-
-<!-- 2 -->
-<h3>2. Agro Entrepreneurship</h3>
-
-<p><strong>What it is:</strong><br>
-A course that combines agriculture and business skills for income generation.
-</p>
-
-<p><strong>Advantages:</strong><br>
-Promotes self-employment and modern farming techniques.
-</p>
-
-<p><strong>Outcomes:</strong><br>
-Participants can start and manage agribusiness projects successfully.
-</p>
-
-<!-- 3 -->
-<h3>3. Smartphone Literacy</h3>
-
-<p><strong>What it is:</strong><br>
-Training on effective use of smartphones for communication and digital services.
-</p>
-
-<p><strong>Advantages:</strong><br>
-Improves access to mobile banking, social media, and online learning.
-</p>
-
-<p><strong>Outcomes:</strong><br>
-Users become skilled in using smartphones for productivity and daily life.
-</p>
-
-<!-- 4 -->
-<h3>4. ICT Short Courses</h3>
-
-<p><strong>What it is:</strong><br>
-Basic and intermediate ICT training including typing, data entry, and graphic design.
-</p>
-
-<p><strong>Advantages:</strong><br>
-Enhances employability and digital career opportunities.
-</p>
-
-<p><strong>Outcomes:</strong><br>
-Learners gain practical ICT skills for jobs and freelancing.
+<p>
+Its mission is to empower communities through affordable and accessible digital training, promote innovation, reduce unemployment, and create opportunities for sustainable development.
 </p>
 
 </div>
-<div class="apply-section">
 
-    <p class="apply-text">
-        Are you a person with disability (PWD), youth, women, or any vulnerable person who needs to gain digital skills, smartphone literacy, and agro-entrepreneurship? <br><br>
-        <strong>Your future starts here.</strong>
-    </p>
+<!-- WHEN -->
 
-    <a href="apply.html" class="apply-btn">Apply Now</a>
+<span class="link-heading"
+onclick="toggleCard('when')">
+When It Was Formed
+</span>
+
+<div id="when" class="card">
+
+<p>
+Garissa Digital Empowerment Hub CBO was established in early 2026 to support digital transformation and youth empowerment within the region.
+</p>
 
 </div>
+
+<!-- WHO -->
+
+<span class="link-heading"
+onclick="toggleCard('who')">
+Who Formed It
+</span>
+
+<div id="who" class="card">
+
+<p>
+The organization was founded by ten dedicated youth members who strongly believe in inclusivity, equal opportunity, and community empowerment through technology and education.
+</p>
+
+</div>
+
+<!-- WHERE -->
+
+<span class="link-heading"
+onclick="toggleCard('where')">
+Where It Operates
+</span>
+
+<div id="where" class="card">
+
+<p>
+The Hub primarily operates within Garissa Township while welcoming participants from different areas across Northern Kenya who are interested in gaining digital and entrepreneurial skills.
+</p>
+
+</div>
+
+<!-- HOW -->
+
+<span class="link-heading"
+onclick="toggleCard('how')">
+How It Operates
+</span>
+
+<div id="how" class="card">
+
+<p>
+The Hub operates Monday to Friday from 8:00 AM to 4:00 PM through structured learning sessions, practical workshops, mentorship, and digital training activities.
+</p>
+
+<p>
+Weekend workshops are also conducted to provide additional hands-on learning experiences and specialized short courses.
+</p>
+
+</div>
+
+<!-- ELIGIBILITY -->
+
+<span class="link-heading"
+onclick="toggleCard('eligibility')">
+Eligibility
+</span>
+
+<div id="eligibility" class="card">
+
+<p>
+Youth, women, persons with disabilities, and vulnerable community members with interest in digital literacy and entrepreneurship are eligible to participate in the Hub’s programs and training activities.
+</p>
+
+</div>
+
+<!-- COST -->
+
+<span class="link-heading"
+onclick="toggleCard('cost')">
+Cost of Training & Membership
+</span>
+
+<div id="cost" class="card">
+
+<p>
+Training programmes are designed to remain affordable and accessible to the community.
+</p>
+
+<p>
+Students are only required to pay minimal maintenance and certification processing fees. Membership registration and workshop participation fees support sustainability of the programmes and operational activities.
+</p>
+
+</div>
+
 
 <footer>
-<p>Garissa Digital Empowerment Hub CBO. All rights reserved</p>
-<p><a href="privacy_terms.html" style="color:orange;">Privacy Policy | Terms & Conditions</a></p>
+
+<p>
+©2026 GDEH CBO All right reserved
+</p>
+
+<p>
+<a href="privacy_terms.html">
+Privacy Policy | Terms & Conditions
+</a>
+</p>
+
 </footer>
 
-
-
-
-
-<script>
-function toggleCard(id) {
-  let card = document.getElementById(id);
-  card.style.display = (card.style.display === "block") ? "none" : "block";
-}
-
-function toggleAll(event) {
-  event.preventDefault();
-  let cards = document.querySelectorAll(".card");
-
-  let anyOpen = Array.from(cards).some(c => c.style.display === "block");
-
-  cards.forEach(c => {
-    c.style.display = anyOpen ? "none" : "block";
-  });
-}
-</script>
 </body>
 </html>
