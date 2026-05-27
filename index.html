@@ -30,13 +30,23 @@ body{
 }
 
 /* =========================
+   DARK ORANGE CONTAINER (WRAPPER)
+========================= */
+
+.orange-wrapper {
+  background:#a84f00;
+  color:#ffffff;
+  width:100%;
+}
+
+/* =========================
    HEADER
 ========================= */
 
 .header{
   width:100%;
-  background:white;
-  border-bottom:1px solid #eee;
+  background:#a84f00; /* Matching background */
+  border-bottom:1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
   padding:12px 18px;
 
   display:flex;
@@ -56,14 +66,26 @@ body{
   gap:10px;
 }
 
+/* Square box container to make logo visible */
+.logo-box {
+  width:45px;
+  height:45px;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:4px;
+  padding:4px;
+}
+
 .logo{
-  width:120px;
-  height:auto;
+  max-width:100%;
+  max-height:100%;
   object-fit:contain;
 }
 
 .brand-name{
-  color:#a84f00;
+  color:#ffffff; /* Font changed to white */
   font-size:14px;
   font-weight:bold;
   letter-spacing:1px;
@@ -80,14 +102,14 @@ body{
 
 .nav-links a{
   text-decoration:none;
-  color:#111;
+  color:#ffffff; /* Font changed to white */
   font-size:10px;
   transition:0.3s ease;
   font-weight:bold;
 }
 
 .nav-links a:hover{
-  color:#cc6600;
+  color:#ffd2a6; /* Light peach color on hover for contrast */
 }
 
 /* =========================
@@ -95,7 +117,7 @@ body{
 ========================= */
 
 .hero-section{
-  background:white;
+  background:#a84f00; /* Matching background */
   padding:20px 15px 50px;
 }
 
@@ -108,8 +130,8 @@ body{
 /* HERO CARD */
 
 .hero-card{
-  background:white;
-  border:1px solid #eee;
+  background:rgba(255, 255, 255, 0.05); /* Transparent white overlay instead of solid white */
+  border:1px solid rgba(255, 255, 255, 0.15); /* Light translucent border */
   border-radius:20px;
   padding:25px;
   display:flex;
@@ -118,7 +140,7 @@ body{
 }
 
 .welcome-title{
-  color:#cc6600;
+  color:#ffffff; /* Font changed to white */
   font-size:16px;
   margin-bottom:15px;
   text-transform:uppercase;
@@ -126,10 +148,11 @@ body{
 }
 
 .hero-text{
-  color:#444;
+  color:#ffffff; /* Font changed to white */
   line-height:1.9;
   font-size:12px;
-}
+   }
+   
 
 /* =========================
    SLIDER
