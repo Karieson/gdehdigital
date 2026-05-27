@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>GDEH CBO</title>
 
@@ -21,8 +20,8 @@
 }
 
 body{
-  background:#0d0d0d;
-  color:white;
+  background:white;
+  color:#111;
   font-size:11px;
   min-height:100vh;
   display:flex;
@@ -36,10 +35,9 @@ body{
 
 .header{
   width:100%;
-  background:#000;
-  border-bottom:1px solid #222;
-
-  padding:10px 15px;
+  background:white;
+  border-bottom:1px solid #eee;
+  padding:12px 18px;
 
   display:flex;
   justify-content:space-between;
@@ -50,7 +48,7 @@ body{
   z-index:1000;
 }
 
-/* LOGO + BRAND GROUP */
+/* LOGO */
 
 .logo-group{
   display:flex;
@@ -59,81 +57,78 @@ body{
 }
 
 .logo{
-  width:38px;
-  height:38px;
+  width:42px;
+  height:42px;
   object-fit:contain;
 }
 
 .brand-name{
-  color:orange;
-  font-size:13px;
+  color:#cc6600;
+  font-size:14px;
   font-weight:bold;
   letter-spacing:1px;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 .nav-links{
   display:flex;
-  gap:14px;
+  gap:16px;
   flex-wrap:wrap;
   align-items:center;
 }
 
 .nav-links a{
   text-decoration:none;
-  color:white;
+  color:#111;
   font-size:11px;
-  transition:0.2s;
+  transition:0.3s ease;
+  font-weight:bold;
 }
 
 .nav-links a:hover{
-  color:orange;
+  color:#cc6600;
 }
-
 
 /* =========================
    HERO SECTION
 ========================= */
 
 .hero-section{
-  padding:15px;
+  background:white;
+  padding:20px 15px 50px;
 }
 
 .hero-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
+  gap:18px;
 }
 
 /* HERO CARD */
 
 .hero-card{
-  background:#151515;
-  border:1px solid #222;
-  border-radius:18px;
-  padding:20px;
-
+  background:white;
+  border:1px solid #eee;
+  border-radius:20px;
+  padding:25px;
   display:flex;
   align-items:center;
-
-  min-height:220px;
+  min-height:320px;
 }
 
 .welcome-title{
-  color:orange;
-  font-size:14px;
-  margin-bottom:10px;
+  color:#cc6600;
+  font-size:20px;
+  margin-bottom:15px;
   text-transform:uppercase;
   letter-spacing:1px;
 }
 
 .hero-text{
-  color:#bbb;
-  line-height:1.8;
-  font-size:11px;
+  color:#444;
+  line-height:1.9;
+  font-size:12px;
 }
 
 /* =========================
@@ -141,54 +136,43 @@ body{
 ========================= */
 
 .slider-card{
-  background:#151515;
-  border:1px solid #222;
-  border-radius:18px;
+  background:white;
+  border:1px solid #eee;
+  border-radius:20px;
   overflow:hidden;
 }
 
 .slider{
   width:100%;
-  height:220px;
+  height:320px;
   overflow:hidden;
+  border-radius:20px;
 }
 
 .slides{
   display:flex;
   width:300%;
   height:100%;
-  animation:slide 12s infinite;
+  animation:slide 15s infinite ease-in-out;
 }
 
 .slides img{
   width:100%;
-  height:220px;
+  height:320px;
   object-fit:cover;
 }
 
 @keyframes slide{
 
-  0%{
+  0%,25%{
     transform:translateX(0);
   }
 
-  30%{
-    transform:translateX(0);
-  }
-
-  35%{
+  33%,58%{
     transform:translateX(-100%);
   }
 
-  65%{
-    transform:translateX(-100%);
-  }
-
-  70%{
-    transform:translateX(-200%);
-  }
-
-  95%{
+  66%,91%{
     transform:translateX(-200%);
   }
 
@@ -199,50 +183,102 @@ body{
 }
 
 /* =========================
-   BENTO GRID
+   INTRO SECTION
 ========================= */
 
-.bento{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  padding:0 15px 20px;
+.intro-section{
+  background:white;
+  padding:0 15px 50px;
 }
 
-.widget{
-  background:#151515;
-  border:1px solid #222;
-  border-radius:18px;
-  padding:18px;
-  transition:0.3s;
+.intro-box{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:20px;
+  padding:25px;
+  text-align:center;
 }
 
-.widget:hover{
-  transform:translateY(-4px);
-  border-color:orange;
-}
-
-.section-title{
-  color:orange;
+.intro-text{
   font-size:12px;
-  margin-bottom:12px;
-  font-weight:bold;
+  color:#444;
+  line-height:2;
+  max-width:700px;
+  margin:auto;
 }
 
-.widget-text{
-  color:#bbb;
-  line-height:1.8;
-  margin-bottom:12px;
-}
+/* CTA BUTTON */
 
-.text-link{
+.apply-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 26px;
+  background:#cc6600;
+  color:white;
   text-decoration:none;
-  color:orange;
-  font-size:11px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:bold;
+  transition:0.3s ease;
+  box-shadow:0 0 15px rgba(204,102,0,0.4);
 }
 
-.text-link:hover{
-  text-decoration:underline;
+.apply-btn:hover{
+  transform:translateY(-2px);
+  background:#a85200;
+}
+
+/* =========================
+   DARK ORANGE SECTION
+========================= */
+
+.orange-section{
+  background:#a84f00;
+  padding:50px 20px;
+}
+
+/* =========================
+   LINKS SECTION
+========================= */
+
+.link-section{
+  max-width:900px;
+  margin:auto;
+}
+
+.link-item{
+  padding:25px 0;
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.link-item:last-child{
+  border-bottom:none;
+}
+
+.link-title{
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.link-text{
+  color:rgba(255,255,255,0.9);
+  line-height:1.9;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.link-btn{
+  text-decoration:none;
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+  transition:0.3s ease;
+}
+
+.link-btn:hover{
+  opacity:0.7;
 }
 
 /* =========================
@@ -251,27 +287,23 @@ body{
 
 .footer{
   width:100%;
-  background:#000;
-  border-top:1px solid #222;
-
-  color:orange;
-
+  background:#a84f00;
+  color:white;
   text-align:center;
-
-  padding:10px;
-
-  font-size:10px;
-
+  padding:20px;
+  font-size:11px;
+  font-weight:bold;
   margin-top:auto;
 }
 
 .footer a{
   color:white;
   text-decoration:none;
+  font-weight:bold;
 }
 
 .footer a:hover{
-  color:orange;
+  text-decoration:underline;
 }
 
 /* =========================
@@ -284,14 +316,10 @@ body{
     grid-template-columns:1fr;
   }
 
-  .bento{
-    grid-template-columns:1fr;
-  }
-
   .header{
     flex-direction:column;
     align-items:flex-start;
-    gap:10px;
+    gap:12px;
   }
 
   .nav-links{
@@ -310,8 +338,6 @@ body{
 ========================= -->
 
 <header class="header">
-
-  <!-- LOGO + TITLE GROUP -->
 
   <div class="logo-group">
 
@@ -334,24 +360,17 @@ body{
     <a href="landing.html">Partnerships</a>
     <a href="explore.html">Explore</a>
     <a href="contact.html">Contact</a>
-     <a href="courses.html">
-    Our Programmes
-  </a>
-
-  </div>
-
-    <!-- EXTERNAL MAIN WEBSITE -->
+    <a href="courses.html">Our Programmes</a>
 
     <a href="https://gdehworkshops.onrender.com"
-   target="_blank">
+       target="_blank">
+       Workshops
+    </a>
 
-   Workshops
-
-</a>
-
-       
-
-    
+    <a href="https://gdeh-student-portal-1.onrender.com"
+       target="_blank">
+       Student Portal
+    </a>
 
   </nav>
 
@@ -372,153 +391,170 @@ body{
       <div>
 
         <h1 class="welcome-title">
-          WELCOME TO GDEH CBO
+          Welcome To GDEH CBO
         </h1>
 
         <p class="hero-text">
 
-          Garissa Digital Empowerment Hub empowers youth and communities
+          Garissa Digital Empowerment Hub (GDEH CBO)
+          empowers youth, women, PWDs and communities
           through digital innovation, entrepreneurship,
           technology access and modern skills development.
+
+          <br><br>
+
+          We provide practical digital training,
+          ICT workshops, mentorship and empowerment
+          programmes designed to create opportunities
+          for the next generation.
 
         </p>
 
       </div>
 
     </div>
-        
 
     <!-- RIGHT -->
 
- 
+    <div class="slider-card">
 
-  <div class="slider">
+      <div class="slider">
 
-    <div class="slides">
+        <div class="slides">
 
-      <img src="img1.jpeg" alt="">
-      <img src="img2.jpeg" alt="">
-      <img src="img3.jpeg" alt="">
+          <img src="img1.jpeg" alt="">
+          <img src="img2.jpeg" alt="">
+          <img src="img3.jpeg" alt="">
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
-
-  <!-- PARAGRAPH GOES HERE -->
-
-  <div style="
-  font-size:11px;
-  color:white;
-  line-height:1.8;
-  padding:15px;
-  max-width:100%;">
-
-    Are you a person living with disability (PWD),
-    a youth, or someone passionate about digital
-    empowerment and innovation?
-
-    Admissions are now open for our digital
-    training and empowerment programmes.
-
-    <br><br>
-
-    <a href="apply.html"
-       style="
-       display:inline-block;
-       padding:8px 18px;
-       background:#cc7000;
-       color:white;
-       text-decoration:none;
-       border-radius:25px;
-       box-shadow:0 0 12px rgba(204,112,0,0.9);
-       transition:0.3s ease;
-       font-size:11px;">
-
-       Apply Now
-
-    </a>
-
-  </div>
-
-</div>
 
 </section>
 
 <!-- =========================
-     BENTO GRID
+     INTRO
 ========================= -->
 
-<section class="bento">
+<section class="intro-section">
 
-  <!-- TEAM -->
+  <div class="intro-box">
 
-  <div class="widget">
+    <p class="intro-text">
 
-    <div class="section-title">
-      Meet Our Team
-    </div>
+      Are you a youth, person living with disability (PWD),
+      entrepreneur or someone passionate about digital
+      empowerment and innovation?
 
-    <p class="widget-text">
+      <br><br>
 
-      Learn more about our leadership,
-      trainers and community innovators.
+      Admissions are now open for our digital training,
+      ICT workshops and empowerment programmes.
+
+      Join our growing innovation community and gain
+      modern digital skills for the future.
 
     </p>
 
-    <a href="teamcbo.html"
-       class="text-link">
+    <a href="apply.html" class="apply-btn">
 
-       View Team →
+      Apply Now
 
     </a>
 
   </div>
 
-  <!-- PARTNERS -->
+</section>
 
-  <div class="widget">
+<!-- =========================
+     DARK ORANGE SECTION
+========================= -->
 
-    <div class="section-title">
-      Partnerships
+<section class="orange-section">
+
+  <div class="link-section">
+
+    <!-- TEAM -->
+
+    <div class="link-item">
+
+      <div class="link-title">
+
+        Meet Our Team
+
+      </div>
+
+      <div class="link-text">
+
+        Learn more about our leadership,
+        trainers and community innovators.
+
+      </div>
+
+      <a href="teamcbo.html"
+         class="link-btn">
+
+         View Team →
+
+      </a>
+
     </div>
 
-    <p class="widget-text">
+    <!-- PARTNERS -->
 
-      Support our mission through collaborations,
-      sponsorships and youth empowerment projects.
+    <div class="link-item">
 
-    </p>
+      <div class="link-title">
 
-    <a href="landing.html"
-       class="text-link">
+        Partnerships
 
-       Learn More →
+      </div>
 
-    </a>
+      <div class="link-text">
 
-  </div>
+        Support our mission through collaborations,
+        sponsorships and youth empowerment projects.
 
-  <!-- EXPLORE -->
+      </div>
 
-  <div class="widget">
+      <a href="landing.html"
+         class="link-btn">
 
-    <div class="section-title">
-      Explore Programs
+         Learn More →
+
+      </a>
+
     </div>
 
-    <p class="widget-text">
+    <!-- PROGRAMS -->
 
-      Discover digital skills training,
-      ICT workshops and innovation opportunities.
+    <div class="link-item">
 
-    </p>
+      <div class="link-title">
 
-    <a href="explore.html"
-       class="text-link">
+        Explore Programs
 
-       Explore →
+      </div>
 
-    </a>
+      <div class="link-text">
+
+        Discover digital skills training,
+        ICT workshops and innovation opportunities.
+
+      </div>
+
+      <a href="explore.html"
+         class="link-btn">
+
+         Explore →
+
+      </a>
+
+    </div>
 
   </div>
 
