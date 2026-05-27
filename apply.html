@@ -12,6 +12,10 @@
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -20,55 +24,81 @@
 }
 
 body{
-    background:#000;
-    padding:20px;
-    color:#fff;
+    background:#fff;
+    color:#111;
     font-size:11px;
+    min-height:100vh;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 .top-bar{
     display:flex;
     align-items:center;
     gap:15px;
-    margin:0 auto 20px auto;
-    max-width:900px;
+    margin:0 auto 25px auto;
+    max-width:950px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
 }
 
 .logo{
-    width:100px;
+    width:85px;
     height:auto;
 }
 
 h1{
-    color:#fff;
-    font-size:16px;
+    color:#a84f00;
+    font-size:20px;
     font-weight:700;
 }
 
-/* MAIN CONTENT */
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
+    padding:0 15px 40px;
 }
 
-/* SECTION TITLES */
+/* =========================
+   FORM BOX
+========================= */
+
+.form-box{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:20px;
+    padding:30px;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
 h2{
-    color:#cc7000;
-    font-size:12px;
+    color:#a84f00;
+    font-size:13px;
     font-weight:bold;
-    margin:20px 0 10px;
-    border-bottom:1px solid #cc7000;
-    padding-bottom:5px;
+    margin:25px 0 15px;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(168,79,0,0.3);
 }
 
-/* LABELS */
+/* =========================
+   LABELS
+========================= */
+
 label{
     display:block;
-    margin-top:10px;
-    margin-bottom:5px;
-    color:#cc7000;
-    font-size:10px;
+    margin-top:12px;
+    margin-bottom:6px;
+    color:#a84f00;
+    font-size:11px;
     font-weight:600;
 }
 
@@ -76,100 +106,115 @@ label{
     color:red;
 }
 
-/* INPUTS */
+/* =========================
+   INPUTS
+========================= */
+
 input,
 select,
 textarea{
     width:100%;
-    padding:8px;
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:5px;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
     font-size:11px;
-    color:#fff;
-    background:#111;
+    color:#111;
+    background:#fff;
+    transition:0.3s ease;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
     outline:none;
-    border:1px solid #cc7000;
-    box-shadow:0 0 5px rgba(204,112,0,0.5);
+    border:1px solid #a84f00;
+    box-shadow:0 0 10px rgba(168,79,0,0.15);
 }
 
 textarea{
     resize:vertical;
-    min-height:70px;
+    min-height:90px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
+
 .submit-btn{
-    background:#cc7000;
+    background:#a84f00;
     color:#fff;
     border:none;
-    padding:10px 18px;
+    padding:13px 24px;
     font-size:12px;
-    border-radius:5px;
+    border-radius:30px;
     cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 0 8px rgba(204,112,0,0.5);
+    transition:0.3s ease;
+    box-shadow:0 0 12px rgba(168,79,0,0.25);
+    font-weight:bold;
 }
 
 .submit-btn:hover{
-    box-shadow:0 0 15px rgba(204,112,0,0.9);
-    transform:scale(1.03);
+    background:#8e4200;
+    transform:translateY(-2px);
+    box-shadow:0 0 18px rgba(168,79,0,0.4);
 }
+
+/* =========================
+   CONSENT
+========================= */
 
 .consent-box{
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    margin-top:20px;
-    text-align:center;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:25px;
 }
 
 .consent-box input{
     width:auto;
-    margin-top:3px;
+    margin-top:4px;
 }
 
 .consent-box label{
-    color:#fff;
+    color:#333;
     font-size:10px;
-    line-height:1.5;
+    line-height:1.7;
+    margin:0;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
-    margin-top:30px;
+    background:#a84f00;
+    color:white;
     text-align:center;
-    padding:10px;
-    border-top:1px solid rgba(255,255,255,0.15);
+    padding:25px 15px;
+    margin-top:40px;
 }
 
 .footer p{
-    color:#cc7000;
-    font-size:10px;
-}
-
-/* FOOTER LINKS */
-.footer-links{
-    text-align:center;
-    margin-top:10px;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
 .footer-links a{
-    color:#cc7000;
-    font-size:10px;
+    color:white;
     text-decoration:none;
+    font-size:10px;
+    font-weight:bold;
 }
 
 .footer-links a:hover{
     text-decoration:underline;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:768px){
 
     .top-bar{
@@ -178,12 +223,13 @@ textarea{
     }
 
     h1{
-        font-size:14px;
+        font-size:17px;
     }
 
-    .container{
-        padding:0;
+    .form-box{
+        padding:20px;
     }
+
 }
 
 </style>
@@ -191,7 +237,10 @@ textarea{
 
 <body>
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <div class="top-bar">
 
     <img src="gdeh_logo.png"
@@ -202,8 +251,13 @@ textarea{
 
 </div>
 
-<!-- FORM -->
+<!-- =========================
+     FORM
+========================= -->
+
 <div class="container">
+
+<div class="form-box">
 
 <form id="admissionForm"
       action="https://gdeh-database.onrender.com/api/admission"
@@ -211,6 +265,7 @@ textarea{
       enctype="multipart/form-data">
 
 <!-- PERSONAL INFORMATION -->
+
 <h2>Personal Information</h2>
 
 <label>
@@ -262,6 +317,7 @@ Email <span class="required">*</span>
        required>
 
 <!-- ADDRESS -->
+
 <h2>Address</h2>
 
 <label>
@@ -272,6 +328,7 @@ Current Address <span class="required">*</span>
           required></textarea>
 
 <!-- LOCATION -->
+
 <h2>Location</h2>
 
 <label>
@@ -331,6 +388,7 @@ Select Ward
 </select>
 
 <!-- ACADEMIC -->
+
 <h2>Academic</h2>
 
 <label>
@@ -397,6 +455,7 @@ Hybrid
 </select>
 
 <!-- EMERGENCY CONTACT -->
+
 <h2>Emergency Contact</h2>
 
 <label>
@@ -416,6 +475,7 @@ Phone Number <span class="required">*</span>
        required>
 
 <!-- PHOTO -->
+
 <h2>Upload</h2>
 
 <label>
@@ -429,6 +489,7 @@ Upload Profile Photo
        required>
 
 <!-- CONSENT -->
+
 <div class="consent-box">
 
 <input type="checkbox"
@@ -446,8 +507,9 @@ Terms & Conditions
 </div>
 
 <!-- SUBMIT -->
+
 <div style="text-align:center;
-            margin-top:20px;">
+            margin-top:30px;">
 
 <button type="submit"
         class="submit-btn">
@@ -462,7 +524,12 @@ Submit Application
 
 </div>
 
-<!-- FOOTER -->
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
 <p>
@@ -470,9 +537,6 @@ Submit Application
 All Rights Reserved
 </p>
 
-</footer>
-
-<!-- FOOTER LINKS -->
 <div class="footer-links">
 
 <a href="privacy_terms.html"
@@ -492,6 +556,12 @@ Terms & Conditions
 </a>
 
 </div>
+
+</footer>
+
+<!-- =========================
+     SCRIPT
+========================= -->
 
 <script>
 
