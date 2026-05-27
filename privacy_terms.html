@@ -18,7 +18,7 @@ body{
   background:#ffffff;
   color:#222;
   min-height:100vh;
-  padding:18px;
+  padding:18px 18px 0 18px; /* Removed bottom padding for flush footer */
   line-height:1.8;
   font-size:12px;
 }
@@ -71,28 +71,54 @@ ul{
   margin-bottom:16px;
 }
 
-.footer{
+/* =========================
+DARK ORANGE SECTION
+========================= */
+.orange-section{
+  background:#a84f00;
+  padding:50px 20px;
+  margin-top:40px;
+  margin-left:-18px;  /* Breaks out of body padding */
+  margin-right:-18px; /* Breaks out of body padding */
+}
+
+.orange-section .container {
+  max-width:950px;
+  margin:auto;
+}
+
+.orange-section h2{
+  color:#ffffff;
+  border-bottom:1px solid rgba(255, 255, 255, 0.2);
+}
+
+.orange-section p{
+  color:#ffffff;
+}
+
+.orange-section .footer{
   text-align:center;
   margin-top:30px;
   font-size:11px;
-  color:darkorange;
+  color:#ffffff;
   padding-top:12px;
-  border-top:1px solid #ececec;
+  border-top:1px solid rgba(255, 255, 255, 0.2);
 }
 
-.footer-links{
+.orange-section .footer-links{
   text-align:center;
   margin-top:8px;
   font-size:11px;
 }
 
-.footer-links a{
-  color:darkorange;
+.orange-section .footer-links a{
+  color:#ffffff;
   text-decoration:none;
   margin:0 6px;
+  font-weight:600;
 }
 
-.footer-links a:hover{
+.orange-section .footer-links a:hover{
   text-decoration:underline;
 }
 
@@ -236,24 +262,26 @@ Garissa Digital Empowerment Hub CBO may revise these Terms and Conditions at any
 
 </div>
 
-<div class="section">
+</div> <!-- End of main container -->
 
-<h2>Contact Information</h2>
+<!-- Full-width Dark Orange Footer Section -->
+<div class="orange-section">
+  <div class="container">
+    <div class="section">
+      <h2>Contact Information</h2>
+      <p>Email: gdehcbo2026@gmail.com</p>
+      <p>Phone: +254728428431 / +254705299600</p>
+    </div>
 
-<p>Email: gdehcbo2026@gmail.com</p>
-<p>Phone: +254728428431 / +254705299600</p>
+    <div class="footer">
+      ©2026 GDEH CBO All rights reserved
+    </div>
 
-</div>
-
-<div class="footer">
-  ©2026 GDEH CBO All right reserved
-</div>
-
-<div class="footer-links">
-  <a href="#">Privacy_terms.html</a> |
-  <a href="#">Privacy_terms.html</a>
-</div>
-
+    <div class="footer-links">
+      <a href="#privacy">Privacy Policy</a> |
+      <a href="#terms">Terms & Conditions</a>
+    </div>
+  </div>
 </div>
 
 </body>
