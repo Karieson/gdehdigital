@@ -388,83 +388,57 @@ Upload Proof (Optional)
 D. Collaboration Proposal
 </div>
 
-<label>
-Organization Background
-<span class="required">*</span>
-</label>
+<form id="collabForm">
+  <label>
+    Organization Background
+    <span class="required">*</span>
+  </label>
+  <textarea rows="3" required></textarea>
 
-<textarea rows="3"
-          required></textarea>
+  <label>
+    Proposed Area of Collaboration
+    <span class="required">*</span>
+  </label>
+  <textarea rows="3" required></textarea>
 
-<label>
-Proposed Area of Collaboration
-<span class="required">*</span>
-</label>
+  <label>
+    Expected Outcomes
+    <span class="required">*</span>
+  </label>
+  <textarea rows="3" required></textarea>
 
-<textarea rows="3"
-          required></textarea>
+  <label>
+    Duration / Commitment Level
+    <span class="required">*</span>
+  </label>
+  <input type="text" required>
 
-<label>
-Expected Outcomes
-<span class="required">*</span>
-</label>
+  <label>
+    Attach Proposal Document (Optional)
+  </label>
+  <input type="file" class="file-upload" accept=".pdf,.doc,.docx">
 
-<textarea rows="3"
-          required></textarea>
+<!-- CAPTCHA BOX -->
+<div id="captchaBox" style="text-align:center; margin-top:20px;">
+    <canvas id="captchaCanvas" width="220" height="80"
+            style="border:1px solid #ccc; border-radius:5px;"></canvas>
 
-<label>
-Duration / Commitment Level
-<span class="required">*</span>
-</label>
+    <br><br>
 
-<input type="text"
-       required>
+    <label>Enter CAPTCHA:</label><br>
+    <input id="captchaInput" placeholder="Enter 6 letters" style="padding:8px; margin-top:10px; width:200px;">
 
-<label>
-Attach Proposal Document (Optional)
-</label>
+    <br><br>
 
-<input type="file"
-       class="file-upload"
-       accept=".pdf,.doc,.docx">
-
-<!-- SECTION E -->
-<div class="section-title">
-E. Consent & Acknowledgment
+    <button type="button"
+            onclick="verifyCaptcha()"
+            style="padding:8px 14px; cursor:pointer; background:#B8860B; color:white; border:none; border-radius:6px;">
+        Verify
+    </button>
 </div>
 
-<div class="consent-section">
-
-<p>
-By continuing, you agree to the
-<a href="privacy_terms.html"
-   target="_blank">
-
-Privacy Policy & Terms and Conditions
-
-</a>
-of Garissa Digital Empowerment Hub CBO.
-</p>
-
-<label>
-
-<input type="checkbox"
-       id="consentCheck"
-       required>
-
-I confirm that I have read and agree to the Privacy Policy and Terms & Conditions, and consent to the use of my information for communication and partnership purposes.
-
-</label>
-
-</div>
-
-<button type="submit"
-        class="submit-btn">
-
-Submit Form
-
-</button>
-
+<!-- SUBMIT BUTTON -->
+<button type="submit" class="submit-btn">Submit Collaboration</button>
 </form>
 
 </div>
@@ -505,6 +479,69 @@ window.location.href =
 }
 
 </script>
+  <script>
+const API = "https://YOUR-BACKEND.onrender.com"; // replace with your render backend
+let captchaText = "";
+let captchaVerified = false;
+
+// Draw CAPTCHA on canvas
+function drawCaptcha(text){
+    const canvas = document.getElementById("captchaCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,220,80);
+    ctx.fillStyle = `hsl(${Math.random()*360},70%,85%)`;
+    ctx.fillRect(0,0,220,80);
+    for(let i=0;i<120;i++){
+        ctx.fillStyle="#777";
+        ctx.fillRect(Math.random()*220,Math.random()*80,2,2);
+    }
+    for(let i=0;i<text.length;i++){
+        ctx.save();
+        ctx.font="30px Arial";
+        ctx.fillStyle=`hsl(${Math.random()*360},100%,40%)`;
+        const x = 20 + i*30;
+        const y = 50;
+        ctx.translate(x,y);
+        ctx.rotate((Math.random()-0.5)*0.7);
+        ctx.fillText(text[i],0,0);
+        ctx.restore();
+    }
+}
+
+// Open CAPTCHA by fetching from backend
+async function openCaptcha(){
+    const res = await fetch(`${API}/captcha`);
+    const data = await res.json();
+    captchaText = data.captcha;
+    drawCaptcha(captchaText);
+}
+
+// Verify CAPTCHA input
+async function verifyCaptcha(){
+    const input = document.getElementById("captchaInput").value;
+    const res = await fetch(`${API}/verify`, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({code:input})
+    });
+    const data = await res.json();
+    if(data.success){
+        captchaVerified = true;
+        alert("CAPTCHA verified! You can submit now.");
+    }else{
+        alert("Wrong CAPTCHA. Try again.");
+        openCaptcha();
+    }
+}
+
+// Form submit interceptor
+document.getElementById("collabForm").addEventListener("submit", function(e){
+    if(!captchaVerified){
+        e.preventDefault();
+        openCaptcha();
+    }
+});
+  </script>
 
 </body>
 </html>
