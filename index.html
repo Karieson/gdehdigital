@@ -12,250 +12,256 @@
 <style>
 
 /* GLOBAL */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+body {
+  background: #fff;
+  color: #111;
+  font-size: 11px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
-
-body{
-  background:white;
-  color:#111;
-  font-size:11px;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  overflow-x:hidden;
-  font-family: Arial, sans-serif;
-}
-
-/* WRAPPER */
-.orange-wrapper {
-  background:#a84f00;
-  color:#fff;
-  width:100%;
-}
-
 /* HEADER */
-.header{
-  width:100%;
-  background:#a84f00;
-  padding:16px 18px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  position:sticky;
-  top:0;
-  z-index:1000;
+header {
+  position: relative;
+  padding: 15px 0;
 }
 
-.logo-box {
-  width:45px;
-  height:45px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:4px;
+/* LOGO TOP LEFT */
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 70px;
+  height: auto;
 }
 
-.logo{
-  max-width:100%;
-  max-height:100%;
+/* NAVIGATION CONTAINER */
+.nav-links {
+  display: flex;
+  flex-direction: column;   /* stack rows vertically */
+  align-items: center;      /* center each row */
+  gap: 8px;                 /* spacing between rows */
+  margin: 20px auto;
 }
 
-/* NAV */
-.nav-links{
-  display:flex;
-  gap:16px;
-  overflow-x:auto;
-  width:100%;
+/* EACH ROW */
+.nav-row {
+  display: flex;
+  justify-content: center;  /* center links in each row */
+  gap: 15px;                /* spacing between links */
 }
 
-.nav-links a{
-  text-decoration:none;
-  color:#fff;
-  font-size:11px;
-  font-weight:600;
-  white-space:nowrap;
+/* LINKS STYLE */
+.nav-links a {
+  color: #001f3f;           /* dark navy */
+  font-size: 10px;          /* very small elegant font */
+  font-weight: 300;         /* light weight */
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: #003366;
+  text-decoration: underline;
+}
 /* HERO */
-.hero-section{
-  background:#a84f00;
-  padding:20px 15px 50px;
+.hero-section {
+  background: #fff;          /* white background */
+  padding: 20px 15px 50px;
 }
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.hero-card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:20px;
-  padding:25px;
-  min-height:320px;
-}
-
-.welcome-title{
-  color:#fff;
-  font-size:16px;
-  margin-bottom:15px;
-  text-transform:uppercase;
-}
-
-.hero-text{
-  color:#fff;
-  line-height:1.9;
-  font-size:12px;
-}
-
 /* SLIDER */
-.slider-card{
-  background:#fff;
-  border-radius:20px;
-  overflow:hidden;
+.slider {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
 }
 
-.slider{
-  height:320px;
-  overflow:hidden;
+.slides {
+  display: flex;
+  width: calc(100% * 3);       /* 3 images side by side */
+  animation: scroll 15s linear infinite;
 }
 
-.slides{
-  display:flex;
-  width:300%;
-  animation:slide 15s infinite ease-in-out;
+.slides img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
 }
 
-.slides img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
+/* Continuous scroll animation */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-200%); }
+}
+/* HERO TITLE */
+.welcome-title {
+  color: #001f3f;        /* dark navy */
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;    /* center align */
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
-@keyframes slide{
-  0%,25%{transform:translateX(0);}
-  33%,58%{transform:translateX(-100%);}
-  66%,91%{transform:translateX(-200%);}
-  100%{transform:translateX(0);}
+.hero-text {
+  color: #444;
+  line-height: 1.9;
+  font-size: 12px;
 }
 
 /* INTRO */
-.intro-section{
-  background:#fff;
-  padding:50px 15px;
-  font-family:'Poppins', sans-serif;
-  text-align:center;
+.intro-section {
+  background: #fff;
+  padding: 50px 15px;
+  text-align: center;
 }
 
-.intro-title{
-  color:#a84f00;
-  font-size:22px;
-  font-weight:700;
-  margin-bottom:20px;
+.intro-title {
+  color: #001f3f;            /* dark navy */
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.intro-text{
-  font-size:13px;
-  color:#444;
-  line-height:2;
-  max-width:700px;
-  margin:auto;
+.apply-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 26px;
+  background: #001f3f;       /* dark navy button */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-.apply-btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:12px 26px;
-  background:#a84f00;
-  color:#fff;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
+/* LINKS + FOOTER SECTION */
+.orange-section {
+  background: #001f3f;       /* uniform dark navy */
+  padding: 50px 20px;
+  text-align: center;        /* center align content */
 }
 
-/* ORANGE SECTION */
-.orange-section{
-  background:#a84f00;
-  padding:50px 20px;
+.link-section {
+  max-width: 900px;
+  margin: auto;
 }
 
-.link-section{
-  max-width:900px;
-  margin:auto;
+.link-item {
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
-.link-item{
-  padding:25px 0;
-  border-bottom:1px solid rgba(255,255,255,0.4);
+.link-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.link-title{
-  color:#fff;
-  font-size:16px;
-  font-weight:bold;
+.link-text {
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 10px auto;
+  max-width: 700px;
+  text-align: center;
 }
 
-.link-text{
-  color:rgba(255,255,255,0.9);
-  font-size:12px;
-  line-height:1.9;
-  margin:10px 0;
+.link-btn {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.link-btn:hover {
+  text-decoration: underline;
 }
 
-.link-btn{
-  color:#fff;
-  font-size:12px;
-  font-weight:bold;
-  text-decoration:none;
+/* STICKY FOOTER */
+.footer {
+  position: fixed;           /* stick to bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #001f3f;       /* same dark navy */
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 10px;
+  font-weight: bold;         /* bold white text */
+  z-index: 100;
 }
 
-/* FOOTER */
-.footer{
-  background:#a84f00;
-  color:#fff;
-  text-align:center;
-  padding:20px;
-  font-size:11px;
+
+/* FOOTER LINKS */
+.footer-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  gap: 8px;                  /* spacing between items */
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
+.footer-links a,
+.footer-links span {
+  color: #fff;               /* white text */
+  font-size: 11px;           /* small font size */
+  font-weight: normal;       /* not bold */
+  text-decoration: none;
 }
 
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Separator styling */
+.footer-links span {
+  color: #fff;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+/* MAIN CONTENT CONTAINER */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 100px;     /* reserve space for sticky footer */
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="orange-wrapper">
-  <header class="header">
+<header>
+  <!-- Logo -->
+  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
 
-    <div class="logo-box">
-      <img src="gdeh_logo.png" class="logo" alt="Logo">
-    </div>
+  <!-- Navigation Links -->
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="teamcbo.html">Team</a>
-      <a href="landing.html">Partnerships</a>
-      <a href="explore.html">Explore</a>
-      <a href="contact.html">Contact</a>
-      <a href="courses.html">Programmes</a>
-      <a href="https://gdehworkshops.onrender.com">Workshops</a>
-      <a href="https://gdeh-student-portal-1.onrender.com">Student Portal</a>
-    </nav>
+<nav class="nav-links">
+  <div class="nav-row">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+  </div>
+  <div class="nav-row">
+    <a href="contact.html">Contacts</a>
+    <a href="teamcbo.html">Team</a>
+    <a href="landing.html">Partnerships</a>
+  </div>
+  <div class="nav-row">
+    <a href="courses.html">Programmes</a>
+    <a href="https://gdehworkshops.onrender.com">Workshops</a>
+    <a href="https://gdeh-student-portal-1.onrender.com">Student Portal</a>
+  </div>
+</nav>
+</header>
 
-  </header>
-</div>
+
 
 <!-- HERO -->
 <section class="hero-section">
@@ -268,15 +274,13 @@ body{
       </p>
     </div>
 
-    <div class="slider-card">
-      <div class="slider">
-        <div class="slides">
-          <img src="img1.jpeg">
-          <img src="img2.jpeg">
-          <img src="img3.jpeg">
-        </div>
-      </div>
-    </div>
+    <div class="slider">
+  <div class="slides">
+    <img src="img1.jpeg" alt="Slide 1">
+    <img src="img2.jpeg" alt="Slide 2">
+    <img src="img3.jpeg" alt="Slide 3">
+  </div>
+</div>
 
   </div>
 </section>
@@ -294,11 +298,13 @@ body{
 
 </section>
 
-<!-- LINKS -->
+<!-- LINKS + FOOTER -->
 <section class="orange-section">
-
   <div class="link-section">
 
+
+  <section class="orange-section">
+  <div class="link-section">
     <div class="link-item">
       <div class="link-title">Meet Our Team</div>
       <div class="link-text">Learn about leadership and trainers.</div>
@@ -316,15 +322,23 @@ body{
       <div class="link-text">Discover training opportunities.</div>
       <a class="link-btn" href="explore.html">Explore →</a>
     </div>
-
   </div>
-
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  © GDEH CBO | Digital Empowerment Hub
+  © 2026 Garissa Digital Empowerment Hub CBO.All right reserved 
+  <div class="footer-links">
+  <a href="privacy_terms.html">Privacy Policy</a>
+  <span>|</span>
+  <a href="privacy_terms.html">Terms & Conditions</a>
+</div>
+  
+    <a href="contact.html">CONTACT US</a>
+  </div>
 </footer>
+
+  
+
 
 </body>
 </html>
