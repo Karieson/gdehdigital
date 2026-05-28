@@ -140,47 +140,55 @@ header {
 
 /* LINKS + FOOTER SECTION */
 .orange-section {
-  background: #001f3f;       /* uniform dark navy */
+  background: #fff;             /* switch to white background */
   padding: 50px 20px;
-  text-align: center;        /* center align content */
+  text-align: center;
 }
 
+/* LINK SECTION WRAPPER */
 .link-section {
   max-width: 900px;
   margin: auto;
 }
 
+/* EACH ITEM */
 .link-item {
   padding: 25px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(0,64,128,0.2); /* subtle blue divider */
 }
 
+/* TITLES */
 .link-title {
-  color: #fff;
+  color: #004080;               /* elegant blue */
   font-size: 16px;
   font-weight: bold;
   text-align: center;
 }
 
+/* TEXT */
 .link-text {
-  color: rgba(255,255,255,0.9);
+  color: #004080;               /* elegant blue text */
   font-size: 12px;
   line-height: 1.9;
   margin: 10px auto;
   max-width: 700px;
   text-align: center;
+  font-weight: 300;             /* light elegant weight */
 }
 
+/* BUTTON LINKS */
 .link-btn {
-  color: #fff;
+  color: #004080;               /* elegant blue */
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
-}
-.link-btn:hover {
-  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
+.link-btn:hover {
+  color: #0066cc;               /* brighter blue on hover */
+  text-decoration: underline;
+}
 /* STICKY FOOTER */
 .footer {
   position: fixed;           /* stick to bottom */
@@ -303,24 +311,24 @@ header {
   <div class="link-section">
 
 
-  <section class="orange-section">
+  <section class="white-section">
   <div class="link-section">
     <div class="link-item">
       <div class="link-title">Meet Our Team</div>
       <div class="link-text">Learn about leadership and trainers.</div>
-      <a class="link-btn" href="teamcbo.html">View →</a>
+      <a class="link-btn" href="teamcbo.html">View </a>
     </div>
 
     <div class="link-item">
       <div class="link-title">Partnerships</div>
       <div class="link-text">Collaborate and support our mission.</div>
-      <a class="link-btn" href="landing.html">Learn →</a>
+      <a class="link-btn" href="landing.html">Learn </a>
     </div>
 
     <div class="link-item">
       <div class="link-title">Explore Programs</div>
       <div class="link-text">Discover training opportunities.</div>
-      <a class="link-btn" href="explore.html">Explore →</a>
+      <a class="link-btn" href="explore.html">Explore </a>
     </div>
   </div>
 </section>
