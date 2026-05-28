@@ -2,390 +2,201 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online Application Form</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-body{
-    background:#fff;
-    color:#111;
-    font-size:11px;
-    min-height:100vh;
-}
-/* =========================
-   HEADER
-========================= */
-.top-bar{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin:0 auto 25px auto;
-    max-width:950px;
-    padding:15px 0;
-    border-bottom:1px solid #eee;
-}
-.logo{
-    width:85px;
-    height:auto;
-}
-h1{
-    color:#a84f00;
-    font-size:16px;
-    font-weight:700;
-}
-/* =========================
-   CONTAINER
-========================= */
-.container{
-    max-width:950px;
-    margin:auto;
-    padding:0 15px 40px;
-}
-/* =========================
-   FORM BOX
-========================= */
-.form-box{
-    background:#fff;
-    border:1px solid #eee;
-    border-radius:20px;
-    padding:30px;
-}
-/* =========================
-   SECTION TITLES
-========================= */
-h2{
-    color:#a84f00;
-    font-size:12px;
-    font-weight:bold;
-    margin:25px 0 15px;
-    padding-bottom:8px;
-    border-bottom:1px solid rgba(168,79,0,0.3);
-}
-/* =========================
-   LABELS
-========================= */
-label{
-    display:block;
-    margin-top:12px;
-    margin-bottom:6px;
-    color:#a84f00;
-    font-size:10px;
-    font-weight:600;
-}
-.required{
-    color:red;
-}
-/* =========================
-   INPUTS
-========================= */
-input,
-select,
-textarea{
-    width:100%;
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    font-size:11px;
-    color:#111;
-    background:#fff;
-    transition:0.3s ease;
-}
-input:focus,
-select:focus,
-textarea:focus{
-    outline:none;
-    border:1px solid #a84f00;
-    box-shadow:0 0 10px rgba(168,79,0,0.15);
-}
-textarea{
-    resize:vertical;
-    min-height:90px;
-}
-/* =========================
-   BUTTON
-========================= */
-.submit-btn{
-    background:#a84f00;
-    color:#fff;
-    border:none;
-    padding:13px 24px;
-    font-size:12px;
-    border-radius:30px;
-    cursor:pointer;
-    transition:0.3s ease;
-    box-shadow:0 0 12px rgba(168,79,0,0.25);
-    font-weight:bold;
-}
-.submit-btn:hover{
-    background:#8e4200;
-    transform:translateY(-2px);
-    box-shadow:0 0 18px rgba(168,79,0,0.4);
-}
-/* =========================
-   CONSENT
-========================= */
-.consent-box{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    margin-top:25px;
-}
-.consent-box input{
-    width:auto;
-    margin-top:4px;
-}
-.consent-box label{
-    color:#333;
-    font-size:10px;
-    line-height:1.7;
-    margin:0;
-/* =========================
-   FOOTER
-========================= */
-.footer{
-    background:#a84f00;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-    margin-top:40px;
-}
-.footer p{
-    font-size:11px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-.footer-links a{
-    color:white;
-    text-decoration:none;
-    font-size:10px;
-    font-weight:bold;
-}
-.footer-links a:hover{
-    text-decoration:underline;
-}
-/* =========================
-   MOBILE
-========================= */
-@media(max-width:768px){
-    .top-bar{
-        flex-direction:column;
-        text-align:center;
-    }
-    h1{
-        font-size:17px;
-    }
-    .form-box{
-        padding:20px;
-    }
-}
+/* GLOBAL */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff;color:#111;font-size:10px;min-height:100vh;}
+
+/* HEADER */
+.top-bar{display:flex;align-items:center;gap:10px;margin:20px auto;max-width:900px;padding:10px 0;border-bottom:1px solid #eee;}
+.logo{width:70px;height:auto;}
+h1{color:#001f3f;font-size:13px;font-weight:700;}
+
+/* CONTAINER */
+.container{max-width:900px;margin:auto;padding:0 15px 30px;}
+
+/* FORM BOX */
+.form-box{background:#fff;border:1px solid #eee;border-radius:15px;padding:25px;}
+
+/* SECTION TITLES */
+h2{color:#001f3f;font-size:11px;font-weight:600;margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid rgba(0,31,63,0.3);}
+
+/* LABELS */
+label{display:block;margin-top:6px;margin-bottom:3px;color:#001f3f;font-size:9px;font-weight:500;}
+.required{color:red;}
+
+/* INPUTS */
+input,select,textarea{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:9px;color:#111;background:#fff;transition:0.3s ease;}
+input:focus,select:focus,textarea:focus{outline:none;border:1px solid #001f3f;box-shadow:0 0 6px rgba(0,31,63,0.2);}
+textarea{resize:vertical;min-height:70px;}
+
+/* BUTTON */
+.submit-btn{background:#001f3f;color:#fff;border:none;padding:8px 18px;font-size:9px;border-radius:20px;cursor:pointer;transition:0.3s ease;box-shadow:0 0 10px rgba(0,31,63,0.4);font-weight:600;}
+.submit-btn:hover{background:#002b5c;transform:translateY(-1px);box-shadow:0 0 14px rgba(0,31,63,0.6);}
+
+/* CONSENT */
+.consent-box{display:flex;align-items:flex-start;gap:6px;margin-top:15px;}
+.consent-box input{width:auto;margin-top:3px;}
+.consent-box label{color:#333;font-size:8px;line-height:1.5;margin:0;}
+
+/* CAPTCHA */
+#captchaBox{text-align:center;margin-top:20px;}
+#captchaImage{border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);}
+#captchaInput{padding:6px;margin-top:8px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;}
+#captchaBox a{font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;}
+#captchaBox a:hover{text-decoration:underline;}
+
+/* FOOTER */
+.footer{background:#001f3f;color:white;text-align:center;padding:15px;margin-top:30px;}
+.footer p{font-size:9px;font-weight:600;margin-bottom:6px;}
+.footer-links a{color:white;text-decoration:none;font-size:8px;font-weight:600;}
+.footer-links a:hover{text-decoration:underline;}
 </style>
 </head>
 
 <body>
-
-<!-- =========================
-     HEADER
-========================= -->
 <div class="top-bar">
     <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
     <h1>Online Application Form</h1>
 </div>
 
+<div class="container">
+<div class="form-box">
 <!-- =========================
      FORM
 ========================= -->
 <div class="container">
-<div class="form-box">
+  <div class="form-box">
+    <form id="admissionForm"
+          action="https://gdeh-database.onrender.com/api/admission"
+          method="POST"
+          enctype="multipart/form-data">
 
-<form id="admissionForm"
-      action="https://gdeh-database.onrender.com/api/admission"
-      method="POST"
-      enctype="multipart/form-data">
+      <!-- PERSONAL INFORMATION -->
+      <h2>Personal Information</h2>
+      <label>First Name <span class="required">*</span></label>
+      <input type="text" name="first_name" required>
 
-<!-- PERSONAL INFORMATION -->
-<h2>Personal Information</h2>
-<label>First Name <span class="required">*</span></label>
-<input type="text" name="first_name" required>
+      <label>Last Name <span class="required">*</span></label>
+      <input type="text" name="last_name" required>
 
-<label>Last Name <span class="required">*</span></label>
-<input type="text" name="last_name" required>
+      <label>Gender <span class="required">*</span></label>
+      <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
 
-<label>Gender <span class="required">*</span></label>
-<select name="gender" required>
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select>
+      <label>Phone Number <span class="required">*</span></label>
+      <input type="tel" name="phone" required>
 
-<label>Phone Number <span class="required">*</span></label>
-<input type="tel" name="phone" required>
+      <label>Email <span class="required">*</span></label>
+      <input type="email" name="email" required>
 
-<label>Email <span class="required">*</span></label>
-<input type="email" name="email" required>
+      <!-- ADDRESS -->
+      <h2>Address</h2>
+      <label>Current Address <span class="required">*</span></label>
+      <textarea name="address" required></textarea>
 
-<!-- ADDRESS -->
-<h2>Address</h2>
-<label>Current Address <span class="required">*</span></label>
-<textarea name="address" required></textarea>
+      <!-- LOCATION -->
+      <h2>Location</h2>
+      <label>County <span class="required">*</span></label>
+      <select id="county" name="county" onchange="loadSubCounties()" required>
+        <option value="">Select County</option>
+        <option value="Garissa">Garissa</option>
+        <option value="Wajir">Wajir</option>
+        <option value="Mandera">Mandera</option>
+      </select>
 
-<!-- LOCATION -->
-<h2>Location</h2>
-<label>County <span class="required">*</span></label>
-<select id="county" name="county" onchange="loadSubCounties()" required>
-<option value="">Select County</option>
-<option value="Garissa">Garissa</option>
-<option value="Wajir">Wajir</option>
-<option value="Mandera">Mandera</option>
-</select>
+      <label>Sub County <span class="required">*</span></label>
+      <select id="subcounty" name="sub_county" onchange="loadWards()" required>
+        <option value="">Select Sub County</option>
+      </select>
 
-<label>Sub County <span class="required">*</span></label>
-<select id="subcounty" name="sub_county" onchange="loadWards()" required>
-<option value="">Select Sub County</option>
-</select>
+      <label>Ward <span class="required">*</span></label>
+      <select id="ward" name="ward" required>
+        <option value="">Select Ward</option>
+      </select>
 
-<label>Ward <span class="required">*</span></label>
-<select id="ward" name="ward" required>
-<option value="">Select Ward</option>
-</select>
+      <!-- ACADEMIC -->
+      <h2>Academic</h2>
+      <label>Course Applying <span class="required">*</span></label>
+      <select name="course" required>
+        <option>Smart Phone Literacy</option>
+        <option>Agro-entrepreneurship</option>
+        <option>Computer Literacy</option>
+      </select>
 
-<!-- ACADEMIC -->
-<h2>Academic</h2>
-<label>Course Applying <span class="required">*</span></label>
-<select name="course" required>
-<option>Smart Phone Literacy</option>
-<option>Agro-entrepreneurship</option>
-<option>Computer Literacy</option>
-</select>
+      <label>Intake <span class="required">*</span></label>
+      <select name="intake" required>
+        <option>January Intake</option>
+        <option>May Intake</option>
+        <option>September Intake</option>
+      </select>
 
-<label>Intake <span class="required">*</span></label>
-<select name="intake" required>
-<option>January Intake</option>
-<option>May Intake</option>
-<option>September Intake</option>
-</select>
+      <label>Mode of Study <span class="required">*</span></label>
+      <select name="mode_of_study" required>
+        <option>Online</option>
+        <option>Physical</option>
+        <option>Hybrid</option>
+      </select>
 
-<label>Mode of Study <span class="required">*</span></label>
-<select name="mode_of_study" required>
-<option>Online</option>
-<option>Physical</option>
-<option>Hybrid</option>
-</select>
+      <!-- EMERGENCY CONTACT -->
+      <h2>Emergency Contact</h2>
+      <label>Full Name <span class="required">*</span></label>
+      <input type="text" name="emergency_contact_name" required>
 
-<!-- EMERGENCY CONTACT -->
-<h2>Emergency Contact</h2>
-<label>Full Name <span class="required">*</span></label>
-<input type="text" name="emergency_contact_name" required>
+      <label>Phone Number <span class="required">*</span></label>
+      <input type="tel" name="emergency_contact_phone" required>
 
-<label>Phone Number <span class="required">*</span></label>
-<input type="tel" name="emergency_contact_phone" required>
+      <!-- PHOTO -->
+      <h2>Upload</h2>
+      <label>Upload Profile Photo <span class="required">*</span></label>
+      <input type="file" name="photo" accept=".jpeg,.jpg,.png" required>
 
-<!-- PHOTO -->
-<h2>Upload</h2>
-<label>Upload Profile Photo <span class="required">*</span></label>
-<input type="file" name="photo" accept=".jpeg,.jpg,.png" required>
+      <!-- CONSENT -->
+      <div class="consent-box">
+        <input type="checkbox" id="consent" required>
+        <label for="consent">I have read and agree to the Terms & Conditions <span class="required">*</span></label>
+      </div>
 
-<!-- CONSENT -->
-<div class="consent-box">
-<input type="checkbox" id="consent" required>
-<label for="consent">I have read and agree to the Terms & Conditions <span class="required">*</span></label>
-</div>
-<!-- CAPTCHA BOX -->
-<div id="captchaBox">
+      <!-- CAPTCHA BOX -->
+      <div id="captchaBox">
+        <img id="captchaImage" alt="CAPTCHA" width="180" height="60"
+             style="border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);display:block;margin:auto;">
+        <br>
+        <label style="display:flex;align-items:center;gap:6px;justify-content:center;font-size:9px;color:#001f3f;">
+          Enter CAPTCHA
+          <span onclick="openCaptcha()" style="cursor:pointer;font-size:12px;" title="Refresh CAPTCHA">ðŸ”„</span>
+        </label>
+        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA"
+               style="padding:6px;margin-top:6px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;">
+        <div style="margin-top:8px;">
+          <a href="#" onclick="verifyCaptcha();return false;"
+             style="font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;">Verify CAPTCHA</a>
+        </div>
+      </div>
 
-    <img
-        id="captchaImage"
-        alt="CAPTCHA"
-        width="220"
-        height="80"
-        style="
-            border:1px solid #ddd;
-            border-radius:8px;
-            display:block;
-            margin:auto;
-            background:#f5f5f5;
-        "
-    >
-
-    <br>
-
-    <!-- LABEL + REFRESH ICON -->
-    <label style="display:flex;align-items:center;gap:8px;">
-        Enter CAPTCHA
-        <span
-            onclick="openCaptcha()"
-            style="cursor:pointer;font-size:14px;"
-            title="Refresh CAPTCHA"
-        >
-            🔄
-        </span>
-    </label>
-
-    <input
-        type="text"
-        id="captchaInput"
-        placeholder="Enter CAPTCHA"
-        style="
-            padding:10px;
-            margin-top:10px;
-            width:220px;
-            border:1px solid #ddd;
-            border-radius:6px;
-            font-size:11px;
-        "
-    >
-
-    <!-- VERIFY AS TEXT LINK -->
-    <div style="margin-top:10px;">
-        <a
-            href="#"
-            onclick="verifyCaptcha();return false;"
-            style="
-                font-size:11px;
-                color:#a84f00;
-                font-weight:bold;
-                text-decoration:none;
-                cursor:pointer;
-            "
-        >
-            Verify CAPTCHA
-        </a>
-    </div>
-
-          </div>
-
-<!-- SUBMIT -->
-<div style="text-align:center; margin-top:30px;">
-    <button type="submit" class="submit-btn">
-        Submit Application
-    </button>
-</div>
-
-</form>
+      <!-- SUBMIT -->
+      <div style="text-align:center;margin-top:20px;">
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </div>
+    </form>
+  </div>
 </div>
 </div>
-<!-- ===== FOOTER ===== -->
+</div>
+
 <div class="footer">
-
-© 2026 Garissa Digital Empowerment Hub |
-All Rights Reserved
-
+    <p>Â© 2026 Garissa Digital Empowerment Hub | All Rights Reserved</p>
+    <div class="footer-links">
+        <a href="privacy_terms.html">Privacy & Terms</a>
+    </div>
 </div>
-
-</footer>
 <script>
 // =========================
 // LOCATION DATA (UNCHANGED)
