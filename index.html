@@ -6,6 +6,11 @@
 
 <title>GDEH CBO</title>
 
+<!-- Load Poppins Font -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 /* =========================
@@ -16,7 +21,6 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,sans-serif;
 }
 
 body{
@@ -27,6 +31,7 @@ body{
   display:flex;
   flex-direction:column;
   overflow-x:hidden;
+  font-family: Arial, sans-serif;
 }
 
 /* =========================
@@ -45,28 +50,20 @@ body{
 
 .header{
   width:100%;
-  background:#a84f00; /* Matching background */
-  border-bottom:1px solid rgba(255, 255, 255, 0.1); /* Subtle light border */
-  padding:12px 18px;
-
+  background:#a84f00;
+  border-bottom:1px solid rgba(255, 255, 255, 0.1);
+  padding:16px 18px;
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-
+  flex-direction:column; /* Stacks logo top, links bottom */
+  align-items:flex-start;
+  gap:15px;
   position:sticky;
   top:0;
   z-index:1000;
 }
 
-/* LOGO */
+/* LOGO CONTAINER */
 
-.logo-group{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-/* Square box container to make logo visible */
 .logo-box {
   width:45px;
   height:45px;
@@ -84,32 +81,32 @@ body{
   object-fit:contain;
 }
 
-.brand-name{
-  color:#ffffff; /* Font changed to white */
-  font-size:14px;
-  font-weight:bold;
-  letter-spacing:1px;
-}
-
-/* NAVIGATION */
+/* NAVIGATION BELOW LOGO */
 
 .nav-links{
   display:flex;
-  gap:14px;
-  flex-wrap:wrap;
+  gap:16px;
+  flex-wrap:nowrap; /* Restricts links to a single line */
   align-items:center;
+  overflow-x:auto; /* Horizontal scroll if screen space runs out */
+  width:100%;
+}
+
+.nav-links::-webkit-scrollbar {
+  display:none; /* Hides horizontal scroll bar layout */
 }
 
 .nav-links a{
   text-decoration:none;
-  color:#ffffff; /* Font changed to white */
-  font-size:10px;
+  color:#ffffff;
+  font-size:11px;
   transition:0.3s ease;
-  font-weight:bold;
+  font-weight:600;
+  white-space:nowrap;
 }
 
 .nav-links a:hover{
-  color:#ffd2a6; /* Light peach color on hover for contrast */
+  color:#ffd2a6;
 }
 
 /* =========================
@@ -117,7 +114,7 @@ body{
 ========================= */
 
 .hero-section{
-  background:#a84f00; /* Matching background */
+  background:#a84f00;
   padding:20px 15px 50px;
 }
 
@@ -130,8 +127,8 @@ body{
 /* HERO CARD */
 
 .hero-card{
-  background:rgba(255, 255, 255, 0.05); /* Transparent white overlay instead of solid white */
-  border:1px solid rgba(255, 255, 255, 0.15); /* Light translucent border */
+  background:rgba(255, 255, 255, 0.05);
+  border:1px solid rgba(255, 255, 255, 0.15);
   border-radius:20px;
   padding:25px;
   display:flex;
@@ -140,7 +137,7 @@ body{
 }
 
 .welcome-title{
-  color:#ffffff; /* Font changed to white */
+  color:#ffffff;
   font-size:16px;
   margin-bottom:15px;
   text-transform:uppercase;
@@ -148,11 +145,10 @@ body{
 }
 
 .hero-text{
-  color:#ffffff; /* Font changed to white */
+  color:#ffffff;
   line-height:1.9;
   font-size:12px;
-   }
-   
+}
 
 /* =========================
    SLIDER
@@ -186,44 +182,42 @@ body{
 }
 
 @keyframes slide{
-
-  0%,25%{
-    transform:translateX(0);
-  }
-
-  33%,58%{
-    transform:translateX(-100%);
-  }
-
-  66%,91%{
-    transform:translateX(-200%);
-  }
-
-  100%{
-    transform:translateX(0);
-  }
-
+  0%,25%{ transform:translateX(0); }
+  33%,58%{ transform:translateX(-100%); }
+  66%,91%{ transform:translateX(-200%); }
+  100%{ transform:translateX(0); }
 }
 
 /* =========================
-   INTRO SECTION
+   INTRO SECTION (WHITE & POPPINS)
 ========================= */
 
 .intro-section{
   background:white;
-  padding:0 15px 50px;
+  padding:50px 15px;
+  font-family: 'Poppins', sans-serif; /* Explicit font upgrade */
 }
 
 .intro-box{
   background:#fff;
-  border:1px solid #eee;
-  border-radius:20px;
-  padding:25px;
   text-align:center;
+  max-width:950px;
+  margin:auto;
+}
+
+.intro-title {
+  font-family: 'Poppins', sans-serif;
+  color:#a84f00;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
 .intro-text{
-  font-size:12px;
+  font-family: 'Poppins', sans-serif;
+  font-size:13px;
   color:#444;
   line-height:2;
   max-width:700px;
@@ -234,22 +228,208 @@ body{
 
 .apply-btn{
   display:inline-block;
-  margin-top:20px;
+  margin-top:25px;
   padding:12px 26px;
-  background:#cc6600;
+  background:#a84f00;
   color:white;
   text-decoration:none;
   border-radius:30px;
   font-size:12px;
   font-weight:bold;
   transition:0.3s ease;
-  box-shadow:0 0 15px rgba(204,102,0,0.4);
+  box-shadow:0 0 15px rgba(168,79,0,0.3);
 }
 
 .apply-btn:hover{
   transform:translateY(-2px);
-  background:#a85200;
+  background:#c45d00;
 }
+
+/* =========================
+   DARK ORANGE SECTION
+========================= */
+
+.orange-section{
+  background:#a84f00;
+  padding:50px 20px;
+}
+
+/* =========================
+   LINKS SECTION
+========================= */
+
+.link-section{
+  max-width:900px;
+  margin:auto;
+}
+
+.link-item{
+  padding:25px 0;
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.link-item:last-child{
+  border-bottom:none;
+}
+
+.link-title{
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.link-text{
+  color:rgba(255,255,255,0.9);
+  line-height:1.9;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.link-btn{
+  text-decoration:none;
+  color:white;
+  font-size:12px;
+  font-weight:bold;
+  transition:0.3s ease;
+}
+
+.link-btn:hover{
+  opacity:0.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  width:100%;
+  background:#a84f00;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:11px;
+  font-weight:bold;
+  margin-top:auto;
+}
+
+.footer a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.footer a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER (WRAPPED)
+========================= -->
+
+<div class="orange-wrapper">
+  <header class="header">
+
+    <!-- Logo top left inside box -->
+    <div class="logo-box">
+      <img src="gdeh_logo.png" class="logo" alt="GDEH Logo">
+    </div>
+
+    <!-- Navigation links row below -->
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="teamcbo.html">Team</a>
+      <a href="landing.html">Partnerships</a>
+      <a href="explore.html">Explore</a>
+      <a href="contact.html">Contact</a>
+      <a href="courses.html">Our Programmes</a>
+      <a href="https://gdehworkshops.onrender.com" target="_blank">Workshops</a>
+      <a href="https://gdeh-student-portal-1.onrender.com" target="_blank">Student Portal</a>
+    </nav>
+
+  </header>
+</div>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero-section">
+  <div class="hero-grid">
+
+    <!-- LEFT -->
+    <div class="hero-card">
+      <div>
+        <h1 class="welcome-title">Welcome To GDEH CBO</h1>
+        <p class="hero-text">
+          Garissa Digital Empowerment Hub (GDEH CBO)
+          empowers youth, women, PWDs and communities
+          through digital innovation, entrepreneurship,
+          technology access and modern skills development.
+          <br><br>
+          We provide practical digital training,
+          ICT workshops, mentorship and empowerment
+          programmes designed to create opportunities
+          for the next generation.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="slider-card">
+      <div class="slider">
+        <div class="slides">
+          <img src="img1.jpeg" alt="GDEH Activity 1">
+          <img src="img2.jpeg" alt="GDEH Activity 2">
+          <img src="img3.jpeg" alt="GDEH Activity 3">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     INTRO SECTION (WHITE, POPPINS, CENTERED)
+========================= -->
+
+<section class="intro-section">
+  <div class="intro-box">
+    
+    <h2 class="intro-title">Admissions Open</h2>
+
+    <p class="intro-text">
+      Are you a youth, person living with disability (PWD),
+      entrepreneur or someone passionate about digital
+      empowerment and innovation?
+      <br><br>
+      Admissions are now open for our digital training,
+      ICT workshops and empowerment programmes.
+      Join our growing innovation community and gain
+      modern digital skills for the future.
+    </p>
+
+    <a href="apply.html" class="apply-btn">Apply Now</a>
+
+  </div>
+</section>
+
+
 
 /* =========================
    DARK ORANGE SECTION
