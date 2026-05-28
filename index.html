@@ -4,19 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>GDEH CBO</title>
-
-<!-- Load Poppins Font -->
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
+/* GLOBAL */
 *{
   margin:0;
   padding:0;
@@ -34,85 +29,58 @@ body{
   font-family: Arial, sans-serif;
 }
 
-/* =========================
-   DARK ORANGE CONTAINER (WRAPPER)
-========================= */
-
+/* WRAPPER */
 .orange-wrapper {
   background:#a84f00;
-  color:#ffffff;
+  color:#fff;
   width:100%;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* HEADER */
 .header{
   width:100%;
   background:#a84f00;
-  border-bottom:1px solid rgba(255, 255, 255, 0.1);
   padding:16px 18px;
   display:flex;
-  flex-direction:column; /* Stacks logo top, links bottom */
-  align-items:flex-start;
+  flex-direction:column;
   gap:15px;
   position:sticky;
   top:0;
   z-index:1000;
 }
 
-/* LOGO CONTAINER */
-
 .logo-box {
   width:45px;
   height:45px;
-  background:#ffffff;
+  background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:4px;
-  padding:4px;
 }
 
 .logo{
   max-width:100%;
   max-height:100%;
-  object-fit:contain;
 }
 
-/* NAVIGATION BELOW LOGO */
-
+/* NAV */
 .nav-links{
   display:flex;
   gap:16px;
-  flex-wrap:nowrap; /* Restricts links to a single line */
-  align-items:center;
-  overflow-x:auto; /* Horizontal scroll if screen space runs out */
+  overflow-x:auto;
   width:100%;
-}
-
-.nav-links::-webkit-scrollbar {
-  display:none; /* Hides horizontal scroll bar layout */
 }
 
 .nav-links a{
   text-decoration:none;
-  color:#ffffff;
+  color:#fff;
   font-size:11px;
-  transition:0.3s ease;
   font-weight:600;
   white-space:nowrap;
 }
 
-.nav-links a:hover{
-  color:#ffd2a6;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-
+/* HERO */
 .hero-section{
   background:#a84f00;
   padding:20px 15px 50px;
@@ -124,54 +92,42 @@ body{
   gap:18px;
 }
 
-/* HERO CARD */
-
 .hero-card{
-  background:rgba(255, 255, 255, 0.05);
-  border:1px solid rgba(255, 255, 255, 0.15);
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
   border-radius:20px;
   padding:25px;
-  display:flex;
-  align-items:center;
   min-height:320px;
 }
 
 .welcome-title{
-  color:#ffffff;
+  color:#fff;
   font-size:16px;
   margin-bottom:15px;
   text-transform:uppercase;
-  letter-spacing:1px;
 }
 
 .hero-text{
-  color:#ffffff;
+  color:#fff;
   line-height:1.9;
   font-size:12px;
 }
 
-/* =========================
-   SLIDER
-========================= */
-
+/* SLIDER */
 .slider-card{
-  background:white;
-  border:1px solid #eee;
+  background:#fff;
   border-radius:20px;
   overflow:hidden;
 }
 
 .slider{
-  width:100%;
   height:320px;
   overflow:hidden;
-  border-radius:20px;
 }
 
 .slides{
   display:flex;
   width:300%;
-  height:100%;
   animation:slide 15s infinite ease-in-out;
 }
 
@@ -182,41 +138,28 @@ body{
 }
 
 @keyframes slide{
-  0%,25%{ transform:translateX(0); }
-  33%,58%{ transform:translateX(-100%); }
-  66%,91%{ transform:translateX(-200%); }
-  100%{ transform:translateX(0); }
+  0%,25%{transform:translateX(0);}
+  33%,58%{transform:translateX(-100%);}
+  66%,91%{transform:translateX(-200%);}
+  100%{transform:translateX(0);}
 }
 
-/* =========================
-   INTRO SECTION (WHITE & POPPINS)
-========================= */
-
+/* INTRO */
 .intro-section{
-  background:white;
-  padding:50px 15px;
-  font-family: 'Poppins', sans-serif; /* Explicit font upgrade */
-}
-
-.intro-box{
   background:#fff;
+  padding:50px 15px;
+  font-family:'Poppins', sans-serif;
   text-align:center;
-  max-width:950px;
-  margin:auto;
 }
 
-.intro-title {
-  font-family: 'Poppins', sans-serif;
+.intro-title{
   color:#a84f00;
   font-size:22px;
   font-weight:700;
   margin-bottom:20px;
-  text-transform:uppercase;
-  letter-spacing:1px;
 }
 
 .intro-text{
-  font-family: 'Poppins', sans-serif;
   font-size:13px;
   color:#444;
   line-height:2;
@@ -224,39 +167,22 @@ body{
   margin:auto;
 }
 
-/* CTA BUTTON */
-
 .apply-btn{
   display:inline-block;
   margin-top:25px;
   padding:12px 26px;
   background:#a84f00;
-  color:white;
+  color:#fff;
   text-decoration:none;
   border-radius:30px;
-  font-size:12px;
   font-weight:bold;
-  transition:0.3s ease;
-  box-shadow:0 0 15px rgba(168,79,0,0.3);
 }
 
-.apply-btn:hover{
-  transform:translateY(-2px);
-  background:#c45d00;
-}
-
-/* =========================
-   DARK ORANGE SECTION
-========================= */
-
+/* ORANGE SECTION */
 .orange-section{
   background:#a84f00;
   padding:50px 20px;
 }
-
-/* =========================
-   LINKS SECTION
-========================= */
 
 .link-section{
   max-width:900px;
@@ -268,65 +194,36 @@ body{
   border-bottom:1px solid rgba(255,255,255,0.4);
 }
 
-.link-item:last-child{
-  border-bottom:none;
-}
-
 .link-title{
-  color:white;
+  color:#fff;
   font-size:16px;
   font-weight:bold;
-  margin-bottom:10px;
 }
 
 .link-text{
   color:rgba(255,255,255,0.9);
-  line-height:1.9;
   font-size:12px;
-  margin-bottom:10px;
+  line-height:1.9;
+  margin:10px 0;
 }
 
 .link-btn{
-  text-decoration:none;
-  color:white;
+  color:#fff;
   font-size:12px;
   font-weight:bold;
-  transition:0.3s ease;
+  text-decoration:none;
 }
 
-.link-btn:hover{
-  opacity:0.7;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 .footer{
-  width:100%;
   background:#a84f00;
-  color:white;
+  color:#fff;
   text-align:center;
   padding:20px;
   font-size:11px;
-  font-weight:bold;
-  margin-top:auto;
 }
 
-.footer a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.footer a:hover{
-  text-decoration:underline;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media(max-width:900px){
   .hero-grid{
     grid-template-columns:1fr;
@@ -338,65 +235,45 @@ body{
 
 <body>
 
-<!-- =========================
-     HEADER (WRAPPED)
-========================= -->
-
+<!-- HEADER -->
 <div class="orange-wrapper">
   <header class="header">
 
-    <!-- Logo top left inside box -->
     <div class="logo-box">
-      <img src="gdeh_logo.png" class="logo" alt="GDEH Logo">
+      <img src="gdeh_logo.png" class="logo" alt="Logo">
     </div>
 
-    <!-- Navigation links row below -->
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="teamcbo.html">Team</a>
       <a href="landing.html">Partnerships</a>
       <a href="explore.html">Explore</a>
       <a href="contact.html">Contact</a>
-      <a href="courses.html">Our Programmes</a>
-      <a href="https://gdehworkshops.onrender.com" target="_blank">Workshops</a>
-      <a href="https://gdeh-student-portal-1.onrender.com" target="_blank">Student Portal</a>
+      <a href="courses.html">Programmes</a>
+      <a href="https://gdehworkshops.onrender.com">Workshops</a>
+      <a href="https://gdeh-student-portal-1.onrender.com">Student Portal</a>
     </nav>
 
   </header>
 </div>
 
-<!-- =========================
-     HERO SECTION
-========================= -->
-
+<!-- HERO -->
 <section class="hero-section">
   <div class="hero-grid">
 
-    <!-- LEFT -->
     <div class="hero-card">
-      <div>
-        <h1 class="welcome-title">Welcome To GDEH CBO</h1>
-        <p class="hero-text">
-          Garissa Digital Empowerment Hub (GDEH CBO)
-          empowers youth, women, PWDs and communities
-          through digital innovation, entrepreneurship,
-          technology access and modern skills development.
-          <br><br>
-          We provide practical digital training,
-          ICT workshops, mentorship and empowerment
-          programmes designed to create opportunities
-          for the next generation.
-        </p>
-      </div>
+      <h1 class="welcome-title">Welcome To GDEH CBO</h1>
+      <p class="hero-text">
+        Garissa Digital Empowerment Hub empowers youth, women, PWDs and communities through digital innovation and skills development.
+      </p>
     </div>
 
-    <!-- RIGHT -->
     <div class="slider-card">
       <div class="slider">
         <div class="slides">
-          <img src="img1.jpeg" alt="GDEH Activity 1">
-          <img src="img2.jpeg" alt="GDEH Activity 2">
-          <img src="img3.jpeg" alt="GDEH Activity 3">
+          <img src="img1.jpeg">
+          <img src="img2.jpeg">
+          <img src="img3.jpeg">
         </div>
       </div>
     </div>
@@ -404,384 +281,49 @@ body{
   </div>
 </section>
 
-<!-- =========================
-     INTRO SECTION (WHITE, POPPINS, CENTERED)
-========================= -->
-
-<section class="intro-section">
-  <div class="intro-box">
-    
-    <h2 class="intro-title">Admissions Open</h2>
-
-    <p class="intro-text">
-      Are you a youth, person living with disability (PWD),
-      entrepreneur or someone passionate about digital
-      empowerment and innovation?
-      <br><br>
-      Admissions are now open for our digital training,
-      ICT workshops and empowerment programmes.
-      Join our growing innovation community and gain
-      modern digital skills for the future.
-    </p>
-
-    <a href="apply.html" class="apply-btn">Apply Now</a>
-
-  </div>
-</section>
-
-
-
-/* =========================
-   DARK ORANGE SECTION
-========================= */
-
-.orange-section{
-  background:#a84f00;
-  padding:50px 20px;
-}
-
-/* =========================
-   LINKS SECTION
-========================= */
-
-.link-section{
-  max-width:900px;
-  margin:auto;
-}
-
-.link-item{
-  padding:25px 0;
-  border-bottom:1px solid rgba(255,255,255,0.4);
-}
-
-.link-item:last-child{
-  border-bottom:none;
-}
-
-.link-title{
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.link-text{
-  color:rgba(255,255,255,0.9);
-  line-height:1.9;
-  font-size:12px;
-  margin-bottom:10px;
-}
-
-.link-btn{
-  text-decoration:none;
-  color:white;
-  font-size:12px;
-  font-weight:bold;
-  transition:0.3s ease;
-}
-
-.link-btn:hover{
-  opacity:0.7;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-  width:100%;
-  background:#a84f00;
-  color:white;
-  text-align:center;
-  padding:20px;
-  font-size:11px;
-  font-weight:bold;
-  margin-top:auto;
-}
-
-.footer a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.footer a:hover{
-  text-decoration:underline;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:12px;
-  }
-
-  .nav-links{
-    justify-content:flex-start;
-  }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="header">
-
-  <div class="logo-group">
-
-    <img src="gdeh_logo.png"
-         class="logo"
-         alt="GDEH Logo">
-
-    <div class="brand-name">
-      Garissa Digital Empowerment Hub CBO 
-    </div>
-
-  </div>
-
-  <!-- NAVIGATION -->
-
-  <nav class="nav-links">
-
-    <a href="index.html">Home</a>
-    <a href="teamcbo.html">Team</a>
-    <a href="landing.html">Partnerships</a>
-    <a href="explore.html">Explore</a>
-    <a href="contact.html">Contact</a>
-    <a href="courses.html">Our Programmes</a>
-
-    <a href="https://gdehworkshops.onrender.com"
-       target="_blank">
-       Workshops
-    </a>
-
-    <a href="https://gdeh-student-portal-1.onrender.com"
-       target="_blank">
-       Student Portal
-    </a>
-
-  </nav>
-
-</header>
-
-<!-- =========================
-     HERO SECTION
-========================= -->
-
-<section class="hero-section">
-
-  <div class="hero-grid">
-
-    <!-- LEFT -->
-
-    <div class="hero-card">
-
-      <div>
-
-        <h1 class="welcome-title">
-          Welcome To GDEH CBO
-        </h1>
-
-        <p class="hero-text">
-
-          Garissa Digital Empowerment Hub (GDEH CBO)
-          empowers youth, women, PWDs and communities
-          through digital innovation, entrepreneurship,
-          technology access and modern skills development.
-
-          <br><br>
-
-          We provide practical digital training,
-          ICT workshops, mentorship and empowerment
-          programmes designed to create opportunities
-          for the next generation.
-
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- RIGHT -->
-
-    <div class="slider-card">
-
-      <div class="slider">
-
-        <div class="slides">
-
-          <img src="img1.jpeg" alt="">
-          <img src="img2.jpeg" alt="">
-          <img src="img3.jpeg" alt="">
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =========================
-     INTRO
-========================= -->
-
+<!-- INTRO -->
 <section class="intro-section">
 
-  <div class="intro-box">
+  <h2 class="intro-title">Admissions Open</h2>
 
-    <p class="intro-text">
+  <p class="intro-text">
+    Admissions are now open for digital training and ICT programmes.
+  </p>
 
-      Are you a youth, person living with disability (PWD),
-      entrepreneur or someone passionate about digital
-      empowerment and innovation?
-
-      <br><br>
-
-      Admissions are now open for our digital training,
-      ICT workshops and empowerment programmes.
-
-      Join our growing innovation community and gain
-      modern digital skills for the future.
-
-    </p>
-
-    <a href="apply.html" class="apply-btn">
-
-      Apply Now
-
-    </a>
-
-  </div>
+  <a class="apply-btn" href="apply.html">Apply Now</a>
 
 </section>
 
-<!-- =========================
-     DARK ORANGE SECTION
-========================= -->
-
+<!-- LINKS -->
 <section class="orange-section">
 
   <div class="link-section">
 
-    <!-- TEAM -->
-
     <div class="link-item">
-
-      <div class="link-title">
-
-        Meet Our Team
-
-      </div>
-
-      <div class="link-text">
-
-        Learn more about our leadership,
-        trainers and community innovators.
-
-      </div>
-
-      <a href="teamcbo.html"
-         class="link-btn">
-
-         View Team →
-
-      </a>
-
+      <div class="link-title">Meet Our Team</div>
+      <div class="link-text">Learn about leadership and trainers.</div>
+      <a class="link-btn" href="teamcbo.html">View →</a>
     </div>
 
-    <!-- PARTNERS -->
-
     <div class="link-item">
-
-      <div class="link-title">
-
-        Partnerships
-
-      </div>
-
-      <div class="link-text">
-
-        Support our mission through collaborations,
-        sponsorships and youth empowerment projects.
-
-      </div>
-
-      <a href="landing.html"
-         class="link-btn">
-
-         Learn More →
-
-      </a>
-
+      <div class="link-title">Partnerships</div>
+      <div class="link-text">Collaborate and support our mission.</div>
+      <a class="link-btn" href="landing.html">Learn →</a>
     </div>
 
-    <!-- PROGRAMS -->
-
     <div class="link-item">
-
-      <div class="link-title">
-
-        Explore Programs
-
-      </div>
-
-      <div class="link-text">
-
-        Discover digital skills training,
-        ICT workshops and innovation opportunities.
-
-      </div>
-
-      <a href="explore.html"
-         class="link-btn">
-
-         Explore →
-
-      </a>
-
+      <div class="link-title">Explore Programs</div>
+      <div class="link-text">Discover training opportunities.</div>
+      <a class="link-btn" href="explore.html">Explore →</a>
     </div>
 
   </div>
 
 </section>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
+<!-- FOOTER -->
 <footer class="footer">
-
-  © GDEH CBO |
-  Digital Empowerment &
-  Innovation Hub
-
-  <br><br>
-
-  <a href="privacy_terms.html">
-
-    Privacy Policy |
-    Terms & Conditions
-
-  </a>
-
+  © GDEH CBO | Digital Empowerment Hub
 </footer>
 
 </body>
