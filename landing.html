@@ -6,208 +6,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* ===== GLOBAL STYLE ===== */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
-
-body{
-  background:#fff;
-  color:#333;
-  padding:20px;
-}
+/* ===== GLOBAL ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#fff;color:#111;font-size:10px;padding:20px;}
 
 /* ===== HEADER ===== */
-.header{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  margin-bottom:25px;
-}
+.header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.logo{width:80px;height:auto;}
+.header-content h1{font-size:14px;color:#001f3f;font-weight:700;margin-bottom:4px;}
+.header-content p{font-size:9px;font-style:italic;color:#555;}
 
-.logo{
-  width:120px;
-  height:auto;
-}
-
-.header-content h1{
-  font-size:22px;
-  color:#B8860B;
-  margin-bottom:5px;
-  font-weight:600;
-}
-
-.header-content p{
-  font-size:12px;
-  font-style:italic;
-  color:#666;
-}
-
-/* ===== FORM CONTAINER ===== */
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
+/* ===== CONTAINER ===== */
+.container{max-width:900px;margin:auto;padding:15px;}
 
 /* ===== SECTION TITLE ===== */
-.section-title{
-  border-left:4px solid #C49A00;
-  padding-left:10px;
-  margin-top:25px;
-  margin-bottom:15px;
+.section-title{border-left:3px solid #001f3f;padding-left:8px;margin:18px 0 12px;font-size:10px;color:#001f3f;font-weight:600;}
 
-  font-size:12px;
-  color:#003366;
-  font-weight:600;
-}
-
-/* ===== LABEL ===== */
-label{
-  display:block;
-  margin-bottom:5px;
-  font-size:11px;
-  color:#444;
-}
-
-/* ===== REQUIRED ===== */
-.required{
-  color:red;
-}
+/* ===== LABELS ===== */
+label{display:block;margin-top:6px;margin-bottom:3px;font-size:9px;color:#001f3f;}
+.required{color:red;}
 
 /* ===== INPUTS ===== */
-input,
-select,
-textarea{
-  width:100%;
-  padding:9px;
-  margin-top:6px;
-  margin-bottom:15px;
-
-  border:1px solid #ddd;
-  border-radius:6px;
-
-  font-size:12px;
-  background:#fff;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  outline:none;
-  border:1px solid #B8860B;
-  box-shadow:0 0 5px rgba(184,134,11,0.3);
-}
+input,select,textarea{width:100%;padding:7px;border:1px solid #ddd;border-radius:6px;font-size:9px;color:#111;background:#fff;margin-bottom:12px;}
+input:focus,select:focus,textarea:focus{outline:none;border:1px solid #001f3f;box-shadow:0 0 6px rgba(0,31,63,0.2);}
+textarea{resize:vertical;min-height:70px;}
 
 /* ===== CHECKBOX GROUP ===== */
-.checkbox-group{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:10px;
-}
-
-.checkbox-group label{
-  font-size:11px;
-}
+.checkbox-group{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.checkbox-group label{font-size:9px;color:#333;}
 
 /* ===== BUTTONS ===== */
-.donate-btn,
-.submit-btn{
-  width:auto;
-  min-width:160px;
+.donate-btn,.submit-btn{padding:7px 16px;border:none;border-radius:20px;font-size:9px;cursor:pointer;color:#fff;background:#001f3f;box-shadow:0 0 10px rgba(0,31,63,0.4);transition:0.3s ease;margin:15px auto;display:block;}
+.donate-btn:hover,.submit-btn:hover{background:#002b5c;transform:translateY(-1px);box-shadow:0 0 14px rgba(0,31,63,0.6);}
+.donate-btn:active,.submit-btn:active{transform:scale(0.96);}
 
-  padding:10px 18px;
-  border:none;
-  border-radius:8px;
-
-  font-size:13px;
-  cursor:pointer;
-  color:#fff;
-
-  background:#B8860B;
-
-  display:block;
-  margin:18px auto;
-
-  transition:0.3s ease;
-}
-
-.donate-btn:hover,
-.submit-btn:hover{
-  background:#C49A00;
-  transform:translateY(-2px);
-}
-
-.donate-btn:active,
-.submit-btn:active{
-  transform:scale(0.96);
-}
-
-/* ===== FILE BUTTON ===== */
-.file-upload::file-selector-button{
-  background:#B8860B;
-  color:white;
-  border:none;
-  padding:6px 10px;
-  border-radius:5px;
-  cursor:pointer;
-}
+/* ===== FILE UPLOAD ===== */
+.file-upload::file-selector-button{background:#001f3f;color:white;border:none;padding:5px 8px;border-radius:5px;cursor:pointer;font-size:9px;}
 
 /* ===== CONSENT ===== */
-.consent-section{
-  margin-top:15px;
-}
+.consent-section{margin-top:12px;}
+.consent-section p{font-size:9px;margin-bottom:8px;line-height:1.5;}
+.consent-section a{color:#001f3f;text-decoration:none;}
+.consent-section a:hover{text-decoration:underline;}
+.consent-section label{font-size:9px;color:#333;}
 
-.consent-section p{
-  font-size:11px;
-  margin-bottom:10px;
-  line-height:1.6;
-}
+/* ===== CAPTCHA ===== */
+#captchaBox{text-align:center;margin-top:15px;}
+#captchaImage{border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);}
+#captchaInput{padding:6px;margin-top:6px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;}
+#captchaBox a{font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;}
+#captchaBox a:hover{text-decoration:underline;}
 
-.consent-section a{
-  color:#B8860B;
-  text-decoration:none;
-}
 
-.consent-section a:hover{
-  text-decoration:underline;
-}
 
-/* ===== FOOTER ===== */
-.footer{
-  text-align:center;
-  padding:15px;
-  margin-top:30px;
-
-  border-top:1px solid #eee;
-
-  font-size:12px;
-  color:#B8860B;
-}
 
 /* ===== MOBILE ===== */
 @media(max-width:768px){
+  .header{flex-direction:column;text-align:center;}
+  .logo{width:60px;}
+  .header-content h1{font-size:12px;}
+}
+/* ===== FOOTER ===== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 
-  .header{
-    flex-direction:column;
-    text-align:center;
-  }
+  background: #001f3f;   /* dark navy */
+  color: white;
+  text-align: center;
 
-  .logo{
-    width:70px;
-  }
+  padding: 20px 12px 12px; /* extra top padding */
+  font-size: 9px;
+  font-weight: 600;
 
-  .header-content h1{
-    font-size:18px;
-  }
-
+  z-index: 100;
 }
 
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 80px; /* reserve space for sticky footer */
+}
 </style>
 </head>
 
@@ -215,314 +98,94 @@ textarea:focus{
 
 <!-- ===== HEADER ===== -->
 <header class="header">
-
-  <img src="gdeh_logo.png"
-       alt="GDEH Logo"
-       class="logo">
-
+  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
   <div class="header-content">
-
-    <h1>
-      Garissa Digital Empowerment Hub
-    </h1>
-
-    <p>
-      Empowering youth through digital literacy and innovation
-    </p>
-
+    <h1>Garissa Digital Empowerment Hub</h1>
+    <p>Empowering youth through digital literacy and innovation</p>
   </div>
-
 </header>
 
 <!-- ===== FORM ===== -->
 <div class="container">
-
 <form>
-
-<!-- SECTION A -->
-<div class="section-title">
-A. Donor / Partner Information
-</div>
-
-<label>
-Full Name / Organization Name
-<span class="required">*</span>
-</label>
-
-<input type="text"
-       placeholder="Enter full name or organization"
-       required>
-
-<label>
-Email Address
-<span class="required">*</span>
-</label>
-
-<input type="email"
-       placeholder="Enter email"
-       required>
-
-<label>
-Phone Number
-<span class="required">*</span>
-</label>
-
-<input type="tel"
-       placeholder="Enter phone number"
-       required>
-
-<label>
-Country
-<span class="required">*</span>
-</label>
-
-<select required>
-
-<option value="">
-Select Country
-</option>
-
-<option>Kenya</option>
-<option>Somalia</option>
-<option>Uganda</option>
-<option>Tanzania</option>
-<option>United States</option>
-<option>United Kingdom</option>
-<option>Canada</option>
-<option>Germany</option>
-<option>Qatar</option>
-<option>United Arab Emirates</option>
-
-</select>
-
-<label>
-Preferred Contact Method
-<span class="required">*</span>
-</label>
-
-<select required>
-
-<option>Email</option>
-<option>Phone</option>
-<option>WhatsApp</option>
-
-</select>
-
-<!-- SECTION B -->
-<div class="section-title">
-B. Type of Support
-</div>
-
-<div class="checkbox-group">
-
-<label>
-<input type="checkbox" required>
-Financial Donation
-</label>
-
-<label>
-<input type="checkbox">
-Equipment / Devices
-</label>
-
-<label>
-<input type="checkbox">
-Training / Mentorship
-</label>
-
-<label>
-<input type="checkbox">
-Partnership / Sponsorship
-</label>
-
-<label>
-<input type="checkbox">
-Volunteer Support
-</label>
-
-</div>
-
-<!-- SECTION C -->
-<div class="section-title">
-C. Contribution Details
-</div>
-
-<label>
-Amount / Type of Donation
-<span class="required">*</span>
-</label>
-
-<input type="text"
-       required>
-
-<label>
-Frequency
-<span class="required">*</span>
-</label>
-
-<select required>
-
-<option>One-time</option>
-<option>Monthly</option>
-<option>Annual</option>
-
-</select>
-
-<button type="button"
-        class="donate-btn"
-        onclick="payNow()">
-
-Donate Now
-
-</button>
-
-<label>
-Upload Proof (Optional)
-</label>
-
-<input type="file"
-       class="file-upload">
-
-<!-- SECTION D -->
-<div class="section-title">
-D. Collaboration Proposal
-</div>
-
-<form id="collabForm">
-  <label>
-    Organization Background
-    <span class="required">*</span>
-  </label>
-  <textarea rows="3" required></textarea>
-
-  <label>
-    Proposed Area of Collaboration
-    <span class="required">*</span>
-  </label>
-  <textarea rows="3" required></textarea>
-
-  <label>
-    Expected Outcomes
-    <span class="required">*</span>
-  </label>
-  <textarea rows="3" required></textarea>
-
-  <label>
-    Duration / Commitment Level
-    <span class="required">*</span>
-  </label>
+  <!-- SECTION A -->
+  <div class="section-title">A. Donor / Partner Information</div>
+  <label>Full Name / Organization Name <span class="required">*</span></label>
   <input type="text" required>
+  <label>Email Address <span class="required">*</span></label>
+  <input type="email" required>
+  <label>Phone Number <span class="required">*</span></label>
+  <input type="tel" required>
+  <label>Country <span class="required">*</span></label>
+  <select required><option value="">Select Country</option><option>Kenya</option><option>Somalia</option></select>
+  <label>Preferred Contact Method <span class="required">*</span></label>
+  <select required><option>Email</option><option>Phone</option><option>WhatsApp</option></select>
 
-  <label>
-    Attach Proposal Document (Optional)
-  </label>
+  <!-- SECTION B -->
+  <div class="section-title">B. Type of Support</div>
+  <div class="checkbox-group">
+    <label><input type="checkbox" required> Financial Donation</label>
+    <label><input type="checkbox"> Equipment / Devices</label>
+    <label><input type="checkbox"> Training / Mentorship</label>
+    <label><input type="checkbox"> Partnership / Sponsorship</label>
+    <label><input type="checkbox"> Volunteer Support</label>
+  </div>
+
+  <!-- SECTION C -->
+  <div class="section-title">C. Contribution Details</div>
+  <label>Amount / Type of Donation <span class="required">*</span></label>
+  <input type="text" required>
+  <label>Frequency <span class="required">*</span></label>
+  <select required><option>One-time</option><option>Monthly</option><option>Annual</option></select>
+  <button type="button" class="donate-btn" onclick="payNow()">Donate Now</button>
+  <label>Upload Proof (Optional)</label>
+  <input type="file" class="file-upload">
+
+  <!-- SECTION D -->
+  <div class="section-title">D. Collaboration Proposal</div>
+  <label>Organization Background <span class="required">*</span></label>
+  <textarea rows="3" required></textarea>
+  <label>Proposed Area of Collaboration <span class="required">*</span></label>
+  <textarea rows="3" required></textarea>
+  <label>Expected Outcomes <span class="required">*</span></label>
+  <textarea rows="3" required></textarea>
+  <label>Duration / Commitment Level <span class="required">*</span></label>
+  <input type="text" required>
+  <label>Attach Proposal Document (Optional)</label>
   <input type="file" class="file-upload" accept=".pdf,.doc,.docx">
-<!-- SECTION E -->
-<div class="section-title">
-E. Consent & Acknowledgment
-</div>
 
-<div class="consent-section">
+  <!-- SECTION E -->
+  <div class="section-title">E. Consent & Acknowledgment</div>
+  <div class="consent-section">
+    <p>By continuing, you agree to the <a href="privacy_terms.html" target="_blank">Privacy Policy & Terms</a> of Garissa Digital Empowerment Hub CBO.</p>
+    <label><input type="checkbox" id="consentCheck" required> I confirm that I have read and agree to the Privacy Policy and Terms & Conditions.</label>
+  </div>
 
-<p>
-By continuing, you agree to the
-<a href="privacy_terms.html"
-   target="_blank">
-
-Privacy Policy & Terms and Conditions
-
-</a>
-of Garissa Digital Empowerment Hub CBO.
-</p>
-
-<label>
-
-<input type="checkbox"
-       id="consentCheck"
-       required>
-
-I confirm that I have read and agree to the Privacy Policy and Terms & Conditions, and consent to the use of my information for communication and partnership purposes.
-
-</label>
-
-</div>
-<!-- CAPTCHA BOX -->
-<div id="captchaBox">
-
-    <img
-        id="captchaImage"
-        alt="CAPTCHA"
-        width="220"
-        height="80"
-        style="
-            border:1px solid #ddd;
-            border-radius:8px;
-            display:block;
-            margin:auto;
-            background:#f5f5f5;
-        "
-    >
-
+  <!-- CAPTCHA -->
+  <div id="captchaBox">
+    <img id="captchaImage" alt="CAPTCHA" width="180" height="60">
     <br>
-
-    <!-- LABEL + REFRESH ICON -->
-    <label style="display:flex;align-items:center;gap:8px;">
-        Enter CAPTCHA
-        <span
-            onclick="openCaptcha()"
-            style="cursor:pointer;font-size:14px;"
-            title="Refresh CAPTCHA"
-        >
-            🔄
-        </span>
+    <label style="display:flex;align-items:center;gap:6px;justify-content:center;font-size:9px;color:#001f3f;">
+      Enter CAPTCHA
+      <a href="#" onclick="openCaptcha();return false;" style="color:#001f3f;font-size:12px;text-decoration:none;cursor:pointer;" title="Refresh CAPTCHA">&#x21bb;</a>
     </label>
-
-    <input
-        type="text"
-        id="captchaInput"
-        placeholder="Enter CAPTCHA"
-        style="
-            padding:10px;
-            margin-top:10px;
-            width:220px;
-            border:1px solid #ddd;
-            border-radius:6px;
-            font-size:11px;
-        "
-    >
-
-    <!-- VERIFY AS TEXT LINK -->
-    <div style="margin-top:10px;">
-        <a
-            href="#"
-            onclick="verifyCaptcha();return false;"
-            style="
-                font-size:11px;
-                color:#a84f00;
-                font-weight:bold;
-                text-decoration:none;
-                cursor:pointer;
-            "
-        >
-            Verify CAPTCHA
-        </a>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
+    <div style="margin-top:8px;">
+      <a href="#" onclick="verifyCaptcha();return false;">Verify CAPTCHA</a>
     </div>
+  </div>
 
-</div>
-<!-- SUBMIT BUTTON -->
-<button type="submit" class="submit-btn">Submit Collaboration</button>
+  <!-- SUBMIT -->
+  <button type="submit" class="submit-btn">Submit Collaboration</button>
 </form>
-
 </div>
-
 <!-- ===== FOOTER ===== -->
 <div class="footer">
-
-© 2026 Garissa Digital Empowerment Hub |
-All Rights Reserved
-
+  <p>© 2026 Garissa Digital Empowerment Hub | All Rights Reserved</p>
+  <div class="footer-links">
+    <a href="privacy_terms.html" target="_blank">Privacy & Terms</a>
+  </div>
 </div>
-
 <script>
 
 function payNow(){
@@ -552,6 +215,5 @@ window.location.href =
 
 </script>
   <script src="captcha.js"></script>
-
-</body>
-</html>
+  </head>
+  </html>
