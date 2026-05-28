@@ -6,343 +6,197 @@
 <title>Garissa Digital Empowerment Hub CBO</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    background:#ffffff;
-    color:#000;
-    font-size:12px;
-    line-height:1.8;
-    min-height:100vh;
+body {
+  background: #ffffff;       /* uniform white background */
+  color: #000;               /* black text */
+  font-size: 12px;
+  line-height: 1.8;
+  min-height: 100vh;
+  text-align: left;          /* align all text left */
 }
 
 /* HEADER */
-.header{
-    display:flex;
-    align-items:center;
-    padding:12px 18px;
-    background:transparent;
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: transparent;
+  position: relative;
 }
 
-.logo{
-    width:65px;
-    height:auto;
+.logo {
+  width: 65px;
+  height: auto;
 }
 
-/* HOME LINK */
-.home-link{
-    position:fixed;
-    top:15px;
-    right:18px;
-    color:darkorange;
-    text-decoration:none;
-    font-size:10px;
-    transition:0.3s;
+/* BACK TO HOME LINK */
+.home-link {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: #000;               /* black link */
+  text-decoration: none;
+  font-size: 11px;
+  transition: 0.3s;
 }
 
-.home-link:hover{
-    text-decoration:underline;
-}
-
-/* TOP CENTER */
-.top-center{
-    text-align:center;
-    margin-top:10px;
-}
-
-.link-text{
-    color:darkorange;
-    font-size:10px;
-    text-decoration:none;
-}
-
-.link-text:hover{
-    text-decoration:underline;
+.home-link:hover {
+  text-decoration: underline;
 }
 
 /* SECTION TITLES */
-.link-heading{
-    color:#000;
-    cursor:pointer;
-    margin:14px 15px;
-    display:block;
-    font-size:13px;
-    font-weight:600;
-    transition:0.3s;
+.link-heading {
+  color: #001f3f;            /* dark navy */
+  margin: 14px 15px;
+  display: block;
+  font-size: 12px;           /* small font */
+  font-weight: 700;          /* bold */
+  border-top: 2px solid #001f3f;   /* dark navy horizontal line above */
+  padding-top: 10px;
+  text-align: left;
 }
 
-.link-heading:hover{
-    color:darkorange;
+/* CONTENT BOXES */
+.card {
+  display: block;             /* always visible */
+  background: #ffffff;
+  border-top: 1px solid #001f3f;   /* dark navy line separating content */
+  border-radius: 0;
+  padding: 18px;
+  margin: 0 15px 20px;
+  text-align: left;
 }
 
-/* SIMPLE WHITE BOX */
-.card{
-    display:none;
-    background:#ffffff;
-    border:1px solid #f1f1f1;
-    border-radius:10px;
-    padding:18px;
-    margin:10px 15px;
-}
-
-/* HEADINGS */
-h2,h3{
-    color:#000;
-    font-size:13px;
-    margin-bottom:10px;
-}
-
-/* TEXT */
-.card p{
-    color:#000;
-    font-size:11px;
-    line-height:1.8;
-    margin-bottom:12px;
+.card p {
+  color: #000;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 /* FOOTER */
-footer{
-    text-align:center;
-    padding:18px;
-    margin-top:30px;
-    border-top:1px solid #ececec;
-    background:transparent;
+footer {
+  text-align: center;
+  padding: 18px;
+  border-top: 2px solid #001f3f;
+  background: #001f3f;        /* dark navy footer */
+  position: sticky;
+  bottom: 0;
 }
 
-footer p{
-    color:darkorange;
-    font-size:11px;
-    margin:4px 0;
+footer p {
+  color: #66a3ff;             /* elegant blue text */
+  font-size: 11px;
+  margin: 4px 0;
 }
 
-footer a{
-    color:darkorange;
-    text-decoration:none;
-    font-size:11px;
+footer a {
+  color: #66a3ff;             /* elegant blue links */
+  text-decoration: none;
+  font-size: 11px;
 }
 
-footer a:hover{
-    text-decoration:underline;
+footer a:hover {
+  text-decoration: underline;
+  color: #99c2ff;             /* lighter blue hover */
 }
-
 </style>
-
-<script>
-
-function toggleCard(id){
-
-    let card = document.getElementById(id);
-
-    card.style.display =
-    (card.style.display === "block")
-    ? "none"
-    : "block";
-}
-
-function toggleAll(event){
-
-    event.preventDefault();
-
-    let cards =
-    document.querySelectorAll(".card");
-
-    let anyOpen =
-    Array.from(cards).some(
-    c => c.style.display === "block"
-    );
-
-    cards.forEach(c => {
-
-        c.style.display =
-        anyOpen ? "none" : "block";
-
-    });
-}
-
-</script>
-
 </head>
 
 <body>
 
 <div class="header">
-
-    <img src="gdeh_logo.png"
-    alt="GDEH Logo"
-    class="logo">
-
-</div>
-
-<a href="index.html"
-class="home-link">
-Back to Home
-</a>
-
-<div class="top-center">
-
-<a href="#"
-class="link-text"
-onclick="toggleAll(event)">
-Expand / Collapse All
-</a>
-
+  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+  <a href="index.html" class="home-link">Back to Home</a>
 </div>
 
 <!-- ABOUT -->
-
-<span class="link-heading"
-onclick="toggleCard('about')">
-About Us
-</span>
-
+<span class="link-heading">About Us</span>
 <div id="about" class="card">
-
-<p>
-Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world.
-</p>
-
-<p>
-The Hub creates opportunities for learning, innovation, entrepreneurship, and access to digital tools that support education, employment, and community development across Northern Kenya.
-</p>
-
+  <p>
+    Garissa Digital Empowerment Hub CBO is a community-based organization dedicated to empowering youth through digital literacy and bridging the digital divide within Garissa County. The organization focuses on equipping young people, women, and persons with disabilities with essential digital skills needed in today’s technology-driven world.
+  </p>
+  <p>
+    The Hub creates opportunities for learning, innovation, entrepreneurship, and access to digital tools that support education, employment, and community development across Northern Kenya.
+  </p>
 </div>
 
 <!-- WHY -->
-
-<span class="link-heading"
-onclick="toggleCard('why')">
-Why It Was Formed
-</span>
-
+<span class="link-heading">Why It Was Formed</span>
 <div id="why" class="card">
-
-<p>
-The organization was established to address the growing gap in digital skills and access to technology among youth and vulnerable groups in Garissa and Northern Kenya.
-</p>
-
-<p>
-Its mission is to empower communities through affordable and accessible digital training, promote innovation, reduce unemployment, and create opportunities for sustainable development.
-</p>
-
+  <p>
+    The organization was established to address the growing gap in digital skills and access to technology among youth and vulnerable groups in Garissa and Northern Kenya.
+  </p>
+  <p>
+    Its mission is to empower communities through affordable and accessible digital training, promote innovation, reduce unemployment, and create opportunities for sustainable development.
+  </p>
 </div>
 
 <!-- WHEN -->
-
-<span class="link-heading"
-onclick="toggleCard('when')">
-When It Was Formed
-</span>
-
+<span class="link-heading">When It Was Formed</span>
 <div id="when" class="card">
-
-<p>
-Garissa Digital Empowerment Hub CBO was established in early 2026 to support digital transformation and youth empowerment within the region.
-</p>
-
+  <p>
+    Garissa Digital Empowerment Hub CBO was established in early 2026 to support digital transformation and youth empowerment within the region.
+  </p>
 </div>
 
 <!-- WHO -->
-
-<span class="link-heading"
-onclick="toggleCard('who')">
-Who Formed It
-</span>
-
+<span class="link-heading">Who Formed It</span>
 <div id="who" class="card">
-
-<p>
-The organization was founded by ten dedicated youth members who strongly believe in inclusivity, equal opportunity, and community empowerment through technology and education.
-</p>
-
+  <p>
+    The organization was founded by ten dedicated youth members who strongly believe in inclusivity, equal opportunity, and community empowerment through technology and education.
+  </p>
 </div>
 
 <!-- WHERE -->
-
-<span class="link-heading"
-onclick="toggleCard('where')">
-Where It Operates
-</span>
-
+<span class="link-heading">Where It Operates</span>
 <div id="where" class="card">
-
-<p>
-The Hub primarily operates within Garissa Township while welcoming participants from different areas across Northern Kenya who are interested in gaining digital and entrepreneurial skills.
-</p>
-
+  <p>
+    The Hub primarily operates within Garissa Township while welcoming participants from different areas across Northern Kenya who are interested in gaining digital and entrepreneurial skills.
+  </p>
 </div>
 
 <!-- HOW -->
-
-<span class="link-heading"
-onclick="toggleCard('how')">
-How It Operates
-</span>
-
+<span class="link-heading">How It Operates</span>
 <div id="how" class="card">
-
-<p>
-The Hub operates Monday to Friday from 8:00 AM to 4:00 PM through structured learning sessions, practical workshops, mentorship, and digital training activities.
-</p>
-
-<p>
-Weekend workshops are also conducted to provide additional hands-on learning experiences and specialized short courses.
-</p>
-
+  <p>
+    The Hub operates Monday to Friday from 8:00 AM to 4:00 PM through structured learning sessions, practical workshops, mentorship, and digital training activities.
+  </p>
+  <p>
+    Weekend workshops are also conducted to provide additional hands-on learning experiences and specialized short courses.
+  </p>
 </div>
 
 <!-- ELIGIBILITY -->
-
-<span class="link-heading"
-onclick="toggleCard('eligibility')">
-Eligibility
-</span>
-
+<span class="link-heading">Eligibility</span>
 <div id="eligibility" class="card">
-
-<p>
-Youth, women, persons with disabilities, and vulnerable community members with interest in digital literacy and entrepreneurship are eligible to participate in the Hub’s programs and training activities.
-</p>
-
+  <p>
+    Youth, women, persons with disabilities, and vulnerable community members with interest in digital literacy and entrepreneurship are eligible to participate in the Hub’s programs and training activities.
+  </p>
 </div>
 
 <!-- COST -->
-
-<span class="link-heading"
-onclick="toggleCard('cost')">
-Cost of Training & Membership
-</span>
-
+<span class="link-heading">Cost of Training & Membership</span>
 <div id="cost" class="card">
-
-<p>
-Training programmes are designed to remain affordable and accessible to the community.
-</p>
-
-<p>
-Students are only required to pay minimal maintenance and certification processing fees. Membership registration and workshop participation fees support sustainability of the programmes and operational activities.
-</p>
-
+  <p>
+    Training programmes are designed to remain affordable and accessible to the community.
+  </p>
+  <p>
+    Students are only required to pay minimal maintenance and certification processing fees. Membership registration and workshop participation fees support sustainability of the programmes and operational activities.
+  </p>
 </div>
 
-
 <footer>
-
-<p>
-©2026 GDEH CBO All right reserved
-</p>
-
-<p>
-<a href="privacy_terms.html">
-Privacy Policy | Terms & Conditions
-</a>
-</p>
-
+  <p>©2026 GDEH CBO All rights reserved</p>
+  <p><a href="privacy_terms.html">Privacy Policy | Terms & Conditions</a></p>
 </footer>
 
 </body>
