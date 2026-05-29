@@ -43,12 +43,10 @@ textarea{resize:vertical;min-height:70px;}
 .consent-box input{width:auto;margin-top:3px;}
 .consent-box label{color:#333;font-size:8px;line-height:1.5;margin:0;}
 
-/* CAPTCHA */
-#captchaBox{text-align:center;margin-top:20px;}
-#captchaImage{border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);}
-#captchaInput{padding:6px;margin-top:8px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;}
-#captchaBox a{font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;}
-#captchaBox a:hover{text-decoration:underline;}
+#captchaBox {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* FOOTER */
 .footer{background:#001f3f;color:white;text-align:center;padding:15px;margin-top:30px;}
@@ -164,29 +162,12 @@ textarea{resize:vertical;min-height:70px;}
         <label for="consent">I have read and agree to the Terms & Conditions <span class="required">*</span></label>
       </div>
 
-      <!-- CAPTCHA BOX -->
-      <div id="captchaBox">
-        <img id="captchaImage" alt="CAPTCHA" width="180" height="60"
-             style="border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);display:block;margin:auto;">
-        <br>
-        <!-- LABEL + REFRESH ICON -->
-<label style="display:flex;align-items:center;gap:6px;justify-content:center;font-size:9px;color:#001f3f;">
-  Enter CAPTCHA
-  <svg onclick="openCaptcha()" xmlns="http://www.w3.org/2000/svg" 
-       width="14" height="14" viewBox="0 0 24 24" fill="none" 
-       stroke="#001f3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-       style="cursor:pointer;" title="Refresh CAPTCHA">
-    <polyline points="23 4 23 10 17 10"></polyline>
-    <path d="M20.49 15A9 9 0 1 1 23 10"></path>
-  </svg>
-</label>
-        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA"
-               style="padding:6px;margin-top:6px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;">
-        <div style="margin-top:8px;">
-          <a href="#" onclick="verifyCaptcha();return false;"
-             style="font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;">Verify CAPTCHA</a>
-        </div>
-      </div>
+      <!-- CAPTCHA BOX (Google reCAPTCHA) -->
+<div id="captchaBox" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+  <div class="g-recaptcha"
+       data-sitekey="6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV">
+  </div>
+</div>
 
       <!-- SUBMIT -->
       <div style="text-align:center;margin-top:20px;">
@@ -227,6 +208,6 @@ Mandera: {
 };
 
 </script>
-      <script src="captcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
