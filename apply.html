@@ -208,6 +208,46 @@ Mandera: {
 };
 
 </script>
+  <script>
+document.querySelector("form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  // 1. Get CAPTCHA token
+  const token = grecaptcha.getResponse();
+
+  if (!token) {
+    alert("Please complete the CAPTCHA");
+    return;
+  }
+
+  // 2. Collect form data
+  const formData = new FormData(this);
+
+  // 3. Add token to request
+  formData.append("token", token);
+
+  try {
+    const res = await fetch("https://captchabackend.onrender.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Form submitted successfully");
+      this.reset();
+      grecaptcha.reset(); // reset captcha
+    } else {
+      alert("CAPTCHA verification failed");
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Server error");
+  }
+});
+  </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
