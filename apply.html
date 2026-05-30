@@ -182,27 +182,8 @@ textarea{resize:vertical;min-height:70px;}
 </div>
 <script src="https://www.google.com/recaptcha/api.js?render=6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV"></script>
 
+
 <script>
-// =========================
-// RECAPTCHA v3
-// =========================
-function executeRecaptcha(callback) {
-    grecaptcha.ready(() => {
-        grecaptcha.execute('6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV', {
-            action: 'submit'
-        }).then(token => {
-
-            const input = document.getElementById('recaptchaToken');
-            if (input) {
-                input.value = token;
-            }
-
-            if (callback) callback(token);
-        });
-    });
-}
-
-
 // =========================
 // FORM SUBMIT HANDLER
 // =========================
@@ -212,17 +193,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!form) return;
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        executeRecaptcha(() => {
-            form.submit();
-        });
+        try {
+
+            // Generate reCAPTCHA token
+            grecaptcha.ready(async () => {
+
+                const token = await grecaptcha.execute(
+                    '6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV',
+                    { action: 'submit' }
+                );
+
+                // Verify token with backend
+                const verifyResponse = await fetch("/verify", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ token })
+                });
+
+                const verifyData = await verifyResponse.json();
+
+                // If verification successful
+                if (verifyData.success) {
+
+                    // Append token to hidden input
+                    document.getElementById("recaptchaToken").value = token;
+
+                    // Submit actual form
+                    form.submit();
+
+                } else {
+
+                    alert("reCAPTCHA verification failed. Please try again.");
+
+                }
+
+            });
+
+        } catch (error) {
+
+            console.error("reCAPTCHA Error:", error);
+            alert("Something went wrong. Please try again.");
+
+        }
     });
 
 });
 </script>
-  <script>
+<script>
 // =========================
 // LOCATION DATA (UNCHANGED)
 // =========================
