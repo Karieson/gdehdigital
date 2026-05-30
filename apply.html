@@ -43,9 +43,7 @@ textarea{resize:vertical;min-height:70px;}
 .consent-box input{width:auto;margin-top:3px;}
 .consent-box label{color:#333;font-size:8px;line-height:1.5;margin:0;}
 
-#captchaBox {
-  text-align: center;
-  margin-top: 20px;
+
 }
 
 /* FOOTER */
@@ -161,12 +159,9 @@ textarea{resize:vertical;min-height:70px;}
         <input type="checkbox" id="consent" required>
         <label for="consent">I have read and agree to the Terms & Conditions <span class="required">*</span></label>
       </div>
-
-      <!-- CAPTCHA BOX (Google reCAPTCHA) -->
-<div id="captchaBox" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-  <div class="g-recaptcha"
-       data-sitekey="6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV">
-  </div>
+<input type="hidden" id="recaptchaToken" name="recaptchaToken">
+       
+  
 </div>
 
       <!-- SUBMIT -->
@@ -185,7 +180,49 @@ textarea{resize:vertical;min-height:70px;}
         <a href="privacy_terms.html">Privacy & Terms</a>
     </div>
 </div>
+<script src="https://www.google.com/recaptcha/api.js?render=6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV"></script>
+
 <script>
+// =========================
+// RECAPTCHA v3
+// =========================
+function executeRecaptcha(callback) {
+    grecaptcha.ready(() => {
+        grecaptcha.execute('6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV', {
+            action: 'submit'
+        }).then(token => {
+
+            const input = document.getElementById('recaptchaToken');
+            if (input) {
+                input.value = token;
+            }
+
+            if (callback) callback(token);
+        });
+    });
+}
+
+
+// =========================
+// FORM SUBMIT HANDLER
+// =========================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("admissionForm");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        executeRecaptcha(() => {
+            form.submit();
+        });
+    });
+
+});
+</script>
+  <script>
 // =========================
 // LOCATION DATA (UNCHANGED)
 // =========================
@@ -206,48 +243,7 @@ Mandera: {
 "Banissa": ["Banissa","Derkhale","Malkamari"]
 }
 };
-
 </script>
-  <script>
-document.querySelector("form").addEventListener("submit", async function (e) {
-  e.preventDefault();
 
-  // 1. Get CAPTCHA token
-  const token = grecaptcha.getResponse();
-
-  if (!token) {
-    alert("Please complete the CAPTCHA");
-    return;
-  }
-
-  // 2. Collect form data
-  const formData = new FormData(this);
-
-  // 3. Add token to request
-  formData.append("token", token);
-
-  try {
-    const res = await fetch("https://captchabackend.onrender.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      alert("Form submitted successfully");
-      this.reset();
-      grecaptcha.reset(); // reset captcha
-    } else {
-      alert("CAPTCHA verification failed");
-    }
-
-  } catch (err) {
-    console.error(err);
-    alert("Server error");
-  }
-});
-  </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>
