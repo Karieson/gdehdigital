@@ -172,49 +172,76 @@ textarea{resize:vertical;min-height:70px;}
 
 <script>
 // =========================
-// RECAPTCHA v3 FUNCTION
-// =========================
-function executeRecaptcha(callback) {
-    grecaptcha.ready(() => {
-        grecaptcha.execute('6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV', {
-            action: 'collaboration_submit'
-        }).then(token => {
-            callback(token);
-        });
-    });
-}
-
-
-// =========================
 // FORM HANDLER (COLLAB FORM)
 // =========================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector(".container form"); 
-    // targets this specific form inside container
+    const form = document.querySelector(".container form");
 
     if (!form) return;
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
+
         e.preventDefault();
 
-        executeRecaptcha((token) => {
+        try {
 
-            // create hidden input dynamically (since you didn't include one)
-            let input = document.getElementById("recaptchaTokenCollab");
+            grecaptcha.ready(async () => {
 
-            if (!input) {
-                input = document.createElement("input");
-                input.type = "hidden";
-                input.name = "recaptchaToken";
-                input.id = "recaptchaTokenCollab";
-                form.appendChild(input);
-            }
+                // Generate token
+                const token = await grecaptcha.execute(
+                    '6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV',
+                    { action: 'collaboration_submit' }
+                );
 
-            input.value = token;
+                // Verify token with backend
+                const verifyResponse = await fetch("/verify", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ token })
+                });
 
-            form.submit();
-        });
+                const verifyData = await verifyResponse.json();
+
+                // If verification passed
+                if (verifyData.success) {
+
+                    // Create hidden input dynamically
+                    let input = document.getElementById("recaptchaTokenCollab");
+
+                    if (!input) {
+
+                        input = document.createElement("input");
+                        input.type = "hidden";
+                        input.name = "recaptchaToken";
+                        input.id = "recaptchaTokenCollab";
+
+                        form.appendChild(input);
+                    }
+
+                    // Store token
+                    input.value = token;
+
+                    // Submit form
+                    form.submit();
+
+                } else {
+
+                    alert("reCAPTCHA verification failed. Please try again.");
+
+                }
+
+            });
+
+        } catch (error) {
+
+            console.error("reCAPTCHA Error:", error);
+            alert("Something went wrong. Please try again.");
+
+        }
+
     });
 
 });
