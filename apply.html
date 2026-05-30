@@ -232,13 +232,15 @@ textarea{resize:vertical;min-height:70px;}
 </div>
 </div>
 </div>
-
+    
+<footer>
 <div class="footer">
     <p>© 2026 Garissa Digital Empowerment Hub | All Rights Reserved</p>
     <div class="footer-links">
         <a href="privacy_terms.html">Privacy & Terms</a>
     </div>
-</div>
+</footer>
+
 <script>
 
 // =========================
@@ -372,27 +374,203 @@ document.addEventListener(
 </script>
 
 <script>
+
 // =========================
-// LOCATION DATA (UNCHANGED)
+// LOCATION DATA
 // =========================
+
 const data = {
-Garissa: {
-"Garissa Township": ["Waberi","Galbet","Township"],
-"Ijara": ["Sangailu","Ijara","Masalani"],
-"Lagdera": ["Modogashe","Benane","Maalimin"]
-},
-Wajir: {
-"Wajir East": ["Township","Barwago","Khorof"],
-"Wajir West": ["Arbajahan","Hadado","Adamasajide"],
-"Tarbaj": ["Tarbaj","Elben","Sarman"]
-},
-Mandera: {
-"Mandera East": ["Arabia","Township","Neboi"],
-"Mandera West": ["Takaba","Lagsure","Dandu"],
-"Banissa": ["Banissa","Derkhale","Malkamari"]
-}
+
+  Garissa: {
+    "Garissa Township": [
+      "Waberi",
+      "Galbet",
+      "Township"
+    ],
+
+    "Ijara": [
+      "Sangailu",
+      "Ijara",
+      "Masalani"
+    ],
+
+    "Lagdera": [
+      "Modogashe",
+      "Benane",
+      "Maalimin"
+    ]
+  },
+
+  Wajir: {
+    "Wajir East": [
+      "Township",
+      "Barwago",
+      "Khorof"
+    ],
+
+    "Wajir West": [
+      "Arbajahan",
+      "Hadado",
+      "Adamasajide"
+    ],
+
+    "Tarbaj": [
+      "Tarbaj",
+      "Elben",
+      "Sarman"
+    ]
+  },
+
+  Mandera: {
+    "Mandera East": [
+      "Arabia",
+      "Township",
+      "Neboi"
+    ],
+
+    "Mandera West": [
+      "Takaba",
+      "Lagsure",
+      "Dandu"
+    ],
+
+    "Banissa": [
+      "Banissa",
+      "Derkhale",
+      "Malkamari"
+    ]
+  }
+
 };
+
+// =========================
+// DROPDOWNS
+// =========================
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    const countySelect =
+    document.getElementById(
+      "county"
+    );
+
+    const subCountySelect =
+    document.getElementById(
+      "subCounty"
+    );
+
+    const wardSelect =
+    document.getElementById(
+      "ward"
+    );
+
+    if (
+      !countySelect ||
+      !subCountySelect ||
+      !wardSelect
+    ) return;
+
+    // =========================
+    // LOAD SUB COUNTIES
+    // =========================
+
+    countySelect.addEventListener(
+      "change",
+
+      function () {
+
+        const county =
+        this.value;
+
+        subCountySelect.innerHTML =
+          '<option value="">Select Sub County</option>';
+
+        wardSelect.innerHTML =
+          '<option value="">Select Ward</option>';
+
+        if (
+          !county ||
+          !data[county]
+        ) return;
+
+        Object.keys(
+          data[county]
+        ).forEach(
+          subCounty => {
+
+            const option =
+            document.createElement(
+              "option"
+            );
+
+            option.value =
+            subCounty;
+
+            option.textContent =
+            subCounty;
+
+            subCountySelect.appendChild(
+              option
+            );
+          }
+        );
+      }
+    );
+
+    // =========================
+    // LOAD WARDS
+    // =========================
+
+    subCountySelect.addEventListener(
+      "change",
+
+      function () {
+
+        const county =
+        countySelect.value;
+
+        const subCounty =
+        this.value;
+
+        wardSelect.innerHTML =
+          '<option value="">Select Ward</option>';
+
+        if (
+          !county ||
+          !subCounty ||
+          !data[county][subCounty]
+        ) return;
+
+        data[county][subCounty]
+        .forEach(
+          ward => {
+
+            const option =
+            document.createElement(
+              "option"
+            );
+
+            option.value =
+            ward;
+
+            option.textContent =
+            ward;
+
+            wardSelect.appendChild(
+              option
+            );
+          }
+        );
+      }
+    );
+
+  }
+);
+
 </script>
+
 
 </body>
 </html>
