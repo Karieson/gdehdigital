@@ -43,7 +43,46 @@ textarea{resize:vertical;min-height:70px;}
 .consent-box input{width:auto;margin-top:3px;}
 .consent-box label{color:#333;font-size:8px;line-height:1.5;margin:0;}
 
+/* CAPTCHA BOX */
 
+.captcha-box{
+    margin-top:12px;
+}
+
+/* CAPTCHA QUESTION */
+
+#captchaQuestion{
+    width:100%;
+    padding:8px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:11px;
+    font-weight:600;
+    color:#001f3f;
+    background:#f9f9f9;
+    text-align:center;
+    margin-bottom:8px;
+    box-shadow:0 0 5px rgba(0,31,63,0.08);
+}
+
+/* CAPTCHA INPUT */
+
+#captchaAnswer{
+    width:100%;
+    padding:8px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:9px;
+    color:#111;
+    background:#fff;
+    transition:0.3s ease;
+}
+
+#captchaAnswer:focus{
+    outline:none;
+    border:1px solid #001f3f;
+    box-shadow:0 0 6px rgba(0,31,63,0.2);
+         }
 }
 
 /* FOOTER */
@@ -163,7 +202,27 @@ textarea{resize:vertical;min-height:70px;}
        
   
 </div>
+<!-- MATH CAPTCHA -->
 
+<div class="captcha-box">
+
+  <label for="captchaAnswer">
+    Solve this math
+    <span class="required">*</span>
+  </label>
+
+  <div id="captchaQuestion">
+    Loading...
+  </div>
+
+  <input
+    type="number"
+    id="captchaAnswer"
+    placeholder="Enter answer"
+    required
+  >
+
+          </div>
       <!-- SUBMIT -->
       <div style="text-align:center;margin-top:20px;">
         <button type="submit" class="submit-btn">Submit Application</button>
@@ -180,70 +239,138 @@ textarea{resize:vertical;min-height:70px;}
         <a href="privacy_terms.html">Privacy & Terms</a>
     </div>
 </div>
-<script src="https://www.google.com/recaptcha/api.js?render=6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV"></script>
-
-
 <script>
+
+// =========================
+// MATH CAPTCHA CONFIG
+// =========================
+
+const API =
+"https://math-captcha-api.onrender.com";
+
+// =========================
+// LOAD CAPTCHA
+// =========================
+
+async function loadCaptcha() {
+
+    try {
+
+        const response =
+        await fetch(`${API}/captcha`, {
+
+            credentials: "include"
+        });
+
+        const data =
+        await response.json();
+
+        document.getElementById(
+            "captchaQuestion"
+        ).innerText = data.question;
+
+    } catch (error) {
+
+        console.error(
+            "CAPTCHA Load Error:",
+            error
+        );
+    }
+}
+
 // =========================
 // FORM SUBMIT HANDLER
 // =========================
-document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.getElementById("admissionForm");
+document.addEventListener(
+    "DOMContentLoaded",
 
-    if (!form) return;
+    function () {
 
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+        const form =
+        document.getElementById(
+            "admissionForm"
+        );
 
-        try {
+        if (!form) return;
 
-            // Generate reCAPTCHA token
-            grecaptcha.ready(async () => {
+        // Load CAPTCHA immediately
+        loadCaptcha();
 
-                const token = await grecaptcha.execute(
-                    '6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV',
-                    { action: 'submit' }
-                );
+        form.addEventListener(
+            "submit",
 
-                // Verify token with backend
-                const verifyResponse = await fetch("/verify", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ token })
-                });
+            async function (e) {
 
-                const verifyData = await verifyResponse.json();
+                e.preventDefault();
 
-                // If verification successful
-                if (verifyData.success) {
+                try {
 
-                    // Append token to hidden input
-                    document.getElementById("recaptchaToken").value = token;
+                    const answer =
+                    document.getElementById(
+                        "captchaAnswer"
+                    ).value;
 
-                    // Submit actual form
-                    form.submit();
+                    // Verify answer
+                    const verifyResponse =
+                    await fetch(
+                        `${API}/verify`,
+                        {
 
-                } else {
+                            method: "POST",
 
-                    alert("reCAPTCHA verification failed. Please try again.");
+                            credentials: "include",
 
+                            headers: {
+                                "Content-Type":
+                                "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                answer
+                            })
+                        }
+                    );
+
+                    const verifyData =
+                    await verifyResponse.json();
+
+                    // CAPTCHA Passed
+                    if (
+                        verifyData.success
+                    ) {
+
+                        form.submit();
+
+                    } else {
+
+                        alert(
+                            "Wrong CAPTCHA Answer"
+                        );
+
+                        // Reload new CAPTCHA
+                        loadCaptcha();
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "CAPTCHA Error:",
+                        error
+                    );
+
+                    alert(
+                        "Something went wrong."
+                    );
                 }
+            }
+        );
+    }
+);
 
-            });
-
-        } catch (error) {
-
-            console.error("reCAPTCHA Error:", error);
-            alert("Something went wrong. Please try again.");
-
-        }
-    });
-
-});
 </script>
+
 <script>
 // =========================
 // LOCATION DATA (UNCHANGED)
