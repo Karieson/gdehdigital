@@ -50,12 +50,7 @@ textarea{resize:vertical;min-height:70px;}
 .consent-section a:hover{text-decoration:underline;}
 .consent-section label{font-size:9px;color:#333;}
 
-/* ===== CAPTCHA ===== */
-#captchaBox{text-align:center;margin-top:15px;}
-#captchaImage{border:1px solid #ddd;border-radius:6px;background:#f9f9f9;box-shadow:0 0 6px rgba(0,31,63,0.1);}
-#captchaInput{padding:6px;margin-top:6px;width:180px;border:1px solid #ddd;border-radius:6px;font-size:9px;}
-#captchaBox a{font-size:9px;color:#001f3f;font-weight:600;text-decoration:none;}
-#captchaBox a:hover{text-decoration:underline;}
+
 
 
 
@@ -160,20 +155,7 @@ textarea{resize:vertical;min-height:70px;}
     <p>By continuing, you agree to the <a href="privacy_terms.html" target="_blank">Privacy Policy & Terms</a> of Garissa Digital Empowerment Hub CBO.</p>
     <label><input type="checkbox" id="consentCheck" required> I confirm that I have read and agree to the Privacy Policy and Terms & Conditions.</label>
   </div>
-
-  <!-- CAPTCHA -->
-  <div id="captchaBox">
-    <img id="captchaImage" alt="CAPTCHA" width="180" height="60">
-    <br>
-    <label style="display:flex;align-items:center;gap:6px;justify-content:center;font-size:9px;color:#001f3f;">
-      Enter CAPTCHA
-      <a href="#" onclick="openCaptcha();return false;" style="color:#001f3f;font-size:12px;text-decoration:none;cursor:pointer;" title="Refresh CAPTCHA">&#x21bb;</a>
-    </label>
-    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
-    <div style="margin-top:8px;">
-      <a href="#" onclick="verifyCaptcha();return false;">Verify CAPTCHA</a>
-    </div>
-  </div>
+<input type="hidden" id="recaptchaToken" name="recaptchaToken">
 
   <!-- SUBMIT -->
   <button type="submit" class="submit-btn">Submit Collaboration</button>
@@ -186,6 +168,57 @@ textarea{resize:vertical;min-height:70px;}
     <a href="privacy_terms.html" target="_blank">Privacy & Terms</a>
   </div>
 </div>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV"></script>
+
+<script>
+// =========================
+// RECAPTCHA v3 FUNCTION
+// =========================
+function executeRecaptcha(callback) {
+    grecaptcha.ready(() => {
+        grecaptcha.execute('6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV', {
+            action: 'collaboration_submit'
+        }).then(token => {
+            callback(token);
+        });
+    });
+}
+
+
+// =========================
+// FORM HANDLER (COLLAB FORM)
+// =========================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".container form"); 
+    // targets this specific form inside container
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        executeRecaptcha((token) => {
+
+            // create hidden input dynamically (since you didn't include one)
+            let input = document.getElementById("recaptchaTokenCollab");
+
+            if (!input) {
+                input = document.createElement("input");
+                input.type = "hidden";
+                input.name = "recaptchaToken";
+                input.id = "recaptchaTokenCollab";
+                form.appendChild(input);
+            }
+
+            input.value = token;
+
+            form.submit();
+        });
+    });
+
+});
+</script>
 <script>
 
 function payNow(){
@@ -214,6 +247,6 @@ window.location.href =
 }
 
 </script>
-  <script src="captcha.js"></script>
+  
   </head>
   </html>
