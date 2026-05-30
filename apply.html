@@ -241,336 +241,226 @@ textarea{resize:vertical;min-height:70px;}
     </div>
 </footer>
 
-<script>
+<script type="module">
 
 // =========================
-// MATH CAPTCHA CONFIG
+// FIREBASE
 // =========================
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const API =
-"https://math-captcha-backend.onrender.com";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBykVn_PW_IiZ5M1WmcD3mpywHdo3709c0",
+  authDomain: "gdehstudents.firebaseapp.com",
+  projectId: "gdehstudents",
+  storageBucket: "gdehstudents.appspot.com",
+  messagingSenderId: "843329725555",
+  appId: "1:843329725555:web:e3c0092596b08afa72f606",
+  measurementId: "G-2W72F5VP54"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Firestore
+const db = getFirestore(app);
+
+// Storage (FOR PHOTOS)
+const storage = getStorage(app);
+
+// expose for your form logic
+window.db = db;
+window.storage = storage;
+window.addDoc = addDoc;
+window.collection = collection;
+window.serverTimestamp = serverTimestamp;
+window.ref = ref;
+window.uploadBytes = uploadBytes;
+window.getDownloadURL = getDownloadURL;
+
+// =========================
+// CAPTCHA API
+// =========================
+const API = "https://math-captcha-backend.onrender.com";
 
 // =========================
 // LOAD CAPTCHA
 // =========================
-
 async function loadCaptcha() {
+  try {
+    const response = await fetch(`${API}/captcha`, {
+      credentials: "include"
+    });
 
-    try {
+    const data = await response.json();
 
-        const response =
-        await fetch(`${API}/captcha`, {
+    document.getElementById("captchaQuestion").innerText = data.question;
 
-            credentials: "include"
-        });
-
-        const data =
-        await response.json();
-
-        document.getElementById(
-            "captchaQuestion"
-        ).innerText = data.question;
-
-    } catch (error) {
-
-        console.error(
-            "CAPTCHA Load Error:",
-            error
-        );
-    }
+  } catch (error) {
+    console.error("CAPTCHA Load Error:", error);
+  }
 }
-
-// =========================
-// FORM SUBMIT HANDLER
-// =========================
-
-document.addEventListener(
-    "DOMContentLoaded",
-
-    function () {
-
-        const form =
-        document.getElementById(
-            "admissionForm"
-        );
-
-        if (!form) return;
-
-        // Load CAPTCHA immediately
-        loadCaptcha();
-
-        form.addEventListener(
-            "submit",
-
-            async function (e) {
-
-                e.preventDefault();
-
-                try {
-
-                    const answer =
-                    document.getElementById(
-                        "captchaAnswer"
-                    ).value;
-
-                    // Verify answer
-                    const verifyResponse =
-                    await fetch(
-                        `${API}/verify`,
-                        {
-
-                            method: "POST",
-
-                            credentials: "include",
-
-                            headers: {
-                                "Content-Type":
-                                "application/json"
-                            },
-
-                            body: JSON.stringify({
-                                answer
-                            })
-                        }
-                    );
-
-                    const verifyData =
-                    await verifyResponse.json();
-
-                    // CAPTCHA Passed
-                    if (
-                        verifyData.success
-                    ) {
-
-                        form.submit();
-
-                    } else {
-
-                        alert(
-                            "Wrong CAPTCHA Answer"
-                        );
-
-                        // Reload new CAPTCHA
-                        loadCaptcha();
-
-                    }
-
-                } catch (error) {
-
-                    console.error(
-                        "CAPTCHA Error:",
-                        error
-                    );
-
-                    alert(
-                        "Something went wrong."
-                    );
-                }
-            }
-        );
-    }
-);
-
-</script>
-
-<script>
 
 // =========================
 // LOCATION DATA
 // =========================
-
 const data = {
 
   Garissa: {
-    "Garissa Township": [
-      "Waberi",
-      "Galbet",
-      "Township"
-    ],
-
-    "Ijara": [
-      "Sangailu",
-      "Ijara",
-      "Masalani"
-    ],
-
-    "Lagdera": [
-      "Modogashe",
-      "Benane",
-      "Maalimin"
-    ]
+    "Garissa Township": ["Waberi", "Galbet", "Township"],
+    "Ijara": ["Sangailu", "Ijara", "Masalani"],
+    "Lagdera": ["Modogashe", "Benane", "Maalimin"]
   },
 
   Wajir: {
-    "Wajir East": [
-      "Township",
-      "Barwago",
-      "Khorof"
-    ],
-
-    "Wajir West": [
-      "Arbajahan",
-      "Hadado",
-      "Adamasajide"
-    ],
-
-    "Tarbaj": [
-      "Tarbaj",
-      "Elben",
-      "Sarman"
-    ]
+    "Wajir East": ["Township", "Barwago", "Khorof"],
+    "Wajir West": ["Arbajahan", "Hadado", "Adamasajide"],
+    "Tarbaj": ["Tarbaj", "Elben", "Sarman"]
   },
 
   Mandera: {
-    "Mandera East": [
-      "Arabia",
-      "Township",
-      "Neboi"
-    ],
-
-    "Mandera West": [
-      "Takaba",
-      "Lagsure",
-      "Dandu"
-    ],
-
-    "Banissa": [
-      "Banissa",
-      "Derkhale",
-      "Malkamari"
-    ]
+    "Mandera East": ["Arabia", "Township", "Neboi"],
+    "Mandera West": ["Takaba", "Lagsure", "Dandu"],
+    "Banissa": ["Banissa", "Derkhale", "Malkamari"]
   }
-
 };
 
 // =========================
-// DROPDOWNS
+// INIT AFTER LOAD
 // =========================
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+  const form = document.getElementById("admissionForm");
 
-    const countySelect =
-    document.getElementById(
-      "county"
-    );
+  const countySelect = document.getElementById("county");
+  const subCountySelect = document.getElementById("subcounty");
+  const wardSelect = document.getElementById("ward");
 
-    const subCountySelect =
-    document.getElementById(
-      "subCounty"
-    );
+  if (!form) return;
 
-    const wardSelect =
-    document.getElementById(
-      "ward"
-    );
+  loadCaptcha();
 
-    if (
-      !countySelect ||
-      !subCountySelect ||
-      !wardSelect
-    ) return;
+  // =========================
+  // COUNTY → SUBCOUNTY → WARD
+  // =========================
+  countySelect.addEventListener("change", function () {
 
-    // =========================
-    // LOAD SUB COUNTIES
-    // =========================
+    const county = this.value;
 
-    countySelect.addEventListener(
-      "change",
+    subCountySelect.innerHTML = '<option value="">Select Sub County</option>';
+    wardSelect.innerHTML = '<option value="">Select Ward</option>';
 
-      function () {
+    if (!data[county]) return;
 
-        const county =
-        this.value;
+    Object.keys(data[county]).forEach(sub => {
+      const opt = document.createElement("option");
+      opt.value = sub;
+      opt.textContent = sub;
+      subCountySelect.appendChild(opt);
+    });
+  });
 
-        subCountySelect.innerHTML =
-          '<option value="">Select Sub County</option>';
+  subCountySelect.addEventListener("change", function () {
 
-        wardSelect.innerHTML =
-          '<option value="">Select Ward</option>';
+    const county = countySelect.value;
+    const sub = this.value;
 
-        if (
-          !county ||
-          !data[county]
-        ) return;
+    wardSelect.innerHTML = '<option value="">Select Ward</option>';
 
-        Object.keys(
-          data[county]
-        ).forEach(
-          subCounty => {
+    if (!data[county] || !data[county][sub]) return;
 
-            const option =
-            document.createElement(
-              "option"
-            );
+    data[county][sub].forEach(ward => {
+      const opt = document.createElement("option");
+      opt.value = ward;
+      opt.textContent = ward;
+      wardSelect.appendChild(opt);
+    });
+  });
 
-            option.value =
-            subCounty;
+  // =========================
+  // FORM SUBMIT (FIREBASE)
+  // =========================
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-            option.textContent =
-            subCounty;
+    try {
 
-            subCountySelect.appendChild(
-              option
-            );
-          }
-        );
+      // CAPTCHA CHECK
+      const answer = document.getElementById("captchaAnswer").value;
+
+      const verify = await fetch(`${API}/verify`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answer })
+      });
+
+      const verifyData = await verify.json();
+
+      if (!verifyData.success) {
+        alert("Wrong CAPTCHA Answer");
+        loadCaptcha();
+        return;
       }
-    );
 
-    // =========================
-    // LOAD WARDS
-    // =========================
-
-    subCountySelect.addEventListener(
-      "change",
-
-      function () {
-
-        const county =
-        countySelect.value;
-
-        const subCounty =
-        this.value;
-
-        wardSelect.innerHTML =
-          '<option value="">Select Ward</option>';
-
-        if (
-          !county ||
-          !subCounty ||
-          !data[county][subCounty]
-        ) return;
-
-        data[county][subCounty]
-        .forEach(
-          ward => {
-
-            const option =
-            document.createElement(
-              "option"
-            );
-
-            option.value =
-            ward;
-
-            option.textContent =
-            ward;
-
-            wardSelect.appendChild(
-              option
-            );
-          }
-        );
+      // CONSENT CHECK
+      if (!document.getElementById("consent").checked) {
+        alert("Please accept Terms & Conditions");
+        return;
       }
-    );
 
-  }
-);
+      // FIREBASE SAVE
+      await addDoc(collection(db, "applications"), {
+
+        firstName: form.first_name.value,
+        lastName: form.last_name.value,
+        gender: form.gender.value,
+        phone: form.phone.value,
+        email: form.email.value,
+
+        address: form.address.value,
+        county: form.county.value,
+        subCounty: form.sub_county.value,
+        ward: form.ward.value,
+
+        course: form.course.value,
+        intake: form.intake.value,
+        mode: form.mode_of_study.value,
+
+        emergencyName: form.emergency_contact_name.value,
+        emergencyPhone: form.emergency_contact_phone.value,
+
+        createdAt: serverTimestamp()
+
+      });
+
+      alert("Application submitted successfully!");
+
+      form.reset();
+      loadCaptcha();
+
+    } catch (error) {
+      console.error(error);
+      alert("Submission failed. Try again.");
+    }
+
+  });
+
+});
 
 </script>
-
 
 </body>
 </html>
