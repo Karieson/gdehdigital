@@ -49,7 +49,50 @@ textarea{resize:vertical;min-height:70px;}
 .consent-section a{color:#001f3f;text-decoration:none;}
 .consent-section a:hover{text-decoration:underline;}
 .consent-section label{font-size:9px;color:#333;}
+/* ===== CAPTCHA ===== */
 
+.captcha-box{
+  margin-top:12px;
+}
+
+.captcha-box label{
+  display:block;
+  margin-top:6px;
+  margin-bottom:3px;
+  font-size:9px;
+  color:#001f3f;
+}
+
+#captchaQuestion{
+  width:100%;
+  padding:8px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:10px;
+  font-weight:600;
+  color:#001f3f;
+  background:#f8f9fb;
+  text-align:center;
+  margin-bottom:10px;
+  box-shadow:0 0 6px rgba(0,31,63,0.08);
+}
+
+#captchaAnswer{
+  width:100%;
+  padding:7px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:9px;
+  color:#111;
+  background:#fff;
+  margin-bottom:12px;
+}
+
+#captchaAnswer:focus{
+  outline:none;
+  border:1px solid #001f3f;
+  box-shadow:0 0 6px rgba(0,31,63,0.2);
+           }
 
 
 
@@ -155,12 +198,36 @@ textarea{resize:vertical;min-height:70px;}
     <p>By continuing, you agree to the <a href="privacy_terms.html" target="_blank">Privacy Policy & Terms</a> of Garissa Digital Empowerment Hub CBO.</p>
     <label><input type="checkbox" id="consentCheck" required> I confirm that I have read and agree to the Privacy Policy and Terms & Conditions.</label>
   </div>
-<input type="hidden" id="recaptchaToken" name="recaptchaToken">
+<!-- MATH CAPTCHA -->
 
-  <!-- SUBMIT -->
-  <button type="submit" class="submit-btn">Submit Collaboration</button>
-</form>
+<div class="captcha-box">
+
+  <label for="captchaAnswer">
+    Solve this math
+    <span class="required">*</span>
+  </label>
+
+  <div id="captchaQuestion">
+    Loading...
+  </div>
+
+  <input
+    type="number"
+    id="captchaAnswer"
+    placeholder="Enter answer"
+    required
+  >
+
 </div>
+
+<!-- SUBMIT -->
+
+<button
+  type="submit"
+  class="submit-btn"
+>
+  Submit Collaboration
+</button>
 <!-- ===== FOOTER ===== -->
 <div class="footer">
   <p>© 2026 Garissa Digital Empowerment Hub | All Rights Reserved</p>
@@ -168,83 +235,135 @@ textarea{resize:vertical;min-height:70px;}
     <a href="privacy_terms.html" target="_blank">Privacy & Terms</a>
   </div>
 </div>
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV"></script>
-
 <script>
+
 // =========================
-// FORM HANDLER (COLLAB FORM)
+// MATH CAPTCHA API
 // =========================
-document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.querySelector(".container form");
+const API =
+"https://math-captcha-api.onrender.com";
 
-    if (!form) return;
+// =========================
+// LOAD CAPTCHA
+// =========================
 
-    form.addEventListener("submit", async function (e) {
+async function loadCaptcha() {
 
-        e.preventDefault();
+    try {
 
-        try {
+        const response =
+        await fetch(`${API}/captcha`, {
 
-            grecaptcha.ready(async () => {
+            credentials: "include"
+        });
 
-                // Generate token
-                const token = await grecaptcha.execute(
-                    '6Lc3QgMtAAAAADBcEcDv3v17krGHX-qjBiP0o6gV',
-                    { action: 'collaboration_submit' }
-                );
+        const data =
+        await response.json();
 
-                // Verify token with backend
-                const verifyResponse = await fetch("/verify", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ token })
-                });
+        document.getElementById(
+            "captchaQuestion"
+        ).innerText = data.question;
 
-                const verifyData = await verifyResponse.json();
+    } catch (error) {
 
-                // If verification passed
-                if (verifyData.success) {
+        console.error(
+            "CAPTCHA Load Error:",
+            error
+        );
+    }
+}
 
-                    // Create hidden input dynamically
-                    let input = document.getElementById("recaptchaTokenCollab");
+// =========================
+// FORM HANDLER
+// =========================
 
-                    if (!input) {
+document.addEventListener(
+    "DOMContentLoaded",
 
-                        input = document.createElement("input");
-                        input.type = "hidden";
-                        input.name = "recaptchaToken";
-                        input.id = "recaptchaTokenCollab";
+    function () {
 
-                        form.appendChild(input);
+        const form =
+        document.querySelector(
+            ".container form"
+        );
+
+        if (!form) return;
+
+        // Load CAPTCHA
+        loadCaptcha();
+
+        form.addEventListener(
+            "submit",
+
+            async function (e) {
+
+                e.preventDefault();
+
+                try {
+
+                    const answer =
+                    document.getElementById(
+                        "captchaAnswer"
+                    ).value;
+
+                    // Verify answer
+                    const verifyResponse =
+                    await fetch(
+                        `${API}/verify`,
+                        {
+
+                            method: "POST",
+
+                            credentials: "include",
+
+                            headers: {
+                                "Content-Type":
+                                "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                answer
+                            })
+                        }
+                    );
+
+                    const verifyData =
+                    await verifyResponse.json();
+
+                    // If verification passed
+                    if (
+                        verifyData.success
+                    ) {
+
+                        form.submit();
+
+                    } else {
+
+                        alert(
+                            "Wrong CAPTCHA Answer"
+                        );
+
+                        // Reload CAPTCHA
+                        loadCaptcha();
                     }
 
-                    // Store token
-                    input.value = token;
+                } catch (error) {
 
-                    // Submit form
-                    form.submit();
+                    console.error(
+                        "CAPTCHA Error:",
+                        error
+                    );
 
-                } else {
-
-                    alert("reCAPTCHA verification failed. Please try again.");
-
+                    alert(
+                        "Something went wrong."
+                    );
                 }
+            }
+        );
+    }
+);
 
-            });
-
-        } catch (error) {
-
-            console.error("reCAPTCHA Error:", error);
-            alert("Something went wrong. Please try again.");
-
-        }
-
-    });
-
-});
 </script>
 <script>
 
