@@ -465,7 +465,6 @@ document.addEventListener("DOMContentLoaded", function () {
   `APP-${new Date().getFullYear()}-${Date.now()
     .toString()
     .slice(-6)}`;
-        try{
       await addDoc(collection(db, "applications"), {
          applicationNo,
 
