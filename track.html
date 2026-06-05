@@ -265,9 +265,9 @@ async function trackApplication(){
   try{
 
     const response =
-      await fetch(
-        `/track/${applicationNo}`
-      );
+  await fetch(
+    `https://gdehadmissionsystem.onrender.com/track/${applicationNo}`
+  );
 
     const student =
       await response.json();
