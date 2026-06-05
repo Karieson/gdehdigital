@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+GDEH Admission Tracking Portal
+</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  font-family:Arial,sans-serif;
+
+  background:#ffffff;
+
+  color:#001f4d;
+
+}
+
+.header{
+
+  text-align:center;
+
+  padding:20px;
+
+}
+
+.logo{
+
+  width:80px;
+
+}
+
+.title{
+
+  font-size:20px;
+
+  font-weight:bold;
+
+  margin-top:5px;
+
+}
+
+.subtitle{
+
+  font-size:12px;
+
+}
+
+.container{
+
+  width:95%;
+  max-width:600px;
+
+  margin:20px auto;
+
+  background:#fff;
+
+  border:1px solid #ddd;
+
+  border-radius:8px;
+
+  padding:20px;
+
+}
+
+.search-box{
+
+  display:flex;
+
+  gap:10px;
+
+}
+
+.search-box input{
+
+  flex:1;
+
+  padding:10px;
+
+  border:1px solid #ccc;
+
+  border-radius:4px;
+
+}
+
+.search-box button{
+
+  background:#001f4d;
+
+  color:#fff;
+
+  border:none;
+
+  padding:10px 15px;
+
+  border-radius:4px;
+
+  cursor:pointer;
+
+}
+
+.search-box button:hover{
+
+  opacity:0.9;
+
+}
+
+.result{
+
+  margin-top:20px;
+
+  line-height:1.8;
+
+}
+
+.pending{
+
+  color:orange;
+
+  font-weight:bold;
+
+}
+
+.admitted{
+
+  color:green;
+
+  font-weight:bold;
+
+}
+
+.rejected{
+
+  color:red;
+
+  font-weight:bold;
+
+}
+
+.pdf-link{
+
+  display:inline-block;
+
+  margin-top:10px;
+
+  padding:8px 12px;
+
+  background:#001f4d;
+
+  color:#fff;
+
+  text-decoration:none;
+
+  border-radius:4px;
+
+}
+
+.footer{
+
+  text-align:center;
+
+  margin-top:40px;
+
+  padding:15px;
+
+  font-size:12px;
+
+  font-weight:bold;
+
+  color:#001f4d;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+  <img
+    src="/images/gdeh_logo.png"
+    class="logo"
+  >
+
+  <div class="title">
+    GARISSA DIGITAL EMPOWERMENT HUB
+  </div>
+
+  <div class="subtitle">
+    Admission Tracking Portal
+  </div>
+
+</div>
+
+<div class="container">
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="applicationNo"
+      placeholder="Enter Application Number"
+    >
+
+    <button
+      onclick="trackApplication()"
+    >
+      Search
+    </button>
+
+  </div>
+
+  <div
+    id="result"
+    class="result"
+  ></div>
+
+</div>
+
+<div class="footer">
+
+  GDEH ADMISSION TRACKING PORTAL
+
+</div>
+
+<script>
+
+async function trackApplication(){
+
+  const applicationNo =
+    document
+      .getElementById(
+        "applicationNo"
+      )
+      .value
+      .trim();
+
+  if(!applicationNo){
+
+    alert(
+      "Enter Application Number"
+    );
+
+    return;
+
+  }
+
+  try{
+
+    const response =
+      await fetch(
+        `/track/${applicationNo}`
+      );
+
+    const student =
+      await response.json();
+
+    let statusClass =
+      student.status
+        .toLowerCase();
+
+    let html = `
+
+      <p>
+        <b>Name:</b>
+        ${student.firstName}
+        ${student.lastName}
+      </p>
+
+      <p>
+        <b>Application No:</b>
+        ${student.applicationNo}
+      </p>
+
+      <p>
+        <b>Course:</b>
+        ${student.course}
+      </p>
+
+      <p class="${statusClass}">
+        <b>Status:</b>
+        ${student.status}
+      </p>
+
+    `;
+
+    if(
+      student.status ===
+      "Admitted"
+    ){
+
+      html += `
+
+        <p>
+          <b>Registration No:</b>
+          ${student.registrationNo}
+        </p>
+
+        <a
+          class="pdf-link"
+          href="/pdfs/${student.admissionLetter}"
+          target="_blank"
+        >
+          📄 Download Admission Letter
+        </a>
+
+      `;
+
+    }
+
+    document
+      .getElementById(
+        "result"
+      )
+      .innerHTML = html;
+
+  }
+  catch(error){
+
+    document
+      .getElementById(
+        "result"
+      )
+      .innerHTML =
+
+      "<p style='color:red'>Application not found.</p>";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
