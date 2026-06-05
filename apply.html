@@ -461,8 +461,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // FIREBASE SAVE
+        const applicationNo =
+  `APP-${new Date().getFullYear()}-${Date.now()
+    .toString()
+    .slice(-6)}`;
+        try{
       await addDoc(collection(db, "applications"), {
+         applicationNo,
 
+  status: "Pending",
+
+  processed: false,
+    
         firstName: form.first_name.value,
         lastName: form.last_name.value,
         gender: form.gender.value,
@@ -485,7 +495,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
-      alert("Application submitted successfully!");
+      alert(
+
+  "Application Submitted Successfully!\n\n" +
+
+  "Application Number:\n" +
+
+  applicationNo +
+
+  "\n\nKeep this number for tracking."
+
+);
 
       form.reset();
       loadCaptcha();
