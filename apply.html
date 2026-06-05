@@ -494,17 +494,92 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
-      alert(
+      
+const receiptWindow = window.open("", "_blank", "width=700,height=800");
 
-  "Application Submitted Successfully!\n\n" +
+receiptWindow.document.write(`
+<html>
+<head>
+<title>Application Receipt</title>
+<style>
+body{
+  font-family:Arial,sans-serif;
+  padding:30px;
+  text-align:center;
+}
 
-  "Application Number:\n" +
+.logo{
+  width:80px;
+  margin-bottom:10px;
+}
 
-  applicationNo +
+.receipt{
+  border:2px solid #0a2342;
+  padding:20px;
+  max-width:600px;
+  margin:auto;
+}
 
-  "\n\nKeep this number for tracking."
+h2{
+  color:#0a2342;
+}
 
-);
+.appno{
+  color:#c00;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#0a2342;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="receipt">
+
+<img src="/images/gdeh_logo.png" class="logo">
+
+<h2>GARISSA DIGITAL EMPOWERMENT HUB</h2>
+
+<h3>Application Submission Receipt</h3>
+
+<p><b>Applicant:</b></p>
+<p>${form.first_name.value} ${form.last_name.value}</p>
+
+<p><b>Application Number</b></p>
+
+<div class="appno">
+${applicationNo}
+</div>
+
+<p><b>Date Submitted:</b></p>
+<p>${new Date().toLocaleString()}</p>
+
+<p><b>Status:</b> Pending Review</p>
+
+<p>
+Please keep this Application Number for
+tracking your admission status.
+</p>
+
+<button class="btn" onclick="window.print()">
+Print / Save PDF
+</button>
+
+</div>
+
+</body>
+</html>
+`);
+
+receiptWindow.document.close();
 
       form.reset();
       loadCaptcha();
