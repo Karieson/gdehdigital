@@ -301,29 +301,21 @@ async function trackApplication(){
 
     `;
 
-    if(
-      student.status ===
-      "Admitted"
-    ){
+    if (student.status === "Admitted") {
+  html += `
+    <p>
+      <b>Registration No:</b>
+      ${student.registrationNo}
+    </p>
 
-      html += `
-
-        <p>
-          <b>Registration No:</b>
-          ${student.registrationNo}
-        </p>
-
-        html += `
-  <a
-    class="pdf-link"
-    href="https://gdehadmissionsystem.onrender.com/pdfs/${student.admissionLetter}"
-    target="_blank"
-  >
-    📄 Download Admission Letter
-  </a>
-`;
-
-      
+    <a
+      class="pdf-link"
+      href="https://gdehadmissionsystem.onrender.com/pdfs/${student.admissionLetter}"
+      target="_blank"
+    >
+      📄 Download Admission Letter
+    </a>
+  `;
 
     }
 
