@@ -313,15 +313,17 @@ async function trackApplication(){
           ${student.registrationNo}
         </p>
 
-        <a
-          class="pdf-link"
-          href="/pdfs/${student.admissionLetter}"
-          target="_blank"
-        >
-          📄 Download Admission Letter
-        </a>
+        html += `
+  <a
+    class="pdf-link"
+    href="https://gdehadmissionsystem.onrender.com/pdfs/${student.admissionLetter}"
+    target="_blank"
+  >
+    📄 Download Admission Letter
+  </a>
+`;
 
-      `;
+      
 
     }
 
