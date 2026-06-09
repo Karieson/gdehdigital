@@ -316,8 +316,7 @@ const firebaseConfig = {
   projectId:
     "gdehstudents",
 
-  storageBucket:
-    "gdehstudents.appspot.com",
+  
 
   messagingSenderId:
     "843329725555",
@@ -647,33 +646,7 @@ document.addEventListener(
               .toString()
               .slice(-6)}`;
 
-          // =========================
-          // PHOTO UPLOAD
-          // =========================
-          let photoUrl = "";
-
-          const photoFile =
-            form.photo.files[0];
-
-          if (photoFile) {
-
-            const storageRef =
-              ref(
-                storage,
-                `student_photos/${Date.now()}_${photoFile.name}`
-              );
-
-            await uploadBytes(
-              storageRef,
-              photoFile
-            );
-
-            photoUrl =
-              await getDownloadURL(
-                storageRef
-              );
-
-          }
+          
 
           // =========================
           // SAVE TO FIRESTORE
