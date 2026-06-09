@@ -393,41 +393,101 @@ document.addEventListener("DOMContentLoaded", function () {
   loadCaptcha();
 
   // =========================
-  // COUNTY → SUBCOUNTY → WARD
-  // =========================
-  countySelect.addEventListener("change", function () {
+// COUNTY → SUBCOUNTY → WARD
+// =========================
 
-    const county = this.value;
+const countySelect =
+  document.getElementById(
+    "county"
+  );
 
-    subCountySelect.innerHTML = '<option value="">Select Sub County</option>';
-    wardSelect.innerHTML = '<option value="">Select Ward</option>';
+const subCountySelect =
+  document.getElementById(
+    "sub_county"
+  );
+
+const wardSelect =
+  document.getElementById(
+    "ward"
+  );
+
+/* COUNTY → SUB COUNTY */
+
+countySelect.addEventListener(
+  "change",
+  function () {
+
+    const county =
+      this.value;
+
+    subCountySelect.innerHTML =
+      '<option value="">Select Sub County</option>';
+
+    wardSelect.innerHTML =
+      '<option value="">Select Ward</option>';
 
     if (!data[county]) return;
 
-    Object.keys(data[county]).forEach(sub => {
-      const opt = document.createElement("option");
+    Object.keys(
+      data[county]
+    ).forEach(sub => {
+
+      const opt =
+        document.createElement(
+          "option"
+        );
+
       opt.value = sub;
+
       opt.textContent = sub;
-      subCountySelect.appendChild(opt);
+
+      subCountySelect.appendChild(
+        opt
+      );
+
     });
-  });
 
-  subCountySelect.addEventListener("change", function () {
+  }
+);
 
-    const county = countySelect.value;
-    const sub = this.value;
+/* SUB COUNTY → WARD */
 
-    wardSelect.innerHTML = '<option value="">Select Ward</option>';
+subCountySelect.addEventListener(
+  "change",
+  function () {
 
-    if (!data[county] || !data[county][sub]) return;
+    const county =
+      countySelect.value;
 
-    data[county][sub].forEach(ward => {
-      const opt = document.createElement("option");
-      opt.value = ward;
-      opt.textContent = ward;
-      wardSelect.appendChild(opt);
-    });
-  });
+    const sub =
+      this.value;
+
+    wardSelect.innerHTML =
+      '<option value="">Select Ward</option>';
+
+    if (
+      !data[county] ||
+      !data[county][sub]
+    ) return;
+
+    data[county][sub]
+      .forEach(ward => {
+
+        const opt =
+          document.createElement(
+            "option"
+          );
+
+        opt.value = ward;
+
+        opt.textContent = ward;
+
+        wardSelect.appendChild(opt);
+
+      });
+
+  }
+);
 
   // =========================
   // FORM SUBMIT (FIREBASE)
