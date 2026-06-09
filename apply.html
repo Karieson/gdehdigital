@@ -279,14 +279,15 @@ footer a:hover {
     <a href="privacy_terms.html" target="_blank">Privacy & Terms</a>
   </div>
 </div>
-
-
 <script type="module">
 
 // =========================
-// FIREBASE
+// FIREBASE IMPORTS
 // =========================
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
 import {
   getFirestore,
   collection,
@@ -301,56 +302,84 @@ import {
   getDownloadURL
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
 
+// =========================
+// FIREBASE CONFIG
+// =========================
 const firebaseConfig = {
-  apiKey: "AIzaSyBykVn_PW_IiZ5M1WmcD3mpywHdo3709c0",
-  authDomain: "gdehstudents.firebaseapp.com",
-  projectId: "gdehstudents",
-  storageBucket: "gdehstudents.appspot.com",
-  messagingSenderId: "843329725555",
-  appId: "1:843329725555:web:e3c0092596b08afa72f606",
-  measurementId: "G-2W72F5VP54"
+
+  apiKey:
+    "AIzaSyBykVn_PW_IiZ5M1WmcD3mpywHdo3709c0",
+
+  authDomain:
+    "gdehstudents.firebaseapp.com",
+
+  projectId:
+    "gdehstudents",
+
+  storageBucket:
+    "gdehstudents.appspot.com",
+
+  messagingSenderId:
+    "843329725555",
+
+  appId:
+    "1:843329725555:web:e3c0092596b08afa72f606",
+
+  measurementId:
+    "G-2W72F5VP54"
+
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// =========================
+// FIREBASE INIT
+// =========================
+const app =
+  initializeApp(firebaseConfig);
 
-// Firestore
-const db = getFirestore(app);
+const db =
+  getFirestore(app);
 
-// Storage (FOR PHOTOS)
-const storage = getStorage(app);
-
-// expose for your form logic
-window.db = db;
-window.storage = storage;
-window.addDoc = addDoc;
-window.collection = collection;
-window.serverTimestamp = serverTimestamp;
-window.ref = ref;
-window.uploadBytes = uploadBytes;
-window.getDownloadURL = getDownloadURL;
+const storage =
+  getStorage(app);
 
 // =========================
 // CAPTCHA API
 // =========================
-const API = "https://math-captcha-backend.onrender.com";
+const API =
+  "https://math-captcha-backend.onrender.com";
 
 // =========================
 // LOAD CAPTCHA
 // =========================
 async function loadCaptcha() {
+
   try {
-    const response = await fetch(`${API}/captcha`, {
-      credentials: "include"
-    });
 
-    const data = await response.json();
+    const response =
+      await fetch(
+        `${API}/captcha`,
+        {
+          credentials: "include"
+        }
+      );
 
-    document.getElementById("captchaQuestion").innerText = data.question;
+    const data =
+      await response.json();
 
-  } catch (error) {
-    console.error("CAPTCHA Load Error:", error);
+    document.getElementById(
+      "captchaQuestion"
+    ).innerText = data.question;
+
   }
+  catch(error){
+
+    console.error(
+      "Captcha Error:",
+      error
+    );
+
+  }
+
 }
 
 // =========================
@@ -359,220 +388,296 @@ async function loadCaptcha() {
 const data = {
 
   Garissa: {
-    "Garissa Township": ["Waberi", "Galbet", "Township"],
-    "Ijara": ["Sangailu", "Ijara", "Masalani"],
-    "Lagdera": ["Modogashe", "Benane", "Maalimin"]
+
+    "Garissa Township": [
+      "Waberi",
+      "Galbet",
+      "Township"
+    ],
+
+    "Ijara": [
+      "Sangailu",
+      "Ijara",
+      "Masalani"
+    ],
+
+    "Lagdera": [
+      "Modogashe",
+      "Benane",
+      "Maalimin"
+    ]
+
   },
 
   Wajir: {
-    "Wajir East": ["Township", "Barwago", "Khorof"],
-    "Wajir West": ["Arbajahan", "Hadado", "Adamasajide"],
-    "Tarbaj": ["Tarbaj", "Elben", "Sarman"]
+
+    "Wajir East": [
+      "Township",
+      "Barwago",
+      "Khorof"
+    ],
+
+    "Wajir West": [
+      "Arbajahan",
+      "Hadado",
+      "Adamasajide"
+    ],
+
+    "Tarbaj": [
+      "Tarbaj",
+      "Elben",
+      "Sarman"
+    ]
+
   },
 
   Mandera: {
-    "Mandera East": ["Arabia", "Township", "Neboi"],
-    "Mandera West": ["Takaba", "Lagsure", "Dandu"],
-    "Banissa": ["Banissa", "Derkhale", "Malkamari"]
+
+    "Mandera East": [
+      "Arabia",
+      "Township",
+      "Neboi"
+    ],
+
+    "Mandera West": [
+      "Takaba",
+      "Lagsure",
+      "Dandu"
+    ],
+
+    "Banissa": [
+      "Banissa",
+      "Derkhale",
+      "Malkamari"
+    ]
+
   }
+
 };
 
 // =========================
-// INIT AFTER LOAD
+// INIT
 // =========================
-document.addEventListener("DOMContentLoaded", function () {
-
-  const form = document.getElementById("admissionForm");
-
-  const countySelect = document.getElementById("county");
-  const subCountySelect = document.getElementById("sub_county");
-  const wardSelect = document.getElementById("ward");
-
-  if (!form) return;
-
-  loadCaptcha();
-
-  // =========================
-// COUNTY → SUBCOUNTY → WARD
-// =========================
-
-const countySelect =
-  document.getElementById(
-    "county"
-  );
-
-const subCountySelect =
-  document.getElementById(
-    "sub_county"
-  );
-
-const wardSelect =
-  document.getElementById(
-    "ward"
-  );
-
-/* COUNTY → SUB COUNTY */
-
-countySelect.addEventListener(
-  "change",
+document.addEventListener(
+  "DOMContentLoaded",
   function () {
 
-    const county =
-      this.value;
-
-    subCountySelect.innerHTML =
-      '<option value="">Select Sub County</option>';
-
-    wardSelect.innerHTML =
-      '<option value="">Select Ward</option>';
-
-    if (!data[county]) return;
-
-    Object.keys(
-      data[county]
-    ).forEach(sub => {
-
-      const opt =
-        document.createElement(
-          "option"
-        );
-
-      opt.value = sub;
-
-      opt.textContent = sub;
-
-      subCountySelect.appendChild(
-        opt
+    const form =
+      document.getElementById(
+        "admissionForm"
       );
 
-    });
+    const countySelect =
+      document.getElementById(
+        "county"
+      );
 
-  }
-);
+    const subCountySelect =
+      document.getElementById(
+        "sub_county"
+      );
 
-/* SUB COUNTY → WARD */
+    const wardSelect =
+      document.getElementById(
+        "ward"
+      );
 
-subCountySelect.addEventListener(
-  "change",
-  function () {
+    if (!form) return;
 
-    const county =
-      countySelect.value;
+    loadCaptcha();
 
-    const sub =
-      this.value;
+    // =========================
+    // COUNTY → SUB COUNTY
+    // =========================
+    countySelect.addEventListener(
+      "change",
+      function () {
 
-    wardSelect.innerHTML =
-      '<option value="">Select Ward</option>';
+        const county =
+          this.value;
 
-    if (
-      !data[county] ||
-      !data[county][sub]
-    ) return;
+        subCountySelect.innerHTML =
+          '<option value="">Select Sub County</option>';
 
-    data[county][sub]
-      .forEach(ward => {
+        wardSelect.innerHTML =
+          '<option value="">Select Ward</option>';
 
-        const opt =
-          document.createElement(
-            "option"
+        if (!data[county]) return;
+
+        Object.keys(
+          data[county]
+        ).forEach(sub => {
+
+          const opt =
+            document.createElement(
+              "option"
+            );
+
+          opt.value = sub;
+
+          opt.textContent = sub;
+
+          subCountySelect.appendChild(
+            opt
           );
 
-        opt.value = ward;
+        });
 
-        opt.textContent = ward;
-
-        wardSelect.appendChild(opt);
-
-      });
-
-  }
-);
-
-  // =========================
-  // FORM SUBMIT (FIREBASE)
-  // =========================
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    try {
-
-      // CAPTCHA CHECK
-      const answer = document.getElementById("captchaAnswer").value;
-
-      const verify = await fetch(`${API}/verify`, {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ answer })
-      });
-
-      const verifyData = await verify.json();
-
-      if (!verifyData.success) {
-        alert("Wrong CAPTCHA Answer");
-        loadCaptcha();
-        return;
       }
+    );
 
-      // CONSENT CHECK
-      if (!document.getElementById("consent").checked) {
-        alert("Please accept Terms & Conditions");
-        return;
+    // =========================
+    // SUB COUNTY → WARD
+    // =========================
+    subCountySelect.addEventListener(
+      "change",
+      function () {
+
+        const county =
+          countySelect.value;
+
+        const sub =
+          this.value;
+
+        wardSelect.innerHTML =
+          '<option value="">Select Ward</option>';
+
+        if (
+          !data[county] ||
+          !data[county][sub]
+        ) return;
+
+        data[county][sub]
+          .forEach(ward => {
+
+            const opt =
+              document.createElement(
+                "option"
+              );
+
+            opt.value = ward;
+
+            opt.textContent = ward;
+
+            wardSelect.appendChild(opt);
+
+          });
+
       }
+    );
 
-      // FIREBASE SAVE
-        const applicationNo =
-  `APP-${new Date().getFullYear()}-${Date.now()
-    .toString()
-    .slice(-6)}`;
-      await addDoc(collection(db, "applications"), {
-         applicationNo,
+    // =========================
+    // FORM SUBMIT
+    // =========================
+    form.addEventListener(
+      "submit",
+      async function (e) {
 
-  status: "Pending",
+        e.preventDefault();
 
-  processed: false,
-    
-        firstName: form.first_name.value,
-        lastName: form.last_name.value,
-        gender: form.gender.value,
-        phone: form.phone.value,
-        email: form.email.value,
+        try {
 
-        address: form.address.value,
-        county: form.county.value,
-        subCounty: form.sub_county.value,
-        ward: form.ward.value,
+          // =========================
+          // CAPTCHA VERIFY
+          // =========================
+          const answer =
+            document.getElementById(
+              "captchaAnswer"
+            ).value;
 
-        course: form.course.value,
-        intake: form.intake.value,
-        mode: form.mode_of_study.value,
+          const verify =
+            await fetch(
+              `${API}/verify`,
+              {
+                method: "POST",
 
-        emergencyName: form.emergency_contact_name.value,
-        emergencyPhone: form.emergency_contact_phone.value,
+                credentials:
+                  "include",
 
-        createdAt: serverTimestamp()
+                headers: {
+                  "Content-Type":
+                    "application/json"
+                },
 
-      });
+                body: JSON.stringify({
+                  answer
+                })
+              }
+            );
 
-      
-const receiptWindow = window.open("", "_blank", "width=700,height=800");
+          const verifyData =
+            await verify.json();
 
-receiptWindow.document.write(`
-<html>
-<head>
-<title>Application Receipt</title>
-<style>
-body{
-  font-family:Arial,sans-serif;
-  padding:30px;
-  text-align:center;
-}
+          if (!verifyData.success) {
 
-.logo{
-  width:80px;
-/* SAVE TO FIRESTORE */
+            alert(
+              "Wrong CAPTCHA Answer"
+            );
 
+            loadCaptcha();
+
+            return;
+
+          }
+
+          // =========================
+          // CONSENT
+          // =========================
+          if (
+            !document.getElementById(
+              "consent"
+            ).checked
+          ) {
+
+            alert(
+              "Please accept Terms & Conditions"
+            );
+
+            return;
+
+          }
+
+          // =========================
+          // APPLICATION NUMBER
+          // =========================
+          const applicationNo =
+
+            `APP-${new Date()
+              .getFullYear()}-${Date.now()
+              .toString()
+              .slice(-6)}`;
+
+          // =========================
+          // PHOTO UPLOAD
+          // =========================
+          let photoUrl = "";
+
+          const photoFile =
+            form.photo.files[0];
+
+          if (photoFile) {
+
+            const storageRef =
+              ref(
+                storage,
+                `student_photos/${Date.now()}_${photoFile.name}`
+              );
+
+            await uploadBytes(
+              storageRef,
+              photoFile
+            );
+
+            photoUrl =
+              await getDownloadURL(
+                storageRef
+              );
+
+          }
+
+          // =========================
+          // SAVE TO FIRESTORE
+          // =========================
           await addDoc(
             collection(
               db,
@@ -647,17 +752,21 @@ body{
             }
           );
 
-          /* SUCCESS */
-
+          // =========================
+          // SUCCESS ALERT
+          // =========================
           alert(
-            `Application Submitted Successfully!
+
+`Application Submitted Successfully!
 
 Application Number:
 ${applicationNo}`
+
           );
 
-          /* RECEIPT WINDOW */
-
+          // =========================
+          // RECEIPT WINDOW
+          // =========================
           const receiptWindow =
             window.open(
               "",
@@ -690,10 +799,24 @@ ${applicationNo}`
             margin:auto;
           }
 
+          .logo{
+            width:80px;
+            margin-bottom:10px;
+          }
+
           .appno{
             color:red;
             font-size:22px;
             font-weight:bold;
+          }
+
+          button{
+            padding:10px 20px;
+            margin-top:20px;
+            background:#0a2342;
+            color:white;
+            border:none;
+            cursor:pointer;
           }
 
           </style>
@@ -704,6 +827,11 @@ ${applicationNo}`
 
           <div class="receipt">
 
+          <img
+            src="gdeh_logo.png"
+            class="logo"
+          >
+
           <h2>
           GARISSA DIGITAL EMPOWERMENT HUB
           </h2>
@@ -713,8 +841,10 @@ ${applicationNo}`
           </h3>
 
           <p>
+
           ${form.first_name.value}
           ${form.last_name.value}
+
           </p>
 
           <div class="appno">
@@ -723,6 +853,10 @@ ${applicationNo}`
 
           <p>
           Status: Pending Review
+          </p>
+
+          <p>
+          Keep your application number safely.
           </p>
 
           <button onclick="window.print()">
@@ -739,11 +873,15 @@ ${applicationNo}`
 
           receiptWindow.document.close();
 
+          // =========================
+          // RESET
+          // =========================
           form.reset();
 
           loadCaptcha();
 
-        } catch(error){
+        }
+        catch(error){
 
           console.error(error);
 
@@ -761,5 +899,6 @@ ${applicationNo}`
 
 </script>
 
+          
 </body>
 </html>
