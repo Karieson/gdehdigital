@@ -341,28 +341,46 @@ const db =
 
 const storage =
   getStorage(app);
-// =========================  
-// CAPTCHA API  
-// =========================  
-const API = "https://math-captcha-backend.onrender.com";  
-  
-// =========================  
-// LOAD CAPTCHA  
-// =========================  
-async function loadCaptcha() {  
-  try {  
-    const response = await fetch(`${API}/captcha`, {  
-      credentials: "include"  
-    });  
-  
-    const data = await response.json();  
-  
-    document.getElementById("captchaQuestion").innerText = data.question;  
-  
-  } catch (error) {  
-    console.error("CAPTCHA Load Error:", error);  
-  }  
-}  
+
+// =========================
+// CAPTCHA API
+// =========================
+const API =
+  "https://math-captcha-backend.onrender.com";
+
+// =========================
+// LOAD CAPTCHA
+// =========================
+async function loadCaptcha() {
+
+  try {
+
+    const response =
+      await fetch(
+        `${API}/captcha`,
+        {
+          credentials: "include"
+        }
+      );
+
+    const data =
+      await response.json();
+
+    document.getElementById(
+      "captchaQuestion"
+    ).innerText = data.question;
+
+  }
+  catch(error){
+
+    console.error(
+      "Captcha Error:",
+      error
+    );
+
+  }
+
+}
 
 // =========================
 // LOCATION DATA
@@ -559,23 +577,33 @@ document.addEventListener(
 
         try {
 
-              // CAPTCHA CHECK  
-      const answer = document.getElementById("captchaAnswer").value;  
-  
-      const verify = await fetch(`${API}/verify`, {  
-        method: "POST",  
-        credentials: "include",  
-        headers: { "Content-Type": "application/json" },  
-        body: JSON.stringify({ answer })  
-      });  
-  
-      const verifyData = await verify.json();  
-  
-      if (!verifyData.success) {  
-        alert("Wrong CAPTCHA Answer");  
-        loadCaptcha();  
-        return;  
-      }  
+          // =========================
+          // CAPTCHA VERIFY
+          // =========================
+          const answer =
+            document.getElementById(
+              "captchaAnswer"
+            ).value;
+
+          const verify =
+            await fetch(
+              `${API}/verify`,
+              {
+                method: "POST",
+
+                credentials:
+                  "include",
+
+                headers: {
+                  "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify({
+                  answer
+                })
+              }
+            );
 
           const verifyData =
             await verify.json();
@@ -868,9 +896,7 @@ ${applicationNo}`
 
   }
 );
-
-</script>
-
-          
+ </script>
+                   
 </body>
 </html>
