@@ -511,88 +511,193 @@ body{
 
 .logo{
   width:80px;
-  margin-bottom:10px;
-}
+/* SAVE TO FIRESTORE */
 
-.receipt{
-  border:2px solid #0a2342;
-  padding:20px;
-  max-width:600px;
-  margin:auto;
-}
+          await addDoc(
+            collection(
+              db,
+              "applications"
+            ),
+            {
 
-h2{
-  color:#0a2342;
-}
+              applicationNo,
 
-.appno{
-  color:#c00;
-  font-size:22px;
-  font-weight:bold;
-}
+              status:
+                "Pending",
 
-.btn{
-  margin-top:20px;
-  padding:10px 20px;
-  background:#0a2342;
-  color:white;
-  border:none;
-  cursor:pointer;
-}
-</style>
-</head>
-<body>
+              processed:
+                false,
 
-<div class="receipt">
+              registrationNo:
+                "",
 
-<img src="gdeh_logo.png" class="logo">
+              pdfUrl:
+                "",
 
-<h2>GARISSA DIGITAL EMPOWERMENT HUB</h2>
+              admissionLetter:
+                "",
 
-<h3>Application Submission Receipt</h3>
+              firstName:
+                form.first_name.value,
 
-<p><b>Applicant:</b></p>
-<p>${form.first_name.value} ${form.last_name.value}</p>
+              lastName:
+                form.last_name.value,
 
-<p><b>Application Number</b></p>
+              gender:
+                form.gender.value,
 
-<div class="appno">
-${applicationNo}
-</div>
+              phone:
+                form.phone.value,
 
-<p><b>Date Submitted:</b></p>
-<p>${new Date().toLocaleString()}</p>
+              email:
+                form.email.value,
 
-<p><b>Status:</b> Pending Review</p>
+              address:
+                form.address.value,
 
-<p>
-Please keep this Application Number for
-tracking your admission status.
-</p>
+              county:
+                form.county.value,
 
-<button class="btn" onclick="window.print()">
-Print / Save PDF
-</button>
+              subCounty:
+                form.sub_county.value,
 
-</div>
+              ward:
+                form.ward.value,
 
-</body>
-</html>
-`);
+              course:
+                form.course.value,
 
-receiptWindow.document.close();
+              intake:
+                form.intake.value,
 
-      form.reset();
-      loadCaptcha();
+              mode:
+                form.mode_of_study.value,
 
-    } catch (error) {
-      console.error(error);
-      alert("Submission failed. Try again.");
-    }
+              emergencyName:
+                form.emergency_contact_name.value,
 
-  });
+              emergencyPhone:
+                form.emergency_contact_phone.value,
 
-});
+              photoUrl,
+
+              createdAt:
+                serverTimestamp()
+
+            }
+          );
+
+          /* SUCCESS */
+
+          alert(
+            `Application Submitted Successfully!
+
+Application Number:
+${applicationNo}`
+          );
+
+          /* RECEIPT WINDOW */
+
+          const receiptWindow =
+            window.open(
+              "",
+              "_blank",
+              "width=700,height=800"
+            );
+
+          receiptWindow.document.write(`
+
+          <html>
+
+          <head>
+
+          <title>
+          Application Receipt
+          </title>
+
+          <style>
+
+          body{
+            font-family:Arial;
+            padding:30px;
+            text-align:center;
+          }
+
+          .receipt{
+            border:2px solid #0a2342;
+            padding:20px;
+            max-width:600px;
+            margin:auto;
+          }
+
+          .appno{
+            color:red;
+            font-size:22px;
+            font-weight:bold;
+          }
+
+          </style>
+
+          </head>
+
+          <body>
+
+          <div class="receipt">
+
+          <h2>
+          GARISSA DIGITAL EMPOWERMENT HUB
+          </h2>
+
+          <h3>
+          Application Submission Receipt
+          </h3>
+
+          <p>
+          ${form.first_name.value}
+          ${form.last_name.value}
+          </p>
+
+          <div class="appno">
+          ${applicationNo}
+          </div>
+
+          <p>
+          Status: Pending Review
+          </p>
+
+          <button onclick="window.print()">
+          Print / Save PDF
+          </button>
+
+          </div>
+
+          </body>
+
+          </html>
+
+          `);
+
+          receiptWindow.document.close();
+
+          form.reset();
+
+          loadCaptcha();
+
+        } catch(error){
+
+          console.error(error);
+
+          alert(
+            "Submission failed."
+          );
+
+        }
+
+      }
+    );
+
+  }
+);
 
 </script>
 
