@@ -295,12 +295,7 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
+
 
 // =========================
 // FIREBASE CONFIG
@@ -338,8 +333,6 @@ const app =
 const db =
   getFirestore(app);
 
-const storage =
-  getStorage(app);
 
 // =========================
 // CAPTCHA API
@@ -717,7 +710,7 @@ document.addEventListener(
               emergencyPhone:
                 form.emergency_contact_phone.value,
 
-              photoUrl,
+              photoUrl: "",
 
               createdAt:
                 serverTimestamp()
