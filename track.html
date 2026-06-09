@@ -269,8 +269,16 @@ async function trackApplication(){
     `https://gdehadmissionsystem.onrender.com/track/${applicationNo}`
   );
 
-    const student =
-      await response.json();
+    if(!response.ok){
+
+  throw new Error(
+    "Application not found"
+  );
+
+}
+
+const student =
+  await response.json();
 
     let statusClass =
       student.status
@@ -300,9 +308,10 @@ async function trackApplication(){
       </p>
 
     `;
+if (student.status === "Admitted") {
 
-    if (student.status === "Admitted") {
   html += `
+
     <p>
       <b>Registration No:</b>
       ${student.registrationNo}
@@ -310,11 +319,12 @@ async function trackApplication(){
 
     <a
       class="pdf-link"
-      href="https://gdehadmissionsystem.onrender.com/pdfs/${student.admissionLetter}"
+      href="${student.pdfUrl}"
       target="_blank"
     >
       📄 Download Admission Letter
     </a>
+
   `;
 
     }
