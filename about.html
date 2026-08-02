@@ -6,39 +6,145 @@
 <title>About Us Extended - GDEH CBO</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body { background:#fff; color:#000; font-size:12px; line-height:1.8; min-height:100vh; text-align:left; }
-.header { display:flex; align-items:center; padding:12px 18px; background:transparent; position:relative; }
-.logo { width:65px; height:auto; }
-.home-link { position:absolute; top:15px; right:18px; color:#000; text-decoration:none; font-size:11px; }
-.home-link:hover { text-decoration:underline; }
-.section-title { color:#FFA500; margin:14px 15px; display:block; font-size:12px; font-weight:700; border-top:2px solid #001f3f; padding-top:10px; }
-.section-content { background:#fff; border-top:1px solid #001f3f; padding:18px; margin:0 15px 20px; }
-.section-content p { font-size:11px; margin-bottom:12px; }/* FOOTER */
-    footer{
-      text-align:center;
-      padding:18px;
-      margin-top:auto;
-      width:100%;
-      font-size:13px;
-      font-weight:bold;             /* bold footer text */
-      background:#001f3f;           /* dark navy background */
-      color:#fff;                   /* white text */
-      border-top:2px solid #001f3f;
-    }
+:root{
+    --corporate-red:#C00000;
+}
 
-    footer a{
-      color:#f0f0f0;                /* lighter white links */
-      font-weight:300;
-      text-decoration:none;
-      font-size:12px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
 
-    footer a:hover{
-      text-decoration:underline;
-      color:#e0e0e0;
-    }
+body{
+    background:#fff;
+    color:#222;
+    font-size:12px;
+    line-height:1.8;
+    min-height:100vh;
+}
 
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    background:#fff;
+    border-bottom:3px solid var(--corporate-red);
+}
+
+.logo{
+    width:65px;
+    height:auto;
+}
+
+.home-link{
+    color:#222;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:600;
+}
+
+.home-link:hover{
+    color:var(--corporate-red);
+}
+
+/* Section Titles */
+
+.section-title{
+    display:block;
+    color:var(--corporate-red);
+    font-size:15px;
+    font-weight:700;
+    margin:25px 20px 12px;
+    padding-left:12px;
+    border-left:5px solid var(--corporate-red);
+}
+
+/* Content */
+
+.section-content{
+    background:#fff;
+    margin:0 20px 20px;
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.section-content:hover{
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.section-content p{
+    color:#222;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+/* Lists */
+
+.section-content ul{
+    margin-left:20px;
+}
+
+.section-content li{
+    margin-bottom:8px;
+    color:#222;
+}
+
+/* Footer */
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    background:#fff;
+    border-top:3px solid var(--corporate-red);
+    text-align:center;
+}
+
+footer p{
+    color:#222;
+    font-size:12px;
+    font-weight:600;
+    margin:6px 0;
+}
+
+footer a{
+    color:#222;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:var(--corporate-red);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:10px;
+}
+
+.logo{
+    width:55px;
+}
+
+.section-title{
+    font-size:14px;
+}
+
+.section-content{
+    margin:0 15px 18px;
+    padding:16px;
+}
+
+}
 </style>
 </head>
 
@@ -101,4 +207,4 @@ body { background:#fff; color:#000; font-size:12px; line-height:1.8; min-height:
 </footer>
 
 </body>
-</html>
+    </html>
