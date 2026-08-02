@@ -12,234 +12,272 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
+:root{
+    --corporate-red:#C00000;
+}
 /* GLOBAL */
-body {
-  background: #fff;
-  color: #111;
-  font-size: 11px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
-}
-/* HEADER */
-header {
-  position: relative;
-  padding: 15px 0;
+body{
+    background:#fff;
+    color:#222;
+    font-size:11px;
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
 }
 
-/* LOGO TOP LEFT */
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  width: 70px;
-  height: auto;
+/* STICKY HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#fff;
+    padding:15px 0 0;
+    border-bottom:3px solid var(--corporate-red);
 }
 
-/* NAVIGATION CONTAINER */
-.nav-links {
-  display: flex;
-  flex-direction: column;   /* stack rows vertically */
-  align-items: center;      /* center each row */
-  gap: 8px;                 /* spacing between rows */
-  margin: 20px auto;
+/* LOGO */
+.logo{
+    display:block;
+    width:70px;
+    height:auto;
+    margin:0 0 10px 20px;
 }
 
-/* EACH ROW */
-.nav-row {
-  display: flex;
-  justify-content: center;  /* center links in each row */
-  gap: 15px;                /* spacing between links */
+/* STICKY NAVIGATION */
+.nav-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:0 0 15px;
+    background:#fff;
 }
 
-/* LINKS STYLE */
-.nav-links a {
-  color: #001f3f;           /* dark navy */
-  font-size: 10px;          /* very small elegant font */
-  font-weight: 300;         /* light weight */
-  text-decoration: none;
-  letter-spacing: 0.4px;
-  transition: color 0.3s ease;
+.nav-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
 }
 
-.nav-links a:hover {
-  color: #003366;
-  text-decoration: underline;
+.nav-links a{
+    color:#222;
+    font-size:11px;
+    font-weight:700;
+    text-decoration:none;
 }
+
+.nav-links a:hover{
+    color:var(--corporate-red);
+}
+
+/* PAGE CONTENT */
+.hero-section{
+    margin-top:20px;
+}
+
 /* HERO */
-.hero-section {
-  background: #fff;          /* white background */
-  padding: 20px 15px 50px;
-}
-/* SLIDER */
-.slider {
-  width: 100%;
-  height: 320px;
-  overflow: hidden;
-  position: relative;
+.hero-section{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    text-align:center;
 }
 
-.slides {
-  display: flex;
-  width: calc(100% * 3);       /* 3 images side by side */
-  animation: scroll 15s linear infinite;
+.hero-card{
+    margin-bottom:20px;
 }
 
-.slides img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
+.slider{
+    width:100%;
+    max-width:900px;
+    height:320px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:8px;
 }
 
-/* Continuous scroll animation */
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-200%); }
-}
-/* HERO TITLE */
-.welcome-title {
-  color: #001f3f;        /* dark navy */
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;    /* center align */
-  margin-bottom: 12px;
-  text-transform: uppercase;
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 15s infinite;
 }
 
-.hero-text {
-  color: #444;
-  line-height: 1.9;
-  font-size: 12px;
+.slides img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+@keyframes slide{
+    0%,25%{transform:translateX(0);}
+    33%,58%{transform:translateX(-100%);}
+    66%,91%{transform:translateX(-200%);}
+    100%{transform:translateX(0);}
 }
 
 /* INTRO */
-.intro-section {
-  background: #fff;
-  padding: 50px 15px;
-  text-align: center;
+.intro-section{
+    text-align:center;
+    padding:50px 20px;
 }
 
-.intro-title {
-  color: #001f3f;            /* dark navy */
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.intro-text{
+    font-size:13px;
+    color:#555;
+    margin:15px 0 25px;
 }
 
-.apply-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 26px;
-  background: #001f3f;       /* dark navy button */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
+/* LINKS */
+.link-section{
+    max-width:900px;
+    margin:auto;
 }
 
-/* LINKS + FOOTER SECTION */
-.orange-section {
-  background: #fff;             /* switch to white background */
-  padding: 50px 20px;
-  text-align: center;
-}
-
-/* LINK SECTION WRAPPER */
-.link-section {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* EACH ITEM */
-.link-item {
-  padding: 25px 0;
-  border-bottom: 1px solid rgba(0,64,128,0.2); /* subtle blue divider */
+.orange-section{
+    padding:40px 20px 120px;
 }
 
 /* TITLES */
-.link-title {
-  color: #004080;               /* elegant blue */
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
+.welcome-title,
+.intro-title,
+.link-title{
+    font-family:"Brush Script MT","Lucida Handwriting",cursive;
+    color:var(--corporate-red);
+    font-weight:700;
 }
 
-/* TEXT */
-.link-text {
-  color: #004080;               /* elegant blue text */
-  font-size: 12px;
-  line-height: 1.9;
-  margin: 10px auto;
-  max-width: 700px;
-  text-align: center;
-  font-weight: 300;             /* light elegant weight */
+/* PARAGRAPHS */
+.hero-text,
+.intro-text,
+.link-text{
+    color:#222;
+    font-size:12px;
+    line-height:1.8;
+    font-weight:400;
+}
+/* CORPORATE BUTTONS */
+.apply-btn,
+.link-btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:var(--corporate-red);
+    color:#fff;
+    text-decoration:none;
+    border-radius:4px;
+    transition:.3s;
 }
 
-/* BUTTON LINKS */
-.link-btn {
-  color: #004080;               /* elegant blue */
-  font-size: 12px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.apply-btn:hover,
+.link-btn:hover{
+    opacity:.9;
+    color:#fff;
 }
 
-.link-btn:hover {
-  color: #0066cc;               /* brighter blue on hover */
-  text-decoration: underline;
-}
-/* STICKY FOOTER */
-.footer {
-  position: fixed;           /* stick to bottom */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #fff;       /* same dark navy */
-  color: #001f3f;
-  text-align: center;
-  padding: 12px;
-  font-size: 10px;
-  font-weight: normal;         /* bold white text */
-  z-index: 100;
+/* WHITE BACKGROUND */
+.hero-section,
+.intro-section,
+.orange-section{
+    background:#fff;
 }
 
+/* EACH LINK ITEM */
+.link-item{
+    display:grid;
+    grid-template-columns:4px 1fr;
+    column-gap:18px;
+    padding:25px 0;
+    align-items:start;
+}
 
-/* FOOTER LINKS */
-.footer-links {
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;   /* center horizontally */
-  gap: 8px;                  /* spacing between items */
+/* SLIM LEFT CORPORATE RED BAR */
+.link-item::before{
+    content:"";
+    width:4px;
+    height:100%;
+    background:var(--corporate-red);
+    border-radius:2px;
+}
+
+/* CONTENT */
+.link-title{
+    color:#222;
+    font-family:'Poppins',sans-serif;
+    font-size:16px;
+    font-weight:700;
+    text-align:left;
+    margin-bottom:10px;
+}
+
+.link-text{
+    color:#555;
+    font-size:12px;
+    line-height:1.8;
+    text-align:center;
+    margin-bottom:12px;
+}
+
+/* TEXT LINK (NOT BUTTON) */
+.link-btn{
+    display:inline;
+    background:none;
+    padding:0;
+    color:var(--corporate-red);
+    font-size:12px;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.link-btn:hover{
+    text-decoration:underline;
+}
+
+/* BODY TEXT */
+.hero-text,
+.link-text{
+    color:#555;
+    line-height:1.9;
+    font-weight:300;
+}
+
+/* INTRODUCTION TITLE */
+.intro-title{
+    font-family:"Brush Script MT","Lucida Handwriting",cursive;
+    color:var(--corporate-red);
+    font-size:32px;
+    font-weight:700;
+    text-transform:uppercase;
+    text-align:center;
+}
+
+/* FOOTER */
+.footer{
+    background:#fff;
+    color:#222;
+    border-top:3px solid var(--corporate-red);
+    text-align:center;
+    padding:14px;
+    font-size:11px;
+    font-weight:700; /* Bold */
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    z-index:100;
 }
 
 .footer-links a,
-.footer-links span {
-  color:#001f3f ;               /* white text */
-  font-size: 11px;           /* small font size */
-  font-weight: normal;       /* not bold */
-  text-decoration: none;
+.footer-links span{
+    color:#222;
+    font-size:11px;
+    font-weight:700; /* Bold */
+    text-decoration:none;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Separator styling */
-.footer-links span {
-  color: #001f3f;
-  font-size: 11px;
-  font-weight: normal;
-}
-
-/* MAIN CONTENT CONTAINER */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 15px;
-  padding-bottom: 100px;     /* reserve space for sticky footer */
+.footer-links a:hover{
+    color:var(--corporate-red);
 }
 </style>
 </head>
@@ -247,114 +285,136 @@ header {
 <body>
 
 <header>
-  <!-- Logo -->
-  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+    <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
 
-  <!-- Navigation Links -->
+    <nav class="nav-links">
+        <div class="nav-row">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+        </div>
 
-<nav class="nav-links">
-  <div class="nav-row">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="services.html">Services</a>
-  </div>
-  <div class="nav-row">
-    <a href="contact.html">Contacts</a>
-    <a href="teamcbo.html">Team</a>
-    <a href="landing.html">Partnerships</a>
-  <a href="https://gdehexm.onrender.com/verify">
-   Document Verification
-</a>
-  </div>
-  <div class="nav-row">
-    <a href="courses.html">Programmes</a>
-    <a href="ourworkshop.html">Workshops</a>
-    <a href="https://gdehdigital-7b5q.onrender.com">
-    Student Portal
-</a>
-  </div>
-</nav>
+        <div class="nav-row">
+            <a href="contact.html">Contacts</a>
+            <a href="teamcbo.html">Team</a>
+            <a href="landing.html">Partnerships</a>
+            <a href="https://gdehexm.onrender.com/verify">Document Verification</a>
+        </div>
+
+        <div class="nav-row">
+            <a href="courses.html">Programmes</a>
+            <a href="ourworkshop.html">Workshops</a>
+            <a href="https://gdehdigital-7b5q.onrender.com">Student Portal</a>
+        </div>
+    </nav>
 </header>
 
-
-
-<!-- HERO -->
 <section class="hero-section">
-  <div class="hero-grid">
 
     <div class="hero-card">
-      <h1 class="welcome-title">Welcome To GDEH CBO</h1>
-      <p class="hero-text">
-        Garissa Digital Empowerment Hub empowers youth, women, PWDs and communities through digital innovation and skills development.
-      </p>
+        <h1 class="welcome-title">Welcome To GDEH CBO</h1>
+
+        <p class="hero-text">
+            Garissa Digital Empowerment Hub empowers youth, women, PWDs and communities through digital innovation and skills development.
+        </p>
     </div>
 
     <div class="slider">
-  <div class="slides">
-    <img src="img1.jpeg" alt="Slide 1">
-    <img src="img2.jpeg" alt="Slide 2">
-    <img src="img3.jpeg" alt="Slide 3">
-  </div>
-</div>
+        <div class="slides">
+            <img src="img1.jpeg" alt="Slide 1">
+            <img src="img2.jpeg" alt="Slide 2">
+            <img src="img3.jpeg" alt="Slide 3">
+        </div>
+    </div>
 
-  </div>
 </section>
 
-<!-- INTRO -->
 <section class="intro-section">
 
-  <h2 class="intro-title">Admissions Open</h2>
+    <h2 class="intro-title">Admissions Open</h2>
 
-  <p class="intro-text">
-    Admissions are now open for digital training and ICT programmes.
-  </p>
-<a href="https://gdehexm.onrender.com/apply.html" class="apply-btn">
-  Apply Now
-</a>
+    <p class="intro-text">
+        Admissions are now open for digital training and ICT programmes.
+    </p>
+
+    <a href="https://gdehexm.onrender.com/apply.html" class="apply-btn">
+        Apply Now
+    </a>
 
 </section>
 
-<!-- LINKS + FOOTER -->
 <section class="orange-section">
-  <div class="link-section">
 
+    <div class="link-section">
 
-  <section class="white-section">
-  <div class="link-section">
-    <div class="link-item">
-      <div class="link-title">Meet Our Team</div>
-      <div class="link-text">Learn about leadership and trainers.</div>
-      <a class="link-btn" href="teamcbo.html">View </a>
+        <div class="link-item">
+
+            <div class="link-content">
+                <h3 class="link-title">Meet Our Team</h3>
+
+                <p class="link-text">
+                    Learn about our leadership team, trainers and dedicated professionals driving digital empowerment.
+                </p>
+
+                <div class="link-action">
+                    <a class="link-btn" href="teamcbo.html">View More →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="link-item">
+
+            <div class="link-content">
+                <h3 class="link-title">Partnerships</h3>
+
+                <p class="link-text">
+                    Collaborate with us through strategic partnerships that create lasting community impact.
+                </p>
+
+                <div class="link-action">
+                    <a class="link-btn" href="landing.html">Learn More →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="link-item">
+
+            <div class="link-content">
+                <h3 class="link-title">Explore Programmes</h3>
+
+                <p class="link-text">
+                    Discover our digital skills, ICT training and innovation programmes designed for all learners.
+                </p>
+
+                <div class="link-action">
+                    <a class="link-btn" href="explore.html">Explore More →</a>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="link-item">
-      <div class="link-title">Partnerships</div>
-      <div class="link-text">Collaborate and support our mission.</div>
-      <a class="link-btn" href="landing.html">Learn </a>
-    </div>
-
-    <div class="link-item">
-      <div class="link-title">Explore Programs</div>
-      <div class="link-text">Discover training opportunities.</div>
-      <a class="link-btn" href="explore.html">Explore </a>
-    </div>
-  </div>
 </section>
 
 <footer class="footer">
-  © 2026 Garissa Digital Empowerment Hub CBO.All right reserved 
-  <div class="footer-links">
-  <a href="privacy_terms.html">Privacy Policy</a>
-  <span>|</span>
-  <a href="privacy_terms.html">Terms & Conditions</a>
-</div>
-  
-    <a href="contact.html">CONTACT US</a>
-  </div>
+
+    © 2026 Garissa Digital Empowerment Hub CBO. All rights reserved.
+
+    <div class="footer-links">
+        <a href="privacy_terms.html">Privacy Policy</a>
+        <span>|</span>
+        <a href="privacy_terms.html">Terms &amp; Conditions</a>
+        <span>|</span>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
 </footer>
 
-  
-
-
 </body>
+
+
+
 </html>
