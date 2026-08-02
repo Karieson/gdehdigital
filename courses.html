@@ -4,254 +4,217 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GDEH Courses</title>
-
-  <style>
-          *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
+<style>
+  :root{
+    --corporate-red:#C00000;
 }
 
-/* BODY stays white */
-body {
-  background: #ffffff;
-  color: #222;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
-/* GLOBAL FONT STYLE */
-.elegant-blue {
-  color: #004080;              /* dark elegant blue */
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 300;            /* light refined weight */
-  letter-spacing: 0.5px;       /* subtle spacing */
-  line-height: 1.8;            /* airy readability */
+
+body{
+    background:#fff;
+    color:#222;
+    font-size:14px;
+    line-height:1.8;
 }
+
+/* Back Button */
+
 .back-home{
     position:fixed;
-    top:10px;
-    right:15px;
-
-    font-size:10px;
+    top:18px;
+    right:18px;
+    color:#222;
+    font-size:12px;
     font-weight:600;
-
-    color:#001f3f;
     text-decoration:none;
 }
-/* Apply to headings automatically */
-h1, h2, h3, h4, h5, h6 {
-  color:#FFA500;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-weight: 600;            /* slightly stronger for headings */
+
+.back-home:hover{
+    color:var(--corporate-red);
 }
 
-/* Apply to links */
-a {
-  color: #004080;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* Header */
+
+header{
+    background:#fff;
+    text-align:center;
+    padding:20px;
+    border-bottom:3px solid var(--corporate-red);
 }
 
-a:hover {
-  color: #0066cc;              /* brighter elegant blue on hover */
-  text-decoration: underline;
+header img{
+    width:90px;
+    display:block;
+    margin:auto;
 }
 
-/* HEADER */
-header {
-  background: #fff;              /* uniform white header */
-  color: #222;                   /* dark text if needed */
-  padding: 14px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.1); /* subtle divider */
+/* Headings */
+
+h1,h2,h3{
+    color:var(--corporate-red);
+    font-weight:700;
 }
 
-/* LOGO */
-header img {
-  width: 90px;
-  height: auto;
-  object-fit: contain;
-  background: none;              /* remove white box */
-  padding: 0;                    /* remove padding */
-  border-radius: 0;              /* no rounded box */
-  box-shadow: none;              /* no shadow */
-}
-    
-
-//* HERO */
-
-.hero {
-  text-align: center;
-  padding: 45px 20px 30px;
-  background: #fff;              /* uniform white background */
-  color: #004080;                /* elegant blue text */
+.hero{
+    padding:40px 20px;
+    text-align:center;
+    background:#fff;
 }
 
-.hero h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #004080;                /* elegant blue heading */
-  text-align: center;            /* force center alignment */
+.hero h2{
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-.hero p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 12px;
-  line-height: 1.8;
-  color: #004080;                /* elegant blue paragraph */
-  opacity: 0.95;
-  text-align: center;            /* ensure centered text */
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#222;
+    font-size:13px;
 }
 
-/* COURSE GRID */
-.container {
-  flex: 1;
-  max-width: 1000px;
-  width: 100%;
-  margin: auto;
-  padding: 25px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+/* Course Grid */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
 }
 
-/* CARDS */
-.card {
-  background: #fff;
-  border: 1px solid #e0e6ed;     /* soft border */
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
+/* Cards */
+
+.card{
+    background:#fff;
+    border:2px solid var(--corporate-red);
+    border-radius:12px;
+    padding:22px;
+    transition:.3s;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  border-color: #004080;         /* elegant blue accent */
-  box-shadow: 0 8px 18px rgba(0,64,128,0.15);
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-.card h2 {
-  color: #004080;                /* elegant blue heading */
-  font-size: 14px;
-  margin-bottom: 10px;
-  font-weight: 600;
+.card h2{
+    font-size:16px;
+    margin-bottom:10px;
 }
 
-.card p {
-  font-size: 12px;
-  line-height: 1.8;
-  color: #333;
+.card p{
+    color:#222;
+    font-size:12px;
 }
 
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #004080;                /* elegant blue text */
-  text-decoration: none;
-  transition: 0.3s;
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 18px;
+    background:var(--corporate-red);
+    color:#fff;
+    border-radius:4px;
+    font-size:12px;
+    font-weight:600;
+    text-decoration:none;
 }
 
-.btn:hover {
-  padding-left: 5px;
-  color: #0066cc;                /* brighter blue hover */
-  opacity: 0.85;
-}
-/* WHY SECTION */
-.why-section {
-  padding: 45px 20px;
-  background: #fff;               /* switch to white background */
-  text-align: center;
-  color: #004080;                 /* elegant blue text */
-  border-top: 1px solid rgba(0,64,128,0.2); /* subtle divider */
+.btn:hover{
+    opacity:.9;
 }
 
-.why-section h2 {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #004080;                 /* elegant blue heading */
+/* Why Study */
+
+.why-section{
+    background:#fff;
+    padding:40px 20px;
 }
 
-.why-grid {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+.why-section h2{
+    text-align:center;
+    margin-bottom:25px;
 }
 
-.why-box {
-  padding: 20px;
-  border: 1px solid rgba(0,64,128,0.2); /* light blue border */
-  border-radius: 14px;
-  background: #f9f9f9;            /* soft white/grey background for contrast */
+.why-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
-.why-box h3 {
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #004080;                 /* elegant blue subheading */
+.why-box{
+    background:#fff;
+    border-left:5px solid var(--corporate-red);
+    border:1px solid #ddd;
+    border-left-width:5px;
+    padding:20px;
+    border-radius:8px;
 }
 
-.why-box p {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #004080;                 /* elegant blue text */
-  opacity: 0.95;
-}
-/* FOOTER */
-footer {
-  background: #001f3f;          /* dark navy sticky footer */
-  color: #fff;                  /* default text color */
-  text-align: center;
-  padding: 18px;
-  font-size: 12px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  position: sticky;             /* sticky at bottom */
-  bottom: 0;
-  z-index: 1000;
+.why-box h3{
+    margin-bottom:10px;
 }
 
-/* FOOTER LINKS */
-footer a {
-  color: #66a3ff;               /* elegant blue links */
-  font-weight: 300;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.why-box p{
+    color:#222;
+    font-size:12px;
 }
 
-footer a:hover {
-  color: #99c2ff;               /* lighter blue on hover */
-  text-decoration: underline;
+/* Footer */
+
+footer{
+    background:#fff;
+    color:#222;
+    text-align:center;
+    padding:20px;
+    border-top:3px solid var(--corporate-red);
+    font-size:12px;
+    font-weight:600;
 }
 
+footer a{
+    color:#222;
+    text-decoration:none;
+}
 
-  @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 16px;   /* smaller heading */
-  }
+footer a:hover{
+    color:var(--corporate-red);
+}
 
-  .hero p {
-    font-size: 13px;   /* smaller paragraph */
-  }
+/* Mobile */
 
-  .container {
-    padding: 15px;     /* reduced padding */
-  }
-}  </style>
+@media(max-width:768px){
+
+.hero h2{
+    font-size:18px;
+}
+
+.hero p{
+    font-size:12px;
+}
+
+.container{
+    padding:15px;
+}
+
+.back-home{
+    position:static;
+    display:block;
+    text-align:right;
+    padding:15px;
+}
+
+}
+</style>
 </head>
 
 <body>
@@ -389,4 +352,4 @@ footer a:hover {
   </footer>
 <script src="courses.js"></script>
 </body>
-</html>
+    </html>
