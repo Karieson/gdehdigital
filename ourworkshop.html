@@ -6,107 +6,193 @@
     <title>GDEH Workshops</title>
 
     <style>
-        body{
-            margin:0;
-            padding:0;
-            font-family: Arial, sans-serif;
-            background:#ffffff;
-            color:#000;
-        
-   .back-home{
+        :root{
+    --corporate-red:#C00000;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#222;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* Back Home */
+
+.back-home{
     position:fixed;
-    top:10px;
-    right:15px;
-
-    font-size:10px;
-    font-weight:600;
-
-    color:#001f3f;
+    top:18px;
+    right:20px;
+    color:#222;
     text-decoration:none;
-        }
+    font-size:12px;
+    font-weight:600;
+}
 
-        .container{
-            width:90%;
-            max-width:1000px;
-            margin:auto;
-            padding:20px;
-        }
+.back-home:hover{
+    color:var(--corporate-red);
+}
 
-        .logo{
-            width:120px;
-        }
+/* Container */
 
-    
-        header{
-            padding-top:20px;
-        }
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
 
-        h1{
-            text-align:center;
-            color:#0b1f3a;
-            font-size:32px;
-            margin-top:20px;
-            margin-bottom:30px;
-            font-weight:600;
-        }
+/* Header */
 
-        .content{
-            font-size:12px;
-            line-height:1.8;
-            color:#000;
-        }
+header{
+    padding:20px 0;
+    border-bottom:3px solid var(--corporate-red);
+    margin-bottom:30px;
+    text-align:center;
+}
 
-        .content h2{
-            color:#0b1f3a;
-            font-size:18px;
-            margin-top:30px;
-        }
+.logo{
+    width:80px;
+    height:auto;
+}
 
-        ul{
-            padding-left:20px;
-        }
+/* Main Title */
 
-        li{
-            margin-bottom:10px;
-        }
+h1{
+    text-align:center;
+    color:var(--corporate-red);
+    font-size:26px;
+    font-weight:700;
+    margin-bottom:30px;
+}
 
-        .highlight{
-            margin-top:20px;
-            padding:15px;
-            border-left:4px solid #0b1f3a;
-            background:#f8f8f8;
-        }
+/* Content */
 
-        .book-btn{
-            display:inline-block;
-            margin-top:25px;
-            text-decoration:none;
-            background:#0b1f3a;
-            color:#ffffff;
-            padding:12px 28px;
-            border-radius:5px;
-            font-size:14px;
-            transition:0.3s;
-        }
+.content{
+    color:#222;
+    font-size:12px;
+    line-height:1.9;
+}
 
-        .book-btn:hover{
-            background:#16345e;
-        }
+.content h2{
+    color:var(--corporate-red);
+    font-size:16px;
+    font-weight:700;
+    margin:30px 0 15px;
+    padding-left:12px;
+    border-left:5px solid var(--corporate-red);
+}
 
-        .light-link{
-            color:#0b1f3a;
-            text-decoration:none;
-            font-size:13px;
-        }
+/* Lists */
 
-        footer{
-            margin-top:50px;
-            background:#0b1f3a;
-            color:#ffffff;
-            text-align:center;
-            padding:20px;
-            font-size:12px;
-        }
+ul{
+    margin-left:25px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+/* Highlight Box */
+
+.highlight{
+    margin:25px 0;
+    padding:20px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-left:5px solid var(--corporate-red);
+    border-radius:8px;
+}
+
+.highlight strong{
+    color:var(--corporate-red);
+}
+
+/* Button */
+
+.book-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:var(--corporate-red);
+    color:#fff;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.book-btn:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+
+/* Links */
+
+.light-link{
+    color:#222;
+    text-decoration:none;
+}
+
+.light-link:hover{
+    color:var(--corporate-red);
+}
+
+/* Footer */
+
+footer{
+    margin-top:50px;
+    padding:20px;
+    background:#fff;
+    border-top:3px solid var(--corporate-red);
+    color:#222;
+    text-align:center;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.back-home{
+    position:static;
+    display:block;
+    text-align:right;
+    padding:15px;
+}
+
+.logo{
+    width:65px;
+}
+
+h1{
+    font-size:22px;
+}
+
+.content h2{
+    font-size:15px;
+}
+
+.container{
+    width:95%;
+    padding:15px;
+}
+
+.book-btn{
+    width:100%;
+    text-align:center;
+}
+
+}
     </style>
 </head>
 <body>
@@ -178,4 +264,4 @@
     </footer>
 
 </body>
-</html>
+    </html>
