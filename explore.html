@@ -6,107 +6,132 @@
 <title>Garissa Digital Empowerment Hub CBO</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root{
+    --corporate-red:#C00000;
 }
 
-body {
-  background: #ffffff;       /* uniform white background */
-  color: #000;               /* black text */
-  font-size: 12px;
-  line-height: 1.8;
-  min-height: 100vh;
-  text-align: left;          /* align all text left */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 12px 18px;
-  background: transparent;
-  position: relative;
+body{
+    background:#fff;
+    color:#222;
+    font-size:12px;
+    line-height:1.8;
 }
 
-.logo {
-  width: 65px;
-  height: auto;
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+    border-bottom:3px solid var(--corporate-red);
+    background:#fff;
 }
 
-/* BACK TO HOME LINK */
-.home-link {
-  position: absolute;
-  top: 15px;
-  right: 18px;
-  color: #000;               /* black link */
-  text-decoration: none;
-  font-size: 11px;
-  transition: 0.3s;
+.logo{
+    width:65px;
+    height:auto;
 }
 
-.home-link:hover {
-  text-decoration: underline;
+.home-link{
+    color:#222;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:600;
 }
 
-/* SECTION TITLES */
-.link-heading {
-  color: #001f3f;            /* dark navy */
-  margin: 14px 15px;
-  display: block;
-  font-size: 12px;           /* small font */
-  font-weight: 700;          /* bold */
-  border-top: 2px solid #001f3f;   /* dark navy horizontal line above */
-  padding-top: 10px;
-  text-align: left;
+.home-link:hover{
+    color:var(--corporate-red);
 }
 
-/* CONTENT BOXES */
-.card {
-  display: block;             /* always visible */
-  background: #ffffff;
-  border-top: 1px solid #001f3f;   /* dark navy line separating content */
-  border-radius: 0;
-  padding: 18px;
-  margin: 0 15px 20px;
-  text-align: left;
+/* Section Titles */
+
+.link-heading{
+    display:block;
+    color:var(--corporate-red);
+    font-size:15px;
+    font-weight:700;
+    margin:25px 20px 12px;
+    padding-left:12px;
+    border-left:5px solid var(--corporate-red);
 }
 
-.card p {
-  color: #000;
-  font-size: 11px;
-  line-height: 1.8;
-  margin-bottom: 12px;
-  text-align: left;
+/* Content Cards */
+
+.card{
+    background:#fff;
+    margin:0 20px 20px;
+    padding:18px 20px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    transition:.3s;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 18px;
-  border-top: 2px solid #001f3f;
-  background: #001f3f;        /* dark navy footer */
-  position: sticky;
-  bottom: 0;
+.card:hover{
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
 }
 
-footer p {
-  color: #66a3ff;             /* elegant blue text */
-  font-size: 11px;
-  margin: 4px 0;
+.card p{
+    color:#222;
+    font-size:12px;
+    margin-bottom:12px;
 }
 
-footer a {
-  color: #66a3ff;             /* elegant blue links */
-  text-decoration: none;
-  font-size: 11px;
+/* Footer */
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    background:#fff;
+    border-top:3px solid var(--corporate-red);
+    text-align:center;
 }
 
-footer a:hover {
-  text-decoration: underline;
-  color: #99c2ff;             /* lighter blue hover */
+footer p{
+    color:#222;
+    font-size:12px;
+    font-weight:600;
+    margin:6px 0;
+}
+
+footer a{
+    color:#222;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:var(--corporate-red);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:10px;
+}
+
+.logo{
+    width:55px;
+}
+
+.link-heading{
+    font-size:14px;
+}
+
+.card{
+    margin:0 15px 18px;
+    padding:16px;
+}
+
 }
 </style>
 </head>
@@ -200,4 +225,4 @@ footer a:hover {
 </footer>
 
 </body>
-</html>
+  </html>
