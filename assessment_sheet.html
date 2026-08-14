@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GDEH CBO - Training Assessment Sheet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root {
+            --corporate-red: #C00000;
+            --black: #222;
+            --gray: #666;
+            --border: #cfcfcf;
+            --light-gray: #f7f7f7;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: #eeeeee;
+            color: var(--black);
+            font-size: 0.63rem;
+            line-height: 1.45;
+        }
+
+        .document {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 1rem auto;
+            background: var(--white);
+            box-shadow: 0 0 15px rgba(0,0,0,0.08);
+        }
+
+        .document-inner {
+            padding: 13mm 15mm;
+        }
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .document-header {
+            margin-bottom: 1rem;
+        }
+
+        .header-top {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            width: 4.5rem;
+            height: 4.5rem;
+            object-fit: contain;
+            display: block;
+        }
+
+        .organization-tags {
+            margin-top: 0.2rem;
+            color: #222;
+            font-family:
+                "Brush Script MT",
+                "Segoe Script",
+                "Lucida Handwriting",
+                cursive;
+            font-size: 0.6rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .corporate-line {
+            width: 100%;
+            height: 0.1rem;
+            background: var(--corporate-red);
+            margin-top: 0.5rem;
+        }
+
+        .document-title {
+            margin-top: 0.35rem;
+            color: var(--corporate-red);
+            font-family:
+                "Brush Script MT",
+                "Segoe Script",
+                "Lucida Handwriting",
+                cursive;
+            font-size: 0.72rem;
+            font-weight: 400;
+        }
+
+        /* =====================================
+           FORM INTRO
+        ===================================== */
+
+        .form-heading {
+            text-align: center;
+            margin: 0.8rem 0 0.7rem;
+        }
+
+        .form-heading h1 {
+            color: var(--corporate-red);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03rem;
+        }
+
+        .form-heading p {
+            color: var(--gray);
+            font-size: 0.58rem;
+            margin-top: 0.15rem;
+        }
+
+        /* =====================================
+           SECTION TITLES
+        ===================================== */
+
+        .section-title {
+            color: var(--corporate-red);
+            font-size: 0.68rem;
+            font-weight: 700;
+            border-left: 0.15rem solid var(--corporate-red);
+            padding-left: 0.45rem;
+            margin: 0.75rem 0 0.4rem;
+            line-height: 1.3;
+        }
+
+        /* =====================================
+           INFORMATION TABLE
+        ===================================== */
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .info-table td {
+            border: 1px solid var(--border);
+            padding: 0.38rem 0.45rem;
+            height: 1.55rem;
+            vertical-align: middle;
+        }
+
+        .label {
+            width: 16%;
+            background: var(--light-gray);
+            font-weight: 600;
+            font-size: 0.58rem;
+        }
+
+        .field {
+            width: 34%;
+        }
+
+        /* =====================================
+           INSTRUCTIONS
+        ===================================== */
+
+        .instructions {
+            border: 1px solid var(--border);
+            background: var(--light-gray);
+            padding: 0.55rem 0.7rem;
+            margin-top: 0.35rem;
+        }
+
+        .instructions p {
+            font-size: 0.57rem;
+        }
+
+        /* =====================================
+           ASSESSMENT TABLE
+        ===================================== */
+
+        .assessment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.35rem;
+            table-layout: fixed;
+        }
+
+        .assessment-table th,
+        .assessment-table td {
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.35rem;
+            vertical-align: middle;
+        }
+
+        .assessment-table th {
+            background: var(--light-gray);
+            color: var(--black);
+            font-size: 0.55rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .assessment-table td {
+            font-size: 0.55rem;
+        }
+
+        .assessment-table .competency {
+            width: 29%;
+        }
+
+        .assessment-table .rating {
+            width: 9%;
+            text-align: center;
+        }
+
+        .assessment-table .comments {
+            width: 35%;
+        }
+
+        .rating-box {
+            text-align: center;
+            font-size: 0.65rem;
+            height: 1.2rem;
+        }
+
+        /* =====================================
+           RATING GUIDE
+        ===================================== */
+
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.35rem;
+            margin-top: 0.4rem;
+        }
+
+        .rating-item {
+            border: 1px solid var(--border);
+            padding: 0.4rem;
+            background: var(--light-gray);
+        }
+
+        .rating-item strong {
+            color: var(--corporate-red);
+            font-size: 0.58rem;
+        }
+
+        .rating-item span {
+            display: block;
+            font-size: 0.52rem;
+            margin-top: 0.08rem;
+        }
+
+        /* =====================================
+           FEEDBACK
+        ===================================== */
+
+        .feedback-box {
+            border: 1px solid var(--border);
+            min-height: 3.3rem;
+            padding: 0.45rem;
+            margin-top: 0.35rem;
+        }
+
+        /* =====================================
+           SIGNATURES
+        ===================================== */
+
+        .signature-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.45rem;
+        }
+
+        .signature-table td {
+            width: 50%;
+            border: 1px solid var(--border);
+            padding: 0.45rem;
+            height: 3.2rem;
+            vertical-align: bottom;
+            font-size: 0.56rem;
+        }
+
+        .signature-line {
+            display: block;
+            border-bottom: 1px solid #555;
+            margin: 0.9rem 0 0.25rem;
+        }
+
+        /* =====================================
+           FINAL RESULT
+        ===================================== */
+
+        .result-box {
+            border: 1px solid var(--corporate-red);
+            margin-top: 0.55rem;
+            padding: 0.5rem;
+            background: #fffafa;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .result-item {
+            flex: 1;
+            font-size: 0.57rem;
+        }
+
+        .result-item strong {
+            color: var(--corporate-red);
+            font-size: 0.58rem;
+        }
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        .document-footer {
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.5rem;
+        }
+
+        .document-footer strong {
+            color: var(--corporate-red);
+        }
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media (max-width: 800px) {
+
+            body {
+                background: #fff;
+            }
+
+            .document {
+                width: 100%;
+                min-height: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .document-inner {
+                padding: 1rem;
+            }
+
+            .rating-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        /* =====================================
+           PRINT / PDF
+        ===================================== */
+
+        @page {
+            size: A4;
+            margin: 10mm 11mm 11mm;
+        }
+
+        @media print {
+
+            html,
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-size: 0.59rem;
+            }
+
+            .document {
+                width: 100%;
+                min-height: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .document-inner {
+                padding: 0;
+            }
+
+            .document-header {
+                margin-bottom: 0.7rem;
+            }
+
+            .logo {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            .organization-tags {
+                font-size: 0.55rem;
+                font-weight: 700;
+            }
+
+            .corporate-line {
+                height: 0.08rem;
+                margin-top: 0.4rem;
+            }
+
+            .document-title {
+                font-size: 0.66rem;
+            }
+
+            .form-heading h1 {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 0.64rem;
+                margin-top: 0.6rem;
+            }
+
+            .info-table td {
+                padding: 0.3rem 0.35rem;
+                height: 1.4rem;
+            }
+
+            .label,
+            .field {
+                font-size: 0.53rem;
+            }
+
+            .assessment-table th,
+            .assessment-table td {
+                font-size: 0.51rem;
+                padding: 0.25rem 0.3rem;
+            }
+
+            .rating-item strong {
+                font-size: 0.54rem;
+            }
+
+            .rating-item span {
+                font-size: 0.49rem;
+            }
+
+            .feedback-box {
+                min-height: 2.8rem;
+            }
+
+            .document-footer {
+                margin-top: 0.7rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="document">
+
+    <div class="document-inner">
+
+
+        <!-- ===============================
+             HEADER
+        ================================ -->
+
+        <header class="document-header">
+
+            <div class="header-top">
+
+                <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+
+                <div class="organization-tags">
+                    Digital Literacy • Internet of Things •
+                    Technology Innovation • Agro-Entrepreneurship
+                </div>
+
+            </div>
+
+            <div class="corporate-line"></div>
+
+            
+            
+
+        </header>
+
+
+        <!-- ===============================
+             TITLE
+        ================================ -->
+
+        <div class="form-heading">
+
+            <h1>
+                Training Assessment Sheet
+            </h1>
+
+            <p>
+                Garissa Digital Empowerment Hub CBO
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             TRAINEE INFORMATION
+        ================================ -->
+
+        <h2 class="section-title">
+            1. Trainee Information
+        </h2>
+
+        <table class="info-table">
+
+            <tr>
+                <td class="label">Full Name</td>
+                <td class="field"></td>
+
+                <td class="label">Assessment Date</td>
+                <td class="field"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Phone</td>
+                <td class="field"></td>
+
+                <td class="label">Email</td>
+                <td class="field"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Course / Program</td>
+                <td class="field"></td>
+
+                <td class="label">Training Cohort</td>
+                <td class="field"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Trainer</td>
+                <td class="field"></td>
+
+                <td class="label">Duration</td>
+                <td class="field"></td>
+            </tr>
+
+        </table>
+
+
+        <!-- ===============================
+             INSTRUCTIONS
+        ================================ -->
+
+        <h2 class="section-title">
+            2. Assessment Instructions
+        </h2>
+
+        <div class="instructions">
+
+            <p>
+                The trainer should assess the participant based on practical
+                knowledge, participation, understanding and ability to apply
+                the skills acquired during training. Tick the appropriate
+                rating and provide comments where necessary.
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             COMPETENCY ASSESSMENT
+        ================================ -->
+
+        <h2 class="section-title">
+            3. Competency Assessment
+        </h2>
+
+        <table class="assessment-table">
+
+            <thead>
+
+                <tr>
+
+                    <th class="competency">
+                        Competency / Learning Area
+                    </th>
+
+                    <th class="rating">
+                        1
+                    </th>
+
+                    <th class="rating">
+                        2
+                    </th>
+
+                    <th class="rating">
+                        3
+                    </th>
+
+                    <th class="rating">
+                        4
+                    </th>
+
+                    <th class="rating">
+                        5
+                    </th>
+
+                    <th class="comments">
+                        Trainer's Comments
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>Understanding of training concepts</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Practical application of skills</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Digital literacy / ICT skills</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Problem-solving ability</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Participation and engagement</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Communication and teamwork</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Confidence using technology</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Ability to complete practical tasks</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td class="rating-box">□</td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <!-- ===============================
+             RATING GUIDE
+        ================================ -->
+
+        <h2 class="section-title">
+            4. Rating Guide
+        </h2>
+
+        <div class="rating-grid">
+
+            <div class="rating-item">
+                <strong>1 — Beginning</strong>
+                <span>Requires significant support.</span>
+            </div>
+
+            <div class="rating-item">
+                <strong>2 — Developing</strong>
+                <span>Demonstrates basic understanding.</span>
+            </div>
+
+            <div class="rating-item">
+                <strong>3 — Competent</strong>
+                <span>Meets the expected standard.</span>
+            </div>
+
+            <div class="rating-item">
+                <strong>4–5 — Proficient</strong>
+                <span>Demonstrates strong or excellent ability.</span>
+            </div>
+
+        </div>
+
+
+        <!-- ===============================
+             PRACTICAL ASSESSMENT
+        ================================ -->
+
+        <h2 class="section-title">
+            5. Practical Assessment
+        </h2>
+
+        <table class="info-table">
+
+            <tr>
+                <td class="label">Practical Task</td>
+                <td colspan="3"></td>
+            </tr>
+
+            <tr>
+                <td class="label">Task Completed</td>
+                <td>□ Yes</td>
+                <td>□ Partially</td>
+                <td>□ No</td>
+            </tr>
+
+            <tr>
+                <td class="label">Level of Independence</td>
+                <td>□ High</td>
+                <td>□ Moderate</td>
+                <td>□ Requires Support</td>
+            </tr>
+
+        </table>
+
+
+        <!-- ===============================
+             TRAINER FEEDBACK
+        ================================ -->
+
+        <h2 class="section-title">
+            6. Trainer's Feedback
+        </h2>
+
+        <div class="feedback-box"></div>
+
+
+        <!-- ===============================
+             TRAINEE FEEDBACK
+        ================================ -->
+
+        <h2 class="section-title">
+            7. Trainee's Feedback
+        </h2>
+
+        <div class="feedback-box"></div>
+
+
+        <!-- ===============================
+             FINAL RESULT
+        ================================ -->
+
+        <h2 class="section-title">
+            8. Assessment Result
+        </h2>
+
+        <div class="result-box">
+
+            <div class="result-row">
+
+                <div class="result-item">
+                    <strong>Overall Rating</strong><br>
+                    ____________________
+                </div>
+
+                <div class="result-item">
+                    <strong>Result</strong><br>
+                    □ Competent &nbsp;&nbsp;
+                    □ Developing &nbsp;&nbsp;
+                    □ Requires Further Support
+                </div>
+
+                <div class="result-item">
+                    <strong>Certificate</strong><br>
+                    □ Recommended &nbsp;&nbsp;
+                    □ Not Recommended
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===============================
+             SIGNATURES
+        ================================ -->
+
+        <h2 class="section-title">
+            9. Verification
+        </h2>
+
+        <table class="signature-table">
+
+            <tr>
+
+                <td>
+                    Trainer's Name:
+                    <span class="signature-line"></span>
+                    Signature: ____________________ &nbsp;
+                    Date: ____________________
+                </td>
+
+                <td>
+                    Trainee's Name:
+                    <span class="signature-line"></span>
+                    Signature: ____________________ &nbsp;
+                    Date: ____________________
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <!-- ===============================
+             FOOTER
+        ================================ -->
+
+        <footer class="document-footer">
+
+            <strong>
+                Garissa Digital Empowerment Hub CBO
+            </strong>
+
+            <br>
+
+            Digital Literacy • Internet of Things • Technology Innovation
+            • Agro-Entrepreneurship
+
+            <br>
+
+            Training Assessment Document
+
+            <br><br>
+
+            &copy; <span id="year"></span>
+            Garissa Digital Empowerment Hub CBO.
+            All Rights Reserved.
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /*
+        Print function intentionally has no visible button.
+        It can be called from another JavaScript function
+        using printAssessment().
+    */
+
+    
+window.addEventListener("load", function () {
+    window.print();
+});
+
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
