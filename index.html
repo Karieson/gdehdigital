@@ -279,6 +279,123 @@ header{
 .footer-links a:hover{
     color:var(--corporate-red);
 }
+  /* ==============================
+   GDEH DOCUMENTS
+============================== */
+
+.documents-section{
+    background:#fff;
+    padding:45px 20px 70px;
+}
+
+.documents-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.documents-heading{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.documents-heading h2{
+    color:var(--corporate-red);
+    font-family:"Brush Script MT",
+                 "Lucida Handwriting",
+                 cursive;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.documents-heading p{
+    color:#555;
+    font-size:11px;
+    line-height:1.7;
+    margin:0;
+}
+
+.documents-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.document-item{
+    display:grid;
+    grid-template-columns:4px 1fr auto;
+    gap:18px;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.document-item::before{
+    content:"";
+    width:4px;
+    height:100%;
+    min-height:55px;
+    background:var(--corporate-red);
+    border-radius:2px;
+}
+
+.document-item h3{
+    color:#222;
+    font-size:14px;
+    font-weight:700;
+    margin:0 0 5px;
+}
+
+.document-item p{
+    color:#555;
+    font-size:11px;
+    line-height:1.7;
+    margin:0;
+}
+
+.document-item a{
+    color:var(--corporate-red);
+    font-size:11px;
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+.document-item a:hover{
+    text-decoration:underline;
+    color:var(--corporate-red);
+}
+
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .documents-section{
+        padding:35px 15px 55px;
+    }
+
+    .documents-heading h2{
+        font-size:25px;
+    }
+
+    .document-item{
+        grid-template-columns:3px 1fr auto;
+        gap:12px;
+        padding:16px 0;
+    }
+
+    .document-item h3{
+        font-size:12px;
+    }
+
+    .document-item p{
+        font-size:10px;
+    }
+
+    .document-item a{
+        font-size:10px;
+    }
+
+  }
 </style>
 </head>
 
@@ -391,6 +508,80 @@ header{
                 <div class="link-action">
                     <a class="link-btn" href="explore.html">Explore More →</a>
                 </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  <section class="documents-section" id="documents">
+
+    <div class="documents-container">
+
+        <div class="documents-heading">
+            <h2>GDEH Documents</h2>
+            <p>
+                Access official training forms, assessment documents and certificates.
+            </p>
+        </div>
+
+        <div class="documents-list">
+
+            <div class="document-item">
+                <div>
+                    <h3>Training Assessment Sheet</h3>
+                    <p>Assessment of participant knowledge, practical skills and competency.</p>
+                </div>
+                <a href="training_assessment.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Training Attendance Register</h3>
+                    <p>Official attendance record for GDEH training programmes and workshops.</p>
+                </div>
+                <a href="training_attendance.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Training Evaluation Form</h3>
+                    <p>Participant feedback form for evaluating training quality and experience.</p>
+                </div>
+                <a href="training_evaluation.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Trainee Registration Form</h3>
+                    <p>Registration form for participants joining GDEH training programmes.</p>
+                </div>
+                <a href="trainee_registration.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Trainer's Report</h3>
+                    <p>Training delivery, performance, challenges and recommendations report.</p>
+                </div>
+                <a href="trainers_report.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Certificate of Completion</h3>
+                    <p>Certificate for participants who successfully complete a GDEH training programme.</p>
+                </div>
+                <a href="certificate_completion.html">Open →</a>
+            </div>
+
+            <div class="document-item">
+                <div>
+                    <h3>Certificate of Participation</h3>
+                    <p>Certificate recognizing active participation in GDEH programmes and activities.</p>
+                </div>
+                <a href="certificate_participation.html">Open →</a>
             </div>
 
         </div>
