@@ -3,108 +3,635 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Our Services - GDEH CBO</title>
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-body { background:#fff; color:#000; font-size:12px; line-height:1.8; min-height:100vh; text-align:left; }
 
-/* HEADER */
-.header { display:flex; align-items:center; padding:12px 18px; background:transparent; position:relative; }
-.logo { width:65px; height:auto; }
+:root{
+    --corporate-red:#C00000;
+    --black:#222;
+    --light:#f8f8f8;
+    --white:#fff;
+    --border:#eeeeee;
+    --shadow:0 8px 25px rgba(0,0,0,.07);
+}
 
-/* BACK TO HOME LINK */
-.home-link { position:absolute; top:15px; right:18px; color:#000; text-decoration:none; font-size:11px; }
-.home-link:hover { text-decoration:underline; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-/* SECTION TITLES */
-.section-title { color:#FFA500; margin:14px 15px; display:block; font-size:12px; font-weight:700; border-top:2px solid #001f3f; padding-top:10px; }
+html{
+    scroll-behavior:smooth;
+}
 
-/* CONTENT */
-.section-content { background:#fff; border-top:1px solid #001f3f; padding:18px; margin:0 15px 20px; }
-.section-content p { font-size:11px; margin-bottom:12px; }
+body{
+    background:#fff;
+    color:var(--black);
+    font-family:'Poppins',sans-serif;
+    font-size:12px;
+    line-height:1.8;
+    min-height:100vh;
+}
 
-/* FOOTER */
-    footer{
-      text-align:center;
-      padding:18px;
-      margin-top:auto;
-      width:100%;
-      font-size:13px;
-      font-weight:bold;             /* bold footer text */
-      background:#001f3f;           /* dark navy background */
-      color:#fff;                   /* white text */
-      border-top:2px solid #001f3f;
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 22px;
+    background:#fff;
+    border-bottom:1px solid #f1f1f1;
+}
+
+.logo{
+    width:70px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+}
+
+.home-link{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+
+    color:var(--corporate-red);
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:600;
+
+    padding:7px 12px;
+    border:1px solid var(--corporate-red);
+    border-radius:20px;
+
+    transition:.3s ease;
+}
+
+.home-link:hover{
+    background:var(--corporate-red);
+    color:#fff;
+}
+
+
+/* =========================
+   PAGE INTRO
+========================= */
+
+.services-intro{
+    text-align:center;
+    padding:30px 20px 22px;
+}
+
+.services-intro h1{
+    font-family:'Poppins',sans-serif;
+    font-size:18px;
+    font-weight:600;
+    color:var(--corporate-red);
+    letter-spacing:.4px;
+    margin-bottom:2px;
+}
+
+.services-intro .script-title{
+    font-family:'Allura',cursive;
+    font-size:27px;
+    color:#222;
+    font-weight:400;
+    line-height:1.2;
+}
+
+.services-intro p{
+    max-width:650px;
+    margin:9px auto 0;
+    font-size:10.5px;
+    color:#666;
+    line-height:1.8;
+}
+
+
+/* =========================
+   RED DIVIDER
+========================= */
+
+.title-divider{
+    width:45px;
+    height:3px;
+    background:var(--corporate-red);
+    margin:13px auto 0;
+    border-radius:10px;
+}
+
+
+/* =========================
+   SERVICES CONTAINER
+========================= */
+
+.services-container{
+    width:100%;
+    max-width:1050px;
+    margin:0 auto;
+    padding:5px 20px 40px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card{
+    position:relative;
+
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    padding:22px 20px 20px 23px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background:var(--corporate-red);
+}
+
+.service-card:hover{
+    transform:translateY(-4px);
+    border-color:#e6e6e6;
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+}
+
+
+/* =========================
+   NUMBER BADGE
+========================= */
+
+.service-number{
+    width:31px;
+    height:31px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#fff5f5;
+    color:var(--corporate-red);
+
+    border:1px solid #f0cccc;
+
+    font-size:10px;
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   SERVICE TITLE
+========================= */
+
+.service-card h2{
+    font-family:'Allura',cursive;
+    color:var(--corporate-red);
+
+    font-size:26px;
+    font-weight:400;
+
+    line-height:1.2;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   SERVICE TEXT
+========================= */
+
+.service-card p{
+    font-family:'Poppins',sans-serif;
+
+    font-size:10.5px;
+    font-weight:400;
+
+    color:#555;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   CARD FOOTER
+========================= */
+
+.service-link{
+    display:inline-block;
+
+    margin-top:12px;
+
+    color:var(--corporate-red);
+    text-decoration:none;
+
+    font-size:9.5px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.service-link:hover{
+    letter-spacing:.3px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    width:100%;
+    margin-top:15px;
+
+    padding:20px 15px;
+
+    background:#fff;
+    color:#222;
+
+    text-align:center;
+
+    border-top:3px solid var(--corporate-red);
+}
+
+footer p{
+    margin:3px 0;
+    font-size:10px;
+    font-weight:400;
+}
+
+footer p:first-child{
+    font-weight:600;
+}
+
+footer a{
+    color:#C00000;
+    text-decoration:none;
+    font-size:9.5px;
+    transition:.3s ease;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .header{
+        padding:12px 16px;
     }
 
-    footer a{
-      color:#f0f0f0;                /* lighter white links */
-      font-weight:300;
-      text-decoration:none;
-      font-size:12px;
+    .logo{
+        width:60px;
     }
 
-    footer a:hover{
-      text-decoration:underline;
-      color:#e0e0e0;
+    .services-intro{
+        padding:25px 16px 18px;
     }
+
+    .services-intro h1{
+        font-size:16px;
+    }
+
+    .services-intro .script-title{
+        font-size:25px;
+    }
+
+    .services-intro p{
+        font-size:10px;
+    }
+
+    .services-container{
+        grid-template-columns:1fr;
+        padding:5px 15px 30px;
+        gap:15px;
+    }
+
+    .service-card{
+        padding:20px 17px 18px 20px;
+    }
+
+    .service-card h2{
+        font-size:24px;
+    }
+
+}
+
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media(max-width:380px){
+
+    .home-link{
+        font-size:9px;
+        padding:6px 10px;
+    }
+
+    .services-intro .script-title{
+        font-size:23px;
+    }
+
+    .service-card h2{
+        font-size:22px;
+    }
+
+}
 
 </style>
 </head>
 
+
 <body>
 
-<div class="header">
-  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
-  <a href="index.html" class="home-link">Back to Home</a>
-</div>
 
-<span class="section-title">Digital Literacy Training</span>
-<div class="section-content">
-  <p>
-    We provide comprehensive computer packages and ICT short courses covering Microsoft Office, internet applications, web design, graphic design, and cybersecurity basics. These trainings equip learners with essential digital skills for education, employment, and entrepreneurship.
-  </p>
-</div>
+<!-- =========================
+     HEADER
+========================= -->
 
-<span class="section-title">Smartphone Literacy</span>
-<div class="section-content">
-  <p>
-    Our smartphone literacy programs help participants understand Android basics, internet browsing, social media use, and mobile money applications. This service empowers community members to use smartphones effectively for communication, business, and financial inclusion.
-  </p>
-</div>
+<header class="header">
 
-<span class="section-title">Agro-Entrepreneurship</span>
-<div class="section-content">
-  <p>
-    We train youth and farmers in agribusiness management, crop production techniques, farm record keeping, and agricultural marketing. This service promotes sustainable farming practices and entrepreneurship opportunities in agriculture.
-  </p>
-</div>
+    <img
+        src="gdeh_logo.png"
+        alt="GDEH CBO Logo"
+        class="logo"
+    >
 
-<span class="section-title">Workshops & Mentorship</span>
-<div class="section-content">
-  <p>
-    GDEH CBO organizes workshops and mentorship sessions to support innovation, creativity, and career growth. These sessions provide hands-on learning, guidance from experts, and opportunities to network with peers and professionals.
-  </p>
-</div>
+    <a href="index.html" class="home-link">
+        ← Back to Home
+    </a>
 
-<span class="section-title">Community Empowerment Programs</span>
-<div class="section-content">
-  <p>
-    We run inclusive programs targeting women, persons with disabilities, and vulnerable groups. These services ensure equal access to digital tools, entrepreneurship training, and community development opportunities.
-  </p>
-</div>
+</header>
 
-<span class="section-title">Youth Employment & Innovation Hub</span>
-<div class="section-content">
-  <p>
-    Our hub serves as a platform for youth to access resources, mentorship, and training that enhance employability and self-employment. We encourage innovation and creativity, helping young people turn ideas into sustainable projects.
-  </p>
-</div>
+
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<section class="services-intro">
+
+    <h1>OUR SERVICES</h1>
+
+    <div class="script-title">
+        Empowering Communities
+    </div>
+
+    <div class="title-divider"></div>
+
+    <p>
+        GDEH CBO delivers practical digital, entrepreneurial and
+        community-based programs designed to create opportunities,
+        strengthen skills and promote inclusive development.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<main class="services-container">
+
+
+    <!-- SERVICE 01 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            01
+        </div>
+
+        <h2>
+            Digital Literacy Training
+        </h2>
+
+        <p>
+            We provide comprehensive computer packages and ICT short
+            courses covering Microsoft Office, internet applications,
+            web design, graphic design, and cybersecurity basics.
+            These trainings equip learners with essential digital
+            skills for education, employment, and entrepreneurship.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+
+    <!-- SERVICE 02 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            02
+        </div>
+
+        <h2>
+            Smartphone Literacy
+        </h2>
+
+        <p>
+            Our smartphone literacy programs help participants
+            understand Android basics, internet browsing, social
+            media use, and mobile money applications. This service
+            empowers community members to use smartphones effectively
+            for communication, business, and financial inclusion.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+
+    <!-- SERVICE 03 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            03
+        </div>
+
+        <h2>
+            Agro-Entrepreneurship
+        </h2>
+
+        <p>
+            We train youth and farmers in agribusiness management,
+            crop production techniques, farm record keeping, and
+            agricultural marketing. Our programs promote sustainable
+            farming practices and entrepreneurship opportunities
+            within the agricultural sector.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+
+    <!-- SERVICE 04 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            04
+        </div>
+
+        <h2>
+            Workshops &amp; Mentorship
+        </h2>
+
+        <p>
+            GDEH CBO organizes workshops and mentorship sessions
+            that support innovation, creativity, personal development,
+            and career growth. Participants gain practical knowledge,
+            expert guidance, and opportunities to connect with peers
+            and professionals.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+
+    <!-- SERVICE 05 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            05
+        </div>
+
+        <h2>
+            Community Empowerment
+        </h2>
+
+        <p>
+            We run inclusive programs targeting women, persons with
+            disabilities, youth, and vulnerable groups. These services
+            promote equal access to digital tools, entrepreneurship
+            training, skills development, and community opportunities.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+
+    <!-- SERVICE 06 -->
+
+    <article class="service-card">
+
+        <div class="service-number">
+            06
+        </div>
+
+        <h2>
+            Youth Employment &amp; Innovation
+        </h2>
+
+        <p>
+            Our hub provides young people with access to resources,
+            mentorship, training, and opportunities that enhance
+            employability and self-employment. We encourage innovation
+            and creativity, helping youth transform ideas into
+            sustainable projects.
+        </p>
+
+        <a href="#" class="service-link">
+            Learn More →
+        </a>
+
+    </article>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-  <p>©2026 GDEH CBO All rights reserved</p>
-  <p><a href="privacy_terms.html">Privacy Policy | Terms & Conditions</a></p>
+
+    <p>
+        © 2026 GDEH CBO. All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="privacy_terms.html">
+            Privacy Policy
+        </a>
+        &nbsp; | &nbsp;
+        <a href="privacy_terms.html">
+            Terms &amp; Conditions
+        </a>
+    </p>
+
 </footer>
+
 
 </body>
 </html>
