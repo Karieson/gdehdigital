@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project Evaluation & Monitoring | GDEH CBO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --corporate-red:#C00000;
+    --black:#222;
+    --border:#999;
+    --light:#f5f5f5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#eee;
+    color:#222;
+    font-family:"Poppins","Segoe UI",Arial,sans-serif;
+    font-size:9px;
+    line-height:1.35;
+}
+
+.page{
+    width:210mm;
+    min-height:297mm;
+    margin:15px auto;
+    background:#fff;
+    padding:12mm 13mm;
+    box-shadow:0 0 10px rgba(0,0,0,.10);
+}
+
+/* Compact Header */
+
+.document-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    padding-bottom:8px;
+
+    border-bottom:3px solid var(--corporate-red);
+}
+
+.logo{
+    width:62px;
+    height:auto;
+    margin-bottom:3px;
+}
+
+.header-info h1{
+    display:none;
+}
+
+.header-info p{
+    color:#222;
+
+    font-family:"Allura",cursive;
+
+    font-size:14px;
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin:0;
+}
+
+
+/* Document Title */
+
+.document-title{
+    text-align:center;
+    padding:12px 0 9px;
+}
+
+.document-title h2{
+    color:var(--corporate-red);
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.3px;
+}
+
+.document-title p{
+    font-family:"Allura",cursive;
+    color:#222;
+    font-size:15px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+
+/* Smaller Section Titles */
+
+.section-title{
+    color:var(--corporate-red);
+
+    font-family:"Poppins", sans-serif;
+
+    font-size:11px;
+    font-weight:700;
+
+    margin:9px 0 5px;
+
+    padding-left:8px;
+
+    border-left:3px solid var(--corporate-red);
+
+    line-height:1.3;
+    letter-spacing:.1px;
+}
+
+
+/* Smaller Tables */
+
+.info-table,
+.evaluation-table,
+.rating-table{
+    font-size:8px;
+}
+
+.info-table td,
+.evaluation-table th,
+.evaluation-table td,
+.rating-table th,
+.rating-table td{
+    padding:4px 5px;
+}
+
+
+/* Smaller Writing Areas */
+
+.writing-box{
+    min-height:45px;
+    padding:5px;
+}
+
+.large-writing-box{
+    min-height:65px;
+}
+
+
+/* Smaller Footer */
+
+.document-footer{
+    margin-top:10px;
+    padding-top:5px;
+    font-size:7px;
+}
+
+/* =========================
+   INFORMATION TABLE
+========================= */
+
+.info-table,
+.evaluation-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.info-table td,
+.evaluation-table th,
+.evaluation-table td{
+    border:1px solid var(--border);
+    padding:5px 6px;
+    vertical-align:top;
+}
+
+.info-table td:first-child{
+    width:28%;
+    background:var(--light);
+    font-weight:600;
+}
+
+.evaluation-table th{
+    background:var(--corporate-red);
+    color:#fff;
+    font-weight:600;
+    text-align:left;
+}
+
+.evaluation-table td{
+    height:30px;
+}
+
+
+/* =========================
+   FORM LINES
+========================= */
+
+.line{
+    display:inline-block;
+    min-width:100px;
+    border-bottom:1px solid #555;
+    height:14px;
+    vertical-align:bottom;
+}
+
+.long-line{
+    min-width:250px;
+}
+
+
+/* =========================
+   CHECKBOXES
+========================= */
+
+.checkbox{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border:1px solid #555;
+    margin-right:4px;
+    vertical-align:-1px;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.rating-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:5px;
+}
+
+.rating-table th,
+.rating-table td{
+    border:1px solid #999;
+    padding:5px;
+    text-align:center;
+}
+
+.rating-table th{
+    background:#f2f2f2;
+    font-weight:600;
+}
+
+.rating-table td:first-child{
+    text-align:left;
+    width:55%;
+}
+
+
+/* =========================
+   TEXT AREAS
+========================= */
+
+.writing-box{
+    border:1px solid #999;
+    min-height:55px;
+    padding:7px;
+}
+
+.large-writing-box{
+    min-height:85px;
+}
+
+
+/* =========================
+   SIGNATURES
+========================= */
+
+.signature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:10px;
+}
+
+.signature{
+    padding-top:25px;
+    border-bottom:1px solid #555;
+}
+
+.signature-label{
+    margin-top:4px;
+    font-size:9px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.document-footer{
+    margin-top:18px;
+    padding-top:7px;
+
+    border-top:2px solid var(--corporate-red);
+
+    text-align:center;
+
+    font-size:8px;
+    color:#555;
+}
+
+
+/* =========================
+   PRINT BUTTON
+========================= */
+
+.print-button{
+    position:fixed;
+    top:18px;
+    right:20px;
+
+    background:var(--corporate-red);
+    color:#fff;
+
+    border:0;
+    border-radius:5px;
+
+    padding:9px 15px;
+
+    font-family:"Poppins",sans-serif;
+    font-size:11px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.print-button:hover{
+    opacity:.9;
+}
+
+
+/* =========================
+   PAGE BREAK
+========================= */
+
+.page-break{
+    margin-top:15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    body{
+        background:#fff;
+    }
+
+    .page{
+        width:100%;
+        min-height:auto;
+        margin:0;
+        padding:20px;
+        box-shadow:none;
+    }
+
+    .print-button{
+        position:static;
+        display:block;
+        margin:10px auto;
+    }
+
+    .evaluation-table{
+        font-size:8px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<div class="page">
+
+
+<header class="document-header">
+
+    <img
+        src="gdeh_logo.png"
+        alt="GDEH Logo"
+        class="logo"
+    >
+
+    <div class="header-info">
+
+        <p>
+            Empowering youth through digital literacy and innovation
+        </p>
+
+    </div>
+
+</header>
+
+
+<div class="document-title">
+
+    <h2>
+        Project Evaluation &amp; Monitoring Form
+    </h2>
+
+    
+
+</div>
+
+
+<!-- PROJECT INFORMATION -->
+
+<h3 class="section-title">
+    A. Project Information
+</h3>
+
+<table class="info-table">
+
+<tr>
+    <td>Project / Programme Name</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Project Coordinator</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Project Location</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Reporting Period</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Evaluation Date</td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Evaluator / Monitoring Officer</td>
+    <td></td>
+</tr>
+
+</table>
+
+
+<!-- PROJECT OBJECTIVES -->
+
+<h3 class="section-title">
+    B. Project Objectives
+</h3>
+
+<div class="writing-box large-writing-box">
+    1. 
+    <br><br>
+    2.
+    <br><br>
+    3.
+</div>
+
+
+<!-- MONITORING INDICATORS -->
+
+<h3 class="section-title">
+    C. Monitoring &amp; Performance Indicators
+</h3>
+
+<table class="evaluation-table">
+
+<thead>
+<tr>
+    <th style="width:24%;">Indicator</th>
+    <th style="width:16%;">Target</th>
+    <th style="width:16%;">Achieved</th>
+    <th style="width:22%;">Evidence / Source</th>
+    <th style="width:22%;">Remarks</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td>Number of beneficiaries reached</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Training sessions conducted</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Participants completing training</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Women and girls reached</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Youth reached</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Persons with disabilities reached</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Other key project indicators</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<!-- IMPLEMENTATION STATUS -->
+
+<h3 class="section-title">
+    D. Implementation Status
+</h3>
+
+<table class="rating-table">
+
+<tr>
+    <th>Area</th>
+    <th>Excellent</th>
+    <th>Good</th>
+    <th>Fair</th>
+    <th>Poor</th>
+    <th>Not Applicable</th>
+</tr>
+
+<tr>
+    <td>Achievement of project objectives</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+<tr>
+    <td>Quality of activities delivered</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+<tr>
+    <td>Participation of beneficiaries</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+<tr>
+    <td>Use of project resources</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+<tr>
+    <td>Timeliness of implementation</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+</table>
+
+
+<div class="document-footer">
+    GDEH CBO — Project Evaluation &amp; Monitoring Document
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+<div class="page page-break">
+
+
+<header class="document-header">
+
+    <img
+        src="gdeh_logo.png"
+        alt="GDEH Logo"
+        class="logo"
+    >
+
+    <div class="header-info">
+
+        <h1>
+            GARISSA DIGITAL EMPOWERMENT HUB CBO
+        </h1>
+
+        <p>
+            Project Evaluation &amp; Monitoring
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- OUTCOMES -->
+
+<h3 class="section-title">
+    E. Outcomes &amp; Impact Assessment
+</h3>
+
+<table class="evaluation-table">
+
+<thead>
+<tr>
+    <th>Outcome / Impact Area</th>
+    <th>Evidence of Change</th>
+    <th>Rating</th>
+    <th>Remarks</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td>Digital skills acquired by beneficiaries</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Improved access to technology</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Employment / income opportunities created</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Entrepreneurship and innovation outcomes</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Community-level benefits</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>Sustainability of project results</td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<!-- BENEFICIARY FEEDBACK -->
+
+<h3 class="section-title">
+    F. Beneficiary Feedback
+</h3>
+
+<div class="writing-box large-writing-box">
+
+    Key feedback received from participants and community members:
+
+    <br><br><br><br>
+
+</div>
+
+
+<!-- CHALLENGES -->
+
+<h3 class="section-title">
+    G. Challenges &amp; Issues Identified
+</h3>
+
+<div class="writing-box large-writing-box">
+
+    Describe key implementation challenges, operational issues,
+    resource constraints or risks identified during monitoring.
+
+    <br><br><br><br>
+
+</div>
+
+
+<!-- RECOMMENDATIONS -->
+
+<h3 class="section-title">
+    H. Recommendations &amp; Corrective Actions
+</h3>
+
+<table class="evaluation-table">
+
+<thead>
+<tr>
+    <th>Issue / Finding</th>
+    <th>Recommended Action</th>
+    <th>Responsible Person</th>
+    <th>Timeline</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<!-- OVERALL ASSESSMENT -->
+
+<h3 class="section-title">
+    I. Overall Project Assessment
+</h3>
+
+<table class="rating-table">
+
+<tr>
+    <th>Overall Performance</th>
+    <th>Excellent</th>
+    <th>Good</th>
+    <th>Fair</th>
+    <th>Poor</th>
+</tr>
+
+<tr>
+    <td>Overall project performance</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+    <td>□</td>
+</tr>
+
+</table>
+
+
+<label style="display:block;margin:12px 0 5px;font-weight:600;">
+    Overall Evaluation Summary
+</label>
+
+<div class="writing-box large-writing-box"></div>
+
+
+<!-- SIGN OFF -->
+
+<h3 class="section-title">
+    J. Evaluation &amp; Approval
+</h3>
+
+<div class="signature-grid">
+
+    <div>
+        <div class="signature"></div>
+
+        <div class="signature-label">
+            Evaluator / Monitoring Officer
+        </div>
+
+        <div style="margin-top:10px;">
+            Date: __________________________
+        </div>
+    </div>
+
+
+    <div>
+        <div class="signature"></div>
+
+        <div class="signature-label">
+            Project Coordinator / Director
+        </div>
+
+        <div style="margin-top:10px;">
+            Date: __________________________
+        </div>
+    </div>
+
+</div>
+
+
+<div class="document-footer">
+    Garissa Digital Empowerment Hub CBO © 2026 — All Rights Reserved
+</div>
+
+</div>
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>
