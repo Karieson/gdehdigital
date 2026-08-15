@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GDEH CBO - Project Plan Sheet</title>
+
+<style>
+@page {
+    size: A4 landscape;
+    margin: 8mm;
+}
+
+:root {
+    --corporate-red: #C00000;
+    --body-font: #222;
+    --border: #bbb;
+    --light: #f7f7f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    background: #eee;
+    color: var(--body-font);
+    font-family: Poppins, "Segoe UI", Arial, sans-serif;
+    font-size: .68rem;
+    line-height: 1.35;
+}
+
+
+.document-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5mm;
+}
+
+/* Logo header only */
+.logo-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2mm 0 4mm;
+}
+
+.gdeh-logo {
+    width: 50mm;
+    height: auto;
+    max-height: 25mm;
+    object-fit: contain;
+    display: block;
+}
+
+/* Corporate red separation */
+.project-title {
+    border-top: 2px solid var(--corporate-red);
+    padding: 3mm 2mm 2mm;
+}
+
+.project-title h1 {
+    margin: 0;
+    color: var(--corporate-red);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.project-title p {
+    margin: 1mm 0 0;
+    color: #222;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.project-summary {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--border);
+    margin-bottom: 5mm;
+}
+
+.summary-item {
+    padding: 2mm;
+    border-right: 1px solid var(--border);
+}
+
+.summary-item:last-child {
+    border-right: 0;
+}
+
+.summary-item strong {
+    display: block;
+    color: var(--corporate-red);
+    font-size: .58rem;
+}
+
+.summary-item span {
+    font-size: .65rem;
+}
+
+h2 {
+    color: var(--corporate-red);
+    font-size: .85rem;
+    border-bottom: 1px solid var(--corporate-red);
+    padding-bottom: 1mm;
+    margin: 4mm 0 2mm;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--corporate-red);
+    color: #fff;
+    font-weight: 600;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 1.6mm;
+    vertical-align: top;
+    font-size: .61rem;
+}
+
+td strong {
+    color: var(--corporate-red);
+}
+
+.number {
+    text-align: center;
+    width: 5mm;
+}
+
+.target {
+    font-weight: 600;
+}
+
+.small-table {
+    margin-top: 4mm;
+}
+
+.small-table th,
+.small-table td {
+    font-size: .59rem;
+}
+
+.page-break {
+    page-break-before: always;
+}
+
+.legend {
+    margin-top: 3mm;
+    font-size: .6rem;
+}
+
+.legend strong {
+    color: var(--corporate-red);
+}
+
+@media print {
+
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .document {
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+
+<main class="document">
+
+<header class="document-header">
+
+    <div class="logo-header">
+        <img
+            src="gdeh_logo.png"
+            alt="Garissa Digital Empowerment Hub"
+            class="gdeh-logo"
+        >
+    </div>
+
+    <div class="project-title">
+        <h1>
+            YOUTH DIGITAL AND GREEN INNOVATION
+            EMPOWERMENT INITIATIVE
+        </h1>
+
+        <p>PROJECT PLAN SHEET</p>
+    </div>
+
+</header>
+
+
+<div class="project-summary">
+
+    <div class="summary-item">
+        <strong>DURATION</strong>
+        <span>24 Months</span>
+    </div>
+
+    <div class="summary-item">
+        <strong>LOCATION</strong>
+        <span>Garissa County</span>
+    </div>
+
+    <div class="summary-item">
+        <strong>TARGET</strong>
+        <span>1,000 Youth</span>
+    </div>
+
+    <div class="summary-item">
+        <strong>FUNDING</strong>
+        <span>KES 5,000,000</span>
+    </div>
+
+    <div class="summary-item">
+        <strong>CORE FOCUS</strong>
+        <span>Digital + Green Innovation</span>
+    </div>
+
+</div>
+
+
+<h2>1. Project Implementation Plan</h2>
+
+<table>
+
+<thead>
+<tr>
+    <th>No.</th>
+    <th>Objective / Result</th>
+    <th>Key Activities</th>
+    <th>Target</th>
+    <th>Timeline</th>
+    <th>Responsible</th>
+    <th>Key Indicator</th>
+    <th>Means of Verification</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td class="number">1</td>
+
+<td>
+<strong>Increase youth digital literacy.</strong>
+</td>
+
+<td>
+Conduct computer literacy, internet, productivity tools,
+graphic design, digital marketing and web development training.
+</td>
+
+<td class="target">
+1,000 youth trained
+</td>
+
+<td>
+M1–M24
+</td>
+
+<td>
+Project Coordinator<br>
+Digital Trainers
+</td>
+
+<td>
+Number trained and completing courses.
+</td>
+
+<td>
+Attendance registers,
+training reports,
+certificates,
+pre/post assessments.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">2</td>
+
+<td>
+<strong>Improve access to digital technology.</strong>
+</td>
+
+<td>
+Equip and operate a youth digital empowerment hub with
+computers, internet and learning resources.
+</td>
+
+<td class="target">
+Functional hub
+</td>
+
+<td>
+M1–M6
+</td>
+
+<td>
+Project Coordinator<br>
+IT Officer
+</td>
+
+<td>
+Number of computers installed and youth accessing hub.
+</td>
+
+<td>
+Asset register,
+photographs,
+usage records,
+internet records.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">3</td>
+
+<td>
+<strong>Increase youth entrepreneurship.</strong>
+</td>
+
+<td>
+Business planning, financial literacy, digital marketing,
+business development and entrepreneurship clinics.
+</td>
+
+<td class="target">
+200 youth supported
+</td>
+
+<td>
+M4–M24
+</td>
+
+<td>
+Business Mentor<br>
+Project Team
+</td>
+
+<td>
+Youth developing businesses or income activities.
+</td>
+
+<td>
+Business plans,
+mentorship records,
+follow-up reports.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">4</td>
+
+<td>
+<strong>Promote online employment.</strong>
+</td>
+
+<td>
+Training on freelancing, remote work, digital portfolios,
+online platforms and professional profiles.
+</td>
+
+<td class="target">
+200 youth supported
+</td>
+
+<td>
+M5–M24
+</td>
+
+<td>
+Digital Trainers<br>
+Career Mentor
+</td>
+
+<td>
+Youth accessing online work opportunities.
+</td>
+
+<td>
+Participant surveys,
+portfolio records,
+follow-up data.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">5</td>
+
+<td>
+<strong>Promote youth innovation.</strong>
+</td>
+
+<td>
+Innovation challenges, idea development, prototyping,
+mentorship and demonstrations.
+</td>
+
+<td class="target">
+50 ideas developed<br>
+20 mentored
+</td>
+
+<td>
+M7–M22
+</td>
+
+<td>
+Innovation Lead<br>
+Mentors
+</td>
+
+<td>
+Number of viable innovations developed.
+</td>
+
+<td>
+Innovation reports,
+prototypes,
+demonstration records.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">6</td>
+
+<td>
+<strong>Promote green solutions.</strong>
+</td>
+
+<td>
+E-waste awareness, green technology training,
+environmental campaigns and green enterprise development.
+</td>
+
+<td class="target">
+5 green initiatives
+</td>
+
+<td>
+M6–M22
+</td>
+
+<td>
+Green Innovation Lead
+</td>
+
+<td>
+Number of green initiatives implemented.
+</td>
+
+<td>
+Activity reports,
+photos,
+participant records.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">7</td>
+
+<td>
+<strong>Strengthen career networks.</strong>
+</td>
+
+<td>
+Mentorship events, professional networking, career clinics
+and private-sector engagement.
+</td>
+
+<td class="target">
+10 major events
+</td>
+
+<td>
+M6–M23
+</td>
+
+<td>
+Project Coordinator
+</td>
+
+<td>
+Number of mentorship and career activities.
+</td>
+
+<td>
+Event reports,
+attendance lists,
+participant feedback.
+</td>
+
+</tr>
+
+
+<tr>
+<td class="number">8</td>
+
+<td>
+<strong>Ensure accountability and learning.</strong>
+</td>
+
+<td>
+Baseline assessment, routine monitoring, quarterly reviews,
+participant feedback and final evaluation.
+</td>
+
+<td class="target">
+24-month M&E system
+</td>
+
+<td>
+M1–M24
+</td>
+
+<td>
+M&E Officer<br>
+Project Coordinator
+</td>
+
+<td>
+Reports produced and indicators tracked.
+</td>
+
+<td>
+M&E reports,
+databases,
+evaluation report.
+</td>
+
+</tr>
+
+</tbody>
+</table>
+
+
+<h2>2. 24-Month Implementation Schedule</h2>
+
+<table class="small-table">
+
+<thead>
+
+<tr>
+    <th>Activity</th>
+    <th>M1–3</th>
+    <th>M4–6</th>
+    <th>M7–9</th>
+    <th>M10–12</th>
+    <th>M13–15</th>
+    <th>M16–18</th>
+    <th>M19–21</th>
+    <th>M22–24</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td><strong>Project setup and baseline</strong></td>
+<td>✓</td><td></td><td></td><td></td>
+<td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+<td><strong>Digital hub equipment</strong></td>
+<td>✓</td><td>✓</td><td></td><td></td>
+<td></td><td></td><td></td><td></td>
+</tr>
+
+<tr>
+<td><strong>Digital skills training</strong></td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+
+<tr>
+<td><strong>Entrepreneurship training</strong></td>
+<td></td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+
+<tr>
+<td><strong>Online work preparation</strong></td>
+<td></td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+
+<tr>
+<td><strong>Innovation challenges</strong></td>
+<td></td><td></td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td></td>
+</tr>
+
+<tr>
+<td><strong>Green innovation activities</strong></td>
+<td></td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td></td>
+</tr>
+
+<tr>
+<td><strong>Mentorship and career events</strong></td>
+<td></td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+
+<tr>
+<td><strong>Monitoring and reporting</strong></td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+<td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+</tr>
+
+<tr>
+<td><strong>Final evaluation</strong></td>
+<td></td><td></td><td></td><td></td>
+<td></td><td></td><td></td><td>✓</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<h2>3. Key Performance Targets</h2>
+
+<table class="small-table">
+
+<thead>
+<tr>
+    <th>Indicator</th>
+    <th>Baseline</th>
+    <th>Target</th>
+    <th>Data Source</th>
+    <th>Frequency</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Youth trained in digital skills</td>
+<td>To be established</td>
+<td>1,000</td>
+<td>Training database</td>
+<td>Quarterly</td>
+</tr>
+
+<tr>
+<td>Youth supported into income opportunities</td>
+<td>To be established</td>
+<td>200</td>
+<td>Follow-up survey</td>
+<td>Biannual</td>
+</tr>
+
+<tr>
+<td>Youth-led innovation ideas</td>
+<td>0</td>
+<td>50</td>
+<td>Innovation records</td>
+<td>Quarterly</td>
+</tr>
+
+<tr>
+<td>Innovations receiving mentorship</td>
+<td>0</td>
+<td>20</td>
+<td>Mentorship records</td>
+<td>Quarterly</td>
+</tr>
+
+<tr>
+<td>Green initiatives</td>
+<td>0</td>
+<td>5+</td>
+<td>Project reports</td>
+<td>Quarterly</td>
+</tr>
+
+<tr>
+<td>Mentorship/career events</td>
+<td>0</td>
+<td>10+</td>
+<td>Event reports</td>
+<td>Quarterly</td>
+</tr>
+
+<tr>
+<td>Women participating</td>
+<td>To be established</td>
+<td>At least 50%</td>
+<td>Registration database</td>
+<td>Quarterly</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<h2>4. Key Project Risks and Mitigation</h2>
+
+<table class="small-table">
+
+<thead>
+<tr>
+    <th>Risk</th>
+    <th>Potential Effect</th>
+    <th>Mitigation Measure</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Limited internet connectivity</td>
+<td>Disruption of digital training</td>
+<td>Use multiple connectivity options and maintain backup connectivity.</td>
+</tr>
+
+<tr>
+<td>Low participant retention</td>
+<td>Reduced completion rates</td>
+<td>Flexible schedules, mentorship and participant follow-up.</td>
+</tr>
+
+<tr>
+<td>Equipment damage or loss</td>
+<td>Reduced training capacity</td>
+<td>Asset management, security controls and maintenance.</td>
+</tr>
+
+<tr>
+<td>Limited employment opportunities</td>
+<td>Reduced economic outcomes</td>
+<td>Develop employer, freelancer and entrepreneurship partnerships.</td>
+</tr>
+
+<tr>
+<td>Insufficient sustainability after funding</td>
+<td>Reduced continuation of activities</td>
+<td>Develop revenue-generating services and strategic partnerships.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<div class="legend">
+    <strong>Implementation principle:</strong>
+    The project will prioritize practical learning, inclusion, measurable
+    outcomes, youth ownership, sustainability and responsible use of technology.
+</div>
+
+</main>
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+</body>
+</html>

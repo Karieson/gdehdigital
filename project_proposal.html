@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Digital and Green Innovation Empowerment Initiative</title>
+
+<style>
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    :root {
+        --corporate-red: #C00000;
+        --body-font: #222;
+        --white: #fff;
+        --border: #ddd;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px;
+        background: #eee;
+        color: var(--body-font);
+        font-family: Poppins, "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    .document-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5mm;
+}
+
+/* Logo header only */
+.logo-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2mm 0 4mm;
+}
+
+.gdeh-logo {
+    width: 50mm;
+    height: auto;
+    max-height: 25mm;
+    object-fit: contain;
+    display: block;
+}
+
+/* Corporate red separation */
+.project-title {
+    border-top: 2px solid var(--corporate-red);
+    padding: 3mm 2mm 2mm;
+}
+
+.project-title h1 {
+    margin: 0;
+    color: var(--corporate-red);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+
+
+    .cover {
+        text-align: center;
+        padding: 22mm 10mm 18mm;
+        page-break-after: always;
+    }
+
+    .organization {
+        color: var(--corporate-red);
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        margin-bottom: 15mm;
+    }
+
+    .cover h1 {
+        color: var(--corporate-red);
+        font-size: 1.55rem;
+        line-height: 1.3;
+        margin: 0 auto 8mm;
+        max-width: 165mm;
+    }
+
+    .cover h2 {
+        color: var(--body-font);
+        font-size: .95rem;
+        font-weight: 600;
+        margin: 0 auto 12mm;
+    }
+
+    .cover-details {
+        width: 125mm;
+        margin: 0 auto;
+        text-align: left;
+        border: 1px solid var(--border);
+        padding: 7mm;
+    }
+
+    .cover-details p {
+        margin: 2mm 0;
+        font-size: .78rem;
+    }
+
+    .cover-details strong {
+        color: var(--corporate-red);
+    }
+
+    h1, h2, h3 {
+        color: var(--corporate-red);
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: 7mm 0 2.5mm;
+        padding-bottom: 1mm;
+        border-bottom: 1px solid var(--corporate-red);
+    }
+
+    h3 {
+        font-size: .88rem;
+        margin: 4mm 0 1.5mm;
+    }
+
+    p {
+        margin: 0 0 2.5mm;
+        font-size: .78rem;
+        color: #222;
+        text-align: justify;
+    }
+
+    ul, ol {
+        margin: 1.5mm 0 3mm 5mm;
+        padding-left: 4mm;
+    }
+
+    li {
+        font-size: .76rem;
+        margin-bottom: 1.2mm;
+        color: #222;
+    }
+
+    .project-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border: 1px solid var(--border);
+        margin: 4mm 0 6mm;
+    }
+
+    .info-item {
+        padding: 3mm;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:nth-child(odd) {
+        border-right: 1px solid var(--border);
+    }
+
+    .info-item strong {
+        display: block;
+        color: var(--corporate-red);
+        font-size: .68rem;
+        text-transform: uppercase;
+        margin-bottom: 1mm;
+    }
+
+    .info-item span {
+        font-size: .76rem;
+    }
+
+    .highlight {
+        border-left: 3px solid var(--corporate-red);
+        background: #fafafa;
+        padding: 4mm;
+        margin: 4mm 0;
+    }
+
+    .highlight p {
+        margin: 0;
+    }
+
+    .budget-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 4mm 0;
+        font-size: .72rem;
+    }
+
+    .budget-table th {
+        background: var(--corporate-red);
+        color: #fff;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .budget-table th,
+    .budget-table td {
+        border: 1px solid #ccc;
+        padding: 2.2mm;
+        vertical-align: top;
+    }
+
+    .budget-table td:last-child,
+    .budget-table th:last-child {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .budget-table .total td {
+        font-weight: 700;
+        color: var(--corporate-red);
+        border-top: 2px solid var(--corporate-red);
+    }
+
+    .justification {
+        margin-bottom: 3.5mm;
+    }
+
+    .justification strong {
+        color: var(--corporate-red);
+        font-size: .78rem;
+    }
+
+    .signature-section {
+        margin-top: 10mm;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15mm;
+    }
+
+    .signature-line {
+        border-top: 1px solid #222;
+        padding-top: 2mm;
+        font-size: .72rem;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+
+    @media print {
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background: #fff;
+            padding: 0;
+        }
+
+        .print-controls {
+            display: none !important;
+        }
+
+        .proposal {
+            width: 100%;
+            min-height: auto;
+            margin: 0;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .cover {
+            page-break-after: always;
+        }
+
+        h2, h3 {
+            break-after: avoid;
+        }
+
+        p, li {
+            orphans: 3;
+            widows: 3;
+        }
+
+        table {
+            page-break-inside: auto;
+        }
+
+        tr {
+            page-break-inside: avoid;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<main class="document">
+
+<header class="document-header">
+
+    <div class="logo-header">
+        <img
+            src="gdeh_logo.png"
+            alt="Garissa Digital Empowerment Hub"
+            class="gdeh-logo"
+        >
+    </div>
+
+    <div class="project-title">
+        <h1>
+            YOUTH DIGITAL AND GREEN INNOVATION
+            EMPOWERMENT INITIATIVE
+        </h1>
+
+        </div>
+
+</header>
+
+
+        <div class="cover-details">
+<h2>PROJECT PROPOSAL</h2>
+    
+            <p>
+                <strong>Applicant Organization:</strong>
+                Garissa Digital Empowerment Hub (GDEH CBO)
+            </p>
+
+            <p>
+                <strong>Funding Requested:</strong>
+                KES 5,000,000
+            </p>
+
+            <p>
+                <strong>Project Duration:</strong>
+                24 Months
+            </p>
+
+            <p>
+                <strong>Project Location:</strong>
+                Garissa County, Kenya
+            </p>
+
+            <p>
+                <strong>Target Beneficiaries:</strong>
+                Youth aged approximately 18–35 years
+            </p>
+
+            <p>
+                <strong>Focus Areas:</strong>
+                Digital Skills, Technology, Entrepreneurship,
+                Innovation and Green Solutions
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXECUTIVE SUMMARY -->
+    <section>
+
+        <h2>1. Executive Summary</h2>
+
+        <p>
+            Garissa County has a large and growing population of young people,
+            yet many youth face limited access to digital skills, affordable
+            internet connectivity, employment opportunities, entrepreneurship
+            support and practical pathways into the digital economy.
+        </p>
+
+        <p>
+            Garissa Digital Empowerment Hub (GDEH CBO) proposes the
+            <strong>Youth Digital and Green Innovation Empowerment Initiative
+            (YDGEI)</strong>, a 24-month project designed to equip young people
+            with practical digital, entrepreneurial and green innovation skills
+            while creating opportunities for employment, self-employment and
+            community-based innovation.
+        </p>
+
+        <p>
+            The project will establish and strengthen an accessible youth
+            digital empowerment hub where young people can receive training in
+            digital literacy, computer applications, graphic design, digital
+            marketing, web development, online work, entrepreneurship and other
+            relevant digital skills.
+        </p>
+
+        <p>
+            The initiative will also introduce green technology and
+            environmental awareness components, including digital solutions
+            for environmental challenges, responsible electronic waste
+            management and youth-led green enterprises.
+        </p>
+
+        <div class="highlight">
+            <p>
+                The project aims to directly reach approximately
+                <strong>1,000 young people</strong>, with particular attention
+                to unemployed and underemployed youth, young women, youth with
+                disabilities and young people from underserved communities.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT INFORMATION -->
+    <section>
+
+        <h2>2. Project Information</h2>
+
+        <div class="project-info">
+
+            <div class="info-item">
+                <strong>Project Title</strong>
+                <span>Youth Digital and Green Innovation Empowerment Initiative</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Applicant</strong>
+                <span>Garissa Digital Empowerment Hub (GDEH CBO)</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Location</strong>
+                <span>Garissa County, Kenya</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Duration</strong>
+                <span>24 Months</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Funding Requested</strong>
+                <span>KES 5,000,000</span>
+            </div>
+
+            <div class="info-item">
+                <strong>Primary Beneficiaries</strong>
+                <span>Youth aged 18–35 years</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROBLEM STATEMENT -->
+    <section>
+
+        <h2>3. Problem Statement</h2>
+
+        <p>
+            Youth unemployment and limited economic opportunities remain
+            significant challenges in many parts of Garissa County. Although
+            young people increasingly have access to mobile phones and digital
+            platforms, many lack the practical skills, equipment, connectivity
+            and mentorship required to convert technology into sustainable
+            economic opportunities.
+        </p>
+
+        <p>
+            Young people in underserved communities also face barriers
+            including:
+        </p>
+
+        <ul>
+            <li>Limited access to computers and reliable internet.</li>
+            <li>Inadequate practical digital skills.</li>
+            <li>Limited knowledge of online employment and freelancing.</li>
+            <li>Lack of entrepreneurship and business development skills.</li>
+            <li>Limited access to mentors and professional networks.</li>
+            <li>Low exposure to technology-based innovation.</li>
+            <li>Limited participation of young women in technology.</li>
+            <li>
+                Inadequate awareness of environmentally sustainable
+                technologies and e-waste management.
+            </li>
+        </ul>
+
+        <p>
+            Without targeted interventions, many young people risk remaining
+            excluded from the rapidly expanding digital economy.
+        </p>
+
+        <p>
+            The proposed project responds to these challenges by combining
+            <strong>digital empowerment, entrepreneurship, innovation and green
+            solutions</strong> within one youth-focused initiative.
+        </p>
+
+    </section>
+
+
+    <!-- GOAL -->
+    <section>
+
+        <h2>4. Overall Goal</h2>
+
+        <p>
+            To increase economic opportunities and community resilience among
+            young people in Garissa County through access to digital skills,
+            technology, entrepreneurship and green innovation.
+        </p>
+
+    </section>
+
+
+    <!-- OBJECTIVES -->
+    <section>
+
+        <h2>5. Specific Objectives</h2>
+
+        <ol>
+            <li>
+                To provide practical digital skills training to at least
+                <strong>1,000 young people</strong> over 24 months.
+            </li>
+
+            <li>
+                To support at least <strong>200 youth</strong> to develop
+                income-generating activities, digital enterprises, freelancing
+                careers or technology-based businesses.
+            </li>
+
+            <li>
+                To establish a youth innovation environment where young people
+                can develop technology-based and environmentally sustainable
+                solutions to community challenges.
+            </li>
+
+            <li>
+                To improve access to computers, internet connectivity, digital
+                learning resources and mentorship for underserved youth.
+            </li>
+
+            <li>
+                To strengthen youth participation in green innovation,
+                responsible e-waste management and environmentally sustainable
+                entrepreneurship.
+            </li>
+        </ol>
+
+    </section>
+
+
+    <!-- TARGET BENEFICIARIES -->
+    <section>
+
+        <h2>6. Target Beneficiaries</h2>
+
+        <p>
+            The primary beneficiaries will be young people aged approximately
+            18–35 years in Garissa County.
+        </p>
+
+        <p>Priority will be given to:</p>
+
+        <ul>
+            <li>Unemployed and underemployed youth.</li>
+            <li>Young women.</li>
+            <li>Youth from low-income households.</li>
+            <li>Youth with disabilities.</li>
+            <li>Youth without access to computers or reliable internet.</li>
+            <li>Young entrepreneurs and aspiring entrepreneurs.</li>
+            <li>Youth interested in technology and innovation.</li>
+        </ul>
+
+        <p>
+            The project will also indirectly benefit families, community
+            organizations, local businesses and other community institutions
+            that benefit from youth-led digital services and innovations.
+        </p>
+
+    </section>
+
+
+    <!-- ACTIVITIES -->
+    <section>
+
+        <h2>7. Key Project Activities</h2>
+
+        <h3>A. Digital Skills Training</h3>
+
+        <p>The project will provide practical training in:</p>
+
+        <ul>
+            <li>Basic computer literacy.</li>
+            <li>Microsoft Office and productivity tools.</li>
+            <li>Internet and digital literacy.</li>
+            <li>Graphic design.</li>
+            <li>Digital marketing.</li>
+            <li>Website development.</li>
+            <li>Online communication and collaboration.</li>
+            <li>Digital entrepreneurship.</li>
+            <li>Freelancing and remote work.</li>
+            <li>Online business development.</li>
+            <li>Cybersecurity and responsible digital citizenship.</li>
+        </ul>
+
+        <h3>B. Youth Entrepreneurship Development</h3>
+
+        <p>Participants will receive training and mentorship on:</p>
+
+        <ul>
+            <li>Business idea development.</li>
+            <li>Business planning.</li>
+            <li>Financial literacy.</li>
+            <li>Digital marketing.</li>
+            <li>Customer acquisition.</li>
+            <li>Record keeping.</li>
+            <li>Business registration and compliance.</li>
+            <li>Using digital platforms to access markets.</li>
+        </ul>
+
+        <h3>C. Youth Innovation Programme</h3>
+
+        <p>
+            The project will organize innovation challenges where youth teams
+            identify local problems and develop technology-based solutions.
+        </p>
+
+        <p>Potential areas include:</p>
+
+        <ul>
+            <li>Agriculture.</li>
+            <li>Education.</li>
+            <li>Healthcare information.</li>
+            <li>Digital commerce.</li>
+            <li>Water management.</li>
+            <li>Waste management.</li>
+            <li>Climate resilience.</li>
+            <li>Community information systems.</li>
+        </ul>
+
+        <h3>D. Green Technology and Environmental Action</h3>
+
+        <ul>
+            <li>E-waste awareness.</li>
+            <li>Responsible disposal and recycling of electronic equipment.</li>
+            <li>Training on energy-efficient technology.</li>
+            <li>Youth-led environmental campaigns.</li>
+            <li>Development of green digital businesses.</li>
+            <li>
+                Promotion of technology solutions addressing environmental
+                challenges.
+            </li>
+        </ul>
+
+        <h3>E. Digital Access Hub</h3>
+
+        <p>
+            The project will strengthen the organization's digital hub with:
+        </p>
+
+        <ul>
+            <li>Computers.</li>
+            <li>Internet connectivity.</li>
+            <li>Digital learning resources.</li>
+            <li>Training equipment.</li>
+            <li>Appropriate networking equipment.</li>
+            <li>Power backup solutions.</li>
+        </ul>
+
+        <h3>F. Mentorship and Career Linkages</h3>
+
+        <p>
+            Participants will be connected with technology professionals,
+            entrepreneurs, trainers, employers, freelancing platforms,
+            business development organizations and relevant government and
+            private-sector institutions.
+        </p>
+
+    </section>
+
+
+    <!-- OUTPUTS -->
+    <section>
+
+        <h2>8. Expected Outputs</h2>
+
+        <ol>
+            <li>At least 1,000 youth will receive digital and entrepreneurship training.</li>
+            <li>At least 200 youth will be supported toward income-generating opportunities.</li>
+            <li>At least 50 youth-led digital/green ideas will be developed.</li>
+            <li>At least 20 promising innovations or enterprises will receive intensive mentorship.</li>
+            <li>A functional youth digital empowerment hub will be strengthened.</li>
+            <li>Youth will gain improved access to computers and internet connectivity.</li>
+            <li>Youth will receive practical exposure to green technology and e-waste management.</li>
+            <li>Partnerships will be developed with relevant stakeholders.</li>
+        </ol>
+
+    </section>
+
+
+    <!-- OUTCOMES -->
+    <section>
+
+        <h2>9. Expected Outcomes</h2>
+
+        <ul>
+            <li>Increased digital literacy among youth.</li>
+            <li>Increased youth employability.</li>
+            <li>Increased youth entrepreneurship.</li>
+            <li>Increased access to online work opportunities.</li>
+            <li>Increased participation of young women in digital opportunities.</li>
+            <li>Increased youth-led innovation.</li>
+            <li>Improved awareness of environmental sustainability.</li>
+            <li>Increased use of technology to address local challenges.</li>
+        </ul>
+
+    </section>
+
+
+    <!-- SUSTAINABILITY -->
+    <section>
+
+        <h2>10. Sustainability</h2>
+
+        <p>
+            The project will establish mechanisms that allow the digital hub
+            to continue supporting young people beyond the grant period.
+        </p>
+
+        <ul>
+            <li>Affordable digital services at the hub.</li>
+            <li>Partnerships with local businesses and institutions.</li>
+            <li>Youth membership programmes.</li>
+            <li>Entrepreneurship and innovation partnerships.</li>
+            <li>Training-of-trainers approaches.</li>
+            <li>Volunteer mentors.</li>
+            <li>Revenue-generating digital services.</li>
+            <li>
+                Partnerships with technology companies and development
+                organizations.
+            </li>
+        </ul>
+
+        <p>
+            A portion of the hub's future income will be reinvested into
+            equipment maintenance, internet connectivity and youth training.
+        </p>
+
+    </section>
+
+
+    <!-- MONITORING -->
+    <section>
+
+        <h2>11. Monitoring and Evaluation</h2>
+
+        <p>
+            The project will establish a monitoring and evaluation framework
+            to measure progress and demonstrate results.
+        </p>
+
+        <p>Key indicators will include:</p>
+
+        <ul>
+            <li>Number of youth enrolled.</li>
+            <li>Number completing training.</li>
+            <li>Number of women participating.</li>
+            <li>Number of youth receiving mentorship.</li>
+            <li>Number of youth starting businesses.</li>
+            <li>Number accessing online employment.</li>
+            <li>Number of innovations developed.</li>
+            <li>Number of youth-led green initiatives.</li>
+            <li>Number of partnerships established.</li>
+            <li>Income opportunities created.</li>
+        </ul>
+
+        <p>
+            Baseline information will be collected at the beginning of the
+            project, followed by periodic monitoring, participant feedback and
+            an end-of-project evaluation.
+        </p>
+
+    </section>
+
+
+    <!-- BUDGET -->
+    <section class="page-break">
+
+        <h2>12. Proposed Budget Summary</h2>
+
+        <table class="budget-table">
+
+            <thead>
+                <tr>
+                    <th>Budget Category</th>
+                    <th>Amount (KES)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Computers and digital equipment</td>
+                    <td>1,200,000</td>
+                </tr>
+
+                <tr>
+                    <td>Internet connectivity and networking</td>
+                    <td>300,000</td>
+                </tr>
+
+                <tr>
+                    <td>Digital and entrepreneurship training</td>
+                    <td>750,000</td>
+                </tr>
+
+                <tr>
+                    <td>Trainers and technical facilitators</td>
+                    <td>550,000</td>
+                </tr>
+
+                <tr>
+                    <td>Youth innovation and green solution grants</td>
+                    <td>600,000</td>
+                </tr>
+
+                <tr>
+                    <td>Mentorship, career and entrepreneurship activities</td>
+                    <td>300,000</td>
+                </tr>
+
+                <tr>
+                    <td>Community outreach and recruitment</td>
+                    <td>250,000</td>
+                </tr>
+
+                <tr>
+                    <td>Green technology and e-waste activities</td>
+                    <td>250,000</td>
+                </tr>
+
+                <tr>
+                    <td>Monitoring, evaluation and learning</td>
+                    <td>250,000</td>
+                </tr>
+
+                <tr>
+                    <td>Project coordination and administration</td>
+                    <td>350,000</td>
+                </tr>
+
+                <tr>
+                    <td>Communication, documentation and visibility</td>
+                    <td>100,000</td>
+                </tr>
+
+                <tr>
+                    <td>Contingency / operational support</td>
+                    <td>100,000</td>
+                </tr>
+
+                <tr class="total">
+                    <td>TOTAL PROJECT BUDGET</td>
+                    <td>KES 5,000,000</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- BUDGET JUSTIFICATION -->
+    <section>
+
+        <h2>13. Budget Justification</h2>
+
+        <div class="justification">
+            <strong>Computers and Digital Equipment — KES 1,200,000</strong>
+            <p>
+                This will support the acquisition of computers and essential
+                digital equipment required for practical training, online work,
+                innovation and digital entrepreneurship.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Internet Connectivity and Networking — KES 300,000</strong>
+            <p>
+                Reliable internet is essential for digital learning, online
+                employment, research, entrepreneurship and access to global
+                digital markets.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Digital and Entrepreneurship Training — KES 750,000</strong>
+            <p>
+                This will cover training materials, learning resources,
+                practical sessions and participant support.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Trainers and Technical Facilitators — KES 550,000</strong>
+            <p>
+                Qualified trainers and facilitators will deliver practical
+                technical and entrepreneurship training.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Youth Innovation and Green Solution Grants — KES 600,000</strong>
+            <p>
+                Small competitive awards will enable selected youth teams to
+                test and develop promising technology and environmentally
+                sustainable solutions.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Mentorship and Career Activities — KES 300,000</strong>
+            <p>
+                This will support mentorship sessions, career events, business
+                clinics and connections between youth and professionals.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Community Outreach — KES 250,000</strong>
+            <p>
+                The project will conduct community mobilization and recruitment
+                activities to ensure that opportunities reach underserved
+                youth.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Green Technology and E-Waste — KES 250,000</strong>
+            <p>
+                Resources will support environmental awareness, e-waste
+                initiatives and youth-led green innovation activities.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Monitoring and Evaluation — KES 250,000</strong>
+            <p>
+                This will support data collection, monitoring, evaluation,
+                documentation and learning activities.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Project Coordination and Administration — KES 350,000</strong>
+            <p>
+                This will support essential project coordination, reporting,
+                communication and administrative requirements.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Communication and Visibility — KES 100,000</strong>
+            <p>
+                This will support documentation, project communication and
+                responsible visibility of project activities.
+            </p>
+        </div>
+
+        <div class="justification">
+            <strong>Contingency / Operational Support — KES 100,000</strong>
+            <p>
+                A limited allocation will address unforeseen operational
+                requirements during implementation.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- CONCLUSION -->
+    <section>
+
+        <h2>14. Conclusion</h2>
+
+        <p>
+            The Youth Digital and Green Innovation Empowerment Initiative
+            presents an opportunity to transform the potential of young people
+            in Garissa County into practical economic and community solutions.
+        </p>
+
+        <p>
+            By combining digital skills, technology access, entrepreneurship,
+            innovation and environmental sustainability, the project will
+            create pathways for young people to acquire skills, develop
+            businesses, access employment and contribute to solving local
+            challenges.
+        </p>
+
+        <p>
+            GDEH CBO seeks support of <strong>KES 5,000,000</strong> to
+            implement this 24-month initiative and establish a sustainable
+            model of youth digital and green empowerment that can be expanded
+            to additional communities in the future.
+        </p>
+
+    </section>
+
+
+    <!-- SIGNATURE -->
+    <section>
+
+        <div class="signature-section">
+
+            <div class="signature-line">
+                Authorized Representative<br>
+                Garissa Digital Empowerment Hub (GDEH CBO)
+            </div>
+
+            <div class="signature-line">
+                Date
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>

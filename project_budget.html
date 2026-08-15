@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GDEH CBO - Detailed Project Budget</title>
+
+<style>
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+:root {
+    --corporate-red: #C00000;
+    --body-font: #222;
+    --border: #ccc;
+    --light: #f7f7f7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 15px;
+    background: #eee;
+    color: var(--body-font);
+    font-family: Poppins, "Segoe UI", Arial, sans-serif;
+    font-size: .72rem;
+    line-height: 1.4;
+}
+
+.document-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5mm;
+}
+
+/* Logo header only */
+.logo-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2mm 0 4mm;
+}
+
+.gdeh-logo {
+    width: 50mm;
+    height: auto;
+    max-height: 25mm;
+    object-fit: contain;
+    display: block;
+}
+
+/* Corporate red separation */
+.project-title {
+    border-top: 2px solid var(--corporate-red);
+    padding: 3mm 2mm 2mm;
+}
+
+.project-title h1 {
+    margin: 0;
+    color: var(--corporate-red);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.project-title p {
+    margin: 1mm 0 0;
+    color: #222;
+    font-size: .7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    margin-bottom: 6mm;
+}
+
+.info {
+    padding: 2.5mm;
+    border-bottom: 1px solid var(--border);
+}
+
+.info:nth-child(odd) {
+    border-right: 1px solid var(--border);
+}
+
+.info strong {
+    color: var(--corporate-red);
+    display: block;
+    font-size: .65rem;
+}
+
+.info span {
+    font-size: .7rem;
+}
+
+h2 {
+    color: var(--corporate-red);
+    font-size: .9rem;
+    border-bottom: 1px solid var(--corporate-red);
+    padding-bottom: 1mm;
+    margin: 5mm 0 2mm;
+}
+
+p {
+    font-size: .7rem;
+    margin: 0 0 2mm;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0 5mm;
+}
+
+th {
+    background: var(--corporate-red);
+    color: #fff;
+    font-weight: 600;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 1.8mm;
+    font-size: .66rem;
+    vertical-align: middle;
+}
+
+td:nth-child(1) {
+    text-align: center;
+}
+
+.amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.total td {
+    font-weight: 700;
+    color: var(--corporate-red);
+    border-top: 2px solid var(--corporate-red);
+}
+
+.category {
+    color: var(--corporate-red);
+    font-weight: 700;
+    background: var(--light);
+}
+
+.note {
+    border-left: 3px solid var(--corporate-red);
+    padding: 3mm;
+    background: #fafafa;
+    margin-top: 5mm;
+}
+
+.note strong {
+    color: var(--corporate-red);
+}
+
+@media print {
+
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .controls {
+        display: none;
+    }
+
+    .document {
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="document">
+
+<header class="document-header">
+
+    <div class="logo-header">
+        <img
+            src="gdeh_logo.png"
+            alt="Garissa Digital Empowerment Hub"
+            class="gdeh-logo"
+        >
+    </div>
+
+    <div class="project-title">
+        <h1>
+            YOUTH DIGITAL AND GREEN INNOVATION
+            EMPOWERMENT INITIATIVE
+        </h1>
+
+        <p>PROJECT BUDGET SUMMARY</p>
+    </div>
+
+</header>
+
+<div class="project-info">
+
+    <div class="info">
+        <strong>PROJECT DURATION</strong>
+        <span>24 Months</span>
+    </div>
+
+    <div class="info">
+        <strong>PROJECT LOCATION</strong>
+        <span>Garissa County, Kenya</span>
+    </div>
+
+    <div class="info">
+        <strong>TARGET BENEFICIARIES</strong>
+        <span>1,000 Youth</span>
+    </div>
+
+    <div class="info">
+        <strong>FUNDING REQUEST</strong>
+        <span>KES 5,000,000</span>
+    </div>
+
+</div>
+
+
+<h2>1. Detailed Budget</h2>
+
+<table>
+
+<thead>
+<tr>
+    <th>#</th>
+    <th>Budget Item</th>
+    <th>Quantity</th>
+    <th>Unit Cost (KES)</th>
+    <th>Total (KES)</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Desktop/Laptop Computers</td>
+<td>15</td>
+<td class="amount">55,000</td>
+<td class="amount">825,000</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Printer, projector and training equipment</td>
+<td>1 Lot</td>
+<td class="amount">150,000</td>
+<td class="amount">150,000</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Computer accessories and peripherals</td>
+<td>1 Lot</td>
+<td class="amount">125,000</td>
+<td class="amount">125,000</td>
+</tr>
+
+<tr class="category">
+<td colspan="4">SUBTOTAL — DIGITAL EQUIPMENT</td>
+<td class="amount">1,100,000</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Internet connectivity</td>
+<td>24 Months</td>
+<td class="amount">10,000</td>
+<td class="amount">240,000</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Networking and Wi-Fi infrastructure</td>
+<td>1 Lot</td>
+<td class="amount">60,000</td>
+<td class="amount">60,000</td>
+</tr>
+
+<tr class="category">
+<td colspan="4">SUBTOTAL — INTERNET & NETWORKING</td>
+<td class="amount">300,000</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Digital skills training materials</td>
+<td>1 Lot</td>
+<td class="amount">250,000</td>
+<td class="amount">250,000</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Entrepreneurship training</td>
+<td>10 Sessions</td>
+<td class="amount">30,000</td>
+<td class="amount">300,000</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Training resources and participant support</td>
+<td>1 Lot</td>
+<td class="amount">200,000</td>
+<td class="amount">200,000</td>
+</tr>
+
+<tr class="category">
+<td colspan="4">SUBTOTAL — TRAINING</td>
+<td class="amount">750,000</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Technical trainers and facilitators</td>
+<td>1 Lot</td>
+<td class="amount">550,000</td>
+<td class="amount">550,000</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Youth innovation challenge grants</td>
+<td>10 Teams</td>
+<td class="amount">40,000</td>
+<td class="amount">400,000</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Green solution mini-grants</td>
+<td>5 Teams</td>
+<td class="amount">40,000</td>
+<td class="amount">200,000</td>
+</tr>
+
+<tr class="category">
+<td colspan="4">SUBTOTAL — INNOVATION & GREEN SOLUTIONS</td>
+<td class="amount">600,000</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Mentorship and career events</td>
+<td>10 Events</td>
+<td class="amount">30,000</td>
+<td class="amount">300,000</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>Community outreach and recruitment</td>
+<td>1 Lot</td>
+<td class="amount">250,000</td>
+<td class="amount">250,000</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>Green technology and e-waste activities</td>
+<td>1 Lot</td>
+<td class="amount">250,000</td>
+<td class="amount">250,000</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>Monitoring, evaluation and learning</td>
+<td>1 Lot</td>
+<td class="amount">250,000</td>
+<td class="amount">250,000</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>Project coordination and administration</td>
+<td>1 Lot</td>
+<td class="amount">350,000</td>
+<td class="amount">350,000</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>Communication and project visibility</td>
+<td>1 Lot</td>
+<td class="amount">100,000</td>
+<td class="amount">100,000</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>Contingency and operational support</td>
+<td>1 Lot</td>
+<td class="amount">100,000</td>
+<td class="amount">100,000</td>
+</tr>
+
+<tr class="total">
+<td colspan="4">TOTAL PROJECT BUDGET</td>
+<td class="amount">KES 5,000,000</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<h2>2. Budget Allocation by Major Component</h2>
+
+<table>
+
+<thead>
+<tr>
+    <th>#</th>
+    <th>Major Component</th>
+    <th>Amount (KES)</th>
+    <th>% of Budget</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Digital Equipment</td>
+<td class="amount">1,100,000</td>
+<td class="amount">22%</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Internet & Networking</td>
+<td class="amount">300,000</td>
+<td class="amount">6%</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Training</td>
+<td class="amount">750,000</td>
+<td class="amount">15%</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Trainers & Facilitators</td>
+<td class="amount">550,000</td>
+<td class="amount">11%</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Innovation & Green Solutions</td>
+<td class="amount">600,000</td>
+<td class="amount">12%</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Mentorship & Career Development</td>
+<td class="amount">300,000</td>
+<td class="amount">6%</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Community Outreach</td>
+<td class="amount">250,000</td>
+<td class="amount">5%</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Green Technology & E-Waste</td>
+<td class="amount">250,000</td>
+<td class="amount">5%</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Monitoring & Evaluation</td>
+<td class="amount">250,000</td>
+<td class="amount">5%</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Coordination & Administration</td>
+<td class="amount">350,000</td>
+<td class="amount">7%</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Communication & Visibility</td>
+<td class="amount">100,000</td>
+<td class="amount">2%</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>Contingency</td>
+<td class="amount">100,000</td>
+<td class="amount">2%</td>
+</tr>
+
+<tr class="total">
+<td colspan="2">TOTAL</td>
+<td class="amount">5,000,000</td>
+<td class="amount">100%</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<div class="note">
+
+<strong>Budget Note</strong>
+
+<p>
+The proposed budget is designed to prioritize direct investment in youth
+digital access, practical skills development, innovation and green solutions.
+Administrative and operational costs are maintained at a controlled level
+to maximize the proportion of funding reaching project beneficiaries.
+</p>
+
+</div>
+
+</main>
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+</body>
+</html>
