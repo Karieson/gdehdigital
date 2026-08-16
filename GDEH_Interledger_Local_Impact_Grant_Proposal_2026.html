@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interledger Local Impact Grant Proposal - GDEH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --corporate-red:#C00000;
+    --dark:#222;
+    --muted:#666;
+    --border:#d9d9d9;
+    --soft:#f7f7f7;
+    --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:#eee;
+    color:var(--dark);
+    font-family:Poppins,Arial,sans-serif;
+    font-size:12px;
+    line-height:1.65;
+}
+.toolbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+    padding:12px 16px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.page{
+    width:210mm;
+    min-height:297mm;
+    margin:22px auto;
+    background:#fff;
+    padding:18mm 17mm;
+    box-shadow:0 2px 14px rgba(0,0,0,.12);
+}
+.cover{
+    min-height:245mm;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    padding:0;
+}
+.cover-header{
+    text-align:center;
+    margin-bottom:12px;
+}
+.gdeh-logo{
+    display:block;
+    width:140px;
+    height:auto;
+    object-fit:contain;
+    margin:0 auto 10px;
+}
+.cover-tags{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:7px 16px;
+    color:#222;
+    font-size:9px;
+    letter-spacing:1.5px;
+    font-weight:600;
+    text-transform:uppercase;
+}
+.cover-tags span{
+    position:relative;
+}
+.cover-tags span + span:before{
+    content:"";
+    position:absolute;
+    left:-9px;
+    top:50%;
+    width:1px;
+    height:10px;
+    transform:translateY(-50%);
+    background:#aaa;
+}
+.cover-divider{
+    width:100%;
+    height:3px;
+    background:var(--corporate-red);
+    margin:0 0 28px;
+}
+.cover-title{
+    margin:0 auto;
+    max-width:700px;
+}
+.cover h1{
+    margin:0 0 9px;
+    font-size:16px;
+    line-height:1.3;
+    font-weight:700;
+}
+.cover h2{
+    margin:0 auto 22px;
+    max-width:650px;
+    font-size:12px;
+    line-height:1.6;
+    font-weight:500;
+    color:#333;
+}
+.cover-meta {
+    position: relative;
+    max-width: 680px;
+    margin: 25px auto 0;
+    padding: 18px 24px 18px 30px;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+/* Corporate red vertical bar */
+.cover-meta::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--corporate-red);
+    border-radius: 6px 0 0 6px;
+}
+
+.cover-meta div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 9px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.cover-meta div:last-child {
+    border-bottom: none;
+}
+
+.cover-meta span {
+    color: #666;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.cover-meta strong {
+    color: #222;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: right;
+}
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:1px solid #ddd;
+    padding-bottom:7px;
+    margin-bottom:14px;
+}
+.section-title:before{
+    content:"";
+    width:5px;
+    height:24px;
+    background:var(--corporate-red);
+    display:inline-block;
+}
+h2{
+    font-size:16px;
+    margin:0;
+    color:#222;
+}
+h3{
+    font-size:14px;
+    margin:17px 0 7px;
+    color:#222;
+}
+p{margin:7px 0}
+ul,ol{margin-top:7px}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0;
+}
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 5px 6px;
+    vertical-align: middle;
+    font-size: 9.5px;
+    line-height: 1.45;
+}
+
+th {
+    background: #f3f3f3;
+    font-size: 9.5px;
+    font-weight: 600;
+    text-align: left;
+    padding: 6px;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.highlight {
+    border-left: 3px solid var(--corporate-red);
+    background: #fafafa;
+    padding: 9px 12px;
+    margin: 10px 0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.small {
+    font-size: 9px;
+    color: var(--muted);
+}
+
+.total {
+    font-size: 9.5px;
+    font-weight: 700;
+    background: #f4f4f4;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 2px 6px;
+    font-size: 8.5px;
+    margin: 1px;
+}
+
+/* =================================
+   COMPACT IMPLEMENTATION PLAN TABLE
+================================= */
+
+.plan {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 9.5px;
+}
+
+.plan th,
+.plan td {
+    padding: 5px 6px;
+    font-size: 9.5px;
+    line-height: 1.45;
+    vertical-align: middle;
+}
+
+/* No. */
+.plan th:first-child,
+.plan td:first-child {
+    width: 4%;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Objective / Result */
+.plan th:nth-child(2),
+.plan td:nth-child(2) {
+    width: 17%;
+}
+
+/* Key Activities */
+.plan th:nth-child(3),
+.plan td:nth-child(3) {
+    width: 31%;
+}
+
+/* Target */
+.plan th:nth-child(4),
+.plan td:nth-child(4) {
+    width: 11%;
+    text-align: center;
+}
+
+/* Timeline */
+.plan th:nth-child(5),
+.plan td:nth-child(5) {
+    width: 10%;
+    text-align: center;
+}
+
+/* Verification */
+.plan th:nth-child(6),
+.plan td:nth-child(6) {
+    width: 27%;
+}
+
+/* Keep table text compact */
+.plan td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* =================================
+   SIGNATURE
+================================= */
+
+.signature {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.page {
+    position: relative;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 22px auto;
+    background: #fff;
+    padding: 15mm 15mm 18mm;
+    box-shadow: 0 2px 14px rgba(0,0,0,.12);
+    border: none;
+
+
+
+}
+@page{
+    size:A4;
+    margin:12mm;
+}
+@media print{
+    body{background:#fff;font-size:11px}
+    .toolbar{display:none}
+    .page{
+        width:auto;
+        min-height:auto;
+        margin:0;
+        padding:0;
+        box-shadow:none;
+        page-break-after:always;
+    }
+    .page:last-child{page-break-after:auto}
+    .cover{min-height:260mm;padding-top:10mm}
+    .section{page-break-inside:auto}
+    table{font-size:10px}
+    h2{font-size:15px}
+}
+@media(max-width:800px){
+    body{background:#fff}
+    .page{
+        width:100%;
+        margin:0;
+        padding:25px 18px;
+        box-shadow:none;
+    }
+    .cover{min-height:650px;padding-top:30px}
+    .gdeh-logo{width:115px;max-width:50%}
+    .cover-divider{margin-bottom:22px}
+    .cover-meta div{display:block;text-align:left}
+    .cover-meta strong{display:block}
+    .signature{grid-template-columns:1fr}
+    .plan{font-size:9px}
+}
+@media (max-width: 800px) {
+
+    .cover-meta {
+        width: 100%;
+        padding: 15px 18px 15px 24px;
+    }
+
+    .cover-meta div {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .cover-meta span {
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .cover-meta strong {
+        display: block;
+        text-align: left;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+
+<!-- COVER -->
+<div class="page">
+<section class="cover">
+    <div class="cover-header">
+        <img src="gdeh_logo.png" alt="GDEH Logo" class="gdeh-logo">
+        <div class="cover-tags">
+            <span>INTERLEDGER FOUNDATION</span>
+            <span>LOCAL IMPACT GRANTS</span>
+        </div>
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-title">
+        <h1>Garissa Open Digital Finance &amp; Payments Innovation Initiative</h1>
+        <h2>
+            A community-led initiative to expand practical knowledge, experimentation
+            and inclusive participation in open payments and digital financial infrastructure
+            among underserved communities in Garissa County, Kenya.
+        </h2>
+    </div>
+
+    <div class="cover-meta">
+        <div><span>Applicant / Community Initiative</span><strong>Garissa Digital Empowerment Hub (GDEH)</strong></div>
+        <div><span>Project Location</span><strong>Garissa County, Kenya</strong></div>
+        <div><span>Project Duration</span><strong>6 Months</strong></div>
+        <div><span>Funding Requested</span><strong>USD 3,000</strong></div>
+        <div><span>Primary Community</span><strong>Youth, micro-entrepreneurs &amp; underserved digital users</strong></div>
+    </div>
+</section>
+
+
+<!-- PROPOSAL -->
+<div class="page">
+
+<section class="section">
+<div class="section-title"><h2>1. Executive Summary</h2></div>
+<p>
+Garissa Digital Empowerment Hub (GDEH) proposes a six-month community-led initiative
+to improve understanding, practical use and local experimentation around open payments
+and inclusive digital financial infrastructure in Garissa County, Kenya.
+</p>
+<p>
+Many young people and small community businesses increasingly depend on mobile and
+digital platforms but have limited opportunities to understand how modern payment
+systems, digital financial services, interoperability, open standards and related
+digital infrastructure can expand access to economic opportunities. GDEH will create
+a practical community learning environment where participants can learn, discuss,
+demonstrate and experiment with open and inclusive digital payment concepts.
+</p>
+<p>
+The project will combine community conversations, practical workshops, demonstrations,
+research and storytelling, a youth innovation sprint, and development of accessible
+learning materials. The initiative will particularly encourage young people and
+community-based entrepreneurs to explore how open payment ecosystems can support
+small businesses, digital livelihoods and broader financial inclusion.
+</p>
+<div class="highlight">
+<strong>Core proposition:</strong> GDEH will act as a local community bridge between
+underserved digital users and the emerging ecosystem of open, inclusive and
+interoperable digital financial infrastructure.
+</div>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>2. Project Information</h2></div>
+<table>
+<tr><th>Project Title</th><td>Garissa Open Digital Finance &amp; Payments Innovation Initiative</td></tr>
+<tr><th>Applicant</th><td>Garissa Digital Empowerment Hub (GDEH)</td></tr>
+<tr><th>Location</th><td>Garissa County, Kenya</td></tr>
+<tr><th>Duration</th><td>6 months from grant acceptance</td></tr>
+<tr><th>Funding Requested</th><td>USD 3,000</td></tr>
+<tr><th>Primary Participants</th><td>Youth, emerging digital entrepreneurs, micro-business operators and underserved community members</td></tr>
+<tr><th>Implementation Model</th><td>Community workshops, demonstrations, conversations, research, innovation sprint and open learning materials</td></tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>3. Community Problem &amp; Opportunity</h2></div>
+<p>
+Garissa County has a large youth population and a growing dependence on mobile
+technology, online services and digital commerce. GDEH's existing youth empowerment
+work has identified practical barriers including limited access to computers and
+reliable internet, inadequate practical digital skills, limited exposure to technology
+innovation and limited access to professional networks and digital economic
+opportunities.
+</p>
+<p>
+The broader challenge is not only access to devices. Community members also need
+the knowledge and confidence to understand the systems behind digital transactions,
+the opportunities created by more open and interoperable payment infrastructure,
+and the responsible use of digital financial services.
+</p>
+<p>
+GDEH therefore proposes a focused community learning and experimentation programme
+that translates complex concepts around open payments and digital financial
+infrastructure into practical local learning, demonstrations and community-led
+innovation.
+</p>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>4. Overall Goal</h2></div>
+<p>
+<strong>To strengthen community knowledge, participation and experimentation around
+open payments and inclusive digital financial infrastructure, enabling underserved
+young people and community businesses in Garissa to better understand and use
+emerging digital financial opportunities.</strong>
+</p>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>5. Specific Objectives</h2></div>
+<ol>
+<li>Provide practical learning sessions on open payments, digital financial infrastructure and inclusive digital finance.</li>
+<li>Create a community space for conversations and demonstrations involving youth, entrepreneurs, technology practitioners and other local stakeholders.</li>
+<li>Support youth participants to identify local financial-access problems and develop early-stage technology or community solutions through an innovation sprint.</li>
+<li>Produce simple, accessible learning and awareness materials that explain open payments and digital financial infrastructure in locally relevant terms.</li>
+<li>Document community experiences, opportunities and barriers and share learning with the wider ecosystem.</li>
+</ol>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>6. Target Community &amp; Inclusion</h2></div>
+<p>Primary participants will include:</p>
+<ul>
+<li>Young people interested in technology, entrepreneurship and innovation.</li>
+<li>Emerging digital entrepreneurs and small business operators.</li>
+<li>Community members with limited exposure to digital financial systems.</li>
+<li>Young women and participants from underserved communities.</li>
+<li>Technology learners, innovators and community digital champions.</li>
+</ul>
+<p>
+The project will use accessible community sessions and practical demonstrations so
+that participation does not depend on advanced technical knowledge.
+</p>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>7. Key Project Activities</h2></div>
+
+<h3>A. Community Conversations on Open Payments</h3>
+<p>
+Facilitated conversations will introduce participants to open payments, digital
+financial infrastructure, interoperability, open standards and the relevance of
+these concepts to local businesses and digital livelihoods.
+</p>
+
+<h3>B. Practical Workshops &amp; Demonstrations</h3>
+<p>
+GDEH will conduct practical learning sessions using examples, demonstrations and
+guided exercises. Topics will include digital payment ecosystems, financial access,
+responsible digital transactions, open payment concepts and opportunities for
+community innovation.
+</p>
+
+<h3>C. Youth Digital Finance Innovation Sprint</h3>
+<p>
+A participatory innovation sprint will bring together youth to identify local
+financial-access challenges and develop early-stage concepts, prototypes, content
+or community solutions. Selected ideas will receive peer feedback and mentorship.
+</p>
+
+<h3>D. Community Research &amp; Storytelling</h3>
+<p>
+GDEH will document community experiences and identify barriers, opportunities and
+practical lessons relating to digital payments and financial access. Findings will
+be converted into a concise community learning report and stories.
+</p>
+
+<h3>E. Open Learning Materials &amp; Awareness Campaign</h3>
+<p>
+The project will produce accessible digital and printable materials for community
+use, including explainers, workshop resources, practical guides and awareness
+content focused on open payments and digital financial infrastructure.
+</p>
+
+<h3>F. Local Ecosystem Gathering</h3>
+<p>
+A closing community gathering will bring participants and relevant local technology,
+business and community stakeholders together to share lessons, demonstrate outputs
+and identify pathways for continued collaboration.
+</p>
+</section>
+
+</div>
+
+<!-- RESULTS / PLAN -->
+<div class="page">
+
+<section class="section">
+<div class="section-title"><h2>8. Expected Outputs &amp; Outcomes</h2></div>
+<table>
+<tr><th>Output / Result</th><th>Six-Month Target</th></tr>
+<tr><td>Community members reached through awareness and outreach</td><td>150+</td></tr>
+<tr><td>Participants completing practical workshops</td><td>100+</td></tr>
+<tr><td>Community conversations</td><td>4</td></tr>
+<tr><td>Practical workshops / demonstrations</td><td>4</td></tr>
+<tr><td>Youth innovation sprint</td><td>1</td></tr>
+<tr><td>Early-stage community innovation concepts</td><td>10+</td></tr>
+<tr><td>Selected concepts receiving mentorship / feedback</td><td>5</td></tr>
+<tr><td>Learning / awareness materials produced</td><td>8+</td></tr>
+<tr><td>Community research / learning report</td><td>1</td></tr>
+<tr><td>Local ecosystem gathering</td><td>1</td></tr>
+</table>
+
+<h3>Expected Outcomes</h3>
+<ul>
+<li>Improved community understanding of open payments and digital financial infrastructure.</li>
+<li>Greater confidence among youth and small businesses in navigating digital financial opportunities.</li>
+<li>Increased local participation in open innovation and digital finance conversations.</li>
+<li>Locally relevant ideas and prototypes addressing financial-access challenges.</li>
+<li>A reusable set of community learning resources that can support continued GDEH activities.</li>
+</ul>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>9. Six-Month Implementation Plan</h2></div>
+<table class="plan">
+<tr>
+<th>No.</th><th>Objective / Result</th><th>Key Activities</th><th>Target</th><th>Timeline</th><th>Verification</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Establish project and community baseline</td>
+<td>Participant mapping, baseline questions, stakeholder outreach and detailed activity preparation.</td>
+<td>Baseline completed</td><td>Month 1</td>
+<td>Baseline records, participant database, stakeholder notes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Build awareness of open payments</td>
+<td>Community conversations and introductory awareness sessions.</td>
+<td>4 sessions / 150+ reached</td><td>Months 1–3</td>
+<td>Attendance, photos, session reports</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Develop practical knowledge</td>
+<td>Workshops and demonstrations on open payments and digital financial infrastructure.</td>
+<td>100+ participants</td><td>Months 2–4</td>
+<td>Registers, learning assessments, workshop reports</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Promote community innovation</td>
+<td>Youth innovation sprint, problem identification, idea development and demonstrations.</td>
+<td>10+ ideas / 5 mentored</td><td>Month 4</td>
+<td>Idea records, prototypes, mentor feedback</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Generate community learning</td>
+<td>Research, storytelling, participant feedback and documentation of barriers/opportunities.</td>
+<td>1 learning report</td><td>Months 3–5</td>
+<td>Research notes, interviews, report</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Share open learning resources</td>
+<td>Create and distribute digital/print learning materials and awareness content.</td>
+<td>8+ materials</td><td>Months 4–6</td>
+<td>Published materials, distribution records</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Connect local ecosystem</td>
+<td>Closing ecosystem gathering, demonstrations, learning exchange and partnerships.</td>
+<td>1 gathering</td><td>Month 6</td>
+<td>Attendance, agenda, event report</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Measure results and learning</td>
+<td>Endline assessment, participant feedback, results analysis and final report.</td>
+<td>1 final report</td><td>Month 6</td>
+<td>Survey results, M&amp;E report</td>
+</tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>10. Six-Month Activity Schedule</h2></div>
+<table class="center">
+<tr><th>Activity</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>M5</th><th>M6</th></tr>
+<tr><td>Project setup &amp; baseline</td><td>✓</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Community conversations</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+<tr><td>Open payments workshops</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+<tr><td>Demonstrations / practical sessions</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>Innovation sprint</td><td></td><td></td><td></td><td>✓</td><td></td><td></td></tr>
+<tr><td>Research &amp; storytelling</td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>Learning materials</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Mentorship / feedback</td><td></td><td></td><td></td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>Local ecosystem gathering</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+<tr><td>Final evaluation &amp; report</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>11. Monitoring, Evaluation &amp; Learning</h2></div>
+<table>
+<tr><th>Indicator</th><th>Target</th><th>Data Source</th><th>Frequency</th></tr>
+<tr><td>People reached</td><td>150+</td><td>Outreach records</td><td>Monthly</td></tr>
+<tr><td>Workshop participants</td><td>100+</td><td>Attendance / registration</td><td>Per session</td></tr>
+<tr><td>Knowledge improvement</td><td>Demonstrated improvement</td><td>Pre/post questions and feedback</td><td>Per workshop</td></tr>
+<tr><td>Innovation ideas</td><td>10+</td><td>Innovation records</td><td>At sprint</td></tr>
+<tr><td>Mentored concepts</td><td>5</td><td>Mentorship records</td><td>Monthly</td></tr>
+<tr><td>Learning materials</td><td>8+</td><td>Published materials</td><td>Monthly</td></tr>
+<tr><td>Research report</td><td>1</td><td>Final document</td><td>Endline</td></tr>
+</table>
+</section>
+
+</div>
+
+<!-- BUDGET -->
+<div class="page">
+
+<section class="section">
+<div class="section-title"><h2>12. Detailed Project Budget — USD 3,000</h2></div>
+<p class="small">
+The budget is designed to place the majority of resources directly into community
+learning, workshops, innovation, content production and outreach while keeping
+administrative costs controlled.
+</p>
+<table>
+<tr><th>No.</th><th>Budget Item</th><th>Quantity / Basis</th><th>Unit Cost (USD)</th><th>Total (USD)</th></tr>
+<tr><td>1</td><td>Open payments &amp; digital finance workshops</td><td>4 sessions</td><td>120</td><td class="right">480</td></tr>
+<tr><td>2</td><td>Community conversations &amp; local ecosystem sessions</td><td>4 sessions</td><td>75</td><td class="right">300</td></tr>
+<tr><td>3</td><td>Innovation sprint / hackday</td><td>1 event</td><td>450</td><td class="right">450</td></tr>
+<tr><td>4</td><td>Participant learning materials &amp; printing</td><td>1 lot</td><td>220</td><td class="right">220</td></tr>
+<tr><td>5</td><td>Internet, connectivity &amp; digital tools</td><td>6 months</td><td>70</td><td class="right">420</td></tr>
+<tr><td>6</td><td>Innovation / prototype support</td><td>5 concepts</td><td>80</td><td class="right">400</td></tr>
+<tr><td>7</td><td>Research, storytelling &amp; documentation</td><td>1 lot</td><td>180</td><td class="right">180</td></tr>
+<tr><td>8</td><td>Awareness content &amp; digital distribution</td><td>1 lot</td><td>150</td><td class="right">150</td></tr>
+<tr><td>9</td><td>Monitoring, evaluation &amp; final learning report</td><td>1 lot</td><td>150</td><td class="right">150</td></tr>
+<tr><td>10</td><td>Project coordination &amp; essential administration</td><td>6 months</td><td>25</td><td class="right">150</td></tr>
+<tr><td>11</td><td>Closing community ecosystem gathering</td><td>1 event</td><td>100</td><td class="right">100</td></tr>
+<tr class="total"><td colspan="4" class="right">TOTAL REQUEST</td><td class="right">3,000</td></tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>13. Budget Allocation by Major Component</h2></div>
+<table>
+<tr><th>Major Component</th><th>Amount (USD)</th><th>%</th></tr>
+<tr><td>Community learning, workshops &amp; conversations</td><td class="right">780</td><td class="right">26.0%</td></tr>
+<tr><td>Innovation sprint &amp; prototype support</td><td class="right">850</td><td class="right">28.3%</td></tr>
+<tr><td>Connectivity &amp; digital tools</td><td class="right">420</td><td class="right">14.0%</td></tr>
+<tr><td>Learning materials &amp; awareness</td><td class="right">370</td><td class="right">12.3%</td></tr>
+<tr><td>Research, documentation &amp; M&amp;E</td><td class="right">330</td><td class="right">11.0%</td></tr>
+<tr><td>Coordination &amp; closing event</td><td class="right">250</td><td class="right">8.3%</td></tr>
+<tr class="total"><td>TOTAL</td><td class="right">3,000</td><td class="right">100%</td></tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>14. Budget Justification</h2></div>
+<p><strong>Workshops and conversations — USD 780:</strong> Supports community-organized learning sessions, facilitation and practical demonstrations focused directly on open payments and digital financial infrastructure.</p>
+<p><strong>Innovation sprint and prototype support — USD 850:</strong> Enables a participatory innovation event and small practical support for selected community concepts to move from problems to early experiments.</p>
+<p><strong>Connectivity and digital tools — USD 420:</strong> Provides the internet and basic digital resources needed for learning, demonstrations, research and content distribution.</p>
+<p><strong>Learning materials and awareness — USD 370:</strong> Supports production of accessible materials and community awareness content that can remain available beyond the grant period.</p>
+<p><strong>Research, documentation and M&amp;E — USD 330:</strong> Supports community research, participant feedback, documentation of learning and preparation of the final results report.</p>
+<p><strong>Coordination and closing event — USD 250:</strong> Covers essential coordination and a final local ecosystem gathering to share learning and strengthen relationships.</p>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>15. Sustainability &amp; Continuity</h2></div>
+<p>
+The project is designed as a foundation for continued community learning rather than
+a one-time event. GDEH will retain and reuse the learning materials, community
+research and workshop methodology developed during the six-month period.
+</p>
+<p>
+Following the grant, GDEH will continue community digital learning through affordable
+digital services, youth membership activities, partnerships, volunteer mentors,
+technology-sector relationships and revenue-generating digital services. The existing
+GDEH model also emphasizes access to computers, internet, mentorship and practical
+digital opportunities for underserved youth.
+</p>
+<p>
+The project will encourage participants who develop promising concepts to continue
+working with GDEH and relevant ecosystem partners beyond the grant period.
+</p>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>16. Risk Management</h2></div>
+<table>
+<tr><th>Risk</th><th>Potential Effect</th><th>Mitigation</th></tr>
+<tr><td>Limited participant awareness</td><td>Low attendance</td><td>Community outreach, partnerships and targeted recruitment.</td></tr>
+<tr><td>Limited internet connectivity</td><td>Disrupted demonstrations</td><td>Plan offline materials and maintain backup connectivity.</td></tr>
+<tr><td>Low technical familiarity</td><td>Participants struggle with concepts</td><td>Use plain-language explanations, practical demonstrations and peer learning.</td></tr>
+<tr><td>Limited innovation capacity</td><td>Weak early-stage concepts</td><td>Provide structured problem definition, mentoring and team-based experimentation.</td></tr>
+<tr><td>Project continuity after funding</td><td>Reduced activity</td><td>Retain materials, develop partnerships and integrate activities into GDEH's continuing hub programme.</td></tr>
+</table>
+</section>
+
+<section class="section">
+<div class="section-title"><h2>17. Conclusion</h2></div>
+<p>
+Garissa Digital Empowerment Hub seeks support to establish a practical community
+learning and innovation programme that connects underserved young people and
+community businesses with the opportunities emerging from open payments and
+inclusive digital financial infrastructure.
+</p>
+<p>
+With a focused six-month programme, a modest USD 3,000 investment can support
+community conversations, practical workshops, an innovation sprint, local research,
+open learning materials and an ecosystem gathering. The project will generate
+reusable knowledge and locally grounded learning that can continue through GDEH
+after the grant period.
+</p>
+<p>
+GDEH is committed to practical learning, inclusion, youth ownership, responsible
+technology use, community participation and measurable outcomes.
+</p>
+</section>
+
+<section class="signature">
+<div>
+<div class="signature-line"><strong>Authorized Representative</strong></div>
+Garissa Digital Empowerment Hub (GDEH)<br>
+Garissa County, Kenya
+</div>
+<div>
+<div class="signature-line"><strong>Date</strong></div>
+____________________________
+</div>
+</section>
+
+
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>
