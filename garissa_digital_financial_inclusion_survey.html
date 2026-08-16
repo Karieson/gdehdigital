@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Financial Inclusion & Open Payments Survey</title>
+
+<style>
+    :root {
+        --corporate-red: #C00000;
+        --dark: #222;
+        --light-red: #fff5f5;
+        --border: #777;
+        --light: #f5f5f5;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #eee;
+        color: var(--dark);
+        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12px auto;
+        padding: 15mm;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,.15);
+    }
+
+.header {
+    position: relative;
+    border-bottom: 2px solid var(--corporate-red);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 0.35rem;
+}
+
+.gdeh-logo {
+    display: block;
+    width: auto;
+    height: 3.6rem;
+    max-width: 11rem;
+    object-fit: contain;
+}
+
+.title {
+    margin: 0.15rem 0 0.25rem;
+
+    color: var(--corporate-red);
+
+    font-size: 1.05rem;
+    line-height: 1.35;
+    font-weight: 700;
+
+    text-align: center;
+    letter-spacing: 0.015rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    margin: 0;
+
+    color: #222;
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+    .study-box {
+        background: var(--light-red);
+        border-left: 5px solid var(--red);
+        padding: 10px 12px;
+        margin: 12px 0;
+    }
+
+    .study-box strong {
+        color: var(--red);
+    }
+
+    :root {
+    --corporate-red: #C00000;
+    --black: #222;
+    --white: #fff;
+    --border: #777;
+    --light: #f5f5f5;
+    --light-red: #fff5f5;
+}
+
+h2.section-title {
+    position: relative;
+
+    background: transparent;
+    color: var(--corporate-red);
+
+    margin: 1.4rem 0 0.65rem;
+    padding: 0.42rem 0.75rem 0.42rem 0.85rem;
+
+    font-size: 0.78rem;
+    line-height: 1.3;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.015rem;
+
+    border: none;
+    border-left: 0.38rem solid var(--corporate-red);
+}
+
+    h3 {
+        font-size: 12px;
+        margin: 12px 0 6px;
+        color: var(--red);
+    }
+
+    p {
+        margin: 5px 0 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 7px 0 12px;
+    }
+
+    th,
+    td {
+        border: 1px solid var(--border);
+        padding: 6px 6px;
+        vertical-align: middle;
+    }
+
+    th {
+        background: #eee;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    td.question {
+        font-weight: 500;
+    }
+
+    .number {
+        width: 35px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .small {
+        font-size: 9px;
+    }
+
+    .tiny {
+        font-size: 8px;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .code-box {
+        display: inline-block;
+        border: 1px solid #444;
+        width: 24px;
+        height: 25px;
+        margin-right: 3px;
+        text-align: center;
+        line-height: 25px;
+        font-weight: bold;
+    }
+
+    .line {
+        display: inline-block;
+        border-bottom: 1px solid #444;
+        min-width: 150px;
+        height: 17px;
+    }
+
+    .long-line {
+        border-bottom: 1px solid #555;
+        height: 23px;
+        margin: 5px 0;
+    }
+
+    .checkbox {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        margin-right: 3px;
+    }
+
+    .option {
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+
+    .likert td {
+        text-align: center;
+        font-size: 9px;
+        padding: 5px 2px;
+    }
+
+    .likert td.question {
+        text-align: left;
+        font-size: 10px;
+    }
+
+    .likert th {
+        font-size: 8px;
+        padding: 5px 2px;
+    }
+
+    .open-box {
+        border: 1px solid #777;
+        min-height: 65px;
+        margin: 5px 0 12px;
+        padding: 5px;
+    }
+
+    .open-box.large {
+        min-height: 100px;
+    }
+
+    .open-box.xlarge {
+        min-height: 140px;
+    }
+
+    .instruction {
+        background: #f7f7f7;
+        border: 1px solid #ccc;
+        padding: 7px;
+        margin: 7px 0;
+        font-size: 9px;
+    }
+
+    .signature-table td {
+        height: 45px;
+    }
+
+    .footer {
+        border-top: 2px solid var(--red);
+        margin-top: 20px;
+        padding-top: 7px;
+        font-size: 8px;
+        color: #555;
+        text-align: center;
+    }
+
+    .page-break {
+        page-break-before: always;
+    }
+
+    .avoid-break {
+        page-break-inside: avoid;
+    }
+
+    @media print {
+        body {
+            background: white;
+        }
+
+        .page {
+            width: 100%;
+            min-height: auto;
+            margin: 0;
+            padding: 12mm;
+            box-shadow: none;
+        }
+
+        .no-print {
+            display: none !important;
+        }
+
+        h2.section-title {
+            break-after: avoid;
+        }
+
+        table,
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+    }
+
+    .print-button {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: var(--red);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 700;
+        z-index: 999;
+    }
+
+    .print-button:hover {
+        background: #900000;
+    }
+</style>
+</head>
+
+<body>
+
+<button class="print-button no-print" onclick="window.print()">
+    Print / Save PDF
+</button>
+
+
+<!-- =========================================================
+     COVER / INTRODUCTION
+========================================================= -->
+
+<div class="page">
+
+    <div class="header">
+
+    <div class="header-top">
+        <img src="gdeh_logo.png" alt="GDEH Logo" class="gdeh-logo">
+    </div>
+
+    <div class="title">
+        DIGITAL FINANCIAL INCLUSION & OPEN PAYMENTS SURVEY
+    </div>
+
+    <div class="subtitle">
+        Evidence, Challenges and Opportunities Among Youth in Northern Kenya
+    </div>
+
+</div>
+
+    <h3>Purpose of the Survey</h3>
+
+    <p>
+        This questionnaire is designed to collect primary evidence on access to
+        digital financial services, mobile money, digital payments, payment
+        interoperability, financial literacy, online security, and opportunities
+        for improving financial inclusion among young people and communities
+        in Garissa County.
+    </p>
+
+    <p>
+        The information collected will be used for research and will be presented
+        in aggregated or anonymized form. Participation is voluntary.
+        You may decline to answer any question or withdraw from the survey.
+    </p>
+
+    <div class="instruction">
+        <strong>Instructions to respondent:</strong>
+        Please answer the questions honestly based on your own experience.
+        Tick the appropriate box or write your response in the space provided.
+        Do not write your name, national ID number, phone number, PIN,
+        password, or other unnecessary personal identifying information.
+    </div>
+
+
+    <!-- RESPONDENT IDENTIFICATION -->
+
+    <h2 class="section-title">Respondent Identification</h2>
+
+    <table>
+        <tr>
+            <td><strong>Respondent Code</strong></td>
+            <td>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <span class="code-box"></span>
+                <br>
+                <span class="small">Example: GAR-YOUTH-001</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>Date of Interview</strong></td>
+            <td>
+                Day: __________ &nbsp;&nbsp;
+                Month: __________ &nbsp;&nbsp;
+                Year: __________
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>Location / Area</strong></td>
+            <td>
+                ________________________________________________
+            </td>
+        </tr>
+
+        <tr>
+            <td><strong>County</strong></td>
+            <td>
+                ☐ Garissa &nbsp;&nbsp;
+                ☐ Wajir &nbsp;&nbsp;
+                ☐ Mandera &nbsp;&nbsp;
+                ☐ Other: __________________
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- CONSENT -->
+
+    <h2 class="section-title">Consent to Participate</h2>
+
+    <div class="instruction">
+        I understand that this survey is for research purposes. I understand
+        that participation is voluntary, that I may refuse to answer any
+        question, and that my responses will be treated confidentially and
+        reported in anonymized or aggregated form.
+    </div>
+
+    <table class="signature-table">
+        <tr>
+            <td>
+                <strong>Do you agree to participate?</strong><br><br>
+                ☐ Yes &nbsp;&nbsp;&nbsp;&nbsp;
+                ☐ No
+            </td>
+
+            <td>
+                <strong>Respondent Signature / Mark</strong><br><br>
+                ______________________________
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>Date</strong><br><br>
+                ______________________________
+            </td>
+
+            <td>
+                <strong>Researcher / Enumerator Signature</strong><br><br>
+                ______________________________
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- =========================================================
+         SECTION A
+    ========================================================= -->
+
+    <h2 class="section-title">Section A — Respondent Profile</h2>
+
+    <table>
+        <tr>
+            <th class="number">A1</th>
+            <td class="question">Age group</td>
+            <td>
+                ☐ 18–24<br>
+                ☐ 25–29<br>
+                ☐ 30–34<br>
+                ☐ 35–39<br>
+                ☐ 40+
+            </td>
+        </tr>
+
+        <tr>
+            <th>A2</th>
+            <td class="question">Gender</td>
+            <td>
+                ☐ Female<br>
+                ☐ Male<br>
+                ☐ Non-binary / Other<br>
+                ☐ Prefer not to say
+            </td>
+        </tr>
+
+        <tr>
+            <th>A3</th>
+            <td class="question">Highest education level</td>
+            <td>
+                ☐ No formal education<br>
+                ☐ Primary<br>
+                ☐ Secondary<br>
+                ☐ Certificate<br>
+                ☐ Diploma<br>
+                ☐ Degree<br>
+                ☐ Postgraduate
+            </td>
+        </tr>
+
+        <tr>
+            <th>A4</th>
+            <td class="question">Current employment status</td>
+            <td>
+                ☐ Employed<br>
+                ☐ Self-employed<br>
+                ☐ Student<br>
+                ☐ Unemployed<br>
+                ☐ Casual worker<br>
+                ☐ Other: __________________
+            </td>
+        </tr>
+
+        <tr>
+            <th>A5</th>
+            <td class="question">Main occupation / economic activity</td>
+            <td>
+                ___________________________________________
+            </td>
+        </tr>
+
+        <tr>
+            <th>A6</th>
+            <td class="question">Area of residence</td>
+            <td>
+                ☐ Urban &nbsp;
+                ☐ Peri-urban &nbsp;
+                ☐ Rural
+            </td>
+        </tr>
+
+        <tr>
+            <th>A7</th>
+            <td class="question">How long have you lived in this area?</td>
+            <td>
+                ☐ Less than 1 year<br>
+                ☐ 1–3 years<br>
+                ☐ 4–10 years<br>
+                ☐ More than 10 years
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION B -->
+
+    <h2 class="section-title">Section B — Digital Access & Connectivity</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>B1</td>
+            <td class="question">Do you personally own or regularly use a mobile phone?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>B2</td>
+            <td class="question">What type of phone do you mainly use?</td>
+            <td>
+                ☐ Basic phone<br>
+                ☐ Feature phone<br>
+                ☐ Smartphone<br>
+                ☐ Shared phone
+            </td>
+        </tr>
+
+        <tr>
+            <td>B3</td>
+            <td class="question">Do you regularly access the internet?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>B4</td>
+            <td class="question">Main method of internet access</td>
+            <td>
+                ☐ Mobile data<br>
+                ☐ Wi-Fi<br>
+                ☐ Public hotspot<br>
+                ☐ Cyber café<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+
+        <tr>
+            <td>B5</td>
+            <td class="question">How reliable is your internet connection?</td>
+            <td>
+                ☐ Very unreliable<br>
+                ☐ Unreliable<br>
+                ☐ Average<br>
+                ☐ Reliable<br>
+                ☐ Very reliable
+            </td>
+        </tr>
+
+        <tr>
+            <td>B6</td>
+            <td class="question">How often do network problems prevent you from completing digital transactions?</td>
+            <td>
+                ☐ Never<br>
+                ☐ Rarely<br>
+                ☐ Sometimes<br>
+                ☐ Often<br>
+                ☐ Very often
+            </td>
+        </tr>
+
+        <tr>
+            <td>B7</td>
+            <td class="question">Is the cost of internet/data a barrier to your use of digital services?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Sometimes</td>
+        </tr>
+
+        <tr>
+            <td>B8</td>
+            <td class="question">What is the biggest digital access challenge in your area?</td>
+            <td>
+                ☐ Network coverage<br>
+                ☐ Internet cost<br>
+                ☐ Device cost<br>
+                ☐ Electricity<br>
+                ☐ Digital skills<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION C -->
+
+    <h2 class="section-title">Section C — Mobile Money & Digital Payments</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>C1</td>
+            <td class="question">Do you use mobile money services?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>C2</td>
+            <td class="question">Which mobile/digital payment services do you use?</td>
+            <td>
+                ☐ M-PESA<br>
+                ☐ Airtel Money<br>
+                ☐ Bank mobile app<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+
+        <tr>
+            <td>C3</td>
+            <td class="question">How frequently do you make digital payments?</td>
+            <td>
+                ☐ Several times a day<br>
+                ☐ Daily<br>
+                ☐ Several times a week<br>
+                ☐ Weekly<br>
+                ☐ Monthly<br>
+                ☐ Rarely
+            </td>
+        </tr>
+
+        <tr>
+            <td>C4</td>
+            <td class="question">What do you mainly use digital payments for?</td>
+            <td>
+                ☐ Food / household needs<br>
+                ☐ Business<br>
+                ☐ School fees<br>
+                ☐ Bills<br>
+                ☐ Transport<br>
+                ☐ Sending money<br>
+                ☐ Receiving money<br>
+                ☐ Savings<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+
+        <tr>
+            <td>C5</td>
+            <td class="question">How convenient are digital payments compared with cash?</td>
+            <td>
+                ☐ Very inconvenient<br>
+                ☐ Inconvenient<br>
+                ☐ Neutral<br>
+                ☐ Convenient<br>
+                ☐ Very convenient
+            </td>
+        </tr>
+
+        <tr>
+            <td>C6</td>
+            <td class="question">How often do you use cash instead of digital payments?</td>
+            <td>
+                ☐ Always<br>
+                ☐ Often<br>
+                ☐ Sometimes<br>
+                ☐ Rarely<br>
+                ☐ Never
+            </td>
+        </tr>
+
+        <tr>
+            <td>C7</td>
+            <td class="question">Why do you prefer cash when you use it?</td>
+            <td>
+                ☐ No transaction fee<br>
+                ☐ Easier<br>
+                ☐ More accepted<br>
+                ☐ Network problems<br>
+                ☐ Lack of trust<br>
+                ☐ Lack of digital skills<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION D -->
+
+    <h2 class="section-title">Section D — Transaction Costs & Accessibility</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>D1</td>
+            <td class="question">Are digital transaction charges affordable to you?</td>
+            <td>
+                ☐ Strongly disagree<br>
+                ☐ Disagree<br>
+                ☐ Neutral<br>
+                ☐ Agree<br>
+                ☐ Strongly agree
+            </td>
+        </tr>
+
+        <tr>
+            <td>D2</td>
+            <td class="question">Have transaction fees ever prevented you from making a digital payment?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Sometimes</td>
+        </tr>
+
+        <tr>
+            <td>D3</td>
+            <td class="question">Have you ever abandoned a transaction because of network failure?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>D4</td>
+            <td class="question">How easy is it to access a mobile money agent?</td>
+            <td>
+                ☐ Very difficult<br>
+                ☐ Difficult<br>
+                ☐ Neutral<br>
+                ☐ Easy<br>
+                ☐ Very easy
+            </td>
+        </tr>
+
+        <tr>
+            <td>D5</td>
+            <td class="question">How far do you normally travel to access financial services?</td>
+            <td>
+                ☐ Less than 1 km<br>
+                ☐ 1–5 km<br>
+                ☐ 6–10 km<br>
+                ☐ More than 10 km
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION E -->
+
+    <h2 class="section-title">Section E — Digital & Financial Literacy</h2>
+
+    <p class="instruction">
+        For each statement, tick one response.
+    </p>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Statement</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>E1</td>
+            <td class="question">I understand how to use mobile money services.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>E2</td>
+            <td class="question">I understand the charges associated with digital transactions.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>E3</td>
+            <td class="question">I can identify suspicious digital financial messages.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>E4</td>
+            <td class="question">I know how to protect my PIN and financial information.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>E5</td>
+            <td class="question">I feel confident using digital financial services independently.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>E6</td>
+            <td class="question">I would benefit from additional digital financial literacy training.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION F -->
+
+    <h2 class="section-title">Section F — Trust, Privacy & Security</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Statement</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>F1</td>
+            <td class="question">I trust digital payment services.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>F2</td>
+            <td class="question">I feel safe making digital financial transactions.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>F3</td>
+            <td class="question">I am concerned about the privacy of my financial information.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>F4</td>
+            <td class="question">I understand how financial service providers use my personal information.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>F5</td>
+            <td class="question">I know what to do if a digital transaction goes wrong.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION G -->
+
+    <h2 class="section-title">Section G — Fraud, Scams & Negative Experiences</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>G1</td>
+            <td class="question">Have you personally experienced or nearly experienced digital financial fraud?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Prefer not to say</td>
+        </tr>
+
+        <tr>
+            <td>G2</td>
+            <td class="question">Have you ever received a suspicious financial message or call?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>G3</td>
+            <td class="question">Have you ever lost money through a digital transaction?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>G4</td>
+            <td class="question">What was the main problem?</td>
+            <td>
+                ☐ Fraud/scam<br>
+                ☐ Wrong number/account<br>
+                ☐ Network failure<br>
+                ☐ Failed transaction<br>
+                ☐ Unauthorized transaction<br>
+                ☐ Other: ____________
+            </td>
+        </tr>
+
+        <tr>
+            <td>G5</td>
+            <td class="question">Were you able to obtain assistance after the problem?</td>
+            <td>
+                ☐ Yes<br>
+                ☐ No<br>
+                ☐ Partially
+            </td>
+        </tr>
+    </table>
+
+    <h3>G6. Briefly describe any negative experience you have had:</h3>
+    <div class="open-box"></div>
+
+
+    <!-- SECTION H -->
+
+    <h2 class="section-title">Section H — Positive Experiences & Benefits</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Digital payments have...</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>H1</td>
+            <td class="question">Made it easier to send money.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>H2</td>
+            <td class="question">Made it easier to receive money.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>H3</td>
+            <td class="question">Reduced the need to carry cash.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>H4</td>
+            <td class="question">Improved access to financial services.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>H5</td>
+            <td class="question">Helped support my business or economic activities.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>H6</td>
+            <td class="question">Saved time when making payments.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION I -->
+
+    <h2 class="section-title">Section I — Challenges & Barriers</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Challenge</th>
+            <th>Tick if experienced</th>
+        </tr>
+
+        <tr><td>I1</td><td>High transaction charges</td><td>☐</td></tr>
+        <tr><td>I2</td><td>Poor network coverage</td><td>☐</td></tr>
+        <tr><td>I3</td><td>Expensive internet/data</td><td>☐</td></tr>
+        <tr><td>I4</td><td>Lack of smartphone</td><td>☐</td></tr>
+        <tr><td>I5</td><td>Lack of digital skills</td><td>☐</td></tr>
+        <tr><td>I6</td><td>Fear of fraud</td><td>☐</td></tr>
+        <tr><td>I7</td><td>Privacy concerns</td><td>☐</td></tr>
+        <tr><td>I8</td><td>Lack of trust</td><td>☐</td></tr>
+        <tr><td>I9</td><td>Limited agent availability</td><td>☐</td></tr>
+        <tr><td>I10</td><td>Power/electricity challenges</td><td>☐</td></tr>
+        <tr><td>I11</td><td>Language or communication barriers</td><td>☐</td></tr>
+        <tr><td>I12</td><td>Other</td><td>☐ __________________</td></tr>
+    </table>
+
+
+    <!-- SECTION J -->
+
+    <h2 class="section-title">Section J — Gender & Age-Related Barriers</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Statement</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>J1</td>
+            <td class="question">Women and men have equal access to digital financial services in my community.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>J2</td>
+            <td class="question">Young people generally have better access to digital financial services than older people.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>J3</td>
+            <td class="question">Women face specific barriers when using digital financial services.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>J4</td>
+            <td class="question">Digital literacy opportunities are equally available to women and men.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>J5</td>
+            <td class="question">Older adults need additional support to use digital financial services.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+    <h3>J6. What gender- or age-related barriers have you observed?</h3>
+    <div class="open-box"></div>
+
+
+    <!-- SECTION K -->
+
+    <h2 class="section-title">Section K — Youth Employment & Entrepreneurship</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Statement</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>K1</td>
+            <td class="question">Digital payments make it easier for young people to operate businesses.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>K2</td>
+            <td class="question">Digital financial services create opportunities for youth entrepreneurship.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>K3</td>
+            <td class="question">Digital payments make it easier to receive income from customers.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>K4</td>
+            <td class="question">Digital financial services can support online employment and freelancing.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>K5</td>
+            <td class="question">Limited internet access prevents many young people from benefiting from digital opportunities.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION L -->
+
+    <h2 class="section-title">Section L — Cross-Platform & Interoperable Payments</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>L1</td>
+            <td class="question">Have you ever wanted to send money to someone using a different payment platform?</td>
+            <td>☐ Yes &nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td>L2</td>
+            <td class="question">Have you experienced difficulties sending money between different providers?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Not sure</td>
+        </tr>
+
+        <tr>
+            <td>L3</td>
+            <td class="question">Would you prefer to make payments regardless of which provider you or the recipient uses?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Not sure</td>
+        </tr>
+
+        <tr>
+            <td>L4</td>
+            <td class="question">Would greater interoperability make digital payments more useful to you?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Not sure</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION M -->
+
+    <h2 class="section-title">Section M — Awareness of Open Payments</h2>
+
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Question</th>
+            <th>Response</th>
+        </tr>
+
+        <tr>
+            <td>M1</td>
+            <td class="question">Before this survey, had you heard the term "Open Payments"?</td>
+            <td>
+                ☐ Yes<br>
+                ☐ No<br>
+                ☐ Not sure
+            </td>
+        </tr>
+
+        <tr>
+            <td>M2</td>
+            <td class="question">How would you describe your understanding of Open Payments?</td>
+            <td>
+                ☐ None<br>
+                ☐ Limited<br>
+                ☐ Moderate<br>
+                ☐ Good<br>
+                ☐ Very good
+            </td>
+        </tr>
+
+        <tr>
+            <td>M3</td>
+            <td class="question">Would you like to learn more about Open Payments?</td>
+            <td>☐ Yes &nbsp; ☐ No &nbsp; ☐ Maybe</td>
+        </tr>
+    </table>
+
+    <div class="instruction">
+        <strong>Researcher explanation where necessary:</strong><br>
+        For this survey, "Open Payments" refers broadly to payment systems and
+        arrangements that enable greater interoperability and easier movement
+        of payments between different financial or payment service providers,
+        subject to appropriate security, privacy and regulatory safeguards.
+    </div>
+
+
+    <!-- SECTION N -->
+
+    <h2 class="section-title">Section N — Potential Benefits of Open Payments</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Potential benefit</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>N1</td>
+            <td class="question">Open Payments could make sending money easier.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N2</td>
+            <td class="question">Open Payments could reduce payment barriers between providers.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N3</td>
+            <td class="question">Open Payments could reduce transaction costs.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N4</td>
+            <td class="question">Open Payments could benefit small businesses.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N5</td>
+            <td class="question">Open Payments could increase financial inclusion.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N6</td>
+            <td class="question">Open Payments could create more opportunities for youth entrepreneurs.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>N7</td>
+            <td class="question">Open Payments could make digital financial services more competitive.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION O -->
+
+    <h2 class="section-title">Section O — Concerns About Open Payments</h2>
+
+    <table class="likert">
+        <tr>
+            <th>No.</th>
+            <th>Concern</th>
+            <th>Strongly Agree</th>
+            <th>Agree</th>
+            <th>Neutral</th>
+            <th>Disagree</th>
+            <th>Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>O1</td>
+            <td class="question">I would be concerned about fraud in interoperable payment systems.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>O2</td>
+            <td class="question">I would be concerned about the privacy of my financial data.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>O3</td>
+            <td class="question">I would worry about unauthorized access to my account.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>O4</td>
+            <td class="question">Users would need clear information before adopting Open Payments.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>O5</td>
+            <td class="question">Strong consumer protection would be necessary.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+
+        <tr>
+            <td>O6</td>
+            <td class="question">People with limited digital literacy could face additional risks.</td>
+            <td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION P -->
+
+    <h2 class="section-title">Section P — Improving Financial Inclusion</h2>
+
+    <p><strong>Which interventions would most improve digital financial inclusion in your community?</strong></p>
+
+    <table>
+        <tr>
+            <th>Priority</th>
+            <th>Potential intervention</th>
+            <th>Select</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Improve mobile/network coverage</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Reduce digital transaction costs</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Expand digital literacy training</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Increase fraud awareness and consumer protection</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>Improve payment interoperability</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td>Increase access to smartphones and devices</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>Improve electricity access</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td>Increase financial education</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>Strengthen privacy and data protection</td>
+            <td>☐</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td>Other: ____________________________________</td>
+            <td>☐</td>
+        </tr>
+    </table>
+
+
+    <!-- SECTION Q -->
+
+    <h2 class="section-title">Section Q — Policy & Institutional Recommendations</h2>
+
+    <h3>Q1. What should government do to improve digital financial inclusion?</h3>
+    <div class="open-box large"></div>
+
+    <h3>Q2. What should financial service providers do differently?</h3>
+    <div class="open-box large"></div>
+
+    <h3>Q3. What should telecommunications companies do to improve access?</h3>
+    <div class="open-box"></div>
+
+    <h3>Q4. What role should community organizations play?</h3>
+    <div class="open-box"></div>
+
+    <h3>Q5. What policy changes would make digital payments safer and more accessible?</h3>
+    <div class="open-box large"></div>
+
+
+    <!-- SECTION R -->
+
+    <h2 class="section-title">Section R — Personal Experiences & Future Expectations</h2>
+
+    <h3>R1. Tell us about your most positive experience using digital financial services.</h3>
+    <div class="open-box large"></div>
+
+    <h3>R2. What is the biggest problem you face when using digital payments?</h3>
+    <div class="open-box"></div>
+
+    <h3>R3. What would make you use digital payments more frequently?</h3>
+    <div class="open-box"></div>
+
+    <h3>R4. What changes would you like to see in payment services in the next five years?</h3>
+    <div class="open-box large"></div>
+
+    <h3>R5. Is there anything else you would like to tell us about digital financial inclusion?</h3>
+    <div class="open-box xlarge"></div>
+
+
+    <!-- ENUMERATOR SECTION -->
+
+    <div class="page-break"></div>
+
+    <h2 class="section-title">Enumerator / Researcher Verification</h2>
+
+    <table>
+        <tr>
+            <td><strong>Questionnaire Code</strong></td>
+            <td>GAR-YOUTH-________________</td>
+        </tr>
+
+        <tr>
+            <td><strong>Interview completed?</strong></td>
+            <td>☐ Yes &nbsp;&nbsp; ☐ No &nbsp;&nbsp; ☐ Partially</td>
+        </tr>
+
+        <tr>
+            <td><strong>Consent obtained?</strong></td>
+            <td>☐ Yes &nbsp;&nbsp; ☐ No</td>
+        </tr>
+
+        <tr>
+            <td><strong>Respondent completed questionnaire personally?</strong></td>
+            <td>☐ Yes &nbsp;&nbsp; ☐ Assisted</td>
+        </tr>
+
+        <tr>
+            <td><strong>Any major difficulty during interview?</strong></td>
+            <td>☐ Yes &nbsp;&nbsp; ☐ No</td>
+        </tr>
+    </table>
+
+    <h3>Enumerator Notes</h3>
+    <div class="open-box large"></div>
+
+    <table class="signature-table">
+        <tr>
+            <td>
+                <strong>Enumerator Name / Code</strong><br><br>
+                ______________________________
+            </td>
+
+            <td>
+                <strong>Signature</strong><br><br>
+                ______________________________
+            </td>
+
+            <td>
+                <strong>Date</strong><br><br>
+                ______________________________
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- DATA QUALITY NOTE -->
+
+    <div class="study-box">
+        <strong>Research Data Protection Notice</strong><br>
+        Completed questionnaires should be stored securely. The research dataset
+        should use respondent codes rather than names, telephone numbers,
+        national identification numbers, PINs, passwords, or other unnecessary
+        personal identifiers. Results should be analyzed and reported in
+        aggregated or anonymized form.
+    </div>
+
+
+    <div class="footer">
+        Digital Financial Inclusion & Open Payments Survey |
+        Garissa County, Kenya |
+        Research Instrument
+    </div>
+
+</div>
+
+
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>
