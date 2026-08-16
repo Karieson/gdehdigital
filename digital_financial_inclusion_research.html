@@ -1,0 +1,4480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Digital Financial Inclusion and Payment Interoperability Among Youth in Northern Kenya
+</title>
+
+<style>
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --corporate-red: #C00000;
+    --black: #222;
+    --white: #fff;
+    --border: #aaa;
+    --light: #f5f5f5;
+    --light-red: #fff6f6;
+    --muted: #666;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #e9e9e9;
+    color: var(--black);
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   A4 PAGE
+========================================================= */
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 14px auto;
+    padding: 15mm;
+
+    background: var(--white);
+
+    box-shadow:
+        0 0 8px rgba(0,0,0,0.14);
+
+    position: relative;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: relative;
+
+    border-bottom:
+        2px solid var(--corporate-red);
+
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.15rem;
+}
+
+.header-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-bottom: 0.35rem;
+}
+
+.gdeh-logo {
+    display: block;
+
+    width: auto;
+    height: 3.5rem;
+    max-width: 11rem;
+
+    object-fit: contain;
+}
+
+.document-title {
+    margin: 0.15rem 0 0.25rem;
+
+    color: var(--corporate-red);
+
+    font-size: 1.02rem;
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    letter-spacing: 0.01rem;
+
+    text-transform: uppercase;
+}
+
+.document-subtitle {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+h2.section-title {
+    position: relative;
+
+    background: transparent;
+
+    color: var(--corporate-red);
+
+    margin:
+        1.45rem
+        0
+        0.7rem;
+
+    padding:
+        0.42rem
+        0.75rem
+        0.42rem
+        0.85rem;
+
+    font-size: 0.78rem;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.015rem;
+
+    border: none;
+
+    border-left:
+        0.38rem solid
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   SUBHEADINGS
+========================================================= */
+
+h3 {
+    margin:
+        1rem
+        0
+        0.35rem;
+
+    color: var(--black);
+
+    font-size: 0.76rem;
+
+    line-height: 1.4;
+
+    font-weight: 800;
+}
+
+h4 {
+    margin:
+        0.8rem
+        0
+        0.3rem;
+
+    color: var(--black);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+    margin:
+        0
+        0
+        0.7rem;
+
+    text-align: justify;
+}
+
+.lead {
+    font-size: 0.74rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.red {
+    color: var(--corporate-red);
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+ol,
+ul {
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+
+    padding-left: 1.45rem;
+}
+
+li {
+    margin-bottom: 0.35rem;
+}
+
+
+/* =========================================================
+   COVER PAGE
+========================================================= */
+
+.cover {
+    min-height: 260mm;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.cover-logo {
+    width: auto;
+
+    height: 5rem;
+
+    max-width: 14rem;
+
+    object-fit: contain;
+
+    margin-bottom: 1.5rem;
+}
+
+.cover-title {
+    margin: 3rem auto 1rem;
+
+    color: var(--corporate-red);
+
+    font-family: "Allura", "Brush Script MT", "Segoe Script", cursive;
+
+    font-size: 3.2rem;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    letter-spacing: 0;
+
+    max-width: 900px;
+}
+
+.cover-title span {
+    display: block;
+}
+
+.cover-subtitle {
+    color:
+        var(--black);
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.55;
+
+    font-weight:
+        600;
+
+    max-width:
+        82%;
+}
+
+.cover-line {
+    width:
+        65%;
+
+    height:
+        0.2rem;
+
+    background:
+        var(--corporate-red);
+
+    margin:
+        1.5rem auto;
+}
+
+.cover-meta {
+    margin-top:
+        1.5rem;
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.9;
+
+    color:
+        #555;
+}
+
+
+/* =========================================================
+   DOCUMENT INFORMATION BOX
+========================================================= */
+
+.info-box {
+    background:
+        var(--light-red);
+
+    border-left:
+        0.25rem solid
+        var(--corporate-red);
+
+    padding:
+        0.7rem
+        0.8rem;
+
+    margin:
+        0.8rem
+        0
+        1rem;
+}
+
+
+/* =========================================================
+   ABSTRACT
+========================================================= */
+
+.abstract-box {
+    border:
+        1px solid
+        #ccc;
+
+    background:
+        #fafafa;
+
+    padding:
+        0.9rem;
+
+    margin-bottom:
+        1rem;
+}
+
+.keywords {
+    font-size:
+        0.68rem;
+
+    margin-top:
+        0.7rem;
+}
+
+
+/* =========================================================
+   TOC
+========================================================= */
+
+.toc {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    margin:
+        0.7rem
+        0
+        1rem;
+}
+
+.toc td {
+    padding:
+        0.3rem
+        0;
+
+    border-bottom:
+        1px dotted
+        #aaa;
+}
+
+.toc td:last-child {
+    text-align:
+        right;
+
+    width:
+        45px;
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+table {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    margin:
+        0.8rem
+        0
+        1rem;
+
+    font-size:
+        0.67rem;
+}
+
+th,
+td {
+    border:
+        1px solid
+        var(--border);
+
+    padding:
+        0.4rem
+        0.45rem;
+
+    vertical-align:
+        top;
+}
+
+th {
+    background:
+        var(--light);
+
+    font-weight:
+        800;
+
+    text-align:
+        left;
+}
+
+.table-title {
+    margin:
+        0.8rem
+        0
+        0.3rem;
+
+    font-weight:
+        800;
+
+    font-size:
+        0.68rem;
+}
+
+
+/* =========================================================
+   FRAMEWORK
+========================================================= */
+
+.framework {
+    display:
+        flex;
+
+    align-items:
+        stretch;
+
+    justify-content:
+        space-between;
+
+    gap:
+        0.45rem;
+
+    margin:
+        1rem
+        0;
+}
+
+.framework-box {
+    flex:
+        1;
+
+    border:
+        1px solid
+        #999;
+
+    background:
+        #fafafa;
+
+    padding:
+        0.65rem;
+
+    text-align:
+        center;
+
+    font-size:
+        0.62rem;
+}
+
+.framework-box strong {
+    display:
+        block;
+
+    color:
+        var(--corporate-red);
+
+    margin-bottom:
+        0.3rem;
+
+    font-size:
+        0.67rem;
+}
+
+.framework-arrow {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        var(--corporate-red);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        800;
+}
+
+
+/* =========================================================
+   VARIABLES TABLE
+========================================================= */
+
+.variable-card {
+    border-left:
+        0.25rem solid
+        var(--corporate-red);
+
+    background:
+        #fafafa;
+
+    padding:
+        0.6rem
+        0.75rem;
+
+    margin:
+        0.55rem
+        0;
+}
+
+
+/* =========================================================
+   RESEARCH DESIGN FLOW
+========================================================= */
+
+.method-flow {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.45rem;
+
+    margin:
+        1rem
+        0;
+}
+
+.method-step {
+    border:
+        1px solid
+        #bbb;
+
+    padding:
+        0.55rem
+        0.7rem;
+
+    background:
+        #fafafa;
+}
+
+.method-step strong {
+    color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   SIGNATURE / DECLARATION
+========================================================= */
+
+.signature-line {
+    margin-top:
+        2rem;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        1.5rem;
+}
+
+.signature-box {
+    border-bottom:
+        1px solid
+        #555;
+
+    min-height:
+        1.8rem;
+}
+
+.signature-label {
+    font-size:
+        0.62rem;
+
+    margin-top:
+        0.25rem;
+
+    color:
+        #555;
+}
+
+
+/* =========================================================
+   REFERENCES
+========================================================= */
+
+.reference {
+    padding-left:
+        1.45rem;
+
+    text-indent:
+        -1.45rem;
+
+    margin-bottom:
+        0.5rem;
+
+    font-size:
+        0.67rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    margin-top:
+        1.5rem;
+
+    padding-top:
+        0.5rem;
+
+    border-top:
+        2px solid
+        var(--corporate-red);
+
+    color:
+        #666;
+
+    font-size:
+        0.58rem;
+
+    text-align:
+        center;
+}
+
+
+
+
+/* =========================================================
+   PAGE BREAKS
+========================================================= */
+
+.page-break {
+    page-break-before:
+        always;
+}
+
+.avoid-break {
+    page-break-inside:
+        avoid;
+}
+
+/* =========================================
+   SURVEY RESULTS & ANALYSIS
+========================================= */
+
+.results-divider{
+    margin:40px 0 28px;
+    padding:12px 15px;
+    background:#fafafa;
+    border-top:3px solid var(--corporate-red);
+    border-bottom:1px solid var(--border);
+    color:var(--corporate-red);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.survey-results-analysis{
+    margin-top:20px;
+}
+
+.results-main-title{
+    color:var(--corporate-red);
+    font-size:1.15rem;
+    margin:0 0 15px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--corporate-red);
+}
+
+.survey-results-analysis .section{
+    margin-top:28px;
+}
+
+.survey-results-analysis .section h2{
+    font-size:.95rem;
+}
+
+.survey-results-analysis table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.68rem;
+}
+
+.survey-results-analysis th{
+    background:var(--corporate-red);
+    color:#fff;
+    white-space:nowrap;
+    padding:5px 7px;
+    line-height:1.15;
+    font-size:.64rem;
+}
+
+.survey-results-analysis td{
+    padding:5px 7px;
+    border:1px solid var(--border);
+    vertical-align:top;
+}
+
+.survey-results-analysis tr:nth-child(even){
+    background:#fafafa;
+}
+
+.survey-results-analysis .table-wrapper{
+    width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+.survey-results-analysis .highlight{
+    border-left:3px solid var(--corporate-red);
+    background:#fafafa;
+    padding:10px 13px;
+    margin:12px 0;
+}
+
+.survey-results-analysis .stat strong{
+    color:var(--corporate-red);
+}
+
+.survey-results-analysis .method{
+    border-left:3px solid var(--corporate-red);
+}
+
+@media(max-width:750px){
+
+    .survey-results-analysis table{
+        min-width:650px;
+        font-size:.64rem;
+    }
+
+    .survey-results-analysis th{
+        font-size:.60rem;
+        padding:4px 6px;
+        white-space:nowrap;
+    }
+
+    .survey-results-analysis td{
+        font-size:.63rem;
+        padding:4px 6px;
+    }
+
+    .results-main-title{
+        font-size:1rem;
+    }
+}
+
+@media print{
+
+    .results-divider{
+        page-break-before:always;
+        margin-top:0;
+        color:var(--corporate-red) !important;
+        background:#fff !important;
+    }
+
+    .survey-results-analysis table{
+        width:100%;
+        font-size:.62rem;
+    }
+
+    .survey-results-analysis th{
+        background:var(--corporate-red) !important;
+        color:#fff !important;
+        white-space:nowrap !important;
+        font-size:.59rem;
+        padding:4px 5px;
+    }
+
+    .survey-results-analysis td{
+        font-size:.60rem;
+        padding:4px 5px;
+    }
+
+    .survey-results-analysis .section{
+        page-break-inside:avoid;
+    }
+
+    .survey-results-analysis .card,
+    .survey-results-analysis .method,
+    .survey-results-analysis .highlight{
+        page-break-inside:avoid;
+    }
+}
+/* =========================================================
+   PRINT — A4 FULL PRINTABLE AREA
+========================================================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 10mm 12mm;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+        background: #fff !important;
+        font-size: 10pt;
+    }
+
+    .page {
+        width: 100%;
+        min-height: calc(297mm - 20mm);
+        height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        background: #fff;
+        box-shadow: none;
+
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+    /* =====================================================
+       SURVEY RESULTS ANALYSIS
+    ===================================================== */
+
+    .results-divider {
+        page-break-before: always;
+        break-before: page;
+
+        margin-top: 0;
+
+        color: var(--corporate-red) !important;
+        background: #fff !important;
+    }
+
+    .survey-results-analysis {
+        width: 100%;
+    }
+
+    .survey-results-analysis table {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+
+        font-size: .62rem;
+
+        /* Allow long tables to flow naturally */
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    .survey-results-analysis tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .survey-results-analysis th {
+        background: var(--corporate-red) !important;
+        color: #fff !important;
+
+        font-size: .59rem;
+        padding: 4px 5px;
+
+        white-space: nowrap !important;
+    }
+
+    .survey-results-analysis td {
+        font-size: .60rem;
+        padding: 4px 5px;
+    }
+
+    /* =====================================================
+       GENERAL CONTENT
+    ===================================================== */
+
+    .cover,
+    .section,
+    .research-section,
+    .survey-results-analysis .section,
+    .survey-results-analysis .card,
+    .survey-results-analysis .method,
+    .survey-results-analysis .highlight,
+    figure,
+    .avoid-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Keep headings with the content below */
+    h1,
+    h2,
+    h3,
+    h4 {
+        break-after: avoid;
+        page-break-after: avoid;
+
+        margin-top: .55rem;
+        margin-bottom: .3rem;
+    }
+
+    h2.section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    /* =====================================================
+       TABLES
+    ===================================================== */
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+
+        /* Tables can continue onto the next page */
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* =====================================================
+       TEXT SPACING
+    ===================================================== */
+
+    p {
+        margin-top: .2rem;
+        margin-bottom: .35rem;
+    }
+
+    ul,
+    ol {
+        margin-top: .2rem;
+        margin-bottom: .35rem;
+        padding-left: 1.1rem;
+    }
+
+    li {
+        margin-bottom: .1rem;
+    }
+
+    /* =====================================================
+       IMAGES
+    ===================================================== */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* =====================================================
+       SCREEN-ONLY ELEMENTS
+    ===================================================== */
+
+    .no-print,
+    .print-button {
+        display: none !important;
+    }
+
+    /* =====================================================
+       SECTION FLOW
+    ===================================================== */
+
+    .section,
+    .research-section {
+        page-break-before: auto;
+        break-before: auto;
+    }
+}
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    body {
+        background: white;
+        font-size: 10.5px;
+    }
+
+    .page {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .framework {
+        flex-direction: column;
+    }
+
+    .framework-arrow {
+        transform: rotate(90deg);
+    }
+
+    .cover-title {
+        font-size: 1.1rem;
+    }
+
+    .signature-line {
+        grid-template-columns: 1fr;
+    }
+@media screen and (max-width: 750px) {
+
+    .survey-results-analysis table {
+        min-width: 650px;
+        font-size: .64rem;
+    }
+
+    .survey-results-analysis th {
+        font-size: .60rem;
+        padding: 4px 6px;
+        white-space: nowrap;
+    }
+
+    .survey-results-analysis td {
+        font-size: .63rem;
+        padding: 4px 6px;
+    }
+
+    .results-main-title {
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     COVER PAGE
+========================================================= -->
+
+<div class="page">
+
+    <div class="cover">
+
+        <img
+            src="gdeh_logo.png"
+            alt="GDEH Logo"
+            class="cover-logo">
+
+        <div class="cover-title">
+    <span>Digital Financial Inclusion</span>
+    <span>and Payment Interoperability</span>
+    <span>Among Youth in</span>
+    <span>Northern Kenya</span>
+</div>
+
+        <div class="cover-subtitle">
+
+            Evidence, Challenges and Opportunities
+            from Garissa County
+
+        </div>
+
+        <div class="cover-line"></div>
+
+        <div class="cover-meta">
+
+            <strong>RESEARCH PAPER</strong><br>
+
+            Primary Field Research Study<br>
+
+            Garissa County, Kenya<br><br>
+
+            <strong>Research Duration:</strong>
+            Six Months<br><br>
+
+            <strong>Research Approach:</strong>
+            Mixed-Methods Primary Field Research
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FRONT MATTER
+========================================================= -->
+
+<div class="page">
+
+    <div class="header">
+
+        <div class="header-top">
+
+            <img
+                src="gdeh_logo.png"
+                alt="GDEH Logo"
+                class="gdeh-logo">
+
+        </div>
+
+        <div class="document-title">
+
+            Digital Financial Inclusion and Payment Interoperability
+
+        </div>
+
+        <div class="document-subtitle">
+
+            Evidence, Challenges and Opportunities Among Youth in Northern Kenya
+
+        </div>
+
+    </div>
+
+
+    <!-- DECLARATION -->
+
+    <h2 class="section-title">
+        Declaration
+    </h2>
+
+    <p>
+        This research paper is intended to present findings generated through
+        a structured primary field research process. The researcher declares
+        that the final empirical findings, statistical results, quotations and
+        conclusions presented in the completed version of this report will be
+        based on data actually collected, coded and analyzed during the study.
+    </p>
+
+    <p>
+        No participant information will be fabricated, altered or presented
+        in a manner that deliberately misrepresents the evidence collected.
+        Respondent identities will be protected through the use of unique
+        questionnaire codes and anonymized analytical data.
+    </p>
+
+
+    <div class="signature-line">
+
+        <div>
+            <div class="signature-box"></div>
+            <div class="signature-label">
+                Researcher / Project Lead
+            </div>
+        </div>
+
+        <div>
+            <div class="signature-box"></div>
+            <div class="signature-label">
+                Date
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ACKNOWLEDGEMENTS -->
+
+    <h2 class="section-title">
+        Acknowledgements
+    </h2>
+
+    <p>
+        The researcher acknowledges the contribution of all individuals,
+        community members, youth participants and stakeholders who will
+        contribute to this study through their time, experiences and
+        perspectives.
+    </p>
+
+    <p>
+        Particular appreciation is extended to respondents who participate
+        voluntarily in the field survey and provide information regarding
+        their experiences with digital financial services, mobile money,
+        digital payments and payment interoperability.
+    </p>
+
+    <p>
+        The study also recognizes the contribution of institutions,
+        researchers, policymakers, technology providers and development
+        organizations whose work has contributed to the broader understanding
+        of digital financial inclusion.
+    </p>
+
+
+    <!-- ABSTRACT -->
+
+    <h2 class="section-title">
+        Abstract
+    </h2>
+
+    <div class="abstract-box">
+
+        <p>
+            Digital financial services have become an important component of
+            modern financial inclusion. Mobile money, digital payments and
+            technology-enabled financial services have created opportunities
+            for individuals and businesses to access, transfer and manage
+            money with reduced dependence on traditional physical financial
+            infrastructure.
+        </p>
+
+        <p>
+            Despite these developments, access to and effective use of digital
+            financial services remains uneven. Factors including network
+            connectivity, internet affordability, transaction costs, digital
+            literacy, financial literacy, trust, privacy concerns, fraud and
+            cybersecurity can influence the ability of individuals to benefit
+            from digital finance.
+        </p>
+
+        <p>
+            This study examines digital financial inclusion and payment
+            interoperability among youth in Garissa County, Northern Kenya.
+            It investigates access, usage patterns, affordability,
+            connectivity, literacy, trust, privacy, security, fraud,
+            gender-related barriers, age-related differences, youth
+            employment and entrepreneurship, payment interoperability and
+            perceptions of Open Payments.
+        </p>
+
+        <p>
+            The study adopts a mixed-methods approach using a structured
+            offline field survey containing quantitative, Likert-scale and
+            qualitative questions. Respondents are assigned unique codes,
+            while completed questionnaires are retained as field evidence.
+            Quantitative responses will be analyzed using descriptive
+            statistics and comparative analysis, while qualitative responses
+            will be analyzed thematically.
+        </p>
+
+        <p>
+            The findings are expected to provide locally grounded evidence
+            that can support policymakers, financial service providers,
+            telecommunications companies, development organizations and
+            community institutions seeking to strengthen inclusive, secure,
+            affordable and interoperable digital payment ecosystems.
+        </p>
+
+        <div class="keywords">
+
+            <strong>Keywords:</strong>
+
+            digital financial inclusion; mobile money;
+            digital payments; payment interoperability;
+            Open Payments; youth; financial literacy;
+            digital literacy; entrepreneurship;
+            Garissa County; Northern Kenya.
+
+        </div>
+
+    </div>
+
+
+    <!-- EXECUTIVE SUMMARY -->
+
+    <h2 class="section-title">
+        Executive Summary
+    </h2>
+
+    <p>
+        This research investigates the experiences of young people with
+        digital financial services in Garissa County. The study is motivated
+        by the growing importance of mobile money and digital payments in
+        everyday economic activity and by the need to understand whether
+        existing digital financial ecosystems provide meaningful and
+        inclusive access.
+    </p>
+
+    <p>
+        The research goes beyond measuring whether individuals possess
+        mobile-money accounts. It considers whether people can use digital
+        financial services reliably, affordably and safely. It therefore
+        examines infrastructure, costs, literacy, trust, security, privacy,
+        fraud, gender, age and economic participation.
+    </p>
+
+    <p>
+        A particular focus is placed on payment interoperability and Open
+        Payments. The research examines whether users perceive greater
+        interoperability as an opportunity to reduce payment barriers and
+        improve convenience, while also identifying concerns that should be
+        addressed through appropriate safeguards.
+    </p>
+
+    <p>
+        The research will ultimately produce an evidence chain linking
+        signed consent and coded field questionnaires to a structured
+        dataset, statistical analysis, qualitative findings, conclusions
+        and recommendations.
+    </p>
+
+
+    <!-- ABBREVIATIONS -->
+
+    <h2 class="section-title">
+        List of Abbreviations and Acronyms
+    </h2>
+
+    <table>
+
+        <tr>
+            <th>Abbreviation</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>DFS</td>
+            <td>Digital Financial Services</td>
+        </tr>
+
+        <tr>
+            <td>DFI</td>
+            <td>Digital Financial Inclusion</td>
+        </tr>
+
+        <tr>
+            <td>ICT</td>
+            <td>Information and Communication Technology</td>
+        </tr>
+
+        <tr>
+            <td>PIN</td>
+            <td>Personal Identification Number</td>
+        </tr>
+
+        <tr>
+            <td>SME</td>
+            <td>Small and Medium Enterprise</td>
+        </tr>
+
+        <tr>
+            <td>CBO</td>
+            <td>Community-Based Organization</td>
+        </tr>
+
+        <tr>
+            <td>API</td>
+            <td>Application Programming Interface</td>
+        </tr>
+
+        <tr>
+            <td>OTP</td>
+            <td>One-Time Password</td>
+        </tr>
+
+        <tr>
+            <td>Open Payments</td>
+            <td>
+                Payment arrangements that facilitate greater connectivity
+                and interoperability between payment systems, subject to
+                appropriate safeguards.
+            </td>
+        </tr>
+
+    </table>
+
+
+    <!-- TABLE OF CONTENTS -->
+
+    <h2 class="section-title">
+        Table of Contents
+    </h2>
+
+    <table class="toc">
+
+        <tr>
+            <td>Chapter One — Introduction</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Two — Literature Review</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Three — Theoretical and Conceptual Framework</td>
+            <td>3</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Four — Research Methodology</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Five — Respondent Profile</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Six — Digital Financial Access</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Seven — Mobile Money and Digital Payments</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Eight — Transaction Costs and Accessibility</td>
+            <td>8</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Nine — Digital and Financial Literacy</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Ten — Trust, Privacy, Fraud and Security</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Eleven — Gender and Age Analysis</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Twelve — Youth Employment and Entrepreneurship</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Thirteen — Payment Interoperability</td>
+            <td>13</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Fourteen — Open Payments</td>
+            <td>14</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Fifteen — Positive Impacts</td>
+            <td>15</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Sixteen — Negative Experiences and Challenges</td>
+            <td>16</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Seventeen — Qualitative Findings</td>
+            <td>17</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Eighteen — Opportunities</td>
+            <td>18</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Nineteen — Discussion</td>
+            <td>19</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Twenty — Policy and Institutional Implications</td>
+            <td>20</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Twenty-One — Recommendations</td>
+            <td>21</td>
+        </tr>
+
+        <tr>
+            <td>Chapter Twenty-Two — Conclusion</td>
+            <td>22</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHAPTER ONE
+========================================================= -->
+
+<div class="page page-break">
+
+<div class="header">
+
+    <div class="header-top">
+
+        <img
+            src="gdeh_logo.png"
+            alt="GDEH Logo"
+            class="gdeh-logo">
+
+    </div>
+
+    <div class="document-title">
+
+        Chapter One — Introduction
+
+    </div>
+
+    <div class="document-subtitle">
+
+        Digital Financial Inclusion and Payment Interoperability Among Youth in Northern Kenya
+
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    1.1 Background of the Study
+</h2>
+
+<p>
+    Digital technology has significantly changed the manner in which
+    individuals, households and businesses access financial services.
+    Mobile phones, internet connectivity and digital payment platforms
+    increasingly provide alternative channels through which people can
+    transfer funds, receive income, purchase goods and services, pay bills
+    and participate in economic activities.
+</p>
+
+<p>
+    Digital financial inclusion extends the concept of traditional financial
+    inclusion by recognizing that access to financial services increasingly
+    depends on technological capabilities and digital infrastructure.
+    Meaningful inclusion therefore involves more than simply possessing a
+    financial account. Users need reliable access, affordable services,
+    adequate digital skills, financial knowledge, trust and appropriate
+    consumer protection.
+</p>
+
+<p>
+    Young people represent an important population within this transformation.
+    Youth increasingly interact with digital financial services for personal
+    transactions, employment, entrepreneurship, online commerce and social
+    activities. Digital payments can reduce geographical barriers and create
+    opportunities for young entrepreneurs to receive payments and access
+    customers beyond their immediate physical surroundings.
+</p>
+
+<p>
+    Nevertheless, digital financial inclusion is affected by persistent
+    barriers. These include the cost of internet access, network reliability,
+    transaction charges, access to smartphones, limited digital literacy,
+    financial literacy, fraud, privacy concerns and lack of confidence in
+    digital platforms.
+</p>
+
+<p>
+    These issues become particularly important in areas where digital
+    infrastructure and economic opportunities are unevenly distributed.
+    Northern Kenya provides an important context for examining how young
+    people experience the benefits and limitations of digital finance.
+</p>
+
+
+<h2 class="section-title">
+    1.2 Digital Transformation and Financial Services
+</h2>
+
+<p>
+    The digital transformation of financial services has reduced reliance
+    on physical branches and cash-based transactions. Mobile-based services
+    allow users to initiate financial transactions from locations where
+    traditional financial institutions may be less accessible.
+</p>
+
+<p>
+    Digital platforms may also support small businesses by allowing
+    entrepreneurs to receive customer payments, transfer funds to suppliers,
+    pay workers and maintain financial records. For young people who operate
+    informal or emerging businesses, these capabilities can be particularly
+    valuable.
+</p>
+
+<p>
+    However, digital transformation may also reproduce existing inequalities
+    when individuals lack the infrastructure, skills or financial resources
+    required to participate effectively.
+</p>
+
+
+<h2 class="section-title">
+    1.3 Financial Inclusion in Kenya
+</h2>
+
+<p>
+    Kenya has developed a strong digital financial ecosystem, particularly
+    through mobile money and mobile-based financial services. The country's
+    experience demonstrates how technology can expand financial access and
+    introduce new mechanisms for transferring and managing money.
+</p>
+
+<p>
+    Despite progress, financial inclusion should be considered in terms of
+    actual usage and outcomes rather than account ownership alone. A person
+    may have access to a digital financial account but still face practical
+    barriers that prevent meaningful use.
+</p>
+
+<p>
+    This study therefore examines not only access but also frequency of use,
+    affordability, confidence, security and the ability of digital financial
+    services to support economic participation.
+</p>
+
+
+<h2 class="section-title">
+    1.4 Digital Financial Inclusion
+</h2>
+
+<p>
+    Digital financial inclusion refers to the availability and effective use
+    of appropriate financial products and services through digital channels.
+    It incorporates both financial access and the technological conditions
+    necessary for individuals to participate.
+</p>
+
+<p>
+    For the purposes of this research, digital financial inclusion is viewed
+    as a multidimensional concept involving access, affordability,
+    reliability, usability, digital capability, financial capability,
+    security and trust.
+</p>
+
+
+<h2 class="section-title">
+    1.5 Youth and Digital Financial Services
+</h2>
+
+<p>
+    Youth are increasingly exposed to digital technologies and may be
+    important users of mobile money, digital payments, online marketplaces
+    and technology-enabled employment opportunities.
+</p>
+
+<p>
+    At the same time, youth unemployment, limited access to capital and
+    unstable income may make transaction costs and financial risks more
+    significant. Digital financial services may create opportunities for
+    entrepreneurship, but only where the wider digital ecosystem is
+    accessible and affordable.
+</p>
+
+
+<h2 class="section-title">
+    1.6 Northern Kenya Context
+</h2>
+
+<p>
+    Northern Kenya contains communities with diverse socioeconomic
+    circumstances and varying access to infrastructure and services.
+    Geographic distance, connectivity challenges and differences in
+    economic opportunities can influence access to digital technologies.
+</p>
+
+<p>
+    Understanding digital financial inclusion in this context requires
+    primary evidence from users themselves. National statistics can provide
+    important background information, but local field research can reveal
+    practical barriers and experiences that may not be visible in national
+    aggregates.
+</p>
+
+
+<h2 class="section-title">
+    1.7 Garissa County Context
+</h2>
+
+<p>
+    Garissa County provides the geographical focus of this study. The
+    research examines how young people within the county interact with
+    digital financial services and how they perceive the emerging
+    possibilities associated with payment interoperability.
+</p>
+
+<p>
+    The study recognizes that experiences may vary within the county.
+    Respondents may differ in age, gender, education, employment status,
+    occupation, location, digital skills and access to network infrastructure.
+    These differences will be captured through the survey instrument and
+    incorporated into the analysis.
+</p>
+
+
+<h2 class="section-title">
+    1.8 Payment Interoperability
+</h2>
+
+<p>
+    Payment interoperability refers broadly to the ability of different
+    payment systems, providers or platforms to interact in ways that allow
+    users to conduct transactions across otherwise separate systems.
+</p>
+
+<p>
+    Greater interoperability may reduce friction by giving users greater
+    flexibility in selecting payment channels. It may also support businesses
+    that serve customers using different financial-service providers.
+</p>
+
+<p>
+    However, interoperability must be accompanied by effective security,
+    privacy, consumer protection and dispute-resolution mechanisms.
+    Interoperability without adequate safeguards could potentially increase
+    exposure to fraud or unauthorized access.
+</p>
+
+
+<h2 class="section-title">
+    1.9 Open Payments
+</h2>
+
+<p>
+    Within this research, Open Payments refers to payment arrangements that
+    seek to facilitate greater connectivity and interoperability among
+    payment systems while maintaining appropriate regulatory, security and
+    consumer-protection safeguards.
+</p>
+
+<p>
+    The study does not assume that Open Payments automatically produce
+    financial inclusion. Instead, it investigates whether users perceive
+    potential benefits, what risks they identify and what conditions they
+    believe would be necessary for successful implementation.
+</p>
+
+
+<h2 class="section-title">
+    1.10 Statement of the Problem
+</h2>
+
+<p>
+    Digital financial services have created substantial opportunities for
+    financial participation, yet access to and effective use of these
+    services remains affected by technological, economic and social barriers.
+</p>
+
+<p>
+    Young people may experience difficulties related to network coverage,
+    internet costs, transaction charges, digital literacy, financial
+    literacy, fraud, privacy and trust. These challenges can reduce the
+    practical value of digital financial services even when the services are
+    technically available.
+</p>
+
+<p>
+    Furthermore, there is a need for stronger local evidence regarding how
+    young people in Garissa County experience digital financial services and
+    how they perceive payment interoperability and Open Payments.
+</p>
+
+<p>
+    Without such evidence, interventions designed to promote digital
+    financial inclusion may overlook the practical realities faced by
+    users. This study therefore seeks to generate primary field evidence
+    that can contribute to a more locally responsive understanding of
+    digital financial inclusion.
+</p>
+
+
+<h2 class="section-title">
+    1.11 Justification of the Study
+</h2>
+
+<p>
+    The study is justified by the increasing importance of digital payments
+    in everyday economic activity and the need to understand whether
+    technological progress is translating into meaningful financial
+    inclusion.
+</p>
+
+<p>
+    The research also responds to the need for evidence from Northern Kenya,
+    where local experiences may differ from national averages. By collecting
+    primary data directly from respondents, the study can identify practical
+    barriers and opportunities that may otherwise remain underrepresented.
+</p>
+
+
+<h2 class="section-title">
+    1.12 Significance of the Study
+</h2>
+
+<p>
+    The study may benefit several groups.
+</p>
+
+<ul>
+
+    <li>
+        <strong>Policymakers:</strong>
+        by providing evidence that can inform inclusive digital-finance
+        policies.
+    </li>
+
+    <li>
+        <strong>Financial service providers:</strong>
+        by identifying user concerns regarding costs, access, trust and
+        interoperability.
+    </li>
+
+    <li>
+
+        <strong>Telecommunications and technology providers:</strong>
+        by highlighting connectivity and usability challenges.
+
+    </li>
+
+    <li>
+
+        <strong>Youth organizations:</strong>
+        by identifying opportunities for digital and financial literacy.
+
+    </li>
+
+    <li>
+
+        <strong>Development organizations:</strong>
+        by providing evidence for community-level financial inclusion
+        interventions.
+
+    </li>
+
+    <li>
+
+        <strong>Researchers:</strong>
+        by contributing local evidence to the broader literature on digital
+        financial inclusion.
+
+    </li>
+
+</ul>
+
+
+<h2 class="section-title">
+    1.13 General Objective
+</h2>
+
+<p>
+    To examine digital financial inclusion and payment interoperability
+    among youth in Garissa County, Northern Kenya, with particular emphasis
+    on access, usage, affordability, digital and financial literacy, trust,
+    security, barriers, opportunities and perceptions of Open Payments.
+</p>
+
+
+<h2 class="section-title">
+    1.14 Specific Objectives
+</h2>
+
+<ol>
+
+    <li>
+        To assess access to digital financial services among youth in
+        Garissa County.
+    </li>
+
+    <li>
+        To examine patterns of mobile-money and digital-payment usage.
+    </li>
+
+    <li>
+        To assess transaction costs and affordability barriers.
+    </li>
+
+    <li>
+        To examine internet and network accessibility.
+    </li>
+
+    <li>
+        To assess digital and financial literacy among respondents.
+    </li>
+
+    <li>
+        To investigate trust, privacy, fraud and security concerns.
+    </li>
+
+    <li>
+        To examine gender and age-related differences in digital financial
+        inclusion.
+    </li>
+
+    <li>
+        To assess the relationship between digital payments and youth
+        employment and entrepreneurship.
+    </li>
+
+    <li>
+        To examine perceptions and experiences of payment interoperability.
+    </li>
+
+    <li>
+        To assess awareness, potential benefits, risks and opportunities
+        associated with Open Payments.
+    </li>
+
+    <li>
+        To develop evidence-based recommendations for improving inclusive,
+        affordable and secure digital payment ecosystems.
+    </li>
+
+</ol>
+
+
+<h2 class="section-title">
+    1.15 Research Questions
+</h2>
+
+<ol>
+
+    <li>
+        What is the level of access to digital financial services among
+        youth in Garissa County?
+    </li>
+
+    <li>
+        How frequently do respondents use mobile money and digital payments?
+    </li>
+
+    <li>
+        What factors affect the affordability of digital financial services?
+    </li>
+
+    <li>
+        What connectivity barriers affect digital financial participation?
+    </li>
+
+    <li>
+        What levels of digital and financial literacy exist among respondents?
+    </li>
+
+    <li>
+        What trust, privacy, fraud and security concerns do users experience?
+    </li>
+
+    <li>
+        How do gender and age affect digital financial inclusion?
+    </li>
+
+    <li>
+        How do digital payments support youth employment and entrepreneurship?
+    </li>
+
+    <li>
+        How do respondents perceive payment interoperability?
+    </li>
+
+    <li>
+        What benefits and risks do respondents associate with Open Payments?
+    </li>
+
+</ol>
+
+
+<h2 class="section-title">
+    1.16 Scope of the Study
+</h2>
+
+<p>
+    The study focuses on digital financial inclusion and payment
+    interoperability among youth in Garissa County. The research covers
+    access, usage, affordability, connectivity, literacy, trust, privacy,
+    security, fraud, gender, age, entrepreneurship, interoperability and
+    perceptions of Open Payments.
+</p>
+
+<p>
+    The study primarily examines user experiences rather than technical
+    engineering aspects of payment-system architecture. Technical and
+    regulatory issues are considered to the extent that they influence
+    user-level financial inclusion.
+</p>
+
+
+<h2 class="section-title">
+    1.17 Limitations and Delimitations
+</h2>
+
+<p>
+    The study may face limitations associated with sample size, respondent
+    availability, geographical coverage, recall bias and the possibility
+    that respondents may be reluctant to disclose negative financial
+    experiences.
+</p>
+
+<p>
+    These limitations will be addressed through clear questionnaire
+    instructions, voluntary participation, respondent coding, careful data
+    management and transparent reporting of methodological limitations.
+</p>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHAPTER TWO
+========================================================= -->
+
+<div class="page page-break">
+
+<div class="header">
+
+    <div class="header-top">
+
+        <img
+            src="gdeh_logo.png"
+            alt="GDEH Logo"
+            class="gdeh-logo">
+
+    </div>
+
+    <div class="document-title">
+        Chapter Two — Literature Review
+    </div>
+
+    <div class="document-subtitle">
+        Digital Financial Inclusion, Youth and Payment Interoperability
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    2.1 Introduction
+</h2>
+
+<p>
+    This chapter reviews the conceptual and empirical literature relevant to
+    digital financial inclusion, digital payments, mobile money, payment
+    interoperability and Open Payments. It considers evidence from global,
+    African and Kenyan contexts and identifies areas requiring further local
+    investigation.
+</p>
+
+
+<h2 class="section-title">
+    2.2 Global Perspective
+</h2>
+
+<p>
+    Globally, digital financial services have expanded the range of channels
+    through which individuals can access financial products. Mobile phones,
+    digital platforms and electronic payment systems can reduce physical
+    barriers and allow users to participate in financial transactions without
+    relying entirely on traditional banking infrastructure.
+</p>
+
+<p>
+    However, global research also demonstrates that digital access can be
+    uneven. Individuals with lower incomes, limited digital skills or poor
+    connectivity may face greater barriers to effective use.
+</p>
+
+
+<h2 class="section-title">
+    2.3 African Perspective
+</h2>
+
+<p>
+    African countries have experienced significant growth in mobile-money
+    services and technology-enabled financial systems. Mobile money has
+    demonstrated the potential of digital channels to reach populations that
+    may be underserved by conventional banking systems.
+</p>
+
+<p>
+    Nevertheless, challenges relating to affordability, network reliability,
+    digital skills, fraud and consumer protection remain important.
+</p>
+
+
+<h2 class="section-title">
+    2.4 Kenyan Perspective
+</h2>
+
+<p>
+    Kenya provides an important case for studying digital financial
+    inclusion because mobile money has become deeply integrated into
+    everyday economic transactions. Digital payments are used for personal
+    transfers, business transactions, bill payments and other activities.
+</p>
+
+<p>
+    The Kenyan experience also illustrates the importance of interoperability,
+    competition, consumer protection and infrastructure in determining how
+    users experience digital financial services.
+</p>
+
+
+<h2 class="section-title">
+    2.5 Digital Financial Inclusion Among Youth
+</h2>
+
+<p>
+    Youth may have comparatively high exposure to digital technology, but
+    technological familiarity does not necessarily translate into financial
+    inclusion. Young people may still face income constraints, transaction
+    costs, limited financial knowledge and employment instability.
+</p>
+
+
+<h2 class="section-title">
+    2.6 Mobile Money Adoption
+</h2>
+
+<p>
+    Mobile money can provide convenient mechanisms for sending and receiving
+    funds. Its accessibility through mobile devices can reduce the need for
+    users to travel to physical financial institutions.
+</p>
+
+<p>
+    The continued importance of mobile money makes it necessary to examine
+    both its positive effects and the practical difficulties users encounter.
+</p>
+
+
+<h2 class="section-title">
+    2.7 Digital Payment Usage
+</h2>
+
+<p>
+    Digital payment usage encompasses transactions involving mobile money,
+    electronic transfers, online payment platforms and other digital
+    mechanisms. Usage patterns can reveal whether digital financial services
+    are primarily used for personal transfers or whether they have become
+    integrated into economic activities and businesses.
+</p>
+
+
+<h2 class="section-title">
+    2.8 Transaction Costs and Affordability
+</h2>
+
+<p>
+    Transaction costs can influence how frequently users make digital
+    payments. For individuals with low or irregular incomes, even relatively
+    small charges may affect decisions regarding payment methods.
+</p>
+
+<p>
+    Affordability also extends beyond transaction charges to include the cost
+    of mobile devices, internet access, data bundles and travel required to
+    access agents.
+</p>
+
+
+<h2 class="section-title">
+    2.9 Internet and Network Accessibility
+</h2>
+
+<p>
+    Reliable connectivity is a fundamental requirement for many digital
+    financial services. Network interruptions can delay transactions,
+    create uncertainty and potentially result in failed or duplicated
+    payment attempts.
+</p>
+
+
+<h2 class="section-title">
+    2.10 Digital and Financial Literacy
+</h2>
+
+<p>
+    Digital literacy involves the ability to use technology effectively and
+    safely, while financial literacy involves knowledge and skills related
+    to financial decision-making.
+</p>
+
+<p>
+    The combination of both forms of literacy is important for digital
+    financial inclusion because users must be able to operate digital
+    platforms while understanding financial costs and risks.
+</p>
+
+
+<h2 class="section-title">
+    2.11 Trust and Consumer Confidence
+</h2>
+
+<p>
+    Trust can influence willingness to use digital financial services.
+    Concerns about failed transactions, fraud, privacy and poor customer
+    support may reduce confidence.
+</p>
+
+
+<h2 class="section-title">
+    2.12 Privacy and Data Protection
+</h2>
+
+<p>
+    Digital financial transactions generate information about users and
+    their financial activity. Users may therefore have concerns regarding
+    how personal and transactional information is collected, stored,
+    processed and shared.
+</p>
+
+
+<h2 class="section-title">
+    2.13 Fraud and Cybersecurity
+</h2>
+
+<p>
+    Fraud represents one of the most important risks associated with digital
+    financial services. Users may encounter phishing attempts, social
+    engineering, unauthorized transactions, fraudulent requests or other
+    forms of digital exploitation.
+</p>
+
+<p>
+    Digital financial inclusion therefore requires not only access but also
+    effective security awareness and consumer protection.
+</p>
+
+
+<h2 class="section-title">
+    2.14 Gender and Digital Financial Inclusion
+</h2>
+
+<p>
+    Gender may influence access to digital devices, financial resources,
+    digital skills and decision-making power. The study therefore examines
+    whether female and male respondents report different experiences.
+</p>
+
+
+<h2 class="section-title">
+    2.15 Age and Digital Financial Inclusion
+</h2>
+
+<p>
+    Different age groups may demonstrate different levels of digital
+    familiarity, confidence and financial independence. Age-related
+    comparisons can therefore help identify groups that may require
+    targeted interventions.
+</p>
+
+
+<h2 class="section-title">
+    2.16 Youth Employment and Entrepreneurship
+</h2>
+
+<p>
+    Digital payments may support youth entrepreneurship by enabling
+    businesses to receive payments remotely and participate in digital
+    marketplaces.
+</p>
+
+<p>
+    The study investigates whether respondents perceive digital financial
+    services as contributing to employment, self-employment, online work
+    and business growth.
+</p>
+
+
+<h2 class="section-title">
+    2.17 Payment Interoperability
+</h2>
+
+<p>
+    Interoperability can potentially reduce fragmentation by allowing users
+    to transact across different payment systems. It may improve convenience
+    for both individuals and businesses.
+</p>
+
+<p>
+    However, interoperability also requires effective standards, security,
+    dispute-resolution mechanisms and clear consumer information.
+</p>
+
+
+<h2 class="section-title">
+    2.18 Open Payments
+</h2>
+
+<p>
+    Open Payments represent an opportunity to explore how greater payment
+    connectivity can support financial inclusion. The literature suggests
+    that openness and interoperability should be considered alongside
+    privacy, security, consumer protection and regulatory oversight.
+</p>
+
+
+<h2 class="section-title">
+    2.19 Research Gap
+</h2>
+
+<p>
+    Although substantial literature exists on digital financial inclusion
+    and mobile money, there remains a need for more locally grounded evidence
+    regarding how youth in Northern Kenya experience digital financial
+    services.
+</p>
+
+<p>
+    In particular, the intersection between digital financial inclusion,
+    youth economic participation, payment interoperability and perceptions
+    of Open Payments requires further investigation at community level.
+</p>
+
+<p>
+    This study addresses that gap by collecting primary evidence directly
+    from respondents in Garissa County.
+</p>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHAPTER THREE
+========================================================= -->
+
+<div class="page page-break">
+
+<div class="header">
+
+    <div class="header-top">
+
+        <img
+            src="gdeh_logo.png"
+            alt="GDEH Logo"
+            class="gdeh-logo">
+
+    </div>
+
+    <div class="document-title">
+        Chapter Three — Theoretical and Conceptual Framework
+    </div>
+
+    <div class="document-subtitle">
+        Analytical Foundation of the Study
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    3.1 Introduction
+</h2>
+
+<p>
+    This chapter presents the theoretical and conceptual foundations
+    guiding the study. The framework links digital access, affordability,
+    digital and financial literacy, trust, security and interoperability
+    with outcomes associated with financial inclusion and economic
+    participation.
+</p>
+
+
+<h2 class="section-title">
+    3.2 Technology Acceptance Perspective
+</h2>
+
+<p>
+    Technology acceptance perspectives emphasize factors influencing whether
+    individuals are willing and able to use technological systems.
+    Perceived usefulness, ease of use, confidence and trust may influence
+    adoption and continued use.
+</p>
+
+<p>
+    Within this study, these concepts are relevant because availability of
+    digital financial services does not necessarily guarantee adoption.
+    Users must perceive services as useful, understandable, accessible and
+    sufficiently safe.
+</p>
+
+
+<h2 class="section-title">
+    3.3 Financial Inclusion Perspective
+</h2>
+
+<p>
+    Financial inclusion emphasizes access to appropriate financial services
+    and the ability to use them effectively. Digital financial inclusion
+    extends this perspective by incorporating technological access,
+    affordability and digital capability.
+</p>
+
+
+<h2 class="section-title">
+    3.4 Digital Divide Perspective
+</h2>
+
+<p>
+    The digital divide perspective recognizes inequalities in access to
+    technology, connectivity, skills and meaningful digital participation.
+</p>
+
+<p>
+    This perspective is particularly important for the study because
+    differences in internet access, device ownership and digital literacy
+    may affect financial inclusion outcomes.
+</p>
+
+
+<h2 class="section-title">
+    3.5 Conceptual Framework
+</h2>
+
+<p>
+    The conceptual framework proposes that digital financial inclusion is
+    influenced by a combination of access factors, user-level factors and
+    payment-system characteristics. These factors interact to influence
+    financial participation and economic outcomes.
+</p>
+
+
+<div class="framework">
+
+    <div class="framework-box">
+
+        <strong>
+            DIGITAL ACCESS
+        </strong>
+
+        Mobile phone<br>
+        Smartphone<br>
+        Internet<br>
+        Network<br>
+        Devices
+
+    </div>
+
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+
+    <div class="framework-box">
+
+        <strong>
+            USER FACTORS
+        </strong>
+
+        Digital literacy<br>
+        Financial literacy<br>
+        Trust<br>
+        Affordability<br>
+        Security awareness
+
+    </div>
+
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+
+    <div class="framework-box">
+
+        <strong>
+            PAYMENT ECOSYSTEM
+        </strong>
+
+        Mobile money<br>
+        Digital payments<br>
+        Interoperability<br>
+        Open Payments
+
+    </div>
+
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+
+    <div class="framework-box">
+
+        <strong>
+            OUTCOMES
+        </strong>
+
+        Financial inclusion<br>
+        Convenience<br>
+        Entrepreneurship<br>
+        Economic participation
+
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    3.6 Independent Variables
+</h2>
+
+<p>
+    The principal independent variables include:
+</p>
+
+<ul>
+
+    <li>Access to mobile devices</li>
+
+    <li>Internet availability</li>
+
+    <li>Network reliability</li>
+
+    <li>Affordability</li>
+
+    <li>Digital literacy</li>
+
+    <li>Financial literacy</li>
+
+    <li>Trust</li>
+
+    <li>Security awareness</li>
+
+    <li>Gender</li>
+
+    <li>Age</li>
+
+    <li>Employment status</li>
+
+</ul>
+
+
+<h2 class="section-title">
+    3.7 Intervening Factors
+</h2>
+
+<p>
+    Intervening factors include payment-system interoperability, consumer
+    protection, digital infrastructure, availability of financial education,
+    service-provider practices and regulatory conditions.
+</p>
+
+
+<h2 class="section-title">
+    3.8 Dependent Variables
+</h2>
+
+<p>
+    The principal outcomes examined include:
+</p>
+
+<ul>
+
+    <li>Use of digital financial services</li>
+
+    <li>Frequency of digital payment use</li>
+
+    <li>Financial inclusion</li>
+
+    <li>Business participation</li>
+
+    <li>Youth entrepreneurship</li>
+
+    <li>Perceived convenience</li>
+
+    <li>Economic participation</li>
+
+</ul>
+
+
+<h2 class="section-title">
+    3.9 Variables and Indicators
+</h2>
+
+<table>
+
+    <tr>
+
+        <th>
+            Variable
+        </th>
+
+        <th>
+            Indicators
+        </th>
+
+        <th>
+            Measurement
+        </th>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Digital access
+        </td>
+
+        <td>
+            Device ownership, internet access,
+            network availability
+        </td>
+
+        <td>
+            Categorical / frequency
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Affordability
+        </td>
+
+        <td>
+            Transaction charges, data costs,
+            access costs
+        </td>
+
+        <td>
+            Likert / categorical
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Digital literacy
+        </td>
+
+        <td>
+            Ability to use digital services
+            safely and confidently
+        </td>
+
+        <td>
+            Likert scale
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Trust
+        </td>
+
+        <td>
+            Confidence, privacy,
+            security perceptions
+        </td>
+
+        <td>
+            Likert scale
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Interoperability
+        </td>
+
+        <td>
+            Cross-platform use,
+            awareness and perceived benefits
+        </td>
+
+        <td>
+            Categorical / Likert
+        </td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>
+            Financial inclusion
+        </td>
+
+        <td>
+            Access, usage and economic
+            participation
+        </td>
+
+        <td>
+            Composite indicators
+        </td>
+
+    </tr>
+
+</table>
+
+
+<h2 class="section-title">
+    3.10 Expected Relationships
+</h2>
+
+<p>
+    The study expects improved access, affordability, digital literacy and
+    trust to be positively associated with digital financial inclusion.
+    Conversely, high costs, poor connectivity, low literacy and security
+    concerns are expected to act as barriers.
+</p>
+
+<p>
+    Payment interoperability is expected to have potential positive effects
+    on convenience and access, provided that privacy, security and consumer
+    protection are adequately addressed.
+</p>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHAPTER FOUR
+========================================================= -->
+
+<div class="page page-break">
+
+<div class="header">
+
+    <div class="header-top">
+
+        <img
+            src="gdeh_logo.png"
+            alt="GDEH Logo"
+            class="gdeh-logo">
+
+    </div>
+
+    <div class="document-title">
+        Chapter Four — Research Methodology
+    </div>
+
+    <div class="document-subtitle">
+        Research Design, Fieldwork, Data Management and Analysis
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    4.1 Introduction
+</h2>
+
+<p>
+    This chapter describes the methodology that will be used to collect,
+    manage and analyze primary evidence for the study. The methodology is
+    designed to ensure that the final findings are traceable to the
+    completed field questionnaires.
+</p>
+
+
+<h2 class="section-title">
+    4.2 Research Design
+</h2>
+
+<p>
+    The study adopts a mixed-methods descriptive research design. The
+    quantitative component provides measurable evidence regarding access,
+    usage, affordability, literacy, trust and other indicators, while the
+    qualitative component captures respondents' personal experiences,
+    perceptions and recommendations.
+</p>
+
+<p>
+    Combining the two approaches allows the study to identify measurable
+    patterns while preserving the experiences behind those patterns.
+</p>
+
+
+<h2 class="section-title">
+    4.3 Study Area
+</h2>
+
+<p>
+    The study will be conducted in Garissa County, Northern Kenya. Field
+    activities will seek to capture respondents from relevant communities
+    and locations in order to provide variation in digital access and
+    socioeconomic circumstances.
+</p>
+
+
+<h2 class="section-title">
+    4.4 Target Population
+</h2>
+
+<p>
+    The primary target population consists of youth and relevant users of
+    digital financial services in Garissa County. Respondents will be
+    selected to capture diversity in age, gender, education, employment,
+    occupation and location.
+</p>
+
+
+<h2 class="section-title">
+    4.5 Sampling Strategy
+</h2>
+
+<p>
+    The study will use a structured field sampling strategy appropriate to
+    the available population and research resources. Where practical,
+    respondents will be distributed across relevant demographic and
+    geographic categories to reduce overrepresentation of a single group.
+</p>
+
+
+<h2 class="section-title">
+    4.6 Sample Size
+</h2>
+
+<p>
+    The final sample size will be established before field analysis and
+    documented transparently in the final research report.
+</p>
+
+<div class="info-box">
+
+    <strong>
+        Data Integrity Note:
+    </strong>
+
+    The final sample size must reflect the actual number of valid completed
+    questionnaires. It should not be increased or estimated after data
+    collection simply to produce a stronger-looking result.
+
+</div>
+
+
+<h2 class="section-title">
+    4.7 Inclusion Criteria
+</h2>
+
+<ul>
+
+    <li>
+        Respondents who fall within the defined youth study population.
+    </li>
+
+    <li>
+        Respondents located within the study area.
+    </li>
+
+    <li>
+        Respondents able and willing to provide informed consent.
+    </li>
+
+    <li>
+        Respondents who voluntarily complete the questionnaire.
+    </li>
+
+</ul>
+
+
+<h2 class="section-title">
+    4.8 Exclusion Criteria
+</h2>
+
+<ul>
+
+    <li>
+        Individuals outside the defined target population.
+    </li>
+
+    <li>
+        Individuals who do not provide consent.
+    </li>
+
+    <li>
+        Questionnaires containing insufficient information for meaningful
+        analysis.
+    </li>
+
+</ul>
+
+
+<h2 class="section-title">
+    4.9 Survey Instrument
+</h2>
+
+<p>
+    Data will be collected using a professionally structured offline paper
+    questionnaire. The questionnaire has been designed to be completed
+    manually and includes a respondent consent statement.
+</p>
+
+<p>
+    The instrument contains both closed-ended and open-ended questions.
+    Closed-ended questions generate quantitative data, while open-ended
+    questions provide qualitative information concerning personal
+    experiences, challenges and recommendations.
+</p>
+
+
+<h2 class="section-title">
+    4.10 Structure of the Questionnaire
+</h2>
+
+<table>
+
+    <tr>
+
+        <th>
+            Section
+        </th>
+
+        <th>
+            Main Content
+        </th>
+
+    </tr>
+
+
+    <tr>
+        <td>A</td>
+        <td>Respondent Profile</td>
+    </tr>
+
+    <tr>
+        <td>B</td>
+        <td>Access to Digital Financial Services</td>
+    </tr>
+
+    <tr>
+        <td>C</td>
+        <td>Mobile Money and Digital Payments</td>
+    </tr>
+
+    <tr>
+        <td>D</td>
+        <td>Transaction Costs and Affordability</td>
+    </tr>
+
+    <tr>
+        <td>E</td>
+        <td>Internet and Network Accessibility</td>
+    </tr>
+
+    <tr>
+        <td>F</td>
+        <td>Digital and Financial Literacy</td>
+    </tr>
+
+    <tr>
+        <td>G</td>
+        <td>Trust, Privacy and Security</td>
+    </tr>
+
+    <tr>
+        <td>H</td>
+        <td>Fraud and Negative Experiences</td>
+    </tr>
+
+    <tr>
+        <td>I</td>
+        <td>Gender and Age Barriers</td>
+    </tr>
+
+    <tr>
+        <td>J</td>
+        <td>Youth Employment and Entrepreneurship</td>
+    </tr>
+
+    <tr>
+        <td>K</td>
+        <td>Payment Interoperability</td>
+    </tr>
+
+    <tr>
+        <td>L</td>
+        <td>Awareness of Open Payments</td>
+    </tr>
+
+    <tr>
+        <td>M</td>
+        <td>Benefits and Opportunities</td>
+    </tr>
+
+    <tr>
+        <td>N</td>
+        <td>Challenges and Recommendations</td>
+    </tr>
+
+    <tr>
+        <td>O</td>
+        <td>Personal Experiences and Open-Ended Responses</td>
+    </tr>
+
+</table>
+
+
+<h2 class="section-title">
+    4.11 Pilot Testing
+</h2>
+
+<p>
+    Before full field deployment, the questionnaire should be pilot-tested
+    with a small number of respondents who are representative of the target
+    population but are not necessarily included in the final analytical
+    sample.
+</p>
+
+<p>
+    Pilot testing will help identify unclear wording, repetitive questions,
+    inappropriate response categories, excessive questionnaire length and
+    other practical problems.
+</p>
+
+
+<h2 class="section-title">
+    4.12 Validity
+</h2>
+
+<p>
+    Content validity will be strengthened by ensuring that the questionnaire
+    directly corresponds to the research objectives and research questions.
+    Each major research objective should be represented by one or more
+    survey indicators.
+</p>
+
+
+<h2 class="section-title">
+    4.13 Reliability
+</h2>
+
+<p>
+    Reliability will be supported through consistent questionnaire wording,
+    standardized administration procedures, clear coding rules and careful
+    data-entry verification.
+</p>
+
+<p>
+    Where appropriate, internal consistency of groups of Likert-scale items
+    may be assessed during quantitative analysis.
+</p>
+
+
+<h2 class="section-title">
+    4.14 Field Data Collection Procedure
+</h2>
+
+<div class="method-flow">
+
+    <div class="method-step">
+        <strong>Step 1 — Preparation:</strong>
+        Print and organize the questionnaires and consent information.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 2 — Respondent Introduction:</strong>
+        Explain the purpose of the research and voluntary nature of
+        participation.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 3 — Consent:</strong>
+        Obtain informed consent before questionnaire completion.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 4 — Coding:</strong>
+        Assign a unique code such as GAR-YOUTH-001.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 5 — Completion:</strong>
+        Respondent completes the questionnaire independently where practical.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 6 — Review:</strong>
+        Check the questionnaire for completeness without changing responses.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 7 — Secure Storage:</strong>
+        Store completed paper questionnaires securely.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 8 — Data Entry:</strong>
+        Transfer coded responses into the research dataset.
+    </div>
+
+    <div class="method-step">
+        <strong>Step 9 — Verification:</strong>
+        Compare entered data against the original questionnaires.
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    4.15 Respondent Coding
+</h2>
+
+<p>
+    Each completed questionnaire will receive a unique code rather than
+    being identified in the analytical dataset by the respondent's name.
+</p>
+
+<table>
+
+    <tr>
+
+        <th>
+            Code
+        </th>
+
+        <th>
+            Meaning
+        </th>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            GAR
+        </td>
+
+        <td>
+            Garissa study identifier
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            YOUTH
+        </td>
+
+        <td>
+            Target population
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+            001
+        </td>
+
+        <td>
+            Sequential respondent number
+        </td>
+
+    </tr>
+
+</table>
+
+<p>
+    Example:
+    <strong class="red">GAR-YOUTH-001</strong>
+</p>
+
+
+<h2 class="section-title">
+    4.16 Data Management
+</h2>
+
+<p>
+    Completed questionnaires will be retained as original field evidence.
+    The analytical dataset will contain respondent codes and survey
+    responses rather than unnecessary personal identifiers.
+</p>
+
+<p>
+    Data entry should be conducted carefully and verified against original
+    questionnaires. Missing responses should be coded consistently and
+    should not be converted into arbitrary answers.
+</p>
+
+<section class="section survey-analysis-section">
+
+    <div class="results-divider">
+        <span>4.17 — OFFLINE SURVEY RESULTS & ANALYSIS</span>
+    </div>
+
+    <h2 class="section-title">
+        4.17 Offline Survey Results & Analysis
+    </h2>
+
+    <div class="info-box">
+
+        <strong>Purpose of this section</strong>
+
+        <p>
+            This section provides the structured results-entry framework for
+            the physical/offline questionnaires administered during the field
+            study. The questions and analytical categories correspond directly
+            to the offline survey instrument.
+        </p>
+
+        <p>
+            After fieldwork, the researcher will review the completed
+            questionnaires, count the responses, calculate the corresponding
+            percentages and enter the verified results into the tables below.
+        </p>
+
+        <p>
+            No figures should be entered before the corresponding physical
+            questionnaires have been collected and verified.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         A. RESPONDENT PROFILE
+         ===================================================== -->
+
+    <h3>Survey Section A — Respondent Profile</h3>
+
+    <table>
+        <tr>
+            <th>Question / Indicator</th>
+            <th>Response Category</th>
+            <th>Frequency</th>
+            <th>Percentage</th>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>18–24</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>25–29</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>30–34</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>35–39</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>40+</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>Female</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>Male</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Education</td>
+            <td>Diploma</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Employment</td>
+            <td>Employed</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Employment</td>
+            <td>Self-employed</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Residence</td>
+            <td>Urban</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Residence</td>
+            <td>Rural</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         B. DIGITAL FINANCIAL ACCESS
+         ===================================================== -->
+
+    <h3>Survey Section B — Access to Digital Financial Services</h3>
+
+    <table>
+        <tr>
+            <th>Question / Indicator</th>
+            <th>Response</th>
+            <th>Frequency</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>Access to digital financial services</td>
+            <td>Yes</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Access to digital financial services</td>
+            <td>No</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Regular mobile phone use</td>
+            <td>Yes</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Regular internet access</td>
+            <td>Yes</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Internet access is affordable</td>
+            <td>Yes</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Network reliability</td>
+            <td>Reliable</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         C. MOBILE MONEY AND DIGITAL PAYMENTS
+         ===================================================== -->
+
+    <h3>Survey Section C — Mobile Money & Digital Payments</h3>
+
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Response</th>
+            <th>Frequency</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>C1</td>
+            <td>Uses mobile money</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>C2</td>
+            <td>M-PESA</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>C2</td>
+            <td>Airtel Money</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>C3</td>
+            <td>Daily or more frequently</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>C5</td>
+            <td>Digital payments are convenient</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>C6</td>
+            <td>Uses cash instead of digital payments</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         D. TRANSACTION COSTS
+         ===================================================== -->
+
+    <h3>Survey Section D — Transaction Costs & Affordability</h3>
+
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Strongly Disagree</th>
+            <th>Disagree</th>
+            <th>Neutral</th>
+            <th>Agree</th>
+            <th>Strongly Agree</th>
+        </tr>
+
+        <tr>
+            <td>Digital transaction charges are affordable</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Transaction costs discourage digital payment use</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         E. INTERNET AND NETWORK
+         ===================================================== -->
+
+    <h3>Survey Section E — Internet & Network Accessibility</h3>
+
+    <table>
+        <tr>
+            <th>Indicator</th>
+            <th>Yes / Positive</th>
+            <th>No / Negative</th>
+            <th>Frequency</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>Regular internet access</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Internet/data cost is a barrier</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Network coverage is adequate</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Electricity availability affects digital access</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         F. DIGITAL AND FINANCIAL LITERACY
+         ===================================================== -->
+
+    <h3>Survey Section F — Digital & Financial Literacy</h3>
+
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Agree / Strongly Agree</th>
+            <th>Neutral</th>
+            <th>Disagree / Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>I understand how to use mobile money services.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>I understand digital transaction charges.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>I can identify suspicious financial messages.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>I know how to protect my PIN and financial information.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>I would benefit from additional digital financial literacy.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         G. TRUST, PRIVACY AND SECURITY
+         ===================================================== -->
+
+    <h3>Survey Section G — Trust, Privacy & Security</h3>
+
+    <table>
+        <tr>
+            <th>Indicator</th>
+            <th>Positive</th>
+            <th>Neutral</th>
+            <th>Negative</th>
+        </tr>
+
+        <tr>
+            <td>Trust in digital payment services</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Feeling safe making digital transactions</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Concern about financial privacy</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Understanding use of personal information</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         H. FRAUD
+         ===================================================== -->
+
+    <h3>Survey Section H — Fraud, Scams & Negative Experiences</h3>
+
+    <table>
+        <tr>
+            <th>Experience</th>
+            <th>Frequency</th>
+            <th>Percentage</th>
+        </tr>
+
+        <tr>
+            <td>Experienced or nearly experienced digital fraud</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Received suspicious financial message/call</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Lost money through digital transaction</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Unable to obtain assistance</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         I. GENDER AND AGE
+         ===================================================== -->
+
+    <h3>Survey Section I — Gender & Age Barriers</h3>
+
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Agree / Strongly Agree</th>
+            <th>Neutral</th>
+            <th>Disagree / Strongly Disagree</th>
+        </tr>
+
+        <tr>
+            <td>Women and men have equal access.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Young people have better access than older people.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Women face specific barriers.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Older adults need additional support.</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         J. YOUTH
+         ===================================================== -->
+
+    <h3>Survey Section J — Youth Employment & Entrepreneurship</h3>
+
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Positive Response</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>Digital payments make youth businesses easier to operate.</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Digital financial services create youth entrepreneurship opportunities.</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Digital payments facilitate receiving customer income.</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Digital services support online employment/freelancing.</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         K. INTEROPERABILITY
+         ===================================================== -->
+
+    <h3>Survey Section K — Payment Interoperability</h3>
+
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Yes</th>
+            <th>No</th>
+            <th>Not Sure</th>
+        </tr>
+
+        <tr>
+            <td>Wanted to send money to a different payment platform</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Experienced difficulties between providers</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Would prefer provider-independent payments</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Greater interoperability would increase usefulness</td>
+            <td>___%</td>
+            <td>___%</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         L. OPEN PAYMENTS AWARENESS
+         ===================================================== -->
+
+    <h3>Survey Section L — Awareness of Open Payments</h3>
+
+    <table>
+        <tr>
+            <th>Awareness Level</th>
+            <th>Frequency</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>Heard of Open Payments</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>No prior awareness</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Not sure</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <h4>Understanding of Open Payments</h4>
+
+    <table>
+        <tr>
+            <th>Level</th>
+            <th>Frequency</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>None</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Limited</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Moderate</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Good</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Very good</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         M. BENEFITS OF OPEN PAYMENTS
+         ===================================================== -->
+
+    <h3>Survey Section M — Benefits & Opportunities</h3>
+
+    <table>
+        <tr>
+            <th>Potential Benefit</th>
+            <th>Agree / Strongly Agree</th>
+            <th>%</th>
+        </tr>
+
+        <tr>
+            <td>Could make sending money easier</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could reduce barriers between providers</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could reduce transaction costs</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could benefit small businesses</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could increase financial inclusion</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could create youth opportunities</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+        <tr>
+            <td>Could increase competition</td>
+            <td>___</td>
+            <td>___%</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         N. CHALLENGES AND RECOMMENDATIONS
+         ===================================================== -->
+
+    <h3>Survey Section N — Challenges & Recommendations</h3>
+
+    <table>
+        <tr>
+            <th>Challenge / Priority</th>
+            <th>Frequency</th>
+            <th>%</th>
+            <th>Rank</th>
+        </tr>
+
+        <tr>
+            <td>High transaction charges</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Poor network coverage</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Expensive internet/data</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Lack of digital skills</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Fear of fraud</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Privacy concerns</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+        <tr>
+            <td>Electricity challenges</td>
+            <td>___</td>
+            <td>___%</td>
+            <td>___</td>
+        </tr>
+
+    </table>
+
+
+    <!-- =====================================================
+         O. OPEN-ENDED RESPONSES
+         ===================================================== -->
+
+    <h3>Survey Section O — Personal Experiences & Open-Ended Responses</h3>
+
+    <div class="card">
+
+        <h4>Major Positive Experiences</h4>
+
+        <p>
+            <strong>Emerging themes:</strong>
+            _________________________________________________
+        </p>
+
+        <h4>Biggest Problems Reported</h4>
+
+        <p>
+            <strong>Emerging themes:</strong>
+            _________________________________________________
+        </p>
+
+        <h4>What Would Increase Digital Payment Use?</h4>
+
+        <p>
+            <strong>Emerging themes:</strong>
+            _________________________________________________
+        </p>
+
+        <h4>Expected Changes Over the Next Five Years</h4>
+
+        <p>
+            <strong>Emerging themes:</strong>
+            _________________________________________________
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESULTS MIGRATION NOTE
+         ===================================================== -->
+
+    <div class="info-box">
+
+        <strong>Results Migration Procedure</strong>
+
+        <ol>
+
+            <li>
+                Collect and verify all completed physical questionnaires.
+            </li>
+
+            <li>
+                Count the responses for every question.
+            </li>
+
+            <li>
+                Calculate the corresponding frequencies and percentages.
+            </li>
+
+            <li>
+                Enter the verified figures into the tables in Section 4.17.
+            </li>
+
+            <li>
+                Identify the major quantitative patterns and qualitative
+                themes.
+            </li>
+
+            <li>
+                Migrate the relevant findings into the formal Results,
+                Discussion and Recommendations chapters.
+            </li>
+
+            <li>
+                Retain the original handwritten questionnaires as the
+                supporting field evidence.
+            </li>
+
+        </ol>
+
+        <p>
+            <strong>Important:</strong>
+            The figures entered here must be exactly traceable to the completed
+            offline questionnaires. This section is therefore the bridge
+            between the physical field evidence and the final research
+            findings.
+        </p>
+
+    </div>
+
+</section>
+
+<h2 class="section-title">
+    4.17 Quantitative Data Analysis
+</h2>
+
+<p>
+    Quantitative data will initially be summarized using frequencies and
+    percentages. Where appropriate, cross-tabulations will be used to
+    examine differences between age groups, gender groups, employment
+    categories and other relevant characteristics.
+</p>
+
+<p>
+    Likert-scale responses will be summarized using appropriate descriptive
+    measures and response distributions.
+</p>
+
+
+<h2 class="section-title">
+    4.18 Qualitative Data Analysis
+</h2>
+
+<p>
+    Open-ended responses will be reviewed systematically and coded into
+    themes. Thematic analysis will identify recurring experiences,
+    challenges, benefits, concerns and recommendations.
+</p>
+
+<p>
+    Where respondent quotations are used in the final paper, they will be
+    presented anonymously using respondent codes rather than names.
+</p>
+
+
+<h2 class="section-title">
+    4.19 Data Quality Assurance
+</h2>
+
+<ul>
+
+    <li>
+        Use standardized questionnaires.
+    </li>
+
+    <li>
+        Train data collectors where applicable.
+    </li>
+
+    <li>
+        Check questionnaires for completeness.
+    </li>
+
+    <li>
+        Maintain consistent respondent codes.
+    </li>
+
+    <li>
+        Verify entered data against original questionnaires.
+    </li>
+
+    <li>
+        Document missing data.
+    </li>
+
+    <li>
+        Avoid altering respondent answers.
+    </li>
+
+    <li>
+        Preserve original completed questionnaires securely.
+    </li>
+
+</ul>
+
+
+<h2 class="section-title">
+    4.20 Ethical Considerations
+</h2>
+
+<p>
+    Participation will be voluntary. Respondents will be informed about the
+    purpose of the study and will have the opportunity to decline
+    participation or skip questions they do not wish to answer.
+</p>
+
+<p>
+    The study will avoid collecting unnecessary personally identifiable
+    information. Names, national identification numbers, passwords, PINs
+    and similar authentication information should not be recorded in the
+    research dataset.
+</p>
+
+<p>
+    Completed questionnaires will be stored securely and used only for the
+    stated research purposes. Findings will be reported in aggregated or
+    anonymized form.
+</p>
+
+
+<h2 class="section-title">
+    4.21 Evidence Chain
+</h2>
+
+<div class="framework">
+
+    <div class="framework-box">
+
+        <strong>
+            FIELD EVIDENCE
+        </strong>
+
+        Signed consent<br>
+        Completed questionnaire<br>
+        Respondent code
+
+    </div>
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+    <div class="framework-box">
+
+        <strong>
+            DATASET
+        </strong>
+
+        Coded responses<br>
+        Verified entries<br>
+        Clean data
+
+    </div>
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+    <div class="framework-box">
+
+        <strong>
+            ANALYSIS
+        </strong>
+
+        Statistics<br>
+        Cross-tabulation<br>
+        Themes
+
+    </div>
+
+    <div class="framework-arrow">
+        →
+    </div>
+
+    <div class="framework-box">
+
+        <strong>
+            RESEARCH OUTPUT
+        </strong>
+
+        Findings<br>
+        Discussion<br>
+        Recommendations
+
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    4.22 Research Integrity
+</h2>
+
+<div class="info-box">
+
+    <strong>
+        Research Integrity Principle
+    </strong>
+
+    <p style="margin-top:0.4rem;">
+        The final results chapters will be populated only after actual
+        questionnaires have been collected and analyzed. Frequencies,
+        percentages, statistical comparisons, respondent quotations and
+        conclusions will be derived from the collected evidence rather than
+        estimated or fabricated.
+    </p>
+
+</div>
+
+
+<h2 class="section-title">
+    4.23 Planned Results Chapters
+</h2>
+
+<p>
+    Following field data collection, the subsequent chapters will be
+    developed directly from the survey dataset.
+</p>
+
+<table>
+
+    <tr>
+        <th>Chapter</th>
+        <th>Evidence Source</th>
+    </tr>
+
+    <tr>
+        <td>Chapter Five</td>
+        <td>Respondent demographic section</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Six</td>
+        <td>Digital access questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Seven</td>
+        <td>Mobile money and payment questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Eight</td>
+        <td>Cost and accessibility questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Nine</td>
+        <td>Literacy questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Ten</td>
+        <td>Trust, privacy, fraud and security questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Eleven</td>
+        <td>Gender and age comparisons</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Twelve</td>
+        <td>Youth employment and entrepreneurship questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Thirteen</td>
+        <td>Payment interoperability questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Fourteen</td>
+        <td>Open Payments questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Fifteen</td>
+        <td>Positive-impact questions</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Sixteen</td>
+        <td>Negative experiences and challenges</td>
+    </tr>
+
+    <tr>
+        <td>Chapter Seventeen</td>
+        <td>Open-ended qualitative responses</td>
+    </tr>
+
+</table>
+
+
+<div class="footer">
+
+    Digital Financial Inclusion and Payment Interoperability Among Youth in
+    Northern Kenya | Chapters 1–4
+
+</div>
+
+</div>
+
+
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>
