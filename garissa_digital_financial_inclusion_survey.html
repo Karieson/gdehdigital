@@ -7,411 +7,1608 @@
 <title>Digital Financial Inclusion & Open Payments Survey</title>
 
 <style>
-    :root {
-        --corporate-red: #C00000;
-        --dark: #222;
-        --light-red: #fff5f5;
-        --border: #777;
-        --light: #f5f5f5;
-    }
 
-    * {
-        box-sizing: border-box;
-    }
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
 
-    body {
-        margin: 0;
-        padding: 0;
-        background: #eee;
-        color: var(--dark);
-        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-        font-size: 11px;
-        line-height: 1.45;
-    }
+:root {
+    --corporate-red: #C00000;
+    --dark: #222;
+    --white: #fff;
+    --border: #777;
+    --light: #f5f5f5;
+    --light-red: #fff5f5;
+    --table-grey: #eee;
+}
 
-    .page {
-        width: 210mm;
-        min-height: 297mm;
-        margin: 12px auto;
-        padding: 15mm;
-        background: #fff;
-        box-shadow: 0 0 8px rgba(0,0,0,.15);
-    }
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: #eee;
+
+    color: var(--dark);
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   A4 SCREEN PAGE
+========================================================= */
+
+.page {
+    width: 210mm;
+
+    min-height: 297mm;
+
+    margin: 12px auto;
+
+    padding: 15mm;
+
+    background: var(--white);
+
+    box-shadow: 0 0 8px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
     position: relative;
-    border-bottom: 2px solid var(--corporate-red);
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
+
+    width: 100%;
+
+    text-align: center;
+
+    border-bottom:
+        2px solid var(--corporate-red);
+
+    padding:
+        0 0 0.55rem;
+
+    margin:
+        0 0 0.7rem;
 }
+
+
+/* =========================================================
+   HEADER LOGO
+========================================================= */
 
 .header-top {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 0.35rem;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
 }
 
 .gdeh-logo {
     display: block;
+
     width: auto;
-    height: 3.6rem;
-    max-width: 11rem;
+
+    height: 4.2rem;
+
+    max-width: 12rem;
+
     object-fit: contain;
+
+    margin: 0 auto;
 }
+
+
+/* =========================================================
+   SURVEY TITLE
+========================================================= */
 
 .title {
-    margin: 0.15rem 0 0.25rem;
+    margin:
+        0.55rem 0 0.2rem;
 
-    color: var(--corporate-red);
+    color:
+        var(--corporate-red);
 
-    font-size: 1.05rem;
-    line-height: 1.35;
-    font-weight: 700;
+    font-size:
+        1.05rem;
 
-    text-align: center;
-    letter-spacing: 0.015rem;
-    text-transform: uppercase;
+    line-height:
+        1.25;
+
+    font-weight:
+        700;
+
+    text-align:
+        center;
+
+    letter-spacing:
+        0.015rem;
+
+    text-transform:
+        uppercase;
 }
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
 
 .subtitle {
     margin: 0;
 
-    color: #222;
+    color: var(--dark);
 
     font-size: 0.68rem;
-    line-height: 1.4;
+
+    line-height: 1.35;
+
     font-weight: 600;
 
     text-align: center;
 }
 
-    .study-box {
-        background: var(--light-red);
-        border-left: 5px solid var(--red);
-        padding: 10px 12px;
-        margin: 12px 0;
-    }
 
-    .study-box strong {
-        color: var(--red);
-    }
+/* =========================================================
+   STUDY / INFORMATION BOX
+========================================================= */
 
-    :root {
-    --corporate-red: #C00000;
-    --black: #222;
-    --white: #fff;
-    --border: #777;
-    --light: #f5f5f5;
-    --light-red: #fff5f5;
+.study-box {
+    background:
+        var(--light-red);
+
+    border-left:
+        5px solid var(--corporate-red);
+
+    padding:
+        10px 12px;
+
+    margin:
+        12px 0;
 }
+
+.study-box strong {
+    color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
 h2.section-title {
     position: relative;
 
     background: transparent;
-    color: var(--corporate-red);
 
-    margin: 1.4rem 0 0.65rem;
-    padding: 0.42rem 0.75rem 0.42rem 0.85rem;
+    color:
+        var(--corporate-red);
 
-    font-size: 0.78rem;
-    line-height: 1.3;
-    font-weight: 800;
+    margin:
+        1.4rem 0 0.65rem;
 
-    text-transform: uppercase;
-    letter-spacing: 0.015rem;
+    padding:
+        0.42rem 0.75rem 0.42rem 0.85rem;
+
+    font-size:
+        0.78rem;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.015rem;
 
     border: none;
-    border-left: 0.38rem solid var(--corporate-red);
+
+    border-left:
+        0.38rem solid var(--corporate-red);
 }
 
-    h3 {
-        font-size: 12px;
-        margin: 12px 0 6px;
-        color: var(--red);
-    }
 
-    p {
-        margin: 5px 0 8px;
+/* =========================================================
+   H3
+========================================================= */
+
+h3 {
+    font-size:
+        12px;
+
+    margin:
+        12px 0 6px;
+
+    color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+    margin:
+        5px 0 8px;
+}
+
+
+/* =========================================================
+   ALL TABLES
+========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse:
+        collapse;
+
+    margin:
+        0.3rem 0 0.55rem;
+
+    table-layout:
+        auto;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+th,
+td {
+    border:
+        1px solid var(--border);
+
+    padding:
+        4px 5px;
+
+    vertical-align:
+        middle;
+
+    font-size:
+        8.2pt;
+
+    line-height:
+        1.2;
+}
+
+
+/* =========================================================
+   ALL FIRST / CODE COLUMNS
+   B1, B2, B3...
+   C1, C2, C3...
+   D1, D2, D3...
+========================================================= */
+
+table tr > th:first-child,
+table tr > td:first-child {
+
+    width:
+        7%;
+
+    min-width:
+        30px;
+
+    max-width:
+        45px;
+
+    text-align:
+        center;
+
+    font-weight:
+        700;
+
+    background:
+        var(--table-grey);
+
+    color:
+        var(--dark);
+}
+
+
+/* =========================================================
+   QUESTION COLUMN
+========================================================= */
+
+td.question {
+    font-weight:
+        500;
+
+    text-align:
+        left;
+
+    background:
+        var(--white);
+}
+
+
+/* =========================================================
+   RESPONSE COLUMN
+========================================================= */
+
+table tr > td:last-child {
+    background:
+        var(--white);
+}
+
+
+/* =========================================================
+   TABLE HEADERS
+========================================================= */
+
+th {
+    background:
+        var(--table-grey);
+
+    font-weight:
+        700;
+
+    text-align:
+        center;
+
+    padding:
+        3px 4px;
+}
+
+
+/* =========================================================
+   SECOND COLUMN
+========================================================= */
+
+table tr > th:nth-child(2),
+table tr > td:nth-child(2) {
+    text-align:
+        left;
+}
+
+
+/* =========================================================
+   RESPONDENT PROFILE TABLE
+========================================================= */
+
+table.respondent-profile tr > td:first-child {
+
+    width:
+        25%;
+
+    min-width:
+        0;
+
+    max-width:
+        none;
+
+    text-align:
+        left;
+
+    background:
+        var(--table-grey);
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   TABLE ROWS
+========================================================= */
+
+tr {
+    page-break-inside:
+        avoid;
+
+    break-inside:
+        avoid;
+}
+
+
+/* =========================================================
+   SECTION TABLE SPACING
+========================================================= */
+
+h2.section-title + table {
+    margin-top:
+        0.25rem;
+}
+
+
+/* =========================================================
+   TEXT SIZES
+========================================================= */
+
+.small {
+    font-size:
+        9px;
+}
+
+.tiny {
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.center {
+    text-align:
+        center;
+}
+
+.left {
+    text-align:
+        left;
+}
+
+
+/* =========================================================
+   RESPONDENT CODE
+   FORMAT:
+
+   [ ][ ][ ]   [ ][ ][ ]   [ ][ ][ ]
+
+   GSA         YTH         001
+========================================================= */
+
+.code-group {
+    display:
+        inline-flex;
+
+    gap:
+        3px;
+
+    vertical-align:
+        middle;
+}
+
+.code-space {
+    display:
+        inline-block;
+
+    width:
+        12px;
+}
+
+.code-box {
+    display:
+        inline-flex;
+
+    width:
+        24px;
+
+    height:
+        25px;
+
+    border:
+        1px solid #444;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-weight:
+        bold;
+
+    background:
+        var(--white);
+
+    vertical-align:
+        middle;
+}
+
+
+/* =========================================================
+   WRITING LINES
+========================================================= */
+
+.line {
+    display:
+        inline-block;
+
+    border-bottom:
+        1px solid #444;
+
+    min-width:
+        150px;
+
+    height:
+        17px;
+}
+
+.long-line {
+    border-bottom:
+        1px solid #555;
+
+    height:
+        23px;
+
+    margin:
+        5px 0;
+}
+
+
+/* =========================================================
+   CHECKBOX / OPTIONS
+========================================================= */
+
+.checkbox {
+    font-size:
+        14px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    margin-right:
+        3px;
+}
+
+.option {
+    white-space:
+        nowrap;
+
+    margin-right:
+        10px;
+}
+
+
+/* =========================================================
+   LIKERT TABLE
+========================================================= */
+
+.likert {
+    width:
+        100%;
+
+    table-layout:
+        fixed;
+}
+
+.likert th,
+.likert td {
+    font-size:
+        7.2pt;
+
+    padding:
+        3px 2px;
+
+    line-height:
+        1.15;
+}
+
+
+/* CODE COLUMN */
+
+.likert th:nth-child(1),
+.likert td:nth-child(1) {
+
+    width:
+        7%;
+
+    text-align:
+        center;
+
+    background:
+        var(--table-grey);
+
+    font-weight:
+        700;
+}
+
+
+/* STATEMENT COLUMN */
+
+.likert th:nth-child(2),
+.likert td:nth-child(2) {
+
+    width:
+        45%;
+
+    text-align:
+        left;
+
+    background:
+        var(--white);
+}
+
+
+/* RATING COLUMNS */
+
+.likert th:nth-child(n+3),
+.likert td:nth-child(n+3) {
+
+    width:
+        9.6%;
+
+    text-align:
+        center;
+}
+
+.likert td.question {
+    text-align:
+        left;
+
+    font-size:
+        7.5pt;
+}
+/* =========================================================
+   ENUMERATOR / RESEARCHER VERIFICATION
+========================================================= */
+
+table.enumerator-verification {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.enumerator-verification td {
+    border: 1px solid var(--border);
+    padding: 5px 6px;
+    vertical-align: middle;
+}
+
+/* Grey label column */
+table.enumerator-verification td:first-child {
+    width: 25%;
+    background: #eee;
+    color: #222;
+    text-align: left;
+    font-weight: 700;
+}
+
+/* Response column */
+table.enumerator-verification td:last-child {
+    width: 75%;
+    background: #fff;
+    text-align: left;
+}
+
+/* =========================================================
+   OPEN RESPONSE BOXES
+========================================================= */
+
+.open-box {
+
+    border:
+        1px solid #777;
+
+    min-height:
+        65px;
+
+    margin:
+        5px 0 12px;
+
+    padding:
+        5px;
+
+    page-break-inside:
+        avoid;
+
+    break-inside:
+        avoid;
+}
+
+.open-box.large {
+    min-height:
+        100px;
+}
+
+.open-box.xlarge {
+    min-height:
+        140px;
+}
+
+
+/* =========================================================
+   INSTRUCTIONS
+========================================================= */
+
+.instruction {
+
+    background:
+        #f7f7f7;
+
+    border:
+        1px solid #ccc;
+
+    padding:
+        7px;
+
+    margin:
+        7px 0;
+
+    font-size:
+        9px;
+
+    page-break-inside:
+        avoid;
+
+    break-inside:
+        avoid;
+}
+
+
+/* =========================================================
+   SIGNATURE TABLE
+========================================================= */
+
+.signature-table td {
+    height:
+        45px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    border-top:
+        2px solid var(--corporate-red);
+
+    margin-top:
+        20px;
+
+    padding-top:
+        7px;
+
+    font-size:
+        8px;
+
+    color:
+        #555;
+
+    text-align:
+        center;
+
+    page-break-inside:
+        avoid;
+
+    break-inside:
+        avoid;
+}
+
+
+/* =========================================================
+   DELIBERATE PAGE BREAK
+========================================================= */
+
+.page-break {
+
+    page-break-before:
+        always;
+
+    break-before:
+        page;
+}
+
+
+/* =========================================================
+   AVOID BREAK
+========================================================= */
+
+.avoid-break {
+
+    page-break-inside:
+        avoid;
+
+    break-inside:
+        avoid;
+}
+
+
+/* =========================================================
+   PRINT BUTTON
+========================================================= */
+
+.print-button {
+
+    position:
+        fixed;
+
+    top:
+        15px;
+
+    right:
+        15px;
+
+    background:
+        var(--corporate-red);
+
+    color:
+        var(--white);
+
+    border:
+        none;
+
+    padding:
+        10px 16px;
+
+    border-radius:
+        4px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        700;
+
+    z-index:
+        999;
+}
+
+.print-button:hover {
+    background:
+        #900000;
+}
+
+
+/* =========================================================
+   MOBILE SCREEN
+========================================================= */
+
+@media screen and (max-width: 750px) {
+
+    .page {
+        width:
+            100%;
+
+        padding:
+            10px;
+
+        margin:
+            0;
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 7px 0 12px;
+        font-size:
+            8px;
     }
 
     th,
     td {
-        border: 1px solid var(--border);
-        padding: 6px 6px;
-        vertical-align: middle;
+        padding:
+            4px 3px;
+
+        font-size:
+            7.5px;
     }
 
-    th {
-        background: #eee;
-        font-weight: 700;
-        text-align: center;
+    table tr > th:first-child,
+    table tr > td:first-child {
+
+        width:
+            8%;
+
+        min-width:
+            28px;
     }
 
-    td.question {
-        font-weight: 500;
-    }
-
-    .number {
-        width: 35px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    .small {
-        font-size: 9px;
-    }
-
-    .tiny {
-        font-size: 8px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .left {
-        text-align: left;
-    }
-
-    .code-box {
-        display: inline-block;
-        border: 1px solid #444;
-        width: 24px;
-        height: 25px;
-        margin-right: 3px;
-        text-align: center;
-        line-height: 25px;
-        font-weight: bold;
-    }
-
-    .line {
-        display: inline-block;
-        border-bottom: 1px solid #444;
-        min-width: 150px;
-        height: 17px;
-    }
-
-    .long-line {
-        border-bottom: 1px solid #555;
-        height: 23px;
-        margin: 5px 0;
-    }
-
-    .checkbox {
-        font-size: 14px;
-        font-family: Arial, sans-serif;
-        margin-right: 3px;
-    }
-
-    .option {
-        white-space: nowrap;
-        margin-right: 10px;
-    }
-
+    .likert th,
     .likert td {
-        text-align: center;
-        font-size: 9px;
-        padding: 5px 2px;
-    }
 
-    .likert td.question {
-        text-align: left;
-        font-size: 10px;
-    }
+        font-size:
+            6.5px;
 
-    .likert th {
-        font-size: 8px;
-        padding: 5px 2px;
+        padding:
+            3px 1px;
     }
+}
 
-    .open-box {
-        border: 1px solid #777;
-        min-height: 65px;
-        margin: 5px 0 12px;
-        padding: 5px;
-    }
 
-    .open-box.large {
-        min-height: 100px;
-    }
+/* =========================================================
+   A4 PRINT / PDF
+========================================================= */
 
-    .open-box.xlarge {
-        min-height: 140px;
-    }
+@media print {
 
-    .instruction {
-        background: #f7f7f7;
-        border: 1px solid #ccc;
-        padding: 7px;
-        margin: 7px 0;
-        font-size: 9px;
-    }
-
-    .signature-table td {
-        height: 45px;
-    }
-
-    .footer {
-        border-top: 2px solid var(--red);
-        margin-top: 20px;
-        padding-top: 7px;
-        font-size: 8px;
-        color: #555;
-        text-align: center;
-    }
-
-    .page-break {
-        page-break-before: always;
-    }
-
-    .avoid-break {
-        page-break-inside: avoid;
-    }
-
-    @media print {
+    /* -----------------------------------------------------
+       A4 PAGE
+    ----------------------------------------------------- */
 
     @page {
-        size: A4;
-        margin: 10mm 12mm;
+
+        size:
+            A4 portrait;
+
+        margin:
+            7mm 9mm 7mm 9mm;
     }
+
+
+    /* -----------------------------------------------------
+       HTML / BODY
+    ----------------------------------------------------- */
 
     html,
     body {
-        width: 210mm;
-        margin: 0;
-        padding: 0;
-        background: #fff !important;
+
+        width:
+            210mm;
+
+        margin:
+            0;
+
+        padding:
+            0;
+
+        background:
+            var(--white) !important;
     }
 
     body {
-        font-size: 10pt;
-        line-height: 1.3;
+
+        font-size:
+            9.2pt;
+
+        line-height:
+            1.25;
+
+        color:
+            var(--dark);
     }
+
+
+    /* -----------------------------------------------------
+       A4 CONTENT
+    ----------------------------------------------------- */
 
     .page {
-        width: 100%;
-        min-height: calc(297mm - 20mm);
-        height: auto;
 
-        margin: 0;
-        padding: 0;
+        width:
+            100%;
 
-        background: #fff;
-        box-shadow: none;
+        min-height:
+            0;
 
-        box-sizing: border-box;
+        height:
+            auto;
 
-        page-break-after: auto;
-        break-after: auto;
+        margin:
+            0;
+
+        padding:
+            0;
+
+        background:
+            var(--white);
+
+        box-shadow:
+            none;
+
+        page-break-after:
+            auto;
+
+        break-after:
+            auto;
     }
+
+
+    /* -----------------------------------------------------
+       HIDE PRINT BUTTON
+    ----------------------------------------------------- */
 
     .no-print,
     .print-button {
-        display: none !important;
+
+        display:
+            none !important;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-        break-after: avoid;
-        page-break-after: avoid;
 
-        margin-top: 0.55rem;
-        margin-bottom: 0.3rem;
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .header {
+
+        margin-bottom:
+            0.65rem;
+
+        padding-bottom:
+            0.45rem;
+
+        border-bottom:
+            2px solid var(--corporate-red);
+
+        break-inside:
+            avoid;
+
+        page-break-inside:
+            avoid;
     }
+
+    .header-top {
+
+        display:
+            flex;
+
+        justify-content:
+            center;
+
+        align-items:
+            center;
+    }
+
+    .gdeh-logo {
+
+        height:
+            3.5rem;
+
+        max-width:
+            10rem;
+    }
+
+    .title {
+
+        font-size:
+            10.5pt;
+
+        line-height:
+            1.2;
+
+        margin:
+            0.4rem 0 0.15rem;
+    }
+
+    .subtitle {
+
+        font-size:
+            7.5pt;
+
+        line-height:
+            1.25;
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION HEADINGS
+    ----------------------------------------------------- */
 
     h2.section-title {
-        break-after: avoid;
-        page-break-after: avoid;
+
+        margin:
+            0.75rem 0 0.35rem;
+
+        padding:
+            0.3rem 0.55rem 0.3rem 0.65rem;
+
+        font-size:
+            8.5pt;
+
+        line-height:
+            1.2;
+
+        border-left:
+            0.3rem solid var(--corporate-red);
+
+        break-after:
+            avoid;
+
+        page-break-after:
+            avoid;
+
+        break-inside:
+            avoid;
+
+        page-break-inside:
+            avoid;
     }
 
-    table {
-        width: 100%;
-        max-width: 100%;
-        border-collapse: collapse;
 
-        break-inside: auto;
-        page-break-inside: auto;
+    /* -----------------------------------------------------
+       H3
+    ----------------------------------------------------- */
+
+    h3 {
+
+        font-size:
+            9pt;
+
+        line-height:
+            1.25;
+
+        margin:
+            0.45rem 0 0.25rem;
+
+        break-after:
+            avoid;
+
+        page-break-after:
+            avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       PARAGRAPHS
+    ----------------------------------------------------- */
+
+    p {
+
+        margin-top:
+            0.2rem;
+
+        margin-bottom:
+            0.35rem;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLES
+    ----------------------------------------------------- */
+
+    table {
+
+        width:
+            100%;
+
+        max-width:
+            100%;
+
+        border-collapse:
+            collapse;
+
+        margin:
+            0.3rem 0 0.55rem;
+
+        table-layout:
+            auto;
+
+        page-break-inside:
+            auto;
+
+        break-inside:
+            auto;
     }
 
     tr {
-        break-inside: avoid;
-        page-break-inside: avoid;
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
     }
 
-    figure,
-    .avoid-break {
-        break-inside: avoid;
-        page-break-inside: avoid;
+    th,
+    td {
+
+        border:
+            1px solid var(--border);
+
+        padding:
+            3.5px 4px;
+
+        vertical-align:
+            middle;
+
+        font-size:
+            8.2pt;
+
+        line-height:
+            1.2;
     }
 
-    p {
-        margin-top: 0.2rem;
-        margin-bottom: 0.35rem;
+
+    /* -----------------------------------------------------
+       ALL SECTION CODE COLUMNS
+    ----------------------------------------------------- */
+
+    table tr > th:first-child,
+    table tr > td:first-child {
+
+        width:
+            7%;
+
+        min-width:
+            30px;
+
+        max-width:
+            42px;
+
+        text-align:
+            center;
+
+        font-weight:
+            700;
+
+        background:
+            var(--table-grey) !important;
+
+        color:
+            var(--dark);
     }
 
-    ul,
-    ol {
-        margin-top: 0.2rem;
-        margin-bottom: 0.35rem;
-        padding-left: 1.1rem;
+
+    /* -----------------------------------------------------
+       RESPONDENT PROFILE
+    ----------------------------------------------------- */
+
+    table.respondent-profile tr > td:first-child {
+
+        width:
+            25%;
+
+        max-width:
+            none;
+
+        min-width:
+            0;
+
+        text-align:
+            left;
+
+        background:
+            var(--table-grey) !important;
+
+        font-weight:
+            700;
     }
 
-    li {
-        margin-bottom: 0.1rem;
+
+    /* -----------------------------------------------------
+       QUESTION COLUMN
+    ----------------------------------------------------- */
+
+    td.question {
+
+        font-weight:
+            500;
+
+        text-align:
+            left;
+
+        background:
+            var(--white) !important;
     }
+
+
+    /* -----------------------------------------------------
+       RESPONSE COLUMN
+    ----------------------------------------------------- */
+
+    table tr > td:last-child {
+
+        background:
+            var(--white) !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE HEADERS
+    ----------------------------------------------------- */
+
+    th {
+
+        background:
+            var(--table-grey) !important;
+
+        font-size:
+            7.8pt;
+
+        padding:
+            3px 4px;
+
+        font-weight:
+            700;
+
+        text-align:
+            center;
+    }
+
+
+    /* -----------------------------------------------------
+       LIKERT TABLES
+    ----------------------------------------------------- */
+
+    .likert {
+
+        width:
+            100%;
+
+        table-layout:
+            fixed;
+    }
+
+    .likert th,
+    .likert td {
+
+        font-size:
+            7.2pt;
+
+        padding:
+            3px 2px;
+
+        line-height:
+            1.15;
+    }
+
+
+    /* LIKERT CODE COLUMN */
+
+    .likert th:nth-child(1),
+    .likert td:nth-child(1) {
+
+        width:
+            7%;
+
+        text-align:
+            center;
+
+        background:
+            var(--table-grey) !important;
+
+        font-weight:
+            700;
+    }
+
+
+    /* LIKERT QUESTION */
+
+    .likert th:nth-child(2),
+    .likert td:nth-child(2) {
+
+        width:
+            45%;
+
+        text-align:
+            left;
+
+        background:
+            var(--white) !important;
+    }
+
+
+    /* LIKERT RATINGS */
+
+    .likert th:nth-child(n+3),
+    .likert td:nth-child(n+3) {
+
+        width:
+            9.6%;
+
+        text-align:
+            center;
+    }
+
+
+    /* -----------------------------------------------------
+       INSTRUCTION BOX
+    ----------------------------------------------------- */
+
+    .instruction {
+
+        padding:
+            4px 5px;
+
+        margin:
+            0.3rem 0 0.45rem;
+
+        font-size:
+            7.5pt;
+
+        line-height:
+            1.25;
+
+        border:
+            1px solid #ccc;
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       OPEN RESPONSE BOXES
+    ----------------------------------------------------- */
+
+    .open-box {
+
+        min-height:
+            48px;
+
+        margin:
+            3px 0 7px;
+
+        padding:
+            4px;
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
+    }
+
+    .open-box.large {
+        min-height:
+            75px;
+    }
+
+    .open-box.xlarge {
+        min-height:
+            105px;
+    }
+
+
+    /* -----------------------------------------------------
+       SIGNATURE TABLE
+    ----------------------------------------------------- */
+
+    .signature-table td {
+        height:
+            35px;
+    }
+
+
+    /* -----------------------------------------------------
+       RESPONDENT CODE
+    ----------------------------------------------------- */
+
+    .code-group {
+        gap:
+            2px;
+    }
+
+    .code-space {
+        width:
+            10px;
+    }
+
+    .code-box {
+
+        width:
+            21px;
+
+        height:
+            22px;
+    }
+
+
+    /* -----------------------------------------------------
+       STUDY BOX
+    ----------------------------------------------------- */
+
+    .study-box {
+
+        padding:
+            5px 7px;
+
+        margin:
+            0.45rem 0;
+
+        border-left:
+            4px solid var(--corporate-red);
+
+        font-size:
+            7.5pt;
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    .footer {
+
+        border-top:
+            1px solid var(--corporate-red);
+
+        margin-top:
+            0.5rem;
+
+        padding-top:
+            4px;
+
+        font-size:
+            6.8pt;
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       DELIBERATE PAGE BREAK ONLY
+    ----------------------------------------------------- */
+
+    .page-break {
+
+        page-break-before:
+            always;
+
+        break-before:
+            page;
+    }
+
+
+    /* -----------------------------------------------------
+       AVOID BAD SPLITS
+    ----------------------------------------------------- */
+
+    .avoid-break,
+    figure {
+
+        page-break-inside:
+            avoid;
+
+        break-inside:
+            avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGES
+    ----------------------------------------------------- */
 
     img {
-        max-width: 100%;
-        height: auto;
-    }
 
-    .section,
-    .research-section {
-        page-break-before: auto;
-        break-before: auto;
+        max-width:
+            100%;
+
+        height:
+            auto;
     }
 }
 
-.print-button {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-
-    background: var(--red);
-    color: white;
-
-    border: none;
-    padding: 10px 16px;
-
-    border-radius: 4px;
-
-    cursor: pointer;
-    font-weight: 700;
-
-    z-index: 999;
-}
-
-.print-button:hover {
-    background: #900000;
-}
 </style>
 </head>
 
 <body>
 
-<button class="print-button no-print" onclick="window.print()">
-    Print / Save PDF
-</button>
+
 
 
 <!-- =========================================================
@@ -466,21 +1663,37 @@ h2.section-title {
     <h2 class="section-title">Respondent Identification</h2>
 
     <table>
-        <tr>
-            <td><strong>Respondent Code</strong></td>
-            <td>
+    <tr>
+        <td><strong>Respondent Code</strong></td>
+
+        <td>
+            <span class="code-group">
                 <span class="code-box"></span>
                 <span class="code-box"></span>
                 <span class="code-box"></span>
+            </span>
+
+            <span class="code-space"></span>
+
+            <span class="code-group">
                 <span class="code-box"></span>
                 <span class="code-box"></span>
                 <span class="code-box"></span>
+            </span>
+
+            <span class="code-space"></span>
+
+            <span class="code-group">
                 <span class="code-box"></span>
                 <span class="code-box"></span>
-                <br>
-                <span class="small">Example: GAR-YOUTH-001</span>
-            </td>
-        </tr>
+                <span class="code-box"></span>
+            </span>
+
+            <br>
+
+            <span class="small">Example: GSA YTH 001</span>
+        </td>
+    </tr>
 
         <tr>
             <td><strong>Date of Interview</strong></td>
@@ -1535,60 +2748,102 @@ h2.section-title {
     <div class="open-box xlarge"></div>
 
 
-    <!-- ENUMERATOR SECTION -->
+    <!-- =========================================================
+     ENUMERATOR / RESEARCHER VERIFICATION
+========================================================= -->
 
-    <div class="page-break"></div>
+<div class="page-break"></div>
 
-    <h2 class="section-title">Enumerator / Researcher Verification</h2>
+<h2 class="section-title">Enumerator / Researcher Verification</h2>
 
-    <table>
-        <tr>
-            <td><strong>Questionnaire Code</strong></td>
-            <td>GAR-YOUTH-________________</td>
-        </tr>
+<table class="enumerator-verification">
 
-        <tr>
-            <td><strong>Interview completed?</strong></td>
-            <td>☐ Yes &nbsp;&nbsp; ☐ No &nbsp;&nbsp; ☐ Partially</td>
-        </tr>
+    <tr>
+        <td><strong>Questionnaire Code</strong></td>
+        <td>GSA-YTH-....................</td>
+        <td>WJR-YTH-...................</td>
+        <td>MDR-YTH-................. </td>
+    </tr>
 
-        <tr>
-            <td><strong>Consent obtained?</strong></td>
-            <td>☐ Yes &nbsp;&nbsp; ☐ No</td>
-        </tr>
+    <tr>
+        <td><strong>Interview Completed?</strong></td>
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No &nbsp;&nbsp;
+            ☐ Partially
+        </td>
+        
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No &nbsp;&nbsp;
+            ☐ Partially
+        </td>
+        
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No &nbsp;&nbsp;
+            ☐ Partially
+        </td>
+    </tr>
+    
 
-        <tr>
-            <td><strong>Respondent completed questionnaire personally?</strong></td>
-            <td>☐ Yes &nbsp;&nbsp; ☐ Assisted</td>
-        </tr>
+    <tr>
+        <td><strong>Consent Obtained?</strong></td>
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No
+        </td>
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No
+        </td>
+        <td>
+            ☐ Yes &nbsp;&nbsp;
+            ☐ No
+        </td>
+    </tr>
 
-        <tr>
-            <td><strong>Any major difficulty during interview?</strong></td>
-            <td>☐ Yes &nbsp;&nbsp; ☐ No</td>
-        </tr>
-    </table>
+</table>
 
-    <h3>Enumerator Notes</h3>
-    <div class="open-box large"></div>
 
-    <table class="signature-table">
-        <tr>
-            <td>
-                <strong>Enumerator Name / Code</strong><br><br>
-                ______________________________
-            </td>
+<!-- =========================================================
+     ENUMERATOR NOTES
+========================================================= -->
 
-            <td>
-                <strong>Signature</strong><br><br>
-                ______________________________
-            </td>
+<h3>Enumerator Notes</h3>
 
-            <td>
-                <strong>Date</strong><br><br>
-                ______________________________
-            </td>
-        </tr>
-    </table>
+<div class="open-box large"></div>
+
+
+<!-- =========================================================
+     FINAL ENUMERATOR SIGN-OFF
+========================================================= -->
+
+<h3>Enumerator / Researcher Sign-Off</h3>
+
+<table class="signature-table">
+
+    <tr>
+        <td>
+            <strong>Enumerator Name / Code</strong>
+            <br><br>
+            ______________________________
+        </td>
+
+        <td>
+            <strong>Signature</strong>
+            <br><br>
+            ______________________________
+        </td>
+
+        <td>
+            <strong>Date</strong>
+            <br><br>
+            ______________________________
+        </td>
+    </tr>
+
+</table>
 
 
     <!-- DATA QUALITY NOTE -->
@@ -1604,9 +2859,9 @@ h2.section-title {
 
 
     <div class="footer">
-        Digital Financial Inclusion & Open Payments Survey |
-        Garissa County, Kenya |
-        Research Instrument
+      <strong> Digital Financial Inclusion & Open Payments Survey |
+        Northern Part(Garissa, Wajir and Mandera) counties, Kenya|
+        Research Instrument</strong>
     </div>
 
 </div>
