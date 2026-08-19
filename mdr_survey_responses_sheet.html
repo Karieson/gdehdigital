@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+/* =========================================================
+   CORPORATE VARIABLES
+========================================================= */
+
+:root {
+    --corporate-red: #C00000;
+    --corporate-red-dark: #9B0000;
+    --light-gray: #F7F7F7;
+    --header-gray: #EEEEEE;
+    --border-gray: #999999;
+}
+
+
+/* =========================================================
+   GLOBAL DOCUMENT
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: Poppins, Arial, sans-serif;
+    color: #111;
+    background: #fff;
+}
+
+.response-data-sheet {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   HEADER / TITLE INFORMATION
+========================================================= */
+
+.response-sheet-header {
+    width: 100%;
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   LOGO AREA
+--------------------------------------------------------- */
+
+.response-logo-area {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 2px 5px 2px 5px;
+
+    border-bottom: 2px solid var(--corporate-red);
+}
+
+.gdeh-logo {
+    display: block;
+
+    width: 105px;
+    height: auto;
+    max-height: 32px;
+
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE AREA
+   Title is deliberately BELOW the logo
+--------------------------------------------------------- */
+
+.response-title-area {
+    width: 100%;
+
+    margin: 0;
+    padding: 4px 8px 5px 8px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--corporate-red);
+}
+
+.response-sheet-title {
+    margin: 0;
+
+    padding: 0;
+
+    font-size: 16px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: var(--corporate-red);
+}
+
+
+/* =========================================================
+   STUDY INFORMATION
+========================================================= */
+
+.response-study-information {
+    width: 100%;
+
+    margin: 6px 0 7px 0;
+
+    padding: 5px 7px;
+
+    background: var(--light-gray);
+
+    border: 1px solid #CCCCCC;
+    border-left: 3px solid var(--corporate-red);
+}
+
+
+/* Introductory instructions */
+
+.response-sheet-intro {
+    margin: 0 0 5px 0;
+
+    padding: 0;
+
+    font-size: 8px;
+    line-height: 1.3;
+
+    color: #222;
+}
+
+
+/* Study metadata */
+
+.response-sheet-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin: 0;
+
+    padding: 4px 0 0 0;
+
+    font-size: 7.5px;
+
+    border-top: 1px solid #CCCCCC;
+}
+
+.response-sheet-meta span {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   MAIN RESPONSE SHEET SEPARATOR
+========================================================= */
+
+.response-matrix-wrapper {
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding-top: 4px;
+
+    border-top: 3px solid var(--corporate-red);
+}
+
+
+/* =========================================================
+   MAIN RESPONSE MATRIX
+========================================================= */
+
+.response-matrix {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    border-spacing: 0;
+}
+
+
+/* ---------------------------------------------------------
+   TABLE CELLS
+--------------------------------------------------------- */
+
+.response-matrix th,
+.response-matrix td {
+    border: 1px solid var(--border-gray);
+
+    padding: 3px 2px;
+
+    font-size: 6.3px;
+
+    line-height: 1.15;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+========================================================= */
+
+
+/* CODE COLUMN */
+
+.response-matrix th:first-child,
+.response-matrix td:first-child {
+    width: 6%;
+
+    text-align: center;
+
+    background: var(--header-gray);
+
+    font-weight: 700;
+}
+
+
+/* QUESTION COLUMN */
+
+.response-matrix th:nth-child(2),
+.response-matrix td:nth-child(2) {
+    width: 36%;
+
+    text-align: left;
+}
+
+
+/* RESPONDENT COLUMNS */
+
+.response-matrix th:nth-child(n+3),
+.response-matrix td:nth-child(n+3) {
+    width: 4.46%;
+
+    text-align: center;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.response-matrix thead {
+    display: table-header-group;
+}
+
+.response-matrix thead th {
+    background: var(--header-gray);
+
+    color: #111;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    font-size: 6.5px;
+
+    padding: 4px 2px;
+
+    border-top: 1px solid #888;
+
+    border-bottom: 2px solid var(--corporate-red);
+}
+
+
+/* =========================================================
+   SECTION DIVIDERS
+========================================================= */
+
+.response-matrix .matrix-section td {
+    background: var(--corporate-red) !important;
+
+    color: #fff !important;
+
+    font-weight: 700;
+
+    text-align: left;
+
+    font-size: 7px;
+
+    padding: 4px 5px;
+
+    border-top: 2px solid var(--corporate-red);
+
+    border-bottom: 1px solid var(--corporate-red);
+}
+
+
+/* =========================================================
+   RESPONSE CELLS
+========================================================= */
+
+.response-matrix tbody tr:not(.matrix-section)
+td:nth-child(n+3) {
+    height: 20px;
+
+    text-align: center;
+}
+
+
+/* Question cells */
+
+.response-matrix tbody tr:not(.matrix-section)
+td:nth-child(2) {
+    background: #fff;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   CODING GUIDE
+========================================================= */
+
+.response-coding-guide {
+    width: 100%;
+
+    margin-top: 7px;
+
+    padding: 5px;
+
+    border: 1px solid #BBBBBB;
+
+    background: var(--light-gray);
+
+    font-size: 7px;
+
+    line-height: 1.4;
+}
+
+.response-coding-guide span {
+    display: inline-block;
+
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   A4 LANDSCAPE PRINT / PDF
+========================================================= */
+
+@media print {
+
+    @page {
+        size: A4 landscape;
+
+        margin: 7mm 6mm 7mm 6mm;
+    }
+
+
+    html,
+    body {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+
+    body {
+        background: #fff;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+
+    .response-data-sheet {
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .response-sheet-header {
+        width: 100%;
+
+        margin-bottom: 6px;
+
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+
+    .response-logo-area {
+        padding: 1px 4px 2px 4px;
+
+        border-bottom: 2px solid var(--corporate-red);
+    }
+
+
+    .gdeh-logo {
+        width: 105px;
+
+        max-height: 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       TITLE
+    ----------------------------------------------------- */
+
+    .response-title-area {
+        padding: 3px 5px 4px 5px;
+
+        border-bottom: 1px solid var(--corporate-red);
+    }
+
+
+    .response-sheet-title {
+        font-size: 15px;
+
+        line-height: 1.15;
+
+        color: var(--corporate-red);
+    }
+
+
+    /* -----------------------------------------------------
+       STUDY INFORMATION
+    ----------------------------------------------------- */
+
+    .response-study-information {
+        margin: 5px 0 6px 0;
+
+        padding: 4px 6px;
+
+        border-left: 3px solid var(--corporate-red);
+    }
+
+
+    .response-sheet-intro {
+        font-size: 7px;
+
+        line-height: 1.25;
+
+        margin-bottom: 4px;
+    }
+
+
+    .response-sheet-meta {
+        font-size: 6.8px;
+
+        padding-top: 3px;
+    }
+
+
+    /* -----------------------------------------------------
+       MAIN TABLE
+    ----------------------------------------------------- */
+
+    .response-matrix-wrapper {
+        margin-top: 6px;
+
+        padding-top: 3px;
+
+        border-top: 3px solid var(--corporate-red);
+    }
+
+
+    .response-matrix {
+        width: 100%;
+
+        table-layout: fixed;
+
+        border-collapse: collapse;
+    }
+
+
+    /* Repeat header on every printed page */
+
+    .response-matrix thead {
+        display: table-header-group;
+    }
+
+
+    /* Prevent individual rows from splitting */
+
+    .response-matrix tr {
+        page-break-inside: avoid;
+
+        break-inside: avoid;
+    }
+
+
+    /* -----------------------------------------------------
+       PRINT TABLE CELLS
+    ----------------------------------------------------- */
+
+    .response-matrix th,
+    .response-matrix td {
+        font-size: 6px;
+
+        padding: 2.5px 1.5px;
+
+        line-height: 1.1;
+    }
+
+
+    .response-matrix th:first-child,
+    .response-matrix td:first-child {
+        width: 6%;
+    }
+
+
+    .response-matrix th:nth-child(2),
+    .response-matrix td:nth-child(2) {
+        width: 36%;
+    }
+
+
+    .response-matrix th:nth-child(n+3),
+    .response-matrix td:nth-child(n+3) {
+        width: 4.46%;
+    }
+
+
+    /* -----------------------------------------------------
+       PRINT TABLE HEADER
+    ----------------------------------------------------- */
+
+    .response-matrix thead th {
+        font-size: 6px;
+
+        padding: 3px 1px;
+
+        border-bottom: 2px solid var(--corporate-red);
+    }
+
+
+    /* -----------------------------------------------------
+       SECTION ROWS
+    ----------------------------------------------------- */
+
+    .response-matrix .matrix-section td {
+        font-size: 6.8px;
+
+        padding: 3px 4px;
+
+        background: var(--corporate-red) !important;
+
+        color: #fff !important;
+    }
+
+
+    /* -----------------------------------------------------
+       EMPTY RESPONSE CELLS
+    ----------------------------------------------------- */
+
+    .response-matrix tbody tr:not(.matrix-section)
+    td:nth-child(n+3) {
+        height: 18px;
+    }
+
+
+    /* -----------------------------------------------------
+       CODING GUIDE
+    ----------------------------------------------------- */
+
+    .response-coding-guide {
+        font-size: 6.5px;
+
+        line-height: 1.3;
+
+        margin-top: 6px;
+
+        padding: 4px;
+
+        page-break-inside: avoid;
+
+        break-inside: avoid;
+    }
+
+}
+
+
+/* =========================================================
+   SCREEN VIEW
+========================================================= */
+
+@media screen {
+
+    .response-data-sheet {
+        padding: 8px;
+    }
+
+    .response-matrix-wrapper {
+        overflow-x: auto;
+    }
+
+}
+
+
+/* =========================================================
+   OPTIONAL PDF/PRINT COLOR SUPPORT
+========================================================= */
+
+@media print {
+
+    .response-matrix .matrix-section td {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .response-title-area,
+    .response-logo-area,
+    .response-study-information,
+    .response-matrix-wrapper {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="response-data-sheet">
+
+
+    <!-- =====================================================
+         SEPARATE HEADER / TITLE INFORMATION
+    ====================================================== -->
+
+    <div class="response-sheet-header">
+
+
+        <!-- LOGO -->
+        <div class="response-logo-area">
+
+            <img
+                src="gdeh_logo.png"
+                alt="GDEH Logo"
+                class="gdeh-logo"
+            >
+
+        </div>
+
+
+        <!-- TITLE BELOW LOGO -->
+        <div class="response-title-area">
+
+            <h1 class="response-sheet-title">
+                Consolidated Survey Responses Data Sheet
+            </h1>
+
+        </div>
+
+
+        <!-- =================================================
+             STUDY INFORMATION — SEPARATE FROM MAIN SHEET
+        ================================================== -->
+
+        <div class="response-study-information">
+
+
+            <p class="response-sheet-intro">
+
+                <strong>Instructions:</strong>
+
+                This sheet is used to manually record the responses from
+                completed offline questionnaires. Each column represents one
+                respondent. Enter the respondent's actual answer, selected
+                option, rating, or a short coded response in the appropriate
+                cell.
+
+            </p>
+
+
+            <div class="response-sheet-meta">
+
+                <span>
+                    <strong>Study:</strong>
+                    Digital Financial Inclusion &amp; Open Payments
+                </span>
+
+                <span>
+                    <strong>Location:</strong>
+                    Mandera County, Kenya
+                </span>
+
+                <span>
+    <strong>Respondents:</strong>
+    MDR-001 – MDR-013 (Youth, Adults &amp; Older Persons 40+)
+</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN RESPONSE SHEET
+    ====================================================== -->
+
+    <div class="response-matrix-wrapper">
+
+
+        <table class="response-matrix">
+
+            <thead>
+
+                <tr>
+
+                    <th class="matrix-code">
+                        Code
+                    </th>
+
+                    <th class="matrix-question">
+                        Question / Statement
+                    </th>
+
+                    <th>001</th>
+                    <th>002</th>
+                    <th>003</th>
+                    <th>004</th>
+                    <th>005</th>
+                    <th>006</th>
+                    <th>007</th>
+                    <th>008</th>
+                    <th>009</th>
+                    <th>010</th>
+                    <th>011</th>
+                    <th>012</th>
+                    <th>013</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+            <!-- =================================================
+                 SECTION A
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION A — RESPONDENT PROFILE
+                </td>
+            </tr>
+
+            <tr>
+                <td>A1</td>
+                <td>Age group</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A2</td>
+                <td>Gender</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A3</td>
+                <td>Highest education level</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A4</td>
+                <td>Current employment status</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A5</td>
+                <td>Main occupation / economic activity</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A6</td>
+                <td>Area of residence</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+                <td>A7</td>
+                <td>Length of residence in the area</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION B
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION B — DIGITAL ACCESS &amp; CONNECTIVITY
+                </td>
+            </tr>
+
+            <tr><td>B1</td><td>Own or regularly use a mobile phone?</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B2</td><td>Main type of phone used</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B3</td><td>Regularly access the internet?</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B4</td><td>Main method of internet access</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B5</td><td>Reliability of internet connection</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B6</td><td>Network problems preventing digital transactions</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B7</td><td>Internet/data cost as a barrier</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>B8</td><td>Biggest digital access challenge</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION C
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION C — MOBILE MONEY &amp; DIGITAL PAYMENTS
+                </td>
+            </tr>
+
+            <tr><td>C1</td><td>Use mobile money services?</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C2</td><td>Mobile / digital payment services used</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C3</td><td>Frequency of digital payments</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C4</td><td>Main purpose of digital payments</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C5</td><td>Convenience compared with cash</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C6</td><td>Frequency of using cash instead</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>C7</td><td>Reason for preferring cash</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION D
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION D — TRANSACTION COSTS &amp; ACCESSIBILITY
+                </td>
+            </tr>
+
+            <tr><td>D1</td><td>Digital transaction charges are affordable</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>D2</td><td>Fees prevented a digital payment</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>D3</td><td>Abandoned transaction because of network failure</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>D4</td><td>Ease of accessing mobile money agent</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>D5</td><td>Distance travelled to financial services</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION E
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION E — DIGITAL &amp; FINANCIAL LITERACY
+                </td>
+            </tr>
+
+            <tr><td>E1</td><td>Understand how to use mobile money services</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>E2</td><td>Understand charges associated with digital transactions</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>E3</td><td>Can identify suspicious digital financial messages</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>E4</td><td>Know how to protect PIN and financial information</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>E5</td><td>Confident using digital financial services independently</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>E6</td><td>Would benefit from additional literacy training</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION F
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION F — TRUST, PRIVACY &amp; SECURITY
+                </td>
+            </tr>
+
+            <tr><td>F1</td><td>Trust digital payment services</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>F2</td><td>Feel safe making digital financial transactions</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>F3</td><td>Concerned about privacy of financial information</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>F4</td><td>Understand use of personal information</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>F5</td><td>Know what to do when a transaction goes wrong</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION G
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION G — FRAUD, SCAMS &amp; NEGATIVE EXPERIENCES
+                </td>
+            </tr>
+
+            <tr><td>G1</td><td>Experienced or nearly experienced digital fraud</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>G2</td><td>Received suspicious financial message or call</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>G3</td><td>Lost money through digital transaction</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>G4</td><td>Main problem experienced</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>G5</td><td>Obtained assistance after problem</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>G6</td><td>Brief description of negative experience</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION H
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION H — POSITIVE EXPERIENCES &amp; BENEFITS
+                </td>
+            </tr>
+
+            <tr><td>H1</td><td>Made it easier to send money</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>H2</td><td>Made it easier to receive money</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td>
+            </tr>
+
+            <tr><td>H3</td><td>Reduced need to carry cash</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>H4</td><td>Improved access to financial services</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>H5</td><td>Supported business/economic activities</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>H6</td><td>Saved time when making payments</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION I
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION I — CHALLENGES &amp; BARRIERS
+                </td>
+            </tr>
+
+            <tr><td>I1</td><td>High transaction charges</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I2</td><td>Poor network coverage</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I3</td><td>Expensive internet/data</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I4</td><td>Lack of smartphone</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I5</td><td>Lack of digital skills</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I6</td><td>Fear of fraud</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I7</td><td>Privacy concerns</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I8</td><td>Lack of trust</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I9</td><td>Limited agent availability</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I10</td><td>Power/electricity challenges</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I11</td><td>Language/communication barriers</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>I12</td><td>Other challenge</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION J
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION J — GENDER &amp; AGE-RELATED BARRIERS
+                </td>
+            </tr>
+
+            <tr><td>J1</td><td>Women and men have equal access</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>J2</td><td>Youth have better access than older people</td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>J3</td><td>Women face specific barriers</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>J4</td><td>Literacy opportunities equally available</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>J5</td><td>Older adults need additional support</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>J6</td><td>Gender/age-related barriers observed</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION K
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION K — YOUTH EMPLOYMENT &amp; ENTREPRENEURSHIP
+                </td>
+            </tr>
+
+            <tr><td>K1</td><td>Digital payments support youth businesses</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>K2</td><td>Digital financial services create youth opportunities</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>K3</td><td>Digital payments help receive customer income</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>K4</td><td>Digital services support online employment/freelancing</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>K5</td><td>Limited internet prevents digital opportunities</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION L
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION L — CROSS-PLATFORM &amp; INTEROPERABLE PAYMENTS
+                </td>
+            </tr>
+
+            <tr><td>L1</td><td>Wanted to send money across different platforms</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>L2</td><td>Difficulties sending between providers</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>L3</td><td>Prefer payments regardless of provider</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>L4</td><td>Greater interoperability would be more useful</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION M
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION M — AWARENESS OF OPEN PAYMENTS
+                </td>
+            </tr>
+
+            <tr><td>M1</td><td>Previously heard term "Open Payments"</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>M2</td><td>Understanding of Open Payments</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>M3</td><td>Would like to learn more</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION N
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION N — POTENTIAL BENEFITS OF OPEN PAYMENTS
+                </td>
+            </tr>
+
+            <tr><td>N1</td><td>Could make sending money easier</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N2</td><td>Could reduce barriers between providers</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N3</td><td>Could reduce transaction costs</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N4</td><td>Could benefit small businesses</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N5</td><td>Could increase financial inclusion</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N6</td><td>Could create youth entrepreneurship opportunities</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>N7</td><td>Could increase competition</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION O
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION O — CONCERNS ABOUT OPEN PAYMENTS
+                </td>
+            </tr>
+
+            <tr><td>O1</td><td>Concern about fraud</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>O2</td><td>Concern about financial-data privacy</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>O3</td><td>Concern about unauthorized account access</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>O4</td><td>Need clear information before adoption</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>O5</td><td>Need strong consumer protection</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>O6</td><td>Limited digital literacy could increase risks</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION P
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION P — IMPROVING FINANCIAL INCLUSION
+                </td>
+            </tr>
+
+            <tr><td>P1</td><td>Improve mobile/network coverage</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P2</td><td>Reduce digital transaction costs</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P3</td><td>Expand digital literacy training</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P4</td><td>Increase fraud awareness and protection</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P5</td><td>Improve payment interoperability</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P6</td><td>Increase smartphone/device access</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P7</td><td>Improve electricity access</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P8</td><td>Increase financial education</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P9</td><td>Strengthen privacy/data protection</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>P10</td><td>Other intervention</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION Q
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION Q — POLICY &amp; INSTITUTIONAL RECOMMENDATIONS
+                </td>
+            </tr>
+
+            <tr><td>Q1</td><td>What should government do?</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>Q2</td><td>What should financial service providers do?</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>Q3</td><td>What should telecommunications companies do?</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>Q4</td><td>What role should community organizations play?</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>Q5</td><td>What policy changes are needed?</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+
+            <!-- =================================================
+                 SECTION R
+            ================================================== -->
+
+            <tr class="matrix-section">
+                <td colspan="15">
+                    SECTION R — PERSONAL EXPERIENCES &amp; FUTURE EXPECTATIONS
+                </td>
+            </tr>
+
+            <tr><td>R1</td><td>Most positive digital-financial experience</td>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>R2</td><td>Biggest problem when using digital payments</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>R3</td><td>What would increase digital-payment use?</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>R4</td><td>Changes desired in next five years</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr><td>R5</td><td>Anything else about digital financial inclusion</td>
+                <td></td><td></td><td></td><td></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+    <!-- =====================================================
+         CODING GUIDE
+    ====================================================== -->
+
+    <div class="response-coding-guide">
+
+        <strong>Suggested response codes:</strong>
+
+        <span>SA = Strongly Agree</span>
+        <span>A = Agree</span>
+        <span>N = Neutral</span>
+        <span>D = Disagree</span>
+        <span>SD = Strongly Disagree</span>
+        <span>Y = Yes</span>
+        <span>N = No</span>
+
+        <br>
+
+        <small>
+            For open-ended questions, record a concise faithful summary of
+            the respondent's handwritten answer rather than changing its meaning.
+        </small>
+
+    </div>
+
+</div>
+<script>
+window.addEventListener("load", function () {
+    window.print();
+});
+</script>
+
+</body>
+</html>
