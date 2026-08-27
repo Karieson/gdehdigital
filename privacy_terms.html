@@ -1,226 +1,1730 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy & Terms and Conditions</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<style>
+<meta name="description"
+content="Privacy Policy and Terms and Conditions of Garissa Agro-Digital Empowerment Hub CBO.">
+
+<meta name="theme-color"
+content="#C00000">
+
+<title>Privacy Policy & Terms and Conditions</title><style>
+
+/* =========================================================
+   GADEH CBO
+   PRIVACY POLICY & TERMS AND CONDITIONS
+   FORMAL CORPORATE / CONSTITUTION STYLE
+   A4 PORTRAIT PRINT DESIGN
+========================================================= */
 
 :root{
+
+    /* Corporate Identity */
     --corporate-red:#C00000;
+    --corporate-red-dark:#8B0000;
+
+    /* Agriculture */
+    --agriculture-green:#2E7D32;
+    --agriculture-green-dark:#1B5E20;
+    --agriculture-light:#EEF6EE;
+
+    /* Neutral */
+    --black:#222222;
+    --dark:#333333;
+    --grey:#666666;
+    --light-grey:#F5F5F5;
+    --border:#D6D6D6;
+    --white:#FFFFFF;
+
+    /* A4 */
+    --page-width:210mm;
+    --page-height:297mm;
+
+    --page-margin-top:14mm;
+    --page-margin-right:15mm;
+    --page-margin-bottom:12mm;
+    --page-margin-left:15mm;
 }
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    font-size:10px;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#fff;
-    color:#222;
-    line-height:1.8;
-    font-size:12px;
+
+    background:#EAEAEA;
+
+    color:var(--black);
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    font-size:1rem;
+
+    line-height:1.65;
+
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
+
+/* =========================================================
+   DOCUMENT
+========================================================= */
+
+.document{
+
+    width:var(--page-width);
+
+    min-height:var(--page-height);
+
+    margin:15px auto;
+
+    padding:
+        var(--page-margin-top)
+        var(--page-margin-right)
+        var(--page-margin-bottom)
+        var(--page-margin-left);
+
+    background:var(--white);
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,.10);
+
+    position:relative;
 }
 
-/* Header */
 
-header{
+/* =========================================================
+   HEADER
+========================================================= */
+
+.document-header{
+
     text-align:center;
-    border-bottom:3px solid var(--corporate-red);
-    padding-bottom:15px;
-    margin-bottom:25px;
+
+    padding-bottom:1.2rem;
+
+    margin-bottom:2rem;
+
+    border-bottom:
+        .3rem solid var(--corporate-red);
+
+    position:relative;
 }
 
-header img{
-    width:55px;
-    height:auto;
+
+/* Agricultural green accent */
+
+.document-header::after{
+
+    content:"";
+
     display:block;
-    margin:auto;
+
+    width:8rem;
+
+    height:.25rem;
+
+    background:var(--agriculture-green);
+
+    margin:.55rem auto 0;
 }
 
-/* Titles */
 
-h1{
-    color:var(--corporate-red);
+/* Logo */
+
+.document-logo{
+
+    width:6.2rem;
+
+    height:6.2rem;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto;
+
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.document-title{
+
     text-align:center;
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:6px;
-}
 
-h2{
     color:var(--corporate-red);
-    font-size:14px;
+
+    font-size:1.65rem;
+
+    line-height:1.3;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.03em;
+
+    margin-bottom:.45rem;
+}
+
+.document-subtitle{
+
+    text-align:center;
+
+    color:var(--grey);
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    letter-spacing:.02em;
+}
+
+
+/* =========================================================
+   DOCUMENT INFORMATION
+========================================================= */
+
+.document-info{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border:
+        .1rem solid var(--border);
+
+    margin-bottom:2rem;
+
+    background:var(--light-grey);
+}
+
+.info-item{
+
+    padding:.7rem;
+
+    text-align:center;
+
+    border-right:
+        .1rem solid var(--border);
+}
+
+.info-item:last-child{
+
+    border-right:none;
+}
+
+.info-label{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.15rem;
+}
+
+.info-value{
+
+    color:var(--black);
+
+    font-size:.85rem;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   TABLE OF CONTENTS
+========================================================= */
+
+.contents{
+
+    margin-bottom:2.5rem;
+
+    padding:1.2rem 1.4rem;
+
+    border:
+        .1rem solid var(--border);
+
+    background:#FAFAFA;
+}
+
+.contents-title{
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-size:1.2rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:1rem;
+
+    padding-bottom:.5rem;
+
+    border-bottom:
+        .15rem solid var(--corporate-red);
+}
+
+.contents-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+    padding:.4rem 0;
+
+    border-bottom:
+        .1rem dotted #CCCCCC;
+
+    font-size:.9rem;
+}
+
+.contents-row:last-child{
+
+    border-bottom:none;
+}
+
+.contents-row span:first-child{
+
+    font-weight:600;
+}
+
+.contents-row span:last-child{
+
     font-weight:700;
-    border-left:5px solid var(--corporate-red);
-    padding-left:12px;
-    margin:25px 0 12px;
+
+    color:var(--corporate-red);
 }
 
-.section{
-    margin-bottom:25px;
+
+/* =========================================================
+   ARTICLE SECTIONS
+========================================================= */
+
+.article{
+
+    margin-bottom:2.2rem;
 }
 
-p,
-li{
-    color:#222;
-    font-size:12px;
-    margin-bottom:10px;
+.article-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    color:var(--corporate-red);
+
+    font-size:1.3rem;
+
+    line-height:1.35;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin:
+        2.5rem
+        0
+        1.1rem;
+
+    padding:
+        .55rem
+        .8rem;
+
+    background:
+        linear-gradient(
+            to right,
+            var(--agriculture-light),
+            transparent
+        );
+
+    border-left:
+        .5rem solid var(--corporate-red);
+
+    border-bottom:
+        .1rem solid var(--border);
 }
 
-ul{
-    padding-left:20px;
+.article-number{
+
+    color:var(--white);
+
+    background:var(--corporate-red);
+
+    min-width:2.1rem;
+
+    height:2.1rem;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.85rem;
+
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   SUBSECTION
+========================================================= */
+
+.subsection{
+
+    margin-bottom:1.25rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.subsection-title{
+
+    color:var(--black);
+
+    font-size:1.05rem;
+
+    font-weight:800;
+
+    margin-bottom:.35rem;
+
+    line-height:1.4;
+}
+
+.subsection-title .number{
+
+    color:var(--corporate-red);
+}
+
+p{
+
+    font-size:.92rem;
+
+    margin-bottom:.7rem;
+
+    text-align:justify;
+
+    color:var(--dark);
 }
 
 strong{
-    color:var(--corporate-red);
+
+    font-weight:800;
+
+    color:var(--black);
 }
 
-/* Footer */
 
-.footer{
-    margin-top:40px;
-    border-top:3px solid var(--corporate-red);
+/* =========================================================
+   LISTS
+========================================================= */
+
+ul,
+ol{
+
+    margin:
+        .35rem
+        0
+        .75rem
+        1.8rem;
+
+    padding-left:1rem;
+}
+
+li{
+
+    font-size:.9rem;
+
+    margin-bottom:.35rem;
+
+    padding-left:.15rem;
+}
+
+li::marker{
+
+    color:var(--agriculture-green);
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   IMPORTANT NOTE / POLICY BOX
+========================================================= */
+
+.policy-box{
+
+    margin:
+        1rem
+        0
+        1.2rem;
+
+    padding:
+        .9rem
+        1.1rem;
+
+    background:var(--agriculture-light);
+
+    border-left:
+        .45rem solid var(--agriculture-green);
+
+    border-top:
+        .1rem solid #D5E5D5;
+
+    border-right:
+        .1rem solid #D5E5D5;
+
+    border-bottom:
+        .1rem solid #D5E5D5;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.policy-box strong{
+
+    color:var(--agriculture-green-dark);
+}
+
+.warning-box{
+
+    margin:
+        1rem
+        0;
+
+    padding:
+        .9rem
+        1.1rem;
+
+    background:#FFF7F7;
+
+    border-left:
+        .45rem solid var(--corporate-red);
+
+    border-top:
+        .1rem solid #E8CCCC;
+
+    border-right:
+        .1rem solid #E8CCCC;
+
+    border-bottom:
+        .1rem solid #E8CCCC;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+
+/* =========================================================
+   DEFINITIONS TABLE
+========================================================= */
+
+.definition-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:
+        .8rem
+        0
+        1.2rem;
+
+    font-size:.85rem;
+}
+
+.definition-table th{
+
+    background:var(--corporate-red);
+
+    color:var(--white);
+
+    text-align:left;
+
+    padding:.55rem;
+
+    font-weight:800;
+}
+
+.definition-table td{
+
+    border:
+        .1rem solid var(--border);
+
+    padding:.55rem;
+
+    vertical-align:top;
+}
+
+.definition-table td:first-child{
+
+    width:25%;
+
+    font-weight:800;
+
+    color:var(--agriculture-green-dark);
+}
+
+
+/* =========================================================
+   CONTACT BOX
+========================================================= */
+
+.contact-box{
+
+    margin-top:1.5rem;
+
+    padding:1rem;
+
+    border:
+        .15rem solid var(--corporate-red);
+
+    background:#FAFAFA;
+
     text-align:center;
-    padding:20px;
-    background:#fff;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
 }
 
-.footer p{
-    color:#222;
-    font-size:12px;
+.contact-box-title{
+
+    color:var(--corporate-red);
+
+    font-size:1.05rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.5rem;
+}
+
+.contact-box p{
+
+    text-align:center;
+
+    margin-bottom:.3rem;
+
+    font-size:.88rem;
+}
+
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.declaration{
+
+    margin-top:2rem;
+
+    padding:1.2rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FAFAFA,
+            var(--agriculture-light)
+        );
+
+    border:
+        .15rem solid var(--agriculture-green);
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.declaration-title{
+
+    text-align:center;
+
+    color:var(--agriculture-green-dark);
+
+    font-size:1.1rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.7rem;
+}
+
+.declaration p{
+
+    text-align:center;
+
     font-weight:600;
-    margin:5px 0;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.document-footer{
+
+    margin-top:2.5rem;
+
+    padding-top:.8rem;
+
+    border-top:
+        .3rem solid var(--corporate-red);
+
+    text-align:center;
+
+    break-inside:avoid;
+}
+
+.footer-green-line{
+
+    width:6rem;
+
+    height:.2rem;
+
+    background:var(--agriculture-green);
+
+    margin:
+        -.45rem
+        auto
+        .7rem;
+}
+
+.document-footer p{
+
+    text-align:center;
+
+    margin:.15rem 0;
+
+    font-size:.75rem;
+
+    color:var(--grey);
 }
 
 .footer-links{
-    margin:12px 0;
+
+    margin:.55rem 0;
 }
 
 .footer-links a{
-    color:#222;
+
+    color:var(--corporate-red);
+
     text-decoration:none;
-    margin:0 8px;
-    font-weight:600;
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    margin:
+        0
+        .5rem;
 }
 
-.footer-links a:hover{
+
+/* =========================================================
+   PAGE NUMBER
+========================================================= */
+
+.page-number{
+
+    text-align:right;
+
+    font-size:.7rem;
+
+    color:#777;
+
+    margin-top:.6rem;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a{
+
     color:var(--corporate-red);
 }
 
-</style>
-</head>
 
-<body>
+/* =========================================================
+   RESPONSIVE SCREEN
+========================================================= */
 
-<div class="container">
+@media(max-width:900px){
 
-<header>
-<img src="gdeh_logo.png" alt="GDEH Logo">
-</header>
+    body{
 
-<h1>Garissa Digital Empowerment Hub CBO</h1>
-<h1>Privacy Policy & Terms and Conditions</h1>
+        background:#fff;
+    }
 
-<div class="section">
+    .document{
 
-<h2 id="privacy">Privacy Policy</h2>
+        width:100%;
 
-<p>We value your privacy and are committed to protecting all personal information shared with Garissa Digital Empowerment Hub CBO through our website, registration forms, training platforms, and communication channels.</p>
+        min-height:auto;
 
-<p>Personal information collected may include your full name, email address, phone number, identification details, educational background, course registration details, and other information necessary for participation in our programmes.</p>
+        margin:0;
 
-<p>Information submitted to the Hub is used strictly for educational administration, student management, reporting, communication, certification, monitoring, and programme improvement purposes.</p>
+        padding:
+            1.5rem
+            1.5rem
+            1.2rem;
 
-<p>We implement reasonable technical and administrative safeguards to protect personal data from unauthorized access, disclosure, alteration, loss, or misuse.</p>
+        box-shadow:none;
+    }
 
-<p>The organization does not sell, rent, or trade personal information to third parties. Limited data sharing may occur only with authorized programme partners, sponsors, trainers, government agencies, or legal authorities where required for operational or compliance purposes.</p>
+}
 
-<p>Users have the right to request correction, update, or deletion of their personal data, subject to operational, legal, and reporting obligations.</p>
 
-<p>We may use aggregated and non-identifiable data for reporting, research, statistical analysis, programme evaluation, and donor accountability purposes.</p>
+@media(max-width:500px){
 
-<p>Our website may contain links to external websites or third-party services. Garissa Digital Empowerment Hub CBO is not responsible for the privacy practices or content of external platforms.</p>
+    html{
 
-<p>Cookies or basic browser technologies may be used to improve user experience, website performance, and analytics. Users may disable cookies through their browser settings if preferred.</p>
+        font-size:9px;
+    }
 
-<p>We reserve the right to update this Privacy Policy periodically. Continued use of our services after changes indicates acceptance of the revised policy.</p>
+    .document{
+
+        padding:
+            1.2rem
+            1rem
+            1rem;
+    }
+
+    .document-logo{
+
+        width:5.5rem;
+
+        height:5.5rem;
+    }
+
+    .document-title{
+
+        font-size:1.45rem;
+    }
+
+    .document-info{
+
+        grid-template-columns:1fr;
+    }
+
+    .info-item{
+
+        border-right:none;
+
+        border-bottom:
+            .1rem solid var(--border);
+    }
+
+    .info-item:last-child{
+
+        border-bottom:none;
+    }
+
+    .contents-row{
+
+        font-size:.82rem;
+    }
+
+    .article-heading{
+
+        font-size:1.15rem;
+    }
+
+    p{
+
+        font-size:.9rem;
+
+        text-align:left;
+    }
+
+    li{
+
+        font-size:.88rem;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT / A4 PORTRAIT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+}
+
+
+@media print{
+
+    html{
+
+        font-size:10px;
+    }
+
+    body{
+
+        background:#fff;
+
+        margin:0;
+
+        padding:0;
+    }
+
+    .document{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:
+            14mm
+            15mm
+            12mm;
+
+        box-shadow:none;
+
+        background:#fff;
+    }
+
+    .document-header{
+
+        break-after:auto;
+
+        page-break-after:auto;
+    }
+
+    .article{
+
+        break-inside:auto;
+
+        page-break-inside:auto;
+    }
+
+    .subsection{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+    .policy-box,
+    .warning-box,
+    .contact-box,
+    .declaration{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+    .contents{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+    h1,
+    h2,
+    h3{
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+    }
+
+    p,
+    li{
+
+        orphans:3;
+
+        widows:3;
+    }
+
+    a{
+
+        color:inherit;
+
+        text-decoration:none;
+    }
+
+}
+
+
+/* =========================================================
+   UTILITY PAGE BREAK
+========================================================= */
+
+.page-break{
+
+    break-before:page;
+
+    page-break-before:always;
+}
+
+
+/* =========================================================
+   AVOID UNNECESSARY BOTTOM SPACE
+========================================================= */
+
+.last-section{
+
+    margin-bottom:0;
+}
+
+</style></head><body><div class="document"><!-- =====================================================
+     HEADER
+===================================================== --><header class="document-header"><img
+    src="gadeh_logo.png"
+    alt="Organization Logo"
+    class="document-logo"
+>
+
+</header><!-- =====================================================
+     DOCUMENT TITLE
+===================================================== --><h1 class="document-title">Privacy Policy &amp; Terms and Conditions
+
+</h1><p class="document-subtitle">Official Organizational Policy Document
+
+</p><!-- =====================================================
+     DOCUMENT INFORMATION
+===================================================== --><div class="document-info"><div class="info-item">
+
+    <span class="info-label">
+        Document
+    </span>
+
+    <span class="info-value">
+        Privacy &amp; Terms
+    </span>
 
 </div>
 
-<div class="section">
 
-<h2 id="terms">Terms &amp; Conditions</h2>
+<div class="info-item">
 
-<p><strong>1. Acceptable Use</strong><br>
-Users agree to use the website, training resources and digital services only for lawful, educational and authorized purposes. Any attempt to interfere with system operations, misuse resources or gain unauthorized access is prohibited.</p>
+    <span class="info-label">
+        Effective Year
+    </span>
 
-<p><strong>2. Registration and Admission</strong><br>
-Programme registration does not guarantee admission or participation. Acceptance depends on eligibility, available space, organizational priorities and compliance with programme requirements.</p>
-
-<p><strong>3. Training Participation</strong><br>
-Participants are expected to attend sessions regularly, complete assignments responsibly and engage respectfully with trainers, staff and fellow learners.</p>
-
-<p><strong>4. Code of Conduct</strong><br>
-Harassment, abusive language, discrimination, disruptive behaviour, fraud, impersonation or misuse of organizational resources may result in suspension or permanent removal from programmes.</p>
-
-<p><strong>5. Accuracy of Information</strong><br>
-Users are responsible for ensuring that all submitted information is accurate, complete and truthful. False declarations may lead to cancellation of registration or certification.</p>
-
-<p><strong>6. Intellectual Property</strong><br>
-All learning materials, documents, software, logos, branding elements, videos, digital resources and website content remain the property of Garissa Digital Empowerment Hub CBO unless otherwise stated.</p>
-
-<p><strong>7. Certificates and Completion</strong><br>
-Certificates may only be issued to participants who successfully meet attendance, participation, assessment and programme completion requirements.</p>
-
-<p><strong>8. Limitation of Liability</strong><br>
-Garissa Digital Empowerment Hub CBO shall not be liable for any direct, indirect, incidental or consequential damages arising from website use, service interruption, programme participation or reliance on provided information.</p>
-
-<p><strong>9. Programme Changes</strong><br>
-Training schedules, instructors, learning methods, course content, venues and programme structures may be modified, postponed or cancelled without prior notice when necessary.</p>
-
-<p><strong>10. User Accounts</strong><br>
-Users are responsible for maintaining confidentiality of account credentials and activities conducted under their accounts.</p>
-
-<p><strong>11. Termination of Access</strong><br>
-The organization reserves the right to suspend, restrict or terminate access to services or programmes for users who violate these Terms or engage in misconduct.</p>
-
-<p><strong>12. External Services</strong><br>
-Some services may rely on third-party platforms or providers. The organization is not responsible for interruptions, failures or limitations caused by third-party systems.</p>
-
-<p><strong>13. Governing Principles</strong><br>
-These Terms are governed by the policies, operational guidelines and applicable laws of the Republic of Kenya.</p>
-
-<p><strong>14. Amendments</strong><br>
-Garissa Digital Empowerment Hub CBO may revise these Terms and Conditions at any time without prior notice. Continued use of services indicates acceptance of updated terms.</p>
+    <span class="info-value">
+        2026
+    </span>
 
 </div>
 
-<footer class="footer">
 
-<p>Email: gdehcbo2026@gmail.com</p>
+<div class="info-item">
 
-<p>Phone: +254728428431 / +254705299600</p>
+    <span class="info-label">
+        Review
+    </span>
 
-<div class="footer-links">
-<a href="#privacy">Privacy Policy</a> |
-<a href="#terms">Terms &amp; Conditions</a>
-</div>
-
-<p>© 2026 Garissa Digital Empowerment Hub CBO. All Rights Reserved.</p>
-
-</footer>
+    <span class="info-value">
+        Periodic
+    </span>
 
 </div>
 
-</body>
-  </html>
+</div><!-- =====================================================
+     TABLE OF CONTENTS
+===================================================== --><div class="contents"><div class="contents-title">
+    Table of Contents
+</div>
+
+<div class="contents-row">
+    <span>Article 1 — Purpose and Scope</span>
+    <span>1</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 2 — Definitions</span>
+    <span>2</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 3 — Privacy and Data Protection</span>
+    <span>3</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 4 — Information We Collect</span>
+    <span>4</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 5 — Use of Personal Information</span>
+    <span>5</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 6 — Data Sharing and Disclosure</span>
+    <span>6</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 7 — Data Security and Retention</span>
+    <span>7</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 8 — Rights of Data Subjects</span>
+    <span>8</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 9 — Website and Digital Services</span>
+    <span>9</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 10 — Photography, Media and Communications</span>
+    <span>10</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 11 — Terms and Conditions</span>
+    <span>11</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 12 — Programme Participation</span>
+    <span>12</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 13 — Code of Conduct</span>
+    <span>13</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 14 — Intellectual Property</span>
+    <span>14</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 15 — Agricultural and Entrepreneurship Information</span>
+    <span>15</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 16 — Payments, Fees and Refunds</span>
+    <span>16</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 17 — Complaints and Dispute Resolution</span>
+    <span>17</span>
+</div>
+
+<div class="contents-row">
+    <span>Article 18 — Amendments and Governing Law</span>
+    <span>18</span>
+</div>
+
+</div><!-- =====================================================
+     ARTICLE 1
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">1</span>
+
+Purpose and Scope
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">1.1</span>
+    Purpose
+</h3><p>
+This document establishes the principles, procedures and conditions
+governing the collection and use of personal information and the
+use of organizational websites, programmes, services, facilities
+and digital resources.
+</p><p>
+It is intended to promote responsible information management,
+transparency, accountability, respectful participation and the
+protection of individuals who interact with the organization.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">1.2</span>
+    Scope
+</h3><p>
+This Policy applies, where relevant, to members, programme
+participants, farmers, trainees, trainers, volunteers, staff,
+partners, beneficiaries, applicants, website visitors and other
+persons interacting with the organization.
+</p></div></section><!-- =====================================================
+     ARTICLE 2
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">2</span>
+
+Definitions
+
+</h2><table class="definition-table"><thead><tr>
+    <th>Term</th>
+    <th>Meaning</th>
+</tr></thead><tbody><tr>
+    <td>Organization</td>
+    <td>
+        Refers to Garissa Agro-Digital Empowerment Hub CBO and its
+        authorized programmes, representatives and activities.
+    </td>
+</tr><tr>
+    <td>Personal Data</td>
+    <td>
+        Information relating to an identifiable or identified
+        individual.
+    </td>
+</tr><tr>
+    <td>Participant</td>
+    <td>
+        Any person registered for, attending or benefiting from an
+        organizational programme or activity.
+    </td>
+</tr><tr>
+    <td>Website</td>
+    <td>
+        Any official website, online form, digital portal or
+        electronic platform operated on behalf of the organization.
+    </td>
+</tr><tr>
+    <td>Programme</td>
+    <td>
+        Any training, agricultural, digital, entrepreneurship,
+        environmental, youth or community initiative conducted or
+        supported by the organization.
+    </td>
+</tr></tbody></table></section><!-- =====================================================
+     ARTICLE 3
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">3</span>
+
+Privacy and Data Protection
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">3.1</span>
+    Commitment to Privacy
+</h3><p>
+The organization is committed to respecting the privacy, dignity
+and lawful rights of individuals whose personal information is
+collected or processed in connection with its activities.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">3.2</span>
+    Lawful and Responsible Processing
+</h3><p>
+Personal information shall be collected and processed for
+legitimate organizational purposes and, where required, on an
+appropriate lawful basis or with appropriate consent.
+</p></div><div class="policy-box"><strong>Data Protection Principle:</strong>
+
+<p>
+The organization seeks to collect only information that is
+reasonably relevant to the purpose for which it is required and
+to handle such information responsibly.
+</p></div></section><!-- =====================================================
+     ARTICLE 4
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">4</span>
+
+Information We Collect
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">4.1</span>
+    General Information
+</h3><ul><li>Full name and preferred name.</li><li>Telephone number and email address.</li><li>General location or county information.</li><li>Age or age category where relevant.</li><li>Gender or demographic information where required for programme monitoring.</li><li>Educational and professional background.</li></ul></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">4.2</span>
+    Programme Information
+</h3><ul><li>Training registration and attendance information.</li><li>Membership and participation records.</li><li>Programme applications and eligibility information.</li><li>Assessment, certification and completion records.</li><li>Feedback, complaints and enquiries.</li></ul></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">4.3</span>
+    Agricultural and Entrepreneurship Information
+</h3><ul><li>Farming activities and agricultural interests.</li><li>Crop and production information where relevant to a programme.</li><li>Entrepreneurship interests and business information.</li><li>Training needs and development priorities.</li><li>Programme monitoring and impact information.</li></ul></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">4.4</span>
+    Documents and Supporting Information
+</h3><p>
+Where reasonably required for a programme or administrative
+process, participants may be asked to provide supporting documents
+or other information. Such information shall be handled according
+to applicable requirements and organizational procedures.
+</p></div></section><!-- =====================================================
+     ARTICLE 5
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">5</span>
+
+Use of Personal Information
+
+</h2><p>
+Personal information may be used for legitimate organizational
+purposes, including:
+</p><ul><li>Programme registration and administration.</li><li>Training and learner management.</li><li>Membership administration.</li><li>Communication with participants and members.</li><li>Certification and verification.</li><li>Monitoring, evaluation and programme learning.</li><li>Community outreach and engagement.</li><li>Agricultural and agro-entrepreneurship programme implementation.</li><li>Digital agricultural advisory and educational activities.</li><li>Reporting to authorized funders, partners or authorities.</li><li>Improving services and organizational programmes.</li><li>Maintaining appropriate organizational records.</li></ul><div class="policy-box"><strong>Non-commercial principle:</strong>
+
+<p>
+The organization does not sell, rent or trade personal information
+as a commercial commodity.
+</p></div></section><!-- =====================================================
+     ARTICLE 6
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">6</span>
+
+Data Sharing and Disclosure
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">6.1</span>
+    Authorized Sharing
+</h3><p>
+Information may be shared where reasonably necessary with
+authorized programme partners, trainers, sponsors, funders,
+professional service providers, government authorities or other
+relevant entities.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">6.2</span>
+    Legal Requirements
+</h3><p>
+Information may be disclosed where required or permitted by
+applicable law, lawful authority, regulatory requirements or
+legitimate legal processes.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">6.3</span>
+    Third-Party Services
+</h3><p>
+Some digital, communication, payment, hosting or other services
+may be operated by third parties. Where such services process
+information on behalf of the organization, reasonable steps should
+be taken to use appropriate providers and safeguards.
+</p></div></section><!-- =====================================================
+     ARTICLE 7
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">7</span>
+
+Data Security and Retention
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">7.1</span>
+    Security Measures
+</h3><p>
+Reasonable technical, administrative and organizational safeguards
+may be used to protect information against unauthorized access,
+loss, misuse, alteration, disclosure or destruction.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">7.2</span>
+    Access Control
+</h3><p>
+Access to personal information should be limited to persons who
+require it for legitimate programme, organizational,
+administrative or legal purposes.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">7.3</span>
+    Retention
+</h3><p>
+Information may be retained for as long as reasonably necessary
+for programme administration, reporting, accountability,
+certification, legal or legitimate organizational requirements.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">7.4</span>
+    Disposal
+</h3><p>
+When information is no longer required, reasonable measures may be
+taken to securely delete, destroy, anonymize or otherwise dispose
+of it in accordance with applicable requirements.
+</p></div></section><!-- =====================================================
+     ARTICLE 8
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">8</span>
+
+Rights of Data Subjects
+
+</h2><p>
+Subject to applicable law and legitimate organizational
+requirements, individuals may request to:
+</p><ul><li>Access personal information held about them.</li><li>Correct inaccurate or incomplete information.</li><li>Request deletion where legally and operationally appropriate.</li><li>Raise concerns about the handling of their information.</li><li>Request clarification about how information is used.</li><li>Withdraw consent where processing is based on consent and withdrawal is legally applicable.</li></ul><div class="warning-box"><strong>Important:</strong>
+
+<p>
+Certain information may need to be retained where required for
+legal, accountability, safeguarding, financial, certification or
+other legitimate organizational purposes.
+</p></div></section><!-- =====================================================
+     ARTICLE 9
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">9</span>
+
+Website and Digital Services
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">9.1</span>
+    Website Use
+</h3><p>
+Users are expected to use the website and digital services
+responsibly, lawfully and respectfully.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">9.2</span>
+    Cookies
+</h3><p>
+The website may use basic cookies, browser technologies or
+analytics tools to improve functionality, security, performance
+and user experience.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">9.3</span>
+    External Websites
+</h3><p>
+The organization's website may contain links to external websites,
+platforms or services. The organization is not responsible for the
+privacy practices, security or content of independently operated
+third-party websites.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">9.4</span>
+    Website Security
+</h3><p>
+Users must not attempt to gain unauthorized access to systems,
+accounts, databases, files, administrative areas or other
+restricted resources.
+</p></div></section><!-- =====================================================
+     ARTICLE 10
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">10</span>
+
+Photography, Media and Communications
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">10.1</span>
+    Documentation
+</h3><p>
+During training sessions, agricultural demonstrations, community
+activities, workshops, meetings and events, photographs or videos
+may be taken for legitimate documentation, reporting, awareness
+and programme communication purposes.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">10.2</span>
+    Responsible Use
+</h3><p>
+The organization should seek to use photographs, videos and
+participant stories responsibly and in a manner consistent with
+the dignity and legitimate expectations of participants.
+</p></div></section><!-- =====================================================
+     ARTICLE 11
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">11</span>
+
+Terms and Conditions
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">11.1</span>
+    Acceptance
+</h3><p>
+By accessing the website, registering for a programme, becoming a
+member, attending training or using organizational services, a
+user agrees to comply with these Terms and Conditions.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">11.2</span>
+    Acceptable Use
+</h3><p>
+The organization's facilities, website, digital resources,
+equipment and services shall be used only for lawful, educational,
+agricultural, entrepreneurial, community or otherwise authorized
+purposes.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">11.3</span>
+    Prohibited Activities
+</h3><ul><li>Unauthorized system access.</li><li>Fraud or deliberate misrepresentation.</li><li>Harassment or intimidation.</li><li>Damage or misuse of organizational property.</li><li>Unauthorized use of organizational accounts.</li><li>Distribution of unlawful or harmful content.</li><li>Threatening or disruptive conduct.</li><li>Any other unlawful activity.</li></ul></div></section><!-- =====================================================
+     ARTICLE 12
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">12</span>
+
+Programme Participation
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">12.1</span>
+    Registration
+</h3><p>
+Registration or application does not automatically guarantee
+admission, selection or participation in a programme.
+</p><p>
+Admission may depend on eligibility, available spaces, programme
+requirements, funding, organizational priorities and other relevant
+considerations.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">12.2</span>
+    Attendance
+</h3><p>
+Participants are expected to attend scheduled sessions and engage
+responsibly in training, workshops, practical activities,
+agricultural demonstrations and other programme activities.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">12.3</span>
+    Assessments and Certificates
+</h3><p>
+Certificates may be issued only to participants who satisfy the
+applicable attendance, participation, assessment and completion
+requirements.
+</p><p>
+A certificate may be withheld or withdrawn where it was obtained
+through fraud, false information or serious misconduct.
+</p></div></section><!-- =====================================================
+     ARTICLE 13
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">13</span>
+
+Code of Conduct
+
+</h2><p>
+All participants, members, staff, volunteers, trainers and other
+persons participating in organizational activities are expected to
+maintain respectful and professional conduct.
+</p><ul><li>Respect the dignity and rights of others.</li><li>Do not engage in harassment, bullying or intimidation.</li><li>Do not engage in discriminatory or abusive conduct.</li><li>Do not commit fraud, impersonation or deliberate misrepresentation.</li><li>Protect organizational property and equipment.</li><li>Respect programme rules and instructions.</li><li>Protect confidential information.</li><li>Use digital systems responsibly.</li><li>Report serious concerns through appropriate channels.</li></ul><p>
+Violation of the Code of Conduct may result in warning,
+suspension, termination of participation, withdrawal of access or
+other appropriate action.
+</p></section><!-- =====================================================
+     ARTICLE 14
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">14</span>
+
+Intellectual Property
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">14.1</span>
+    Organizational Materials
+</h3><p>
+Unless otherwise stated, organizational logos, branding, training
+materials, publications, documents, graphics, videos, photographs,
+website content and other original materials are owned by the
+organization or their respective rights holders.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">14.2</span>
+    Restrictions
+</h3><p>
+Materials shall not be reproduced, distributed, modified,
+published or commercially exploited without appropriate
+authorization where authorization is required.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">14.3</span>
+    Participant Contributions
+</h3><p>
+Where participants contribute photographs, stories, ideas,
+testimonials or other materials for programme documentation,
+appropriate permissions and applicable rights shall be considered
+before such materials are used publicly.
+</p></div></section><!-- =====================================================
+     ARTICLE 15
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">15</span>
+
+Agricultural and Entrepreneurship Information
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">15.1</span>
+    Educational Purpose
+</h3><p>
+Agricultural, agro-entrepreneurship, business, digital and
+entrepreneurship information provided through organizational
+programmes is intended primarily for educational and informational
+purposes.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">15.2</span>
+    Individual Decisions
+</h3><p>
+Participants remain responsible for evaluating information and
+making their own farming, business, financial or investment
+decisions.
+</p></div><div class="policy-box"><strong>Agriculture and enterprise notice:</strong>
+
+<p>
+The organization does not guarantee specific agricultural yields,
+business profits, investment returns, employment outcomes or other
+financial results from participation in its programmes.
+</p></div></section><!-- =====================================================
+     ARTICLE 16
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">16</span>
+
+Payments, Fees and Refunds
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">16.1</span>
+    Programme Fees
+</h3><p>
+Where a programme requires training, membership, materials,
+certification or other fees, the applicable charges and payment
+requirements shall be communicated to participants before payment
+where reasonably practicable.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">16.2</span>
+    Refunds
+</h3><p>
+Refund and cancellation arrangements may vary depending on the
+specific programme, service, funding arrangement or applicable
+terms communicated at the time of registration.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">16.3</span>
+    Payment Records
+</h3><p>
+Reasonable payment and transaction records may be maintained for
+accountability, financial administration, auditing and reporting
+purposes.
+</p></div></section><!-- =====================================================
+     ARTICLE 17
+===================================================== --><section class="article"><h2 class="article-heading"><span class="article-number">17</span>
+
+Complaints and Dispute Resolution
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">17.1</span>
+    Complaints
+</h3><p>
+Participants and other stakeholders may raise reasonable
+complaints, concerns or enquiries relating to organizational
+services, programmes, privacy, conduct or information handling.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">17.2</span>
+    Good-Faith Resolution
+</h3><p>
+The organization will seek, where reasonably practicable, to
+address legitimate complaints fairly, respectfully and in good
+faith through appropriate internal procedures.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">17.3</span>
+    Safeguarding Concerns
+</h3><p>
+Concerns involving serious misconduct, abuse, threats, exploitation
+or other safeguarding matters should be reported through the
+appropriate organizational reporting channels or relevant
+authorities where necessary.
+</p></div></section><!-- =====================================================
+     ARTICLE 18
+===================================================== --><section class="article last-section"><h2 class="article-heading"><span class="article-number">18</span>
+
+Amendments and Governing Law
+
+</h2><div class="subsection"><h3 class="subsection-title">
+    <span class="number">18.1</span>
+    Policy Updates
+</h3><p>
+This Privacy Policy and Terms and Conditions may be reviewed and
+updated periodically to reflect changes in programmes,
+organizational practices, technology or applicable legal and
+regulatory requirements.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">18.2</span>
+    Effective Date
+</h3><p>
+An updated version shall take effect when formally adopted or
+published through an appropriate organizational communication
+channel, unless a different effective date is stated.
+</p></div><div class="subsection"><h3 class="subsection-title">
+    <span class="number">18.3</span>
+    Governing Law
+</h3><p>
+These Terms and Conditions shall be interpreted in accordance with
+the applicable laws and regulations of the Republic of Kenya.
+</p></div></section><!-- =====================================================
+     FINAL DECLARATION
+===================================================== --><div class="declaration"><div class="declaration-title">Acknowledgement
+
+</div><p>
+By accessing the website, registering for a programme, becoming a
+member, participating in organizational activities or using
+organizational services, an individual acknowledges that they have
+had an opportunity to read and understand this Privacy Policy and
+Terms and Conditions and agree to comply with the applicable
+provisions.
+</p></div><!-- =====================================================
+     CONTACT
+===================================================== --><div class="contact-box"><div class="contact-box-title">Official Contact
+
+</div><p>
+<strong>Email:</strong>
+gadehcbo2026@gmail.com
+</p><p>
+<strong>Telephone:</strong>
++254 728 428 431 / +254 705 299 600
+</p><p>
+Privacy concerns, complaints, enquiries and requests relating to
+this document may be submitted through the official contact
+channels.
+</p></div><!-- =====================================================
+     FOOTER
+===================================================== --><footer class="document-footer"><div class="footer-green-line"></div><p>
+Privacy Policy &amp; Terms and Conditions
+</p><div class="footer-links"><a href="#privacy">
+Privacy Policy
+</a>|
+
+<a href="#terms">
+Terms &amp; Conditions
+</a></div><p>
+© 2026. All Rights Reserved.
+</p><div class="page-number">
+Official Policy Document
+</div></footer></div><script>
+
+/* =========================================================
+   SMOOTH INTERNAL NAVIGATION
+========================================================= */
+
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(event){
+
+            const target =
+                document.querySelector(
+                    this.getAttribute("href")
+                );
+
+            if(target){
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+function printDocument(){
+
+    window.print();
+
+}
+
+</script></body></html>
