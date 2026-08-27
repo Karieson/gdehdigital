@@ -60,17 +60,25 @@
         ========================================= */
 
         .document {
-            width: 210mm;
-            max-width: 100%;
-            min-height: 297mm;
-            margin: 1.5rem auto;
-            background: var(--white);
-            box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
-        }
+    width: 210mm;
+    max-width: 100%;
+    min-height: 297mm;
+    margin: 1.5rem auto;
+    background: var(--white);
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+}
 
         .document-inner {
-            padding: 17mm 18mm 15mm;
-        }
+    padding: 17mm 18mm 15mm;
+
+    min-height: 297mm;
+
+    display: flex;
+    flex-direction: column;
+}
 
         .container {
             width: 100%;
@@ -446,17 +454,24 @@
         ========================================= */
 
         .document-footer {
-            margin-top: 2rem;
-            padding-top: 0.8rem;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--gray);
-            font-size: 0.58rem;
-        }
+    margin-top: auto;
 
-        .document-footer strong {
-            color: var(--corporate-red);
-        }
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    color: var(--gray);
+
+    font-size: 0.58rem;
+
+    line-height: 1.6;
+}
+
+.document-footer strong {
+    color: var(--corporate-red);
+}
 
         /* =========================================
            MOBILE
@@ -626,7 +641,7 @@
         <header class="document-header">
 
     <div class="header-top">
-<img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
+<img src="gadeh_logo.png" alt="GDEH Logo" class="logo">
 
         <!-- Calligraphy Tags -->
         <div class="organization-tags">
@@ -660,7 +675,7 @@
             </h2>
 
             <p>
-                Garissa Digital Empowerment Hub CBO is committed to equipping
+                Garissa Agro-Digital Empowerment Hub CBO is committed to equipping
                 communities with practical digital skills, promoting Internet
                 of Things innovation and supporting sustainable agricultural
                 entrepreneurship.
@@ -680,13 +695,13 @@
         <section>
 
             <h2 class="section-title">
-                1. About Garissa Digital Empowerment Hub CBO
+                1. About Garissa Agro-Digital Empowerment Hub CBO
             </h2>
 
             <div class="text-box">
 
                 <p>
-                    <strong>Garissa Digital Empowerment Hub CBO (GDEH CBO)</strong>
+                    <strong>Garissa Agro-Digital Empowerment Hub CBO (GDEH CBO)</strong>
                     is a community-based organization committed to promoting
                     inclusive socio-economic development through
                     <strong>digital literacy, technology innovation, Internet
@@ -721,47 +736,51 @@
 
 
         <!-- =====================================
-             VISION & MISSION
-        ====================================== -->
+     VISION & MISSION
+====================================== -->
 
-        <section>
+<section>
 
-            <div class="two-column">
+    <h2 class="section-title">
+        2. Vision &amp; Mission
+    </h2>
 
-                <div class="info-card">
+    <div class="two-column">
 
-                    <h3>
-                        Vision
-                    </h3>
+        <div class="info-card">
 
-                    <p>
-                        A digitally empowered and economically resilient
-                        community where technology, innovation and
-                        agro-entrepreneurship create sustainable opportunities
-                        for all.
-                    </p>
+            <h3>
+                Vision
+            </h3>
 
-                </div>
+            <p>
+                A digitally empowered and economically resilient
+                community where technology, innovation and
+                agro-entrepreneurship create sustainable opportunities
+                for all.
+            </p>
+
+        </div>
 
 
-                <div class="info-card">
+        <div class="info-card">
 
-                    <h3>
-                        Mission
-                    </h3>
+            <h3>
+                Mission
+            </h3>
 
-                    <p>
-                        To empower communities through digital literacy,
-                        Internet of Things, technology innovation,
-                        entrepreneurship and sustainable agricultural
-                        enterprise development.
-                    </p>
+            <p>
+                To empower communities through digital literacy,
+                Internet of Things, technology innovation,
+                entrepreneurship and sustainable agricultural
+                enterprise development.
+            </p>
 
-                </div>
+        </div>
 
-            </div>
+    </div>
 
-        </section>
+</section>
 
 
         <!-- =====================================
@@ -771,7 +790,7 @@
         <section>
 
             <h2 class="section-title">
-                2. Community Challenges We Address
+                3. Community Challenges We Address
             </h2>
 
             <div class="challenge-grid">
@@ -1625,7 +1644,7 @@
 
                     <div class="contact-item">
                         <strong>Organization:</strong><br>
-                        Garissa Digital Empowerment Hub CBO
+                        Garissa Agro-Digital Empowerment Hub CBO
                     </div>
 
                     <div class="contact-item">
@@ -1673,7 +1692,7 @@
             <div class="closing">
 
                 <p>
-                    <strong>Garissa Digital Empowerment Hub CBO</strong>
+                    <strong>Garissa Agro-Digital Empowerment Hub CBO</strong>
                     is committed to transforming communities through the
                     combined power of <strong>digital literacy, technology,
                     Internet of Things, innovation, entrepreneurship
@@ -1696,7 +1715,7 @@
                 </p>
 
                 <p class="motto">
-                    Garissa Digital Empowerment Hub CBO — Empowering
+                    Garissa Agro-Digital Empowerment Hub CBO — Empowering
                     Communities Through Digital Literacy, Technology,
                     IoT &amp; Agro-Entrepreneurship.
                 </p>
@@ -1713,7 +1732,7 @@
         <footer class="document-footer">
 
             <strong>
-                Garissa Digital Empowerment Hub CBO
+                Garissa Agro-Digital Empowerment Hub CBO
             </strong>
 
             <br>
@@ -1724,7 +1743,7 @@
             <br><br>
 
             &copy; <span id="year"></span>
-            Garissa Digital Empowerment Hub CBO.
+            Garissa Agro-Digital Empowerment Hub CBO.
             All Rights Reserved.
 
         </footer>
@@ -1738,21 +1757,18 @@
 <script>
 
     /*
-       Print function intentionally has NO visible button.
-       It can be triggered from another page, browser console,
-       or another JavaScript function using:
-
-       printProfile();
+       Automatically open the print dialog
+       when the profile page loads.
     */
 
-    
-window.addEventListener("load", function () {
-    window.print();
-});
-</script>
+    window.addEventListener("load", function () {
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        window.print();
+
+    });
 
 </script>
 
