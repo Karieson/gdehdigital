@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>GDEH Donation & Partnership Form</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Support and collaborate with Garissa Agro-Digital Empowerment Hub CBO through donations, partnerships, equipment, mentorship, training and community development initiatives.">
+
+<title>Support & Partnership | Garissa Agro-Digital Empowerment Hub CBO</title>
+
+
 <style>
+
 :root{
     --corporate-red:#C00000;
+    --dark:#222;
+    --border:#ccc;
+    --light:#f8f8f8;
 }
 
 *{
@@ -22,28 +31,35 @@
 
 body{
     background:#fff;
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     line-height:1.8;
 }
 
-/* Back Home */
+
+/* ==============================
+   BACK HOME
+============================== */
 
 .back-home{
     position:fixed;
     top:18px;
     right:20px;
-    color:#222;
+    color:var(--dark);
     text-decoration:none;
     font-size:12px;
     font-weight:600;
+    z-index:10;
 }
 
 .back-home:hover{
     color:var(--corporate-red);
 }
 
-/* Header */
+
+/* ==============================
+   HEADER
+============================== */
 
 .header{
     display:flex;
@@ -51,13 +67,13 @@ body{
     gap:18px;
     padding:18px 20px;
     border-bottom:3px solid var(--corporate-red);
-    margin-bottom:25px;
     background:#fff;
 }
 
 .logo{
     width:70px;
     height:auto;
+    display:block;
 }
 
 .header-content h1{
@@ -68,14 +84,14 @@ body{
 }
 
 .header-content p{
-    color:#222;
-    font-family:"Allura", cursive;
-    font-size:14px;
-    font-weight:700;
-    line-height:1.2;
-    margin-top:2px;
-    }
-/* Container */
+    color:var(--dark);
+    font-size:12px;
+}
+
+
+/* ==============================
+   CONTAINER
+============================== */
 
 .container{
     max-width:900px;
@@ -83,7 +99,36 @@ body{
     padding:20px;
 }
 
-/* Section Titles */
+
+/* ==============================
+   INTRODUCTION
+============================== */
+
+.introduction{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px 20px;
+    margin-bottom:25px;
+}
+
+.introduction p{
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.introduction p:last-child{
+    margin-bottom:0;
+}
+
+.introduction strong{
+    color:var(--corporate-red);
+}
+
+
+/* ==============================
+   SECTION TITLES
+============================== */
 
 .section-title{
     color:var(--corporate-red);
@@ -94,13 +139,16 @@ body{
     border-left:5px solid var(--corporate-red);
 }
 
-/* Labels */
+
+/* ==============================
+   FORM LABELS
+============================== */
 
 label{
     display:block;
     margin-bottom:6px;
     margin-top:14px;
-    color:#222;
+    color:var(--dark);
     font-weight:600;
     font-size:12px;
 }
@@ -109,17 +157,20 @@ label{
     color:var(--corporate-red);
 }
 
-/* Inputs */
+
+/* ==============================
+   FORM INPUTS
+============================== */
 
 input,
 select,
 textarea{
     width:100%;
     padding:10px 12px;
-    border:1px solid #ccc;
+    border:1px solid var(--border);
     border-radius:6px;
     font-size:12px;
-    color:#222;
+    color:var(--dark);
     background:#fff;
     transition:.3s;
 }
@@ -137,7 +188,10 @@ textarea{
     min-height:100px;
 }
 
-/* Checkboxes */
+
+/* ==============================
+   CHECKBOXES
+============================== */
 
 .checkbox-group{
     display:grid;
@@ -157,7 +211,14 @@ textarea{
     width:auto;
 }
 
-/* Upload Buttons */
+
+/* ==============================
+   FILE UPLOAD
+============================== */
+
+.file-upload{
+    padding:7px;
+}
 
 .file-upload::file-selector-button{
     background:var(--corporate-red);
@@ -166,47 +227,87 @@ textarea{
     border-radius:4px;
     padding:8px 12px;
     cursor:pointer;
+    margin-right:8px;
 }
 
-/* Consent */
+
+/* ==============================
+   DONATION INFORMATION
+============================== */
+
+.donation-note{
+    background:var(--light);
+    border-left:4px solid var(--corporate-red);
+    padding:12px 15px;
+    margin:15px 0;
+}
+
+.donation-note p{
+    margin:0;
+    font-size:12px;
+}
+
+
+/* ==============================
+   CONSENT
+============================== */
 
 .consent-section{
     margin-top:15px;
 }
 
 .consent-section p{
-    color:#222;
+    color:var(--dark);
     margin-bottom:12px;
 }
 
 .consent-section a{
     color:var(--corporate-red);
     text-decoration:none;
+    font-weight:600;
 }
 
 .consent-section a:hover{
     text-decoration:underline;
 }
 
-/* CAPTCHA */
+.consent-label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-weight:500;
+}
+
+.consent-label input{
+    width:auto;
+    margin-top:4px;
+}
+
+
+/* ==============================
+   CAPTCHA
+============================== */
 
 .captcha-box{
-    margin-top:20px;
+    margin-top:25px;
 }
 
 #captchaQuestion{
-    background:#f8f8f8;
-    border:1px solid #ddd;
+    background:var(--light);
+    border:1px solid var(--border);
     border-left:5px solid var(--corporate-red);
     padding:12px;
     text-align:center;
-    color:#222;
+    color:var(--dark);
     font-weight:700;
     border-radius:6px;
     margin-bottom:12px;
 }
 
-/* Buttons */
+
+/* ==============================
+   BUTTONS
+============================== */
 
 .donate-btn,
 .submit-btn{
@@ -229,7 +330,10 @@ textarea{
     transform:translateY(-2px);
 }
 
-/* Footer */
+
+/* ==============================
+   FOOTER
+============================== */
 
 .footer{
     margin-top:40px;
@@ -240,14 +344,14 @@ textarea{
 }
 
 .footer p{
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     font-weight:600;
     margin-bottom:8px;
 }
 
 .footer-links a{
-    color:#222;
+    color:var(--dark);
     text-decoration:none;
     font-weight:600;
 }
@@ -256,262 +360,779 @@ textarea{
     color:var(--corporate-red);
 }
 
-/* Mobile */
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:768px){
 
-.header{
-    flex-direction:column;
-    text-align:center;
+    .back-home{
+        position:static;
+        display:block;
+        text-align:right;
+        padding:15px 15px 0;
+    }
+
+    .header{
+        flex-direction:column;
+        text-align:center;
+        padding-top:15px;
+    }
+
+    .logo{
+        width:60px;
+    }
+
+    .header-content h1{
+        font-size:18px;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .section-title{
+        font-size:14px;
+    }
+
 }
 
-.logo{
-    width:60px;
-}
-
-.header-content h1{
-    font-size:18px;
-}
-
-.container{
-    padding:15px;
-}
-
-.back-home{
-    position:static;
-    display:block;
-    text-align:right;
-    padding:15px;
-}
-
-.section-title{
-    font-size:14px;
-}
-
-}
 </style>
+
 </head>
 
-<body>
-  <a href="index.html" class="back-home">
-    ← Back to Home
-  </a>
 
-<!-- ===== HEADER ===== -->
+<body>
+
+
+<!-- ==============================
+     BACK HOME
+============================== -->
+
+<a
+    href="index.html"
+    class="back-home"
+>
+    ← Back to Home
+</a>
+
+
+<!-- ==============================
+     HEADER
+============================== -->
+
 <header class="header">
-  <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
-  <div class="header-content">
-    <h1>Garissa Digital Empowerment Hub</h1>
-    <p>Empowering youth through digital literacy and innovation</p>
-  </div>
+
+    <img
+        src="gadeh_logo.png"
+        alt="Garissa Agro-Digital Empowerment Hub CBO Logo"
+        class="logo"
+    >
+
+    <div class="header-content">
+
+        <h1>
+            Garissa Agro-Digital Empowerment Hub
+        </h1>
+
+        <p>
+            Empowering communities through digital skills,
+            agriculture, entrepreneurship and innovation
+        </p>
+
+    </div>
+
 </header>
 
-<!-- ===== FORM ===== -->
+
+<!-- ==============================
+     FORM CONTAINER
+============================== -->
+
 <div class="container">
-<form>
-  <!-- SECTION A -->
-  <div class="section-title">A. Donor / Partner Information</div>
-  <label>Full Name / Organization Name <span class="required">*</span></label>
-  <input type="text" required>
-  <label>Email Address <span class="required">*</span></label>
-  <input type="email" required>
-  <label>Phone Number <span class="required">*</span></label>
-  <input type="tel" required>
-  <label>Country <span class="required">*</span></label>
-  <select required><option value="">Select Country</option><option>Kenya</option><option>Somalia</option></select>
-  <label>Preferred Contact Method <span class="required">*</span></label>
-  <select required><option>Email</option><option>Phone</option><option>WhatsApp</option></select>
 
-  <!-- SECTION B -->
-  <div class="section-title">B. Type of Support</div>
-  <div class="checkbox-group">
-    <label><input type="checkbox" required> Financial Donation</label>
-    <label><input type="checkbox"> Equipment / Devices</label>
-    <label><input type="checkbox"> Training / Mentorship</label>
-    <label><input type="checkbox"> Partnership / Sponsorship</label>
-    <label><input type="checkbox"> Volunteer Support</label>
-  </div>
 
-  <!-- SECTION C -->
-  <div class="section-title">C. Contribution Details</div>
-  <label>Amount / Type of Donation <span class="required">*</span></label>
-  <input type="text" required>
-  <label>Frequency <span class="required">*</span></label>
-  <select required><option>One-time</option><option>Monthly</option><option>Annual</option></select>
-  <button type="button" class="donate-btn" onclick="payNow()">Donate Now</button>
-  <label>Upload Proof (Optional)</label>
-  <input type="file" class="file-upload">
+<!-- INTRODUCTION -->
 
-  <!-- SECTION D -->
-  <div class="section-title">D. Collaboration Proposal</div>
-  <label>Organization Background <span class="required">*</span></label>
-  <textarea rows="3" required></textarea>
-  <label>Proposed Area of Collaboration <span class="required">*</span></label>
-  <textarea rows="3" required></textarea>
-  <label>Expected Outcomes <span class="required">*</span></label>
-  <textarea rows="3" required></textarea>
-  <label>Duration / Commitment Level <span class="required">*</span></label>
-  <input type="text" required>
-  <label>Attach Proposal Document (Optional)</label>
-  <input type="file" class="file-upload" accept=".pdf,.doc,.docx">
+<div class="introduction">
 
-  <!-- SECTION E -->
-  <div class="section-title">E. Consent & Acknowledgment</div>
-  <div class="consent-section">
-    <p>By continuing, you agree to the <a href="privacy_terms.html" target="_blank">Privacy Policy & Terms</a> of Garissa Digital Empowerment Hub CBO.</p>
-    <label><input type="checkbox" id="consentCheck" required> I confirm that I have read and agree to the Privacy Policy and Terms & Conditions.</label>
-  </div>
-<!-- MATH CAPTCHA -->
+    <p>
+        <strong>Partner With Us</strong>
+    </p>
+
+    <p>
+        Garissa Agro-Digital Empowerment Hub CBO welcomes
+        individuals, organizations, institutions, businesses,
+        development partners and other stakeholders interested
+        in supporting community empowerment.
+    </p>
+
+    <p>
+        Support may include financial contributions, equipment,
+        digital resources, training, mentorship, volunteering,
+        sponsorships or strategic partnerships supporting
+        digital empowerment, agro-entrepreneurship, climate-smart
+        agriculture, innovation and youth development.
+    </p>
+
+</div>
+
+
+<form id="supportForm">
+
+
+<!-- ==============================
+     SECTION A
+============================== -->
+
+<div class="section-title">
+    A. Donor / Partner Information
+</div>
+
+
+<label>
+    Full Name / Organization Name
+    <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    name="name"
+    placeholder="Enter your name or organization name"
+    required
+>
+
+
+<label>
+    Email Address
+    <span class="required">*</span>
+</label>
+
+<input
+    type="email"
+    name="email"
+    placeholder="Enter email address"
+    required
+>
+
+
+<label>
+    Phone Number
+    <span class="required">*</span>
+</label>
+
+<input
+    type="tel"
+    name="phone"
+    placeholder="+254..."
+    required
+>
+
+
+<label>
+    Country
+    <span class="required">*</span>
+</label>
+
+<select
+    name="country"
+    required
+>
+
+    <option value="">
+        Select Country
+    </option>
+
+    <option>Kenya</option>
+    <option>Somalia</option>
+    <option>Uganda</option>
+    <option>Tanzania</option>
+    <option>Ethiopia</option>
+    <option>United States</option>
+    <option>United Kingdom</option>
+    <option>Other</option>
+
+</select>
+
+
+<label>
+    Preferred Contact Method
+    <span class="required">*</span>
+</label>
+
+<select
+    name="contact_method"
+    required
+>
+
+    <option value="">
+        Select Contact Method
+    </option>
+
+    <option>Email</option>
+    <option>Phone</option>
+    <option>WhatsApp</option>
+
+</select>
+
+
+<!-- ==============================
+     SECTION B
+============================== -->
+
+<div class="section-title">
+    B. Type of Support
+</div>
+
+
+<div class="checkbox-group">
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Financial Donation"
+        >
+        Financial Donation
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Equipment / Devices"
+        >
+        Equipment / Devices
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Training / Mentorship"
+        >
+        Training / Mentorship
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Agro-Entrepreneurship Support"
+        >
+        Agro-Entrepreneurship Support
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Agricultural Support"
+        >
+        Agricultural Support
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Partnership / Sponsorship"
+        >
+        Partnership / Sponsorship
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="support"
+            value="Volunteer Support"
+        >
+        Volunteer Support
+    </label>
+
+</div>
+
+
+<!-- ==============================
+     SECTION C
+============================== -->
+
+<div class="section-title">
+    C. Contribution Details
+</div>
+
+
+<label>
+    Amount / Type of Contribution
+    <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    name="contribution"
+    placeholder="e.g. KES 50,000 / 10 laptops / Training support"
+    required
+>
+
+
+<label>
+    Frequency
+    <span class="required">*</span>
+</label>
+
+<select
+    name="frequency"
+    required
+>
+
+    <option value="">
+        Select Frequency
+    </option>
+
+    <option>One-time</option>
+    <option>Monthly</option>
+    <option>Quarterly</option>
+    <option>Annual</option>
+    <option>Other</option>
+
+</select>
+
+
+<div class="donation-note">
+
+    <p>
+        <strong>Financial Support:</strong>
+        If you wish to make a financial contribution,
+        use the secure donation option below. Your support
+        can contribute to digital training, agricultural
+        programmes, youth empowerment and community initiatives.
+    </p>
+
+</div>
+
+
+<button
+    type="button"
+    class="donate-btn"
+    onclick="payNow()"
+>
+    Donate Now
+</button>
+
+
+<label>
+    Upload Proof / Supporting Document
+    (Optional)
+</label>
+
+<input
+    type="file"
+    name="proof"
+    class="file-upload"
+>
+
+
+<!-- ==============================
+     SECTION D
+============================== -->
+
+<div class="section-title">
+    D. Collaboration Proposal
+</div>
+
+
+<label>
+    Organization / Partner Background
+    <span class="required">*</span>
+</label>
+
+<textarea
+    name="organization_background"
+    placeholder="Tell us briefly about yourself or your organization..."
+    required
+></textarea>
+
+
+<label>
+    Proposed Area of Collaboration
+    <span class="required">*</span>
+</label>
+
+<textarea
+    name="collaboration_area"
+    placeholder="Describe how you would like to collaborate with us..."
+    required
+></textarea>
+
+
+<label>
+    Expected Outcomes
+    <span class="required">*</span>
+</label>
+
+<textarea
+    name="expected_outcomes"
+    placeholder="What outcomes or impact do you expect from the collaboration?"
+    required
+></textarea>
+
+
+<label>
+    Duration / Commitment Level
+    <span class="required">*</span>
+</label>
+
+<input
+    type="text"
+    name="duration"
+    placeholder="e.g. 6 months, 1 year, ongoing"
+    required
+>
+
+
+<label>
+    Attach Proposal Document
+    (Optional)
+</label>
+
+<input
+    type="file"
+    name="proposal"
+    class="file-upload"
+    accept=".pdf,.doc,.docx"
+>
+
+
+<!-- ==============================
+     SECTION E
+============================== -->
+
+<div class="section-title">
+    E. Consent &amp; Acknowledgment
+</div>
+
+
+<div class="consent-section">
+
+    <p>
+        By submitting this form, you agree to the
+        <a
+            href="privacy_terms.html"
+            target="_blank"
+        >
+            Privacy Policy &amp; Terms and Conditions
+        </a>
+        of Garissa Agro-Digital Empowerment Hub CBO.
+    </p>
+
+
+    <label class="consent-label">
+
+        <input
+            type="checkbox"
+            id="consentCheck"
+            required
+        >
+
+        <span>
+            I confirm that I have read and agree to the
+            Privacy Policy and Terms &amp; Conditions.
+        </span>
+
+    </label>
+
+</div>
+
+
+<!-- ==============================
+     MATH CAPTCHA
+============================== -->
 
 <div class="captcha-box">
 
-  <label for="captchaAnswer">
-    Solve this math
-    <span class="required">*</span>
-  </label>
+    <label for="captchaAnswer">
 
-  <div id="captchaQuestion">
-    Loading...
-  </div>
+        Solve this math question
 
-  <input
-    type="number"
-    id="captchaAnswer"
-    placeholder="Enter answer"
-    required
-  >
+        <span class="required">*</span>
+
+    </label>
+
+
+    <div id="captchaQuestion">
+        Loading...
+    </div>
+
+
+    <input
+        type="number"
+        id="captchaAnswer"
+        placeholder="Enter your answer"
+        required
+    >
 
 </div>
 
-<!-- SUBMIT -->
+
+<!-- ==============================
+     SUBMIT
+============================== -->
 
 <button
-  type="submit"
-  class="submit-btn"
+    type="submit"
+    class="submit-btn"
 >
-  Submit Collaboration
+    Submit Support / Partnership Request
 </button>
-<!-- ===== FOOTER ===== -->
-<div class="footer">
-  <p>© 2026 Garissa Digital Empowerment Hub | All Rights Reserved</p>
-  <div class="footer-links">
-    <a href="privacy_terms.html" target="_blank">Privacy & Terms</a>
-  </div>
-</div>
-<script>
 
-// =========================
-// MATH CAPTCHA API
-// =========================
+
+</form>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Garissa Agro-Digital Empowerment Hub CBO
+        | All Rights Reserved
+    </p>
+
+    <p>
+        Email: gdehcbo2026@gmail.com
+    </p>
+
+    <p>
+        Phone: +254728428431 / +254705299600
+    </p>
+
+    <div class="footer-links">
+
+        <a
+            href="privacy_terms.html"
+            target="_blank"
+        >
+            Privacy &amp; Terms
+        </a>
+
+    </div>
+
+</footer>
+
+
+</div>
+
+
+<!-- ==============================
+     CAPTCHA SCRIPT
+============================== -->
+
+<script>
 
 const API =
 "https://math-captcha-backend.onrender.com";
 
-// =========================
-// LOAD CAPTCHA
-// =========================
 
-async function loadCaptcha() {
+/* ==============================
+   LOAD CAPTCHA
+============================== */
 
-    try {
+async function loadCaptcha(){
+
+    try{
 
         const response =
-        await fetch(`${API}/captcha`, {
-
-            credentials: "include"
-        });
+        await fetch(
+            `${API}/captcha`,
+            {
+                credentials:"include"
+            }
+        );
 
         const data =
         await response.json();
 
         document.getElementById(
             "captchaQuestion"
-        ).innerText = data.question;
+        ).innerText =
+        data.question;
 
-    } catch (error) {
+    }
+
+    catch(error){
 
         console.error(
             "CAPTCHA Load Error:",
             error
         );
+
+        document.getElementById(
+            "captchaQuestion"
+        ).innerText =
+        "Unable to load CAPTCHA. Please refresh.";
+
     }
+
 }
 
-// =========================
-// FORM HANDLER
-// =========================
+
+/* ==============================
+   DONATION BUTTON
+============================== */
+
+function payNow(){
+
+    const consent =
+    document.getElementById(
+        "consentCheck"
+    );
+
+    if(!consent.checked){
+
+        alert(
+            "Please agree to the Privacy Policy and Terms & Conditions before donating."
+        );
+
+        consent.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+        return;
+    }
+
+
+    /*
+       Replace this URL with your
+       actual secure payment / donation
+       checkout link.
+    */
+
+    window.location.href =
+    "https://www.pesapal.com/checkout/YOUR_UNIQUE_LINK";
+
+}
+
+
+/* ==============================
+   FORM SUBMISSION
+============================== */
 
 document.addEventListener(
     "DOMContentLoaded",
-
-    function () {
+    function(){
 
         const form =
-        document.querySelector(
-            ".container form"
+        document.getElementById(
+            "supportForm"
         );
 
-        if (!form) return;
 
-        // Load CAPTCHA
         loadCaptcha();
+
 
         form.addEventListener(
             "submit",
-
-            async function (e) {
+            async function(e){
 
                 e.preventDefault();
 
-                try {
+
+                try{
 
                     const answer =
                     document.getElementById(
                         "captchaAnswer"
                     ).value;
 
-                    // Verify answer
+
+                    if(!answer){
+
+                        alert(
+                            "Please solve the CAPTCHA."
+                        );
+
+                        return;
+                    }
+
+
                     const verifyResponse =
                     await fetch(
                         `${API}/verify`,
                         {
 
-                            method: "POST",
+                            method:"POST",
 
-                            credentials: "include",
+                            credentials:"include",
 
-                            headers: {
+                            headers:{
                                 "Content-Type":
                                 "application/json"
                             },
 
-                            body: JSON.stringify({
-                                answer
+                            body:
+                            JSON.stringify({
+                                answer:answer
                             })
+
                         }
                     );
+
 
                     const verifyData =
                     await verifyResponse.json();
 
-                    // If verification passed
-                    if (
+
+                    if(
                         verifyData.success
-                    ) {
+                    ){
 
-                        form.submit();
+                        /*
+                           CAPTCHA passed.
 
-                    } else {
+                           Add your backend submission
+                           API here when ready.
+                        */
 
                         alert(
-                            "Wrong CAPTCHA Answer"
+                            "CAPTCHA verified successfully. Your support or partnership request can now be submitted."
                         );
 
-                        // Reload CAPTCHA
-                        loadCaptcha();
+                        /*
+                           Example:
+
+                           form.submit();
+
+                           Or replace with:
+
+                           fetch("/api/support", {
+                               method:"POST",
+                               body:new FormData(form)
+                           });
+                        */
+
                     }
 
-                } catch (error) {
+                    else{
+
+                        alert(
+                            "Incorrect CAPTCHA answer. Please try again."
+                        );
+
+                        document.getElementById(
+                            "captchaAnswer"
+                        ).value = "";
+
+                        loadCaptcha();
+
+                    }
+
+                }
+
+                catch(error){
 
                     console.error(
                         "CAPTCHA Error:",
@@ -519,43 +1140,20 @@ document.addEventListener(
                     );
 
                     alert(
-                        "Something went wrong."
+                        "Something went wrong. Please try again."
                     );
+
                 }
+
             }
         );
+
     }
 );
 
 </script>
-<script>
 
-function payNow(){
 
-const consent =
-document.getElementById("consentCheck");
+</body>
 
-if(!consent.checked){
-
-alert(
-"Please agree to the consent before donating."
-);
-
-consent.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-return;
-
-}
-
-window.location.href =
-"https://www.pesapal.com/checkout/YOUR_UNIQUE_LINK";
-
-}
-
-</script>
-  
-  </head>
-    </html>
+</html>

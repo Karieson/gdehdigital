@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDEH Workshops</title>
 
-    <style>
-        :root{
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Garissa Agro-Digital Empowerment Hub CBO workshops in digital literacy, agro-entrepreneurship, cybersecurity, online platforms and practical community skills.">
+
+<title>Workshops | Garissa Agro-Digital Empowerment Hub CBO</title>
+
+
+<style>
+
+:root{
     --corporate-red:#C00000;
+    --dark:#222;
+    --border:#ddd;
+    --light:#f8f8f8;
 }
 
 *{
@@ -19,28 +32,35 @@
 
 body{
     background:#fff;
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     line-height:1.8;
 }
 
-/* Back Home */
+
+/* ==============================
+   BACK HOME
+============================== */
 
 .back-home{
     position:fixed;
     top:18px;
     right:20px;
-    color:#222;
+    color:var(--dark);
     text-decoration:none;
     font-size:12px;
     font-weight:600;
+    z-index:10;
 }
 
 .back-home:hover{
     color:var(--corporate-red);
 }
 
-/* Container */
+
+/* ==============================
+   CONTAINER
+============================== */
 
 .container{
     width:90%;
@@ -49,7 +69,10 @@ body{
     padding:20px;
 }
 
-/* Header */
+
+/* ==============================
+   HEADER
+============================== */
 
 header{
     padding:20px 0;
@@ -61,25 +84,49 @@ header{
 .logo{
     width:80px;
     height:auto;
+    display:block;
+    margin:auto;
 }
 
-/* Main Title */
+
+/* ==============================
+   MAIN TITLE
+============================== */
 
 h1{
     text-align:center;
     color:var(--corporate-red);
     font-size:26px;
     font-weight:700;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#222;
+    font-size:12px;
     margin-bottom:30px;
 }
 
-/* Content */
+
+/* ==============================
+   CONTENT
+============================== */
 
 .content{
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     line-height:1.9;
 }
+
+.content p{
+    margin-bottom:15px;
+}
+
+
+/* ==============================
+   SECTION TITLES
+============================== */
 
 .content h2{
     color:var(--corporate-red);
@@ -90,37 +137,104 @@ h1{
     border-left:5px solid var(--corporate-red);
 }
 
-/* Lists */
 
-ul{
-    margin-left:25px;
+/* ==============================
+   WORKSHOP LIST
+============================== */
+
+.workshop-list{
+    list-style:none;
+    margin:15px 0 20px;
+    padding:0;
 }
 
-li{
+.workshop-list li{
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:12px 15px;
     margin-bottom:10px;
+    background:#fff;
+    font-weight:600;
+    transition:.3s;
 }
 
-/* Highlight Box */
+.workshop-list li:hover{
+    border-color:var(--corporate-red);
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+    transform:translateY(-1px);
+}
+
+.workshop-list li::before{
+    content:"✓";
+    color:var(--corporate-red);
+    font-weight:700;
+    margin-right:10px;
+}
+
+
+/* ==============================
+   HIGHLIGHT BOX
+============================== */
 
 .highlight{
     margin:25px 0;
     padding:20px;
-    background:#fff;
-    border:1px solid #ddd;
+    background:var(--light);
+    border:1px solid var(--border);
     border-left:5px solid var(--corporate-red);
     border-radius:8px;
+}
+
+.highlight p{
+    margin-bottom:10px;
+}
+
+.highlight p:last-child{
+    margin-bottom:0;
 }
 
 .highlight strong{
     color:var(--corporate-red);
 }
 
-/* Button */
+
+/* ==============================
+   WORKSHOP AREAS
+============================== */
+
+.focus-box{
+    margin:20px 0;
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#fff;
+}
+
+.focus-box p{
+    margin-bottom:8px;
+}
+
+.focus-box p:last-child{
+    margin-bottom:0;
+}
+
+.focus-box strong{
+    color:var(--corporate-red);
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+.book-container{
+    text-align:center;
+    margin:30px 0;
+}
 
 .book-btn{
     display:inline-block;
-    margin-top:25px;
-    padding:12px 28px;
+    padding:12px 30px;
     background:var(--corporate-red);
     color:#fff;
     text-decoration:none;
@@ -135,10 +249,13 @@ li{
     transform:translateY(-2px);
 }
 
-/* Links */
+
+/* ==============================
+   LINKS
+============================== */
 
 .light-link{
-    color:#222;
+    color:var(--dark);
     text-decoration:none;
 }
 
@@ -146,122 +263,394 @@ li{
     color:var(--corporate-red);
 }
 
-/* Footer */
+
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
     margin-top:50px;
     padding:20px;
     background:#fff;
     border-top:3px solid var(--corporate-red);
-    color:#222;
+    color:var(--dark);
     text-align:center;
     font-size:12px;
     font-weight:600;
 }
 
-/* Mobile */
+footer p{
+    margin:5px 0;
+}
+
+footer a{
+    color:var(--dark);
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:var(--corporate-red);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:768px){
 
-.back-home{
-    position:static;
-    display:block;
-    text-align:right;
-    padding:15px;
+    .back-home{
+        position:static;
+        display:block;
+        text-align:right;
+        padding:15px;
+    }
+
+    .logo{
+        width:65px;
+    }
+
+    h1{
+        font-size:22px;
+    }
+
+    .content h2{
+        font-size:15px;
+    }
+
+    .container{
+        width:95%;
+        padding:15px;
+    }
+
+    .book-btn{
+        width:100%;
+        text-align:center;
+    }
+
 }
 
-.logo{
-    width:65px;
-}
+</style>
 
-h1{
-    font-size:22px;
-}
-
-.content h2{
-    font-size:15px;
-}
-
-.container{
-    width:95%;
-    padding:15px;
-}
-
-.book-btn{
-    width:100%;
-    text-align:center;
-}
-
-}
-    </style>
 </head>
+
+
 <body>
-<a href="index.html" class="back-home">
+
+
+<!-- ==============================
+     BACK HOME
+============================== -->
+
+<a
+    href="index.html"
+    class="back-home"
+>
     ← Back to Home
 </a>
-    <div class="container">
 
-        <header>
-            <img src="gdeh_logo.png" alt="GDEH Logo" class="logo">
-        </header>
 
-        <h1>GDEH Workshops</h1>
+<div class="container">
 
-        <div class="content">
 
-            <p>
-                Our Community Based Organization (CBO) operates in Garissa Township, Kenya,
-                offering free empowerment skills and professional workshops every weekday
-                throughout the calendar year. The workshops are designed to equip youth,
-                women, and community members with practical modern skills that create
-                opportunities for employment, self-development, entrepreneurship, and
-                digital empowerment.
-            </p>
+<!-- ==============================
+     HEADER
+============================== -->
 
-            <h2>Training Workshops Include</h2>
+<header>
 
-            <ul>
-                <li>Computer Literacy</li>
-                <li>Smartphone Literacy</li>
-                <li>Agro Entrepreneurship</li>
-                <li>Cyber Security</li>
-                <li>Online Platforms Training</li>
-            </ul>
+    <img
+        src="gadeh_logo.png"
+        alt="Garissa Agro-Digital Empowerment Hub CBO Logo"
+        class="logo"
+    >
 
-            <p>
-                Participants are guided through practical and easy-to-understand sessions
-                by experienced trainers in a friendly learning environment. Our goal is to
-                bridge the digital skills gap and empower communities with knowledge that
-                can improve livelihoods and open new opportunities.
-            </p>
+</header>
 
-            <div class="highlight">
-                Although the workshops are community empowerment programs, a small
-                management and maintenance contribution fee of only <strong>1000 KSH</strong>
-                is applicable. This helps support training resources, equipment maintenance,
-                internet access, and smooth workshop operations for all participants.
-                <br><br>
-                A <strong>Certificate of Participation</strong> is also available for attendees
-                who successfully complete the workshop sessions.
-            </div>
 
-            <p>
-                To participate in the workshops and secure your slot, please proceed with booking below.
-            </p>
+<!-- ==============================
+     TITLE
+============================== -->
 
-            <a href="https://gdehworkshops.onrender.com" class="book-btn">
-                Book Now
-            </a>
+<h1>
+    GDEH Workshops
+</h1>
 
-           
+<p class="subtitle">
+    Digital Skills • Agro-Entrepreneurship • Innovation • Community Empowerment
+</p>
 
-     </div>
 
-    </div>
+<div class="content">
 
-    <footer>
-        © 2026 GDEH Workshops - Garissa Township, Kenya. All Rights Reserved.
-    </footer>
+
+<!-- ==============================
+     INTRODUCTION
+============================== -->
+
+<p>
+    <strong>
+        Garissa Agro-Digital Empowerment Hub CBO
+        (GDEH CBO)
+    </strong>
+    provides practical community empowerment workshops
+    designed to equip youth, women, farmers, entrepreneurs
+    and other community members with relevant skills for
+    today's digital and agricultural economy.
+</p>
+
+<p>
+    Our workshops combine digital literacy, entrepreneurship,
+    agriculture and innovation to help participants improve
+    their employability, start or strengthen enterprises,
+    access online opportunities and adopt modern approaches
+    to agriculture.
+</p>
+
+<p>
+    Training activities are conducted in a practical,
+    accessible and supportive learning environment, with
+    emphasis on skills that participants can apply in their
+    daily lives, businesses and communities.
+</p>
+
+
+<!-- ==============================
+     TRAINING WORKSHOPS
+============================== -->
+
+<h2>
+    Training Workshops Include
+</h2>
+
+
+<ul class="workshop-list">
+
+    <li>
+        Computer &amp; Digital Literacy
+    </li>
+
+    <li>
+        Smartphone &amp; Mobile Technology Skills
+    </li>
+
+    <li>
+        Agro-Entrepreneurship
+    </li>
+
+    <li>
+        Digital Agriculture
+    </li>
+
+    <li>
+        Climate-Smart Agriculture
+    </li>
+
+    <li>
+        Agricultural Business &amp; Market Access
+    </li>
+
+    <li>
+        Cybersecurity &amp; Online Safety
+    </li>
+
+    <li>
+        Online Platforms &amp; Digital Services
+    </li>
+
+    <li>
+        Entrepreneurship &amp; Business Skills
+    </li>
+
+    <li>
+        Digital Marketing &amp; Online Business
+    </li>
+
+</ul>
+
+
+<!-- ==============================
+     PRACTICAL LEARNING
+============================== -->
+
+<h2>
+    Practical Learning
+</h2>
+
+<p>
+    Participants are guided through practical exercises,
+    demonstrations, discussions and hands-on activities.
+    Training is designed to be easy to understand and
+    accessible to participants with different levels of
+    previous experience.
+</p>
+
+<p>
+    Our trainers and facilitators encourage participants
+    to apply what they learn to real-life challenges,
+    businesses, agricultural activities and community
+    development initiatives.
+</p>
+
+
+<!-- ==============================
+     AREAS OF IMPACT
+============================== -->
+
+<h2>
+    What Participants Can Gain
+</h2>
+
+
+<div class="focus-box">
+
+    <p>
+        <strong>Digital Skills:</strong>
+        Build confidence in using computers, smartphones,
+        internet services and digital platforms.
+    </p>
+
+    <p>
+        <strong>Entrepreneurship:</strong>
+        Develop practical knowledge for starting and
+        managing small enterprises.
+    </p>
+
+    <p>
+        <strong>Agro-Entrepreneurship:</strong>
+        Learn how agriculture can be developed into
+        sustainable and profitable business opportunities.
+    </p>
+
+    <p>
+        <strong>Digital Agriculture:</strong>
+        Understand how technology can support agricultural
+        production, information access, marketing and
+        decision-making.
+    </p>
+
+    <p>
+        <strong>Online Safety:</strong>
+        Develop awareness of cybersecurity, privacy,
+        scams and responsible use of online platforms.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     FEES
+============================== -->
+
+<h2>
+    Workshop Contribution &amp; Certificate
+</h2>
+
+
+<div class="highlight">
+
+    <p>
+        Our workshops are designed as affordable community
+        empowerment programmes.
+    </p>
+
+    <p>
+        A small management and maintenance contribution of
+        <strong>KES 1,000</strong> may apply to selected
+        workshops. This contribution supports training
+        resources, equipment maintenance, internet access,
+        learning materials and smooth workshop operations.
+    </p>
+
+    <p>
+        Participants who successfully complete the required
+        workshop sessions may receive a
+        <strong>Certificate of Participation</strong>,
+        subject to the requirements of the specific programme.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     PARTICIPATION
+============================== -->
+
+<h2>
+    Who Can Participate?
+</h2>
+
+<p>
+    Our workshops are open to youth, women, farmers,
+    entrepreneurs, students, persons with disabilities and
+    other community members interested in developing
+    practical digital, agricultural and entrepreneurial
+    skills.
+</p>
+
+
+<!-- ==============================
+     BOOKING
+============================== -->
+
+<h2>
+    Book a Workshop
+</h2>
+
+<p>
+    To participate in an upcoming workshop, register online
+    and secure your training slot through our workshop
+    booking platform.
+</p>
+
+
+<div class="book-container">
+
+    <a
+        href="https://gdehworkshops.onrender.com"
+        class="book-btn"
+    >
+        Book a Workshop
+    </a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <p>
+        © 2026 Garissa Agro-Digital Empowerment Hub CBO
+        | All Rights Reserved
+    </p>
+
+    <p>
+        Garissa Township, Kenya
+    </p>
+
+    <p>
+        Digital Empowerment • Agro-Entrepreneurship •
+        Innovation • Community Development
+    </p>
+
+    <p>
+        <a href="privacy_terms.html">
+            Privacy Policy | Terms &amp; Conditions
+        </a>
+    </p>
+
+</footer>
+
 
 </body>
-    </html>
+
+</html>
