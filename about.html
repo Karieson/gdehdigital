@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-<title>About Us Extended - GADEH CBO</title>
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="About Garissa Agro-Digital Empowerment Hub CBO, a community-based organization advancing digital empowerment, agro-entrepreneurship, climate-smart agriculture, innovation and youth development in Garissa and Northern Kenya.">
+
+<title>About Us - Garissa Agro-Digital Empowerment Hub CBO</title>
+
 
 <style>
+
 :root{
     --corporate-red:#C00000;
+    --dark:#222;
+    --border:#ddd;
 }
 
 *{
@@ -22,13 +31,16 @@
 
 body{
     background:#fff;
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     line-height:1.8;
     min-height:100vh;
 }
 
-/* Header */
+
+/* ==============================
+   HEADER
+============================== */
 
 .header{
     display:flex;
@@ -42,20 +54,25 @@ body{
 .logo{
     width:65px;
     height:auto;
+    display:block;
 }
 
 .home-link{
-    color:#222;
+    color:var(--dark);
     text-decoration:none;
     font-size:12px;
     font-weight:600;
+    transition:.3s;
 }
 
 .home-link:hover{
     color:var(--corporate-red);
 }
 
-/* Section Titles */
+
+/* ==============================
+   SECTION TITLES
+============================== */
 
 .section-title{
     display:block;
@@ -67,39 +84,59 @@ body{
     border-left:5px solid var(--corporate-red);
 }
 
-/* Content */
+
+/* ==============================
+   CONTENT
+============================== */
 
 .section-content{
     background:#fff;
     margin:0 20px 20px;
     padding:20px;
-    border:1px solid #ddd;
+    border:1px solid var(--border);
     border-radius:8px;
-    transition:.3s;
+    transition:.3s ease;
 }
 
 .section-content:hover{
     box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transform:translateY(-1px);
 }
 
 .section-content p{
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     margin-bottom:12px;
 }
 
-/* Lists */
+.section-content p:last-child{
+    margin-bottom:0;
+}
+
+
+/* ==============================
+   LISTS
+============================== */
 
 .section-content ul{
     margin-left:20px;
+    padding-left:5px;
 }
 
 .section-content li{
     margin-bottom:8px;
-    color:#222;
+    color:var(--dark);
+    font-size:12px;
 }
 
-/* Footer */
+.section-content strong{
+    color:var(--corporate-red);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
     margin-top:40px;
@@ -110,91 +147,455 @@ footer{
 }
 
 footer p{
-    color:#222;
+    color:var(--dark);
     font-size:12px;
     font-weight:600;
     margin:6px 0;
 }
 
 footer a{
-    color:#222;
+    color:#777777;
     text-decoration:none;
+    transition:.3s;
 }
 
 footer a:hover{
-    color:var(--corporate-red);
+    color:#555555;
 }
 
-/* Mobile */
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:768px){
 
-.header{
-    flex-direction:column;
-    gap:10px;
-}
-
-.logo{
-    width:55px;
-}
-
-.section-title{
-    font-size:14px;
-}
-
-.section-content{
-    margin:0 15px 18px;
-    padding:16px;
-}
-
-}
-.cover-intro{text-align:center;padding:35px 20px 25px}.cover-intro h1{color:var(--corporate-red);font-family:"Brush Script MT","Lucida Handwriting",cursive;font-size:30px;margin-bottom:10px}.cover-intro h2{font-size:17px;line-height:1.6;margin-bottom:12px}.cover-intro p{max-width:800px;margin:0 auto 14px;color:#555;font-size:12px}.motto-line{color:var(--corporate-red);font-size:11px;font-weight:700;letter-spacing:1px}.text-box{margin:0 20px 25px;padding:20px;border-left:4px solid var(--corporate-red);border-top:1px solid #eee;border-right:1px solid #eee;border-bottom:1px solid #eee;border-radius:6px}.text-box p{font-size:12px;line-height:1.8;margin-bottom:12px}.two-column,.sdg-grid,.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:0 20px 28px}.info-card,.sdg,.value{border:1px solid #eee;border-left:4px solid var(--corporate-red);border-radius:6px;padding:20px}.info-card h3{font-size:15px;margin-bottom:8px}.info-card p{color:#555;font-size:12px}.sdg,.value{font-size:11px}.value h3{font-size:13px;margin-bottom:4px}.value p{color:#555;font-size:11px}section>p{margin:0 20px 15px;color:#555;font-size:12px}@media(max-width:768px){.two-column,.sdg-grid,.values-grid{grid-template-columns:1fr;margin-left:15px;margin-right:15px}.text-box{margin-left:15px;margin-right:15px}.cover-intro{padding:30px 15px 20px}.cover-intro h1{font-size:26px}.cover-intro h2{font-size:15px}}
-
-/* Organizational Profile typography */
-.cover-intro h1{
-    font-family:'Poppins',sans-serif;
-    font-size:24px;
-    font-weight:600;
-    color:var(--corporate-red);
-    letter-spacing:.4px;
-    margin-bottom:8px;
-}
-
-.cover-intro h2{
-    font-family:"Brush Script MT","Lucida Handwriting",cursive;
-    font-size:19px;
-    font-weight:700;
-    color:#222;
-    line-height:1.4;
-    margin:0 auto 14px;
-}
-
-@media(max-width:600px){
-    .cover-intro h1{
-        font-size:21px;
+    .header{
+        flex-direction:column;
+        gap:10px;
     }
 
-    .cover-intro h2{
-        font-size:17px;
+    .logo{
+        width:55px;
     }
+
+    .section-title{
+        font-size:14px;
+        margin-left:15px;
+        margin-right:15px;
+    }
+
+    .section-content{
+        margin:0 15px 18px;
+        padding:16px;
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ==============================
+     HEADER
+============================== -->
+
 <div class="header">
-  <img src="gadeh_logo.png" alt="GADEH Logo" class="logo">
-  <a href="index.html" class="home-link">Back to Home</a>
+
+    <img
+        src="gadeh_logo.png"
+        alt="Garissa Agro-Digital Empowerment Hub CBO Logo"
+        class="logo"
+    >
+
+    <a
+        href="index.html"
+        class="home-link"
+    >
+        Back to Home
+    </a>
+
 </div>
 
-<div class="cover-intro"><h1>ORGANIZATIONAL PROFILE</h1><h2>Empowering Communities Through Digital Literacy, Technology &amp; Agro-Entrepreneurship</h2><p>Garissa Agro-Digital Empowerment Hub CBO is committed to equipping communities with practical digital skills, promoting Internet of Things innovation and supporting sustainable agricultural entrepreneurship.</p><div class="motto-line">TECHNOLOGY • INNOVATION • SKILLS • ENTERPRISE</div></div><section><h2 class="section-title">1. About Garissa Agro-Digital Empowerment Hub CBO</h2><div class="text-box"><p><strong>Garissa Agro-Digital Empowerment Hub CBO (GADEH CBO)</strong> is a community-based organization committed to promoting inclusive socio-economic development through <strong>digital literacy, technology innovation, Internet of Things (IoT), entrepreneurship and agro-entrepreneurship.</strong></p><p>The organization seeks to equip young people, women, farmers, entrepreneurs, students, job seekers and underserved communities with practical skills, technology knowledge and opportunities that can improve livelihoods and strengthen local economic development.</p><p>GADEH CBO recognizes technology and agriculture as important drivers of employment, entrepreneurship, food security, innovation and sustainable development.</p><p>Through training, mentorship, innovation, community engagement, partnerships and enterprise development, GADEH CBO seeks to bridge the digital divide and create practical pathways toward <strong>learning, employment, entrepreneurship and sustainable livelihoods.</strong></p></div></section><section><div class="two-column"><div class="info-card"><h3>Vision</h3><p>A digitally empowered and economically resilient community where technology, innovation and agro-entrepreneurship create sustainable opportunities for all.</p></div><div class="info-card"><h3>Mission</h3><p>To empower communities through digital literacy, Internet of Things, technology innovation, entrepreneurship and sustainable agricultural enterprise development.</p></div></div></section><section><h2 class="section-title">12. Sustainable Development Goals Alignment</h2><p>GADEH CBO's programs contribute to several Sustainable Development Goals, including:</p><div class="sdg-grid"><div class="sdg">SDG 4 — Quality Education</div><div class="sdg">SDG 5 — Gender Equality</div><div class="sdg">SDG 8 — Decent Work &amp; Economic Growth</div><div class="sdg">SDG 9 — Industry, Innovation &amp; Infrastructure</div><div class="sdg">SDG 10 — Reduced Inequalities</div><div class="sdg">SDG 13 — Climate Action</div><div class="sdg">SDG 17 — Partnerships</div></div></section><section><h2 class="section-title">13. Core Values</h2><div class="values-grid"><div class="value"><h3>Integrity</h3><p>Honesty, transparency and accountability.</p></div><div class="value"><h3>Empowerment</h3><p>Equipping people with skills and opportunities.</p></div><div class="value"><h3>Innovation</h3><p>Encouraging creativity and technology-based solutions.</p></div><div class="value"><h3>Inclusion</h3><p>Promoting equal participation and opportunity.</p></div><div class="value"><h3>Sustainability</h3><p>Supporting long-term social and economic benefits.</p></div><div class="value"><h3>Collaboration</h3><p>Building partnerships for stronger development outcomes.</p></div></div></section>
+
+<!-- ==============================
+     ABOUT US
+============================== -->
+
+<span class="section-title">
+    About Us
+</span>
+
+<div class="section-content">
+
+    <p>
+        <strong>Garissa Agro-Digital Empowerment Hub CBO
+        (GADEH CBO)</strong> is a youth-led community-based
+        organization established in 2026 to promote digital
+        empowerment, agro-entrepreneurship, innovation and
+        sustainable community development in Garissa and
+        Northern Kenya.
+    </p>
+
+    <p>
+        We believe that technology, agriculture and
+        entrepreneurship can work together to create practical
+        opportunities for young people, farmers, women, persons
+        with disabilities and other underserved members of the
+        community.
+    </p>
+
+    <p>
+        Our programmes focus on digital literacy, computer and
+        smartphone skills, ICT training, agro-entrepreneurship,
+        climate-smart agriculture, agricultural innovation,
+        entrepreneurship, mentorship and community capacity
+        building.
+    </p>
+
+    <p>
+        Through practical training, partnerships and community
+        engagement, we aim to equip individuals with knowledge
+        and skills that can support employment, self-reliance,
+        enterprise development and sustainable livelihoods.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     VISION
+============================== -->
+
+<span class="section-title">
+    Vision
+</span>
+
+<div class="section-content">
+
+    <p>
+        To build digitally empowered and economically resilient
+        communities in Garissa and Northern Kenya where young
+        people, farmers and entrepreneurs have the knowledge,
+        skills and opportunities to thrive through technology,
+        agriculture and innovation.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     MISSION
+============================== -->
+
+<span class="section-title">
+    Mission
+</span>
+
+<div class="section-content">
+
+    <p>
+        Our mission is to provide inclusive, practical and
+        accessible digital, agricultural and entrepreneurial
+        training that enables communities to adopt technology,
+        develop sustainable enterprises, improve agricultural
+        productivity and create meaningful economic opportunities.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     CORE VALUES
+============================== -->
+
+<span class="section-title">
+    Core Values
+</span>
+
+<div class="section-content">
+
+    <ul>
+
+        <li>
+            <strong>Inclusivity</strong> –
+            promoting equal access to opportunities, knowledge
+            and technology.
+        </li>
+
+        <li>
+            <strong>Innovation</strong> –
+            encouraging creativity, technology adoption and
+            practical problem-solving.
+        </li>
+
+        <li>
+            <strong>Empowerment</strong> –
+            equipping individuals and communities with skills
+            that promote independence and self-reliance.
+        </li>
+
+        <li>
+            <strong>Sustainability</strong> –
+            promoting solutions that create lasting social,
+            economic and environmental impact.
+        </li>
+
+        <li>
+            <strong>Collaboration</strong> –
+            working with communities, institutions, private
+            sector organizations and development partners.
+        </li>
+
+        <li>
+            <strong>Integrity</strong> –
+            maintaining honesty, transparency, accountability
+            and responsible management.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- ==============================
+     STRATEGIC AIMS
+============================== -->
+
+<span class="section-title">
+    Strategic Aims
+</span>
+
+<div class="section-content">
+
+    <ul>
+
+        <li>
+            Bridge the digital skills gap in Garissa and
+            Northern Kenya.
+        </li>
+
+        <li>
+            Promote digital literacy and responsible use of
+            technology.
+        </li>
+
+        <li>
+            Equip youth and women with practical
+            agro-entrepreneurship skills.
+        </li>
+
+        <li>
+            Promote climate-smart and sustainable agricultural
+            practices.
+        </li>
+
+        <li>
+            Support farmers in adopting appropriate digital
+            technologies and agricultural innovations.
+        </li>
+
+        <li>
+            Promote youth entrepreneurship, employment and
+            self-reliance.
+        </li>
+
+        <li>
+            Encourage innovation and technology-driven
+            agricultural enterprises.
+        </li>
+
+        <li>
+            Create opportunities for mentorship, training,
+            networking and community development.
+        </li>
+
+        <li>
+            Develop partnerships that expand access to
+            knowledge, technology, markets and opportunities.
+        </li>
+
+    </ul>
+
+</div>
+
+
+<!-- ==============================
+     AREAS OF FOCUS
+============================== --><span class="section-title">
+    Our Areas of Focus
+</span><div class="section-content"><ul>
+
+    <li>
+        <strong>Digital Empowerment &amp; Literacy</strong> –
+        promoting practical digital skills including computer
+        literacy, computer packages, internet use, email,
+        smartphone literacy, digital communication and
+        responsible use of technology.
+    </li>
+
+    <li>
+        <strong>ICT Skills &amp; Short Courses</strong> –
+        providing practical short courses in ICT, digital
+        productivity, data entry, digital services, help-desk
+        support and other relevant technology skills.
+    </li>
+
+    <li>
+        <strong>Graphic Design &amp; Digital Creativity</strong> –
+        equipping youth and community members with practical
+        skills in graphic design, digital content creation,
+        visual communication, branding and related digital
+        creative tools.
+    </li>
+
+    <li>
+        <strong>Computer Repair &amp; Technical Support</strong> –
+        developing practical skills in computer maintenance,
+        troubleshooting, basic hardware and software support,
+        installation and technical assistance.
+    </li>
+
+    <li>
+        <strong>Smartphone &amp; Mobile Technology</strong> –
+        helping community members use smartphones, mobile
+        applications, online services and digital communication
+        tools effectively, safely and productively.
+    </li>
+
+    <li>
+        <strong>Agro-Entrepreneurship</strong> –
+        supporting youth, farmers and emerging entrepreneurs
+        to develop agricultural enterprises, value-addition
+        activities, market opportunities and sustainable
+        agribusinesses.
+    </li>
+
+    <li>
+        <strong>Climate-Smart Agriculture</strong> –
+        promoting sustainable, productive and climate-resilient
+        agricultural practices suited to local conditions.
+    </li>
+
+    <li>
+        <strong>Digital Agriculture</strong> –
+        encouraging the use of digital technologies, information
+        and tools to improve agricultural productivity,
+        decision-making, market access and farm management.
+    </li>
+
+    <li>
+        <strong>Entrepreneurship &amp; Innovation</strong> –
+        supporting business development, creativity, problem
+        solving, innovation and technology-driven enterprises.
+    </li>
+
+    <li>
+        <strong>Youth &amp; Women Empowerment</strong> –
+        creating opportunities for practical skills development,
+        mentorship, entrepreneurship, innovation and meaningful
+        participation in community development.
+    </li>
+
+    <li>
+        <strong>Environmental Conservation</strong> –
+        promoting tree planting, ecosystem restoration,
+        responsible natural-resource management and sustainable
+        community practices.
+    </li>
+
+    <li>
+        <strong>Community Capacity Building</strong> –
+        strengthening the knowledge, skills, confidence and
+        participation of individuals and community groups
+        through training, awareness and practical programmes.
+    </li>
+
+</ul>
+
+</div>
+
+
+<!-- ==============================
+     OUR APPROACH
+============================== -->
+
+<span class="section-title">
+    Our Approach
+</span>
+
+<div class="section-content">
+
+    <p>
+        We believe in a practical and community-driven approach
+        to development. We listen to community needs, understand
+        local challenges, test practical solutions, learn from
+        experience and continuously improve our programmes.
+    </p>
+
+    <p>
+        Our approach can be summarized as:
+    </p>
+
+    <p>
+        <strong>Listen → Understand → Test → Learn →
+        Improve → Scale</strong>
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     OUR COMMUNITY
+============================== -->
+
+<span class="section-title">
+    Who We Serve
+</span>
+
+<div class="section-content">
+
+    <p>
+        Our programmes are designed to serve youth, women,
+        farmers, entrepreneurs, students, persons with
+        disabilities and other community members seeking
+        practical skills and opportunities.
+    </p>
+
+    <p>
+        We particularly seek to reach underserved communities
+        and individuals who face barriers to accessing digital
+        technology, entrepreneurship opportunities and modern
+        agricultural knowledge.
+    </p>
+
+</div>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
-  <p>©2026 GADEH CBO All rights reserved</p>
-  <p><a href="privacy_terms.html">Privacy Policy | Terms & Conditions</a></p>
+
+    <p>
+        © 2026 Garissa Agro-Digital Empowerment Hub CBO
+        All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="privacy_terms.html">
+            Privacy Policy | Terms &amp; Conditions
+        </a>
+    </p>
+
 </footer>
 
+
 </body>
-    </html>
+
+</html>
