@@ -12,37 +12,33 @@ content="#C00000">
 /* =========================================================
    GADEH CBO
    PRIVACY POLICY & TERMS AND CONDITIONS
-   FORMAL CORPORATE / CONSTITUTION STYLE
-   A4 PORTRAIT PRINT DESIGN
+   A4 PORTRAIT — CLEAN PDF PRINT LAYOUT
 ========================================================= */
 
 :root{
 
-    /* Corporate Identity */
     --corporate-red:#C00000;
     --corporate-red-dark:#8B0000;
 
-    /* Agriculture */
     --agriculture-green:#2E7D32;
     --agriculture-green-dark:#1B5E20;
     --agriculture-light:#EEF6EE;
 
-    /* Neutral */
-    --black:#222222;
-    --dark:#333333;
-    --grey:#666666;
+    --black:#222;
+    --dark:#333;
+    --grey:#666;
     --light-grey:#F5F5F5;
     --border:#D6D6D6;
-    --white:#FFFFFF;
+    --white:#fff;
 
-    /* A4 */
-    --page-width:210mm;
-    --page-height:297mm;
+    /* A4 page dimensions */
+    --a4-width:210mm;
+    --a4-height:297mm;
 
-    --page-margin-top:14mm;
-    --page-margin-right:15mm;
-    --page-margin-bottom:12mm;
-    --page-margin-left:15mm;
+    /* Small but safe print margins */
+    --top-space:10mm;
+    --bottom-space:10mm;
+    --side-space:14mm;
 }
 
 
@@ -63,6 +59,10 @@ html{
 
 body{
 
+    margin:0;
+
+    padding:0;
+
     background:#EAEAEA;
 
     color:var(--black);
@@ -76,7 +76,7 @@ body{
 
     font-size:1rem;
 
-    line-height:1.65;
+    line-height:1.55;
 
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
@@ -89,17 +89,17 @@ body{
 
 .document{
 
-    width:var(--page-width);
+    width:var(--a4-width);
 
-    min-height:var(--page-height);
+    min-height:var(--a4-height);
 
     margin:15px auto;
 
     padding:
-        var(--page-margin-top)
-        var(--page-margin-right)
-        var(--page-margin-bottom)
-        var(--page-margin-left);
+        var(--top-space)
+        var(--side-space)
+        var(--bottom-space)
+        var(--side-space);
 
     background:var(--white);
 
@@ -118,9 +118,9 @@ body{
 
     text-align:center;
 
-    padding-bottom:1.2rem;
+    padding-bottom:1rem;
 
-    margin-bottom:2rem;
+    margin-bottom:1.5rem;
 
     border-bottom:
         .3rem solid var(--corporate-red);
@@ -128,44 +128,42 @@ body{
     position:relative;
 }
 
-
-/* Agricultural green accent */
-
 .document-header::after{
 
     content:"";
 
     display:block;
 
-    width:8rem;
+    width:7rem;
 
-    height:.25rem;
+    height:.22rem;
 
     background:var(--agriculture-green);
 
-    margin:.55rem auto 0;
+    margin:.5rem auto 0;
 }
 
 
-/* Logo */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .document-logo{
 
-    width:6.2rem;
+    width:5.8rem;
 
-    height:6.2rem;
+    height:5.8rem;
 
     object-fit:contain;
 
     display:block;
 
     margin:0 auto;
-
 }
 
 
 /* =========================================================
-   DOCUMENT TITLE
+   TITLE
 ========================================================= */
 
 .document-title{
@@ -174,17 +172,17 @@ body{
 
     color:var(--corporate-red);
 
-    font-size:1.65rem;
+    font-size:1.6rem;
 
-    line-height:1.3;
+    line-height:1.25;
 
     font-weight:800;
 
     text-transform:uppercase;
 
-    letter-spacing:.03em;
+    letter-spacing:.02em;
 
-    margin-bottom:.45rem;
+    margin-bottom:.35rem;
 }
 
 .document-subtitle{
@@ -193,11 +191,11 @@ body{
 
     color:var(--grey);
 
-    font-size:.95rem;
+    font-size:.9rem;
 
     font-weight:600;
 
-    letter-spacing:.02em;
+    margin-bottom:1.4rem;
 }
 
 
@@ -215,14 +213,14 @@ body{
     border:
         .1rem solid var(--border);
 
-    margin-bottom:2rem;
+    margin-bottom:1.6rem;
 
     background:var(--light-grey);
 }
 
 .info-item{
 
-    padding:.7rem;
+    padding:.55rem;
 
     text-align:center;
 
@@ -241,20 +239,20 @@ body{
 
     color:var(--corporate-red);
 
-    font-size:.75rem;
+    font-size:.7rem;
 
     font-weight:800;
 
     text-transform:uppercase;
 
-    margin-bottom:.15rem;
+    margin-bottom:.1rem;
 }
 
 .info-value{
 
     color:var(--black);
 
-    font-size:.85rem;
+    font-size:.82rem;
 
     font-weight:600;
 }
@@ -266,14 +264,18 @@ body{
 
 .contents{
 
-    margin-bottom:2.5rem;
+    margin-bottom:1.8rem;
 
-    padding:1.2rem 1.4rem;
+    padding:1rem 1.2rem;
 
     border:
         .1rem solid var(--border);
 
     background:#FAFAFA;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
 }
 
 .contents-title{
@@ -282,15 +284,15 @@ body{
 
     color:var(--corporate-red);
 
-    font-size:1.2rem;
+    font-size:1.1rem;
 
     font-weight:800;
 
     text-transform:uppercase;
 
-    margin-bottom:1rem;
+    margin-bottom:.7rem;
 
-    padding-bottom:.5rem;
+    padding-bottom:.4rem;
 
     border-bottom:
         .15rem solid var(--corporate-red);
@@ -304,12 +306,14 @@ body{
 
     gap:1rem;
 
-    padding:.4rem 0;
+    padding:.27rem 0;
 
     border-bottom:
-        .1rem dotted #CCCCCC;
+        .1rem dotted #CCC;
 
-    font-size:.9rem;
+    font-size:.84rem;
+
+    line-height:1.35;
 }
 
 .contents-row:last-child{
@@ -331,13 +335,22 @@ body{
 
 
 /* =========================================================
-   ARTICLE SECTIONS
+   ARTICLE
 ========================================================= */
 
 .article{
 
-    margin-bottom:2.2rem;
+    margin-bottom:1.5rem;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
 }
+
+
+/* =========================================================
+   ARTICLE HEADING
+========================================================= */
 
 .article-heading{
 
@@ -345,26 +358,26 @@ body{
 
     align-items:center;
 
-    gap:.8rem;
+    gap:.7rem;
 
     color:var(--corporate-red);
 
-    font-size:1.3rem;
+    font-size:1.18rem;
 
-    line-height:1.35;
+    line-height:1.3;
 
     font-weight:800;
 
     text-transform:uppercase;
 
     margin:
-        2.5rem
+        1.8rem
         0
-        1.1rem;
+        .8rem;
 
     padding:
-        .55rem
-        .8rem;
+        .45rem
+        .65rem;
 
     background:
         linear-gradient(
@@ -374,11 +387,20 @@ body{
         );
 
     border-left:
-        .5rem solid var(--corporate-red);
+        .45rem solid var(--corporate-red);
 
     border-bottom:
         .1rem solid var(--border);
+
+    break-after:avoid;
+
+    page-break-after:avoid;
 }
+
+
+/* =========================================================
+   ARTICLE NUMBER
+========================================================= */
 
 .article-number{
 
@@ -386,9 +408,9 @@ body{
 
     background:var(--corporate-red);
 
-    min-width:2.1rem;
+    min-width:2rem;
 
-    height:2.1rem;
+    height:2rem;
 
     display:inline-flex;
 
@@ -396,19 +418,19 @@ body{
 
     justify-content:center;
 
-    font-size:.85rem;
+    font-size:.8rem;
 
     flex-shrink:0;
 }
 
 
 /* =========================================================
-   SUBSECTION
+   SUBSECTIONS
 ========================================================= */
 
 .subsection{
 
-    margin-bottom:1.25rem;
+    margin-bottom:1rem;
 
     break-inside:avoid;
 
@@ -419,13 +441,17 @@ body{
 
     color:var(--black);
 
-    font-size:1.05rem;
+    font-size:1rem;
 
     font-weight:800;
 
-    margin-bottom:.35rem;
+    margin-bottom:.3rem;
 
-    line-height:1.4;
+    line-height:1.35;
+
+    break-after:avoid;
+
+    page-break-after:avoid;
 }
 
 .subsection-title .number{
@@ -433,11 +459,18 @@ body{
     color:var(--corporate-red);
 }
 
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
 p{
 
-    font-size:.92rem;
+    font-size:.88rem;
 
-    margin-bottom:.7rem;
+    line-height:1.55;
+
+    margin-bottom:.55rem;
 
     text-align:justify;
 
@@ -460,21 +493,23 @@ ul,
 ol{
 
     margin:
-        .35rem
+        .25rem
         0
-        .75rem
-        1.8rem;
+        .6rem
+        1.6rem;
 
-    padding-left:1rem;
+    padding-left:.9rem;
 }
 
 li{
 
-    font-size:.9rem;
+    font-size:.86rem;
 
-    margin-bottom:.35rem;
+    line-height:1.45;
 
-    padding-left:.15rem;
+    margin-bottom:.22rem;
+
+    padding-left:.1rem;
 }
 
 li::marker{
@@ -486,24 +521,24 @@ li::marker{
 
 
 /* =========================================================
-   IMPORTANT NOTE / POLICY BOX
+   POLICY BOX
 ========================================================= */
 
 .policy-box{
 
     margin:
-        1rem
+        .8rem
         0
-        1.2rem;
+        1rem;
 
     padding:
-        .9rem
-        1.1rem;
+        .75rem
+        .95rem;
 
     background:var(--agriculture-light);
 
     border-left:
-        .45rem solid var(--agriculture-green);
+        .4rem solid var(--agriculture-green);
 
     border-top:
         .1rem solid #D5E5D5;
@@ -524,20 +559,25 @@ li::marker{
     color:var(--agriculture-green-dark);
 }
 
+
+/* =========================================================
+   WARNING BOX
+========================================================= */
+
 .warning-box{
 
     margin:
-        1rem
+        .8rem
         0;
 
     padding:
-        .9rem
-        1.1rem;
+        .75rem
+        .95rem;
 
     background:#FFF7F7;
 
     border-left:
-        .45rem solid var(--corporate-red);
+        .4rem solid var(--corporate-red);
 
     border-top:
         .1rem solid #E8CCCC;
@@ -565,11 +605,27 @@ li::marker{
     border-collapse:collapse;
 
     margin:
-        .8rem
+        .7rem
         0
-        1.2rem;
+        1rem;
 
-    font-size:.85rem;
+    font-size:.82rem;
+
+    break-inside:avoid;
+
+    page-break-inside:auto;
+}
+
+.definition-table thead{
+
+    display:table-header-group;
+}
+
+.definition-table tr{
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
 }
 
 .definition-table th{
@@ -580,7 +636,7 @@ li::marker{
 
     text-align:left;
 
-    padding:.55rem;
+    padding:.45rem;
 
     font-weight:800;
 }
@@ -590,9 +646,11 @@ li::marker{
     border:
         .1rem solid var(--border);
 
-    padding:.55rem;
+    padding:.45rem;
 
     vertical-align:top;
+
+    line-height:1.4;
 }
 
 .definition-table td:first-child{
@@ -611,9 +669,9 @@ li::marker{
 
 .contact-box{
 
-    margin-top:1.5rem;
+    margin-top:1.3rem;
 
-    padding:1rem;
+    padding:.85rem;
 
     border:
         .15rem solid var(--corporate-red);
@@ -631,22 +689,22 @@ li::marker{
 
     color:var(--corporate-red);
 
-    font-size:1.05rem;
+    font-size:1rem;
 
     font-weight:800;
 
     text-transform:uppercase;
 
-    margin-bottom:.5rem;
+    margin-bottom:.4rem;
 }
 
 .contact-box p{
 
     text-align:center;
 
-    margin-bottom:.3rem;
+    margin-bottom:.2rem;
 
-    font-size:.88rem;
+    font-size:.84rem;
 }
 
 
@@ -656,9 +714,9 @@ li::marker{
 
 .declaration{
 
-    margin-top:2rem;
+    margin-top:1.5rem;
 
-    padding:1.2rem;
+    padding:1rem;
 
     background:
         linear-gradient(
@@ -681,13 +739,13 @@ li::marker{
 
     color:var(--agriculture-green-dark);
 
-    font-size:1.1rem;
+    font-size:1rem;
 
     font-weight:800;
 
     text-transform:uppercase;
 
-    margin-bottom:.7rem;
+    margin-bottom:.5rem;
 }
 
 .declaration p{
@@ -695,6 +753,8 @@ li::marker{
     text-align:center;
 
     font-weight:600;
+
+    margin-bottom:0;
 }
 
 
@@ -704,46 +764,48 @@ li::marker{
 
 .document-footer{
 
-    margin-top:2.5rem;
+    margin-top:1.8rem;
 
-    padding-top:.8rem;
+    padding-top:.65rem;
 
     border-top:
-        .3rem solid var(--corporate-red);
+        .25rem solid var(--corporate-red);
 
     text-align:center;
 
     break-inside:avoid;
+
+    page-break-inside:avoid;
 }
 
 .footer-green-line{
 
-    width:6rem;
+    width:5rem;
 
-    height:.2rem;
+    height:.18rem;
 
     background:var(--agriculture-green);
 
     margin:
-        -.45rem
+        -.4rem
         auto
-        .7rem;
+        .55rem;
 }
 
 .document-footer p{
 
     text-align:center;
 
-    margin:.15rem 0;
+    margin:.1rem 0;
 
-    font-size:.75rem;
+    font-size:.7rem;
 
     color:var(--grey);
 }
 
 .footer-links{
 
-    margin:.55rem 0;
+    margin:.4rem 0;
 }
 
 .footer-links a{
@@ -752,13 +814,13 @@ li::marker{
 
     text-decoration:none;
 
-    font-size:.78rem;
+    font-size:.72rem;
 
     font-weight:700;
 
     margin:
         0
-        .5rem;
+        .4rem;
 }
 
 
@@ -770,11 +832,11 @@ li::marker{
 
     text-align:right;
 
-    font-size:.7rem;
+    font-size:.65rem;
 
     color:#777;
 
-    margin-top:.6rem;
+    margin-top:.4rem;
 }
 
 
@@ -814,9 +876,12 @@ a{
 
         box-shadow:none;
     }
-
 }
 
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:500px){
 
@@ -835,14 +900,14 @@ a{
 
     .document-logo{
 
-        width:5.5rem;
+        width:5.2rem;
 
-        height:5.5rem;
+        height:5.2rem;
     }
 
     .document-title{
 
-        font-size:1.45rem;
+        font-size:1.4rem;
     }
 
     .document-info{
@@ -863,57 +928,46 @@ a{
         border-bottom:none;
     }
 
-    .contents-row{
-
-        font-size:.82rem;
-    }
-
     .article-heading{
 
-        font-size:1.15rem;
+        font-size:1.1rem;
     }
 
     p{
 
-        font-size:.9rem;
+        font-size:.88rem;
 
         text-align:left;
     }
 
     li{
 
-        font-size:.88rem;
+        font-size:.86rem;
     }
-
 }
 
 
 /* =========================================================
-   PRINT / A4 PORTRAIT
+   CLEAN A4 PAGE FLOW
+   DO NOT FORCE ARTICLES TO NEW PAGES
 ========================================================= */
 
 @page{
-
     size:A4 portrait;
-
     margin:0;
 }
-
 
 @media print{
 
     html{
-
         font-size:10px;
     }
 
     body{
-
-        background:#fff;
-
+        width:210mm;
         margin:0;
-
         padding:0;
+        background:#fff;
     }
 
     .document{
@@ -925,61 +979,159 @@ a{
         margin:0;
 
         padding:
+            10mm
             14mm
-            15mm
-            12mm;
-
-        box-shadow:none;
+            10mm
+            14mm;
 
         background:#fff;
+
+        box-shadow:none;
     }
 
-    .document-header{
 
-        break-after:auto;
-
-        page-break-after:auto;
-    }
+    /* =====================================================
+       ARTICLES FLOW NATURALLY
+       NEVER FORCE ARTICLE TO A NEW PAGE
+    ===================================================== */
 
     .article{
+
+        break-before:auto !important;
+
+        page-break-before:auto !important;
+
+        break-after:auto !important;
+
+        page-break-after:auto !important;
 
         break-inside:auto;
 
         page-break-inside:auto;
+
+        margin-bottom:1.5rem;
     }
 
+
+    /* =====================================================
+       KEEP HEADING WITH CONTENT BELOW IT
+       BUT DO NOT CREATE A NEW PAGE
+    ===================================================== */
+
+    .article-heading{
+
+        break-before:auto !important;
+
+        page-break-before:auto !important;
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+
+        margin-top:1.8rem;
+    }
+
+    .subsection-title{
+
+        break-before:auto !important;
+
+        page-break-before:auto !important;
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+    }
+
+
+    /* =====================================================
+       SUBSECTIONS
+       Keep together when possible, but allow natural flow
+    ===================================================== */
+
     .subsection{
+
+        break-before:auto;
+
+        page-break-before:auto;
+
+        break-after:auto;
+
+        page-break-after:auto;
 
         break-inside:avoid;
 
         page-break-inside:avoid;
     }
+
+
+    /* =====================================================
+       BOXES SHOULD NOT SPLIT
+    ===================================================== */
 
     .policy-box,
     .warning-box,
     .contact-box,
     .declaration{
 
+        break-before:auto;
+
+        page-break-before:auto;
+
         break-inside:avoid;
 
         page-break-inside:avoid;
     }
+
+
+    /* =====================================================
+       CONTENTS
+    ===================================================== */
 
     .contents{
 
+        break-before:auto;
+
+        page-break-before:auto;
+
         break-inside:avoid;
 
         page-break-inside:avoid;
     }
 
-    h1,
-    h2,
-    h3{
 
-        break-after:avoid;
+    /* =====================================================
+       TABLES
+    ===================================================== */
 
-        page-break-after:avoid;
+    .definition-table{
+
+        width:100%;
+
+        break-before:auto;
+
+        page-break-before:auto;
+
+        break-inside:auto;
+
+        page-break-inside:auto;
     }
+
+    .definition-table thead{
+
+        display:table-header-group;
+    }
+
+    .definition-table tr{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+
+    /* =====================================================
+       TEXT FLOW
+    ===================================================== */
 
     p,
     li{
@@ -989,6 +1141,23 @@ a{
         widows:3;
     }
 
+
+    /* =====================================================
+       ONLY USE .page-break WHEN YOU EXPLICITLY WANT ONE
+    ===================================================== */
+
+    .page-break{
+
+        break-before:page;
+
+        page-break-before:always;
+    }
+
+
+    /* =====================================================
+       NO EXTRA PRINT DECORATION
+    ===================================================== */
+
     a{
 
         color:inherit;
@@ -996,28 +1165,15 @@ a{
         text-decoration:none;
     }
 
-}
+    *,
+    *::before,
+    *::after{
 
+        -webkit-print-color-adjust:exact !important;
 
-/* =========================================================
-   UTILITY PAGE BREAK
-========================================================= */
+        print-color-adjust:exact !important;
+    }
 
-.page-break{
-
-    break-before:page;
-
-    page-break-before:always;
-}
-
-
-/* =========================================================
-   AVOID UNNECESSARY BOTTOM SPACE
-========================================================= */
-
-.last-section{
-
-    margin-bottom:0;
 }
 
 </style></head><body><div class="document"><!-- =====================================================
@@ -2027,50 +2183,17 @@ Terms &amp; Conditions
 © 2026. All Rights Reserved.
 </p><div class="page-number">
 Official Policy Document
-</div></footer></div><script>
+</div></footer></div>
+<script>
 
-/* =========================================================
-   SMOOTH INTERNAL NAVIGATION
-========================================================= */
+    window.addEventListener("load", function () {
 
-document.querySelectorAll(
-    'a[href^="#"]'
-).forEach(function(link){
+        setTimeout(function () {
 
-    link.addEventListener(
-        "click",
-        function(event){
+            window.print();
 
-            const target =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+        }, 800);
 
-            if(target){
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
-
-            }
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   PRINT
-========================================================= */
-
-function printDocument(){
-
-    window.print();
-
-}
+    });
 
 </script></body></html>

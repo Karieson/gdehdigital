@@ -340,12 +340,15 @@ tr:nth-child(even) {
 }
 
 /* =========================================================
-   PRINT / A4
+   PRINT / A4 PORTRAIT
+   CLEAN PROFESSIONAL CONSTITUTION LAYOUT
 ========================================================= */
 
 @page {
     size: A4 portrait;
-    margin: 0;
+
+    /* Small top, bottom and side margins */
+    margin: 8mm 10mm 8mm 10mm;
 }
 
 @media print {
@@ -353,137 +356,325 @@ tr:nth-child(even) {
     html,
     body {
         width: 210mm;
-        min-height: 297mm;
         margin: 0;
         padding: 0;
-        background: var(--white);
+
+        background: #FFFFFF;
+
+        color: #222222;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 
     body {
         font-size: 0.75rem;
+        line-height: 1.5;
     }
 
-    .document {
-        width: 210mm;
-        min-height: 297mm;
-        margin: 0;
+    /* =====================================================
+       A4 DOCUMENT
+    ===================================================== */
 
-        padding:
-            12mm
-            12mm
-            8mm
-            12mm;
+    .document {
+        width: 100%;
+        max-width: none;
+
+        min-height: 0;
+
+        margin: 0;
+        padding: 0;
+
+        background: #FFFFFF;
 
         box-shadow: none;
     }
 
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
     .document-header {
-        margin-bottom: 1.125rem;
+        margin-bottom: 1rem;
     }
 
     .gadeh-logo {
         width: 7.1875rem;
-        margin-bottom: 0.625rem;
+        max-width: 40%;
+
+        margin: 0 auto 0.5rem auto;
     }
 
     .corporate-line {
-        height: 0.25rem;
+        height: 0.2rem;
     }
 
+    /* =====================================================
+       DOCUMENT TITLE
+    ===================================================== */
+
     .document-title {
-        margin: 1.125rem 0 1.375rem;
+        margin: 1rem 0 1.25rem;
     }
 
     .document-title h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+        letter-spacing: 0.08rem;
+        margin-bottom: 0.35rem;
     }
 
     .document-title h2 {
-        font-size: 0.9375rem;
+        font-size: 0.9rem;
+        line-height: 1.3;
     }
 
     .document-title .subtitle {
-        font-size: 0.6875rem;
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
     }
 
+    /* =====================================================
+       TABLE OF CONTENTS
+    ===================================================== */
+
+    .contents {
+        margin: 1rem 0;
+
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .contents-card {
+        padding: 0.8rem;
+        border-top-width: 0.2rem;
+    }
+
+    .contents-title {
+        margin-bottom: 0.65rem;
+        padding-bottom: 0.4rem;
+
+        font-size: 0.65rem;
+    }
+
+    .contents-row {
+        padding: 0.32rem 0;
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+
+    /* =====================================================
+       MAJOR CONSTITUTION SECTIONS
+    ===================================================== */
+
+    .constitution-section {
+
+        /* Every Article begins on a new page */
+        break-before: page;
+        page-break-before: always;
+
+        /* Allow long Articles to continue naturally */
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    /*
+       First Article should not create an unnecessary
+       blank page if the contents page has already ended.
+    */
+    .constitution-section:first-of-type {
+        break-before: auto;
+        page-break-before: auto;
+    }
+
+    /* =====================================================
+       SECTION TITLE
+    ===================================================== */
+
     .section-title {
-        font-size: 1rem;
-        margin-top: 1.25rem;
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.3125rem;
+
+        font-size: 0.95rem;
+
+        margin-top: 0;
+        margin-bottom: 0.65rem;
+
+        padding-bottom: 0.3rem;
+
+        line-height: 1.25;
+
+        break-after: avoid;
+        page-break-after: avoid;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 
     .section-number {
-        width: 1.75rem;
-        height: 1.75rem;
-        font-size: 0.6875rem;
+        width: 1.6rem;
+        height: 1.6rem;
+
+        font-size: 0.65rem;
     }
+
+    /* =====================================================
+       SUBSECTIONS
+    ===================================================== */
 
     h3 {
-        font-size: 0.8125rem;
-        margin-top: 0.75rem;
-        margin-bottom: 0.3125rem;
+
+        font-size: 0.78rem;
+
+        margin-top: 0.65rem;
+        margin-bottom: 0.3rem;
+
+        line-height: 1.3;
+
+        break-after: avoid;
+        page-break-after: avoid;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 
+    /* =====================================================
+       PARAGRAPHS
+    ===================================================== */
+
     p {
-        font-size: 0.6875rem;
-        line-height: 1.5;
-        margin-bottom: 0.4375rem;
+
+        font-size: 0.68rem;
+
+        line-height: 1.45;
+
+        margin-bottom: 0.4rem;
+
+        text-align: justify;
+
+        orphans: 3;
+        widows: 3;
     }
+
+    /* =====================================================
+       LISTS
+    ===================================================== */
 
     ul,
     ol {
-        margin-top: 0.3125rem;
-        margin-bottom: 0.5625rem;
-        margin-left: 1.25rem;
+
+        margin-top: 0.3rem;
+        margin-bottom: 0.55rem;
+
+        margin-left: 1.2rem;
     }
 
     li {
-        font-size: 0.6875rem;
-        margin-bottom: 0.1875rem;
+
+        font-size: 0.68rem;
+
+        line-height: 1.4;
+
+        margin-bottom: 0.18rem;
+
+        orphans: 3;
+        widows: 3;
     }
+
+    /* =====================================================
+       CONTENT BOXES
+    ===================================================== */
 
     .intro,
     .definition-box,
     .important-box,
     .official-details {
-        padding: 0.625rem;
-        margin: 0.625rem 0;
-    }
 
-    table {
-        margin: 0.625rem 0 0.9375rem;
-    }
+        padding: 0.55rem;
 
-    th {
-        padding: 0.4375rem;
-        font-size: 0.625rem;
-    }
+        margin: 0.55rem 0;
 
-    td {
-        padding: 0.4375rem;
-        font-size: 0.625rem;
-    }
-
-    .document-footer {
-        margin-top: 1.25rem;
-        padding-top: 0.4375rem;
-        font-size: 0.5625rem;
-    }
-
-    tr,
-    img,
-    .important-box,
-    .definition-box,
-    .official-details {
         break-inside: avoid;
         page-break-inside: avoid;
     }
 
-    .section-title {
-        break-after: avoid;
-        page-break-after: avoid;
+    /* =====================================================
+       TABLES
+    ===================================================== */
+
+    table {
+
+        width: 100%;
+
+        margin: 0.55rem 0 0.85rem;
+
+        break-inside: auto;
+        page-break-inside: auto;
     }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    tr {
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    th {
+
+        padding: 0.38rem;
+
+        font-size: 0.6rem;
+
+        line-height: 1.25;
+    }
+
+    td {
+
+        padding: 0.38rem;
+
+        font-size: 0.6rem;
+
+        line-height: 1.35;
+    }
+
+    /* =====================================================
+       IMAGES
+    ===================================================== */
+
+    img {
+
+        max-width: 100%;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .document-footer {
+
+        margin-top: 1rem;
+
+        padding-top: 0.35rem;
+
+        border-top-width: 0.2rem;
+
+        font-size: 0.52rem;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* =====================================================
+       HIDE SCREEN-ONLY ELEMENTS
+    ===================================================== */
 
     .no-print {
         display: none !important;
