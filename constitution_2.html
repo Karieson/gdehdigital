@@ -14,6 +14,7 @@
 /* =========================================================
    GADEH CBO CONSTITUTION
    RESPONSIVE WEB + A4 PORTRAIT PRINT
+   REM-BASED TYPOGRAPHY
 ========================================================= */
 
 * {
@@ -31,18 +32,28 @@
     --light-grey: #F5F5F5;
     --border: #D8D8D8;
     --white: #FFFFFF;
+
+    /* Typography */
+    --font-xs: 0.65rem;
+    --font-sm: 0.75rem;
+    --font-base: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.75rem;
 }
 
 /* =========================================================
-   NORMAL WEB PAGE
+   BASE
 ========================================================= */
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
-
     font-family:
         Arial,
         Helvetica,
@@ -54,8 +65,7 @@ body {
 
     line-height: 1.65;
 
-    font-size: 15px;
-
+    font-size: var(--font-base);
 }
 
 /* =========================================================
@@ -63,21 +73,15 @@ body {
 ========================================================= */
 
 .document {
-
     width: 100%;
-
-    max-width: 900px;
-
-    margin: 20px auto;
-
+    max-width: 56.25rem;
+    margin: 1.25rem auto;
     background: var(--white);
-
-    padding: 45px;
+    padding: 2.8125rem;
 
     box-shadow:
-        0 2px 15px
+        0 0.125rem 0.9375rem
         rgba(0,0,0,0.10);
-
 }
 
 /* =========================================================
@@ -85,263 +89,105 @@ body {
 ========================================================= */
 
 .document-header {
-
     width: 100%;
-
     text-align: center;
-
-    margin-bottom: 25px;
-
+    margin-bottom: 1.5625rem;
 }
 
 .gadeh-logo {
-
     display: block;
-
-    width: 145px;
-
+    width: 9.0625rem;
     max-width: 70%;
-
     height: auto;
-
-    margin: 0 auto 15px auto;
-
+    margin: 0 auto 0.9375rem auto;
 }
 
 .corporate-line {
-
     width: 100%;
-
-    height: 5px;
-
+    height: 0.3125rem;
     background: var(--corporate-red);
-
     margin: 0 auto;
-
 }
 
 /* =========================================================
-   TITLE
+   DOCUMENT TITLE
 ========================================================= */
 
 .document-title {
-
     text-align: center;
-
-    margin: 25px 0 30px;
-
+    margin: 1.5625rem 0 1.875rem;
 }
 
 .document-title h1 {
-
     color: var(--black);
-
-    font-size: 30px;
-
+    font-size: var(--font-2xl);
     font-weight: 800;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 7px;
-
+    letter-spacing: 0.125rem;
+    margin-bottom: 0.4375rem;
 }
 
 .document-title h2 {
-
     color: var(--agriculture-green);
-
-    font-size: 18px;
-
+    font-size: var(--font-lg);
     font-weight: 600;
-
 }
 
 .document-title .subtitle {
-
-    color: var(--grey);
-
-    font-size: 13px;
-
-    margin-top: 4px;
-
+    color: var(--corporate-red);
+    font-size: var(--font-sm);
+    margin-top: 0.25rem;
 }
-/* =====================================================
-   TABLE OF CONTENTS CARD
-===================================================== */
+
+/* =========================================================
+   TABLE OF CONTENTS
+========================================================= */
 
 .contents {
     width: 100%;
-    margin: 25px 0;
+    margin: 1.5625rem 0;
 }
 
 .contents-card {
-
     width: 100%;
-
-    background: #FFFFFF;
-
-    border: 1px solid #D8D8D8;
-
-    border-top: 4px solid #C00000;
-
+    background: var(--white);
+    border: 0.0625rem solid var(--border);
+    border-top: 0.25rem solid var(--corporate-red);
     padding: 1.2rem;
-
-    box-sizing: border-box;
-
 }
-
-
-/* =====================================================
-   CONTENTS TITLE
-===================================================== */
 
 .contents-title {
-
     margin: 0 0 1rem 0;
-
     padding-bottom: 0.6rem;
-
-    border-bottom: 1px solid #D8D8D8;
-
-    color: #C00000;
-
-    font-size: 0.95rem;
-
+    border-bottom: 0.0625rem solid var(--border);
+    color: var(--corporate-red);
+    font-size: var(--font-sm);
     font-weight: 700;
-
     letter-spacing: 0.04rem;
-
 }
-
-
-/* =====================================================
-   CONTENTS ROW
-===================================================== */
 
 .contents-row {
-
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 1rem;
-
     padding: 0.48rem 0;
-
-    border-bottom: 1px dotted #CCCCCC;
-
-    font-size: 0.78rem;
-
+    border-bottom: 0.0625rem dotted #CCCCCC;
+    font-size: var(--font-sm);
     line-height: 1.4;
-
 }
-
-
-/* Article name */
 
 .contents-row span:first-child {
-
     flex: 1;
-
     min-width: 0;
-
 }
-
-
-/* Page number */
 
 .contents-row span:last-child {
-
     flex: 0 0 auto;
-
     min-width: 1.5rem;
-
     text-align: right;
-
     font-weight: 700;
-
-    color: #C00000;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 480px) {
-
-    .contents-card {
-
-        padding: 0.9rem;
-
-    }
-
-    .contents-title {
-
-        font-size: 0.88rem;
-
-    }
-
-    .contents-row {
-
-        font-size: 0.75rem;
-
-        padding: 0.42rem 0;
-
-    }
-
-}
-
-
-/* =====================================================
-   PRINT
-===================================================== */
-
-@media print {
-
-    .contents {
-
-        width: 100%;
-
-        margin: 0;
-
-    }
-
-    .contents-card {
-
-        width: 100%;
-
-        padding: 0.8rem;
-
-        border: 1px solid #BBBBBB;
-
-        border-top: 3px solid #C00000;
-
-        box-shadow: none;
-
-    }
-
-    .contents-title {
-
-        font-size: 0.85rem;
-
-        margin-bottom: 0.6rem;
-
-    }
-
-    .contents-row {
-
-        font-size: 0.68rem;
-
-        padding: 0.28rem 0;
-
-    }
-
+    color: var(--corporate-red);
 }
 
 /* =========================================================
@@ -349,96 +195,68 @@ body {
 ========================================================= */
 
 section {
-
     width: 100%;
-
 }
 
 .section-title {
-
     display: flex;
-
     align-items: center;
-
-    gap: 10px;
+    gap: 0.625rem;
 
     color: var(--corporate-red);
 
-    font-size: 19px;
+    font-size: 1.1875rem;
 
     text-transform: uppercase;
 
-    border-bottom: 2px solid var(--corporate-red);
+    border-bottom: 0.125rem solid var(--corporate-red);
 
-    padding-bottom: 7px;
+    padding-bottom: 0.4375rem;
 
-    margin-top: 30px;
-
-    margin-bottom: 17px;
+    margin-top: 1.875rem;
+    margin-bottom: 1.0625rem;
 
     page-break-after: avoid;
-
 }
 
 .section-number {
-
     flex-shrink: 0;
 
-    width: 34px;
-
-    height: 34px;
+    width: 2.125rem;
+    height: 2.125rem;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background: var(--corporate-red);
-
     color: var(--white);
 
-    font-size: 14px;
-
+    font-size: var(--font-sm);
     font-weight: bold;
-
 }
 
 h3 {
-
     color: var(--agriculture-green);
-
-    font-size: 16px;
-
-    margin-top: 17px;
-
-    margin-bottom: 7px;
-
+    font-size: var(--font-lg);
+    margin-top: 1.0625rem;
+    margin-bottom: 0.4375rem;
 }
 
 p {
-
-    font-size: 14px;
-
-    margin-bottom: 11px;
-
+    font-size: var(--font-base);
+    margin-bottom: 0.6875rem;
     text-align: justify;
-
 }
 
 ul,
 ol {
-
-    margin: 8px 0 15px 25px;
-
+    margin: 0.5rem 0 0.9375rem 1.5625rem;
 }
 
 li {
-
-    font-size: 14px;
-
-    margin-bottom: 5px;
-
+    font-size: var(--font-base);
+    margin-bottom: 0.3125rem;
 }
 
 /* =========================================================
@@ -449,55 +267,34 @@ li {
 .definition-box,
 .important-box,
 .official-details {
-
     width: 100%;
-
-    padding: 15px;
-
-    margin: 15px 0;
-
+    padding: 0.9375rem;
+    margin: 0.9375rem 0;
 }
 
 .intro {
-
-    border-left: 5px solid var(--agriculture-green);
-
+    border-left: 0.3125rem solid var(--agriculture-green);
     background: #F8FBF8;
-
 }
 
 .definition-box {
-
-    border-left: 5px solid var(--agriculture-green);
-
+    border-left: 0.3125rem solid var(--agriculture-green);
     background: var(--light-grey);
-
-    border-top: 1px solid var(--border);
-
-    border-right: 1px solid var(--border);
-
-    border-bottom: 1px solid var(--border);
-
+    border-top: 0.0625rem solid var(--border);
+    border-right: 0.0625rem solid var(--border);
+    border-bottom: 0.0625rem solid var(--border);
 }
 
 .important-box {
-
-    border-left: 5px solid var(--corporate-red);
-
+    border-left: 0.3125rem solid var(--corporate-red);
     background: #FFF8F8;
-
-    border-top: 1px solid #E0B0B0;
-
-    border-right: 1px solid #E0B0B0;
-
-    border-bottom: 1px solid #E0B0B0;
-
+    border-top: 0.0625rem solid #E0B0B0;
+    border-right: 0.0625rem solid #E0B0B0;
+    border-bottom: 0.0625rem solid #E0B0B0;
 }
 
 .official-details {
-
-    border: 2px solid var(--black);
-
+    border: 0.125rem solid var(--black);
 }
 
 /* =========================================================
@@ -505,45 +302,28 @@ li {
 ========================================================= */
 
 table {
-
     width: 100%;
-
     border-collapse: collapse;
-
-    margin: 15px 0 25px;
-
+    margin: 0.9375rem 0 1.5625rem;
 }
 
 th {
-
     background: var(--black);
-
     color: var(--white);
-
-    padding: 10px;
-
-    font-size: 13px;
-
+    padding: 0.625rem;
+    font-size: var(--font-sm);
     text-align: left;
-
 }
 
 td {
-
-    border: 1px solid var(--border);
-
-    padding: 9px;
-
-    font-size: 13px;
-
+    border: 0.0625rem solid var(--border);
+    padding: 0.5625rem;
+    font-size: var(--font-sm);
     vertical-align: top;
-
 }
 
 tr:nth-child(even) {
-
     background: #FAFAFA;
-
 }
 
 /* =========================================================
@@ -551,372 +331,238 @@ tr:nth-child(even) {
 ========================================================= */
 
 .document-footer {
-
-    margin-top: 35px;
-
-    padding-top: 10px;
-
-    border-top: 4px solid var(--corporate-red);
-
+    margin-top: 2.1875rem;
+    padding-top: 0.625rem;
+    border-top: 0.25rem solid var(--corporate-red);
     text-align: center;
-
-    font-size: 11px;
-
+    font-size: var(--font-xs);
     color: var(--grey);
-
 }
 
-
 /* =========================================================
-   PRINT / SAVE AS PDF
-   A4 PORTRAIT
+   PRINT / A4
 ========================================================= */
 
 @page {
-
     size: A4 portrait;
-
     margin: 0;
-
 }
 
 @media print {
 
     html,
     body {
-
         width: 210mm;
-
         min-height: 297mm;
-
         margin: 0;
-
         padding: 0;
-
-        background: #FFFFFF;
-
+        background: var(--white);
     }
 
     body {
-
-        font-size: 12px;
-
+        font-size: 0.75rem;
     }
 
     .document {
-
         width: 210mm;
-
         min-height: 297mm;
-
         margin: 0;
 
         padding:
-
             12mm
             12mm
             8mm
             12mm;
 
         box-shadow: none;
-
     }
 
     .document-header {
-
-        margin-bottom: 18px;
-
+        margin-bottom: 1.125rem;
     }
 
     .gadeh-logo {
-
-        width: 115px;
-
-        margin-bottom: 10px;
-
+        width: 7.1875rem;
+        margin-bottom: 0.625rem;
     }
 
     .corporate-line {
-
-        height: 4px;
-
+        height: 0.25rem;
     }
 
     .document-title {
-
-        margin: 18px 0 22px;
-
+        margin: 1.125rem 0 1.375rem;
     }
 
     .document-title h1 {
-
-        font-size: 24px;
-
+        font-size: 1.5rem;
     }
 
     .document-title h2 {
-
-        font-size: 15px;
-
+        font-size: 0.9375rem;
     }
 
     .document-title .subtitle {
-
-        font-size: 11px;
-
+        font-size: 0.6875rem;
     }
 
     .section-title {
-
-        font-size: 16px;
-
-        margin-top: 20px;
-
-        margin-bottom: 12px;
-
-        padding-bottom: 5px;
-
+        font-size: 1rem;
+        margin-top: 1.25rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.3125rem;
     }
 
     .section-number {
-
-        width: 28px;
-
-        height: 28px;
-
-        font-size: 11px;
-
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.6875rem;
     }
 
     h3 {
-
-        font-size: 13px;
-
-        margin-top: 12px;
-
-        margin-bottom: 5px;
-
+        font-size: 0.8125rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.3125rem;
     }
 
     p {
-
-        font-size: 11px;
-
+        font-size: 0.6875rem;
         line-height: 1.5;
-
-        margin-bottom: 7px;
-
+        margin-bottom: 0.4375rem;
     }
 
     ul,
     ol {
-
-        margin-top: 5px;
-
-        margin-bottom: 9px;
-
-        margin-left: 20px;
-
+        margin-top: 0.3125rem;
+        margin-bottom: 0.5625rem;
+        margin-left: 1.25rem;
     }
 
     li {
-
-        font-size: 11px;
-
-        margin-bottom: 3px;
-
+        font-size: 0.6875rem;
+        margin-bottom: 0.1875rem;
     }
 
     .intro,
     .definition-box,
     .important-box,
     .official-details {
-
-        padding: 10px;
-
-        margin: 10px 0;
-
+        padding: 0.625rem;
+        margin: 0.625rem 0;
     }
 
     table {
-
-        margin: 10px 0 15px;
-
+        margin: 0.625rem 0 0.9375rem;
     }
 
     th {
-
-        padding: 7px;
-
-        font-size: 10px;
-
+        padding: 0.4375rem;
+        font-size: 0.625rem;
     }
 
     td {
-
-        padding: 7px;
-
-        font-size: 10px;
-
+        padding: 0.4375rem;
+        font-size: 0.625rem;
     }
 
     .document-footer {
-
-        margin-top: 20px;
-
-        padding-top: 7px;
-
-        font-size: 9px;
-
+        margin-top: 1.25rem;
+        padding-top: 0.4375rem;
+        font-size: 0.5625rem;
     }
-
-    /* Prevent ugly splitting */
 
     tr,
     img,
     .important-box,
     .definition-box,
     .official-details {
-
         break-inside: avoid;
-
         page-break-inside: avoid;
-
     }
 
     .section-title {
-
         break-after: avoid;
-
         page-break-after: avoid;
-
     }
-
-    /* Hide anything marked no-print */
 
     .no-print {
-
         display: none !important;
-
     }
-
 }
 
-
 /* =========================================================
-   MOBILE RESPONSIVENESS
+   MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
 
+    html {
+        font-size: 16px;
+    }
+
     body {
-
         background: var(--white);
-
-        font-size: 14px;
-
+        font-size: var(--font-base);
     }
 
     .document {
-
         width: 100%;
-
         max-width: none;
-
         margin: 0;
-
-        padding: 25px 18px;
-
+        padding: 1.5625rem 1.125rem;
         box-shadow: none;
-
     }
 
     .gadeh-logo {
-
-        width: 120px;
-
+        width: 7.5rem;
     }
 
     .document-title {
-
-        margin: 20px 0 25px;
-
+        margin: 1.25rem 0 1.5625rem;
     }
 
     .document-title h1 {
-
-        font-size: 25px;
-
-        letter-spacing: 1px;
-
+        font-size: 1.5625rem;
+        letter-spacing: 0.0625rem;
     }
 
     .document-title h2 {
-
-        font-size: 16px;
-
+        font-size: 1rem;
         line-height: 1.4;
-
     }
 
     .section-title {
-
-        font-size: 16px;
-
+        font-size: 1rem;
         line-height: 1.3;
-
     }
 
     .section-number {
-
-        width: 30px;
-
-        height: 30px;
-
-        font-size: 12px;
-
+        width: 1.875rem;
+        height: 1.875rem;
+        font-size: 0.75rem;
     }
 
     p {
-
-        font-size: 14px;
-
+        font-size: 0.875rem;
         text-align: left;
-
     }
 
     li {
-
-        font-size: 14px;
-
+        font-size: 0.875rem;
     }
 
-    /*
-       Make tables scroll horizontally
-       instead of breaking the mobile page.
-    */
-
     table {
-
         display: block;
-
         width: 100%;
-
         overflow-x: auto;
-
         white-space: normal;
-
     }
 
     th,
     td {
-
-        min-width: 120px;
-
+        min-width: 7.5rem;
     }
-
 }
-
 
 /* =========================================================
    SMALL PHONES
@@ -924,56 +570,42 @@ tr:nth-child(even) {
 
 @media (max-width: 480px) {
 
+    html {
+        font-size: 15px;
+    }
+
     .document {
-
-        padding: 20px 14px;
-
+        padding: 1.25rem 0.875rem;
     }
 
     .gadeh-logo {
-
-        width: 105px;
-
+        width: 6.5625rem;
     }
 
     .corporate-line {
-
-        height: 4px;
-
+        height: 0.25rem;
     }
 
     .document-title h1 {
-
-        font-size: 22px;
-
+        font-size: 1.375rem;
     }
 
     .document-title h2 {
-
-        font-size: 15px;
-
+        font-size: 0.9375rem;
     }
 
     .section-title {
-
-        font-size: 15px;
-
+        font-size: 0.9375rem;
     }
 
     p {
-
-        font-size: 13.5px;
-
+        font-size: 0.875rem;
     }
 
     li {
-
-        font-size: 13.5px;
-
+        font-size: 0.875rem;
     }
-
 }
-
 </style>
 </head>
 <body>
@@ -2300,57 +1932,297 @@ tr:nth-child(even) {
     </h2>
 
     <p>
-        GADEH CBO may develop and implement programmes in areas
-        including:
+        GADEH CBO may develop, coordinate and implement programmes,
+        projects, training activities and community initiatives in
+        areas that promote agricultural development, digital
+        empowerment, entrepreneurship, skills development,
+        environmental conservation, youth empowerment and sustainable
+        livelihoods.
     </p>
+
+    <p>
+        The programmes and projects of the Organization may include,
+        but shall not be limited to, the following areas:
+    </p>
+
+    <h3>
+        14.1 Agriculture and Agro-Entrepreneurship
+    </h3>
 
     <ul>
 
         <li>
-            Agro-entrepreneurship
+            Agro-entrepreneurship and agricultural enterprise
+            development.
         </li>
 
         <li>
-            Climate-smart agriculture
+            Climate-smart and sustainable agriculture.
         </li>
 
         <li>
-            Digital agriculture
+            Digital agriculture and agricultural information services.
         </li>
 
         <li>
-            Youth empowerment
+            Water-efficient agriculture and irrigation.
         </li>
 
         <li>
-            Women empowerment
+            Farmer training, extension support and practical
+            agricultural demonstrations.
         </li>
 
         <li>
-            Water-efficient agriculture and irrigation
+            Sustainable crop production and farm management.
         </li>
 
         <li>
-            Environmental conservation
+            Market access, value addition and agricultural value
+            chains.
         </li>
 
         <li>
-            Tree planting and ecosystem restoration
-        </li>
-
-        <li>
-            Farmer training
-        </li>
-
-        <li>
-            Market access
-        </li>
-
-        <li>
-            Innovation and technology
+            Agricultural innovation, research and appropriate
+            technologies.
         </li>
 
     </ul>
+
+
+    <h3>
+        14.2 Digital Literacy and Computer Skills
+    </h3>
+
+    <ul>
+
+        <li>
+            Basic computer literacy and digital skills training.
+        </li>
+
+        <li>
+            Computer packages, including word processing,
+            spreadsheets, presentations and internet applications.
+        </li>
+
+        <li>
+            Digital document preparation, typing and office
+            productivity skills.
+        </li>
+
+        <li>
+            Graphic design and digital creative skills.
+        </li>
+
+        <li>
+            Basic computer hardware maintenance, troubleshooting and
+            computer repair skills.
+        </li>
+
+        <li>
+            Computer installation, software configuration and basic
+            technical support.
+        </li>
+
+        <li>
+            Help desk and ICT support systems training.
+        </li>
+
+        <li>
+            Digital communication, online collaboration and
+            responsible use of digital platforms.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        14.3 Smartphone and Mobile Digital Literacy
+    </h3>
+
+    <ul>
+
+        <li>
+            Basic smartphone literacy and device management.
+        </li>
+
+        <li>
+            Smartphone configuration, applications and settings.
+        </li>
+
+        <li>
+            Internet browsing, email and digital communication.
+        </li>
+
+        <li>
+            Mobile applications and digital service access.
+        </li>
+
+        <li>
+            Mobile money and responsible digital financial practices.
+        </li>
+
+        <li>
+            Digital safety, privacy, cybersecurity awareness and
+            protection against online fraud.
+        </li>
+
+        <li>
+            Access to government, agricultural, educational and other
+            essential services through digital platforms.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        14.4 ICT Short Courses and Skills Development
+    </h3>
+
+    <ul>
+
+        <li>
+            Short-term ICT and digital skills courses.
+        </li>
+
+        <li>
+            Computer applications and office productivity training.
+        </li>
+
+        <li>
+            Graphic design and digital media skills.
+        </li>
+
+        <li>
+            Basic computer repair and technical support training.
+        </li>
+
+        <li>
+            Internet, email and online research skills.
+        </li>
+
+        <li>
+            Digital entrepreneurship and online business skills.
+        </li>
+
+        <li>
+            Website, digital platform and basic technology awareness
+            programmes.
+        </li>
+
+        <li>
+            Digital agricultural information and technology training.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        14.5 Youth and Women Empowerment
+    </h3>
+
+    <ul>
+
+        <li>
+            Youth skills development and entrepreneurship.
+        </li>
+
+        <li>
+            Women empowerment and economic inclusion.
+        </li>
+
+        <li>
+            Digital skills and employment-readiness programmes.
+        </li>
+
+        <li>
+            Innovation, creativity and technology-based
+            entrepreneurship.
+        </li>
+
+        <li>
+            Mentorship, leadership and personal development.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        14.6 Environmental Conservation and Climate Resilience
+    </h3>
+
+    <ul>
+
+        <li>
+            Environmental conservation and awareness.
+        </li>
+
+        <li>
+            Tree planting and ecosystem restoration.
+        </li>
+
+        <li>
+            Climate change awareness and community resilience.
+        </li>
+
+        <li>
+            Sustainable natural-resource management.
+        </li>
+
+        <li>
+            Community-based environmental initiatives.
+        </li>
+
+    </ul>
+
+
+    <h3>
+        14.7 Innovation, Technology and Community Development
+    </h3>
+
+    <ul>
+
+        <li>
+            Community innovation and technology-based solutions.
+        </li>
+
+        <li>
+            Digital platforms for community information and services.
+        </li>
+
+        <li>
+            Innovation hubs, learning activities and practical
+            technology demonstrations.
+        </li>
+
+        <li>
+            Community capacity building and knowledge-sharing
+            programmes.
+        </li>
+
+        <li>
+            Partnerships supporting education, technology,
+            entrepreneurship and sustainable development.
+        </li>
+
+    </ul>
+
+
+    <div class="important-box">
+
+        <strong>
+            Programme Flexibility:
+        </strong>
+
+        <p>
+            GADEH CBO may introduce additional programmes, projects,
+            training courses and community initiatives where such
+            activities are consistent with the Constitution, the
+            Organization's objectives and applicable laws and
+            regulatory requirements in Kenya.
+        </p>
+
+    </div>
 
 </section>
 
@@ -2858,7 +2730,8 @@ tr:nth-child(even) {
 
 </footer>
 
-</div><script>
+</div>
+<script>
 
     window.addEventListener("load", function () {
 
@@ -2870,4 +2743,5 @@ tr:nth-child(even) {
 
     });
 
-</script></body></html>
+</script>
+</body></html>

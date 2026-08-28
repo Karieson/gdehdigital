@@ -1,0 +1,3525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Official Minutes of Garissa Agro-Digital Empowerment Hub CBO held on 28 August 2026.">
+
+<meta name="theme-color"
+      content="#C00000">
+
+<title>Minutes of Meeting | 28 August 2026</title>
+
+
+<style>
+
+/* =========================================================
+   GARISSA AGRO-DIGITAL EMPOWERMENT HUB CBO
+   OFFICIAL MEETING MINUTES
+   FORMAL CONSTITUTION / POLICY DOCUMENT STYLE
+   A4 PORTRAIT + MOBILE RESPONSIVE
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root{
+
+    /* Corporate */
+    --corporate-red:#C00000;
+    --corporate-red-dark:#8B0000;
+    --corporate-red-light:#FFF5F5;
+
+    /* Agriculture */
+    --agriculture-green:#2E7D32;
+    --agriculture-green-dark:#1B5E20;
+    --agriculture-green-light:#EEF6EE;
+
+    /* Neutral */
+    --black:#222222;
+    --dark:#333333;
+    --grey:#666666;
+    --medium-grey:#888888;
+    --light-grey:#F5F5F5;
+    --border:#D6D6D6;
+    --white:#FFFFFF;
+
+    /* A4 */
+    --a4-width:210mm;
+    --a4-height:297mm;
+
+    /* Document spacing */
+    --top-space:13mm;
+    --side-space:15mm;
+    --bottom-space:7mm;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    font-size:10px;
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    margin:0;
+
+    padding:0;
+
+    background:#E9E9E9;
+
+    color:var(--black);
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    font-size:1rem;
+
+    line-height:1.6;
+
+    -webkit-print-color-adjust:exact;
+
+    print-color-adjust:exact;
+
+}
+
+
+/* =========================================================
+   A4 DOCUMENT
+========================================================= */
+
+.document{
+
+    width:var(--a4-width);
+
+    min-height:var(--a4-height);
+
+    margin:15px auto;
+
+    padding:
+        var(--top-space)
+        var(--side-space)
+        var(--bottom-space)
+        var(--side-space);
+
+    background:var(--white);
+
+    box-shadow:
+        0 .2rem 1.2rem rgba(0,0,0,.12);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.document-header{
+
+    text-align:center;
+
+    padding-bottom:1rem;
+
+    margin-bottom:1.5rem;
+
+    border-bottom:
+        .3rem solid var(--corporate-red);
+
+    position:relative;
+
+}
+
+
+.document-header::after{
+
+    content:"";
+
+    display:block;
+
+    width:7rem;
+
+    height:.25rem;
+
+    background:var(--agriculture-green);
+
+    margin:.55rem auto 0;
+
+}
+
+
+.document-logo{
+
+    display:block;
+
+    width:9.5rem;
+
+    height:9.5rem;
+
+    object-fit:contain;
+
+    margin:0 auto .5rem auto;
+
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.document-title{
+
+    color:var(--corporate-red);
+
+    text-align:center;
+
+    font-size:1.65rem;
+
+    line-height:1.3;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.04em;
+
+    margin-bottom:.35rem;
+
+}
+
+
+.document-subtitle{
+
+    color:var(--grey);
+
+    text-align:center;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+/* =========================================================
+   MEETING INFORMATION
+========================================================= */
+
+.meeting-info{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    width:100%;
+
+    border:
+        .1rem solid var(--border);
+
+    background:var(--light-grey);
+
+    margin-bottom:1.8rem;
+
+}
+
+
+.info-item{
+
+    padding:.65rem .55rem;
+
+    text-align:center;
+
+    border-right:
+        .1rem solid var(--border);
+
+}
+
+
+.info-item:last-child{
+
+    border-right:none;
+
+}
+
+
+.info-label{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.7rem;
+
+    line-height:1.2;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.2rem;
+
+}
+
+
+.info-value{
+
+    display:block;
+
+    color:var(--black);
+
+    font-size:.82rem;
+
+    line-height:1.35;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    margin-bottom:1.8rem;
+
+}
+
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.7rem;
+
+    color:var(--corporate-red);
+
+    font-size:1.18rem;
+
+    line-height:1.3;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin:
+        1.8rem
+        0
+        .9rem;
+
+    padding:
+        .55rem
+        .7rem;
+
+    background:
+        linear-gradient(
+            to right,
+            var(--agriculture-green-light),
+            transparent
+        );
+
+    border-left:
+        .45rem solid var(--corporate-red);
+
+    border-bottom:
+        .1rem solid var(--border);
+
+    break-after:avoid;
+
+    page-break-after:avoid;
+
+}
+
+
+.section-number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:2rem;
+
+    height:2rem;
+
+    padding:0 .35rem;
+
+    background:var(--corporate-red);
+
+    color:var(--white);
+
+    font-size:.78rem;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+}
+
+
+/* =========================================================
+   SUBSECTIONS
+========================================================= */
+
+.subsection{
+
+    margin-bottom:1.15rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.subsection-title{
+
+    color:var(--black);
+
+    font-size:1rem;
+
+    line-height:1.35;
+
+    font-weight:800;
+
+    margin-bottom:.4rem;
+
+}
+
+
+.subsection-title .number{
+
+    color:var(--corporate-red);
+
+    margin-right:.2rem;
+
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p{
+
+    color:var(--dark);
+
+    font-size:.9rem;
+
+    line-height:1.6;
+
+    text-align:justify;
+
+    margin-bottom:.65rem;
+
+}
+
+
+strong{
+
+    color:var(--black);
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   GENERAL LISTS
+========================================================= */
+
+ul,
+ol{
+
+    margin:
+        .45rem
+        0
+        .8rem
+        1.6rem;
+
+    padding-left:1rem;
+
+}
+
+
+li{
+
+    color:var(--dark);
+
+    font-size:.88rem;
+
+    line-height:1.55;
+
+    margin-bottom:.3rem;
+
+}
+
+
+li::marker{
+
+    color:var(--agriculture-green);
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   ATTENDANCE TABLE
+========================================================= */
+
+.attendance-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:
+        .7rem
+        0
+        1rem;
+
+    font-size:.8rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.attendance-table th{
+
+    background:var(--corporate-red);
+
+    color:var(--white);
+
+    padding:.48rem .45rem;
+
+    text-align:left;
+
+    font-size:.76rem;
+
+    line-height:1.25;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    border:
+        .1rem solid var(--corporate-red-dark);
+
+}
+
+
+.attendance-table td{
+
+    border:
+        .1rem solid var(--border);
+
+    padding:.43rem .45rem;
+
+    color:var(--dark);
+
+    vertical-align:middle;
+
+}
+
+
+.attendance-table tbody tr:nth-child(even){
+
+    background:#FAFAFA;
+
+}
+
+
+.attendance-table td:first-child{
+
+    width:7%;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-weight:800;
+
+}
+
+
+.attendance-table td:nth-child(3){
+
+    width:24%;
+
+    color:var(--agriculture-green-dark);
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   OFFICIALS TABLE
+========================================================= */
+
+.officials-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:
+        .7rem
+        0
+        1rem;
+
+    font-size:.8rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.officials-table th{
+
+    background:var(--agriculture-green);
+
+    color:var(--white);
+
+    padding:.48rem;
+
+    text-align:left;
+
+    font-size:.76rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    border:
+        .1rem solid var(--agriculture-green-dark);
+
+}
+
+
+.officials-table td{
+
+    border:
+        .1rem solid var(--border);
+
+    padding:.5rem;
+
+    color:var(--dark);
+
+}
+
+
+.officials-table td:first-child{
+
+    width:8%;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-weight:800;
+
+}
+
+
+.officials-table td:nth-child(3){
+
+    color:var(--agriculture-green-dark);
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   AGENDA
+========================================================= */
+
+.agenda-list{
+
+    margin-left:1.6rem;
+
+}
+
+
+.agenda-list li{
+
+    padding-left:.15rem;
+
+}
+
+
+/* =========================================================
+   RESOLUTION BOX
+========================================================= */
+
+.resolution-box{
+
+    margin:
+        .9rem
+        0
+        1rem;
+
+    padding:
+        .8rem
+        1rem;
+
+    background:var(--agriculture-green-light);
+
+    border-left:
+        .45rem solid var(--agriculture-green);
+
+    border-top:
+        .1rem solid #D4E4D4;
+
+    border-right:
+        .1rem solid #D4E4D4;
+
+    border-bottom:
+        .1rem solid #D4E4D4;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.resolution-title{
+
+    color:var(--agriculture-green-dark);
+
+    font-size:.9rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.35rem;
+
+}
+
+
+.resolution-box p{
+
+    margin-bottom:.4rem;
+
+}
+
+
+.resolution-box p:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/* =========================================================
+   NOTE BOX
+========================================================= */
+
+.note-box{
+
+    margin:
+        .9rem
+        0
+        1rem;
+
+    padding:
+        .8rem
+        1rem;
+
+    background:var(--corporate-red-light);
+
+    border-left:
+        .45rem solid var(--corporate-red);
+
+    border-top:
+        .1rem solid #E8CCCC;
+
+    border-right:
+        .1rem solid #E8CCCC;
+
+    border-bottom:
+        .1rem solid #E8CCCC;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.note-box p{
+
+    margin-bottom:.3rem;
+
+}
+
+
+/* =========================================================
+   ACTION TABLE
+========================================================= */
+
+.action-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:
+        .7rem
+        0
+        1rem;
+
+    font-size:.78rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.action-table th{
+
+    background:var(--corporate-red);
+
+    color:var(--white);
+
+    padding:.45rem;
+
+    text-align:left;
+
+    font-size:.74rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    border:
+        .1rem solid var(--corporate-red-dark);
+
+}
+
+
+.action-table td{
+
+    border:
+        .1rem solid var(--border);
+
+    padding:.48rem;
+
+    vertical-align:top;
+
+    color:var(--dark);
+
+}
+
+
+.action-table tbody tr:nth-child(even){
+
+    background:#FAFAFA;
+
+}
+
+
+.action-table td:first-child{
+
+    width:7%;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-weight:800;
+
+}
+
+
+/* =========================================================
+   CLOSING BOX
+========================================================= */
+
+.closing-box{
+
+    margin-top:1rem;
+
+    padding:.85rem 1rem;
+
+    background:#FAFAFA;
+
+    border:
+        .15rem solid var(--corporate-red);
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.closing-box p{
+
+    margin-bottom:.3rem;
+
+}
+
+
+/* =========================================================
+   SIGNATURE SECTION
+========================================================= */
+
+.signature-section{
+
+    margin-top:1.8rem;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+
+}
+
+
+.signature-title{
+
+    color:var(--corporate-red);
+
+    text-align:center;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:1rem;
+
+    padding-bottom:.35rem;
+
+    border-bottom:
+        .15rem solid var(--corporate-red);
+
+}
+
+
+.signature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:2rem;
+
+}
+
+
+.signature-box{
+
+    min-height:7rem;
+
+    padding:.4rem;
+
+}
+
+
+.signature-box p{
+
+    text-align:left;
+
+    font-size:.8rem;
+
+    margin-bottom:.25rem;
+
+}
+
+
+.signature-role{
+
+    color:var(--agriculture-green-dark);
+
+    font-size:.78rem !important;
+
+    font-weight:800;
+
+}
+
+
+.signature-line{
+
+    width:100%;
+
+    margin-top:2.6rem;
+
+    border-bottom:
+        .1rem solid var(--black);
+
+}
+
+
+/* =========================================================
+   PAGE BREAK CONTROL
+========================================================= */
+
+.section,
+.subsection,
+.resolution-box,
+.note-box,
+.closing-box,
+.signature-section{
+
+    orphans:3;
+
+    widows:3;
+
+}
+
+
+.section-heading{
+
+    break-after:avoid;
+
+    page-break-after:avoid;
+
+}
+
+
+table{
+
+    page-break-inside:auto;
+
+}
+
+
+tr{
+
+    page-break-inside:avoid;
+
+    break-inside:avoid;
+
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+
+@media(max-width:900px){
+
+    body{
+
+        background:var(--white);
+
+    }
+
+
+    .document{
+
+        width:100%;
+
+        min-height:auto;
+
+        margin:0;
+
+        padding:
+            1.5rem
+            1.5rem
+            1rem;
+
+        box-shadow:none;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    html{
+
+        font-size:9px;
+
+    }
+
+
+    .document{
+
+        padding:
+            1.2rem
+            1rem
+            .8rem;
+
+    }
+
+
+    .document-logo{
+
+        width:5.5rem;
+
+        height:5.5rem;
+
+    }
+
+
+    .document-title{
+
+        font-size:1.45rem;
+
+    }
+
+
+    .document-subtitle{
+
+        font-size:.85rem;
+
+    }
+
+
+    .meeting-info{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .info-item:nth-child(2){
+
+        border-right:none;
+
+    }
+
+
+    .info-item:nth-child(1),
+    .info-item:nth-child(2){
+
+        border-bottom:
+            .1rem solid var(--border);
+
+    }
+
+
+    .info-item:nth-child(3){
+
+        border-bottom:
+            .1rem solid var(--border);
+
+    }
+
+
+    .section-heading{
+
+        font-size:1.08rem;
+
+    }
+
+
+    .member-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .signature-grid{
+
+        grid-template-columns:1fr;
+
+        gap:1.2rem;
+
+    }
+
+
+    .attendance-table,
+    .officials-table,
+    .action-table{
+
+        font-size:.75rem;
+
+    }
+
+
+    .attendance-table th,
+    .officials-table th,
+    .action-table th{
+
+        font-size:.7rem;
+
+        padding:.38rem;
+
+    }
+
+
+    .attendance-table td,
+    .officials-table td,
+    .action-table td{
+
+        padding:.38rem;
+
+    }
+
+
+    p{
+
+        font-size:.88rem;
+
+        text-align:left;
+
+    }
+
+
+    li{
+
+        font-size:.86rem;
+
+    }
+
+}
+
+
+@media(max-width:400px){
+
+    html{
+
+        font-size:8.5px;
+
+    }
+
+
+    .document{
+
+        padding:
+            1rem
+            .75rem
+            .7rem;
+
+    }
+
+
+    .document-title{
+
+        font-size:1.3rem;
+
+    }
+
+
+    .meeting-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .info-item{
+
+        border-right:none !important;
+
+        border-bottom:
+            .1rem solid var(--border);
+
+    }
+
+
+    .info-item:last-child{
+
+        border-bottom:none;
+
+    }
+
+
+    .section-heading{
+
+        font-size:1rem;
+
+    }
+
+
+    .attendance-table,
+    .officials-table,
+    .action-table{
+
+        font-size:.7rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   A4 PRINT SETTINGS
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+
+}
+
+
+@media print{
+
+    html{
+
+        font-size:10px;
+
+    }
+
+
+    body{
+
+        margin:0;
+
+        padding:0;
+
+        background:#fff;
+
+    }
+
+
+    .document{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:
+            13mm
+            15mm
+            7mm
+            15mm;
+
+        box-shadow:none;
+
+        background:#fff;
+
+    }
+
+
+    .document-header{
+
+        margin-top:0;
+
+    }
+
+
+    .section-heading{
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+
+    }
+
+
+    .subsection,
+    .resolution-box,
+    .note-box,
+    .closing-box,
+    .signature-section{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+    }
+
+
+    p{
+
+        orphans:3;
+
+        widows:3;
+
+    }
+
+
+    a{
+
+        color:inherit;
+
+        text-decoration:none;
+
+    }
+
+
+    table{
+
+        break-inside:auto;
+
+    }
+
+
+    tr{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+    }
+
+
+    thead{
+
+        display:table-header-group;
+
+    }
+
+
+    tfoot{
+
+        display:table-footer-group;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT COLOUR SUPPORT
+========================================================= */
+
+@media print{
+
+    .section-heading,
+    .attendance-table th,
+    .officials-table th,
+    .action-table th,
+    .section-number{
+
+        -webkit-print-color-adjust:exact;
+
+        print-color-adjust:exact;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="document">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="document-header">
+
+    <img
+        src="gadeh_logo.png"
+        alt="Organization Logo"
+        class="document-logo"
+    >
+
+</header>
+
+
+<!-- =====================================================
+     TITLE
+===================================================== -->
+
+<h1 class="document-title">
+
+    Minutes of Meeting
+
+</h1>
+
+<p class="document-subtitle">
+
+    Official Record of Proceedings
+
+</p>
+
+
+<!-- =====================================================
+     MEETING INFORMATION
+===================================================== -->
+
+<div class="meeting-info">
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Date
+        </span>
+
+        <span class="info-value">
+            28 August 2026
+        </span>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Venue
+        </span>
+
+        <span class="info-value">
+            Aqsa Shopping Mall, Along KCB Rd
+        </span>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Meeting Type
+        </span>
+
+        <span class="info-value">
+            Members' Meeting
+        </span>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Record
+        </span>
+
+        <span class="info-value">
+            Official Minutes
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     SECTION 1
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        1
+    </span>
+
+    Opening of the Meeting
+
+</h2>
+
+
+<div class="subsection">
+
+<p>
+
+The meeting of the organization was held on
+<strong>28 August 2026</strong> at
+<strong>Aqsa Shopping Mall, Along KCB Rd</strong>.
+
+</p>
+
+
+<p>
+
+The meeting brought together the founding members and other
+members to deliberate on matters relating to the establishment,
+governance, registration, financial administration and future
+development of the organization.
+
+</p>
+
+
+<p>
+
+The meeting was conducted in a formal and orderly manner.
+Members were given an opportunity to participate in the
+proceedings, express their views and contribute to matters
+presented for discussion and decision.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 2
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        2
+    </span>
+
+    Members Present
+
+</h2>
+
+
+<p>
+
+The following members were recorded as present at the meeting:
+
+</p>
+
+
+<table class="attendance-table">
+
+<thead>
+
+<tr>
+
+<th>
+    No.
+</th>
+
+<th>
+    Member Name
+</th>
+
+<th>
+    Status
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+<td>1</td>
+<td>Abdullahi Sheikh Aden</td>
+<td>Official</td>
+</tr>
+
+
+<tr>
+<td>2</td>
+<td>Samira Abdi Maalim</td>
+<td>Official</td>
+</tr>
+
+
+<tr>
+<td>3</td>
+<td>Hassan Hillow Ahmed</td>
+<td>Official</td>
+</tr>
+
+
+<tr>
+<td>4</td>
+<td>Abdi Rashid Mohamud Abass</td>
+<td>Member</td>
+</tr>
+
+
+<tr>
+<td>5</td>
+<td>Amina Hassan Jama</td>
+<td>Founder Member</td>
+</tr>
+
+
+<tr>
+<td>6</td>
+<td>Halima Hassan Abdi</td>
+<td>Member</td>
+</tr>
+
+
+<tr>
+<td>7</td>
+<td>Abdiaziz Ali Hassan</td>
+<td>Member</td>
+</tr>
+
+
+<tr>
+<td>8</td>
+<td>Habon Ali Muhumed</td>
+<td>Member</td>
+</tr>
+
+
+<tr>
+<td>9</td>
+<td>Abdikadir Ali Dagane</td>
+<td>Member</td>
+</tr>
+
+
+<tr>
+<td>10</td>
+<td>Khadija Abdi Ali</td>
+<td>Member</td>
+</tr>
+
+
+</tbody>
+
+</table>
+
+
+<p>
+
+A total of <strong>ten (10) members</strong> were recorded as
+present during the meeting.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 3
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        3
+    </span>
+
+    Officials Present
+
+</h2>
+
+
+<table class="officials-table">
+
+<thead>
+
+<tr>
+
+<th>No.</th>
+
+<th>Name</th>
+
+<th>Position</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>1</td>
+
+<td>
+    Abdullahi Sheikh Aden
+</td>
+
+<td>
+    Chairperson
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>2</td>
+
+<td>
+    Hassan Hillow Ahmed
+</td>
+
+<td>
+    Secretary
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>3</td>
+
+<td>
+    Samira Abdi Maalim
+</td>
+
+<td>
+    Treasurer
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>4</td>
+
+<td>
+    Amina Hassan Jama
+</td>
+
+<td>
+    Founder Member
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+
+<p>
+
+The remaining members participated in the meeting as general
+members and contributed to the discussions and proceedings.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 4
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        4
+    </span>
+
+    Attendance and Quorum
+
+</h2>
+
+
+<p>
+
+The meeting recorded the presence of ten (10) members. The
+attendance was recorded for purposes of establishing the official
+record of participation.
+
+</p>
+
+
+<p>
+
+Members present were invited to participate actively in the
+deliberations, and the meeting proceeded to consider the matters
+listed on the order of business.
+
+</p>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    Attendance Record
+</div>
+
+
+<p>
+
+<strong>Total Members Present:</strong>
+10
+
+</p>
+
+
+<p>
+
+<strong>Officials Present:</strong>
+4
+
+</p>
+
+
+<p>
+
+<strong>Other Members Present:</strong>
+6
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 5
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        5
+    </span>
+
+    Order of Business
+
+</h2>
+
+
+<p>
+
+The meeting considered the following principal matters:
+
+</p>
+
+
+<ol class="agenda-list">
+
+<li>
+Opening remarks and introduction of members.
+</li>
+
+<li>
+Confirmation of attendance and members present.
+</li>
+
+<li>
+Confirmation of organizational leadership and responsibilities.
+</li>
+
+<li>
+Consideration and adoption of the Constitution.
+</li>
+
+<li>
+Discussion on obtaining the official Certificate of Registration.
+</li>
+
+<li>
+Opening of an official organizational bank account.
+</li>
+
+<li>
+Discussion of organizational objectives and strategic direction.
+</li>
+
+<li>
+Membership responsibilities and governance.
+</li>
+
+<li>
+Programme and community development activities.
+</li>
+
+<li>
+Financial accountability and organizational records.
+</li>
+
+<li>
+Any Other Business.
+</li>
+
+<li>
+Closing remarks and conclusion.
+</li>
+
+</ol>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 6
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        6
+    </span>
+
+    Organizational Leadership
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    6.1
+</span>
+
+Chairperson
+
+</h3>
+
+
+<p>
+
+<strong>Abdullahi Sheikh Aden</strong> was recorded as the
+Chairperson. The Chairperson is responsible for providing overall
+leadership, presiding over meetings, guiding organizational
+direction and supporting the implementation of properly adopted
+decisions.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    6.2
+</span>
+
+Secretary
+
+</h3>
+
+
+<p>
+
+<strong>Hassan Hillow Ahmed</strong> was recorded as the
+Secretary. The Secretary is responsible for maintaining official
+records, preparing and keeping minutes, issuing official
+communications and supporting administrative coordination.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    6.3
+</span>
+
+Treasurer
+
+</h3>
+
+
+<p>
+
+<strong>Samira Abdi Maalim</strong> was recorded as the
+Treasurer. The Treasurer is responsible for supporting proper
+financial administration, maintaining financial records and
+promoting accountability in the management of organizational
+resources.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    6.4
+</span>
+
+Founder Member
+
+</h3>
+
+
+<p>
+
+<strong>Amina Hassan Jama</strong> was recorded as a Founder Member
+and participated in the meeting as part of the organization's
+founding membership.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 7
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        7
+    </span>
+
+    Adoption of the Constitution
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    7.1
+</span>
+
+Presentation of the Constitution
+
+</h3>
+
+
+<p>
+
+The members considered the proposed Constitution as the principal
+governing document establishing the organization's objectives,
+membership structure, leadership responsibilities, meetings,
+financial administration, accountability mechanisms and other
+governance matters.
+
+</p>
+
+
+<p>
+
+The Constitution was presented to the members for consideration,
+discussion and formal adoption.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    7.2
+</span>
+
+Members' Consideration
+
+</h3>
+
+
+<p>
+
+Members were given an opportunity to review and discuss the
+provisions of the Constitution. The members recognized the
+importance of having a formal governing document to guide the
+organization's operations and promote transparency, accountability,
+responsible leadership and proper administration.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    7.3
+</span>
+
+Adoption Resolution
+
+</h3>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    Constitutional Resolution
+</div>
+
+
+<p>
+
+<strong>IT WAS RESOLVED</strong> that the Constitution of the
+organization be and is hereby <strong>adopted</strong> as the
+governing constitutional document of the organization.
+
+</p>
+
+
+<p>
+
+The members agreed to be guided by the adopted Constitution in
+the management, governance, administration and implementation of
+organizational activities.
+
+</p>
+
+
+<p>
+
+The adopted Constitution shall be maintained as an official
+organizational record and shall serve as a reference for future
+meetings, decisions and governance processes.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    7.4
+</span>
+
+Custody of the Constitutional Record
+
+</h3>
+
+
+<p>
+
+The Secretary was tasked with maintaining the official copy of
+the adopted Constitution together with the organization's minutes,
+attendance records and other governance documents.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 8
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        8
+    </span>
+
+    Official Certificate of Registration
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    8.1
+</span>
+
+Registration Documentation
+
+</h3>
+
+
+<p>
+
+The meeting discussed the importance of obtaining the official
+Certificate of Registration for the organization through the
+appropriate Government of Kenya registration process.
+
+</p>
+
+
+<p>
+
+Members specifically discussed pursuing the registration process
+and obtaining the official certificate from the
+<strong>Ministry of Labour, Gender and Social Protection</strong>
+or the applicable registration authority responsible for
+Community-Based Organizations.
+
+</p>
+
+
+<p>
+
+Members recognized that official registration documentation is
+important in establishing the organization's formal status and
+supporting legitimate operations, partnerships, programmes,
+financial administration and accountability.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    8.2
+</span>
+
+Registration Resolution
+
+</h3>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    Registration Resolution
+</div>
+
+
+<p>
+
+<strong>IT WAS RESOLVED</strong> that the organization shall
+proceed with the necessary administrative steps to obtain its
+official Certificate of Registration through the appropriate
+Government of Kenya registration process.
+
+</p>
+
+
+<p>
+
+The organization shall prepare and submit the Constitution,
+minutes, membership information, identification documents,
+application forms and any other documents required by the
+relevant registration authority.
+
+</p>
+
+
+<p>
+
+The leadership shall make reasonable efforts to ensure that the
+registration process is completed properly and that the official
+certificate is securely maintained as part of the organization's
+permanent records.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    8.3
+</span>
+
+Responsibility for Registration
+
+</h3>
+
+
+<p>
+
+The <strong>Chairperson and Secretary</strong> shall coordinate
+the preparation and submission of registration documents, with
+support from the Treasurer and other members where necessary.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 9
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        9
+    </span>
+
+    Opening of Organizational Bank Account
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    9.1
+</span>
+
+Need for an Official Bank Account
+
+</h3>
+
+
+<p>
+
+The meeting discussed the importance of establishing an official
+bank account to provide a secure and accountable mechanism for
+receiving, holding and disbursing organizational funds.
+
+</p>
+
+
+<p>
+
+Members agreed that organizational finances should be separated
+from personal finances and managed through an official account
+held in the organization's name, subject to applicable banking
+requirements.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    9.2
+</span>
+
+Proposed Bank
+
+</h3>
+
+
+<p>
+
+Members considered <strong>Equity Bank, Garissa Branch</strong>
+as the proposed banking institution for the organization's
+official bank account.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    9.3
+</span>
+
+Banking Resolution
+
+</h3>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    Bank Account Resolution
+</div>
+
+
+<p>
+
+<strong>IT WAS RESOLVED</strong> that the organization shall
+proceed with the opening of an official organizational bank
+account with <strong>Equity Bank, Garissa Branch</strong>,
+subject to the bank's account-opening requirements and applicable
+laws and regulations.
+
+</p>
+
+
+<p>
+
+The account shall be used for legitimate organizational
+transactions, including receipt of grants, donations, programme
+funds, member contributions and other lawful organizational
+income, together with payment of approved organizational expenses.
+
+</p>
+
+
+<p>
+
+All transactions shall be undertaken in accordance with the
+organization's Constitution, approved financial procedures,
+internal controls and applicable banking requirements.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    9.4
+</span>
+
+Required Documentation
+
+</h3>
+
+
+<p>
+
+The organization shall provide the required registration
+documents, Constitution, meeting minutes, identification
+documents, leadership information, registration certificate when
+available and any other documents requested by the bank.
+
+</p>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+<span class="number">
+    9.5
+</span>
+
+Financial Accountability
+
+</h3>
+
+
+<p>
+
+The Treasurer shall support the maintenance of accurate financial
+records. Organizational funds shall be used only for legitimate
+purposes consistent with the organization's objectives and
+properly authorized activities.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 10
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        10
+    </span>
+
+    Organizational Objectives and Strategic Direction
+
+</h2>
+
+
+<p>
+
+The meeting discussed the importance of establishing the
+organization around practical community development initiatives,
+with particular attention to agriculture, digital empowerment,
+agro-entrepreneurship, youth participation and sustainable
+livelihoods.
+
+</p>
+
+
+<p>
+
+Members recognized the importance of promoting practical
+approaches that can strengthen agricultural knowledge, encourage
+innovation, improve access to digital opportunities and contribute
+to resilient community livelihoods.
+
+</p>
+
+
+<div class="resolution-box">
+
+<div class="resolution-box"><div class="resolution-title">
+    Strategic Areas of Focus
+</div>
+
+<ul>
+
+    <li>
+        Agro-entrepreneurship and agricultural enterprise development.
+    </li>
+
+    <li>
+        Climate-smart, sustainable and water-efficient agriculture.
+    </li>
+
+    <li>
+        Digital literacy and computer skills development, including
+        computer packages and basic office applications.
+    </li>
+
+    <li>
+        Information and Communication Technology (ICT) training,
+        digital skills and technology awareness.
+    </li>
+
+    <li>
+        Graphic design, digital content creation and creative
+        technology skills.
+    </li>
+
+    <li>
+        Computer repair, maintenance, troubleshooting and basic
+        technical support.
+    </li>
+
+    <li>
+        Help desk systems, digital customer support and basic
+        information-management skills.
+    </li>
+
+    <li>
+        Smartphone literacy, mobile technology and responsible
+        use of digital services.
+    </li>
+
+    <li>
+        ICT short courses, practical skills training, mentorship
+        and digital entrepreneurship.
+    </li>
+
+    <li>
+        Digital agriculture, agricultural information systems and
+        technology-enabled farmer services.
+    </li>
+
+    <li>
+        Farmer education, agricultural training and knowledge
+        sharing.
+    </li>
+
+    <li>
+        Youth innovation, entrepreneurship and meaningful
+        participation in community development.
+    </li>
+
+    <li>
+        Women empowerment, skills development and livelihood
+        opportunities.
+    </li>
+
+    <li>
+        Environmental conservation, tree planting, ecosystem
+        restoration and sustainable natural-resource management.
+    </li>
+
+    <li>
+        Community empowerment, livelihood development and
+        socio-economic inclusion.
+    </li>
+
+    <li>
+        Partnerships, networking, resource mobilization and
+        collaboration with relevant stakeholders.
+    </li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 11
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        11
+    </span>
+
+    Membership Responsibilities
+
+</h2>
+
+
+<p>
+
+Members acknowledged the importance of active participation in
+the organization and agreed that members should support its
+objectives, values and lawful activities.
+
+</p>
+
+
+<ul>
+
+<li>
+Attend and participate in official meetings and organizational
+activities where reasonably possible.
+</li>
+
+<li>
+Respect decisions properly adopted through the organization's
+governance structures.
+</li>
+
+<li>
+Protect organizational property, documents and resources.
+</li>
+
+<li>
+Promote integrity, transparency and accountability.
+</li>
+
+<li>
+Respect fellow members, beneficiaries and community stakeholders.
+</li>
+
+<li>
+Support programmes and community development initiatives.
+</li>
+
+<li>
+Maintain confidentiality where organizational information is
+properly designated as confidential.
+</li>
+
+<li>
+Avoid conduct that may damage the legitimate interests or
+reputation of the organization.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 12
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        12
+    </span>
+
+    Governance and Administration
+
+</h2>
+
+
+<p>
+
+The meeting emphasized the importance of transparent,
+accountable and properly documented organizational administration.
+
+</p>
+
+
+<p>
+
+The organization shall maintain appropriate governance records
+and conduct its activities in accordance with its Constitution,
+approved policies, decisions of members and applicable laws of
+the Republic of Kenya.
+
+</p>
+
+
+<div class="note-box">
+
+<strong>Governance Principle</strong>
+
+<p>
+
+Organizational decisions, records, finances, property and
+resources should be handled with integrity, accountability,
+transparency and responsibility.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 13
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        13
+    </span>
+
+    Programmes and Community Activities
+
+</h2>
+
+
+<p>
+
+Members discussed the importance of developing practical
+programmes that respond to community needs and contribute to
+agricultural, digital, entrepreneurial and socio-economic
+development.
+
+</p>
+
+
+<p>
+
+Potential activities may include farmer training,
+agro-entrepreneurship development, digital skills training,
+agricultural demonstrations, youth innovation, environmental
+conservation, community awareness and other initiatives
+consistent with the organization's objectives.
+
+</p>
+
+
+<p>
+
+Members agreed that future programmes should be planned,
+documented and implemented responsibly, with attention to
+community participation, sustainability and measurable outcomes.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 14
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        14
+    </span>
+
+    Financial Accountability
+
+</h2>
+
+
+<p>
+
+The meeting recognized that responsible financial management is
+essential to the credibility, sustainability and proper
+administration of the organization.
+
+</p>
+
+
+<p>
+
+All organizational funds and resources shall be managed
+responsibly and used only for legitimate purposes consistent with
+the organization's objectives and approved activities.
+
+</p>
+
+
+<ul>
+
+<li>
+Maintain appropriate records of income and expenditure.
+</li>
+
+<li>
+Promote transparency in financial decisions.
+</li>
+
+<li>
+Safeguard organizational funds and property.
+</li>
+
+<li>
+Maintain supporting documentation for financial transactions.
+</li>
+
+<li>
+Use organizational resources only for authorized purposes.
+</li>
+
+<li>
+Promote accountability to members and relevant stakeholders.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 15
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        15
+    </span>
+
+    Documentation and Organizational Records
+
+</h2>
+
+
+<p>
+
+The meeting recognized the importance of maintaining accurate,
+organized and accessible organizational records.
+
+</p>
+
+
+<p>
+
+The Secretary shall support the proper maintenance of official
+documents, while the Treasurer shall maintain appropriate
+financial records in accordance with organizational procedures.
+
+</p>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    Records to be Maintained
+</div>
+
+
+<ul>
+
+<li>
+Meeting minutes and attendance records.
+</li>
+
+<li>
+Membership records.
+</li>
+
+<li>
+Constitution and organizational policies.
+</li>
+
+<li>
+Official correspondence.
+</li>
+
+<li>
+Programme and activity records.
+</li>
+
+<li>
+Financial records.
+</li>
+
+<li>
+Partnership and stakeholder records.
+</li>
+
+<li>
+Registration and compliance documents.
+</li>
+
+<li>
+Banking and financial documentation.
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 16
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        16
+    </span>
+
+    General Decisions and Resolutions
+
+</h2>
+
+
+<p>
+
+Members agreed to work collectively towards strengthening the
+organization's governance, developing practical programmes,
+maintaining proper documentation and promoting initiatives that
+contribute to agricultural, digital, entrepreneurial and community
+development.
+
+</p>
+
+
+<div class="resolution-box">
+
+<div class="resolution-title">
+    General Organizational Resolution
+</div>
+
+
+<p>
+
+The members present resolved to support the continued development
+of the organization and to cooperate in advancing its objectives,
+programmes, governance, partnerships and community initiatives.
+
+</p>
+
+
+<p>
+
+Members further agreed to uphold the Constitution and promote
+responsible, transparent and accountable management of the
+organization.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 17
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        17
+    </span>
+
+    Action Points
+
+</h2>
+
+
+<table class="action-table">
+
+<thead>
+
+<tr>
+
+<th>
+    No.
+</th>
+
+<th>
+    Action / Responsibility
+</th>
+
+<th>
+    Responsible Office / Members
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>
+    1
+</td>
+
+<td>
+    Maintain accurate meeting minutes and organizational records.
+</td>
+
+<td>
+    Secretary
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    2
+</td>
+
+<td>
+    Coordinate preparation and submission of registration
+    documentation.
+</td>
+
+<td>
+    Chairperson &amp; Secretary
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    3
+</td>
+
+<td>
+    Pursue the official Certificate of Registration through the
+    appropriate registration authority.
+</td>
+
+<td>
+    Chairperson &amp; Secretary
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    4
+</td>
+
+<td>
+    Initiate the process of opening the official organizational
+    bank account.
+</td>
+
+<td>
+    Chairperson, Secretary &amp; Treasurer
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    5
+</td>
+
+<td>
+    Provide required banking and organizational documentation.
+</td>
+
+<td>
+    Officials
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    6
+</td>
+
+<td>
+    Maintain responsible financial administration and records.
+</td>
+
+<td>
+    Treasurer
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    7
+</td>
+
+<td>
+    Encourage member participation in programmes and community
+    initiatives.
+</td>
+
+<td>
+    All Members
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>
+    8
+</td>
+
+<td>
+    Develop agricultural, digital and agro-entrepreneurship
+    activities.
+</td>
+
+<td>
+    Officials &amp; Members
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 18
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        18
+    </span>
+
+    Any Other Business
+
+</h2>
+
+
+<p>
+
+Members were given an opportunity to raise any other matters
+relevant to the organization, membership, programmes, governance
+and community activities.
+
+</p>
+
+
+<p>
+
+Any matters requiring further consideration shall be placed on
+the agenda of a subsequent meeting and recorded in accordance
+with the organization's governance procedures.
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 19
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        19
+    </span>
+
+    Closing of the Meeting
+
+</h2>
+
+
+<p>
+
+There being no further matters for consideration, the meeting was
+brought to a close. Members were thanked for their participation,
+contributions and commitment towards the establishment and
+development of the organization.
+
+</p>
+
+
+<div class="closing-box">
+
+<p>
+
+<strong>Date of Meeting:</strong>
+28 August 2026
+
+</p>
+
+
+<p>
+
+<strong>Venue:</strong>
+Aqsa Shopping Mall, Along KCB Rd
+
+</p>
+
+
+<p>
+
+<strong>Total Members Present:</strong>
+10
+
+</p>
+
+
+<p>
+
+<strong>Meeting Record:</strong>
+Official Minutes
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SECTION 20
+===================================================== -->
+
+<section class="signature-section">
+
+<div class="signature-title">
+
+    Confirmation and Signatures
+
+</div>
+
+
+<p style="text-align:center; margin-bottom:1.2rem;">
+
+These minutes are presented as the official record of the
+proceedings held on 28 August 2026 and are submitted for
+confirmation by the designated officials.
+
+</p>
+
+
+<div class="signature-grid">
+
+
+<!-- CHAIRPERSON -->
+
+<div class="signature-box">
+
+<p>
+
+<strong>
+Abdullahi Sheikh Aden
+</strong>
+
+</p>
+
+
+<p class="signature-role">
+
+Chairperson
+
+</p>
+
+
+<div class="signature-line"></div>
+
+
+<p>
+
+Signature
+
+</p>
+
+
+<p>
+
+Date:
+______________________
+
+</p>
+
+</div>
+
+
+<!-- SECRETARY -->
+
+<div class="signature-box">
+
+<p>
+
+<strong>
+Hassan Hillow Ahmed
+</strong>
+
+</p>
+
+
+<p class="signature-role">
+
+Secretary
+
+</p>
+
+
+<div class="signature-line"></div>
+
+
+<p>
+
+Signature
+
+</p>
+
+
+<p>
+
+Date:
+______________________
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</div>
+<script>
+
+    window.addEventListener("load", function () {
+
+        setTimeout(function () {
+
+            window.print();
+
+        }, 800);
+
+    });
+
+</script>
+
+</body>
+
+</html>
