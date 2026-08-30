@@ -14,6 +14,18 @@
 <style>
 :root{
     --corporate-red:#C00000;
+    --red: #C00000;
+    --green: #2E7D32;
+
+    --dark-red: #8B0000;
+
+    --black: #000000;
+    --text: #222222;
+
+    --grey: #F1F1F1;
+    --border: #DEDEDE;
+    --light-green: #F8FBF7;
+
 }
 /* GLOBAL */
 body{
@@ -124,10 +136,125 @@ header{
     padding:50px 20px;
 }
 
-.intro-text{
-    font-size:13px;
-    color:#555;
-    margin:15px 0 25px;
+/* =========================================================
+   GADEH HERO DESCRIPTION
+   CREAM FADE CARD • SMALL BOLD BLACK TEXT
+========================================================= */
+
+.hero-text {
+    position: relative;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 10px auto;
+
+    padding: 11px 15px;
+
+    box-sizing: border-box;
+       );
+
+    /*
+       Small, bold and highly readable.
+    */
+    color: #222222;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    line-height: 1.55;
+
+    text-align: center;
+
+    letter-spacing: .15px;
+
+    /*
+       Very subtle card depth.
+    */
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,.06);
+
+    /*
+       No harsh border.
+    */
+    border: none;
+}
+
+/* =========================================================
+   SOFT TOP/BOTTOM FADE — LIGHT GREY
+========================================================= */
+
+.hero-text::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 0;
+
+    height: 1px;
+
+ background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(180, 180, 180, 0.45),
+    transparent
+    );
+}
+    
+
+
+
+/* =========================================================
+   SECOND PARAGRAPH
+========================================================= */
+
+.hero-text + .hero-text {
+    margin-top: 7px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-text {
+        max-width: 95%;
+
+        padding: 9px 11px;
+
+        font-size: 0.78rem;
+
+        line-height: 1.5;
+
+        border-radius: 6px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-text {
+        font-size: 0.74rem;
+
+        padding:
+            8px 9px;
+    }
 }
 
 /* LINKS */
@@ -148,6 +275,438 @@ header{
     color:var(--corporate-red);
     font-weight:700;
 }
+/* =========================================================
+   GADEH CBO WELCOME TITLE
+   SOLID 3D LETTERS • RED • BLACK • GREEN
+   MEDIUM SIZE • ONE LINE • READABLE SPACING
+   NO TEXTURE • NO BACKGROUND
+========================================================= */
+
+.welcome-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+    padding: 10px 6px;
+
+    /* Keep title on ONE LINE */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    overflow: visible;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: clamp(
+        1.05rem,
+        3.2vw,
+        2.5rem
+    );
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    text-align: center;
+
+    /* READABLE SPACE BETWEEN LETTERS */
+    letter-spacing: 2px;
+
+    perspective: 1000px;
+    perspective-origin: center;
+
+    /* NO BACKGROUND */
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   INDIVIDUAL 3D LETTER
+========================================================= */
+
+.welcome-letter {
+    position: relative;
+
+    display: inline-block;
+
+    flex: 0 0 auto;
+
+    /*
+       Clear spacing between every letter.
+    */
+    margin-left: 4px;
+    margin-right: 4px;
+
+    font-weight: 900;
+    line-height: 1;
+
+    /*
+       Remove all previous texture/gradient.
+    */
+    background: none !important;
+
+    /*
+       IMPORTANT:
+       Text is filled using the color assigned
+       to each individual letter.
+    */
+    -webkit-text-fill-color: var(--letter-color);
+    color: var(--letter-color);
+
+    /*
+       Medium 3D extrusion.
+    */
+    text-shadow:
+        1px 1px 0 #111111,
+        2px 2px 0 #111111,
+        3px 3px 0 rgba(0,0,0,.75),
+        4px 4px 0 rgba(0,0,0,.45),
+        5px 6px 8px rgba(0,0,0,.28);
+
+    opacity: 0;
+
+    transform:
+        translate3d(
+            var(--start-x),
+            var(--start-y),
+            var(--start-z)
+        )
+        rotateX(var(--rotate-x))
+        rotateY(var(--rotate-y))
+        rotateZ(var(--rotate-z))
+        scale(.35);
+
+    filter:
+        blur(3px);
+
+    animation:
+        letter-flock
+        4.5s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+
+    animation-delay:
+        var(--delay);
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+}
+
+
+/* =========================================================
+   CORPORATE COLORS
+   EACH LETTER HAS ONE SOLID COLOR
+========================================================= */
+
+.welcome-letter:nth-child(3n + 1) {
+    --letter-color:
+        var(--corporate-red, #C00000);
+}
+
+.welcome-letter:nth-child(3n + 2) {
+    --letter-color:
+        #000000;
+}
+
+.welcome-letter:nth-child(3n) {
+    --letter-color:
+        var(--agriculture-green, #16833F);
+}
+
+
+/* =========================================================
+   EXTRA WORD SPACING
+   WELCOME / TO / GADEH / CBO
+========================================================= */
+
+.welcome-title .welcome-letter:nth-child(7),
+.welcome-title .welcome-letter:nth-child(9),
+.welcome-title .welcome-letter:nth-child(13) {
+    margin-right: 13px;
+}
+
+
+/* =========================================================
+   FLOCKING TOGETHER
+========================================================= */
+
+@keyframes letter-flock {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--start-x),
+                var(--start-y),
+                var(--start-z)
+            )
+            rotateX(var(--rotate-x))
+            rotateY(var(--rotate-y))
+            rotateZ(var(--rotate-z))
+            scale(.35);
+
+        filter: blur(4px);
+    }
+
+    25% {
+        opacity: .65;
+
+        transform:
+            translate3d(
+                calc(var(--start-x) * .5),
+                calc(var(--start-y) * .5),
+                calc(var(--start-z) * .5)
+            )
+            rotateX(
+                calc(var(--rotate-x) * .5)
+            )
+            rotateY(
+                calc(var(--rotate-y) * .5)
+            )
+            rotateZ(
+                calc(var(--rotate-z) * .5)
+            )
+            scale(.65);
+
+        filter: blur(1.5px);
+    }
+
+    55% {
+        opacity: .95;
+
+        transform:
+            translate3d(
+                calc(var(--start-x) * .12),
+                calc(var(--start-y) * .12),
+                calc(var(--start-z) * .12)
+            )
+            rotateX(8deg)
+            rotateY(-7deg)
+            rotateZ(2deg)
+            scale(.92);
+
+        filter: blur(.4px);
+    }
+
+    75%,
+    100% {
+        opacity: 1;
+
+        transform:
+            translate3d(0,0,0)
+            rotateX(0)
+            rotateY(0)
+            rotateZ(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================================================
+   DISPERSING
+========================================================= */
+
+.welcome-title.dispersing .welcome-letter {
+    animation:
+        letter-disperse
+        4.5s
+        cubic-bezier(.7,0,.84,0)
+        forwards;
+
+    animation-delay:
+        var(--reverse-delay);
+}
+
+
+/* =========================================================
+   LETTER-BY-LETTER 3D DISPERSAL
+========================================================= */
+
+@keyframes letter-disperse {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate3d(0,0,0)
+            rotateX(0)
+            rotateY(0)
+            rotateZ(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+
+    30% {
+        opacity: .9;
+
+        transform:
+            translate3d(
+                calc(var(--start-x) * .2),
+                calc(var(--start-y) * .2),
+                calc(var(--start-z) * .2)
+            )
+            rotateX(
+                calc(var(--rotate-x) * .3)
+            )
+            rotateY(
+                calc(var(--rotate-y) * .3)
+            )
+            rotateZ(
+                calc(var(--rotate-z) * .3)
+            )
+            scale(.85);
+    }
+
+    65% {
+        opacity: .5;
+
+        transform:
+            translate3d(
+                calc(var(--start-x) * .7),
+                calc(var(--start-y) * .7),
+                calc(var(--start-z) * .7)
+            )
+            rotateX(
+                calc(var(--rotate-x) * .7)
+            )
+            rotateY(
+                calc(var(--rotate-y) * .7)
+            )
+            rotateZ(
+                calc(var(--rotate-z) * .7)
+            )
+            scale(.55);
+
+        filter: blur(1.5px);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--start-x),
+                var(--start-y),
+                var(--start-z)
+            )
+            rotateX(var(--rotate-x))
+            rotateY(var(--rotate-y))
+            rotateZ(var(--rotate-z))
+            scale(.3);
+
+        filter: blur(4px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-title {
+        font-size: 3.8vw;
+        letter-spacing: 1.5px;
+    }
+
+    .welcome-letter {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .welcome-title .welcome-letter:nth-child(7),
+    .welcome-title .welcome-letter:nth-child(9),
+    .welcome-title .welcome-letter:nth-child(13) {
+        margin-right: 9px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ONE LINE + READABLE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .welcome-title {
+        font-size: 4.6vw;
+        letter-spacing: .8px;
+
+        padding:
+            8px 2px;
+    }
+
+    .welcome-letter {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .welcome-title .welcome-letter:nth-child(7),
+    .welcome-title .welcome-letter:nth-child(9),
+    .welcome-title .welcome-letter:nth-child(13) {
+        margin-right: 6px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .welcome-title {
+        font-size: 4.1vw;
+        letter-spacing: .4px;
+    }
+
+    .welcome-letter {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .welcome-letter {
+        animation: none !important;
+
+        opacity: 1 !important;
+
+        transform:
+            translate3d(0,0,0)
+            rotateX(0)
+            rotateY(0)
+            rotateZ(0)
+            scale(1) !important;
+
+        filter: none !important;
+    }
+}
 
 /* PARAGRAPHS */
 .hero-text,
@@ -158,22 +717,506 @@ header{
     line-height:1.8;
     font-weight:400;
 }
-/* CORPORATE BUTTONS */
-.apply-btn,
-.link-btn{
-    display:inline-block;
-    padding:12px 28px;
-    background:var(--corporate-red);
-    color:#fff;
-    text-decoration:none;
-    border-radius:4px;
-    transition:.3s;
+/* =====================================
+   ADMISSIONS SECTION
+====================================== */
+
+.admissions-section {
+    width: 100%;
+    padding: 25px 15px;
+    box-sizing: border-box;
 }
 
-.apply-btn:hover,
-.link-btn:hover{
-    opacity:.9;
-    color:#fff;
+
+/* =====================================
+   CORPORATE RED + WHITE CARD
+   RESPONSIVE WIDTH
+====================================== */
+
+.admissions-card {
+    position: relative;
+
+    width: min(650px, calc(100% - 10px));
+    max-width: 650px;
+
+    margin: 0 auto;
+    padding: 25px 22px 24px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    color: #222222;
+
+    border: 2px solid var(--corporate-red);
+    border-radius: 14px;
+
+    /* OUTER CORPORATE RED GLOW */
+    box-shadow:
+        0 0 7px rgba(192, 0, 0, .65),
+        0 0 18px rgba(192, 0, 0, .38),
+        0 0 35px rgba(192, 0, 0, .18);
+
+    overflow: hidden;
+}
+
+
+/* =====================================
+   CORPORATE RED INNER FRAME
+====================================== */
+
+.admissions-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 7px;
+
+    border: 1px solid rgba(192, 0, 0, .45);
+    border-radius: 10px;
+
+    box-shadow:
+        inset 0 0 8px rgba(192, 0, 0, .08);
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   TOP RED GLOW LINE
+====================================== */
+
+.admissions-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 3px;
+
+    background: var(--corporate-red);
+
+    box-shadow:
+        0 0 7px rgba(192, 0, 0, .8),
+        0 0 16px rgba(192, 0, 0, .45);
+
+    border-radius: 0 0 5px 5px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   SMALL SCREEN
+====================================== */
+
+@media (max-width: 600px) {
+
+    .admissions-section {
+        width: 100%;
+        padding: 20px 8px;
+        box-sizing: border-box;
+    }
+
+    .admissions-card {
+        width: calc(100% - 4px);
+        max-width: 100%;
+        margin: 0 auto;
+
+        padding: 21px 14px 20px;
+
+        border-width: 1.5px;
+        border-radius: 12px;
+
+        box-shadow:
+            0 0 6px rgba(192, 0, 0, .55),
+            0 0 15px rgba(192, 0, 0, .30),
+            0 0 25px rgba(192, 0, 0, .15);
+    }
+
+    .admissions-card::before {
+        inset: 5px;
+        border-radius: 8px;
+    }
+
+    .admissions-card::after {
+        left: 12%;
+        right: 12%;
+        height: 2px;
+    }
+}
+
+
+/* =====================================
+   VERY SMALL PHONES
+====================================== */
+
+@media (max-width: 380px) {
+
+    .admissions-section {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .admissions-card {
+        width: 100%;
+        padding: 19px 11px 18px;
+        border-radius: 10px;
+    }
+
+    .admissions-card::before {
+        inset: 4px;
+        border-radius: 7px;
+    }
+}
+
+/* =====================================
+   TOP RED GLOW LINE
+====================================== */
+
+.admissions-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 3px;
+
+    background: var(--corporate-red);
+
+    box-shadow:
+        0 0 7px rgba(192, 0, 0, .8),
+        0 0 16px rgba(192, 0, 0, .45);
+
+    border-radius: 0 0 5px 5px;
+}
+
+
+/* =====================================
+   TITLE
+====================================== */
+
+.admissions-title {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 0 8px;
+
+    text-align: center;
+
+    color: #222222;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* =====================================
+   RED TITLE ACCENT
+====================================== */
+
+.admissions-title::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 3px;
+
+    margin: 8px auto 0;
+
+    background: var(--corporate-red);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 6px rgba(192, 0, 0, .6);
+}
+
+
+/* =====================================
+   INTRO TEXT
+====================================== */
+
+.admissions-text {
+    position: relative;
+    z-index: 2;
+
+    max-width: 530px;
+
+    margin: 0 auto 17px;
+
+    text-align: center;
+
+    color: #222222;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   ADMISSION NOTE
+====================================== */
+
+.admissions-note {
+    position: relative;
+    z-index: 2;
+
+    margin: 0 auto 18px;
+
+    padding: 15px 16px;
+
+    background: #fafafa;
+
+    border-left: 4px solid var(--corporate-red);
+    border-radius: 7px;
+
+    text-align: center;
+
+    color: #222222;
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, .035);
+}
+
+
+/* =====================================
+   NOTE HEADING
+====================================== */
+
+.admissions-note strong:first-child {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--corporate-red);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =====================================
+   NOTE TEXT
+====================================== */
+
+.admissions-note p {
+    margin: 7px 0;
+
+    color: #222222;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =====================================
+   KES 1,500 HIGHLIGHT
+====================================== */
+
+.admission-highlight {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin: 12px 0 !important;
+
+    color: #222222 !important;
+
+    font-weight: 600;
+}
+
+
+.admission-highlight span {
+    color: #222222;
+}
+
+
+.admission-highlight strong {
+    color: var(--corporate-red) !important;
+
+    font-size: 19px !important;
+    font-weight: 800;
+
+    text-shadow:
+        0 0 5px rgba(192, 0, 0, .3);
+}
+
+
+/* =====================================
+   FINAL MESSAGE
+====================================== */
+
+.admission-final {
+    color: #222222 !important;
+}
+
+
+.admission-final b {
+    color: var(--corporate-red);
+}
+
+
+/* =====================================
+   CORPORATE RED CTA BUTTON
+====================================== */
+
+.apply-btn {
+    position: relative;
+    z-index: 3;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 18px auto 0;
+
+    padding: 11px 26px;
+
+    box-sizing: border-box;
+
+    background: var(--corporate-red, #C00000);
+    color: #ffffff !important;
+
+    border: 1px solid var(--corporate-red, #C00000);
+    border-radius: 22px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: .3px;
+
+    text-align: center;
+    text-decoration: none;
+
+    /* CORPORATE RED GLOW */
+    box-shadow:
+        0 0 7px rgba(192, 0, 0, .75),
+        0 0 16px rgba(192, 0, 0, .45),
+        0 4px 12px rgba(192, 0, 0, .25);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* =====================================
+   CTA HOVER
+====================================== */
+
+.apply-btn:hover {
+    transform: translateY(-2px);
+
+    background: #A80000;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 9px rgba(192, 0, 0, .9),
+        0 0 22px rgba(192, 0, 0, .6),
+        0 6px 16px rgba(192, 0, 0, .3);
+}
+
+
+/* =====================================
+   CTA ACTIVE
+====================================== */
+
+.apply-btn:active {
+    transform: scale(.96);
+}
+
+
+/* =====================================
+   MOBILE CTA
+====================================== */
+
+@media (max-width: 600px) {
+
+    .apply-btn {
+        margin-top: 16px;
+
+        padding: 10px 24px;
+
+        font-size: 13px;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 0 6px rgba(192, 0, 0, .7),
+            0 0 15px rgba(192, 0, 0, .4),
+            0 4px 10px rgba(192, 0, 0, .22);
+    }
+}
+
+
+/* =====================================
+   VERY SMALL PHONES
+====================================== */
+
+@media (max-width: 380px) {
+
+    .apply-btn {
+        padding: 9px 21px;
+        font-size: 12.5px;
+    }
+}
+
+/* =====================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .admissions-section {
+        padding: 20px 10px;
+    }
+
+    .admissions-card {
+        padding: 22px 16px;
+        border-radius: 12px;
+
+        box-shadow:
+            0 0 6px rgba(192, 0, 0, .55),
+            0 0 15px rgba(192, 0, 0, .3),
+            0 0 25px rgba(192, 0, 0, .15);
+    }
+
+    .admissions-title {
+        font-size: 22px;
+    }
+
+    .admissions-text {
+        font-size: 13px;
+    }
+
+    .admissions-note {
+        padding: 13px 12px;
+    }
+
+    .admissions-note p {
+        font-size: 12.5px;
+    }
+
+    .admission-highlight strong {
+        font-size: 18px !important;
+    }
+
+    .apply-btn {
+        font-size: 11px;
+        padding: 6px 15px;
+    }
 }
 
 /* WHITE BACKGROUND */
@@ -252,281 +1295,870 @@ header{
     text-align:center;
 }
 
-/* FOOTER */
-.footer{
-    background:#fff;
-    color:#222;
-    border-top:3px solid var(--corporate-red);
-    text-align:center;
-    padding:14px;
+/* =====================================
+   GADEH FOOTER
+====================================== */
+
+.footer {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    padding: 1rem .8rem;
+
+    background: #ffffff;
+
+    /* Grey top border */
+
+    border-top: 1px solid #CFCFCF;
+
+    color: #000000;
+
+    text-align: center;
+}
+
+
+/* =====================================
+   WATERMARK
+====================================== */
+
+.footer-watermark {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+
+    color: rgba(0, 0, 0, 0.035);
+
+    font-size: 5rem;
+
+    font-weight: 900;
+
+    letter-spacing: .15rem;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =====================================
+   FOOTER CONTENT
+====================================== */
+
+.footer-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================
+   COPYRIGHT
+====================================== */
+
+.footer-copyright {
+    margin-bottom: .45rem;
+
+    color: #000000;
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   FOOTER LINKS
+====================================== */
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: .35rem;
+
+    color: #000000;
+
+    font-size: .7rem;
+
+    font-weight: 800;
+}
+
+
+.footer-links a {
+    color: #000000;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+
+.footer-links a:hover {
+    color: var(--red, #C00000);
+
+    text-decoration: underline;
+}
+
+
+.footer-links span {
+    color: #888888;
+
+    font-weight: 700;
+}
+
+
+/* =====================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding: .85rem .6rem;
+    }
+
+    .footer-copyright {
+        font-size: .65rem;
+    }
+
+    .footer-links {
+        font-size: .63rem;
+        gap: .25rem;
+    }
+
+    .footer-watermark {
+        font-size: 3.5rem;
+    }
+
+}
+    
+
+/* =========================================================
+   GADEH DOWNLOADS / RESOURCES
+   CORPORATE RED + AGRICULTURE GREEN
+========================================================= */
+
+.downloads-section {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.downloads-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   RESOURCE GROUP
+========================================================= */
+
+.resource-group {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   MAIN RESOURCE LINK
+========================================================= */
+
+.resource-link {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 7px 5px;
+
+    background: transparent;
+    border: 0;
+
+    color: var(--red);
+
     font-size:11px;
-    font-weight:700; /* Bold */
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    z-index:100;
+    font-weight: 600;
+
+    letter-spacing: .3px;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: color .2s ease;
 }
 
-.footer-links a,
-.footer-links span{
-    color:#222;
-    font-size:11px;
-    font-weight:700; /* Bold */
-    text-decoration:none;
-}
-
-.footer-links a:hover{
-    color:var(--corporate-red);
-}
-  /* ==============================
-   GDEH DOCUMENTS
-============================== */
-
-.documents-section{
-    background:#fff;
-    padding:38px 20px 45px;
-}
-
-.documents-container{
-    max-width:900px;
-    margin:auto;
-}
-
-.documents-heading{
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.documents-heading h2{
-    color:var(--corporate-red);
-    font-family:"Brush Script MT",
-                 "Lucida Handwriting",
-                 cursive;
-    font-size:28px;
-    font-weight:700;
-    margin-bottom:7px;
-}
-
-.documents-heading p{
-    color:#555;
-    font-size:11px;
-    line-height:1.7;
-    margin:0;
-}
-
-.documents-list{
-    display:flex;
-    flex-direction:column;
-}
-
-.document-item{
-    display:grid;
-    grid-template-columns:4px 1fr auto;
-    gap:18px;
-    align-items:center;
-    padding:18px 0;
-    border-bottom:1px solid #eee;
-}
-
-.document-item::before{
-    content:"";
-    width:4px;
-    height:100%;
-    min-height:55px;
-    background:var(--corporate-red);
-    border-radius:2px;
-}
-
-.document-item h3{
-    color:#222;
-    font-size:14px;
-    font-weight:700;
-    margin:0 0 5px;
-}
-
-.document-item p{
-    color:#555;
-    font-size:11px;
-    line-height:1.7;
-    margin:0;
-}
-
-.document-item a{
-    color:var(--corporate-red);
-    font-size:11px;
-    font-weight:700;
-    text-decoration:none;
-    white-space:nowrap;
-}
-
-.document-item a:hover{
-    text-decoration:underline;
-    color:var(--corporate-red);
+.resource-link:hover {
+    color: var(--dark-red);
 }
 
 
+/* =========================================================
+   RED BULLET
+========================================================= */
 
-/* VISION & MISSION */
-.vision-mission-section{background:#fff;padding:25px 20px 35px}
-.two-column{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.info-card{border-left:4px solid var(--corporate-red);padding:15px 18px;background:#fff}
-.info-card h3{color:var(--corporate-red);font-size:18px;font-family:"Brush Script MT","Lucida Handwriting",cursive;margin:0 0 7px}
-.info-card p{color:#555;font-size:11px;line-height:1.8;margin:0}
-.project-document-section{padding-bottom:25px !important}
-@media(max-width:600px){
-.vision-mission-section{padding:20px 15px 30px}
-.two-column{grid-template-columns:1fr;gap:15px}
+.resource-bullet {
+    flex: 0 0 auto;
+
+    margin-right: 8px;
+
+    color: var(--red);
+
+    font-size: 18px;
+    font-weight: 900;
+
+    line-height: 1;
 }
 
-/* MOBILE */
-@media(max-width:600px){
 
-    .documents-section{
-        padding:35px 15px 55px;
+/* =========================================================
+   RESOURCE CONTENT PANEL
+========================================================= */
+
+.resource-content {
+    width: calc(100% - 17px);
+
+    margin: 2px 0 7px 17px;
+    padding: 6px;
+
+    box-sizing: border-box;
+
+    background: #F3F3F3;
+
+    border-left: 3px solid var(--red);
+    border-radius: 4px;
+
+    box-shadow:
+        0 1px 5px rgba(0, 0, 0, .05);
+
+    animation: resourceOpen .2s ease;
+}
+
+
+/* =========================================================
+   RESOURCE CONTENT LINKS
+========================================================= */
+
+.resource-content > a {
+    display: block;
+
+    margin-bottom: 4px;
+    padding: 6px 8px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E1E1E1;
+    border-radius: 3px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease,
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.resource-content > a:last-child {
+    margin-bottom: 0;
+}
+
+.resource-content > a:hover {
+    color: var(--red);
+
+    background: var(--light-green);
+
+    border-color: #D3E0D2;
+}
+
+
+/* =========================================================
+   DOWNLOAD LIST
+   NUMBER + TITLE + OPEN
+========================================================= */
+
+.downloads-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   DOWNLOAD CARD
+========================================================= */
+
+.downloads-list li {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 34px;
+
+    margin-bottom: 5px;
+    padding: 5px 7px 5px 10px;
+
+    box-sizing: border-box;
+
+    background: var(--grey);
+
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+
+    border-radius: 3px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+.downloads-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   DOWNLOAD NUMBER
+========================================================= */
+
+.download-number {
+    flex: 0 0 27px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   DOWNLOAD TITLE
+========================================================= */
+
+.download-title {
+    flex: 1;
+
+    min-width: 0;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    text-transform: lowercase;
+
+    transition: color .2s ease;
+}
+
+.download-title:hover {
+    color: var(--red);
+}
+
+
+/* =========================================================
+   OPEN LINK
+========================================================= */
+
+.download-action {
+    flex: 0 0 auto;
+
+    margin-left: 8px;
+    padding-left: 8px;
+
+    color: var(--red);
+
+    border-left: 1px solid #D5D5D5;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-decoration: none;
+}
+
+.download-action:hover {
+    color: var(--dark-red);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DOWNLOAD CARD HOVER
+========================================================= */
+
+.downloads-list li:hover {
+    background: var(--light-green);
+
+    border-color: #D2DCD0;
+}
+
+
+/* =========================================================
+   DROPDOWN ANIMATION
+========================================================= */
+
+@keyframes resourceOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
     }
 
-    .documents-heading h2{
-        font-size:25px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    .document-item{
-        grid-template-columns:3px 1fr auto;
-        gap:12px;
-        padding:16px 0;
+}
+
+
+/* =========================================================
+   VISION & MISSION SECTION
+========================================================= */
+
+.vision-mission-section {
+    width: 100%;
+
+    padding: 1.5rem 1rem;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+}
+
+
+/* =========================================================
+   VISION & MISSION MAIN CARD
+========================================================= */
+
+.vision-mission-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding: 1.2rem;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid rgba(46, 125, 50, .35);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 5px rgba(46, 125, 50, .18),
+        0 0 12px rgba(46, 125, 50, .10);
+}
+
+
+/* =========================================================
+   VISION & MISSION HEADING
+========================================================= */
+
+.vision-mission-heading {
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+
+    border-bottom: 1px solid #E2EDE2;
+}
+
+.vision-mission-heading h2 {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TWO COLUMN LAYOUT
+========================================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+}
+
+
+/* =========================================================
+   VISION / MISSION CARD
+========================================================= */
+
+.info-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: .85rem .9rem .85rem 1.05rem;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E5E5;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 4px rgba(46, 125, 50, .15),
+        0 2px 6px rgba(0, 0, 0, .04);
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* =========================================================
+   CORPORATE RED LEFT BAR
+========================================================= */
+
+.info-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 9px;
+    bottom: 9px;
+
+    width: 3px;
+
+    background: var(--red);
+
+    border-radius: 1px;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.info-card h3 {
+    margin: 0 0 .35rem;
+
+    color: var(--black);
+
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.info-card p {
+    margin: 0;
+
+    color: var(--black);
+
+    font-size: .78rem;
+    font-weight: 600;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   VISION / MISSION HOVER
+========================================================= */
+
+.info-card:hover {
+    border-color: rgba(46, 125, 50, .45);
+
+    box-shadow:
+        0 0 7px rgba(46, 125, 50, .22),
+        0 3px 8px rgba(0, 0, 0, .05);
+}
+
+
+/* =========================================================
+   ADMISSIONS / CTA SECTION
+========================================================= */
+
+.admissions-section {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    padding: 35px 20px 45px;
+
+    margin-top: 10px;
+
+    background: #FFFFFF;
+
+    border-top: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+
+/* =========================================================
+   ADMISSIONS TITLE
+========================================================= */
+
+.admissions-title {
+    margin: 0 0 8px;
+
+    color: var(--red);
+
+    font-family:
+        "Brush Script MT",
+        "Lucida Handwriting",
+        cursive;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ADMISSIONS TEXT
+========================================================= */
+
+.admissions-text {
+    margin: 0 0 14px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CTA NOTE
+========================================================= */
+
+.cta-note {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    padding: 15px 20px;
+
+    box-sizing: border-box;
+
+    background: #FAFAFA;
+
+    border-left: 4px solid var(--red);
+}
+
+
+/* =========================================================
+   CTA NOTE HEADING
+========================================================= */
+
+.cta-note strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--red);
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   CTA NOTE TEXT
+========================================================= */
+
+.cta-note span {
+    color: #555555;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- Downloads ---------- */
+
+    .downloads-section {
+        margin: 1rem auto;
     }
 
-    .document-item h3{
-        font-size:12px;
+    .downloads-container {
+        width: 100%;
     }
 
-    .document-item p{
-        font-size:10px;
+    .resource-link {
+        padding: 6px 4px;
+
+        font-size: 13px;
     }
 
-    .document-item a{
-        font-size:10px;
+    .resource-bullet {
+        margin-right: 7px;
+
+        font-size: 17px;
     }
 
-  }
+    .resource-content {
+        width: calc(100% - 14px);
 
-/* ==============================
-   VISION & MISSION
-============================== */
-.vision-mission-section{
-    background:#fff;
-    padding:45px 20px 110px;
-}
+        margin-left: 14px;
 
-.vision-mission-container{
-    max-width:900px;
-    margin:0 auto;
-}
-
-.vision-mission-heading{
-    text-align:center;
-    margin-bottom:28px;
-}
-
-.vision-mission-heading h2{
-    color:var(--corporate-red);
-    font-family:"Brush Script MT","Lucida Handwriting",cursive;
-    font-size:28px;
-    font-weight:700;
-    margin:0;
-}
-
-.two-column{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-}
-
-.info-card{
-    background:#fff;
-    border-left:4px solid var(--corporate-red);
-    padding:22px 24px;
-    box-shadow:0 2px 10px rgba(0,0,0,.06);
-}
-
-.info-card h3{
-    color:#222;
-    font-size:16px;
-    font-weight:700;
-    margin:0 0 10px;
-}
-
-.info-card p{
-    color:#555;
-    font-size:12px;
-    line-height:1.9;
-    margin:0;
-}
-
-/* Keep the final section comfortably separated from the fixed footer */
-footer.footer{
-    min-height:58px;
-}
-
-@media(max-width:600px){
-    .vision-mission-section{
-        padding:35px 15px 100px;
+        padding: 5px;
     }
 
-    .two-column{
-        grid-template-columns:1fr;
-        gap:20px;
+    .resource-content > a {
+        padding: 5px 7px;
+
+        font-size: 10px;
     }
 
-    .info-card{
-        padding:20px;
+
+    /* ---------- Download cards ---------- */
+
+    .downloads-list li {
+        min-height: 32px;
+
+        padding: 5px 6px 5px 8px;
     }
-}
-.admissions-section{
-    text-align:center;
-    padding:35px 20px 45px;
-    margin-top:10px;
-    border-top:1px solid #eee;
-    border-bottom:1px solid #eee;
-    background:#fff;
-}
 
-.admissions-title{
-    color:var(--corporate-red);
-    font-family:"Brush Script MT",
-                 "Lucida Handwriting",
-                 cursive;
-    font-size:30px;
-    font-weight:700;
-    margin:0 0 8px;
-}
+    .download-number {
+        flex-basis: 24px;
 
-.admissions-text{
-    color:#222;
-    font-size:13px;
-    font-weight:600;
-    margin:0 0 14px;
-}
+        font-size: 9px;
+    }
 
-.cta-note{
-    max-width:650px;
-    margin:0 auto 20px;
-    padding:15px 20px;
-    border-left:4px solid var(--corporate-red);
-    background:#fafafa;
-}
+    .download-title {
+        font-size: 10px;
+    }
 
-.cta-note strong{
-    display:block;
-    color:var(--corporate-red);
-    font-size:14px;
-    margin-bottom:5px;
-}
+    .download-action {
+        margin-left: 6px;
+        padding-left: 6px;
 
-.cta-note span{
-    color:#555;
-    font-size:11px;
-    line-height:1.8;
+        font-size: 9px;
+    }
+
+
+    /* ---------- Vision & Mission ---------- */
+
+    .vision-mission-section {
+        padding: 1rem .7rem;
+    }
+
+    .vision-mission-container {
+        padding: 1rem;
+    }
+
+    .vision-mission-heading {
+        margin-bottom: .8rem;
+    }
+
+    .vision-mission-heading h2 {
+        font-size: .95rem;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+
+        gap: .7rem;
+    }
+
+    .info-card {
+        padding: .75rem .8rem .75rem 1rem;
+    }
+
+    .info-card h3 {
+        font-size: .85rem;
+    }
+
+    .info-card p {
+        font-size: .75rem;
+
+        line-height: 1.5;
+    }
+
+
+    /* ---------- Admissions ---------- */
+
+    .admissions-section {
+        padding: 28px 15px 35px;
+    }
+
+    .admissions-title {
+        font-size: 26px;
+    }
+
+    .admissions-text {
+        font-size: 12px;
+    }
+
+    .cta-note {
+        padding: 12px 15px;
+    }
+
+    .cta-note strong {
+        font-size: 13px;
+    }
+
+    .cta-note span {
+        font-size: 10px;
+
+        line-height: 1.7;
+    }
+
 }
 
 </style>
@@ -561,9 +2193,12 @@ footer.footer{
 </header>
 
 <section class="hero-section">
-
-    <div class="hero-card">
-        <h1 class="welcome-title">Welcome To GADEH CBO</h1>
+<div class="hero-card">
+    <h1 class="welcome-title" id="welcomeTitle">
+        WELCOME TO GADEH CBO
+    </h1>
+</div>
+    
 
         <p class="hero-text">
             Garissa Agro-Digital Empowerment Hub is a community-based organization
@@ -589,32 +2224,55 @@ footer.footer{
 </section>
 
 <!-- =====================================
-     ADMISSIONS / CALL TO ACTION
-====================================== -->
+     ADMISSIONS / CTA CARD
+====================================== --><section class="admissions-section"><div class="admissions-card">
 
-<section class="admissions-section">
+    <div class="admissions-glow"></div>
 
-    <h2 class="admissions-title">Admissions Open</h2>
+    <h2 class="admissions-title">Admissions Now Open</h2>
 
     <p class="admissions-text">
-        Ready to learn, innovate and create new opportunities?
+        Your opportunity to learn, innovate and build practical skills
+        starts here.
     </p>
 
-    <div class="cta-note">
+    <div class="admissions-note">
+
         <strong>🌱 Learn. Innovate. Grow.</strong>
-        <span>
-            Take the next step towards building practical digital,
-            technology and entrepreneurship skills for a better future.
-        </span>
+
+        <p>
+            Step into a practical learning experience designed to help
+            you develop valuable <b>digital, technology and
+            entrepreneurship skills</b> for today's opportunities and
+            tomorrow's future.
+        </p>
+
+        <p class="admission-highlight">
+            <span>💚 Register today for only</span>
+            <strong>KES 1,500</strong>
+        </p>
+
+        <p>
+            Your registration includes access to the programme and a
+            <b>Certificate of Completion</b> upon successfully completing
+            the required learning activities.
+        </p>
+
+        <p class="admission-final">
+            Don't just prepare for the future — <b>build it.</b>
+            Take your first step with GADEH today.
+        </p>
+
     </div>
 
-    <a href="https://gdehexm.onrender.com/apply.html" class="apply-btn">
-        Apply Now →
+    <a href="https://gdehexm.onrender.com/apply.html"
+       class="apply-btn">
+        Apply Now 
     </a>
 
+</div>
+
 </section>
-
-
 <section class="orange-section">
 
     <div class="link-section">
@@ -629,7 +2287,7 @@ footer.footer{
                 </p>
 
                 <div class="link-action">
-                    <a class="link-btn" href="teamcbo.html">View More →</a>
+                    <a class="link-btn" href="teamcbo.html">View More </a>
                 </div>
             </div>
 
@@ -645,7 +2303,7 @@ footer.footer{
                 </p>
 
                 <div class="link-action">
-                    <a class="link-btn" href="landing.html">Learn More →</a>
+                    <a class="link-btn" href="landing.html">Learn More </a>
                 </div>
             </div>
 
@@ -661,7 +2319,7 @@ footer.footer{
                 </p>
 
                 <div class="link-action">
-                    <a class="link-btn" href="explore.html">Explore More →</a>
+                    <a class="link-btn" href="explore.html">Explore More </a>
                 </div>
             </div>
 
@@ -670,364 +2328,416 @@ footer.footer{
     </div>
 
 </section>
-  <section class="documents-section" id="documents">
-
-    <div class="documents-container">
-
-        <div class="documents-heading">
-            <h2>GADEH Documents</h2>
-            <p>
-                Access official training forms, assessments,documents and certificates.
-            </p>
-        </div>
-      <div class="document-item">
-    <div>
-        <h3>GADEH CBO Profile Document</h3>
-        <p>
-            Official organizational profile covering our mission, vision,
-            programmes, areas of focus and community impact.
-        </p>
-    </div>
-
-    <a href="profile_document.html">View Profile →</a>
-      </div>
-
-        <div class="documents-list">
-
-            <div class="document-item">
-                <div>
-                    <h3>Training Assessment Sheet</h3>
-                    <p>Assessment of participant knowledge, practical skills and competency.</p>
-                </div>
-                <a href="training_assessment.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Training Attendance Register</h3>
-                    <p>Official attendance record for GDEH training programmes and workshops.</p>
-                </div>
-                <a href="training_attendance.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Training Evaluation Form</h3>
-                    <p>Participant feedback form for evaluating training quality and experience.</p>
-                </div>
-                <a href="training_evaluation.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Trainee Registration Form</h3>
-                    <p>Registration form for participants joining GDEH training programmes.</p>
-                </div>
-                <a href="trainee_registration.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Trainer's Report</h3>
-                    <p>Training delivery, performance, challenges and recommendations report.</p>
-                </div>
-                <a href="trainers_report.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Certificate of Completion</h3>
-                    <p>Certificate for participants who successfully complete a GDEH training programme.</p>
-                </div>
-                <a href="certificate_completion.html">Open →</a>
-            </div>
-
-            <div class="document-item">
-                <div>
-                    <h3>Certificate of Participation</h3>
-                    <p>Certificate recognizing active participation in GDEH programmes and activities.</p>
-                </div>
-                <a href="certificate_participation.html">Open →</a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-  <section class="documents-section project-document-section" id="documents">
-
-    <div class="documents-container">
-
-        <div class="documents-heading">
-            <h2>Project Documentation</h2>
-            <p>
-                Access the official project proposal, budget, implementation
-                plan, training documents and supporting project materials.
-            </p>
-        </div>
-
-        <div class="documents-list">
-<div class="document-item">
-    <div>
-        <h3>Project Proposal</h3>
-        <p>
-            Full proposal for the Youth Digital and Green Innovation
-            Empowerment Initiative.
-        </p>
-    </div>
-    <a href="project_proposal.html">Open →</a>
-</div>
-
-<div class="document-item">
-    <div>
-        <h3>Project Budget Summary</h3>
-        <p>
-            Detailed project budget, cost breakdown, allocations and
-            budget justification.
-        </p>
-    </div>
-    <a href="project_budget.html">Open →</a>
-</div>
-
-<div class="document-item">
-    <div>
-        <h3>Project Plan Sheet</h3>
-        <p>
-            Complete implementation plan covering activities, targets,
-            timelines, indicators and responsibilities.
-        </p>
-    </div>
-    <a href="project_plan.html">Open →</a>
-</div>
-  <div class="document-item">
-    <div>
-        <h3>Project Evaluation &amp; Monitoring</h3>
-        <p>
-            Monitoring, evaluation, performance assessment, outcomes,
-            challenges and recommendations.
-        </p>
-    </div>
-
-    <a href="project_evaluation_monitoring.html">
-        Open →
-    </a>
-  </div>  
-    <div class="document-item">
-    <div>
-        <h3>Interledger Local Impact Grant Proposal</h3>
-        <p>
-            Garissa Open Digital Finance &amp; Payments Innovation Initiative —
-            six-month community project proposal and USD 3,000 budget.
-        </p>
-    </div>
-
-    <a href="GDEH_Interledger_Local_Impact_Grant_Proposal_2026.html">
-        Open →
-    </a>
-</div>      
-</section>
-
-<section class="documents-section project-document-section" id="research">
-
-    <div class="documents-container">
-
-        <div class="documents-heading">
-            <h2>Research & Survey</h2>
-
-            <p>
-                Access the Digital Financial Inclusion and Open Payments
-                research and field survey conducted in Northern Kenya.
-            </p>
-        </div>
-
-        <div class="documents-list">
-
-            <div class="document-item">
-
-                <div>
-                    <h3>
-                        Digital Financial Inclusion & Open Payments Research
-                        — Northern Kenya
-                    </h3>
-
-                    <p>
-                        Community-based research examining digital financial
-                        inclusion, digital payments, interoperability,
-                        affordability, digital literacy, security,
-                        opportunities and challenges affecting communities
-                        in Northern Kenya.
-                    </p>
-
-                    <h3>
-                        Digital Financial Inclusion & Open Payments Survey
-                        — Northern Kenya
-                    </h3>
-
-                    <p>
-                        Offline field survey instrument designed to collect
-                        primary evidence from respondents on digital
-                        financial access, payment experiences, challenges,
-                        opportunities and perceptions of Open Payments.
-                    </p>
-                </div>
-
-                <div class="document-actions">
-
-                    <a href="digital_financial_inclusion_research.html">
-                        Research →
-                    </a>
-
-                    <a href="garissa_digital_financial_inclusion_survey.html">
-                        Survey →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-  <div class="document-item">
-    <div>
-        <h3>MDR Survey Responses Sheet</h3>
-        <p>Official survey response sheet for MDR respondents and collected research data.</p>
-    </div>
-    <a href="mdr_survey_responses_sheet.html">Open →</a>
-</div>
-
-<div class="document-item">
-    <div>
-        <h3>GSA Survey Responses Sheet</h3>
-        <p>Official survey response sheet for GSA respondents and collected research data.</p>
-    </div>
-    <a href="gsa_survey_response_sheet.html">Open →</a>
-</div>
-
-<div class="document-item">
-    <div>
-        <h3>WJR Survey Responses Sheet</h3>
-        <p>Official survey response sheet for WJR respondents and collected research data.</p>
-    </div>
-    <a href="wjr_survey_responses_sheet.html">Open →</a>
-</div>
-
-</section>
-     <!-- ==================================================
-     ORGANIZATIONAL DOCUMENTS
-================================================== -->
-
-<section
-    class="project-section"
-    id="organizational-documents"
->
-
-    <div class="documents-heading">
-
-        <h2>
-            Organizational Documents
-        </h2>
-
-        <p>
-
-            Access official GADEH CBO governance,
-            legal, policy and organizational
-            documents.
-
-        </p>
-
-    </div>
-
-
-    <div class="documents-list">
-
-
-        <div class="document-item">
-
-            <div>
-
-                <h3>
-                    Privacy Policy &amp; Terms and Conditions
-                </h3>
-
-                <p>
-
-                    Privacy policy, terms and conditions
-                    governing the use of GADEH CBO
-                    websites, services and programmes.
-
-                </p>
-
-            </div>
-
-            <a href="privacy_terms.html">
-                Open →
-            </a>
-
-        </div>
-
-
-        <div class="document-item">
-
-            <div>
-
-                <h3>
+  <!-- =========================================================
+     GADEH RESOURCES / DOWNLOADS
+========================================================= -->
+
+<section class="downloads-section" id="downloads">
+
+    <div class="downloads-container">
+
+
+        <!-- =================================================
+             DOWNLOADS
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="downloadsMenu"
+            >
+                <span class="resource-bullet">•</span>
+               Downloads
+            </button>
+
+            <div
+                class="resource-content"
+                id="downloadsMenu"
+                hidden
+            >
+
+                <a href="profile_document.html">
+                    GADEH CBO Profile Document
+                </a>
+
+                <a href="training_assessment.html">
+                    Training Assessment Sheet
+                </a>
+
+                <a href="training_attendance.html">
+                    Training Attendance Register
+                </a>
+
+                <a href="training_evaluation.html">
+                    Training Evaluation Form
+                </a>
+
+                <a href="trainee_registration.html">
+                    Trainee Registration Form
+                </a>
+
+                <a href="trainers_report.html">
+                    Trainer's Report
+                </a>
+
+                <a href="certificate_completion.html">
+                    Certificate of Completion
+                </a>
+
+                <a href="certificate_participation.html">
+                    Certificate of Participation
+                </a>
+
+                <a href="project_proposal.html">
+                    Project Proposal
+                </a>
+
+                <a href="project_budget.html">
+                    Project Budget Summary
+                </a>
+
+                <a href="project_plan.html">
+                    Project Plan Sheet
+                </a>
+
+                <a href="project_evaluation_monitoring.html">
+                    Project Evaluation &amp; Monitoring
+                </a>
+
+                <a href="privacy_terms.html">
+                    Privacy Policy &amp; Terms
+                </a>
+
+                <a href="constitution_2.html">
                     GADEH CBO Constitution
-                </h3>
+                </a>
 
-                <p>
-
-                    Official constitution outlining the
-                    organization’s identity, governance,
-                    objectives, membership, leadership and
-                    operational framework.
-
-                </p>
-
-            </div>
-
-            <a href="constitution_2.html">
-                Open →
-            </a>
-
-        </div>
-
-
-        <div class="document-item">
-
-            <div>
-
-                <h3>
+                <a href="minutes.html">
                     Meeting Minutes
-                </h3>
-
-                <p>
-
-                    Official records of GADEH CBO meetings,
-                    resolutions, decisions, discussions and
-                    organizational proceedings.
-
-                </p>
+                </a>
 
             </div>
 
-            <a href="minutes.html">
-                Open →
-            </a>
+        </div>
+
+
+        <!-- =================================================
+             LIBRARY
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="libraryMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Library 
+            </button>
+
+            <div
+                class="resource-content"
+                id="libraryMenu"
+                hidden
+            >
+
+                <a href="library.html">
+                    GADEH Digital Library
+                </a>
+
+                <a href="training_materials.html">
+                    Training Materials
+                </a>
+
+                <a href="research_publications.html">
+                    Research &amp; Publications
+                </a>
+
+                <a href="agricultural_guides.html">
+                    Agricultural Guides
+                </a>
+
+            </div>
 
         </div>
 
+
+        <!-- =================================================
+             GALLERY
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="galleryMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Gallery 
+            </button>
+
+            <div
+                class="resource-content"
+                id="galleryMenu"
+                hidden
+            >
+
+                <a href="gallery.html">
+                    Photo Gallery
+                </a>
+
+                <a href="training_gallery.html">
+                    Training &amp; Workshop Photos
+                </a>
+
+                <a href="community_gallery.html">
+                    Community Activities
+                </a>
+
+                <a href="projects_gallery.html">
+                    Project Activities
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             QUICK LINKS
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="quickLinksMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Quick Links 
+            </button>
+
+            <div
+                class="resource-content"
+                id="quickLinksMenu"
+                hidden
+            >
+
+                <a href="about.html">
+                    About GADEH
+                </a>
+
+                <a href="programmes.html">
+                    Programmes &amp; Activities
+                </a>
+
+                <a href="partnership.html">
+                    Partnerships &amp; Collaboration
+                </a>
+
+                <a href="contact.html">
+                    Contact GADEH
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ABOUT GADEH
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="aboutMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Gdeh Profile 
+            </button>
+
+            <div
+                class="resource-content"
+                id="aboutMenu"
+                hidden
+            >
+
+                <a href="about.html">
+                    Enquire 
+                </a>
+
+                <a href="vision_mission.html">
+                    Vision &amp; Mission
+                </a>
+
+                <a href="founder.html">
+                    Founder
+                </a>
+
+                <a href="objectives.html">
+                    Objectives
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PROGRAMMES
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="programmesMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Programmes &amp; Activities 
+            </button>
+
+            <div
+                class="resource-content"
+                id="programmesMenu"
+                hidden
+            >
+
+                <a href="programmes.html">
+                    Our Programmes
+                </a>
+
+                <a href="training.html">
+                    Training Programmes
+                </a>
+
+                <a href="agriculture.html">
+                    Agriculture &amp; Agribusiness
+                </a>
+
+                <a href="digital_innovation.html">
+                    Digital Innovation
+                </a>
+
+                <a href="community_projects.html">
+                    Community Projects
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PARTNERSHIPS
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="partnershipMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Partnerships &amp; Collaborations
+            </button>
+
+            <div
+                class="resource-content"
+                id="partnershipMenu"
+                hidden
+            >
+
+                <a href="partnership.html">
+                    Partnership Opportunities
+                </a>
+
+                <a href="collaboration.html">
+                    Collaboration
+                </a>
+
+                <a href="partner_application.html">
+                    Partner Application
+                </a>
+
+                <a href="partners.html">
+                    Our Partners
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <div class="resource-group">
+
+            <button
+                class="resource-link"
+                type="button"
+                aria-expanded="false"
+                aria-controls="contactMenu"
+            >
+                <span class="resource-bullet">•</span>
+                Contact Us 
+            </button>
+
+            <div
+                class="resource-content"
+                id="contactMenu"
+                hidden
+            >
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+                <a href="help_desk.html">
+                    Help Desk
+                </a>
+
+                <a href="feedback.html">
+                    Feedback
+                </a>
+
+                <a href="location.html">
+                    Our Location
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 
-</section>     
+</section>
 
 
 
 <!-- =====================================
      VISION & MISSION
 ====================================== -->
+
 <section class="vision-mission-section">
 
     <div class="vision-mission-container">
@@ -1036,26 +2746,42 @@ footer.footer{
             <h2>Vision &amp; Mission</h2>
         </div>
 
+
         <div class="two-column">
 
+            <!-- =========================
+                 VISION
+            ========================== -->
+
             <div class="info-card">
+
                 <h3>Vision</h3>
+
                 <p>
                     A digitally empowered and economically resilient
                     community where technology, innovation and
                     agro-entrepreneurship create sustainable opportunities
                     for all.
                 </p>
+
             </div>
 
+
+            <!-- =========================
+                 MISSION
+            ========================== -->
+
             <div class="info-card">
+
                 <h3>Mission</h3>
+
                 <p>
                     To empower communities through digital literacy,
                     Internet of Things, technology innovation,
                     entrepreneurship and sustainable agricultural
                     enterprise development.
                 </p>
+
             </div>
 
         </div>
@@ -1063,6 +2789,10 @@ footer.footer{
     </div>
 
 </section>
+
+
+
+
 
 <footer class="footer">
 
@@ -1077,7 +2807,278 @@ footer.footer{
     </div>
 
 </footer>
+<!-- =========================================================
+     DOWNLOADS JAVASCRIPT
+========================================================= -->
 
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const resourceLinks =
+        document.querySelectorAll(".resource-link");
+
+
+    resourceLinks.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const contentId =
+                button.getAttribute("aria-controls");
+
+            const content =
+                document.getElementById(contentId);
+
+            const isOpen =
+                button.getAttribute("aria-expanded") === "true";
+
+
+            /* Close all other resource sections */
+
+            resourceLinks.forEach(function (otherButton) {
+
+                const otherId =
+                    otherButton.getAttribute("aria-controls");
+
+                const otherContent =
+                    document.getElementById(otherId);
+
+                otherButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                otherContent.hidden = true;
+
+            });
+
+
+            /* Open selected section */
+
+            if (!isOpen) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                content.hidden = false;
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+<script>
+/* =========================================================
+   GADEH CBO WELCOME TITLE ENGINE
+   FLOCK → FORM → READ FOR 5 MINUTES → DISPERSE → REPEAT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const title = document.getElementById("welcomeTitle");
+
+    if (!title) return;
+
+    const text = title.textContent.trim();
+
+    title.textContent = "";
+
+    /*
+       Create every character individually.
+       Spaces are preserved as invisible spacing elements.
+    */
+    [...text].forEach((character, index) => {
+
+        const letter = document.createElement("span");
+
+        letter.className = "welcome-letter";
+
+        if (character === " ") {
+
+            letter.innerHTML = "&nbsp;";
+            letter.style.marginRight = "0.28em";
+
+        } else {
+
+            letter.textContent = character;
+
+        }
+
+        /*
+           Random 2D starting positions.
+           Letters come from different directions.
+        */
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const distance =
+            120 + Math.random() * 260;
+
+        const x =
+            Math.cos(angle) * distance;
+
+        const y =
+            Math.sin(angle) * distance;
+
+        /*
+           Individual rolling rotation.
+        */
+        const rotation =
+            -720 + Math.random() * 1440;
+
+        /*
+           Each letter gets its own timing.
+        */
+        const delay =
+            index * 0.07;
+
+        /*
+           Reverse timing makes the letters disperse
+           one after another.
+        */
+        const reverseDelay =
+            index * 0.07;
+
+        letter.style.setProperty(
+            "--start-x",
+            `${x}px`
+        );
+
+        letter.style.setProperty(
+            "--start-y",
+            `${y}px`
+        );
+
+        letter.style.setProperty(
+            "--start-r",
+            `${rotation}deg`
+        );
+
+        letter.style.setProperty(
+            "--delay",
+            `${delay}s`
+        );
+
+        letter.style.setProperty(
+            "--reverse-delay",
+            `${reverseDelay}s`
+        );
+
+        /*
+           Give every letter a different texture position.
+        */
+        letter.style.setProperty(
+            "--texture-position",
+            `${Math.random() * 100}% ${Math.random() * 100}%`
+        );
+
+        title.appendChild(letter);
+    });
+
+
+    /*
+       Initial flocking duration.
+    */
+    const flockDuration = 4500;
+
+    /*
+       5 MINUTES of complete readability.
+       5 × 60 × 1000 = 300000 ms
+    */
+    const readingPause = 300000;
+
+    /*
+       Dispersal duration.
+    */
+    const disperseDuration = 4500;
+
+
+    function startCycle() {
+
+        /*
+           Make sure title is in normal state.
+        */
+        title.classList.remove("dispersing");
+
+
+        /*
+           Wait until all letters have flocked together.
+        */
+        setTimeout(() => {
+
+            /*
+               Keep the complete title visible
+               for exactly 5 minutes.
+            */
+            setTimeout(() => {
+
+                /*
+                   Begin letter-by-letter dispersal.
+                */
+                title.classList.add("dispersing");
+
+
+                /*
+                   After dispersal, rebuild the animation.
+                */
+                setTimeout(() => {
+
+                    /*
+                       Force animation restart by replacing
+                       every letter with a cloned element.
+                    */
+                    const letters =
+                        [...title.children];
+
+                    letters.forEach(letter => {
+
+                        const clone =
+                            letter.cloneNode(true);
+
+                        /*
+                           Reset animation state.
+                        */
+                        clone.style.animation = "none";
+
+                        title.replaceChild(
+                            clone,
+                            letter
+                        );
+
+                    });
+
+
+                    /*
+                       Trigger browser reflow so the new
+                       animation starts correctly.
+                    */
+                    void title.offsetWidth;
+
+
+                    /*
+                       Start the next cycle.
+                    */
+                    startCycle();
+
+                }, disperseDuration + 200);
+
+            }, readingPause);
+
+        }, flockDuration + (text.length * 70));
+    }
+
+
+    startCycle();
+
+});
+</script>
 </body>
 
 
