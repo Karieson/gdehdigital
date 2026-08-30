@@ -834,7 +834,99 @@ body{
 
     z-index: 10;
 }
+/* =========================================================
+   CERTIFICATE CONTROL BUTTONS
+========================================================= */
 
+.certificate-controls {
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:15px auto;
+}
+
+
+.certificate-controls button {
+    border:none;
+
+    border-radius:4px;
+
+    padding:7px 15px;
+
+    font-family:
+        Poppins,
+        Arial,
+        sans-serif;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+
+.certificate-controls button:hover:not(:disabled) {
+    transform:translateY(-1px);
+}
+
+
+/* FILL */
+
+.control-fill {
+    background:
+        var(--corporate-red, #C00000);
+
+    color:#ffffff;
+}
+
+
+/* SAVE */
+
+.control-save {
+    background:
+        var(--corporate-green, #16833F);
+
+    color:#ffffff;
+}
+
+
+/* PRINT */
+
+.control-print {
+    background:#222222;
+
+    color:#ffffff;
+}
+
+
+.certificate-controls button:disabled {
+    opacity:.45;
+
+    cursor:not-allowed;
+}
+
+
+/* =========================================================
+   NEVER PRINT CONTROL BUTTONS
+========================================================= */
+
+@media print {
+
+    .certificate-controls {
+        display:none !important;
+    }
+
+}
 
 /* =========================================================
    PRINT SECURITY FRAME
@@ -1191,7 +1283,36 @@ body{
 
 
 <body>
+<!-- =====================================================
+     GADEH CERTIFICATE CONTROLS
+===================================================== -->
 
+<div class="certificate-controls">
+
+    <button
+        type="button"
+        id="fillCertificateBtn"
+        class="control-fill">
+        Fill Certificate
+    </button>
+
+    <button
+        type="button"
+        id="saveCertificateBtn"
+        class="control-save"
+        disabled>
+        Save &amp; Lock
+    </button>
+
+    <button
+        type="button"
+        id="printCertificateBtn"
+        class="control-print"
+        hidden>
+        Print Certificate
+    </button>
+
+</div>
 <div class="document">
 
 <div class="inner">
@@ -1921,7 +2042,334 @@ window.addEventListener(
     });
 
 </script>
+<script>
 
+/* =========================================================
+   GADEH CERTIFICATE SYSTEM
+   FILL → SIGN → SAVE & LOCK → PRINT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const fillButton =
+        document.getElementById(
+            "fillCertificateBtn"
+        );
+
+    const saveButton =
+        document.getElementById(
+            "saveCertificateBtn"
+        );
+
+    const printButton =
+        document.getElementById(
+            "printCertificateBtn"
+        );
+
+
+    /* =====================================================
+       FILLABLE ELEMENTS
+    ===================================================== */
+
+    function getFillableElements() {
+
+        return document.querySelectorAll(
+            ".fillable, " +
+            ".detail-input, " +
+            "input, " +
+            "textarea, " +
+            "select"
+        );
+
+    }
+
+
+    /* =====================================================
+       LOCK ALL FILLABLE ELEMENTS
+    ===================================================== */
+
+    function lockFields() {
+
+        getFillableElements()
+            .forEach(function (element) {
+
+                element.disabled = true;
+
+            });
+
+    }
+
+
+    /* =====================================================
+       ENABLE ALL FILLABLE ELEMENTS
+    ===================================================== */
+
+    function enableFields() {
+
+        getFillableElements()
+            .forEach(function (element) {
+
+                element.disabled = false;
+
+            });
+
+    }
+
+
+    /* =====================================================
+       ENABLE SIGNATURES
+    ===================================================== */
+
+    function enableSignatures() {
+
+        document
+            .querySelectorAll(
+                ".signature-pad"
+            )
+            .forEach(function (canvas) {
+
+                canvas.style.pointerEvents =
+                    "auto";
+
+                canvas.style.cursor =
+                    "crosshair";
+
+                canvas.setAttribute(
+                    "aria-disabled",
+                    "false"
+                );
+
+            });
+
+
+        document
+            .querySelectorAll(
+                ".signature-actions button"
+            )
+            .forEach(function (button) {
+
+                button.disabled = false;
+
+            });
+
+
+        document
+            .querySelectorAll(
+                ".signature-actions"
+            )
+            .forEach(function (actions) {
+
+                actions.style.display =
+                    "flex";
+
+            });
+
+    }
+
+
+    /* =====================================================
+       DISABLE SIGNATURES
+    ===================================================== */
+
+    function disableSignatures() {
+
+        document
+            .querySelectorAll(
+                ".signature-pad"
+            )
+            .forEach(function (canvas) {
+
+                canvas.style.pointerEvents =
+                    "none";
+
+                canvas.style.cursor =
+                    "default";
+
+                canvas.setAttribute(
+                    "aria-disabled",
+                    "true"
+                );
+
+            });
+
+
+        document
+            .querySelectorAll(
+                ".signature-actions button"
+            )
+            .forEach(function (button) {
+
+                button.disabled = true;
+
+            });
+
+
+        document
+            .querySelectorAll(
+                ".signature-actions"
+            )
+            .forEach(function (actions) {
+
+                actions.style.display =
+                    "none";
+
+            });
+
+    }
+
+
+    /* =====================================================
+       FILL CERTIFICATE
+    ===================================================== */
+
+    fillButton.addEventListener(
+        "click",
+        function () {
+
+            enableFields();
+
+            enableSignatures();
+
+
+            fillButton.disabled = true;
+
+            saveButton.disabled = false;
+
+            printButton.hidden = true;
+
+
+            /*
+               Focus first fillable field.
+            */
+
+            const firstField =
+                document.querySelector(
+                    ".fillable:not([disabled])"
+                );
+
+            if (firstField) {
+
+                firstField.focus();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       SAVE & LOCK
+    ===================================================== */
+
+    saveButton.addEventListener(
+        "click",
+        function () {
+
+            /*
+               Check required fields.
+            */
+
+            const requiredFields =
+                document.querySelectorAll(
+                    "[required]"
+                );
+
+
+            let valid = true;
+
+
+            requiredFields.forEach(
+                function (field) {
+
+                    if (
+                        !field.value.trim()
+                    ) {
+
+                        valid = false;
+
+                        field.focus();
+
+                    }
+
+                }
+            );
+
+
+            if (!valid) {
+
+                alert(
+                    "Please complete all required certificate fields before saving."
+                );
+
+                return;
+
+            }
+
+
+            /*
+               Lock certificate fields.
+            */
+
+            lockFields();
+
+            disableSignatures();
+
+
+            /*
+               Update controls.
+            */
+
+            fillButton.disabled = false;
+
+            saveButton.disabled = true;
+
+
+            /*
+               Show PRINT button.
+            */
+
+            printButton.hidden = false;
+
+
+            alert(
+                "Certificate saved and locked. It is ready for printing."
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       PRINT CERTIFICATE
+    ===================================================== */
+
+    printButton.addEventListener(
+        "click",
+        function () {
+
+            window.print();
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ===================================================== */
+
+    lockFields();
+
+    disableSignatures();
+
+    fillButton.disabled = false;
+
+    saveButton.disabled = true;
+
+    printButton.hidden = true;
+
+});
+
+</script>
 
 
 </body>
