@@ -1587,52 +1587,56 @@ textarea{
 
         <span class="section-number">6</span>
 
-        Applicant's Declaration
+        Applicant's Declaration & Agreement
 
     </div>
 
 
     <div class="declaration">
 
+        <!-- =================================================
+             APPLICANT DECLARATION
+        ================================================== -->
+
         <p>
             I hereby apply for membership of Garissa Agro-Digital
-            Empowerment Hub (GADEH). I confirm that the information
-            provided in this application is true and accurate to the
-            best of my knowledge.
+            Empowerment Hub (GADEH). I confirm that all information
+            provided in this application is true, complete and accurate
+            to the best of my knowledge.
         </p>
 
         <p>
-            If admitted as a member, I agree to abide by the
+            If admitted as a member, I agree to abide by the GADEH
             Constitution, rules, policies, regulations and lawful
-            decisions of GADEH and to uphold the objectives, values
-            and integrity of the Organization.
+            decisions, and to uphold the objectives, values and
+            integrity of the Organization.
         </p>
 
         <p>
             I understand that submission of this application does not
-            automatically constitute membership and that my application
-            is subject to review and approval by the appropriate
-            authority of GADEH.
+            automatically constitute membership. My application is
+            subject to review and approval by the appropriate authority
+            of GADEH.
         </p>
 
 
         <!-- =================================================
-             PRIVACY & TERMS NOTICE
+             PRIVACY POLICY & TERMS NOTICE
         ================================================== -->
 
         <div class="legal-notice">
 
             <strong>
-                IMPORTANT — PLEASE READ BEFORE APPLYING
+                IMPORTANT — READ BEFORE SUBMITTING
             </strong>
 
             <p>
-                Before ticking the consent boxes below, you must read
-                and understand the GADEH
+                Before submitting this application, you are required
+                to read and understand the GADEH
                 <a
                     href="privacy_terms.html"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
                     Privacy Policy
                 </a>
@@ -1640,99 +1644,131 @@ textarea{
                 <a
                     href="privacy_terms.html#terms"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                 >
                     Terms and Conditions
                 </a>.
             </p>
 
             <p class="legal-instruction">
-
-                Please open and review the document before continuing.
-                After reading it, tick the confirmation box below.
-
+                Please open and review both documents carefully.
+                You must confirm that you have read and understood
+                them before the other agreement options can be
+                selected.
             </p>
 
         </div>
 
 
         <!-- =================================================
-             READ CONFIRMATION
+             STEP 1 — PRIVACY POLICY & TERMS CONFIRMATION
         ================================================== -->
 
-       
-<label class="consent legal-read">
+        <label class="consent legal-read">
 
-    <input
-        type="checkbox"
-        id="legalRead"
-        name="legal_read"
-        required
-    >
+            <input
+                type="checkbox"
+                id="legalRead"
+                name="legal_read"
+                required
+            >
 
-    <span>
-        I confirm that I have read and understood the
-        <a href="privacy_terms.html" target="_blank">
-            Privacy Policy
-        </a>
-        and
-        <a href="privacy_terms.html#terms" target="_blank">
-            Terms and Conditions
-        </a>
-        of GADEH.
-    </span>
-
-</label>
-
-
-<!-- DECLARATION CONSENT -->
-<label class="consent">
-
-    <input
-        type="checkbox"
-        id="declarationConsent"
-        name="declaration_consent"
-        required
-        disabled
-    >
-
-    <span>
-        I confirm that I have read and understood the above
-        declaration and agree to the GADEH membership
-        requirements.
-    </span>
-
-</label>
-
-
-<!-- PRIVACY CONSENT -->
-<label class="consent">
-
-    <input
-        type="checkbox"
-        id="privacyConsent"
-        name="privacy_consent"
-        required
-        disabled
-    >
-
-    <span>
-        I consent to GADEH collecting and processing my
-        information for legitimate membership administration
-        and organizational purposes in accordance with its
-        Privacy Policy.
-    </span>
-
-
+            <span>
+                <strong>
+                    I confirm that I have read and understood the
+                    <a
+                        href="privacy_terms.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Privacy Policy
+                    </a>
+                    and
+                    <a
+                        href="privacy_terms.html#terms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Terms and Conditions
+                    </a>
+                    of GADEH.
+                </strong>
+            </span>
 
         </label>
+
+
+        <!-- =================================================
+             STEP 2 — APPLICANT DECLARATION AGREEMENT
+        ================================================== -->
+
+        <label class="consent consent-disabled">
+
+            <input
+                type="checkbox"
+                id="declarationConsent"
+                name="declaration_consent"
+                required
+                disabled
+            >
+
+            <span>
+                I confirm that I have read and understood the
+                Applicant's Declaration above and agree to comply
+                with the GADEH membership requirements, Constitution,
+                policies, rules and lawful decisions.
+            </span>
+
+        </label>
+
+
+        <!-- =================================================
+             STEP 3 — PRIVACY CONSENT
+        ================================================== -->
+
+        <label class="consent consent-disabled">
+
+            <input
+                type="checkbox"
+                id="privacyConsent"
+                name="privacy_consent"
+                required
+                disabled
+            >
+
+            <span>
+                I consent to GADEH collecting, using, storing and
+                processing my personal information for legitimate
+                membership administration and organizational
+                purposes in accordance with the
+                <a
+                    href="privacy_terms.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GADEH Privacy Policy
+                </a>.
+            </span>
+
+        </label>
+
+
+        <!-- =================================================
+             AGREEMENT STATUS
+        ================================================== -->
+
+        <div
+            id="agreementStatus"
+            class="agreement-status warning"
+            aria-live="polite"
+        >
+            You must read the Privacy Policy and Terms and Conditions
+            and confirm that you understand them before continuing.
+        </div>
 
     </div>
 
 </section>
-
-
-
         
 
 
@@ -1884,6 +1920,76 @@ document.getElementById("applicationDate").value =
 
 
 /* =========================================================
+   LEGAL / CONSENT ELEMENTS
+========================================================= */
+
+const legalRead =
+    document.getElementById("legalRead");
+
+const declarationConsent =
+    document.getElementById("declarationConsent");
+
+const privacyConsent =
+    document.getElementById("privacyConsent");
+
+const agreementStatus =
+    document.getElementById("agreementStatus");
+
+
+/* =========================================================
+   CONSENT CONTROL
+========================================================= */
+
+function updateAgreementState(){
+
+    if(legalRead.checked){
+
+        declarationConsent.disabled = false;
+        privacyConsent.disabled = false;
+
+        agreementStatus.textContent =
+            "Privacy Policy and Terms and Conditions confirmed. Please complete the remaining agreements.";
+
+        agreementStatus.classList.remove("warning");
+
+        agreementStatus.classList.add("ready");
+
+    }else{
+
+        declarationConsent.checked = false;
+        privacyConsent.checked = false;
+
+        declarationConsent.disabled = true;
+        privacyConsent.disabled = true;
+
+        agreementStatus.textContent =
+            "You must read the Privacy Policy and Terms and Conditions and confirm that you understand them before continuing.";
+
+        agreementStatus.classList.remove("ready");
+
+        agreementStatus.classList.add("warning");
+    }
+}
+
+
+/* =========================================================
+   PRIVACY / TERMS READ CONFIRMATION
+========================================================= */
+
+legalRead.addEventListener(
+    "change",
+    updateAgreementState
+);
+
+
+/* =========================================================
+   INITIAL CONSENT STATE
+========================================================= */
+
+updateAgreementState();
+
+
+/* =========================================================
    SIGNATURE PAD
 ========================================================= */
 
@@ -1895,6 +2001,10 @@ const ctx =
 
 let drawing = false;
 
+
+/* =========================================================
+   RESIZE SIGNATURE CANVAS
+========================================================= */
 
 function resizeCanvas(){
 
@@ -1910,15 +2020,28 @@ function resizeCanvas(){
     canvas.height =
         rect.height * ratio;
 
-    ctx.scale(ratio, ratio);
+    ctx.setTransform(
+        ratio,
+        0,
+        0,
+        ratio,
+        0,
+        0
+    );
 
     ctx.lineWidth = 2;
 
     ctx.lineCap = "round";
+
+    ctx.lineJoin = "round";
 }
 
 resizeCanvas();
 
+
+/* =========================================================
+   SIGNATURE POSITION
+========================================================= */
 
 function getPosition(e){
 
@@ -1928,18 +2051,34 @@ function getPosition(e){
     if(e.touches){
 
         return {
-            x:e.touches[0].clientX - rect.left,
-            y:e.touches[0].clientY - rect.top
+
+            x:
+                e.touches[0].clientX -
+                rect.left,
+
+            y:
+                e.touches[0].clientY -
+                rect.top
         };
 
     }
 
     return {
-        x:e.clientX - rect.left,
-        y:e.clientY - rect.top
+
+        x:
+            e.clientX -
+            rect.left,
+
+        y:
+            e.clientY -
+            rect.top
     };
 }
 
+
+/* =========================================================
+   START SIGNATURE
+========================================================= */
 
 function startDrawing(e){
 
@@ -1950,20 +2089,31 @@ function startDrawing(e){
 
     ctx.beginPath();
 
-    ctx.moveTo(pos.x,pos.y);
+    ctx.moveTo(
+        pos.x,
+        pos.y
+    );
 
     e.preventDefault();
 }
 
 
+/* =========================================================
+   DRAW SIGNATURE
+========================================================= */
+
 function draw(e){
 
-    if(!drawing) return;
+    if(!drawing)
+        return;
 
     const pos =
         getPosition(e);
 
-    ctx.lineTo(pos.x,pos.y);
+    ctx.lineTo(
+        pos.x,
+        pos.y
+    );
 
     ctx.stroke();
 
@@ -1971,11 +2121,21 @@ function draw(e){
 }
 
 
+/* =========================================================
+   STOP SIGNATURE
+========================================================= */
+
 function stopDrawing(){
 
     drawing = false;
+
+    ctx.closePath();
 }
 
+
+/* =========================================================
+   MOUSE EVENTS
+========================================================= */
 
 canvas.addEventListener(
     "mousedown",
@@ -1997,16 +2157,25 @@ canvas.addEventListener(
     stopDrawing
 );
 
+
+/* =========================================================
+   TOUCH EVENTS
+========================================================= */
+
 canvas.addEventListener(
     "touchstart",
     startDrawing,
-    {passive:false}
+    {
+        passive:false
+    }
 );
 
 canvas.addEventListener(
     "touchmove",
     draw,
-    {passive:false}
+    {
+        passive:false
+    }
 );
 
 canvas.addEventListener(
@@ -2014,6 +2183,10 @@ canvas.addEventListener(
     stopDrawing
 );
 
+
+/* =========================================================
+   CLEAR SIGNATURE
+========================================================= */
 
 function clearSignature(){
 
@@ -2033,37 +2206,50 @@ function clearSignature(){
 function saveDraft(){
 
     const form =
-        document.getElementById("membershipForm");
+        document.getElementById(
+            "membershipForm"
+        );
 
     const data =
         new FormData(form);
 
     const draft = {};
 
-    data.forEach((value,key)=>{
 
-        if(
-            key !== "interests"
-        ){
+    data.forEach(
+        (value,key)=>{
 
-            draft[key] = value;
+            if(key !== "interests"){
+
+                draft[key] =
+                    value;
+            }
 
         }
+    );
 
-    });
 
+    /* Interests */
 
     draft.interests =
-        [...document.querySelectorAll(
-            'input[name="interests"]:checked'
-        )].map(
+        [
+            ...document.querySelectorAll(
+                'input[name="interests"]:checked'
+            )
+        ].map(
             el => el.value
         );
 
 
-    draft.signature =
-        canvas.toDataURL("image/png");
+    /* Signature */
 
+    draft.signature =
+        canvas.toDataURL(
+            "image/png"
+        );
+
+
+    /* Save */
 
     localStorage.setItem(
         "GADEH_membership_draft",
@@ -2089,7 +2275,9 @@ function restoreDraft(){
             "GADEH_membership_draft"
         );
 
-    if(!saved) return;
+    if(!saved)
+        return;
+
 
     try{
 
@@ -2097,76 +2285,123 @@ function restoreDraft(){
             JSON.parse(saved);
 
 
-        Object.keys(draft).forEach(key=>{
+        Object.keys(draft).forEach(
+            key=>{
 
-            if(key === "interests") return;
+                if(
+                    key === "interests" ||
+                    key === "signature"
+                ){
 
-            if(key === "signature") return;
-
-            const field =
-                document.querySelector(
-                    `[name="${key}"]`
-                );
-
-            if(!field) return;
-
-            if(
-                field.type === "checkbox" ||
-                field.type === "radio"
-            ){
-
-                field.checked =
-                    field.value === draft[key];
-
-            }else{
-
-                field.value =
-                    draft[key];
-
-            }
-
-        });
+                    return;
+                }
 
 
-        if(Array.isArray(draft.interests)){
-
-            draft.interests.forEach(value=>{
-
-                const checkbox =
+                const field =
                     document.querySelector(
-                        `input[name="interests"][value="${value}"]`
+                        `[name="${key}"]`
                     );
 
-                if(checkbox)
-                    checkbox.checked = true;
 
-            });
+                if(!field)
+                    return;
+
+
+                if(
+                    field.type === "checkbox" ||
+                    field.type === "radio"
+                ){
+
+                    field.checked =
+                        field.value ===
+                        draft[key];
+
+                }else{
+
+                    field.value =
+                        draft[key];
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           RESTORE INTERESTS
+        ================================================= */
+
+        if(
+            Array.isArray(
+                draft.interests
+            )
+        ){
+
+            draft.interests.forEach(
+                value=>{
+
+                    const checkbox =
+                        document.querySelector(
+                            `input[name="interests"][value="${value}"]`
+                        );
+
+                    if(checkbox){
+
+                        checkbox.checked =
+                            true;
+                    }
+
+                }
+            );
 
         }
 
+
+        /* =================================================
+           RESTORE SIGNATURE
+        ================================================= */
 
         if(draft.signature){
 
             const image =
                 new Image();
 
-            image.onload = function(){
 
-                ctx.drawImage(
-                    image,
-                    0,
-                    0,
-                    canvas.width /
-                        (window.devicePixelRatio || 1),
-                    canvas.height /
-                        (window.devicePixelRatio || 1)
-                );
+            image.onload =
+                function(){
 
-            };
+                    const ratio =
+                        window.devicePixelRatio || 1;
+
+
+                    ctx.drawImage(
+
+                        image,
+
+                        0,
+                        0,
+
+                        canvas.width /
+                            ratio,
+
+                        canvas.height /
+                            ratio
+                    );
+
+                };
+
 
             image.src =
                 draft.signature;
         }
+
+
+        /*
+         * Re-apply consent state after
+         * restoring the saved checkbox.
+         */
+
+        updateAgreementState();
+
 
     }catch(error){
 
@@ -2191,14 +2426,17 @@ function showMessage(
 ){
 
     const message =
-        document.getElementById("message");
+        document.getElementById(
+            "message"
+        );
+
 
     message.textContent =
         text;
 
+
     message.className =
         "message " + type;
-
 }
 
 
@@ -2219,26 +2457,117 @@ document
             this;
 
 
+        /* =================================================
+           FINAL LEGAL VALIDATION
+        ================================================= */
+
+
+        /*
+         * 1. PRIVACY POLICY & TERMS
+         */
+
+        if(!legalRead.checked){
+
+            agreementStatus.textContent =
+                "Submission blocked. You must read the Privacy Policy and Terms and Conditions and confirm that you understand them.";
+
+            agreementStatus.classList.remove(
+                "ready"
+            );
+
+            agreementStatus.classList.add(
+                "warning"
+            );
+
+            legalRead.focus();
+
+            return;
+        }
+
+
+        /*
+         * 2. DECLARATION
+         */
+
+        if(!declarationConsent.checked){
+
+            agreementStatus.textContent =
+                "Submission blocked. Please confirm the Applicant's Declaration.";
+
+            agreementStatus.classList.remove(
+                "ready"
+            );
+
+            agreementStatus.classList.add(
+                "warning"
+            );
+
+            declarationConsent.focus();
+
+            return;
+        }
+
+
+        /*
+         * 3. PRIVACY CONSENT
+         */
+
+        if(!privacyConsent.checked){
+
+            agreementStatus.textContent =
+                "Submission blocked. Please provide your Privacy Consent.";
+
+            agreementStatus.classList.remove(
+                "ready"
+            );
+
+            agreementStatus.classList.add(
+                "warning"
+            );
+
+            privacyConsent.focus();
+
+            return;
+        }
+
+
+        /* =================================================
+           NORMAL FORM VALIDATION
+        ================================================= */
+
         if(!form.checkValidity()){
 
             form.reportValidity();
 
             return;
-
         }
 
+
+        /* =================================================
+           FORM DATA
+        ================================================= */
 
         const data =
             new FormData(form);
 
 
+        /* =================================================
+           INTERESTS
+        ================================================= */
+
         const interests =
-            [...document.querySelectorAll(
-                'input[name="interests"]:checked'
-            )].map(
+            [
+                ...document.querySelectorAll(
+                    'input[name="interests"]:checked'
+                )
+            ].map(
                 el => el.value
             );
 
+
+        /* =================================================
+           APPLICATION OBJECT
+        ================================================= */
 
         const application = {
 
@@ -2273,7 +2602,9 @@ document
                 data.get("ward"),
 
             membership_category:
-                data.get("membership_category"),
+                data.get(
+                    "membership_category"
+                ),
 
             interests:
                 interests,
@@ -2291,17 +2622,35 @@ document
                 data.get("reason"),
 
             application_date:
-                data.get("application_date"),
+                data.get(
+                    "application_date"
+                ),
 
             signature:
-                canvas.toDataURL("image/png")
+                canvas.toDataURL(
+                    "image/png"
+                ),
+
+
+            /* =================================================
+               LEGAL AGREEMENTS
+            ================================================= */
+
+            legal_read:
+                legalRead.checked,
+
+            declaration_consent:
+                declarationConsent.checked,
+
+            privacy_consent:
+                privacyConsent.checked
 
         };
 
 
-        /*
-         * CHANGE THIS URL TO YOUR NODE.JS SERVER
-         */
+        /* =================================================
+           API
+        ================================================= */
 
         const API_URL =
             "/api/membership/applications";
@@ -2311,7 +2660,9 @@ document
 
             const response =
                 await fetch(
+
                     API_URL,
+
                     {
                         method:"POST",
 
@@ -2325,6 +2676,7 @@ document
                                 application
                             )
                     }
+
                 );
 
 
@@ -2333,72 +2685,62 @@ document
                 throw new Error(
                     "Submission failed"
                 );
-
             }
-            /* =========================================================
-   ENABLE CONSENT AFTER PRIVACY & TERMS CONFIRMATION
-========================================================= */
-
-const legalRead =
-    document.getElementById("legalRead");
-
-const declarationConsent =
-    document.getElementById("declarationConsent");
-
-const privacyConsent =
-    document.getElementById("privacyConsent");
-
-
-legalRead.addEventListener("change", function(){
-
-    if(this.checked){
-
-        // Enable the consent checkboxes
-        declarationConsent.disabled = false;
-        privacyConsent.disabled = false;
-
-    }else{
-
-        // Disable and reset them
-        declarationConsent.checked = false;
-        privacyConsent.checked = false;
-
-        declarationConsent.disabled = true;
-        privacyConsent.disabled = true;
-    }
-
-});
 
 
             const result =
                 await response.json();
 
 
+            /* =================================================
+               REMOVE SAVED DRAFT
+            ================================================= */
+
             localStorage.removeItem(
                 "GADEH_membership_draft"
             );
 
 
+            localStorage.removeItem(
+                "GADEH_pending_membership"
+            );
+
+
+            /* =================================================
+               SUCCESS
+            ================================================= */
+
             showMessage(
 
                 "Application submitted successfully. " +
+
                 "Application Reference: " +
-                (result.application_reference || "Generated by GADEH"),
+
+                (
+                    result.application_reference ||
+                    "Generated by GADEH"
+                ),
 
                 "success"
-
             );
 
 
         }catch(error){
 
-            /*
-             * Keep the application locally if
-             * internet/server is unavailable.
-             */
+            console.error(
+                "Membership submission error:",
+                error
+            );
+
+
+            /* =================================================
+               SAVE PENDING APPLICATION
+            ================================================= */
 
             localStorage.setItem(
+
                 "GADEH_pending_membership",
+
                 JSON.stringify(
                     application
                 )
@@ -2408,11 +2750,12 @@ legalRead.addEventListener("change", function(){
             showMessage(
 
                 "Internet/server unavailable. " +
+
                 "Your application has been saved on this device " +
+
                 "and can be submitted when connection is available.",
 
                 "error"
-
             );
 
         }
