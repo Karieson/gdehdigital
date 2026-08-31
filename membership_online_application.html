@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GADEH | Membership Application Form</title>
+
+<style>
+
+/* =========================================================
+   ROOT / TYPOGRAPHY
+========================================================= */
+
+:root{
+
+    --corporate-red:#C00000;
+    --corporate-black:#222222;
+
+    --black:#222222;
+    --white:#ffffff;
+    --border:#D5D5D5;
+    --grey:#666666;
+
+    --agriculture-light:#F8EEEE;
+    --input-bg:#FFFFFF;
+
+    /* Base typography */
+    font-size:16px;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:16px;
+}
+
+body{
+
+    margin:0;
+
+    background:#eeeeee;
+
+    color:var(--black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:0.75rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   DESKTOP ZOOM-OUT
+   Keeps the A4 form compact and professional
+========================================================= */
+
+@media screen and (min-width:701px){
+
+    body{
+
+        zoom:0.90;
+    }
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    width:210mm;
+
+    max-width:100%;
+
+    min-height:297mm;
+
+    margin:1.5625rem auto;
+
+    padding:0.9375rem;
+
+    background:var(--white);
+
+    box-shadow:
+        0 0 0.75rem
+        rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding-bottom:.75rem;
+
+    border-bottom:
+        .25rem solid
+        var(--corporate-red);
+}
+
+.logo{
+
+    width:4.6875rem;
+
+    height:4.6875rem;
+
+    object-fit:contain;
+
+    flex-shrink:0;
+}
+
+.header-content{
+
+    flex:1;
+
+    text-align:center;
+}
+
+.organization-name{
+
+    color:var(--corporate-red);
+
+    font-size:1rem;
+
+    font-weight:900;
+
+    line-height:1.2;
+}
+
+.organization-type{
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    margin-top:.1875rem;
+}
+
+.contact{
+
+    color:var(--grey);
+
+    font-size:.625rem;
+
+    margin-top:.25rem;
+}
+
+
+/* =========================================================
+   FORM TITLE
+========================================================= */
+
+.form-title{
+
+    text-align:center;
+
+    margin:1.125rem 0 .1875rem;
+
+    font-size:0.95rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.form-subtitle{
+
+    text-align:center;
+
+    color:var(--grey);
+
+    font-size:.6875rem;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section{
+
+    margin-bottom:1.5rem;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
+}
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.7rem;
+
+    color:var(--corporate-red);
+
+    font-size:0.75rem;
+
+    line-height:1.3;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin:
+        1.8rem
+        0
+        .8rem;
+
+    padding:
+        .45rem
+        .65rem;
+
+    background:transparent;
+
+    border-left:
+        .45rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .1rem solid
+        var(--border);
+
+    break-after:avoid;
+
+    page-break-after:avoid;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.section-number{
+
+    color:var(--corporate-red);
+
+    background:transparent;
+
+    min-width:2rem;
+
+    height:2rem;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    flex-shrink:0;
+
+    border:
+        .15rem solid
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   FORM LABEL
+   Bold black + corporate black vertical bar
+========================================================= */
+
+.form-label{
+
+    display:block;
+
+    font-size:.55rem;
+
+    color:var(--corporate-black);
+
+    font-weight: normal;
+
+    text-transform:uppercase;
+
+    margin-bottom:.35rem;
+
+    padding:
+        .25rem
+        .55rem;
+
+    border-left:
+        .3rem solid
+        var(--corporate-black);
+
+    line-height:1.3;
+}
+
+
+/* =========================================================
+   NORMAL LABELS
+========================================================= */
+
+label{
+
+    display:block;
+
+    margin-bottom:.3125rem;
+
+    font-size:.65rem;
+
+    font-weight:600;
+
+    color:var(--black);
+}
+
+.required{
+
+    color:var(--corporate-red);
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:
+        .5625rem
+        .625rem;
+
+    border:
+        .0625rem solid
+        #BBBBBB;
+
+    border-radius:.125rem;
+
+    background:var(--input-bg);
+
+    color:var(--black);
+
+    font-family:inherit;
+
+    font-size:.8125rem;
+
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:
+        var(--corporate-red);
+
+    box-shadow:
+        0 0 0 .125rem
+        rgba(192,0,0,.08);
+}
+
+textarea{
+
+    min-height:5.3125rem;
+
+    resize:vertical;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.9375rem;
+}
+
+.form-grid.three{
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group{
+
+    margin-bottom:.875rem;
+}
+
+.form-group.full{
+
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   MEMBERSHIP CATEGORY
+========================================================= */
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.5625rem 1.5625rem;
+
+    margin-top:.5rem;
+}
+
+.option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5625rem;
+
+    padding:.5rem;
+
+    border:
+        .0625rem solid
+        var(--border);
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-size:.55rem;
+
+    font-weight:700;
+}
+
+.option:hover{
+
+    border-color:
+        var(--corporate-red);
+}
+
+.option input{
+
+    width:auto;
+
+    accent-color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   AREAS OF INTEREST
+========================================================= */
+
+.interest-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.5rem 1.25rem;
+}
+
+.interest{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    font-size:.55rem;
+
+    font-weight:700;
+}
+
+.interest input{
+
+    width:auto;
+
+    accent-color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.declaration{
+
+    border:
+        .0625rem solid
+        var(--border);
+
+    padding:.75rem;
+
+    font-size:.75rem;
+
+    text-align:justify;
+
+    background:#fff;
+}
+
+.consent{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.5625rem;
+
+    margin-top:.75rem;
+
+    font-size:.75rem;
+
+    text-align:left;
+}
+
+.consent input{
+
+    width:auto;
+
+    margin-top:.1875rem;
+
+    accent-color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.signature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:1.25rem;
+}
+
+.signature-area{
+
+    border:
+        .0625rem solid
+        var(--border);
+
+    padding:.75rem;
+
+    min-height:6.25rem;
+
+    font-size:.75rem;
+}
+
+.signature-canvas{
+
+    width:100%;
+
+    height:4.375rem;
+
+    border-bottom:
+        .0625rem solid
+        #555;
+
+    cursor:crosshair;
+
+    background:#fff;
+}
+
+.signature-actions{
+
+    margin-top:.4375rem;
+
+    display:flex;
+
+    gap:.375rem;
+}
+
+.small-btn{
+
+    padding:
+        .3125rem
+        .625rem;
+
+    border:
+        .0625rem solid
+        var(--corporate-red);
+
+    background:#fff;
+
+    color:var(--corporate-red);
+
+    font-size:.625rem;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:.75rem;
+
+    margin-top:1.5625rem;
+}
+
+.btn{
+
+    border:0;
+
+    padding:
+        .6875rem
+        1.375rem;
+
+    font-size:.8125rem;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    border-radius:.125rem;
+}
+
+.btn-primary{
+
+    background:
+        var(--corporate-red);
+
+    color:#fff;
+}
+
+.btn-secondary{
+
+    background:#333;
+
+    color:#fff;
+}
+
+.btn-light{
+
+    background:#eee;
+
+    color:#222;
+
+    border:
+        .0625rem solid
+        #ccc;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    margin-top:1.5625rem;
+
+    padding-top:.625rem;
+
+    border-top:
+        .125rem solid
+        var(--corporate-red);
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:.625rem;
+}
+
+.footer strong{
+
+    color:
+        var(--corporate-red);
+
+    font-weight:900;
+}
+/* =========================================================
+   LEGAL / PRIVACY NOTICE
+========================================================= */
+
+.legal-notice{
+
+    margin-top:1rem;
+
+    padding:.85rem 1rem;
+
+    background:var(--agriculture-light);
+
+    border-left:
+        .3rem solid
+        var(--corporate-red);
+
+    border-top:
+        .0625rem solid
+        var(--border);
+
+    border-right:
+        .0625rem solid
+        var(--border);
+
+    border-bottom:
+        .0625rem solid
+        var(--border);
+
+    font-size:.75rem;
+
+    line-height:1.5;
+}
+
+.legal-notice strong{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    margin-bottom:.35rem;
+}
+
+.legal-notice p{
+
+    margin:.35rem 0;
+}
+
+.legal-instruction{
+
+    font-weight:700;
+
+    color:var(--black);
+}
+
+
+/* =========================================================
+   LEGAL LINKS
+========================================================= */
+
+.legal-notice a,
+.consent a{
+
+    color:var(--corporate-red);
+
+    font-weight:800;
+
+    text-decoration:underline;
+}
+
+.legal-notice a:hover,
+.consent a:hover{
+
+    color:#900000;
+}
+
+
+/* =========================================================
+   DISABLED CONSENT CHECKBOXES
+========================================================= */
+
+.consent input:disabled{
+
+    cursor:not-allowed;
+
+    opacity:.5;
+}
+
+.consent input:not(:disabled){
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   READ CONFIRMATION
+========================================================= */
+
+.legal-read{
+
+    margin-top:1rem;
+
+    padding:.55rem;
+
+    background:#fafafa;
+
+    border-left:
+        .25rem solid
+        var(--corporate-black);
+}
+
+.legal-read span{
+
+    font-weight:700;
+}
+/* =======================================================
+   GADEH AGRICULTURE-THEMED SUBSCRIPTION CARD
+======================================================= */
+
+.subscription-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    font-size: 0.82rem;
+    color: #000000;
+}
+
+/* Agriculture-inspired inner frame */
+
+.subscription-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(46, 125, 50, 0.18);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+/* Header */
+
+.subscription-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.45rem;
+}
+
+.agri-icon {
+    font-size: 0.95rem;
+}
+
+.subscription-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #C00000;
+}
+
+/* Body */
+
+.subscription-card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.subscription-card-body p {
+    margin: 0.3rem 0;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.subscription-card-body strong {
+    font-weight: 800;
+    color: #000000;
+}
+
+/* Agriculture accent */
+
+.agri-frame {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(46, 125, 50, 0.12);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::before,
+.agri-frame::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    border: 2px solid rgba(46, 125, 50, 0.16);
+    border-radius: 100% 0;
+}
+
+.agri-frame::before {
+    top: 15px;
+    left: 18px;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::after {
+    bottom: 15px;
+    right: 12px;
+    transform: rotate(155deg);
+}
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+}
+
+@media print{
+
+    html{
+
+        font-size:14px;
+    }
+
+    body{
+
+        background:#fff;
+
+        font-size:.6875rem;
+
+        zoom:1;
+    }
+
+    .page{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:
+            13mm 15mm;
+
+        box-shadow:none;
+    }
+
+    .actions,
+    .message,
+    .signature-actions{
+
+        display:none !important;
+    }
+
+    input,
+    select,
+    textarea{
+
+        border:
+            .0625rem solid
+            #777;
+
+        box-shadow:none !important;
+
+        background:#fff;
+    }
+
+    .section-heading{
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    html{
+
+        font-size:16px;
+    }
+
+    body{
+
+        background:#fff;
+
+        font-size:.875rem;
+
+        zoom:1;
+    }
+
+    .page{
+
+        width:100%;
+
+        margin:0;
+
+        padding:1.25rem;
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .form-grid,
+    .form-grid.three,
+    .category-grid,
+    .interest-grid,
+    .signature-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+
+    .btn{
+
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <!-- Change this to your actual logo -->
+    <img
+        src="gadeh_logo.png"
+        class="logo"
+        alt="GADEH Logo"
+    >
+        <div class="organization-type">
+            COMMUNITY-BASED ORGANIZATION (GADEH)
+        </div>
+
+        
+    
+
+</header>
+
+
+<h1 class="form-title">
+    Membership Application Form
+</h1>
+
+<div class="form-subtitle">
+    Complete all required information accurately
+</div>
+<!-- =======================================================
+     GADEH MEMBERSHIP SUBSCRIPTION FEE NOTICE
+======================================================= -->
+
+<div class="subscription-card">
+
+    <div class="subscription-card-header">
+        <span class="agri-icon">🌱</span>
+        <span class="subscription-title">
+            <strong>Important:</strong>
+        </span>
+    </div>
+
+    <div class="subscription-card-body">
+
+        <p>
+            A <strong>membership subscription fee of KSh 500</strong>
+            is applicable to all GADEH membership applicants.
+        </p>
+
+        <p>
+            Please ensure that the required subscription fee is paid
+            according to the approved GADEH payment procedures.
+        </p>
+
+    </div>
+
+    <div class="agri-frame"></div>
+
+</div>
+
+<!-- =====================================================
+     FORM
+===================================================== -->
+
+<form id="membershipForm">
+
+
+
+
+<!-- =====================================================
+     1. APPLICANT INFORMATION
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">1</span>
+
+        Applicant Information
+
+    </div>
+
+
+    <div class="form-grid">
+
+        <div class="form-group full">
+
+            <label>
+                Full Name <span class="required">*</span>
+            </label>
+
+            <input
+                type="text"
+                name="full_name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                National ID / Passport Number
+                <span class="required">*</span>
+            </label>
+
+            <input
+                type="text"
+                name="id_number"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Date of Birth
+                <span class="required">*</span>
+            </label>
+
+            <input
+                type="date"
+                name="date_of_birth"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Gender</label>
+
+            <select name="gender">
+
+                <option value="">Select</option>
+
+                <option>Male</option>
+
+                <option>Female</option>
+
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Telephone Number
+                <span class="required">*</span>
+            </label>
+
+            <input
+                type="tel"
+                name="telephone"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                name="email"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>
+                Physical Address / Location
+                <span class="required">*</span>
+            </label>
+
+            <input
+                type="text"
+                name="physical_address"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>County</label>
+
+            <input
+                type="text"
+                name="county"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Sub-County</label>
+
+            <input
+                type="text"
+                name="sub_county"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Ward</label>
+
+            <input
+                type="text"
+                name="ward"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. MEMBERSHIP CATEGORY
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">2</span>
+
+        Membership Category
+
+    </div>
+
+
+    <p>
+        Select one membership category:
+        <span class="required">*</span>
+    </p>
+
+
+    <div class="category-grid">
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="membership_category"
+                value="Founder Members"
+                required
+            >
+
+            Founder Members
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="membership_category"
+                value="Ordinary Members"
+            >
+
+            Ordinary Members
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="membership_category"
+                value="Youth Members"
+            >
+
+            Youth Members
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="membership_category"
+                value="Associate Members"
+            >
+
+            Associate Members
+
+        </label>
+
+
+        <label class="option">
+
+            <input
+                type="radio"
+                name="membership_category"
+                value="Honorary Members"
+            >
+
+            Honorary Members
+
+        </label>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. AREAS OF INTEREST
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">3</span>
+
+        Areas of Interest / Participation
+
+    </div>
+
+
+    <p>
+        Select the areas in which you would like to participate:
+    </p>
+
+
+    <div class="interest-grid">
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Agriculture">
+            Agriculture & Agro-Entrepreneurship
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Digital">
+            Digital Empowerment
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Youth">
+            Youth Empowerment
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Entrepreneurship">
+            Entrepreneurship & Skills Development
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Environment">
+            Environmental Conservation
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Community">
+            Community Development
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Training">
+            Training & Capacity Building
+        </label>
+
+        <label class="interest">
+            <input type="checkbox" name="interests" value="Other">
+            Other
+        </label>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. EDUCATION AND EXPERIENCE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">4</span>
+
+        Education, Skills and Experience
+
+    </div>
+
+
+    <div class="form-grid">
+
+        <div class="form-group">
+
+            <label>
+                Highest Level of Education
+            </label>
+
+            <select name="education">
+
+                <option value="">Select</option>
+
+                <option>Primary</option>
+
+                <option>Secondary</option>
+
+                <option>Certificate</option>
+
+                <option>Diploma</option>
+
+                <option>Degree</option>
+
+                <option>Postgraduate</option>
+
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Occupation / Profession
+            </label>
+
+            <input
+                type="text"
+                name="occupation"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label>
+                Skills, Experience or Areas of Expertise
+            </label>
+
+            <textarea
+                name="skills"
+            ></textarea>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. REASON FOR JOINING
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">5</span>
+
+        Reason for Applying
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>
+            Why would you like to become a member of GADEH?
+        </label>
+
+        <textarea
+            name="reason"
+        ></textarea>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. APPLICANT DECLARATION, PRIVACY & TERMS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">6</span>
+
+        Applicant's Declaration
+
+    </div>
+
+
+    <div class="declaration">
+
+        <p>
+            I hereby apply for membership of Garissa Agro-Digital
+            Empowerment Hub (GADEH). I confirm that the information
+            provided in this application is true and accurate to the
+            best of my knowledge.
+        </p>
+
+        <p>
+            If admitted as a member, I agree to abide by the
+            Constitution, rules, policies, regulations and lawful
+            decisions of GADEH and to uphold the objectives, values
+            and integrity of the Organization.
+        </p>
+
+        <p>
+            I understand that submission of this application does not
+            automatically constitute membership and that my application
+            is subject to review and approval by the appropriate
+            authority of GADEH.
+        </p>
+
+
+        <!-- =================================================
+             PRIVACY & TERMS NOTICE
+        ================================================== -->
+
+        <div class="legal-notice">
+
+            <strong>
+                IMPORTANT — PLEASE READ BEFORE APPLYING
+            </strong>
+
+            <p>
+                Before ticking the consent boxes below, you must read
+                and understand the GADEH
+                <a
+                    href="privacy_terms.html"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Privacy Policy
+                </a>
+                and
+                <a
+                    href="privacy_terms.html#terms"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Terms and Conditions
+                </a>.
+            </p>
+
+            <p class="legal-instruction">
+
+                Please open and review the document before continuing.
+                After reading it, tick the confirmation box below.
+
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             READ CONFIRMATION
+        ================================================== -->
+
+       
+<label class="consent legal-read">
+
+    <input
+        type="checkbox"
+        id="legalRead"
+        name="legal_read"
+        required
+    >
+
+    <span>
+        I confirm that I have read and understood the
+        <a href="privacy_terms.html" target="_blank">
+            Privacy Policy
+        </a>
+        and
+        <a href="privacy_terms.html#terms" target="_blank">
+            Terms and Conditions
+        </a>
+        of GADEH.
+    </span>
+
+</label>
+
+
+<!-- DECLARATION CONSENT -->
+<label class="consent">
+
+    <input
+        type="checkbox"
+        id="declarationConsent"
+        name="declaration_consent"
+        required
+        disabled
+    >
+
+    <span>
+        I confirm that I have read and understood the above
+        declaration and agree to the GADEH membership
+        requirements.
+    </span>
+
+</label>
+
+
+<!-- PRIVACY CONSENT -->
+<label class="consent">
+
+    <input
+        type="checkbox"
+        id="privacyConsent"
+        name="privacy_consent"
+        required
+        disabled
+    >
+
+    <span>
+        I consent to GADEH collecting and processing my
+        information for legitimate membership administration
+        and organizational purposes in accordance with its
+        Privacy Policy.
+    </span>
+
+
+
+        </label>
+
+    </div>
+
+</section>
+
+
+
+        
+
+
+<!-- =====================================================
+     7. DIGITAL SIGNATURE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">7</span>
+
+        Applicant Signature
+
+    </div>
+
+
+    <div class="signature-grid">
+
+
+        <div class="signature-area">
+
+            <strong>Digital Signature</strong>
+
+            <canvas
+                id="signatureCanvas"
+                class="signature-canvas"
+            ></canvas>
+
+
+            <div class="signature-actions">
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    onclick="clearSignature()"
+                >
+                    Clear Signature
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Application Date
+            </label>
+
+            <input
+                type="date"
+                name="application_date"
+                id="applicationDate"
+                required
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     8. SUBMISSION
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">8</span>
+
+        Application Submission
+
+    </div>
+
+
+    <div class="actions">
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="saveDraft()"
+        >
+            Save Draft
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="window.print()"
+        >
+            Print Form
+        </button>
+
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+            Submit Application
+        </button>
+
+    </div>
+
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+</section>
+
+
+</form>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <strong>GADEH</strong><br>
+
+    Garissa Agro-Digital Empowerment Hub (GADEH)<br>
+
+    Membership Application Form
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   DEFAULT DATE
+========================================================= */
+
+document.getElementById("applicationDate").value =
+    new Date().toISOString().split("T")[0];
+
+
+/* =========================================================
+   SIGNATURE PAD
+========================================================= */
+
+const canvas =
+    document.getElementById("signatureCanvas");
+
+const ctx =
+    canvas.getContext("2d");
+
+let drawing = false;
+
+
+function resizeCanvas(){
+
+    const ratio =
+        window.devicePixelRatio || 1;
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+    canvas.width =
+        rect.width * ratio;
+
+    canvas.height =
+        rect.height * ratio;
+
+    ctx.scale(ratio, ratio);
+
+    ctx.lineWidth = 2;
+
+    ctx.lineCap = "round";
+}
+
+resizeCanvas();
+
+
+function getPosition(e){
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+    if(e.touches){
+
+        return {
+            x:e.touches[0].clientX - rect.left,
+            y:e.touches[0].clientY - rect.top
+        };
+
+    }
+
+    return {
+        x:e.clientX - rect.left,
+        y:e.clientY - rect.top
+    };
+}
+
+
+function startDrawing(e){
+
+    drawing = true;
+
+    const pos =
+        getPosition(e);
+
+    ctx.beginPath();
+
+    ctx.moveTo(pos.x,pos.y);
+
+    e.preventDefault();
+}
+
+
+function draw(e){
+
+    if(!drawing) return;
+
+    const pos =
+        getPosition(e);
+
+    ctx.lineTo(pos.x,pos.y);
+
+    ctx.stroke();
+
+    e.preventDefault();
+}
+
+
+function stopDrawing(){
+
+    drawing = false;
+}
+
+
+canvas.addEventListener(
+    "mousedown",
+    startDrawing
+);
+
+canvas.addEventListener(
+    "mousemove",
+    draw
+);
+
+canvas.addEventListener(
+    "mouseup",
+    stopDrawing
+);
+
+canvas.addEventListener(
+    "mouseleave",
+    stopDrawing
+);
+
+canvas.addEventListener(
+    "touchstart",
+    startDrawing,
+    {passive:false}
+);
+
+canvas.addEventListener(
+    "touchmove",
+    draw,
+    {passive:false}
+);
+
+canvas.addEventListener(
+    "touchend",
+    stopDrawing
+);
+
+
+function clearSignature(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+}
+
+
+/* =========================================================
+   SAVE DRAFT LOCALLY
+========================================================= */
+
+function saveDraft(){
+
+    const form =
+        document.getElementById("membershipForm");
+
+    const data =
+        new FormData(form);
+
+    const draft = {};
+
+    data.forEach((value,key)=>{
+
+        if(
+            key !== "interests"
+        ){
+
+            draft[key] = value;
+
+        }
+
+    });
+
+
+    draft.interests =
+        [...document.querySelectorAll(
+            'input[name="interests"]:checked'
+        )].map(
+            el => el.value
+        );
+
+
+    draft.signature =
+        canvas.toDataURL("image/png");
+
+
+    localStorage.setItem(
+        "GADEH_membership_draft",
+        JSON.stringify(draft)
+    );
+
+
+    showMessage(
+        "Draft saved on this device.",
+        "success"
+    );
+}
+
+
+/* =========================================================
+   RESTORE DRAFT
+========================================================= */
+
+function restoreDraft(){
+
+    const saved =
+        localStorage.getItem(
+            "GADEH_membership_draft"
+        );
+
+    if(!saved) return;
+
+    try{
+
+        const draft =
+            JSON.parse(saved);
+
+
+        Object.keys(draft).forEach(key=>{
+
+            if(key === "interests") return;
+
+            if(key === "signature") return;
+
+            const field =
+                document.querySelector(
+                    `[name="${key}"]`
+                );
+
+            if(!field) return;
+
+            if(
+                field.type === "checkbox" ||
+                field.type === "radio"
+            ){
+
+                field.checked =
+                    field.value === draft[key];
+
+            }else{
+
+                field.value =
+                    draft[key];
+
+            }
+
+        });
+
+
+        if(Array.isArray(draft.interests)){
+
+            draft.interests.forEach(value=>{
+
+                const checkbox =
+                    document.querySelector(
+                        `input[name="interests"][value="${value}"]`
+                    );
+
+                if(checkbox)
+                    checkbox.checked = true;
+
+            });
+
+        }
+
+
+        if(draft.signature){
+
+            const image =
+                new Image();
+
+            image.onload = function(){
+
+                ctx.drawImage(
+                    image,
+                    0,
+                    0,
+                    canvas.width /
+                        (window.devicePixelRatio || 1),
+                    canvas.height /
+                        (window.devicePixelRatio || 1)
+                );
+
+            };
+
+            image.src =
+                draft.signature;
+        }
+
+    }catch(error){
+
+        console.log(
+            "Could not restore draft."
+        );
+
+    }
+
+}
+
+restoreDraft();
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function showMessage(
+    text,
+    type
+){
+
+    const message =
+        document.getElementById("message");
+
+    message.textContent =
+        text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+/* =========================================================
+   ONLINE SUBMISSION
+========================================================= */
+
+document
+.getElementById("membershipForm")
+.addEventListener(
+    "submit",
+    async function(e){
+
+        e.preventDefault();
+
+
+        const form =
+            this;
+
+
+        if(!form.checkValidity()){
+
+            form.reportValidity();
+
+            return;
+
+        }
+
+
+        const data =
+            new FormData(form);
+
+
+        const interests =
+            [...document.querySelectorAll(
+                'input[name="interests"]:checked'
+            )].map(
+                el => el.value
+            );
+
+
+        const application = {
+
+            full_name:
+                data.get("full_name"),
+
+            id_number:
+                data.get("id_number"),
+
+            date_of_birth:
+                data.get("date_of_birth"),
+
+            gender:
+                data.get("gender"),
+
+            telephone:
+                data.get("telephone"),
+
+            email:
+                data.get("email"),
+
+            physical_address:
+                data.get("physical_address"),
+
+            county:
+                data.get("county"),
+
+            sub_county:
+                data.get("sub_county"),
+
+            ward:
+                data.get("ward"),
+
+            membership_category:
+                data.get("membership_category"),
+
+            interests:
+                interests,
+
+            education:
+                data.get("education"),
+
+            occupation:
+                data.get("occupation"),
+
+            skills:
+                data.get("skills"),
+
+            reason:
+                data.get("reason"),
+
+            application_date:
+                data.get("application_date"),
+
+            signature:
+                canvas.toDataURL("image/png")
+
+        };
+
+
+        /*
+         * CHANGE THIS URL TO YOUR NODE.JS SERVER
+         */
+
+        const API_URL =
+            "/api/membership/applications";
+
+
+        try{
+
+            const response =
+                await fetch(
+                    API_URL,
+                    {
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                application
+                            )
+                    }
+                );
+
+
+            if(!response.ok){
+
+                throw new Error(
+                    "Submission failed"
+                );
+
+            }
+            /* =========================================================
+   ENABLE CONSENT AFTER PRIVACY & TERMS CONFIRMATION
+========================================================= */
+
+const legalRead =
+    document.getElementById("legalRead");
+
+const declarationConsent =
+    document.getElementById("declarationConsent");
+
+const privacyConsent =
+    document.getElementById("privacyConsent");
+
+
+legalRead.addEventListener("change", function(){
+
+    if(this.checked){
+
+        // Enable the consent checkboxes
+        declarationConsent.disabled = false;
+        privacyConsent.disabled = false;
+
+    }else{
+
+        // Disable and reset them
+        declarationConsent.checked = false;
+        privacyConsent.checked = false;
+
+        declarationConsent.disabled = true;
+        privacyConsent.disabled = true;
+    }
+
+});
+
+
+            const result =
+                await response.json();
+
+
+            localStorage.removeItem(
+                "GADEH_membership_draft"
+            );
+
+
+            showMessage(
+
+                "Application submitted successfully. " +
+                "Application Reference: " +
+                (result.application_reference || "Generated by GADEH"),
+
+                "success"
+
+            );
+
+
+        }catch(error){
+
+            /*
+             * Keep the application locally if
+             * internet/server is unavailable.
+             */
+
+            localStorage.setItem(
+                "GADEH_pending_membership",
+                JSON.stringify(
+                    application
+                )
+            );
+
+
+            showMessage(
+
+                "Internet/server unavailable. " +
+                "Your application has been saved on this device " +
+                "and can be submitted when connection is available.",
+
+                "error"
+
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

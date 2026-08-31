@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GADEH | Membership Application Form</title>
+
+<style>
+
+/* =========================================================
+   GADEH MEMBERSHIP APPLICATION FORM
+   A4 PORTRAIT • PRINT READY • MANUAL APPLICATION
+========================================================= */
+
+:root{
+    --red:#C00000;
+    --dark:#222;
+    --grey:#666;
+    --border:#999;
+    --light:#f5f5f5;
+    --white:#fff;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    padding:20px;
+    background:#e9e9e9;
+    color:var(--dark);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    line-height:1.45;
+}
+
+.document{
+    width:210mm;
+    min-height:297mm;
+    margin:auto;
+    padding:14mm 15mm;
+    background:#fff;
+    box-shadow:0 0 8px rgba(0,0,0,.15);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding-bottom:10px;
+    border-bottom:4px solid var(--red);
+}
+
+.logo-box{
+    width:72px;
+    height:72px;
+    border:1px solid #ccc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    overflow:hidden;
+}
+
+.logo-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.header-info{
+    flex:1;
+    text-align:center;
+}
+
+.organization{
+    font-size:20px;
+    font-weight:800;
+    color:var(--red);
+    letter-spacing:.4px;
+}
+
+.subtitle{
+    font-size:12px;
+    font-weight:bold;
+    margin-top:2px;
+}
+
+.contact{
+    font-size:10px;
+    margin-top:4px;
+    color:#444;
+}
+
+.form-title{
+    text-align:center;
+    margin:13px 0 4px;
+    font-size:18px;
+    font-weight:800;
+    color:#111;
+    text-transform:uppercase;
+}
+
+.form-subtitle{
+    text-align:center;
+    font-size:10px;
+    color:#555;
+    margin-bottom:13px;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+/* =========================================================
+   SECTION TITLES
+   CORPORATE RED LEFT VERTICAL BAR
+========================================================= */
+
+.section-title{
+    background:#fff;
+    color:var(--red);
+    border-left:5px solid var(--red);
+    padding:7px 10px;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.2px;
+}
+
+.section-body{
+    padding:9px;
+}
+
+/* =========================================================
+   MANUAL FIELDS
+========================================================= */
+
+.field{
+    margin-bottom:9px;
+}
+
+.field-label{
+    font-weight:bold;
+    display:block;
+    margin-bottom:4px;
+}
+
+.line{
+    height:23px;
+    border-bottom:1px solid #555;
+}
+
+.line.short{
+    width:45%;
+}
+
+.line.medium{
+    width:70%;
+}
+
+.field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.field-row.three{
+    grid-template-columns:1fr 1fr 1fr;
+}
+
+/* =========================================================
+   CHECKBOXES
+========================================================= */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px 20px;
+}
+
+.check-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.checkbox{
+    width:15px;
+    height:15px;
+    border:1.3px solid #333;
+    display:inline-block;
+    flex-shrink:0;
+}
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.declaration{
+    text-align:justify;
+    line-height:1.55;
+}
+
+.declaration-list{
+    margin:7px 0;
+    padding-left:20px;
+}
+
+.declaration-list li{
+    margin-bottom:4px;
+}
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.signature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.signature-box{
+    height:55px;
+    border-bottom:1px solid #444;
+    margin-top:15px;
+}
+
+.signature-label{
+    font-size:10px;
+    color:#555;
+}
+
+/* =========================================================
+   OFFICE USE
+========================================================= */
+
+.office-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.office-table td{
+    border:1px solid #999;
+    padding:7px;
+    height:32px;
+}
+
+.office-label{
+    width:35%;
+    font-weight:bold;
+    background:#f5f5f5;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    margin-top:15px;
+    padding-top:8px;
+    border-top:2px solid var(--red);
+    text-align:center;
+    font-size:9px;
+    color:#555;
+}
+
+.footer strong{
+    color:var(--red);
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+.print-controls{
+    width:210mm;
+    margin:0 auto 12px;
+    text-align:right;
+}
+
+.print-btn{
+    background:var(--red);
+    color:#fff;
+    border:0;
+    padding:9px 18px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:3px;
+}
+
+.print-btn:hover{
+    background:#900000;
+}
+
+@page{
+    size:A4 portrait;
+    margin:0;
+}
+
+@media print{
+
+    body{
+        background:#fff;
+        padding:0;
+    }
+
+    .document{
+        width:210mm;
+        min-height:297mm;
+        margin:0;
+        padding:14mm 15mm;
+        box-shadow:none;
+    }
+
+    .print-controls{
+        display:none;
+    }
+
+    .section{
+        break-inside:avoid;
+    }
+
+    .header{
+        break-inside:avoid;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+<!-- =======================================================
+     DOCUMENT
+======================================================= -->
+
+<div class="document">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo-box">
+            <img src="gadeh_logo.png" alt="GADEH Logo">
+        </div>
+
+        
+
+    </header>
+
+
+    <div class="form-title">
+        Membership Application Form
+    </div>
+
+    <div class="form-subtitle">
+        Please complete this form clearly in BLOCK LETTERS and submit it to GADEH
+    </div>
+
+
+    <!-- ===================================================
+         1. APPLICANT INFORMATION
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            1. APPLICANT INFORMATION
+        </div>
+
+        <div class="section-body">
+
+            <div class="field">
+
+                <span class="field-label">
+                    Full Name
+                </span>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="field-row">
+
+                <div class="field">
+
+                    <span class="field-label">
+                        National ID / Passport No.
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="field">
+
+                    <span class="field-label">
+                        Date of Birth
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="field-row">
+
+                <div class="field">
+
+                    <span class="field-label">
+                        Telephone Number
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="field">
+
+                    <span class="field-label">
+                        Email Address
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <span class="field-label">
+                    Physical Address / Location
+                </span>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="field-row three">
+
+                <div class="field">
+
+                    <span class="field-label">
+                        County
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="field">
+
+                    <span class="field-label">
+                        Sub-County
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="field">
+
+                    <span class="field-label">
+                        Ward
+                    </span>
+
+                    <div class="line"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         2. MEMBERSHIP CATEGORY
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            2. MEMBERSHIP CATEGORY
+        </div>
+
+        <div class="section-body">
+
+            <p>
+                Please tick <strong>(✓)</strong> the appropriate membership category:
+            </p>
+
+            <div class="category-grid">
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    <strong>Founder Member</strong>
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    <strong>Ordinary Member</strong>
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    <strong>Youth Member</strong>
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    <strong>Associate Member</strong>
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    <strong>Honorary Member</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         3. AREAS OF INTEREST
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            3. AREAS OF INTEREST / PARTICIPATION
+        </div>
+
+        <div class="section-body">
+
+            <p>
+                Please tick the areas in which you would like to participate:
+            </p>
+
+            <div class="category-grid">
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Agriculture & Agro-Entrepreneurship
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Digital Empowerment
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Youth Empowerment
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Entrepreneurship & Skills
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Environmental Conservation
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Community Development
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Training & Capacity Building
+                </div>
+
+                <div class="check-item">
+                    <span class="checkbox"></span>
+                    Other
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         4. EDUCATION / SKILLS
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            4. EDUCATION, SKILLS AND EXPERIENCE
+        </div>
+
+        <div class="section-body">
+
+            <div class="field">
+
+                <span class="field-label">
+                    Highest Level of Education
+                </span>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="field">
+
+                <span class="field-label">
+                    Occupation / Profession
+                </span>
+
+                <div class="line"></div>
+
+            </div>
+
+
+            <div class="field">
+
+                <span class="field-label">
+                    Relevant Skills, Experience or Areas of Expertise
+                </span>
+
+                <div class="line"></div>
+                <div class="line"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         5. REASON FOR JOINING
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            5. REASON FOR APPLYING FOR MEMBERSHIP
+        </div>
+
+        <div class="section-body">
+
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         6. DECLARATION
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            6. APPLICANT'S DECLARATION
+        </div>
+
+        <div class="section-body declaration">
+
+            <p>
+                I hereby apply for membership of Garissa Agro-Digital
+                Empowerment Hub (GADEH). I confirm that the information
+                provided in this application is true and accurate to the
+                best of my knowledge.
+            </p>
+
+            <p>
+                If admitted as a member, I agree to abide by the Constitution,
+                rules, policies, regulations and lawful decisions of GADEH
+                and to uphold the objectives, values and integrity of the
+                Organization.
+            </p>
+
+            <p>
+                I understand that membership is subject to approval by the
+                appropriate authority of GADEH and that submission of this
+                application does not automatically constitute membership.
+            </p>
+
+            <div class="check-item">
+                <span class="checkbox"></span>
+                I agree to the GADEH membership terms and requirements.
+            </div>
+
+            <div class="check-item" style="margin-top:7px;">
+                <span class="checkbox"></span>
+                I consent to the lawful use of my information for
+                membership administration and organizational purposes.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         7. SIGNATURE
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            7. APPLICANT'S SIGNATURE
+        </div>
+
+        <div class="section-body">
+
+            <div class="signature-grid">
+
+                <div>
+
+                    <div class="signature-box"></div>
+
+                    <div class="signature-label">
+                        Applicant's Signature
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="signature-box"></div>
+
+                    <div class="signature-label">
+                        Date
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         8. FOR OFFICIAL USE
+    ==================================================== -->
+
+    <section class="section">
+
+        <div class="section-title">
+            8. FOR OFFICIAL USE ONLY
+        </div>
+
+        <div class="section-body">
+
+            <table class="office-table">
+
+                <tr>
+                    <td class="office-label">
+                        Application Reference No.
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Date Received
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Membership Category Approved
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Membership No.
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Application Status
+                    </td>
+                    <td>
+                        ☐ Approved &nbsp;&nbsp;
+                        ☐ Pending &nbsp;&nbsp;
+                        ☐ Rejected
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Reviewed / Approved By
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td class="office-label">
+                        Signature & Date
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
+
+    <footer class="footer">
+
+        <strong>GADEH</strong><br>
+
+        Garissa Agro-Digital Empowerment Hub (GADEH)<br>
+
+        Membership Application Form • Official Organizational Record
+
+    </footer>
+
+</div>
+
+
+<!-- =======================================================
+     PRINT JAVASCRIPT
+======================================================= -->
+
+<script>
+
+function printMembershipForm(){
+    window.print();
+}
+
+</script>
+
+</body>
+</html>
