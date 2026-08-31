@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Online Partner Agreement Form">
+
+<meta name="theme-color"
+      content="#C00000">
+
+<title>Partner Agreement Form</title>
+
+<style>
+
+/* =========================================================
+   CORPORATE VARIABLES
+========================================================= */
+
+:root{
+
+    --corporate-red:#C00000;
+
+    --black:#222222;
+
+    --white:#ffffff;
+
+    --border:#dddddd;
+
+    --light:#f7f7f7;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:10px;
+}
+
+body{
+
+    margin:0;
+
+    background:#ffffff;
+
+    color:var(--black);
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    font-size:1rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.partner-page{
+
+    width:100%;
+
+    max-width:850px;
+
+    margin:0 auto;
+
+    padding:2rem 2.2rem 3rem;
+
+    background:#ffffff;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.partner-header{
+
+    text-align:center;
+
+    padding-bottom:1.2rem;
+
+    margin-bottom:2rem;
+
+    border-bottom:
+        1px solid var(--corporate-red);
+
+}
+
+.partner-logo{
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto .7rem;
+
+}
+
+.partner-header-title{
+
+    color:var(--corporate-red);
+
+    font-size:1.65rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.02em;
+
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.introduction{
+
+    margin-bottom:2rem;
+
+    padding:1rem 1.2rem;
+
+    border-left:
+        3px solid var(--corporate-red);
+
+    background:#fafafa;
+
+}
+
+.introduction p{
+
+    color:var(--black);
+
+    font-size:.95rem;
+
+    margin-bottom:.4rem;
+
+}
+
+.introduction p:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.form-section{
+
+    margin-bottom:2rem;
+
+    padding:1.3rem;
+
+    border:
+
+        1px solid var(--border);
+
+    border-left:
+
+        3px solid var(--corporate-red);
+
+    background:#ffffff;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+
+    margin:0 0 1.2rem;
+
+    padding-bottom:.6rem;
+
+    border-bottom:
+        1px solid #e5e5e5;
+
+    color:var(--corporate-red);
+
+    font-size:1.15rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    line-height:1.3;
+
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:1rem 1.2rem;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group.full{
+
+    grid-column:1 / -1;
+
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.form-label{
+
+    margin-bottom:.35rem;
+
+    padding-left:.5rem;
+
+    border-left:
+        2px solid var(--corporate-red);
+
+    color:var(--black);
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-input{
+
+    width:100%;
+
+    min-height:3.4rem;
+
+    padding:.7rem .8rem;
+
+    border:
+        1px solid #cccccc;
+
+    border-radius:2px;
+
+    background:#ffffff;
+
+    color:var(--black);
+
+    font-family:inherit;
+
+    font-size:.9rem;
+
+    outline:none;
+
+}
+
+.form-input:focus{
+
+    border-color:var(--corporate-red);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(192,0,0,.06);
+
+}
+
+textarea.form-input{
+
+    min-height:8rem;
+
+    resize:vertical;
+
+}
+
+
+/* =========================================================
+   READ-ONLY GADEH FIELDS
+========================================================= */
+
+.readonly{
+
+    background:#f5f5f5;
+
+    color:var(--black);
+
+    cursor:not-allowed;
+
+}
+
+.readonly:focus{
+
+    border-color:#cccccc;
+
+    box-shadow:none;
+
+}
+
+
+/* =========================================================
+   AGREEMENT TERMS
+========================================================= */
+
+.terms{
+
+    margin-top:1rem;
+
+    padding:1rem;
+
+    border-left:
+        3px solid var(--corporate-red);
+
+    background:#fafafa;
+
+}
+
+.terms p{
+
+    color:var(--black);
+
+    font-size:.88rem;
+
+    margin-bottom:.6rem;
+
+}
+
+.terms p:last-child{
+    margin-bottom:0;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.consent{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.7rem;
+
+    margin-top:1rem;
+
+    color:var(--black);
+
+    font-size:.88rem;
+
+}
+
+.consent input{
+
+    width:16px;
+
+    height:16px;
+
+    margin-top:2px;
+
+    accent-color:var(--corporate-red);
+
+    flex-shrink:0;
+
+}
+
+
+/* =========================================================
+   SUBMIT AREA
+========================================================= */
+
+.submit-area{
+
+    margin-top:2rem;
+
+    padding:1.2rem;
+
+    text-align:center;
+
+    border-top:
+        1px solid #dddddd;
+
+}
+
+.submit-button{
+
+    min-width:190px;
+
+    padding:.85rem 2rem;
+
+    border:1px solid var(--corporate-red);
+
+    border-radius:3px;
+
+    background:var(--corporate-red);
+
+    color:#ffffff;
+
+    font-family:inherit;
+
+    font-size:.9rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+}
+
+.submit-button:hover{
+
+    background:#222222;
+
+    border-color:#222222;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.form-footer{
+
+    margin-top:2rem;
+
+    padding-top:1rem;
+
+    border-top:
+        1px solid #dddddd;
+
+    text-align:center;
+
+}
+
+.form-footer p{
+
+    color:#222222;
+
+    font-size:.75rem;
+
+    margin-bottom:.2rem;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .partner-page{
+
+        padding:
+            1.2rem
+            1rem
+            2rem;
+
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-group.full{
+
+        grid-column:auto;
+
+    }
+
+    .partner-header-title{
+
+        font-size:1.35rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:12mm;
+
+}
+
+@media print{
+
+    body{
+        background:#ffffff;
+    }
+
+    .partner-page{
+
+        max-width:none;
+
+        padding:0;
+
+    }
+
+    .submit-area{
+        display:none;
+    }
+
+    .form-section{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+
+        box-shadow:none;
+
+    }
+
+    .form-input{
+
+        color:#222222 !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="partner-page">
+
+
+<!-- =====================================================
+     HEADER — LOGO ONLY
+===================================================== -->
+
+<header class="partner-header">
+
+    <img
+        src="gadeh_logo.png"
+        alt="Organization Logo"
+        class="partner-logo"
+    >
+
+    <div class="partner-header-title">
+        Partner Agreement Form
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<div class="introduction">
+
+    <p>
+        Please complete this form to express your organization's
+        interest in entering into a partnership and collaboration
+        arrangement.
+    </p>
+
+    <p>
+        All information provided should be accurate and complete.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     ONLINE FORM
+===================================================== -->
+
+<form
+    id="partnerAgreementForm"
+    action="/submit-partner-agreement"
+    method="POST"
+    enctype="multipart/form-data"
+>
+
+
+<!-- =====================================================
+     PART A — GADEH
+===================================================== -->
+
+<section class="form-section">
+
+    <h2 class="section-heading">
+        Part A — GADEH
+    </h2>
+
+
+    <div class="form-grid">
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Organization Name
+            </label>
+
+            <input
+                type="text"
+                name="party_a_name"
+                class="form-input readonly"
+                value="Garissa Agro-Digital Empowerment Hub"
+                readonly
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Organization Type
+            </label>
+
+            <input
+                type="text"
+                name="party_a_type"
+                class="form-input readonly"
+                value="Community-Based Organization (CBO)"
+                readonly
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Country
+            </label>
+
+            <input
+                type="text"
+                name="party_a_country"
+                class="form-input readonly"
+                value="Kenya"
+                readonly
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Email
+            </label>
+
+            <input
+                type="text"
+                name="party_a_email"
+                class="form-input readonly"
+                value="gadehcbo2026@gmail.com"
+                readonly
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Telephone
+            </label>
+
+            <input
+                type="text"
+                name="party_a_phone"
+                class="form-input readonly"
+                value="+254 728 428 431 / +254 705 299 600"
+                readonly
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PART B — PARTNER
+===================================================== -->
+
+<section class="form-section">
+
+    <h2 class="section-heading">
+        Part B — Partner Information
+    </h2>
+
+
+    <div class="form-grid">
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Organization / Business / Institution Name *
+            </label>
+
+            <input
+                type="text"
+                name="partner_name"
+                class="form-input"
+                required
+                placeholder="Enter full name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Registration Number
+            </label>
+
+            <input
+                type="text"
+                name="registration_number"
+                class="form-input"
+                placeholder="Registration number"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                KRA PIN
+            </label>
+
+            <input
+                type="text"
+                name="kra_pin"
+                class="form-input"
+                placeholder="KRA PIN where applicable"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Organization Type *
+            </label>
+
+            <select
+                name="organization_type"
+                class="form-input"
+                required
+            >
+
+                <option value="">
+                    Select organization type
+                </option>
+
+                <option>Company</option>
+
+                <option>NGO</option>
+
+                <option>CBO</option>
+
+                <option>Community Group</option>
+
+                <option>Educational Institution</option>
+
+                <option>Government Institution</option>
+
+                <option>Private Institution</option>
+
+                <option>Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Contact Person *
+            </label>
+
+            <input
+                type="text"
+                name="contact_person"
+                class="form-input"
+                required
+                placeholder="Full name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Position / Title
+            </label>
+
+            <input
+                type="text"
+                name="position"
+                class="form-input"
+                placeholder="Position"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Telephone *
+            </label>
+
+            <input
+                type="tel"
+                name="telephone"
+                class="form-input"
+                required
+                placeholder="+254"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Email *
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                class="form-input"
+                required
+                placeholder="Official email"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Physical / Postal Address
+            </label>
+
+            <input
+                type="text"
+                name="address"
+                class="form-input"
+                placeholder="Address"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                County
+            </label>
+
+            <input
+                type="text"
+                name="county"
+                class="form-input"
+                placeholder="County"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Country
+            </label>
+
+            <input
+                type="text"
+                name="country"
+                class="form-input"
+                value="Kenya"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PART C — PARTNERSHIP
+===================================================== -->
+
+<section class="form-section">
+
+    <h2 class="section-heading">
+        Part C — Proposed Partnership
+    </h2>
+
+
+    <div class="form-grid">
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Partnership Area *
+            </label>
+
+            <select
+                name="partnership_area"
+                class="form-input"
+                required
+            >
+
+                <option value="">
+                    Select partnership area
+                </option>
+
+                <option>
+                    Agriculture and Agribusiness
+                </option>
+
+                <option>
+                    Digital Empowerment
+                </option>
+
+                <option>
+                    Entrepreneurship and Enterprise
+                </option>
+
+                <option>
+                    Youth Empowerment
+                </option>
+
+                <option>
+                    Environmental Conservation
+                </option>
+
+                <option>
+                    Training and Capacity Building
+                </option>
+
+                <option>
+                    Research and Innovation
+                </option>
+
+                <option>
+                    Community Development
+                </option>
+
+                <option>
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Proposed Start Date
+            </label>
+
+            <input
+                type="date"
+                name="start_date"
+                class="form-input"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Proposed End Date
+            </label>
+
+            <input
+                type="date"
+                name="end_date"
+                class="form-input"
+            >
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Proposed Collaboration
+            </label>
+
+            <textarea
+                name="collaboration_description"
+                class="form-input"
+                placeholder="Describe the proposed partnership or collaboration..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-group full">
+
+            <label class="form-label">
+                Expected Contribution
+            </label>
+
+            <textarea
+                name="partner_contribution"
+                class="form-input"
+                placeholder="Describe the financial, technical, material, professional or other contribution..."
+            ></textarea>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PART D — AGREEMENT
+===================================================== -->
+
+<section class="form-section">
+
+    <h2 class="section-heading">
+        Part D — Agreement
+    </h2>
+
+
+    <div class="terms">
+
+        <p>
+            The parties intend to cooperate in good faith and
+            communicate openly regarding activities undertaken
+            under the proposed partnership.
+        </p>
+
+        <p>
+            Any specific financial, technical, programme or
+            implementation commitments may be agreed separately
+            in writing by the parties.
+        </p>
+
+        <p>
+            The information submitted through this form may be
+            used for partnership assessment, communication,
+            administration and record-keeping purposes.
+        </p>
+
+    </div>
+
+
+    <label class="consent">
+
+        <input
+            type="checkbox"
+            name="agreement_consent"
+            value="accepted"
+            required
+        >
+
+        <span>
+            I confirm that I am authorized to submit this
+            application on behalf of the partner organization and
+            that the information provided is accurate to the best
+            of my knowledge.
+        </span>
+
+    </label>
+
+
+</section>
+
+
+<!-- =====================================================
+     SUBMIT
+===================================================== -->
+
+<div class="submit-area">
+
+    <button
+        type="submit"
+        class="submit-button"
+    >
+        Submit Partner Agreement
+    </button>
+
+</div>
+
+
+</form>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="form-footer">
+
+    <p>
+        Partner Agreement Form
+    </p>
+
+    <p>
+        © 2026
+    </p>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   FORM SUBMISSION
+========================================================= */
+
+document
+    .getElementById("partnerAgreementForm")
+    .addEventListener("submit", function(event){
+
+        const form = this;
+
+        if(!form.checkValidity()){
+
+            event.preventDefault();
+
+            form.reportValidity();
+
+            return;
+
+        }
+
+        const button =
+            form.querySelector(".submit-button");
+
+        button.disabled = true;
+
+        button.textContent = "Submitting...";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

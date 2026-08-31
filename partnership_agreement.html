@@ -1,15 +1,17 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description"
-content="Collaboration Agreement Form for Garissa Agro-Digital Empowerment Hub CBO (GADEH).">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#C00000"><title>GADEH | Collaboration Agreement Form</title><style>
+<title>GADEH | Partnership Agreement Form</title>
+
+<style>
 
 /* =========================================================
-   GADEH CBO
-   COLLABORATION AGREEMENT FORM
-   A4 PORTRAIT — CLEAN PDF PRINT LAYOUT
+   GADEH
+   OFFLINE PARTNERSHIP AGREEMENT FORM
+   HANDWRITING / PRINT VERSION
 ========================================================= */
 
 :root{
@@ -24,21 +26,16 @@ content="Collaboration Agreement Form for Garissa Agro-Digital Empowerment Hub C
     --black:#222;
     --dark:#333;
     --grey:#666;
-    --light-grey:#F5F5F5;
+
     --border:#D6D6D6;
+    --light-grey:#F5F5F5;
+
     --white:#fff;
-
-    --a4-width:210mm;
-    --a4-height:297mm;
-
-    --top-space:10mm;
-    --bottom-space:10mm;
-    --side-space:14mm;
 }
 
 
 /* =========================================================
-   GLOBAL RESET
+   RESET
 ========================================================= */
 
 *{
@@ -49,13 +46,11 @@ content="Collaboration Agreement Form for Garissa Agro-Digital Empowerment Hub C
 
 html{
     font-size:10px;
-    scroll-behavior:smooth;
 }
 
 body{
 
     margin:0;
-    padding:0;
 
     background:#EAEAEA;
 
@@ -69,7 +64,8 @@ body{
         sans-serif;
 
     font-size:1rem;
-    line-height:1.55;
+
+    line-height:1.5;
 
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
@@ -82,19 +78,15 @@ body{
 
 .document{
 
-    width:var(--a4-width);
+    width:210mm;
 
-    min-height:var(--a4-height);
+    min-height:297mm;
 
     margin:15px auto;
 
-    padding:
-        var(--top-space)
-        var(--side-space)
-        var(--bottom-space)
-        var(--side-space);
+    padding:10mm 14mm;
 
-    background:var(--white);
+    background:#fff;
 
     box-shadow:
         0 2px 12px rgba(0,0,0,.10);
@@ -113,7 +105,7 @@ body{
 
     padding-bottom:1rem;
 
-    margin-bottom:1.5rem;
+    margin-bottom:1.4rem;
 
     border-bottom:
         .3rem solid var(--corporate-red);
@@ -143,45 +135,15 @@ body{
 
 .document-logo{
 
-    width:5.8rem;
-    height:5.8rem;
+    width:6rem;
+
+    height:6rem;
 
     object-fit:contain;
 
     display:block;
 
-    margin:0 auto .5rem;
-}
-
-
-/* =========================================================
-   ORGANIZATION NAME
-========================================================= */
-
-.organization-name{
-
-    color:var(--black);
-
-    font-size:1.35rem;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:.02em;
-
-    line-height:1.3;
-}
-
-.organization-type{
-
-    color:var(--agriculture-green-dark);
-
-    font-size:.85rem;
-
-    font-weight:700;
-
-    margin-top:.15rem;
+    margin:0 auto;
 }
 
 
@@ -191,9 +153,9 @@ body{
 
 .document-title{
 
-    text-align:center;
-
     color:var(--corporate-red);
+
+    text-align:center;
 
     font-size:1.65rem;
 
@@ -210,9 +172,9 @@ body{
 
 .document-subtitle{
 
-    text-align:center;
-
     color:var(--grey);
+
+    text-align:center;
 
     font-size:.9rem;
 
@@ -233,12 +195,11 @@ body{
     grid-template-columns:
         repeat(3,1fr);
 
-    border:
-        .1rem solid var(--border);
-
-    margin-bottom:1.6rem;
+    border:1px solid var(--border);
 
     background:var(--light-grey);
+
+    margin-bottom:1.5rem;
 }
 
 .info-item{
@@ -247,11 +208,11 @@ body{
 
     text-align:center;
 
-    border-right:
-        .1rem solid var(--border);
+    border-right:1px solid var(--border);
 }
 
 .info-item:last-child{
+
     border-right:none;
 }
 
@@ -261,22 +222,20 @@ body{
 
     color:var(--corporate-red);
 
-    font-size:.7rem;
+    font-size:.68rem;
 
     font-weight:800;
 
     text-transform:uppercase;
-
-    margin-bottom:.1rem;
 }
 
 .info-value{
 
     color:var(--black);
 
-    font-size:.82rem;
+    font-size:.8rem;
 
-    font-weight:600;
+    font-weight:700;
 }
 
 
@@ -292,17 +251,10 @@ body{
 
     background:var(--agriculture-light);
 
+    border:1px solid #D5E5D5;
+
     border-left:
         .4rem solid var(--agriculture-green);
-
-    border-top:
-        .1rem solid #D5E5D5;
-
-    border-right:
-        .1rem solid #D5E5D5;
-
-    border-bottom:
-        .1rem solid #D5E5D5;
 
     break-inside:avoid;
 
@@ -311,91 +263,48 @@ body{
 
 .introduction p{
 
-    text-align:justify;
+    font-size:.85rem;
 
-    font-size:.88rem;
+    line-height:1.55;
 
     margin-bottom:.45rem;
+
+    text-align:justify;
 }
 
 .introduction p:last-child{
+
     margin-bottom:0;
 }
 
 
 /* =========================================================
-   GADEH SECTION CARDS
-   CORPORATE RED + AGRICULTURE THEME
+   SECTION
 ========================================================= */
 
 .section{
 
     position:relative;
 
-    margin-bottom:1.8rem;
+    margin-bottom:1.5rem;
 
-    padding:1.15rem 1.2rem 1.2rem;
+    padding:1.1rem 1.15rem 1.2rem;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(192,0,0,.025),
-            rgba(76,120,55,.035)
-        );
+    background:#fff;
 
     border:1px solid var(--border);
 
     border-left:
         .35rem solid var(--corporate-red);
 
-    border-radius:.35rem;
+    border-radius:.3rem;
 
     box-shadow:
-        0 2px 8px rgba(0,0,0,.05);
+        0 2px 7px rgba(0,0,0,.045);
 
     break-inside:avoid;
 
     page-break-inside:avoid;
-}
-
-
-/* =========================================================
-   ELEGANT AGRICULTURE ACCENT
-========================================================= */
-
-.section::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:0;
-
-    top:0;
-
-    width:90px;
-
-    height:90px;
-
-    pointer-events:none;
-
-    opacity:.055;
-
-    background:
-        radial-gradient(
-            circle at 70% 30%,
-            var(--corporate-red) 0 2px,
-            transparent 3px
-        ),
-        linear-gradient(
-            135deg,
-            transparent 48%,
-            var(--corporate-red) 49% 51%,
-            transparent 52%
-        );
-
-    border-radius:
-        0 .35rem 0 90px;
 }
 
 
@@ -405,10 +314,6 @@ body{
 
 .section-heading{
 
-    position:relative;
-
-    z-index:1;
-
     display:flex;
 
     align-items:center;
@@ -417,22 +322,17 @@ body{
 
     color:var(--corporate-red);
 
-    font-size:1.09rem;
+    font-size:1.05rem;
 
     line-height:1.3;
 
-    font-weight:700;
+    font-weight:800;
 
     text-transform:uppercase;
 
-    margin:
-        0
-        0
-        1rem;
+    margin-bottom:1rem;
 
-    padding:
-        .45rem
-        .65rem;
+    padding:.45rem .6rem;
 
     background:
         linear-gradient(
@@ -442,7 +342,7 @@ body{
         );
 
     border-left:
-        .4rem solid var(--corporate-red);
+        .35rem solid var(--corporate-red);
 
     border-bottom:
         .08rem solid var(--border);
@@ -454,18 +354,16 @@ body{
 
 
 /* =========================================================
-   SECTION NUMBER
+   NUMBER
 ========================================================= */
 
 .section-number{
 
-    color:var(--white);
-
-    background:var(--corporate-red);
-
-    min-width:2rem;
+    width:2rem;
 
     height:2rem;
+
+    min-width:2rem;
 
     display:inline-flex;
 
@@ -473,229 +371,56 @@ body{
 
     justify-content:center;
 
-    font-size:.78rem;
+    background:var(--corporate-red);
+
+    color:#fff;
+
+    font-size:.75rem;
 
     font-weight:900;
-
-    flex-shrink:0;
 
     border-radius:.15rem;
-
-    box-shadow:
-        0 2px 4px rgba(192,0,0,.15);
 }
 
 
 /* =========================================================
-   FORM CONTENT INSIDE SECTION
-========================================================= */
-
-.section .form-group{
-
-    position:relative;
-
-    z-index:1;
-
-    background:rgba(255,255,255,.88);
-
-    border:1px solid rgba(0,0,0,.08);
-
-    border-radius:.25rem;
-
-    padding:.7rem;
-
-    margin-bottom:.8rem;
-}
-
-
-/* =========================================================
-   FORM LABEL
-========================================================= */
-
-.section .form-label{
-
-    display:block;
-
-    color:var(--black);
-
-    font-size:.72rem;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    line-height:1.3;
-
-    margin-bottom:.35rem;
-
-    padding:
-        .25rem
-        .55rem;
-
-    border-left:
-        .25rem solid var(--black);
-}
-
-
-/* =========================================================
-   INPUTS INSIDE CARD
-========================================================= */
-
-.section input,
-.section select,
-.section textarea{
-
-    width:100%;
-
-    border:1px solid var(--border);
-
-    background:var(--white);
-
-    border-radius:.2rem;
-
-    padding:.65rem .7rem;
-
-    color:var(--black);
-
-    outline:none;
-
-    transition:
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.section input:focus,
-.section select:focus,
-.section textarea:focus{
-
-    border-color:var(--corporate-red);
-
-    box-shadow:
-        0 0 0 2px
-        rgba(192,0,0,.08);
-}
-
-
-/* =========================================================
-   SUBSECTION CONTENT
-   If existing subsection elements are retained
+   SUBSECTION
 ========================================================= */
 
 .subsection{
-
-    position:relative;
 
     margin-bottom:1rem;
 
     padding:.85rem;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(76,120,55,.025),
-            rgba(255,255,255,.8)
-        );
+    background:#FAFAFA;
 
-    border:1px solid #e2e2e2;
+    border:1px solid #E2E2E2;
 
     border-left:
-        .2rem solid var(--black);
-
-    border-radius:.25rem;
+        .2rem solid var(--agriculture-green);
 
     break-inside:avoid;
 
     page-break-inside:avoid;
 }
 
-
 .subsection-title{
 
     color:var(--black);
 
-    font-size:.92rem;
+    font-size:.9rem;
 
     font-weight:900;
 
-    margin:
-        0
-        0
-        .6rem;
-
-    line-height:1.35;
-
     text-transform:uppercase;
 
-    break-after:avoid;
-
-    page-break-after:avoid;
+    margin-bottom:.7rem;
 }
-
 
 .subsection-title .number{
 
     color:var(--corporate-red);
-
-    font-weight:900;
-}
-
-
-/* =========================================================
-   PRINT OPTIMIZATION
-========================================================= */
-
-@media print{
-
-    .section{
-
-        box-shadow:none;
-
-        background:#fff;
-
-        border-left:
-            .3rem solid var(--corporate-red);
-    }
-
-    .section::after{
-
-        opacity:.025;
-    }
-
-    .section .form-group{
-
-        background:#fff;
-
-        box-shadow:none;
-    }
-
-    .subsection{
-
-        background:#fff;
-
-        box-shadow:none;
-    }
-}
-
-/* =========================================================
-   PARAGRAPHS
-========================================================= */
-
-p{
-
-    font-size:.88rem;
-
-    line-height:1.55;
-
-    margin-bottom:.55rem;
-
-    text-align:justify;
-
-    color:var(--dark);
-}
-
-strong{
-    font-weight:800;
-    color:var(--black);
 }
 
 
@@ -710,16 +435,12 @@ strong{
     grid-template-columns:
         repeat(2,1fr);
 
-    gap:.8rem 1.2rem;
-
-    margin-top:.7rem;
+    gap:.85rem 1.2rem;
 }
 
 .form-group{
 
-    display:flex;
-
-    flex-direction:column;
+    min-width:0;
 
     break-inside:avoid;
 
@@ -727,98 +448,122 @@ strong{
 }
 
 .form-group.full{
+
     grid-column:1 / -1;
 }
 
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
 .form-label{
 
-    font-size:.72rem;
+    display:block;
 
     color:var(--black);
 
-    font-weight:800;
+    font-size:.7rem;
+
+    font-weight:900;
 
     text-transform:uppercase;
 
     margin-bottom:.35rem;
 
-    padding-left:.55rem;
+    padding-left:.5rem;
 
-    border-left:.25rem solid var(--black);
-
-    line-height:1.3;
-}
-
-.form-input{
-
-    min-height:2.5rem;
-
-    border:
-        .1rem solid #BDBDBD;
-
-    background:#fff;
-
-    padding:.45rem .55rem;
-
-    font-size:.82rem;
-
-    color:#333;
-
-    outline:none;
-}
-
-.form-input:focus{
-
-    border-color:var(--corporate-red);
-}
-
-textarea.form-input{
-
-    min-height:5rem;
-
-    resize:vertical;
+    border-left:
+        .25rem solid var(--corporate-red);
 }
 
 
 /* =========================================================
-   AGREEMENT BOX
+   HANDWRITING LINE
+========================================================= */
+
+.hand-line{
+
+    height:2.8rem;
+
+    border-bottom:
+        .1rem solid #777;
+
+    background:#fff;
+}
+
+.hand-line.tall{
+
+    height:5.5rem;
+}
+
+.hand-line.extra-tall{
+
+    height:8rem;
+}
+
+
+/* =========================================================
+   READ ONLY GADEH FIELD
+========================================================= */
+
+.readonly-field{
+
+    min-height:2.8rem;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:.55rem .65rem;
+
+    background:#F7F7F7;
+
+    border:1px solid #D0D0D0;
+
+    color:var(--black);
+
+    font-size:.82rem;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   AGREEMENT TEXT
 ========================================================= */
 
 .agreement-box{
 
-    margin:
-        .8rem 0
-        1rem;
-
-    padding:
-        .8rem
-        1rem;
+    padding:.9rem 1rem;
 
     background:#FAFAFA;
 
-    border:
-        .1rem solid var(--border);
+    border:1px solid var(--border);
 
     border-left:
         .4rem solid var(--corporate-red);
 
-    break-inside:avoid;
-
-    page-break-inside:avoid;
+    margin-top:.7rem;
 }
 
 .agreement-box p{
 
-    margin-bottom:.4rem;
+    font-size:.84rem;
+
+    text-align:justify;
+
+    margin-bottom:.5rem;
 }
 
 .agreement-box p:last-child{
+
     margin-bottom:0;
 }
 
 
 /* =========================================================
-   CHECKBOX GRID
+   CHECKBOXES
 ========================================================= */
 
 .checkbox-grid{
@@ -828,9 +573,9 @@ textarea.form-input{
     grid-template-columns:
         repeat(2,1fr);
 
-    gap:.5rem 1.2rem;
+    gap:.65rem 1.2rem;
 
-    margin-top:.6rem;
+    margin-top:.7rem;
 }
 
 .checkbox-item{
@@ -841,28 +586,106 @@ textarea.form-input{
 
     gap:.55rem;
 
-    font-size:.82rem;
+    font-size:.8rem;
 
     line-height:1.4;
 
-    color:var(--dark);
+    color:var(--black);
 
     break-inside:avoid;
 
     page-break-inside:avoid;
 }
 
-.checkbox-item input{
+.checkbox{
 
-    width:1.3rem;
+    width:1.45rem;
 
-    height:1.3rem;
+    height:1.45rem;
 
-    margin-top:.05rem;
+    border:1px solid #555;
 
-    accent-color:var(--corporate-red);
+    background:#fff;
 
     flex-shrink:0;
+}
+
+
+/* =========================================================
+   SIGNATURES
+========================================================= */
+
+.signature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:1.4rem;
+}
+
+.signature-box{
+
+    padding:.85rem;
+
+    min-height:12rem;
+
+    background:#FAFAFA;
+
+    border:1px solid var(--border);
+
+    border-top:
+        .25rem solid var(--corporate-red);
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.signature-title{
+
+    color:var(--corporate-red);
+
+    font-size:.88rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    padding-bottom:.35rem;
+
+    margin-bottom:.8rem;
+
+    border-bottom:1px solid var(--border);
+}
+
+.signature-field{
+
+    margin-bottom:.7rem;
+}
+
+.signature-field label{
+
+    display:block;
+
+    color:var(--grey);
+
+    font-size:.65rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    margin-bottom:.15rem;
+}
+
+.signature-line{
+
+    height:2rem;
+
+    border-bottom:
+        .1rem solid #777;
 }
 
 
@@ -872,9 +695,9 @@ textarea.form-input{
 
 .declaration{
 
-    margin-top:1.5rem;
-
     padding:1rem;
+
+    margin-bottom:1.5rem;
 
     background:
         linear-gradient(
@@ -893,13 +716,13 @@ textarea.form-input{
 
 .declaration-title{
 
-    text-align:center;
-
     color:var(--agriculture-green-dark);
+
+    text-align:center;
 
     font-size:1rem;
 
-    font-weight:800;
+    font-weight:900;
 
     text-transform:uppercase;
 
@@ -908,95 +731,47 @@ textarea.form-input{
 
 .declaration p{
 
+    font-size:.83rem;
+
     text-align:justify;
 
     font-weight:600;
-
-    margin-bottom:0;
 }
 
 
 /* =========================================================
-   SIGNATURE TABLE
+   CONSENT
 ========================================================= */
 
-.signature-grid{
+.consent-row{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    gap:.7rem;
 
-    gap:1.5rem;
+    align-items:flex-start;
 
-    margin-top:1rem;
+    font-size:.8rem;
+
+    line-height:1.45;
 }
 
-.signature-box{
+.consent-box{
 
-    border:
-        .1rem solid var(--border);
+    width:1.5rem;
 
-    padding:.8rem;
+    height:1.5rem;
 
-    min-height:10rem;
+    border:1px solid #555;
 
-    background:#FAFAFA;
+    flex-shrink:0;
 
-    break-inside:avoid;
-
-    page-break-inside:avoid;
-}
-
-.signature-title{
-
-    color:var(--corporate-red);
-
-    font-size:.9rem;
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    padding-bottom:.35rem;
-
-    margin-bottom:.7rem;
-
-    border-bottom:
-        .1rem solid var(--border);
-}
-
-.signature-field{
-
-    margin-bottom:.65rem;
-}
-
-.signature-field label{
-
-    display:block;
-
-    font-size:.68rem;
-
-    color:var(--grey);
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-    margin-bottom:.2rem;
-}
-
-.signature-line{
-
-    height:1.8rem;
-
-    border-bottom:
-        .1rem solid #777;
+    background:#fff;
 }
 
 
 /* =========================================================
-   CONTACT BOX
+   CONTACT
 ========================================================= */
 
 .contact-box{
@@ -1021,22 +796,22 @@ textarea.form-input{
 
     color:var(--corporate-red);
 
-    font-size:1rem;
+    font-size:.95rem;
 
-    font-weight:800;
+    font-weight:900;
 
     text-transform:uppercase;
 
-    margin-bottom:.4rem;
+    margin-bottom:.35rem;
 }
 
 .contact-box p{
 
+    font-size:.78rem;
+
+    margin-bottom:.15rem;
+
     text-align:center;
-
-    margin-bottom:.2rem;
-
-    font-size:.84rem;
 }
 
 
@@ -1048,7 +823,7 @@ textarea.form-input{
 
     margin-top:1.5rem;
 
-    padding-top:.8rem;
+    padding-top:.7rem;
 
     border-top:
         .2rem solid var(--corporate-red);
@@ -1058,30 +833,64 @@ textarea.form-input{
 
 .document-footer p{
 
+    color:#222;
+
+    font-size:.7rem;
+
+    font-weight:700;
+
+    margin-bottom:.1rem;
+
     text-align:center;
-
-    font-size:.72rem;
-
-    margin-bottom:.15rem;
-
-    color:var(--grey);
-}
-
-.document-footer strong{
-
-    color:var(--corporate-red);
-
-    font-size:.85rem;
 }
 
 
 /* =========================================================
-   RESPONSIVE SCREEN
+   PRINT BUTTON
+========================================================= */
+
+.print-button{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:var(--corporate-red);
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.2);
+}
+
+.print-button:hover{
+
+    background:var(--corporate-red-dark);
+}
+
+
+/* =========================================================
+   RESPONSIVE
 ========================================================= */
 
 @media(max-width:900px){
 
     body{
+
         background:#fff;
     }
 
@@ -1093,32 +902,23 @@ textarea.form-input{
 
         margin:0;
 
-        padding:
-            1.5rem
-            1.5rem
-            1.2rem;
+        padding:1.5rem;
 
         box-shadow:none;
     }
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:500px){
+@media(max-width:550px){
 
     html{
+
         font-size:9px;
     }
 
     .document{
 
-        padding:
-            1.2rem
-            1rem
-            1rem;
+        padding:1.2rem 1rem;
     }
 
     .document-info{
@@ -1130,11 +930,11 @@ textarea.form-input{
 
         border-right:none;
 
-        border-bottom:
-            .1rem solid var(--border);
+        border-bottom:1px solid var(--border);
     }
 
     .info-item:last-child{
+
         border-bottom:none;
     }
 
@@ -1146,6 +946,7 @@ textarea.form-input{
     }
 
     .form-group.full{
+
         grid-column:auto;
     }
 }
@@ -1159,23 +960,13 @@ textarea.form-input{
 
     size:A4 portrait;
 
-    margin:10mm 14mm 10mm 14mm;
+    margin:10mm 14mm;
 }
 
 
 @media print{
 
-    html{
-        font-size:10px;
-    }
-
     body{
-
-        width:210mm;
-
-        margin:0;
-
-        padding:0;
 
         background:#fff;
     }
@@ -1188,83 +979,36 @@ textarea.form-input{
 
         margin:0;
 
-        padding:
-            10mm
-            14mm
-            10mm
-            14mm;
-
-        background:#fff;
+        padding:10mm 14mm;
 
         box-shadow:none;
     }
 
+    .print-button{
 
-    /* -----------------------------------------------------
-       NATURAL PAGE FLOW
-    ----------------------------------------------------- */
+        display:none !important;
+    }
 
     .section{
 
-        break-before:auto !important;
-
-        page-break-before:auto !important;
-
-        break-after:auto !important;
-
-        page-break-after:auto !important;
+        box-shadow:none;
 
         break-inside:auto;
 
         page-break-inside:auto;
-
-        margin-bottom:1.5rem;
     }
 
-    .section-heading{
-
-        break-before:auto !important;
-
-        page-break-before:auto !important;
-
-        break-after:avoid;
-
-        page-break-after:avoid;
-    }
-
-    .subsection-title{
-
-        break-before:auto !important;
-
-        page-break-before:auto !important;
-
-        break-after:avoid;
-
-        page-break-after:avoid;
-    }
-
-
-    /* -----------------------------------------------------
-       FORM ELEMENTS
-    ----------------------------------------------------- */
-
-    .form-group,
-    .checkbox-item,
+    .subsection,
     .signature-box,
-    .agreement-box,
     .declaration,
-    .contact-box,
-    .introduction{
+    .agreement-box,
+    .introduction,
+    .contact-box{
 
         break-inside:avoid;
 
         page-break-inside:avoid;
     }
-
-
-    /* -----------------------------------------------------
-       TEXT FLOW
-    ----------------------------------------------------- */
 
     p,
     li{
@@ -1274,38 +1018,6 @@ textarea.form-input{
         widows:3;
     }
 
-
-    /* -----------------------------------------------------
-       PRINT INPUTS AS CLEAN FORM LINES
-    ----------------------------------------------------- */
-
-    input,
-    textarea{
-
-        color:#222 !important;
-
-        -webkit-print-color-adjust:exact;
-
-        print-color-adjust:exact;
-    }
-
-    textarea{
-        overflow:hidden;
-    }
-
-
-    /* -----------------------------------------------------
-       LINKS
-    ----------------------------------------------------- */
-
-    a{
-
-        color:inherit;
-
-        text-decoration:none;
-    }
-
-
     *,
     *::before,
     *::after{
@@ -1314,1021 +1026,1043 @@ textarea.form-input{
 
         print-color-adjust:exact !important;
     }
-
 }
 
-</style></head><body><div class="document"><!-- =====================================================
+</style>
+</head>
+
+<body>
+
+
+<div class="document">
+
+
+<!-- =====================================================
      HEADER
-===================================================== --><header class="document-header"><img
-    src="gadeh_logo.png"
-    alt="GADEH Logo"
-    class="document-logo"
->
+===================================================== -->
+
+<header class="document-header">
+
+    <img
+        src="gadeh_logo.png"
+        alt="GADEH Logo"
+        class="document-logo"
+    >
+
+</header>
 
 
+<!-- =====================================================
+     TITLE
+===================================================== -->
 
-<div class="organization-type">
+<h1 class="document-title">
+    Partnership Agreement Form
+</h1>
+
+<p class="document-subtitle">
+    Official Partnership and Collaboration Document
+</p>
+
+
+<!-- =====================================================
+     DOCUMENT INFORMATION
+===================================================== -->
+
+<div class="document-info">
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Document
+        </span>
+
+        <span class="info-value">
+            Partnership Agreement
+        </span>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Organization
+        </span>
+
+        <span class="info-value">
+            GADEH
+        </span>
+
+    </div>
+
+
+    <div class="info-item">
+
+        <span class="info-label">
+            Year
+        </span>
+
+        <span class="info-value">
+            2026
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<div class="introduction">
+
+    <p>
+        This Partnership Agreement provides a formal framework
+        for cooperation between <strong>Garissa Agro-Digital
+        Empowerment Hub (GADEH)</strong> and the partner
+        organization, institution, business, agency, community
+        group or other approved entity identified in Part B.
+    </p>
+
+    <p>
+        The parties intend to cooperate in good faith on mutually
+        agreed activities that contribute to agricultural
+        development, digital empowerment, entrepreneurship,
+        environmental conservation, youth empowerment, skills
+        development and community development.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     PART A
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        A
+    </span>
+
+    Party A — GADEH
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+    <span class="number">
+        A.1
+    </span>
+
+    Organization Information
+
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group full">
+
+<label class="form-label">
+    Organization Name
+</label>
+
+<div class="readonly-field">
+    Garissa Agro-Digital Empowerment Hub (GADEH)
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Organization Type
+</label>
+
+<div class="readonly-field">
     Community-Based Organization (CBO)
 </div>
 
-</header><!-- =====================================================
-     TITLE
-===================================================== --><h1 class="document-title">
-    Collaboration Agreement Form
-</h1><p class="document-subtitle">
-    Official Partnership and Collaboration Document
-</p><!-- =====================================================
-     DOCUMENT INFORMATION
-===================================================== --><div class="document-info"><div class="info-item">
+</div>
 
-    <span class="info-label">
-        Document
+
+<div class="form-group">
+
+<label class="form-label">
+    Country
+</label>
+
+<div class="readonly-field">
+    Kenya
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Authorized Representative
+</label>
+
+<div class="readonly-field">
+    Abdullahi Sheikh Aden
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Position / Title
+</label>
+
+<div class="readonly-field">
+    Chairperson / Project Lead
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Telephone
+</label>
+
+<div class="readonly-field">
+    +254 728 428 431 / +254 705 299 600
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Official Email
+</label>
+
+<div class="readonly-field">
+    gadehcbo2026@gmail.com
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PART B
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        B
     </span>
 
-    <span class="info-value">
-        Collaboration Agreement
+    Party B — Partner
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+    <span class="number">
+        B.1
     </span>
 
-</div>
+    Partner Information
+
+</h3>
 
 
-<div class="info-item">
-
-    <span class="info-label">
-        Organization
-    </span>
-
-    <span class="info-value">
-        GADEH CBO
-    </span>
-
-</div>
+<div class="form-grid">
 
 
-<div class="info-item">
+<div class="form-group full">
 
-    <span class="info-label">
-        Effective Year
-    </span>
+<label class="form-label">
+    Organization / Institution / Business Name
+</label>
 
-    <span class="info-value">
-        2026
-    </span>
-
-</div>
-
-</div><!-- =====================================================
-     INTRODUCTION
-===================================================== --><div class="introduction"><p>
-    This Collaboration Agreement establishes the understanding
-    between <strong>Garissa Agro-Digital Empowerment Hub (GADEH)</strong>
-    and the collaborating organization, institution, business,
-    agency, community group or other approved partner identified
-    in this document.
-</p>
-
-<p>
-    The parties intend to work together in good faith to support
-    agricultural development, digital empowerment,
-    entrepreneurship, skills development, environmental
-    conservation, youth empowerment, community development and
-    other mutually agreed initiatives.
-</p>
-
-</div><!-- =====================================================
-     SECTION 1 — PARTY A
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    1
-</span>
-
-Party A — GADEH
-
-</h2><div class="subsection"><h3 class="subsection-title"><span class="number">
-    1.1
-</span>
-
-Organization Information
-
-</h3><div class="form-grid"><div class="form-group full">
-
-    <label class="form-label">
-        Organization Name
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        value="Garissa Agro-Digital Empowerment Hub (GADEH)"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Organization Type
-    </label>
+<label class="form-label">
+    Registration Number
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        value="Community-Based Organization"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Registration / Reference No.
-    </label>
+<label class="form-label">
+    KRA PIN
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Enter registration number"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Authorized Representative
-    </label>
+<label class="form-label">
+    Organization / Business Type
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Full Name"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Position / Title
-    </label>
+<label class="form-label">
+    Contact Person
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Position"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Telephone
-    </label>
+<label class="form-label">
+    Position / Title
+</label>
 
-    <input
-        class="form-input"
-        type="tel"
-        placeholder="+254"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Email
-    </label>
+<label class="form-label">
+    Telephone
+</label>
 
-    <input
-        class="form-input"
-        type="email"
-        placeholder="Official Email Address"
-    >
-
-</div>
-
-</div></div></section><!-- =====================================================
-     SECTION 2 — PARTY B
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    2
-</span>
-
-Party B — Collaborating Organization / Partner
-
-</h2><div class="form-grid"><div class="form-group full">
-
-    <label class="form-label">
-        Organization / Institution / Business Name
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Enter full legal name"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Registration Number
-    </label>
+<label class="form-label">
+    Email
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Registration Number"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        KRA PIN
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="KRA PIN where applicable"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Business / Organization Type
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="e.g. NGO, Company, CBO, Institution"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Contact Person
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Full Name"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Position / Title
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Position"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Telephone
-    </label>
-
-    <input
-        class="form-input"
-        type="tel"
-        placeholder="+254"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Email
-    </label>
-
-    <input
-        class="form-input"
-        type="email"
-        placeholder="Official Email Address"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group full">
 
-    <label class="form-label">
-        Physical / Postal Address
-    </label>
+<label class="form-label">
+    Physical / Postal Address
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Address"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        County
-    </label>
+<label class="form-label">
+    County
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="County"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Country
-    </label>
+<label class="form-label">
+    Country
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        value="Kenya"
-    >
+<div class="hand-line"></div>
 
 </div>
 
-</div></section><!-- =====================================================
-     SECTION 3 — PURPOSE
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    3
-</span>
 
-Purpose of Collaboration
+</div>
 
-</h2><div class="subsection"><h3 class="subsection-title"><span class="number">
-    3.1
-</span>
+</div>
 
-Collaboration Objectives
+</section>
 
-</h3><p>
-The parties agree to explore and implement mutually beneficial
-activities that contribute to sustainable community development,
-agricultural innovation, digital empowerment and improved
-livelihood opportunities.
-</p><div class="checkbox-grid"><label class="checkbox-item">
-    <input type="checkbox">
+
+<!-- =====================================================
+     PART C
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        C
+    </span>
+
+    Purpose and Areas of Partnership
+
+</h2>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+    <span class="number">
+        C.1
+    </span>
+
+    Main Purpose
+
+</h3>
+
+<div class="hand-line tall"></div>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+    <span class="number">
+        C.2
+    </span>
+
+    Areas of Collaboration
+
+</h3>
+
+
+<div class="checkbox-grid">
+
+
+<label class="checkbox-item">
+    <span class="checkbox"></span>
     Agriculture and agro-entrepreneurship
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Climate-smart agriculture
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Digital empowerment and ICT
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Youth empowerment
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Entrepreneurship and enterprise development
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Environmental conservation
 </label>
 
-<label class="checkbox-item">
-    <input type="checkbox">
-    Skills development and training
-</label>
 
 <label class="checkbox-item">
-    <input type="checkbox">
-    Community development
+    <span class="checkbox"></span>
+    Training and capacity building
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Research and innovation
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
+    Community development
+</label>
+
+
+<label class="checkbox-item">
+    <span class="checkbox"></span>
     Other mutually agreed activities
 </label>
 
-</div></div></section><!-- =====================================================
-     SECTION 4 — COLLABORATION TYPE
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    4
-</span>
 
-Nature of Collaboration
+</div>
 
-</h2><p>
-Select the areas in which the parties intend to collaborate:
-</p><div class="checkbox-grid"><label class="checkbox-item">
-    <input type="checkbox">
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PART D
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        D
+    </span>
+
+    Nature of Partnership
+
+</h2>
+
+
+<div class="checkbox-grid">
+
+
+<label class="checkbox-item">
+    <span class="checkbox"></span>
     Joint Programme Implementation
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Training and Capacity Building
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Technical Support
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Resource Mobilization
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Equipment / Material Support
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Community Outreach
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Research and Knowledge Sharing
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Sponsorship
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Internship / Mentorship
 </label>
 
+
 <label class="checkbox-item">
-    <input type="checkbox">
+    <span class="checkbox"></span>
     Other
 </label>
 
-</div><div class="form-grid" style="margin-top:1rem;"><div class="form-group">
 
-    <label class="form-label">
-        Proposed Start Date
-    </label>
+</div>
 
-    <input
-        class="form-input"
-        
-    >
+
+<div class="form-grid" style="margin-top:1rem;">
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Proposed Start Date
+</label>
+
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Proposed End Date
-    </label>
+<label class="form-label">
+    Proposed End Date
+</label>
 
-    <input
-        class="form-input"
-        
-    >
+<div class="hand-line"></div>
 
 </div>
 
-</div></section><!-- =====================================================
-     SECTION 5 — RESPONSIBILITIES
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    5
-</span>
 
-Responsibilities of the Parties
+</div>
 
-</h2><div class="subsection"><h3 class="subsection-title"><span class="number">
-    5.1
-</span>
+</section>
 
-GADEH Responsibilities
 
-</h3><ul><li>
-    Coordinate agreed activities in accordance with the
-    approved collaboration plan.
-</li>
+<!-- =====================================================
+     PART E
+===================================================== -->
 
-<li>
-    Provide reasonable programme coordination and
-    communication.
-</li>
+<section class="section">
 
-<li>
-    Facilitate community engagement where applicable.
-</li>
+<h2 class="section-heading">
 
-<li>
-    Provide relevant programme information and updates.
-</li>
+    <span class="section-number">
+        E
+    </span>
 
-<li>
-    Maintain appropriate records relating to agreed
-    activities.
-</li>
+    Responsibilities and Contributions
 
-<li>
-    Promote responsible, transparent and accountable
-    implementation.
-</li>
+</h2>
 
-</ul></div><div class="subsection"><h3 class="subsection-title"><span class="number">
-    5.2
-</span>
 
-Partner Responsibilities
+<div class="subsection">
 
-</h3><ul><li>
-    Participate in agreed activities in good faith.
-</li>
+<h3 class="subsection-title">
 
-<li>
-    Provide agreed technical, financial, material or other
-    support where applicable.
-</li>
+    <span class="number">
+        E.1
+    </span>
 
-<li>
-    Designate an appropriate contact person for coordination.
-</li>
+    GADEH Contribution / Responsibilities
 
-<li>
-    Communicate relevant changes affecting implementation.
-</li>
+</h3>
 
-<li>
-    Comply with applicable laws, regulations and agreed
-    programme requirements.
-</li>
+<div class="hand-line tall"></div>
 
-</ul></div></section><!-- =====================================================
-     SECTION 6 — FINANCIAL ARRANGEMENTS
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    6
-</span>
+</div>
 
-Financial and Resource Arrangements
 
-</h2><p>
-Unless otherwise agreed in writing, this Collaboration Agreement
-does not by itself create an obligation for either party to provide
-funding or financial compensation to the other party.
-</p><div class="form-grid"><div class="form-group">
+<div class="subsection">
 
-    <label class="form-label">
-        Estimated Collaboration Budget
-    </label>
+<h3 class="subsection-title">
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="KES"
-    >
+    <span class="number">
+        E.2
+    </span>
+
+    Partner Contribution / Responsibilities
+
+</h3>
+
+<div class="hand-line tall"></div>
+
+</div>
+
+
+<div class="subsection">
+
+<h3 class="subsection-title">
+
+    <span class="number">
+        E.3
+    </span>
+
+    Financial / In-Kind Support
+
+</h3>
+
+<div class="hand-line tall"></div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PART F
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        F
+    </span>
+
+    Additional Partnership Terms
+
+</h2>
+
+
+<div class="agreement-box">
+
+<p>
+The parties shall cooperate in good faith and shall communicate
+openly regarding activities undertaken under this Agreement.
+</p>
+
+<p>
+Each party shall remain responsible for its own obligations,
+personnel, resources and legal responsibilities unless otherwise
+agreed in writing.
+</p>
+
+<p>
+Any specific financial, technical, operational or programme
+arrangement may be documented separately where necessary.
+</p>
+
+</div>
+
+
+<label class="form-label" style="margin-top:1rem;">
+    Additional Terms / Special Arrangements
+</label>
+
+<div class="hand-line extra-tall"></div>
+
+</section>
+
+
+<!-- =====================================================
+     PART G
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        G
+    </span>
+
+    Duration and Termination
+
+</h2>
+
+
+<p>
+This Agreement shall commence on the effective date agreed by
+the parties and shall remain in effect for the agreed duration,
+unless extended, replaced or terminated in writing.
+</p>
+
+
+<div class="form-grid" style="margin-top:1rem;">
+
+
+<div class="form-group">
+
+<label class="form-label">
+    Effective Date
+</label>
+
+<div class="hand-line"></div>
 
 </div>
 
 
 <div class="form-group">
 
-    <label class="form-label">
-        Funding / Support Source
-    </label>
+<label class="form-label">
+    Agreement Duration
+</label>
 
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Funding source or partner"
-    >
+<div class="hand-line"></div>
 
 </div>
 
 
-<div class="form-group full">
-
-    <label class="form-label">
-        Financial / In-Kind Contribution Details
-    </label>
-
-    <textarea
-        class="form-input"
-        placeholder="Describe agreed financial, material, technical or other contributions..."
-    ></textarea>
-
-</div>
-
-</div></section><!-- =====================================================
-     SECTION 7 — CONFIDENTIALITY
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    7
-</span>
-
-Confidentiality and Data Protection
-
-</h2><div class="agreement-box"><p>
-The parties shall take reasonable steps to protect confidential
-information exchanged in connection with the collaboration.
-</p><p>
-Personal information shall be collected, used, stored and shared
-responsibly and in accordance with applicable data protection
-requirements and the parties' agreed procedures.
-</p><p>
-Neither party shall disclose confidential information to an
-unauthorized third party except where disclosure is authorized,
-required by law or reasonably necessary for implementation of the
-collaboration.
-</p></div></section><!-- =====================================================
-     SECTION 8 — INTELLECTUAL PROPERTY
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    8
-</span>
-
-Intellectual Property and Branding
-
-</h2><p>
-Each party retains ownership of its pre-existing intellectual
-property, trademarks, logos, documents, materials and other
-proprietary resources.
-</p><p>
-Use of either party's name, logo, photographs, publications,
-training materials or other protected content for public
-communication shall be subject to appropriate authorization.
-</p><div class="form-grid"><div class="form-group full">
-
-    <label class="form-label">
-        Special Intellectual Property / Branding Arrangements
-    </label>
-
-    <textarea
-        class="form-input"
-        placeholder="Enter any specific arrangements..."
-    ></textarea>
-
-</div>
-
-</div></section><!-- =====================================================
-     SECTION 9 — COMMUNICATION
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    9
-</span>
-
-Communication and Coordination
-
-</h2><div class="form-grid"><div class="form-group">
-
-    <label class="form-label">
-        GADEH Contact Person
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-    >
-
 </div>
 
 
-<div class="form-group">
+<div class="agreement-box" style="margin-top:1rem;">
 
-    <label class="form-label">
-        Partner Contact Person
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Primary Communication Channel
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Email / Telephone / Meetings"
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Meeting / Reporting Frequency
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="Monthly / Quarterly / As Required"
-    >
-
-</div>
-
-</div></section><!-- =====================================================
-     SECTION 10 — DURATION
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    10
-</span>
-
-Duration and Termination
-
-</h2><p>
-This Agreement shall commence on the agreed effective date and
-shall remain in effect for the period stated below unless extended,
-replaced or terminated in accordance with this Agreement.
-</p><div class="form-grid"><div class="form-group">
-
-    <label class="form-label">
-        Effective Date
-    </label>
-
-    <input
-        class="form-input"
-        
-    >
-
-</div>
-
-
-<div class="form-group">
-
-    <label class="form-label">
-        Agreement Duration
-    </label>
-
-    <input
-        class="form-input"
-        type="text"
-        placeholder="e.g. 12 Months"
-    >
-
-</div>
-
-</div><p style="margin-top:.8rem;">
+<p>
 Either party may request termination or modification of the
-collaboration by providing reasonable written notice to the other
-party, subject to any specific obligations already agreed for
-ongoing activities.
-</p></section><!-- =====================================================
-     SECTION 11 — DISPUTE RESOLUTION
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    11
-</span>
+partnership by providing reasonable written notice to the other
+party, subject to any obligations already agreed for ongoing
+activities.
+</p>
 
-Dispute Resolution
+</div>
 
-</h2><p>
-The parties shall seek to resolve any disagreement arising from
-this Agreement through good-faith consultation and constructive
-communication.
-</p><p>
-Where an issue cannot be resolved through direct consultation, the
-parties may agree to use mediation or another appropriate dispute
-resolution mechanism before pursuing further legal remedies,
-subject to applicable law.
-</p></section><!-- =====================================================
-     SECTION 12 — GENERAL CONDITIONS
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    12
-</span>
+</section>
 
-General Conditions
 
-</h2><ul><li>
-    This Agreement represents the parties' current
-    understanding concerning the stated collaboration.
-</li>
-
-<li>
-    Any significant amendment should be made in writing and
-    acknowledged by both parties.
-</li>
-
-<li>
-    Neither party shall represent itself as the legal agent,
-    employee or representative of the other party unless
-    expressly authorized.
-</li>
-
-<li>
-    Collaboration activities shall be implemented in
-    accordance with applicable laws and regulations of the
-    Republic of Kenya.
-</li>
-
-<li>
-    This Agreement does not create a partnership, joint venture
-    or employment relationship unless expressly stated in a
-    separate written agreement.
-</li>
-
-</ul></section><!-- =====================================================
+<!-- =====================================================
      DECLARATION
-===================================================== --><div class="declaration"><div class="declaration-title">
+===================================================== -->
+
+<div class="declaration">
+
+<div class="declaration-title">
     Declaration and Agreement
-</div><p>
+</div>
+
+
+<p>
 The undersigned representatives confirm that they are authorized
-to represent their respective organizations and that they have
-reviewed the terms of this Collaboration Agreement. The parties
-agree to cooperate in good faith and to undertake the agreed
-activities in a responsible, transparent and mutually respectful
-manner.
-</p></div><!-- =====================================================
+to represent their respective organizations. By signing this
+document, the parties confirm their intention to cooperate in good
+faith and to implement agreed partnership activities in a
+responsible, transparent and mutually respectful manner.
+</p>
+
+</div>
+
+
+<!-- =====================================================
      SIGNATURES
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    13
-</span>
+===================================================== -->
 
-Authorization and Signatures
+<section class="section">
 
-</h2><div class="signature-grid"><!-- PARTY A --><div class="signature-box"><div class="signature-title">
+<h2 class="section-heading">
+
+    <span class="section-number">
+        H
+    </span>
+
+    Authorization and Signatures
+
+</h2>
+
+
+<div class="signature-grid">
+
+
+<!-- GADEH -->
+
+<div class="signature-box">
+
+<div class="signature-title">
     Party A — GADEH
 </div>
 
 
 <div class="signature-field">
 
-    <label>
-        Authorized Representative
-    </label>
+<label>
+    Authorized Representative
+</label>
 
-    <div class="signature-line"></div>
-
-</div>
-
-
-<div class="signature-field">
-
-    <label>
-        Position / Title
-    </label>
-
-    <div class="signature-line"></div>
+<div class="signature-line"></div>
 
 </div>
 
 
 <div class="signature-field">
 
-    <label>
-        Signature
-    </label>
+<label>
+    Position / Title
+</label>
 
-    <div class="signature-line"></div>
-
-</div>
-
-
-<div class="signature-field">
-
-    <label>
-        Date
-    </label>
-
-    <div class="signature-line"></div>
-
-</div>
-
-</div><!-- PARTY B --><div class="signature-box"><div class="signature-title">
-    Party B — Collaborating Partner
-</div>
-
-
-<div class="signature-field">
-
-    <label>
-        Authorized Representative
-    </label>
-
-    <div class="signature-line"></div>
+<div class="signature-line"></div>
 
 </div>
 
 
 <div class="signature-field">
 
-    <label>
-        Position / Title
-    </label>
+<label>
+    Signature
+</label>
 
-    <div class="signature-line"></div>
-
-</div>
-
-
-<div class="signature-field">
-
-    <label>
-        Signature
-    </label>
-
-    <div class="signature-line"></div>
+<div class="signature-line"></div>
 
 </div>
 
 
 <div class="signature-field">
 
-    <label>
-        Date
-    </label>
+<label>
+    Date
+</label>
 
-    <div class="signature-line"></div>
+<div class="signature-line"></div>
 
 </div>
 
-</div></div></section><!-- =====================================================
-     PRIVACY CONSENT
-===================================================== --><section class="section"><h2 class="section-heading"><span class="section-number">
-    14
-</span>
+</div>
 
-Privacy and Information Consent
 
-</h2><div class="agreement-box"><label class="checkbox-item"><input
-    type="checkbox"
-    required
->
+<!-- PARTNER -->
+
+<div class="signature-box">
+
+<div class="signature-title">
+    Party B — Partner
+</div>
+
+
+<div class="signature-field">
+
+<label>
+    Authorized Representative
+</label>
+
+<div class="signature-line"></div>
+
+</div>
+
+
+<div class="signature-field">
+
+<label>
+    Position / Title
+</label>
+
+<div class="signature-line"></div>
+
+</div>
+
+
+<div class="signature-field">
+
+<label>
+    Signature
+</label>
+
+<div class="signature-line"></div>
+
+</div>
+
+
+<div class="signature-field">
+
+<label>
+    Date
+</label>
+
+<div class="signature-line"></div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRIVACY
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-heading">
+
+    <span class="section-number">
+        I
+    </span>
+
+    Privacy and Information Consent
+
+</h2>
+
+
+<div class="agreement-box">
+
+
+<div class="consent-row">
+
+<span class="consent-box"></span>
 
 <span>
-    I/We confirm that the information provided in this
-    Collaboration Agreement Form is accurate to the best of
-    our knowledge and may be processed by GADEH for legitimate
-    collaboration, administrative, communication, monitoring
-    and record-keeping purposes in accordance with applicable
-    requirements.
+I/We confirm that the information provided in this Partnership
+Agreement Form is accurate to the best of our knowledge and may
+be processed by GADEH for legitimate partnership, administrative,
+communication, monitoring and record-keeping purposes.
 </span>
 
-</label><br><label class="checkbox-item"><input
-    type="checkbox"
->
+</div>
+
+
+<br>
+
+
+<div class="consent-row">
+
+<span class="consent-box"></span>
 
 <span>
-    I/We consent to reasonable communication regarding the
-    collaboration and related organizational activities.
+I/We consent to reasonable communication regarding this
+partnership and related organizational activities.
 </span>
 
-</label></div></section><!-- =====================================================
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
      OFFICIAL CONTACT
-===================================================== --><div class="contact-box"><div class="contact-box-title">
+===================================================== -->
+
+<div class="contact-box">
+
+<div class="contact-box-title">
     Official GADEH Contact
 </div>
+
 
 <p>
     <strong>
@@ -2336,26 +2070,36 @@ Privacy and Information Consent
     </strong>
 </p>
 
+
 <p>
     <strong>Email:</strong>
     gadehcbo2026@gmail.com
 </p>
+
 
 <p>
     <strong>Telephone:</strong>
     +254 728 428 431 / +254 705 299 600
 </p>
 
+
 <p>
-    Collaboration enquiries, partnership proposals and
-    supporting documentation may be submitted through the
-    official organizational communication channels.
+    Partnership enquiries and supporting documentation may be
+    submitted through the official organizational communication
+    channels.
 </p>
 
-</div><!-- =====================================================
+</div>
+
+
+<!-- =====================================================
      FOOTER
-===================================================== --><footer class="document-footer"><p>
-    <strong>GADEH</strong>
+===================================================== -->
+
+<footer class="document-footer">
+
+<p>
+    GADEH
 </p>
 
 <p>
@@ -2363,10 +2107,14 @@ Privacy and Information Consent
 </p>
 
 <p>
-    Collaboration • Partnership • Community Empowerment
+    Partnership • Collaboration • Community Empowerment
 </p>
 
-</footer></div><!-- =====================================================
+</footer>
+
+
+
+<!-- =====================================================
      PRINT JAVASCRIPT
 ===================================================== --><script>
 
