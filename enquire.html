@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>GADEH | Enquire</title>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --corporate-red:#C00000;
+    --corporate-green:#2E7D32;
+    --corporate-black:#222222;
+
+    --white:#ffffff;
+    --border:#dddddd;
+
+    --soft-red:#fff7f7;
+    --soft-green:#f7fbf7;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+    font-size:16px;
+}
+
+body{
+
+    margin:0;
+
+    background:#ffffff;
+
+    color:var(--corporate-black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:.75rem;
+
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    width:210mm;
+
+    max-width:100%;
+
+    min-height:297mm;
+
+    margin:0 auto;
+
+    padding:
+        1rem
+        1.1rem;
+
+    background:#ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+   GADEH LOGO ONLY
+========================================================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:
+        .35rem
+        0
+        .7rem;
+
+    border-bottom:
+        .2rem solid
+        var(--corporate-red);
+}
+
+.logo{
+
+    width:5.2rem;
+
+    height:5.2rem;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.document-title{
+
+    margin:
+        1rem
+        0
+        .15rem;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-size:1.05rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.02rem;
+}
+
+.document-subtitle{
+
+    margin:
+        0
+        0
+        1rem;
+
+    text-align:center;
+
+    color:#555555;
+
+    font-size:.68rem;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introduction{
+
+    margin-bottom:1rem;
+
+    padding:
+        .7rem
+        .85rem;
+
+    background:#ffffff;
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-top:
+        .05rem solid
+        var(--border);
+
+    border-right:
+        .05rem solid
+        var(--border);
+
+    border-bottom:
+        .05rem solid
+        var(--border);
+}
+
+.introduction p{
+
+    margin:.25rem 0;
+
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    margin-bottom:1rem;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.55rem;
+
+    margin:
+        1rem
+        0
+        .65rem;
+
+    padding:
+        .35rem
+        .55rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    border-left:
+        .28rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .05rem solid
+        var(--border);
+
+    background:#ffffff;
+
+    break-after:avoid;
+
+    page-break-after:avoid;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.section-number{
+
+    width:1.55rem;
+
+    height:1.55rem;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border:
+        .1rem solid
+        var(--corporate-red);
+
+    color:var(--corporate-red);
+
+    font-size:.65rem;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.7rem .8rem;
+}
+
+.form-group{
+
+    margin-bottom:.2rem;
+}
+
+.form-group.full{
+
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+label{
+
+    display:block;
+
+    margin-bottom:.3rem;
+
+    color:var(--corporate-black);
+
+    font-size:.65rem;
+
+    font-weight:700;
+}
+
+.required{
+
+    color:var(--corporate-red);
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:
+        .52rem
+        .6rem;
+
+    border:
+        .06rem solid
+        #bbbbbb;
+
+    border-radius:.12rem;
+
+    background:#ffffff;
+
+    color:#222222;
+
+    font-family:inherit;
+
+    font-size:.72rem;
+
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:
+        var(--corporate-red);
+
+    box-shadow:
+        0 0 0 .12rem
+        rgba(192,0,0,.08);
+}
+
+textarea{
+
+    min-height:7rem;
+
+    resize:vertical;
+}
+
+
+/* =========================================================
+   ENQUIRY TYPE CARDS
+========================================================= */
+
+.enquiry-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.55rem .75rem;
+
+    margin-top:.4rem;
+}
+
+.enquiry-option{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:.55rem .65rem;
+
+    background:#ffffff;
+
+    border:
+        .05rem solid
+        var(--border);
+
+    border-left:
+        .2rem solid
+        var(--corporate-green);
+
+    cursor:pointer;
+
+    font-size:.66rem;
+
+    font-weight:700;
+}
+
+.enquiry-option:hover{
+
+    border-left-color:
+        var(--corporate-red);
+}
+
+.enquiry-option input{
+
+    width:auto;
+
+    margin:0;
+
+    accent-color:
+        var(--corporate-red);
+}
+
+
+/* =========================================================
+   MESSAGE CARD
+========================================================= */
+
+.message-card{
+
+    position:relative;
+
+    margin-top:.7rem;
+
+    padding:.7rem .8rem;
+
+    background:#ffffff;
+
+    border:
+        .06rem solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .15rem solid
+        var(--corporate-green);
+}
+
+.message-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:.25rem;
+
+    border:
+        .04rem solid
+        rgba(46,125,50,.18);
+
+    pointer-events:none;
+}
+
+.message-card p{
+
+    position:relative;
+
+    margin:0;
+
+    font-size:.68rem;
+}
+
+
+/* =========================================================
+   PRIVACY CONSENT
+========================================================= */
+
+.consent-card{
+
+    margin-top:.7rem;
+
+    padding:.7rem .8rem;
+
+    background:var(--soft-green);
+
+    border-left:
+        .2rem solid
+        var(--corporate-green);
+
+    border-right:
+        .05rem solid
+        var(--border);
+
+    border-top:
+        .05rem solid
+        var(--border);
+
+    border-bottom:
+        .05rem solid
+        var(--border);
+}
+
+.consent{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.5rem;
+
+    font-size:.67rem;
+
+    line-height:1.5;
+}
+
+.consent input{
+
+    width:auto;
+
+    flex-shrink:0;
+
+    margin-top:.18rem;
+
+    accent-color:
+        var(--corporate-red);
+}
+
+.consent a{
+
+    color:var(--corporate-red);
+
+    font-weight:800;
+
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   SUBMISSION
+========================================================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:.6rem;
+
+    margin-top:1rem;
+}
+
+.btn{
+
+    border:0;
+
+    padding:
+        .6rem
+        1.25rem;
+
+    border-radius:.12rem;
+
+    font-size:.7rem;
+
+    font-weight:800;
+
+    cursor:pointer;
+}
+
+.btn-primary{
+
+    background:var(--corporate-red);
+
+    color:#ffffff;
+}
+
+.btn-secondary{
+
+    background:#222222;
+
+    color:#ffffff;
+}
+
+.btn-light{
+
+    background:#eeeeee;
+
+    color:#222222;
+
+    border:
+        .05rem solid
+        #cccccc;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message{
+
+    margin-top:.75rem;
+
+    padding:.55rem .7rem;
+
+    text-align:center;
+
+    font-size:.68rem;
+
+    font-weight:700;
+
+    display:none;
+}
+
+.message.success{
+
+    display:block;
+
+    color:#1f6b2a;
+
+    background:#f1faf2;
+
+    border:
+        .05rem solid
+        #b9dfbd;
+}
+
+.message.error{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    background:#fff4f4;
+
+    border:
+        .05rem solid
+        #e4baba;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    margin-top:1.3rem;
+
+    padding:
+        .7rem
+        .4rem
+        .2rem;
+
+    background:#ffffff;
+
+    border-top:
+        .14rem solid
+        var(--corporate-red);
+
+    text-align:center;
+
+    color:#000000;
+
+    font-size:.63rem;
+
+    font-weight:700;
+
+    line-height:1.5;
+}
+
+.footer strong{
+
+    color:#000000;
+
+    font-size:.7rem;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+}
+
+@media print{
+
+    html{
+
+        font-size:14px;
+    }
+
+    body{
+
+        background:#ffffff;
+
+        font-size:.68rem;
+    }
+
+    .page{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:
+            10mm
+            13mm;
+    }
+
+    .actions{
+
+        display:none !important;
+    }
+
+    input,
+    select,
+    textarea{
+
+        border:
+            .05rem solid
+            #777777;
+
+        box-shadow:none !important;
+    }
+
+    .section-heading{
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    html{
+
+        font-size:16px;
+    }
+
+    body{
+
+        font-size:.78rem;
+    }
+
+    .page{
+
+        width:100%;
+
+        padding:1rem;
+    }
+
+    .logo{
+
+        width:4.5rem;
+
+        height:4.5rem;
+    }
+
+    .document-title{
+
+        font-size:.95rem;
+    }
+
+    .form-grid,
+    .enquiry-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+
+    .btn{
+
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <img
+        src="gadeh_logo.png"
+        class="logo"
+        alt="GADEH Logo"
+    >
+
+</header>
+
+
+<!-- =====================================================
+     TITLE
+===================================================== -->
+
+<h1 class="document-title">
+
+    Enquire
+
+</h1>
+
+
+<div class="document-subtitle">
+
+    General Enquiries • Information • Programmes • Partnerships • Support
+
+</div>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<div class="introduction">
+
+    <p>
+
+        <strong>
+            Welcome to Garissa Agro-Digital Empowerment Hub (GADEH).
+        </strong>
+
+    </p>
+
+    <p>
+
+        Please use this form to submit an enquiry regarding
+        GADEH programmes, training opportunities, membership,
+        partnerships, community initiatives or other matters
+        related to our work.
+
+    </p>
+
+    <p>
+
+        Please provide accurate contact information so that the
+        appropriate GADEH representative can respond to your
+        enquiry.
+
+    </p>
+
+</div>
+
+
+<form id="enquiryForm">
+
+
+<!-- =====================================================
+     1. ENQUIRER INFORMATION
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">1</span>
+
+        Enquirer Information
+
+    </div>
+
+
+    <div class="form-grid">
+
+
+        <div class="form-group">
+
+            <label>
+
+                Full Name
+
+                <span class="required">*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="full_name"
+                autocomplete="name"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                Telephone Number
+
+                <span class="required">*</span>
+
+            </label>
+
+            <input
+                type="tel"
+                name="telephone"
+                autocomplete="tel"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                Email Address
+
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                autocomplete="email"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                Organization / Business
+
+            </label>
+
+            <input
+                type="text"
+                name="organization"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                County
+
+            </label>
+
+            <input
+                type="text"
+                name="county"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                Town / Area
+
+            </label>
+
+            <input
+                type="text"
+                name="location"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. ENQUIRY TYPE
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">2</span>
+
+        Enquiry Category
+
+    </div>
+
+
+    <p>
+
+        Please select the category that best describes your enquiry.
+
+        <span class="required">*</span>
+
+    </p>
+
+
+    <div class="enquiry-grid">
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="General Information"
+                required
+            >
+
+            General Information
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Membership"
+            >
+
+            Membership
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Agriculture & Agribusiness"
+            >
+
+            Agriculture & Agribusiness
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Digital Innovation"
+            >
+
+            Digital Innovation
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Youth Empowerment"
+            >
+
+            Youth Empowerment
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Entrepreneurship"
+            >
+
+            Entrepreneurship & Enterprise
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Environmental Conservation"
+            >
+
+            Environmental Conservation
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Training"
+            >
+
+            Training & Capacity Building
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Partnership"
+            >
+
+            Partnership / Collaboration
+
+        </label>
+
+
+        <label class="enquiry-option">
+
+            <input
+                type="radio"
+                name="enquiry_type"
+                value="Other"
+            >
+
+            Other
+
+        </label>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. ENQUIRY
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">3</span>
+
+        Your Enquiry
+
+    </div>
+
+
+    <div class="message-card">
+
+        <p>
+
+            Please provide sufficient details about your question,
+            request or matter so that GADEH can direct it to the
+            appropriate person or programme.
+
+        </p>
+
+    </div>
+
+
+    <div class="form-group" style="margin-top:.7rem;">
+
+        <label>
+
+            Subject
+
+            <span class="required">*</span>
+
+        </label>
+
+        <input
+            type="text"
+            name="subject"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label>
+
+            Enquiry / Message
+
+            <span class="required">*</span>
+
+        </label>
+
+        <textarea
+            name="message"
+            placeholder="Please type your enquiry here..."
+            required
+        ></textarea>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. RESPONSE PREFERENCE
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">4</span>
+
+        Preferred Response
+
+    </div>
+
+
+    <div class="form-grid">
+
+
+        <div class="form-group">
+
+            <label>
+
+                Preferred Contact Method
+
+                <span class="required">*</span>
+
+            </label>
+
+            <select
+                name="preferred_contact"
+                required
+            >
+
+                <option value="">
+                    Select
+                </option>
+
+                <option value="Telephone">
+                    Telephone
+                </option>
+
+                <option value="Email">
+                    Email
+                </option>
+
+                <option value="Either">
+                    Either Telephone or Email
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+
+                Preferred Response Time
+
+            </label>
+
+            <select
+                name="preferred_time"
+            >
+
+                <option value="">
+                    No Preference
+                </option>
+
+                <option value="Morning">
+                    Morning
+                </option>
+
+                <option value="Afternoon">
+                    Afternoon
+                </option>
+
+                <option value="Evening">
+                    Evening
+                </option>
+
+            </select>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. PRIVACY
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">5</span>
+
+        Privacy & Consent
+
+    </div>
+
+
+    <div class="consent-card">
+
+
+        <label class="consent">
+
+            <input
+                type="checkbox"
+                id="privacyConsent"
+                name="privacy_consent"
+                required
+            >
+
+            <span>
+
+                I confirm that I have read and understood the
+                GADEH
+
+                <a
+                    href="privacy_terms.html"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Privacy Policy
+                </a>
+
+                and
+
+                <a
+                    href="privacy_terms.html#terms"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Terms and Conditions
+                </a>
+
+                and consent to GADEH collecting and processing
+                the information provided in this enquiry for the
+                purpose of responding to my request and related
+                legitimate organizational purposes.
+
+            </span>
+
+        </label>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. SUBMISSION
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-heading">
+
+        <span class="section-number">6</span>
+
+        Submit Enquiry
+
+    </div>
+
+
+    <div class="actions">
+
+
+        <button
+            type="button"
+            class="btn btn-light"
+            onclick="document.getElementById('enquiryForm').reset();"
+        >
+
+            Clear Form
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="window.print();"
+        >
+
+            Print
+
+        </button>
+
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+
+            Submit Enquiry
+
+        </button>
+
+
+    </div>
+
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+
+</section>
+
+
+</form>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <strong>
+        GARISSA AGRO-DIGITAL EMPOWERMENT HUB (GADEH)
+    </strong>
+
+    <br>
+
+    Agriculture • Digital Empowerment • Entrepreneurship •
+    Environment • Youth Empowerment
+
+    <br>
+
+    Enquiry Form
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ENQUIRY FORM
+========================================================= */
+
+const enquiryForm =
+    document.getElementById("enquiryForm");
+
+const messageBox =
+    document.getElementById("message");
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+function showMessage(text,type){
+
+    messageBox.textContent = text;
+
+    messageBox.className =
+        "message " + type;
+
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+enquiryForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        /*
+         * Browser validation
+         */
+
+        if(!this.checkValidity()){
+
+            this.reportValidity();
+
+            return;
+
+        }
+
+
+        const formData =
+            new FormData(this);
+
+
+        const enquiry = {
+
+            full_name:
+                formData.get("full_name"),
+
+            telephone:
+                formData.get("telephone"),
+
+            email:
+                formData.get("email"),
+
+            organization:
+                formData.get("organization"),
+
+            county:
+                formData.get("county"),
+
+            location:
+                formData.get("location"),
+
+            enquiry_type:
+                formData.get("enquiry_type"),
+
+            subject:
+                formData.get("subject"),
+
+            message:
+                formData.get("message"),
+
+            preferred_contact:
+                formData.get("preferred_contact"),
+
+            preferred_time:
+                formData.get("preferred_time"),
+
+            privacy_consent:
+                document.getElementById(
+                    "privacyConsent"
+                ).checked,
+
+            submitted_at:
+                new Date().toISOString()
+
+        };
+
+
+        /*
+         * GADEH BACKEND ENDPOINT
+         *
+         * Change this if your Node.js
+         * server uses another route.
+         */
+
+        const API_URL =
+            "/api/enquiries";
+
+
+        try{
+
+            const response =
+                await fetch(
+                    API_URL,
+                    {
+
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(enquiry)
+
+                    }
+                );
+
+
+            if(!response.ok){
+
+                throw new Error(
+                    "Submission failed"
+                );
+
+            }
+
+
+            const result =
+                await response.json();
+
+
+            showMessage(
+
+                "Your enquiry has been submitted successfully. " +
+                "Reference: " +
+                (
+                    result.enquiry_reference ||
+                    "Generated by GADEH"
+                ),
+
+                "success"
+
+            );
+
+
+            this.reset();
+
+
+        }catch(error){
+
+            /*
+             * Save enquiry locally if the
+             * server is temporarily unavailable.
+             */
+
+            localStorage.setItem(
+
+                "GADEH_pending_enquiry",
+
+                JSON.stringify(enquiry)
+
+            );
+
+
+            showMessage(
+
+                "The enquiry could not be sent to the server. " +
+                "It has been saved on this device. " +
+                "Please try again when the connection is available.",
+
+                "error"
+
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="GADEH Agriculture and Agribusiness — climate-smart agriculture, agribusiness development, digital agriculture, farmer empowerment and sustainable livelihoods."
+>
+
+<title>GADEH | Agriculture & Agribusiness</title>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --corporate-red:#C00000;
+    --corporate-green:#2E7D32;
+    --corporate-black:#111111;
+
+    --black:#222222;
+    --white:#ffffff;
+
+    --border:#D8D8D8;
+    --light-grey:#F6F6F6;
+
+    --red-light:#FFF7F7;
+    --green-light:#F5FAF5;
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    background:#ffffff;
+
+    color:var(--black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:.78rem;
+
+    line-height:1.55;
+}
+
+img{
+    max-width:100%;
+}
+
+a{
+    color:var(--corporate-red);
+
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    width:100%;
+
+    max-width:210mm;
+
+    margin:0 auto;
+
+    padding:1rem;
+
+    background:#ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+   LOGO ONLY
+========================================================= */
+
+.header{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:.35rem 0 .75rem;
+
+    background:#ffffff;
+
+    border-bottom:
+        .18rem solid
+        var(--corporate-red);
+}
+
+.header-logo{
+
+    width:4.8rem;
+
+    height:4.8rem;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.document-title{
+
+    margin:1rem 0 .2rem;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-size:1.05rem;
+
+    font-weight:900;
+
+    line-height:1.25;
+
+    text-transform:uppercase;
+}
+
+.document-subtitle{
+
+    margin:0 auto 1.1rem;
+
+    max-width:48rem;
+
+    text-align:center;
+
+    color:#555555;
+
+    font-size:.68rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   INTRODUCTION CARD
+========================================================= */
+
+.introduction-card{
+
+    position:relative;
+
+    margin-bottom:1rem;
+
+    padding:.85rem .9rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-right:
+        .12rem solid
+        var(--corporate-green);
+}
+
+.introduction-card p{
+
+    margin:.25rem 0;
+
+    font-size:.73rem;
+
+    line-height:1.6;
+}
+
+.introduction-card strong{
+
+    color:var(--corporate-red);
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    margin:1.2rem 0;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:2rem;
+
+    margin:1.15rem 0 .7rem;
+
+    padding:.35rem .55rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.01rem;
+
+    border-left:
+        .3rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .07rem solid
+        #dddddd;
+
+    background:#ffffff;
+}
+
+.section-heading.green{
+
+    color:var(--corporate-green);
+
+    border-left-color:
+        var(--corporate-green);
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.section-number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:1.55rem;
+
+    height:1.55rem;
+
+    margin-right:.5rem;
+
+    color:var(--corporate-red);
+
+    border:
+        .1rem solid
+        var(--corporate-red);
+
+    font-size:.62rem;
+
+    font-weight:900;
+
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+p{
+
+    margin:.45rem 0;
+
+    font-size:.73rem;
+}
+
+ul{
+
+    margin:.45rem 0;
+
+    padding-left:1.25rem;
+}
+
+li{
+
+    margin:.3rem 0;
+
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   RED / GREEN FRAME CARDS
+========================================================= */
+
+.card-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:.75rem;
+}
+
+.card{
+
+    position:relative;
+
+    padding:.75rem .8rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:.15rem;
+
+    overflow:hidden;
+}
+
+
+/* Red and green frame */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:.28rem;
+
+    border:
+        1px solid
+        rgba(192,0,0,.20);
+
+    pointer-events:none;
+}
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:.28rem;
+
+    bottom:.28rem;
+
+    width:2.8rem;
+
+    height:.1rem;
+
+    background:
+        var(--corporate-green);
+
+    pointer-events:none;
+}
+
+.card.red{
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+}
+
+.card.green{
+
+    border-left:
+        .25rem solid
+        var(--corporate-green);
+}
+
+.card-title{
+
+    position:relative;
+
+    z-index:1;
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.73rem;
+
+    font-weight:900;
+}
+
+.card.green .card-title{
+
+    color:var(--corporate-green);
+}
+
+.card p{
+
+    position:relative;
+
+    z-index:1;
+
+    margin:.2rem 0;
+
+    font-size:.68rem;
+
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   AGRICULTURE THEMES
+========================================================= */
+
+.theme-card{
+
+    padding:.75rem .8rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-top:
+        .08rem solid
+        var(--corporate-green);
+}
+
+.theme-card h3{
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.75rem;
+
+    font-weight:900;
+}
+
+.theme-card p{
+
+    font-size:.69rem;
+
+    margin:.25rem 0;
+}
+
+.theme-card ul{
+
+    margin-top:.35rem;
+}
+
+
+/* =========================================================
+   PRIORITY AREAS
+========================================================= */
+
+.priority-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:.65rem;
+}
+
+.priority{
+
+    padding:.7rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        #dcdcdc;
+
+    border-top:
+        .22rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .12rem solid
+        var(--corporate-green);
+}
+
+.priority h3{
+
+    margin:0 0 .3rem;
+
+    color:var(--corporate-red);
+
+    font-size:.7rem;
+
+    font-weight:900;
+}
+
+.priority p{
+
+    margin:0;
+
+    font-size:.65rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   VALUE CHAIN
+========================================================= */
+
+.value-chain{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:.55rem;
+}
+
+.value-item{
+
+    padding:.65rem .5rem;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .18rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .12rem solid
+        var(--corporate-green);
+}
+
+.value-item strong{
+
+    display:block;
+
+    margin-bottom:.2rem;
+
+    color:var(--corporate-red);
+
+    font-size:.67rem;
+
+    font-weight:900;
+}
+
+.value-item span{
+
+    display:block;
+
+    color:#444444;
+
+    font-size:.61rem;
+
+    line-height:1.4;
+}
+
+
+/* =========================================================
+   TWO COLUMN INFORMATION
+========================================================= */
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.8rem;
+}
+
+.info-box{
+
+    padding:.75rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-green);
+}
+
+.info-box h3{
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-green);
+
+    font-size:.73rem;
+
+    font-weight:900;
+}
+
+.info-box p{
+
+    font-size:.68rem;
+}
+
+
+/* =========================================================
+   CLIMATE SMART AGRICULTURE
+========================================================= */
+
+.climate-card{
+
+    padding:.85rem;
+
+    background:var(--green-light);
+
+    border:
+        1px solid
+        rgba(46,125,50,.25);
+
+    border-left:
+        .3rem solid
+        var(--corporate-green);
+}
+
+.climate-card h3{
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-green);
+
+    font-size:.78rem;
+
+    font-weight:900;
+}
+
+.climate-card p{
+
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   DIGITAL AGRICULTURE
+========================================================= */
+
+.digital-card{
+
+    padding:.85rem;
+
+    background:var(--red-light);
+
+    border:
+        1px solid
+        rgba(192,0,0,.2);
+
+    border-left:
+        .3rem solid
+        var(--corporate-red);
+}
+
+.digital-card h3{
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+}
+
+.digital-card p{
+
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   FARMER SUPPORT
+========================================================= */
+
+.support-list{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.55rem .75rem;
+}
+
+.support-item{
+
+    display:flex;
+
+    gap:.45rem;
+
+    padding:.55rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .2rem solid
+        var(--corporate-green);
+}
+
+.support-marker{
+
+    color:var(--corporate-red);
+
+    font-weight:900;
+
+    flex-shrink:0;
+}
+
+.support-item span{
+
+    font-size:.67rem;
+
+    line-height:1.45;
+}
+
+
+/* =========================================================
+   TARGET BENEFICIARIES
+========================================================= */
+
+.beneficiary-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:.65rem;
+}
+
+.beneficiary{
+
+    padding:.7rem;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-top:
+        .2rem solid
+        var(--corporate-green);
+}
+
+.beneficiary strong{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.68rem;
+
+    font-weight:900;
+
+    margin-bottom:.2rem;
+}
+
+.beneficiary span{
+
+    font-size:.62rem;
+
+    color:#444444;
+}
+
+
+/* =========================================================
+   EXPECTED OUTCOMES
+========================================================= */
+
+.outcome-card{
+
+    padding:.8rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-right:
+        .18rem solid
+        var(--corporate-green);
+}
+
+.outcome-card ol{
+
+    margin:.2rem 0;
+
+    padding-left:1.25rem;
+}
+
+.outcome-card li{
+
+    padding-left:.15rem;
+
+    font-size:.68rem;
+}
+
+
+/* =========================================================
+   PARTNERSHIP CARD
+========================================================= */
+
+.partnership-card{
+
+    padding:.85rem;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-top:
+        .22rem solid
+        var(--corporate-red);
+
+    border-left:
+        .22rem solid
+        var(--corporate-green);
+}
+
+.partnership-card h3{
+
+    margin:0 0 .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.75rem;
+
+    font-weight:900;
+}
+
+.partnership-card p{
+
+    font-size:.69rem;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    margin-top:1.2rem;
+
+    padding:.9rem;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-left:
+        .3rem solid
+        var(--corporate-red);
+
+    border-right:
+        .3rem solid
+        var(--corporate-green);
+}
+
+.cta strong{
+
+    display:block;
+
+    margin-bottom:.3rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+}
+
+.cta p{
+
+    margin:.25rem auto;
+
+    max-width:45rem;
+
+    font-size:.68rem;
+}
+
+.cta-button{
+
+    display:inline-block;
+
+    margin-top:.45rem;
+
+    padding:.45rem .9rem;
+
+    background:var(--corporate-red);
+
+    color:#ffffff;
+
+    font-size:.67rem;
+
+    font-weight:900;
+
+    border-radius:.12rem;
+}
+
+.cta-button:hover{
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    background:#990000;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    margin-top:1.5rem;
+
+    padding:.75rem .5rem;
+
+    text-align:center;
+
+    background:#ffffff;
+
+    border-top:
+        .12rem solid
+        var(--corporate-black);
+
+    color:var(--corporate-black);
+
+    font-size:.62rem;
+
+    line-height:1.5;
+}
+
+.footer strong{
+
+    color:#000000;
+
+    font-size:.7rem;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    :root{
+        font-size:16px;
+    }
+
+    body{
+
+        font-size:.78rem;
+    }
+
+    .page{
+
+        padding:.75rem;
+    }
+
+    .header-logo{
+
+        width:4.2rem;
+
+        height:4.2rem;
+    }
+
+    .document-title{
+
+        font-size:.95rem;
+    }
+
+    .card-grid,
+    .two-column,
+    .priority-grid,
+    .beneficiary-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .value-chain{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .support-list{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+}
+
+@media print{
+
+    html{
+
+        font-size:14px;
+    }
+
+    body{
+
+        background:#ffffff;
+
+        font-size:.68rem;
+    }
+
+    .page{
+
+        width:210mm;
+
+        max-width:none;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:10mm 12mm;
+
+        box-shadow:none;
+    }
+
+    .header{
+
+        padding-top:0;
+
+        padding-bottom:.55rem;
+    }
+
+    .header-logo{
+
+        width:3.8rem;
+
+        height:3.8rem;
+    }
+
+    .document-title{
+
+        margin:.7rem 0 .15rem;
+
+        font-size:.9rem;
+    }
+
+    .document-subtitle{
+
+        margin-bottom:.7rem;
+
+        font-size:.58rem;
+    }
+
+    .section{
+
+        break-inside:auto;
+
+        page-break-inside:auto;
+    }
+
+    .section-heading{
+
+        break-after:avoid;
+
+        page-break-after:avoid;
+    }
+
+    .card,
+    .theme-card,
+    .priority,
+    .value-item,
+    .info-box,
+    .climate-card,
+    .digital-card,
+    .support-item,
+    .beneficiary,
+    .outcome-card,
+    .partnership-card,
+    .cta{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+
+    .cta-button{
+
+        color:#ffffff;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER — GADEH LOGO ONLY
+===================================================== -->
+
+<header class="header">
+
+    <img
+        src="gadeh_logo.png"
+        class="header-logo"
+        alt="GADEH Logo"
+    >
+
+</header>
+
+
+<!-- =====================================================
+     DOCUMENT TITLE
+===================================================== -->
+
+<h1 class="document-title">
+
+    Agriculture &amp; Agribusiness
+
+</h1>
+
+<p class="document-subtitle">
+
+    Empowering farmers, entrepreneurs and communities through
+    sustainable agriculture, climate-smart production, digital
+    innovation and inclusive agribusiness development.
+
+</p>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<div class="introduction-card">
+
+    <p>
+        <strong>Garissa Agro-Digital Empowerment Hub (GADEH)</strong>
+        promotes agriculture as a pathway to improved livelihoods,
+        food security, employment creation and inclusive local
+        economic development.
+    </p>
+
+    <p>
+        Our Agriculture &amp; Agribusiness programme connects
+        practical farming knowledge with entrepreneurship, digital
+        tools, environmental stewardship and market-oriented
+        agricultural production.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     1. PROGRAMME OVERVIEW
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">1</span>
+
+        Programme Overview
+
+    </div>
+
+
+    <div class="card-grid">
+
+        <div class="card red">
+
+            <h3 class="card-title">
+                Sustainable Agriculture
+            </h3>
+
+            <p>
+                Promote productive farming systems that conserve
+                soil, water and natural resources while improving
+                household and community livelihoods.
+            </p>
+
+        </div>
+
+
+        <div class="card green">
+
+            <h3 class="card-title">
+                Agribusiness Development
+            </h3>
+
+            <p>
+                Support farmers and emerging entrepreneurs to treat
+                agriculture as a viable business through planning,
+                value addition, market access and enterprise
+                development.
+            </p>
+
+        </div>
+
+
+        <div class="card red">
+
+            <h3 class="card-title">
+                Digital Agriculture
+            </h3>
+
+            <p>
+                Use digital technologies and information services
+                to improve access to agricultural knowledge,
+                markets, financial information and business
+                opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="card green">
+
+            <h3 class="card-title">
+                Farmer Empowerment
+            </h3>
+
+            <p>
+                Equip farmers, youth and community groups with
+                practical skills, knowledge and networks that
+                strengthen agricultural productivity and resilience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. OUR AGRICULTURE APPROACH
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">2</span>
+
+        Our Agriculture Approach
+
+    </div>
+
+
+    <div class="theme-card">
+
+        <h3>
+            From Production to Sustainable Enterprise
+        </h3>
+
+        <p>
+            GADEH takes an integrated approach that goes beyond
+            agricultural production. Farmers and participants are
+            supported to understand the complete agricultural
+            value chain, from planning and production to harvesting,
+            storage, processing, marketing and reinvestment.
+        </p>
+
+        <ul>
+
+            <li>
+                Promote efficient and responsible use of land and water.
+            </li>
+
+            <li>
+                Encourage diversified and climate-resilient farming.
+            </li>
+
+            <li>
+                Strengthen farm management and record keeping.
+            </li>
+
+            <li>
+                Encourage value addition and post-harvest management.
+            </li>
+
+            <li>
+                Connect producers with markets and business opportunities.
+            </li>
+
+            <li>
+                Encourage youth participation in modern agriculture.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. PRIORITY AREAS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">3</span>
+
+        Priority Areas
+
+    </div>
+
+
+    <div class="priority-grid">
+
+        <div class="priority">
+
+            <h3>
+                Crop Production
+            </h3>
+
+            <p>
+                Improved crop planning, sustainable production
+                practices, soil management, irrigation and
+                post-harvest handling.
+            </p>
+
+        </div>
+
+
+        <div class="priority">
+
+            <h3>
+                Water-Efficient Farming
+            </h3>
+
+            <p>
+                Promote responsible water use, efficient irrigation,
+                water harvesting and technologies suitable for
+                water-stressed communities.
+            </p>
+
+        </div>
+
+
+        <div class="priority">
+
+            <h3>
+                Livestock &amp; Mixed Farming
+            </h3>
+
+            <p>
+                Encourage integrated agricultural enterprises that
+                strengthen household resilience and diversify
+                sources of income.
+            </p>
+
+        </div>
+
+
+        <div class="priority">
+
+            <h3>
+                Agribusiness
+            </h3>
+
+            <p>
+                Build entrepreneurial skills in agricultural
+                enterprises, including budgeting, pricing,
+                marketing and business planning.
+            </p>
+
+        </div>
+
+
+        <div class="priority">
+
+            <h3>
+                Value Addition
+            </h3>
+
+            <p>
+                Encourage processing, packaging, branding and
+                other approaches that increase the value and
+                marketability of agricultural products.
+            </p>
+
+        </div>
+
+
+        <div class="priority">
+
+            <h3>
+                Agricultural Markets
+            </h3>
+
+            <p>
+                Strengthen market awareness, buyer linkages,
+                collective marketing and access to relevant
+                agricultural market information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. AGRICULTURAL VALUE CHAIN
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">4</span>
+
+        Agricultural Value Chain
+
+    </div>
+
+
+    <div class="value-chain">
+
+        <div class="value-item">
+
+            <strong>Planning</strong>
+
+            <span>
+                Needs assessment, enterprise selection,
+                budgeting and production planning.
+            </span>
+
+        </div>
+
+
+        <div class="value-item">
+
+            <strong>Production</strong>
+
+            <span>
+                Climate-smart farming, irrigation,
+                crop and livestock management.
+            </span>
+
+        </div>
+
+
+        <div class="value-item">
+
+            <strong>Value Addition</strong>
+
+            <span>
+                Processing, grading, packaging,
+                storage and quality improvement.
+            </span>
+
+        </div>
+
+
+        <div class="value-item">
+
+            <strong>Markets</strong>
+
+            <span>
+                Marketing, buyer connections,
+                pricing and enterprise growth.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. CLIMATE SMART AGRICULTURE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">5</span>
+
+        Climate-Smart Agriculture
+
+    </div>
+
+
+    <div class="climate-card">
+
+        <h3>
+            Building Resilient Agricultural Communities
+        </h3>
+
+        <p>
+            GADEH promotes agricultural practices that help
+            farmers respond to changing environmental conditions
+            while improving productivity and protecting natural
+            resources.
+        </p>
+
+        <ul>
+
+            <li>
+                Water-efficient irrigation and water conservation.
+            </li>
+
+            <li>
+                Soil conservation and soil fertility management.
+            </li>
+
+            <li>
+                Crop diversification and resilient farming systems.
+            </li>
+
+            <li>
+                Agroforestry and responsible tree planting.
+            </li>
+
+            <li>
+                Integrated pest and disease management.
+            </li>
+
+            <li>
+                Sustainable use of agricultural inputs.
+            </li>
+
+            <li>
+                Climate and weather information for farm decisions.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. DIGITAL AGRICULTURE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">6</span>
+
+        Digital Agriculture &amp; Innovation
+
+    </div>
+
+
+    <div class="digital-card">
+
+        <h3>
+            Connecting Agriculture with Digital Opportunity
+        </h3>
+
+        <p>
+            Digital tools can help farmers and agricultural
+            entrepreneurs make better decisions, access
+            information and connect with markets.
+        </p>
+
+        <ul>
+
+            <li>
+                Digital agricultural advisory and information sharing.
+            </li>
+
+            <li>
+                Digital record keeping and farm management.
+            </li>
+
+            <li>
+                Market and price information.
+            </li>
+
+            <li>
+                Digital marketing for agricultural products.
+            </li>
+
+            <li>
+                Online learning and agricultural skills development.
+            </li>
+
+            <li>
+                Digital entrepreneurship for youth in agriculture.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     7. FARMER SUPPORT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">7</span>
+
+        Farmer Support &amp; Capacity Building
+
+    </div>
+
+
+    <div class="support-list">
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Practical farmer training on sustainable
+                agricultural production.
+            </span>
+
+        </div>
+
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Demonstration and learning activities for
+                climate-smart agriculture.
+            </span>
+
+        </div>
+
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Training in farm business planning and
+                agricultural entrepreneurship.
+            </span>
+
+        </div>
+
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Guidance on agricultural value addition and
+                post-harvest management.
+            </span>
+
+        </div>
+
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Digital literacy and technology skills for
+                agricultural enterprises.
+            </span>
+
+        </div>
+
+
+        <div class="support-item">
+
+            <span class="support-marker">✓</span>
+
+            <span>
+                Community-based knowledge sharing and
+                peer learning.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     8. AGRIBUSINESS DEVELOPMENT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">8</span>
+
+        Agribusiness &amp; Enterprise Development
+
+    </div>
+
+
+    <div class="two-column">
+
+        <div class="info-box">
+
+            <h3>
+                Business Skills
+            </h3>
+
+            <p>
+                Participants can develop practical knowledge in
+                business planning, costing, pricing, budgeting,
+                record keeping, customer service, marketing and
+                enterprise management.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                Market-Oriented Production
+            </h3>
+
+            <p>
+                Farmers and entrepreneurs are encouraged to
+                identify market opportunities before investing
+                in production and to consider quality,
+                consistency, demand and profitability.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                Youth Agripreneurship
+            </h3>
+
+            <p>
+                GADEH encourages young people to explore
+                agriculture as an innovative business sector
+                through technology, value addition, services
+                and modern production systems.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                Enterprise Linkages
+            </h3>
+
+            <p>
+                Partnerships and networks can help agricultural
+                enterprises access knowledge, markets, services,
+                finance opportunities and technical support.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     9. TARGET BENEFICIARIES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">9</span>
+
+        Target Beneficiaries
+
+    </div>
+
+
+    <div class="beneficiary-grid">
+
+        <div class="beneficiary">
+
+            <strong>Smallholder Farmers</strong>
+
+            <span>
+                Practical support for improved productivity,
+                resilience and income.
+            </span>
+
+        </div>
+
+
+        <div class="beneficiary">
+
+            <strong>Young Agripreneurs</strong>
+
+            <span>
+                Opportunities to build agricultural enterprises
+                and innovative businesses.
+            </span>
+
+        </div>
+
+
+        <div class="beneficiary">
+
+            <strong>Women Entrepreneurs</strong>
+
+            <span>
+                Skills and enterprise opportunities within
+                agricultural value chains.
+            </span>
+
+        </div>
+
+
+        <div class="beneficiary">
+
+            <strong>Community Groups</strong>
+
+            <span>
+                Collective learning, production and
+                community-based economic activities.
+            </span>
+
+        </div>
+
+
+        <div class="beneficiary">
+
+            <strong>Agricultural Entrepreneurs</strong>
+
+            <span>
+                Support for growth, value addition,
+                marketing and enterprise development.
+            </span>
+
+        </div>
+
+
+        <div class="beneficiary">
+
+            <strong>Students &amp; Learners</strong>
+
+            <span>
+                Exposure to practical agriculture,
+                entrepreneurship and digital skills.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     10. ENVIRONMENTAL CONSERVATION
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">10</span>
+
+        Agriculture &amp; Environmental Conservation
+
+    </div>
+
+
+    <div class="theme-card">
+
+        <h3>
+            Farming While Protecting Natural Resources
+        </h3>
+
+        <p>
+            Sustainable agriculture depends on healthy soils,
+            responsible water management, biodiversity and
+            responsible land use. GADEH integrates environmental
+            conservation into agricultural development.
+        </p>
+
+        <ul>
+
+            <li>
+                Tree planting and agroforestry initiatives.
+            </li>
+
+            <li>
+                Soil and water conservation.
+            </li>
+
+            <li>
+                Responsible management of agricultural waste.
+            </li>
+
+            <li>
+                Protection and restoration of degraded land.
+            </li>
+
+            <li>
+                Promotion of environmentally responsible
+                agricultural practices.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     11. EXPECTED OUTCOMES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">11</span>
+
+        Expected Outcomes
+
+    </div>
+
+
+    <div class="outcome-card">
+
+        <ol>
+
+            <li>
+                Increased knowledge and adoption of sustainable
+                agricultural practices.
+            </li>
+
+            <li>
+                Improved water-use efficiency in agricultural
+                production.
+            </li>
+
+            <li>
+                Stronger agricultural entrepreneurship and
+                business management skills.
+            </li>
+
+            <li>
+                Increased participation of youth and women in
+                agricultural enterprises.
+            </li>
+
+            <li>
+                Improved awareness of agricultural markets and
+                value addition opportunities.
+            </li>
+
+            <li>
+                Greater use of digital tools for agricultural
+                information and enterprise development.
+            </li>
+
+            <li>
+                Stronger community resilience and diversified
+                livelihood opportunities.
+            </li>
+
+            <li>
+                Increased awareness of environmental conservation
+                within agricultural communities.
+            </li>
+
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     12. PARTNERSHIPS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading green">
+
+        <span class="section-number">12</span>
+
+        Partnerships &amp; Collaboration
+
+    </div>
+
+
+    <div class="partnership-card">
+
+        <h3>
+            Working Together for Agricultural Development
+        </h3>
+
+        <p>
+            GADEH welcomes collaboration with farmers, community
+            organizations, government institutions, private-sector
+            actors, agricultural experts, development partners,
+            training institutions, financial service providers,
+            technology organizations and other stakeholders
+            interested in sustainable agricultural development.
+        </p>
+
+        <p>
+            Partnerships may support training, demonstrations,
+            agricultural innovation, digital solutions, market
+            linkages, environmental conservation, research,
+            entrepreneurship and community development.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     13. OUR VISION FOR AGRICULTURE
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">13</span>
+
+        Our Vision for Agriculture
+
+    </div>
+
+
+    <div class="card-grid">
+
+        <div class="card green">
+
+            <h3 class="card-title">
+                Productive
+            </h3>
+
+            <p>
+                Agriculture that enables farmers to produce
+                efficiently and sustainably.
+            </p>
+
+        </div>
+
+
+        <div class="card red">
+
+            <h3 class="card-title">
+                Profitable
+            </h3>
+
+            <p>
+                Agricultural enterprises that create income,
+                employment and viable business opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="card green">
+
+            <h3 class="card-title">
+                Resilient
+            </h3>
+
+            <p>
+                Farming systems capable of responding to
+                environmental and economic challenges.
+            </p>
+
+        </div>
+
+
+        <div class="card red">
+
+            <h3 class="card-title">
+                Inclusive
+            </h3>
+
+            <p>
+                Agricultural opportunities that meaningfully
+                involve youth, women and local communities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
+
+<div class="cta">
+
+    <strong>
+        Get Involved in Agriculture &amp; Agribusiness
+    </strong>
+
+    <p>
+        Join GADEH initiatives, training activities,
+        agricultural entrepreneurship programmes and
+        community-based efforts aimed at building sustainable
+        livelihoods through agriculture and digital innovation.
+    </p>
+
+    <a
+        href="contact.html"
+        class="cta-button"
+    >
+        Contact GADEH
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <strong>
+        GARISSA AGRO-DIGITAL EMPOWERMENT HUB (GADEH)
+    </strong>
+
+    <br>
+
+    Agriculture &amp; Agribusiness Programme
+
+    <br>
+
+    Sustainable Agriculture • Agribusiness • Digital Innovation
+    • Community Empowerment
+
+</footer>
+
+
+</div>
+
+
+</body>
+
+</html>

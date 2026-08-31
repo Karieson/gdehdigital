@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GADEH | Digital Innovation</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --corporate-red:#C00000;
+    --corporate-green:#2E7D32;
+    --corporate-black:#222222;
+
+    --white:#ffffff;
+    --border:#dddddd;
+    --light-grey:#f7f7f7;
+    --soft-red:#fff7f7;
+    --soft-green:#f7fbf7;
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:16px;
+}
+
+body{
+
+    margin:0;
+
+    background:#ffffff;
+
+    color:var(--corporate-black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:.78rem;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    width:210mm;
+
+    max-width:100%;
+
+    min-height:297mm;
+
+    margin:0 auto;
+
+    padding:1rem 1.1rem;
+
+    background:#ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+   GADEH LOGO ONLY
+========================================================= */
+
+.header{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:
+        .35rem
+        0
+        .7rem;
+
+    border-bottom:
+        .2rem solid
+        var(--corporate-red);
+}
+
+.logo{
+
+    width:5.2rem;
+
+    height:5.2rem;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =========================================================
+   DOCUMENT TITLE
+========================================================= */
+
+.document-title{
+
+    margin:
+        1rem
+        0
+        .15rem;
+
+    text-align:center;
+
+    color:var(--corporate-red);
+
+    font-size:1.05rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.02rem;
+}
+
+.document-subtitle{
+
+    margin:
+        0
+        0
+        1rem;
+
+    text-align:center;
+
+    color:#555555;
+
+    font-size:.68rem;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.introduction{
+
+    padding:
+        .75rem
+        .85rem;
+
+    margin-bottom:1rem;
+
+    background:#ffffff;
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-top:
+        .06rem solid
+        var(--border);
+
+    border-right:
+        .06rem solid
+        var(--border);
+
+    border-bottom:
+        .06rem solid
+        var(--border);
+}
+
+.introduction p{
+
+    margin:.25rem 0;
+
+    font-size:.75rem;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+
+    margin-bottom:1.1rem;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.55rem;
+
+    margin:
+        1.1rem
+        0
+        .65rem;
+
+    padding:
+        .35rem
+        .55rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    border-left:
+        .28rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .05rem solid
+        #dddddd;
+
+    background:#ffffff;
+
+    break-after:avoid;
+
+    page-break-after:avoid;
+}
+
+
+/* =========================================================
+   SECTION NUMBER
+========================================================= */
+
+.section-number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:1.55rem;
+
+    height:1.55rem;
+
+    flex-shrink:0;
+
+    border:
+        .1rem solid
+        var(--corporate-red);
+
+    color:var(--corporate-red);
+
+    font-size:.65rem;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+p{
+
+    margin:.4rem 0;
+
+    font-size:.75rem;
+}
+
+strong{
+
+    font-weight:800;
+
+    color:#111111;
+}
+
+ul{
+
+    margin:.4rem 0;
+
+    padding-left:1.25rem;
+}
+
+li{
+
+    margin:.22rem 0;
+
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   RED + GREEN FRAME CARDS
+========================================================= */
+
+.card-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.7rem;
+
+    margin-top:.55rem;
+}
+
+.card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    padding:.7rem .75rem;
+
+    border:
+        .06rem solid
+        var(--border);
+
+    border-left:
+        .22rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .16rem solid
+        var(--corporate-green);
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:.25rem;
+
+    border:
+        .04rem solid
+        rgba(46,125,50,.18);
+
+    pointer-events:none;
+}
+
+.card h3{
+
+    position:relative;
+
+    margin:
+        0
+        0
+        .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.75rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.card p{
+
+    position:relative;
+
+    margin:0;
+
+    font-size:.69rem;
+
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   FULL WIDTH CARDS
+========================================================= */
+
+.full-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    margin:.7rem 0;
+
+    padding:.75rem .85rem;
+
+    border:
+        .06rem solid
+        var(--border);
+
+    border-left:
+        .25rem solid
+        var(--corporate-red);
+
+    border-right:
+        .12rem solid
+        var(--corporate-green);
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
+}
+
+.full-card h3{
+
+    margin:
+        0
+        0
+        .35rem;
+
+    color:var(--corporate-red);
+
+    font-size:.78rem;
+
+    font-weight:900;
+}
+
+.full-card p{
+
+    font-size:.72rem;
+}
+
+
+/* =========================================================
+   DIGITAL INNOVATION AREAS
+========================================================= */
+
+.innovation-list{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.55rem .75rem;
+}
+
+.innovation-item{
+
+    background:#ffffff;
+
+    border:
+        .05rem solid
+        #dddddd;
+
+    border-left:
+        .2rem solid
+        var(--corporate-green);
+
+    padding:.55rem .65rem;
+}
+
+.innovation-item strong{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.7rem;
+
+    margin-bottom:.15rem;
+}
+
+.innovation-item span{
+
+    display:block;
+
+    font-size:.67rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   PRIORITY AREAS
+========================================================= */
+
+.priority{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap:.55rem;
+}
+
+.priority-item{
+
+    padding:.65rem;
+
+    background:var(--soft-green);
+
+    border-top:
+        .15rem solid
+        var(--corporate-green);
+
+    border-left:
+        .08rem solid
+        var(--corporate-red);
+
+    border-right:
+        .08rem solid
+        var(--corporate-red);
+
+    border-bottom:
+        .05rem solid
+        var(--border);
+
+    text-align:center;
+}
+
+.priority-item strong{
+
+    display:block;
+
+    color:var(--corporate-red);
+
+    font-size:.68rem;
+
+    margin-bottom:.2rem;
+}
+
+.priority-item span{
+
+    font-size:.63rem;
+
+    line-height:1.45;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefits{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:.55rem .8rem;
+}
+
+.benefit{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.45rem;
+
+    padding:.5rem;
+
+    background:#ffffff;
+
+    border-left:
+        .18rem solid
+        var(--corporate-green);
+
+    border-bottom:
+        .04rem solid
+        #dddddd;
+}
+
+.benefit-mark{
+
+    flex-shrink:0;
+
+    width:1.15rem;
+
+    height:1.15rem;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ffffff;
+
+    background:var(--corporate-red);
+
+    font-size:.55rem;
+
+    font-weight:900;
+}
+
+.benefit span{
+
+    font-size:.68rem;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.cta{
+
+    margin-top:1rem;
+
+    padding:.8rem .9rem;
+
+    background:#ffffff;
+
+    border:
+        .08rem solid
+        var(--corporate-green);
+
+    border-left:
+        .28rem solid
+        var(--corporate-red);
+
+    text-align:center;
+}
+
+.cta h3{
+
+    margin:
+        0
+        0
+        .3rem;
+
+    color:var(--corporate-red);
+
+    font-size:.82rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.cta p{
+
+    margin:0;
+
+    font-size:.7rem;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    margin-top:1.4rem;
+
+    padding:
+        .75rem
+        .4rem
+        .2rem;
+
+    background:#ffffff;
+
+    border-top:
+        .14rem solid
+        var(--corporate-red);
+
+    text-align:center;
+
+    color:#000000;
+
+    font-size:.65rem;
+
+    font-weight:700;
+
+    line-height:1.5;
+}
+
+.footer strong{
+
+    color:#000000;
+
+    font-size:.72rem;
+
+    font-weight:900;
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:0;
+}
+
+@media print{
+
+    html{
+
+        font-size:14px;
+    }
+
+    body{
+
+        background:#ffffff;
+
+        font-size:.68rem;
+    }
+
+    .page{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        padding:
+            10mm
+            13mm;
+
+        box-shadow:none;
+    }
+
+    .section{
+
+        break-inside:auto;
+
+        page-break-inside:auto;
+    }
+
+    .card,
+    .full-card,
+    .innovation-item,
+    .priority-item,
+    .benefit{
+
+        break-inside:avoid;
+
+        page-break-inside:avoid;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    html{
+
+        font-size:16px;
+    }
+
+    body{
+
+        font-size:.78rem;
+    }
+
+    .page{
+
+        width:100%;
+
+        padding:1rem;
+    }
+
+    .logo{
+
+        width:4.5rem;
+
+        height:4.5rem;
+    }
+
+    .document-title{
+
+        font-size:.95rem;
+    }
+
+    .card-grid,
+    .innovation-list,
+    .benefits{
+
+        grid-template-columns:1fr;
+    }
+
+    .priority{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <img
+        src="gadeh_logo.png"
+        class="logo"
+        alt="GADEH Logo"
+    >
+
+</header>
+
+
+<!-- =====================================================
+     DOCUMENT TITLE
+===================================================== -->
+
+<h1 class="document-title">
+    Digital Innovation
+</h1>
+
+<div class="document-subtitle">
+    Digital Skills • Technology • Innovation • Entrepreneurship • Community Transformation
+</div>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<div class="introduction">
+
+    <p>
+        <strong>Digital Innovation</strong> is a core program area of
+        Garissa Agro-Digital Empowerment Hub (GADEH), designed to
+        promote practical use of digital technologies, innovation and
+        entrepreneurship for inclusive community development.
+    </p>
+
+    <p>
+        GADEH seeks to equip young people, entrepreneurs, farmers,
+        community members and emerging enterprises with relevant
+        digital knowledge and practical skills that can improve
+        productivity, access to information, employment opportunities
+        and participation in the digital economy.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     1. PROGRAM OVERVIEW
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">1</span>
+
+        Program Overview
+
+    </div>
+
+    <div class="full-card">
+
+        <h3>
+            Building Digital Capacity for Inclusive Growth
+        </h3>
+
+        <p>
+            GADEH promotes digital innovation as a practical tool for
+            solving local challenges and creating new opportunities.
+            The program focuses on accessible, responsible and
+            community-oriented technology rather than technology for
+            its own sake.
+        </p>
+
+        <p>
+            Activities are designed to help participants understand,
+            use and apply digital tools in education, agriculture,
+            business, employment, communication, environmental
+            conservation and community development.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. DIGITAL INNOVATION AREAS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">2</span>
+
+        Key Digital Innovation Areas
+
+    </div>
+
+
+    <div class="innovation-list">
+
+        <div class="innovation-item">
+
+            <strong>Digital Literacy</strong>
+
+            <span>
+                Basic computer, smartphone, internet, online
+                communication, information search and digital
+                productivity skills.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Computer Skills</strong>
+
+            <span>
+                Practical training in word processing, spreadsheets,
+                presentations, file management, online services and
+                workplace digital tools.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Digital Entrepreneurship</strong>
+
+            <span>
+                Supporting participants to use digital platforms,
+                online tools and technology to start, promote and
+                grow small enterprises.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Digital Marketing</strong>
+
+            <span>
+                Building practical skills in social media,
+                digital branding, content creation, customer
+                engagement and online promotion.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Technology for Agriculture</strong>
+
+            <span>
+                Encouraging farmers and agribusinesses to use
+                digital information, mobile tools and technology
+                for better production and market access.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Online Learning</strong>
+
+            <span>
+                Promoting access to digital learning resources,
+                online courses, educational platforms and
+                self-directed skills development.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Innovation & Problem Solving</strong>
+
+            <span>
+                Encouraging young innovators to identify community
+                challenges and develop practical technology-enabled
+                solutions.
+            </span>
+
+        </div>
+
+
+        <div class="innovation-item">
+
+            <strong>Digital Safety</strong>
+
+            <span>
+                Promoting responsible internet use, privacy,
+                cybersecurity awareness, secure accounts and
+                protection of personal information.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. PRIORITY GROUPS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">3</span>
+
+        Priority Participants
+
+    </div>
+
+
+    <div class="priority">
+
+        <div class="priority-item">
+
+            <strong>Youth</strong>
+
+            <span>
+                Digital skills, innovation, employment readiness
+                and technology entrepreneurship.
+            </span>
+
+        </div>
+
+
+        <div class="priority-item">
+
+            <strong>Entrepreneurs</strong>
+
+            <span>
+                Digital business tools, marketing, online
+                customer engagement and enterprise growth.
+            </span>
+
+        </div>
+
+
+        <div class="priority-item">
+
+            <strong>Farmers</strong>
+
+            <span>
+                Digital agricultural information, market access
+                and technology-enabled farming.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. DIGITAL SKILLS TRAINING
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">4</span>
+
+        Digital Skills & Training
+
+    </div>
+
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h3>
+                Computer Fundamentals
+            </h3>
+
+            <p>
+                Introduction to computers, operating systems,
+                keyboards, file management, internet use and
+                essential workplace applications.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Office Productivity
+            </h3>
+
+            <p>
+                Practical use of word processors, spreadsheets,
+                presentations, email and digital document
+                management.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Smartphone & Internet Skills
+            </h3>
+
+            <p>
+                Effective use of smartphones, mobile applications,
+                online search, digital communication and
+                internet-based services.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Digital Content Creation
+            </h3>
+
+            <p>
+                Introduction to creating useful digital content
+                including graphics, presentations, social media
+                materials and basic multimedia communication.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. TECHNOLOGY & AGRIBUSINESS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">5</span>
+
+        Technology for Agriculture & Agribusiness
+
+    </div>
+
+
+    <div class="full-card">
+
+        <h3>
+            Connecting Digital Innovation with Agriculture
+        </h3>
+
+        <p>
+            GADEH encourages farmers and agribusiness entrepreneurs
+            to use digital technologies to improve decision-making,
+            access agricultural information and connect with markets.
+        </p>
+
+        <ul>
+
+            <li>
+                Digital access to agricultural knowledge and
+                extension information.
+            </li>
+
+            <li>
+                Mobile-based communication between farmers,
+                buyers and service providers.
+            </li>
+
+            <li>
+                Digital marketing of agricultural products.
+            </li>
+
+            <li>
+                Use of online platforms to identify markets,
+                opportunities and business information.
+            </li>
+
+            <li>
+                Digital record keeping for farms and small
+                agribusiness enterprises.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. ENTREPRENEURSHIP & INNOVATION
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">6</span>
+
+        Innovation & Digital Entrepreneurship
+
+    </div>
+
+
+    <div class="card-grid">
+
+        <div class="card">
+
+            <h3>
+                Idea Development
+            </h3>
+
+            <p>
+                Participants are encouraged to identify real
+                community problems and develop practical,
+                sustainable and technology-supported ideas.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Digital Business
+            </h3>
+
+            <p>
+                Training on using digital platforms to promote
+                products, communicate with customers and create
+                new business opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Youth Innovation
+            </h3>
+
+            <p>
+                Supporting young people to explore technology,
+                creativity and entrepreneurship as pathways to
+                employment and community impact.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Local Solutions
+            </h3>
+
+            <p>
+                Promoting affordable and locally relevant digital
+                solutions addressing agriculture, education,
+                enterprise and community challenges.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     7. EXPECTED BENEFITS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">7</span>
+
+        Expected Benefits
+
+    </div>
+
+
+    <div class="benefits">
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Improved digital literacy and confidence among
+                community members.
+            </span>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Increased access to employment, learning and
+                entrepreneurship opportunities.
+            </span>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Stronger digital capacity among small businesses
+                and emerging entrepreneurs.
+            </span>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Greater use of technology in agriculture and
+                agribusiness.
+            </span>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Increased youth participation in innovation and
+                technology-based enterprises.
+            </span>
+
+        </div>
+
+
+        <div class="benefit">
+
+            <div class="benefit-mark">✓</div>
+
+            <span>
+                Improved awareness of digital safety, privacy and
+                responsible technology use.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     8. COMMUNITY IMPACT
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">8</span>
+
+        Community Impact
+
+    </div>
+
+
+    <div class="full-card">
+
+        <h3>
+            Digital Technology for Community Transformation
+        </h3>
+
+        <p>
+            GADEH's digital innovation approach aims to ensure that
+            technology contributes directly to community resilience,
+            economic opportunity and inclusive development.
+        </p>
+
+        <p>
+            By combining digital literacy with agriculture,
+            entrepreneurship, environmental awareness and youth
+            empowerment, GADEH seeks to build a community that is
+            better equipped to participate in the modern digital
+            economy.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     9. PARTNERSHIP OPPORTUNITIES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-number">9</span>
+
+        Partnership & Collaboration
+
+    </div>
+
+
+    <div class="full-card">
+
+        <h3>
+            Working Together for Digital Inclusion
+        </h3>
+
+        <p>
+            GADEH welcomes collaboration with educational
+            institutions, technology organizations, private-sector
+            partners, development organizations, government
+            institutions and other stakeholders interested in
+            expanding digital opportunities within communities.
+        </p>
+
+        <p>
+            Potential areas of collaboration include digital skills
+            training, innovation challenges, mentorship, technology
+            access, entrepreneurship development, community digital
+            centres and technology-enabled agricultural initiatives.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
+
+<div class="cta">
+
+    <h3>
+        Join the Digital Innovation Journey
+    </h3>
+
+    <p>
+        GADEH believes that practical digital skills, innovation
+        and responsible technology can help individuals and
+        communities create opportunities, solve problems and build
+        a more resilient future.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <strong>GARISSA AGRO-DIGITAL EMPOWERMENT HUB (GADEH)</strong>
+
+    <br>
+
+    Digital Innovation Programme
+
+    <br>
+
+    Agriculture • Digital Empowerment • Entrepreneurship •
+    Environment • Youth Empowerment
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
