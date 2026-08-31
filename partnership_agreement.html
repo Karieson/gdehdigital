@@ -1027,7 +1027,211 @@ body{
         print-color-adjust:exact !important;
     }
 }
+/* =========================================================
+   A4 PORTRAIT PDF PRINT
+   VERY SMALL BOTTOM MARGIN
+========================================================= */
 
+@page {
+    size: A4 portrait;
+
+    /* top right bottom left */
+    margin: 5mm 7mm 2mm 7mm;
+}
+
+@media print {
+
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff !important;
+        color: #222222 !important;
+    }
+
+    .document {
+        width: 100%;
+        min-height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff;
+        box-shadow: none !important;
+    }
+
+    /* =====================================================
+       NATURAL PAGE FLOW
+    ===================================================== */
+
+    .section {
+        break-before: auto !important;
+        page-break-before: auto !important;
+
+        break-after: auto !important;
+        page-break-after: auto !important;
+
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+
+        margin-bottom: 1rem;
+    }
+
+    .section-heading {
+        break-before: auto !important;
+        page-break-before: auto !important;
+
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    /* =====================================================
+       KEEP SMALL FORM BLOCKS TOGETHER
+    ===================================================== */
+
+    .form-group,
+    .subsection,
+    .agreement-box,
+    .declaration,
+    .contact-box,
+    .signature-box,
+    .introduction {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* =====================================================
+       REDUCE EXCESSIVE SPACING
+    ===================================================== */
+
+    .document-header {
+        margin-bottom: 1rem;
+        padding-bottom: .6rem;
+    }
+
+    .document-title {
+        margin-bottom: .2rem;
+    }
+
+    .document-subtitle {
+        margin-bottom: .8rem;
+    }
+
+    .document-info {
+        margin-bottom: 1rem;
+    }
+
+    .introduction {
+        margin-bottom: 1rem;
+        padding: .7rem .8rem;
+    }
+
+    .section {
+        padding: .9rem 1rem 1rem;
+    }
+
+    .section-heading {
+        margin-bottom: .7rem;
+    }
+
+    .subsection {
+        margin-bottom: .7rem;
+        padding: .65rem;
+    }
+
+    .form-grid {
+        gap: .55rem .9rem;
+    }
+
+    .form-group {
+        margin-bottom: .2rem;
+    }
+
+    .agreement-box {
+        margin: .6rem 0 .7rem;
+        padding: .65rem .8rem;
+    }
+
+    .declaration {
+        margin-top: 1rem;
+        padding: .75rem;
+    }
+
+    .signature-grid {
+        gap: 1rem;
+        margin-top: .7rem;
+    }
+
+    .signature-box {
+        min-height: 8rem;
+        padding: .65rem;
+    }
+
+    .contact-box {
+        margin-top: .9rem;
+        padding: .65rem;
+    }
+
+    .document-footer {
+        margin-top: .8rem;
+        padding-top: .5rem;
+    }
+
+    /* =====================================================
+       TEXT FLOW
+    ===================================================== */
+
+    p,
+    li {
+        orphans: 2;
+        widows: 2;
+    }
+
+    /* =====================================================
+       PRESERVE CORPORATE COLOURS
+    ===================================================== */
+
+    *,
+    *::before,
+    *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* =====================================================
+       CLEAN MANUAL-FILL LINES
+    ===================================================== */
+
+    input,
+    textarea,
+    select {
+        background: #ffffff !important;
+        color: #222222 !important;
+
+        border: 1px solid #999999 !important;
+
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    textarea {
+        resize: none;
+        overflow: hidden;
+    }
+
+    /* =====================================================
+       HIDE ONLINE/SCREEN CONTROLS
+    ===================================================== */
+
+    .print-controls {
+        display: none !important;
+    }
+}
 </style>
 </head>
 
