@@ -559,7 +559,108 @@ strong{
     font-size:8.5px;
 }
 
+/* =======================================================
+   GADEH AGRICULTURE-THEMED SUBSCRIPTION CARD
+======================================================= */
 
+.subscription-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    font-size: 0.82rem;
+    color: #000000;
+}
+
+/* Agriculture-inspired inner frame */
+
+.subscription-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(46, 125, 50, 0.18);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+/* Header */
+
+.subscription-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.45rem;
+}
+
+.agri-icon {
+    font-size: 0.95rem;
+}
+
+.subscription-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #C00000;
+}
+
+/* Body */
+
+.subscription-card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.subscription-card-body p {
+    margin: 0.3rem 0;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.subscription-card-body strong {
+    font-weight: 800;
+    color: #000000;
+}
+
+/* Agriculture accent */
+
+.agri-frame {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(46, 125, 50, 0.12);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::before,
+.agri-frame::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    border: 2px solid rgba(46, 125, 50, 0.16);
+    border-radius: 100% 0;
+}
+
+.agri-frame::before {
+    top: 15px;
+    left: 18px;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::after {
+    bottom: 15px;
+    right: 12px;
+    transform: rotate(155deg);
+}
 /* =========================================================
    SCREEN RESPONSIVE
 ========================================================= */
@@ -615,8 +716,6 @@ strong{
         font-size:14px;
     }
 }
-
-
 /* =========================================================
    A4 PORTRAIT PRINT
    VERY SMALL TOP / LEFT / RIGHT / BOTTOM MARGINS
@@ -775,118 +874,12 @@ strong{
     }
 
 }
-/* =======================================================
-   GADEH AGRICULTURE-THEMED SUBSCRIPTION CARD
-======================================================= */
-
-.subscription-card {
-    position: relative;
-    background: #ffffff;
-    border: 1px solid #dcdcdc;
-    border-left: 5px solid var(--red);
-    border-radius: 8px;
-    margin: 1rem 0;
-    padding: 0.9rem 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-    overflow: hidden;
-    font-size: 0.82rem;
-    color: #000000;
-}
-
-/* Agriculture-inspired inner frame */
-
-.subscription-card::before {
-    content: "";
-    position: absolute;
-    inset: 5px;
-    border: 1px solid rgba(46, 125, 50, 0.18);
-    border-radius: 5px;
-    pointer-events: none;
-}
-
-/* Header */
-
-.subscription-card-header {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 0.45rem;
-}
-
-.agri-icon {
-    font-size: 0.95rem;
-}
-
-.subscription-title {
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #C00000;
-}
-
-/* Body */
-
-.subscription-card-body {
-    position: relative;
-    z-index: 1;
-}
-
-.subscription-card-body p {
-    margin: 0.3rem 0;
-    line-height: 1.55;
-    font-weight: 600;
-}
-
-.subscription-card-body strong {
-    font-weight: 800;
-    color: #000000;
-}
-
-/* Agriculture accent */
-
-.agri-frame {
-    position: absolute;
-    right: -20px;
-    bottom: -20px;
-    width: 70px;
-    height: 70px;
-    border: 2px solid rgba(46, 125, 50, 0.12);
-    border-radius: 50%;
-    transform: rotate(-25deg);
-}
-
-.agri-frame::before,
-.agri-frame::after {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 11px;
-    border: 2px solid rgba(46, 125, 50, 0.16);
-    border-radius: 100% 0;
-}
-
-.agri-frame::before {
-    top: 15px;
-    left: 18px;
-    transform: rotate(-25deg);
-}
-
-.agri-frame::after {
-    bottom: 15px;
-    right: 12px;
-    transform: rotate(155deg);
-}
 
 </style>
 </head>
 
 
 <body>
-
-
-
-
 
 <!-- =======================================================
      A4 DOCUMENT
