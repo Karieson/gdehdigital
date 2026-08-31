@@ -4,157 +4,335 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta name="description"
+      content="GADEH Membership Application Form - Offline Printable Form">
+
 <title>GADEH | Membership Application Form</title>
 
 <style>
 
 /* =========================================================
    GADEH MEMBERSHIP APPLICATION FORM
-   A4 PORTRAIT • PRINT READY • MANUAL APPLICATION
+   OFFLINE • HAND-FILLED • A4 PORTRAIT • PDF PRINT READY
 ========================================================= */
 
 :root{
-    --red:#C00000;
-    --dark:#222;
-    --grey:#666;
-    --border:#999;
-    --light:#f5f5f5;
-    --white:#fff;
+    --corporate-red:#C00000;
+    --black:#222222;
+    --dark:#333333;
+    --grey:#666666;
+    --border:#999999;
+    --light:#F5F5F5;
+    --white:#FFFFFF;
 }
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
 
 *{
     box-sizing:border-box;
 }
 
-body{
-    margin:0;
-    padding:20px;
-    background:#e9e9e9;
-    color:var(--dark);
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:12px;
-    line-height:1.45;
+html{
+    font-size:10px;
 }
 
+body{
+    margin:0;
+    padding:12px;
+    background:#E9E9E9;
+
+    color:var(--black);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:10px;
+    line-height:1.35;
+
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+}
+
+
+/* =========================================================
+   PRINT BUTTON
+========================================================= */
+
+.print-controls{
+    width:210mm;
+    margin:0 auto 10px;
+
+    display:flex;
+    justify-content:flex-end;
+}
+
+.print-btn{
+    border:0;
+
+    padding:8px 18px;
+
+    background:var(--corporate-red);
+    color:#fff;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    border-radius:3px;
+}
+
+.print-btn:hover{
+    background:#8B0000;
+}
+
+
+/* =========================================================
+   A4 DOCUMENT
+========================================================= */
+
 .document{
+
     width:210mm;
     min-height:297mm;
-    margin:auto;
-    padding:14mm 15mm;
-    background:#fff;
-    box-shadow:0 0 8px rgba(0,0,0,.15);
+
+    margin:0 auto;
+
+    padding:
+        6mm
+        7mm
+        2mm
+        7mm;
+
+    background:var(--white);
+
+    box-shadow:
+        0 0 8px rgba(0,0,0,.15);
+
+    position:relative;
 }
+
 
 /* =========================================================
    HEADER
 ========================================================= */
 
 .header{
+
     display:flex;
+
     align-items:center;
-    gap:15px;
-    padding-bottom:10px;
-    border-bottom:4px solid var(--red);
+
+    justify-content:center;
+
+    min-height:52px;
+
+    padding-bottom:6px;
+
+    border-bottom:
+        2px solid var(--corporate-red);
+
+    margin-bottom:7px;
+
+    break-inside:avoid;
+    page-break-inside:avoid;
 }
 
+
+/* =========================================================
+   LOGO
+========================================================= */
+
 .logo-box{
-    width:72px;
-    height:72px;
-    border:1px solid #ccc;
+
+    width:58px;
+    height:58px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    flex-shrink:0;
+
     overflow:hidden;
+
+    flex-shrink:0;
 }
 
 .logo-box img{
+
     width:100%;
     height:100%;
+
     object-fit:contain;
+
+    display:block;
 }
 
-.header-info{
-    flex:1;
-    text-align:center;
-}
 
-.organization{
-    font-size:20px;
-    font-weight:800;
-    color:var(--red);
-    letter-spacing:.4px;
-}
-
-.subtitle{
-    font-size:12px;
-    font-weight:bold;
-    margin-top:2px;
-}
-
-.contact{
-    font-size:10px;
-    margin-top:4px;
-    color:#444;
-}
+/* =========================================================
+   TITLE
+========================================================= */
 
 .form-title{
+
     text-align:center;
-    margin:13px 0 4px;
-    font-size:18px;
+
+    color:var(--corporate-red);
+
+    font-size:16px;
+
     font-weight:800;
-    color:#111;
+
     text-transform:uppercase;
+
+    letter-spacing:.2px;
+
+    margin:
+        7px 0
+        2px;
 }
 
 .form-subtitle{
+
     text-align:center;
-    font-size:10px;
-    color:#555;
-    margin-bottom:13px;
+
+    color:var(--black);
+
+    font-size:9px;
+
+    margin:
+        0 0
+        8px;
 }
+
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
+.section{
+
+    margin-bottom:7px;
+
+    break-inside:auto;
+
+    page-break-inside:auto;
+}
+
+
 /* =========================================================
-   SECTION TITLES
-   CORPORATE RED LEFT VERTICAL BAR
+   SECTION TITLE
+   SLIM CORPORATE RED LEFT BAR
 ========================================================= */
 
 .section-title{
+
+    color:var(--corporate-red);
+
     background:#fff;
-    color:var(--red);
-    border-left:5px solid var(--red);
-    padding:7px 10px;
-    font-size:12px;
+
+    border-left:
+        3px solid var(--corporate-red);
+
+    border-bottom:
+        1px solid #D5D5D5;
+
+    padding:
+        4px
+        7px;
+
+    font-size:10px;
+
     font-weight:800;
+
     text-transform:uppercase;
-    letter-spacing:.2px;
+
+    letter-spacing:.15px;
+
+    margin-bottom:5px;
+
+    break-after:avoid;
+
+    page-break-after:avoid;
 }
 
-.section-body{
-    padding:9px;
-}
 
 /* =========================================================
-   MANUAL FIELDS
+   SECTION BODY
+========================================================= */
+
+.section-body{
+
+    padding:
+        2px
+        5px
+        3px;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p{
+
+    margin:
+        0 0
+        5px;
+
+    color:var(--black);
+
+    font-size:9px;
+
+    line-height:1.4;
+
+    text-align:justify;
+}
+
+strong{
+    color:var(--black);
+    font-weight:700;
+}
+
+
+/* =========================================================
+   MANUAL HANDWRITING FIELDS
 ========================================================= */
 
 .field{
-    margin-bottom:9px;
+
+    margin-bottom:6px;
+
+    break-inside:avoid;
+    page-break-inside:avoid;
 }
 
 .field-label{
-    font-weight:bold;
+
     display:block;
-    margin-bottom:4px;
+
+    color:var(--black);
+
+    font-size:8.5px;
+
+    font-weight:700;
+
+    margin-bottom:2px;
 }
 
 .line{
-    height:23px;
-    border-bottom:1px solid #555;
+
+    height:19px;
+
+    width:100%;
+
+    border-bottom:
+        1px solid #555;
 }
 
 .line.short{
@@ -165,208 +343,611 @@ body{
     width:70%;
 }
 
+
+/* =========================================================
+   FIELD ROWS
+========================================================= */
+
 .field-row{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+    margin-bottom:0;
 }
 
 .field-row.three{
-    grid-template-columns:1fr 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap:10px;
 }
+
 
 /* =========================================================
    CHECKBOXES
 ========================================================= */
 
 .category-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px 20px;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        5px 18px;
+
+    margin-top:4px;
 }
 
 .check-item{
+
     display:flex;
-    align-items:center;
-    gap:7px;
+
+    align-items:flex-start;
+
+    gap:6px;
+
+    color:var(--black);
+
+    font-size:9px;
+
+    line-height:1.3;
+
+    break-inside:avoid;
+    page-break-inside:avoid;
 }
 
 .checkbox{
-    width:15px;
-    height:15px;
-    border:1.3px solid #333;
+
+    width:12px;
+    height:12px;
+
+    border:
+        1px solid #333;
+
     display:inline-block;
+
     flex-shrink:0;
+
+    margin-top:1px;
+
+    background:#fff;
 }
+
 
 /* =========================================================
    DECLARATION
 ========================================================= */
 
 .declaration{
-    text-align:justify;
-    line-height:1.55;
+
+    border-left:
+        3px solid var(--corporate-red);
+
+    padding-left:8px;
 }
 
 .declaration-list{
-    margin:7px 0;
-    padding-left:20px;
+
+    margin:
+        5px 0
+        5px;
+
+    padding-left:17px;
 }
 
 .declaration-list li{
-    margin-bottom:4px;
+
+    margin-bottom:2px;
+
+    font-size:9px;
 }
 
+
 /* =========================================================
-   SIGNATURE
+   SIGNATURE AREA
 ========================================================= */
 
 .signature-grid{
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
 }
 
 .signature-box{
-    height:55px;
-    border-bottom:1px solid #444;
-    margin-top:15px;
+
+    height:38px;
+
+    border-bottom:
+        1px solid #444;
+
+    margin-top:4px;
 }
 
 .signature-label{
-    font-size:10px;
-    color:#555;
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--grey);
+
+    font-size:8px;
 }
 
+
 /* =========================================================
-   OFFICE USE
+   OFFICIAL USE TABLE
 ========================================================= */
 
 .office-table{
+
     width:100%;
+
     border-collapse:collapse;
+
+    font-size:8.5px;
 }
 
 .office-table td{
-    border:1px solid #999;
-    padding:7px;
-    height:32px;
+
+    border:
+        1px solid #999;
+
+    padding:
+        4px 6px;
+
+    height:25px;
+
+    vertical-align:middle;
 }
 
 .office-label{
+
     width:35%;
-    font-weight:bold;
-    background:#f5f5f5;
+
+    font-weight:700;
+
+    background:var(--light);
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer{
-    margin-top:15px;
-    padding-top:8px;
-    border-top:2px solid var(--red);
+
+    margin-top:6px;
+
+    padding-top:4px;
+
+    border-top:
+        1px solid var(--corporate-red);
+
     text-align:center;
-    font-size:9px;
-    color:#555;
+
+    color:var(--black);
+
+    font-size:7.5px;
+
+    line-height:1.3;
+
+    font-weight:700;
+
+    break-inside:avoid;
+
+    page-break-inside:avoid;
 }
 
 .footer strong{
-    color:var(--red);
+
+    color:var(--corporate-red);
+
+    font-size:8.5px;
 }
+
 
 /* =========================================================
-   PRINT
+   SCREEN RESPONSIVE
 ========================================================= */
 
-.print-controls{
-    width:210mm;
-    margin:0 auto 12px;
-    text-align:right;
-}
-
-.print-btn{
-    background:var(--red);
-    color:#fff;
-    border:0;
-    padding:9px 18px;
-    font-weight:bold;
-    cursor:pointer;
-    border-radius:3px;
-}
-
-.print-btn:hover{
-    background:#900000;
-}
-
-@page{
-    size:A4 portrait;
-    margin:0;
-}
-
-@media print{
+@media(max-width:900px){
 
     body{
-        background:#fff;
         padding:0;
-    }
-
-    .document{
-        width:210mm;
-        min-height:297mm;
-        margin:0;
-        padding:14mm 15mm;
-        box-shadow:none;
+        background:#fff;
     }
 
     .print-controls{
-        display:none;
+        width:100%;
+        padding:8px;
+        margin:0;
     }
+
+    .document{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:
+            8px
+            8px
+            4px;
+
+        box-shadow:none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:550px){
+
+    .field-row,
+    .field-row.three,
+    .signature-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .form-title{
+        font-size:14px;
+    }
+}
+
+
+/* =========================================================
+   A4 PORTRAIT PRINT
+   VERY SMALL TOP / LEFT / RIGHT / BOTTOM MARGINS
+========================================================= */
+
+@page{
+
+    size:A4 portrait;
+
+    margin:
+        3mm
+        4mm
+        1mm
+        4mm;
+}
+
+
+/* =========================================================
+   PRINT MODE
+========================================================= */
+
+@media print{
+
+    html,
+    body{
+
+        width:210mm;
+
+        margin:0;
+        padding:0;
+
+        background:#fff;
+
+        font-size:10px;
+    }
+
+    .print-controls{
+        display:none !important;
+    }
+
+    .document{
+
+        width:210mm;
+
+        min-height:0;
+
+        margin:0;
+
+        padding:
+            3mm
+            4mm
+            1mm
+            4mm;
+
+        background:#fff;
+
+        box-shadow:none;
+    }
+
+
+    /* -----------------------------------------------------
+       NATURAL PAGE FLOW
+    ----------------------------------------------------- */
 
     .section{
-        break-inside:avoid;
+
+        break-before:auto;
+
+        page-break-before:auto;
+
+        break-after:auto;
+
+        page-break-after:auto;
+
+        break-inside:auto;
+
+        page-break-inside:auto;
     }
 
-    .header{
+
+    /* -----------------------------------------------------
+       KEEP SMALL ELEMENTS TOGETHER
+    ----------------------------------------------------- */
+
+    .header,
+    .section-title,
+    .field,
+    .check-item,
+    .signature-grid,
+    .office-table,
+    .footer{
+
         break-inside:avoid;
+
+        page-break-inside:avoid;
     }
 
+
+    /* -----------------------------------------------------
+       PREVENT LARGE EMPTY BOTTOM AREA
+    ----------------------------------------------------- */
+
+    .section{
+
+        margin-bottom:6px;
+    }
+
+    .section-body{
+
+        padding-bottom:2px;
+    }
+
+    .footer{
+
+        margin-bottom:0;
+    }
+
+
+    /* -----------------------------------------------------
+       TEXT FLOW
+    ----------------------------------------------------- */
+
+    p,
+    li{
+
+        orphans:2;
+        widows:2;
+    }
+
+
+    /* -----------------------------------------------------
+       CLEAN PRINTING
+    ----------------------------------------------------- */
+
+    *,
+    *::before,
+    *::after{
+
+        -webkit-print-color-adjust:exact !important;
+
+        print-color-adjust:exact !important;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT ONLY — HIDE URLS
+========================================================= */
+
+@media print{
+
+    a{
+        color:inherit;
+        text-decoration:none;
+    }
+
+}
+/* =======================================================
+   GADEH AGRICULTURE-THEMED SUBSCRIPTION CARD
+======================================================= */
+
+.subscription-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 0.9rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    font-size: 0.82rem;
+    color: #000000;
+}
+
+/* Agriculture-inspired inner frame */
+
+.subscription-card::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(46, 125, 50, 0.18);
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+/* Header */
+
+.subscription-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.45rem;
+}
+
+.agri-icon {
+    font-size: 0.95rem;
+}
+
+.subscription-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #C00000;
+}
+
+/* Body */
+
+.subscription-card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.subscription-card-body p {
+    margin: 0.3rem 0;
+    line-height: 1.55;
+    font-weight: 600;
+}
+
+.subscription-card-body strong {
+    font-weight: 800;
+    color: #000000;
+}
+
+/* Agriculture accent */
+
+.agri-frame {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(46, 125, 50, 0.12);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::before,
+.agri-frame::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    border: 2px solid rgba(46, 125, 50, 0.16);
+    border-radius: 100% 0;
+}
+
+.agri-frame::before {
+    top: 15px;
+    left: 18px;
+    transform: rotate(-25deg);
+}
+
+.agri-frame::after {
+    bottom: 15px;
+    right: 12px;
+    transform: rotate(155deg);
 }
 
 </style>
 </head>
+
 
 <body>
 
 
 
 
+
 <!-- =======================================================
-     DOCUMENT
+     A4 DOCUMENT
 ======================================================= -->
 
 <div class="document">
 
-    <!-- HEADER -->
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
 
     <header class="header">
 
         <div class="logo-box">
-            <img src="gadeh_logo.png" alt="GADEH Logo">
+
+            <img
+                src="gadeh_logo.png"
+                alt="GADEH Logo"
+            >
+
         </div>
 
-        
-
     </header>
+<!-- =======================================================
+     GADEH MEMBERSHIP SUBSCRIPTION FEE NOTICE
+======================================================= -->
 
+<div class="subscription-card">
 
-    <div class="form-title">
-        Membership Application Form
+    <div class="subscription-card-header">
+        <span class="agri-icon">🌱</span>
+        <span class="subscription-title">
+            <strong>Important:</strong>
+        </span>
     </div>
 
+    <div class="subscription-card-body">
+
+        <p>
+            A <strong>membership subscription fee of KSh 500</strong>
+            is applicable to all GADEH membership applicants.
+        </p>
+
+        <p>
+            Please ensure that the required subscription fee is paid
+            according to the approved GADEH payment procedures.
+        </p>
+
+    </div>
+
+    <!-- ===================================================
+         FORM TITLE
+    ==================================================== -->
+
+    <h1 class="form-title">
+        Membership Application Form
+    </h1>
+
     <div class="form-subtitle">
-        Please complete this form clearly in BLOCK LETTERS and submit it to GADEH
+        Please complete this form clearly in BLOCK LETTERS and submit it to GADEH.
     </div>
 
 
@@ -563,7 +1144,7 @@ body{
 
                 <div class="check-item">
                     <span class="checkbox"></span>
-                    Agriculture & Agro-Entrepreneurship
+                    Agriculture &amp; Agro-Entrepreneurship
                 </div>
 
                 <div class="check-item">
@@ -578,7 +1159,7 @@ body{
 
                 <div class="check-item">
                     <span class="checkbox"></span>
-                    Entrepreneurship & Skills
+                    Entrepreneurship &amp; Skills
                 </div>
 
                 <div class="check-item">
@@ -593,7 +1174,7 @@ body{
 
                 <div class="check-item">
                     <span class="checkbox"></span>
-                    Training & Capacity Building
+                    Training &amp; Capacity Building
                 </div>
 
                 <div class="check-item">
@@ -649,6 +1230,7 @@ body{
                 </span>
 
                 <div class="line"></div>
+
                 <div class="line"></div>
 
             </div>
@@ -711,15 +1293,26 @@ body{
                 application does not automatically constitute membership.
             </p>
 
+
             <div class="check-item">
+
                 <span class="checkbox"></span>
+
                 I agree to the GADEH membership terms and requirements.
+
             </div>
 
-            <div class="check-item" style="margin-top:7px;">
+
+            <div
+                class="check-item"
+                style="margin-top:5px;"
+            >
+
                 <span class="checkbox"></span>
+
                 I consent to the lawful use of my information for
                 membership administration and organizational purposes.
+
             </div>
 
         </div>
@@ -728,7 +1321,7 @@ body{
 
 
     <!-- ===================================================
-         7. SIGNATURE
+         7. APPLICANT SIGNATURE
     ==================================================== -->
 
     <section class="section">
@@ -751,6 +1344,7 @@ body{
 
                 </div>
 
+
                 <div>
 
                     <div class="signature-box"></div>
@@ -769,7 +1363,7 @@ body{
 
 
     <!-- ===================================================
-         8. FOR OFFICIAL USE
+         8. OFFICIAL USE
     ==================================================== -->
 
     <section class="section">
@@ -783,56 +1377,85 @@ body{
             <table class="office-table">
 
                 <tr>
+
                     <td class="office-label">
                         Application Reference No.
                     </td>
+
                     <td></td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
                         Date Received
                     </td>
+
                     <td></td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
                         Membership Category Approved
                     </td>
+
                     <td></td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
                         Membership No.
                     </td>
+
                     <td></td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
                         Application Status
                     </td>
+
                     <td>
-                        ☐ Approved &nbsp;&nbsp;
-                        ☐ Pending &nbsp;&nbsp;
+                        ☐ Approved
+                        &nbsp;&nbsp;&nbsp;
+                        ☐ Pending
+                        &nbsp;&nbsp;&nbsp;
                         ☐ Rejected
                     </td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
                         Reviewed / Approved By
                     </td>
+
                     <td></td>
+
                 </tr>
 
+
                 <tr>
+
                     <td class="office-label">
-                        Signature & Date
+                        Signature &amp; Date
                     </td>
+
                     <td></td>
+
                 </tr>
 
             </table>
@@ -856,20 +1479,30 @@ body{
 
     </footer>
 
+
 </div>
 
 
 <!-- =======================================================
-     PRINT JAVASCRIPT
+     JAVASCRIPT
 ======================================================= -->
 
 <script>
 
-function printMembershipForm(){
-    window.print();
-}
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        window.print();
+
+    }, 800);
+
+});
 
 </script>
+
+
+
 
 </body>
 </html>
