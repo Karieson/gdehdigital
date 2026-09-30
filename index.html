@@ -785,171 +785,239 @@ header{
 }
 
 
-/* =====================================
-   CORPORATE RED + WHITE CARD
-   RESPONSIVE WIDTH
-====================================== */
+/* =========================================
+   CTA — WHITE 3D CARD
+========================================= */
 
-.admissions-card {
-    position: relative;
-
-    width: min(650px, calc(100% - 10px));
-    max-width: 650px;
-
-    margin: 0 auto;
-    padding: 25px 22px 24px;
-
-    box-sizing: border-box;
-
-    background: #ffffff;
-    color: #222222;
-
-    border: 2px solid var(--corporate-red);
-    border-radius: 14px;
-
-    /* OUTER CORPORATE RED GLOW */
-    box-shadow:
-        0 0 7px rgba(192, 0, 0, .65),
-        0 0 18px rgba(192, 0, 0, .38),
-        0 0 35px rgba(192, 0, 0, .18);
-
-    overflow: hidden;
+.admissions-section {
+  background: #ffffff;
+  padding: 70px 20px;
 }
 
+.cta-card {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 45px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
 
-/* =====================================
-   CORPORATE RED INNER FRAME
-====================================== */
+  background: #ffffff;
+  color: #222222;
 
-.admissions-card::before {
-    content: "";
+  border: 1px solid #e8e8e8;
+  border-radius: 24px;
 
-    position: absolute;
-    inset: 7px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 25px 60px rgba(0, 0, 0, 0.06);
 
-    border: 1px solid rgba(192, 0, 0, .45);
-    border-radius: 10px;
+  overflow: hidden;
 
-    box-shadow:
-        inset 0 0 8px rgba(192, 0, 0, .08);
-
-    pointer-events: none;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
 
-/* =====================================
-   TOP RED GLOW LINE
-====================================== */
-
-.admissions-card::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 8%;
-    right: 8%;
-
-    height: 3px;
-
-    background: var(--corporate-red);
-
-    box-shadow:
-        0 0 7px rgba(192, 0, 0, .8),
-        0 0 16px rgba(192, 0, 0, .45);
-
-    border-radius: 0 0 5px 5px;
-
-    pointer-events: none;
+  background: #c00000;
 }
 
+.cta-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -80px;
+  top: -80px;
 
-/* =====================================
-   SMALL SCREEN
-====================================== */
-
-@media (max-width: 600px) {
-
-    .admissions-section {
-        width: 100%;
-        padding: 20px 8px;
-        box-sizing: border-box;
-    }
-
-    .admissions-card {
-        width: calc(100% - 4px);
-        max-width: 100%;
-        margin: 0 auto;
-
-        padding: 21px 14px 20px;
-
-        border-width: 1.5px;
-        border-radius: 12px;
-
-        box-shadow:
-            0 0 6px rgba(192, 0, 0, .55),
-            0 0 15px rgba(192, 0, 0, .30),
-            0 0 25px rgba(192, 0, 0, .15);
-    }
-
-    .admissions-card::before {
-        inset: 5px;
-        border-radius: 8px;
-    }
-
-    .admissions-card::after {
-        left: 12%;
-        right: 12%;
-        height: 2px;
-    }
+  background: rgba(192, 0, 0, 0.04);
+  border-radius: 50%;
 }
 
+.cta-card:hover {
+  transform: translateY(-8px);
 
-/* =====================================
-   VERY SMALL PHONES
-====================================== */
-
-@media (max-width: 380px) {
-
-    .admissions-section {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .admissions-card {
-        width: 100%;
-        padding: 19px 11px 18px;
-        border-radius: 10px;
-    }
-
-    .admissions-card::before {
-        inset: 4px;
-        border-radius: 7px;
-    }
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.10),
+    0 35px 70px rgba(0, 0, 0, 0.08);
 }
 
-/* =====================================
-   TOP RED GLOW LINE
-====================================== */
+.cta-icon {
+  position: relative;
+  z-index: 2;
 
-.admissions-card::after {
-    content: "";
+  min-width: 90px;
+  width: 90px;
+  height: 90px;
 
-    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    top: 0;
-    left: 8%;
-    right: 8%;
+  background: #222222;
+  color: #ffffff;
 
-    height: 3px;
+  border-radius: 22px;
 
-    background: var(--corporate-red);
+  font-size: 38px;
 
-    box-shadow:
-        0 0 7px rgba(192, 0, 0, .8),
-        0 0 16px rgba(192, 0, 0, .45);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 
-    border-radius: 0 0 5px 5px;
+.cta-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.cta-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  color: #c00000;
+}
+
+.cta-content h2 {
+  margin: 0 0 12px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #222222;
+}
+
+.cta-content p {
+  margin: 0 0 25px;
+
+  max-width: 720px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #555555;
+}
+
+.cta-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.cta-detail {
+  min-width: 145px;
+  padding: 13px 17px;
+
+  background: #f7f7f7;
+
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+}
+
+.cta-detail strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 14px;
+  color: #222222;
+}
+
+.cta-detail span {
+  font-size: 12px;
+  color: #777777;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 25px;
+
+  background: #222222;
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.16);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #c00000;
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(192, 0, 0, 0.20);
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .admissions-section {
+    padding: 50px 15px;
+  }
+
+  .cta-card {
+    padding: 30px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cta-icon {
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .cta-content h2 {
+    font-size: 25px;
+  }
+
+  .cta-details {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-detail {
+    width: 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
 }
 
 
@@ -1242,12 +1310,11 @@ header{
 
     .admissions-card {
         padding: 22px 16px;
-        border-radius: 12px;
-
+        border-radius: 14px;
         box-shadow:
-            0 0 6px rgba(192, 0, 0, .55),
-            0 0 15px rgba(192, 0, 0, .3),
-            0 0 25px rgba(192, 0, 0, .15);
+            0 2px 5px rgba(0,0,0,.05),
+            0 10px 22px rgba(0,0,0,.10),
+            0 20px 38px rgba(0,0,0,.07);
     }
 
     .admissions-title {
@@ -1351,7 +1418,246 @@ header{
     text-transform:uppercase;
     text-align:center;
 }
+/* =========================================================
+   STAND-ALONE CONTACT CTA CARD
+========================================================= */
 
+.contact-cta-section {
+    width: 100%;
+    padding: 55px 20px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.contact-cta-card {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+
+    padding: 45px 40px;
+
+    background: #ffffff;
+    color: #222222;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.07),
+        0 25px 55px rgba(0, 0, 0, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Top accent */
+.contact-cta-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: #c00000;
+}
+
+/* Decorative 3D circle */
+.contact-cta-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -85px;
+    top: -85px;
+
+    background: rgba(192, 0, 0, 0.035);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.contact-cta-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.10),
+        0 35px 70px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.contact-cta-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.contact-cta-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #c00000;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.contact-cta-content h2 {
+    margin: 0 0 14px;
+
+    color: #222222;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+.contact-cta-content p {
+    max-width: 680px;
+    margin: 0 auto 28px;
+
+    color: #666666;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.contact-cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.contact-cta-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Email button */
+.contact-cta-email {
+    background: #222222;
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.15);
+}
+
+.contact-cta-email:hover {
+    background: #c00000;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(192, 0, 0, 0.20);
+}
+
+
+/* Call button */
+.contact-cta-call {
+    background: #ffffff;
+    color: #222222;
+
+    border: 1px solid #222222;
+}
+
+.contact-cta-call:hover {
+    background: #222222;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-cta-section {
+        padding: 45px 15px;
+    }
+
+    .contact-cta-card {
+        padding: 35px 22px;
+
+        border-radius: 20px;
+    }
+
+    .contact-cta-content h2 {
+        font-size: 24px;
+    }
+
+    .contact-cta-content p {
+        font-size: 13px;
+    }
+
+    .contact-cta-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .contact-cta-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
 /* =====================================
    GADEH FOOTER
 ====================================== */
@@ -2218,6 +2524,192 @@ header{
 
 }
 
+
+/* =========================================================
+   FAQ + SUGGESTIONS
+========================================================= */
+
+.faq-section,
+.suggestions-section {
+    width: 100%;
+    padding: 35px 15px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.faq-container,
+.suggestions-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-heading,
+.suggestions-heading {
+    margin: 0 0 8px;
+    text-align: center;
+    color: var(--red);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.faq-intro,
+.suggestions-intro {
+    max-width: 650px;
+    margin: 0 auto 22px;
+    text-align: center;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.faq-item {
+    margin-bottom: 9px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.04), 0 7px 16px rgba(0,0,0,.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 16px;
+    border: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    color: var(--red);
+}
+
+.faq-icon {
+    flex: 0 0 auto;
+    color: var(--red);
+    font-size: 17px;
+    font-weight: 800;
+    transition: transform .2s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 16px 15px;
+    color: #555555;
+    font-size: 11px;
+    line-height: 1.75;
+}
+
+.suggestions-card {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.04), 0 10px 25px rgba(0,0,0,.08);
+}
+
+.suggestion-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #222222;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.suggestion-input,
+.suggestion-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    margin-bottom: 13px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #222222;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    outline: none;
+}
+
+.suggestion-input:focus,
+.suggestion-textarea:focus {
+    border-color: var(--red);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(192,0,0,.08);
+}
+
+.suggestion-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.suggestion-btn {
+    display: block;
+    margin: 2px auto 0;
+    padding: 10px 22px;
+    border: 0;
+    border-radius: 22px;
+    background: var(--red);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(192,0,0,.18);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.suggestion-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(192,0,0,.22);
+}
+
+.suggestion-note {
+    margin: 12px 0 0;
+    text-align: center;
+    color: #888888;
+    font-size: 9.5px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .faq-section,
+    .suggestions-section {
+        padding: 28px 10px;
+    }
+
+    .faq-heading,
+    .suggestions-heading {
+        font-size: 24px;
+    }
+
+    .faq-question {
+        padding: 13px 12px;
+        font-size: 11px;
+    }
+
+    .faq-answer {
+        padding: 0 12px 13px;
+        font-size: 10.5px;
+    }
+
+    .suggestions-card {
+        padding: 17px 14px;
+        border-radius: 13px;
+    }
+}
+
 </style>
 </head>
 
@@ -2282,56 +2774,66 @@ header{
 
 </section>
 
-<!-- =====================================
-     ADMISSIONS / CTA CARD
-====================================== --><section class="admissions-section"><div class="admissions-card">
+<!-- =========================================
+     ADMISSIONS CTA — WHITE 3D CARD
+========================================= -->
 
-    <div class="admissions-glow"></div>
+<section class="section admissions-section">
 
-    <h2 class="admissions-title">Admissions Now Open</h2>
+  <div class="cta-card">
 
-    <p class="admissions-text">
+    <div class="cta-icon">🎓</div>
+
+    <div class="cta-content">
+
+      <span class="cta-label">ADMISSIONS NOW OPEN</span>
+
+      <h2>Learn. Innovate. Grow.</h2>
+
+      <p>
         Your opportunity to learn, innovate and build practical skills
-        starts here.
-    </p>
+        starts here. Join Garissa Agro-Digital Empowerment Hub and
+        take the next step toward your future.
+      </p>
 
-    <div class="admissions-note">
+      <div class="cta-details">
 
-        <strong>🌱 Learn. Innovate. Grow.</strong>
+        <div class="cta-detail">
+          <strong>KES 1,500</strong>
+          <span>Registration</span>
+        </div>
 
-        <p>
-            Step into a practical learning experience designed to help
-            you develop valuable <b>digital, technology and
-            entrepreneurship skills</b> for today's opportunities and
-            tomorrow's future.
-        </p>
+        <div class="cta-detail">
+          <strong>Certificate</strong>
+          <span>Of Completion</span>
+        </div>
 
-        <p class="admission-highlight">
-            <span>💚 Register today for only</span>
-            <strong>KES 1,500</strong>
-        </p>
+        <div class="cta-detail">
+          <strong>Practical Skills</strong>
+          <span>Hands-on Learning</span>
+        </div>
 
-        <p>
-            Your registration includes access to the programme and a
-            <b>Certificate of Completion</b> upon successfully completing
-            the required learning activities.
-        </p>
+      </div>
 
-        <p class="admission-final">
-            Don't just prepare for the future — <b>build it.</b>
-            Take your first step with GADEH today.
-        </p>
+      <a
+        href="https://gdehexm.onrender.com/apply.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-button"
+      >
+        Apply Now →
+      </a>
 
     </div>
 
-    <a href="https://gdehexm.onrender.com/apply.html"
-       class="apply-btn">
-        Apply Now 
-    </a>
-
-</div>
+  </div>
 
 </section>
+        
+
+        
+
+    
 <section class="orange-section">
 
     <div class="link-section">
@@ -2397,137 +2899,137 @@ header{
 
 
         <!-- =================================================
-             DOWNLOADS
-        ================================================== -->
+     DOWNLOADS — TEMPORARILY DISABLED
+================================================== -->
 
-        <div class="resource-group">
+<div class="resource-group">
 
-            <button
-                class="resource-link"
-                type="button"
-                aria-expanded="false"
-                aria-controls="downloadsMenu"
-            >
-                <span class="resource-bullet">•</span>
-               Downloads
-            </button>
+    <button
+        class="resource-link"
+        type="button"
+        aria-expanded="false"
+        aria-controls="downloadsMenu"
+    >
+        <span class="resource-bullet">•</span>
+        Downloads
+    </button>
 
-            <div
-                class="resource-content"
-                id="downloadsMenu"
-                hidden
-            >
+    <div
+        class="resource-content"
+        id="downloadsMenu"
+        hidden
+    >
 
-                <a href="profile_document.html">
-                    GADEH CBO Profile Document
-                </a>
+        <a href="/temporarily-disabled/profile_document.html">
+            GADEH CBO Profile Document
+        </a>
 
-                <a href="training_assessment.html">
-                    Training Assessment Sheet
-                </a>
+        <a href="/temporarily-disabled/training_assessment.html">
+            Training Assessment Sheet
+        </a>
 
-                <a href="training_attendance.html">
-                    Training Attendance Register
-                </a>
+        <a href="/temporarily-disabled/training_attendance.html">
+            Training Attendance Register
+        </a>
 
-                <a href="training_evaluation.html">
-                    Training Evaluation Form
-                </a>
+        <a href="/temporarily-disabled/training_evaluation.html">
+            Training Evaluation Form
+        </a>
 
-                <a href="trainee_registration.html">
-                    Trainee Registration Form
-                </a>
+        <a href="/temporarily-disabled/trainee_registration.html">
+            Trainee Registration Form
+        </a>
 
-                <a href="trainers_report.html">
-                    Trainer's Report
-                </a>
+        <a href="/temporarily-disabled/trainers_report.html">
+            Trainer's Report
+        </a>
 
-                <a href="certificate_of_completion.html">
-                    Certificate of Completion
-                </a>
+        <a href="/temporarily-disabled/certificate_of_completion.html">
+            Certificate of Completion
+        </a>
 
-                <a href="certificate_participation.html">
-                    Certificate of Participation
-                </a>
+        <a href="/temporarily-disabled/certificate_participation.html">
+            Certificate of Participation
+        </a>
 
-                <a href="project_proposal.html">
-                    Project Proposal
-                </a>
+        <a href="/temporarily-disabled/project_proposal.html">
+            Project Proposal
+        </a>
 
-                <a href="project_budget.html">
-                    Project Budget Summary
-                </a>
+        <a href="/temporarily-disabled/project_budget.html">
+            Project Budget Summary
+        </a>
 
-                <a href="project_plan.html">
-                    Project Plan Sheet
-                </a>
+        <a href="/temporarily-disabled/project_plan.html">
+            Project Plan Sheet
+        </a>
 
-                <a href="project_evaluation_monitoring.html">
-                    Project Evaluation &amp; Monitoring
-                </a>
+        <a href="/temporarily-disabled/project_evaluation_monitoring.html">
+            Project Evaluation &amp; Monitoring
+        </a>
 
-                <a href="privacy_terms.html">
-                    Privacy Policy &amp; Terms
-                </a>
+        <a href="/temporarily-disabled/privacy_terms.html">
+            Privacy Policy &amp; Terms
+        </a>
 
-                <a href="constitution_2.html">
-                    GADEH CBO Constitution
-                </a>
+        <a href="/temporarily-disabled/constitution_2.html">
+            GADEH CBO Constitution
+        </a>
 
-                <a href="minutes.html">
-                    Meeting Minutes
-                </a>
-              <a href="membership.html">
-                    Download Membership Application Form 
-              </a>
+        <a href="/temporarily-disabled/minutes.html">
+            Meeting Minutes
+        </a>
 
-            </div>
+        <a href="/temporarily-disabled/membership.html">
+            Download Membership Application Form
+        </a>
 
-        </div>
+    </div>
+
+</div>
 
 
-        <!-- =================================================
-             LIBRARY
-        ================================================== -->
+<!-- =================================================
+     LIBRARY — TEMPORARILY DISABLED
+================================================== -->
 
-        <div class="resource-group">
+<div class="resource-group">
 
-            <button
-                class="resource-link"
-                type="button"
-                aria-expanded="false"
-                aria-controls="libraryMenu"
-            >
-                <span class="resource-bullet">•</span>
-                Library 
-            </button>
+    <button
+        class="resource-link"
+        type="button"
+        aria-expanded="false"
+        aria-controls="libraryMenu"
+    >
+        <span class="resource-bullet">•</span>
+        Library
+    </button>
 
-            <div
-                class="resource-content"
-                id="libraryMenu"
-                hidden
-            >
+    <div
+        class="resource-content"
+        id="libraryMenu"
+        hidden
+    >
 
-                <a href="library.html">
-                    GADEH Digital Library
-                </a>
+        <a href="/temporarily-disabled/library.html">
+            GADEH Digital Library
+        </a>
 
-                <a href="training_materials.html">
-                    Training Materials
-                </a>
+        <a href="/temporarily-disabled/training_materials.html">
+            Training Materials
+        </a>
 
-                <a href="research_publications.html">
-                    Research &amp; Publications
-                </a>
+        <a href="/temporarily-disabled/research_publications.html">
+            Research &amp; Publications
+        </a>
 
-                <a href="agricultural_guides.html">
-                    Agricultural Guides
-                </a>
+        <a href="/temporarily-disabled/agricultural_guides.html">
+            Agricultural Guides
+        </a>
 
-            </div>
+    </div>
 
-        </div>
-
+</div>
 
         <!-- =================================================
              GALLERY
@@ -2852,6 +3354,458 @@ header{
 
 
 
+<!-- =========================================================
+     FREQUENTLY ASKED QUESTIONS
+========================================================= -->
+<section class="faq-section" id="faq">
+
+    <div class="faq-container">
+
+        <span class="faq-label">HELP & INFORMATION</span>
+
+        <h2 class="faq-heading">
+            Frequently Asked Questions
+        </h2>
+
+        <p class="faq-intro">
+            Find quick answers to common questions about GADEH, our programmes,
+            training opportunities, admissions, community services and
+            opportunities for collaboration.
+        </p>
+
+
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>What is GADEH?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                GADEH is the Garissa Agro-Digital Empowerment Hub, a
+                community-based organization focused on digital literacy,
+                technology innovation, ICT training and agro-entrepreneurship.
+            </div>
+        </div>
+
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>Who can participate in GADEH programmes?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                Our programmes are designed to support youth, women, persons
+                with disabilities and underserved communities interested in
+                practical digital, technology and entrepreneurship skills.
+            </div>
+        </div>
+
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>What training programmes does GADEH offer?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                GADEH focuses on practical learning opportunities including
+                computer literacy, smartphone literacy, ICT short courses,
+                digital skills, technology innovation and agro-entrepreneurship.
+            </div>
+        </div>
+
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>How can I apply for a programme?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                Use the Apply Now option above to access the online application
+                page and follow the registration instructions provided there.
+            </div>
+        </div>
+
+
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>Where is GADEH located?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                GADEH is located along Jamia Mosque Road, Garissa Township,
+                Kenya.
+            </div>
+        </div>
+
+
+        <!-- FAQ 6 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>Does GADEH provide certificates?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                Participants who successfully complete applicable training
+                programmes may receive a Certificate of Completion according
+                to the requirements of the respective programme.
+            </div>
+        </div>
+
+
+        <!-- FAQ 7 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>What areas does GADEH focus on?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                GADEH focuses on digital literacy, ICT and technology training,
+                innovation, entrepreneurship, agro-entrepreneurship and
+                community digital empowerment.
+            </div>
+        </div>
+
+
+        <!-- FAQ 8 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>Can organizations partner with GADEH?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                Yes. Organizations, institutions, businesses, development
+                partners and community stakeholders can contact GADEH to
+                discuss potential partnerships, training initiatives,
+                community projects and other areas of collaboration.
+            </div>
+        </div>
+
+
+        <!-- FAQ 9 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>Can I suggest a new training programme?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                Yes. We welcome suggestions from learners, community members,
+                organizations and other stakeholders about training areas,
+                digital services and community initiatives that could benefit
+                the local community.
+            </div>
+        </div>
+
+
+        <!-- FAQ 10 -->
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+                <span>How can I contact GADEH?</span>
+                <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer" hidden>
+                You can contact GADEH through email or telephone, or visit
+                the Contacts page through the navigation menu for available
+                contact information.
+
+                <div class="faq-contact-details">
+                    <a href="mailto:gdehcbo2026@gmail.com">
+                        gdehcbo2026@gmail.com
+                    </a>
+
+                    <a href="tel:+254728428431">
+                        +254 728 428 431
+                    </a>
+
+                    <a href="tel:+254705299600">
+                        +254 705 299 600
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     SUGGESTIONS / FEEDBACK
+========================================================= -->
+<section class="suggestions-section" id="suggestions">
+
+    <div class="suggestions-container">
+
+        <span class="suggestions-label">
+            YOUR VOICE MATTERS
+        </span>
+
+        <h2 class="suggestions-heading">
+            Suggestions &amp; Feedback
+        </h2>
+
+        <p class="suggestions-intro">
+            Have an idea, recommendation or suggestion that could help GADEH
+            improve its programmes and services? Share it with us. Your
+            feedback can help us understand community needs and identify
+            opportunities for improvement.
+        </p>
+
+
+        <!-- Feedback information -->
+        <div class="suggestions-info">
+
+            <div class="suggestion-icon">
+                💬
+            </div>
+
+            <h3>
+                Help Us Improve
+            </h3>
+
+            <p>
+                GADEH values ideas and feedback from learners, parents,
+                community members, partners, organizations and other
+                stakeholders.
+            </p>
+
+            <div class="suggestion-points">
+
+                <div class="suggestion-point">
+                    <span>✓</span>
+                    <p>Suggest a new training programme</p>
+                </div>
+
+                <div class="suggestion-point">
+                    <span>✓</span>
+                    <p>Recommend a community initiative</p>
+                </div>
+
+                <div class="suggestion-point">
+                    <span>✓</span>
+                    <p>Share your training experience</p>
+                </div>
+
+                <div class="suggestion-point">
+                    <span>✓</span>
+                    <p>Suggest improvements to our services</p>
+                </div>
+
+                <div class="suggestion-point">
+                    <span>✓</span>
+                    <p>Propose a partnership or collaboration</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feedback form -->
+        <div class="suggestions-card">
+
+            <form
+                action="mailto:gdehcbo2026@gmail.com"
+                method="post"
+                enctype="text/plain"
+            >
+
+                <div class="suggestion-form-group">
+
+                    <label
+                        class="suggestion-label-form"
+                        for="suggestion-name"
+                    >
+                        Your Name
+                    </label>
+
+                    <input
+                        class="suggestion-input"
+                        type="text"
+                        id="suggestion-name"
+                        name="Name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="suggestion-form-group">
+
+                    <label
+                        class="suggestion-label-form"
+                        for="suggestion-email"
+                    >
+                        Email Address
+                    </label>
+
+                    <input
+                        class="suggestion-input"
+                        type="email"
+                        id="suggestion-email"
+                        name="Email"
+                        placeholder="Enter your email address"
+                    >
+
+                </div>
+
+
+                <div class="suggestion-form-group">
+
+                    <label
+                        class="suggestion-label-form"
+                        for="suggestion-category"
+                    >
+                        Feedback Category
+                    </label>
+
+                    <select
+                        class="suggestion-input"
+                        id="suggestion-category"
+                        name="Feedback Category"
+                    >
+
+                        <option value="">
+                            Select a category
+                        </option>
+
+                        <option value="General Suggestion">
+                            General Suggestion
+                        </option>
+
+                        <option value="Programme Suggestion">
+                            Programme Suggestion
+                        </option>
+
+                        <option value="Training Feedback">
+                            Training Feedback
+                        </option>
+
+                        <option value="Community Initiative">
+                            Community Initiative
+                        </option>
+
+                        <option value="Partnership">
+                            Partnership / Collaboration
+                        </option>
+
+                        <option value="Website Feedback">
+                            Website Feedback
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="suggestion-form-group">
+
+                    <label
+                        class="suggestion-label-form"
+                        for="suggestion-message"
+                    >
+                        Your Suggestion or Feedback
+                    </label>
+
+                    <textarea
+                        class="suggestion-textarea"
+                        id="suggestion-message"
+                        name="Suggestion"
+                        rows="7"
+                        placeholder="Write your suggestion or feedback here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    class="suggestion-btn"
+                    type="submit"
+                >
+                    Send Suggestion →
+                </button>
+
+
+                <p class="suggestion-note">
+                    Your message will open your device's default email
+                    application addressed to GADEH.
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+<!-- =========================================================
+     STAND-ALONE CONTACT CTA CARD
+========================================================= -->
+
+<section class="contact-cta-section">
+
+    <div class="contact-cta-card">
+
+        <div class="contact-cta-content">
+
+            <span class="contact-cta-label">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Have a Question or an Idea?
+            </h2>
+
+            <p>
+                We would love to hear from you. Contact Garissa
+                Agro-Digital Empowerment Hub for enquiries, suggestions,
+                training opportunities, partnerships and community
+                initiatives.
+            </p>
+
+            <div class="contact-cta-actions">
+
+                <a
+                    href="mailto:gdehcbo2026@gmail.com"
+                    class="contact-cta-btn contact-cta-email"
+                >
+                    Email GADEH
+                </a>
+
+                <a
+                    href="tel:+254728428431"
+                    class="contact-cta-btn contact-cta-call"
+                >
+                    Call +254 728 428 431
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
 
 
 <footer class="footer">
@@ -3139,6 +4093,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const item = button.closest(".faq-item");
+        const answer = item.querySelector(".faq-answer");
+        const icon = item.querySelector(".faq-icon");
+
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+
+        /* Close all other FAQ items */
+        document.querySelectorAll(".faq-item").forEach(function(otherItem) {
+
+            const otherButton =
+                otherItem.querySelector(".faq-question");
+
+            const otherAnswer =
+                otherItem.querySelector(".faq-answer");
+
+            otherButton.setAttribute("aria-expanded", "false");
+            otherAnswer.hidden = true;
+
+            const otherIcon =
+                otherItem.querySelector(".faq-icon");
+
+            otherIcon.textContent = "+";
+
+        });
+
+
+        /* Open selected FAQ */
+        if (!isOpen) {
+
+            button.setAttribute("aria-expanded", "true");
+
+            answer.hidden = false;
+
+            icon.textContent = "−";
+
+        }
+
+    });
+
+});
+</script>
+
 </body>
 
 
