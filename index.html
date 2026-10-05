@@ -190,7 +190,7 @@ header{
 }
 
 .nav-links a{
-    color:#222;
+    color:#C00000;;
     font-size:11px;
     font-weight:700;
     text-decoration:none;
@@ -1876,7 +1876,274 @@ header{
     font-weight: 700;
 }
 
+/* =========================================================
+   LANGUAGE TRANSLATION + COOKIE CONSENT
+   CORPORATE RED / BLACK / WHITE
+========================================================= */
 
+
+/* ================= LANGUAGE ICON ================= */
+
+.language-selector {
+    position: fixed;
+    top: 80px;
+    right: 18px;
+
+    z-index: 99999;
+}
+
+
+/* Globe button */
+
+.language-icon {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 2px solid #c00000;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #c00000;
+
+    font-size: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+    transition: 0.25s ease;
+}
+
+.language-icon:hover {
+    background: #c00000;
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/* Translation menu */
+
+.language-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 50px;
+    right: 0;
+
+    width: 190px;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    box-sizing: border-box;
+}
+
+
+/* Google Translate */
+
+.goog-te-gadget {
+    font-size: 0 !important;
+}
+
+.goog-te-gadget-simple {
+    width: 100% !important;
+
+    padding: 9px !important;
+
+    box-sizing: border-box;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dddddd !important;
+
+    border-radius: 4px !important;
+
+    font-size: 13px !important;
+}
+
+.goog-te-gadget img {
+    display: none !important;
+}
+
+
+/* ================= COOKIE BANNER ================= */
+
+.cookie-banner {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-top: 2px solid #c00000;
+
+    box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.12);
+
+    z-index: 99998;
+
+    box-sizing: border-box;
+}
+
+
+.cookie-content {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 9px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* Cookie text */
+
+.cookie-content p {
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    flex: 1;
+}
+
+
+/* Cookie buttons */
+
+.cookie-buttons {
+    display: flex;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.cookie-buttons button {
+    min-width: 85px;
+
+    padding: 7px 18px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* Accept */
+
+.cookie-accept {
+    background: #c00000;
+
+    color: #ffffff;
+
+    border: 1px solid #c00000;
+}
+
+.cookie-accept:hover {
+    background: #a00000;
+}
+
+
+/* Reject */
+
+.cookie-reject {
+    background: #000000;
+
+    color: #ffffff;
+
+    border: 1px solid #000000;
+}
+
+.cookie-reject:hover {
+    background: #222222;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .language-selector {
+        top: 70px;
+        right: 12px;
+    }
+
+    .language-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 20px;
+    }
+
+
+    .cookie-content {
+        padding: 9px 12px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+    }
+
+    .cookie-content p {
+        font-size: 12px;
+
+        line-height: 1.4;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+
+        gap: 6px;
+    }
+
+    .cookie-buttons button {
+        flex: 1;
+
+        width: 50%;
+
+        padding: 7px 10px;
+    }
+
+}
 /* =====================================
    MOBILE
 ====================================== */
@@ -2686,7 +2953,7 @@ header{
     padding: 14px 16px;
     border: 0;
     background: #ffffff;
-    color: #222222;
+    color: #000000;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
     font-weight: 700;
@@ -2700,7 +2967,7 @@ header{
 
 .faq-icon {
     flex: 0 0 auto;
-    color: var(--red);
+    color: #C00000;
     font-size: 17px;
     font-weight: 800;
     transition: transform .2s ease;
@@ -2906,13 +3173,15 @@ header{
       <div class="cta-details">
 
         <div class="cta-detail">
-          <strong>KES 1,500</strong>
-          <span>Registration</span>
+          <strong>Pay only ksh 1,500</strong>
+          <span>For Registration</span>
+          <span>&</span>
+                    <span>Certificate of Completion</span>
         </div>
 
         <div class="cta-detail">
-          <strong>Certificate</strong>
-          <span>Of Completion</span>
+        <strong>Training </strong>
+          <span>is completely  free </span>
         </div>
 
         <div class="cta-detail">
@@ -3403,61 +3672,7 @@ header{
 
 
 
-<!-- =====================================
-     VISION & MISSION
-====================================== -->
 
-<section class="vision-mission-section">
-
-    <div class="vision-mission-container">
-
-        <div class="vision-mission-heading">
-            <h2>Vision &amp; Mission</h2>
-        </div>
-
-
-        <div class="two-column">
-
-            <!-- =========================
-                 VISION
-            ========================== -->
-
-            <div class="info-card">
-
-                <h3>Vision</h3>
-
-                <p>
-                    A digitally empowered and economically resilient
-                    community where technology, innovation and
-                    agro-entrepreneurship create sustainable opportunities
-                    for all.
-                </p>
-
-            </div>
-
-
-            <!-- =========================
-                 MISSION
-            ========================== -->
-
-            <div class="info-card">
-
-                <h3>Mission</h3>
-
-                <p>
-                    To empower communities through digital literacy,
-                    Internet of Things, technology innovation,
-                    entrepreneurship and sustainable agricultural
-                    enterprise development.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -3688,37 +3903,7 @@ header{
                 stakeholders.
             </p>
 
-            <div class="suggestion-points">
-
-                <div class="suggestion-point">
-                    <span>✓</span>
-                    <p>Suggest a new training programme</p>
-                </div>
-
-                <div class="suggestion-point">
-                    <span>✓</span>
-                    <p>Recommend a community initiative</p>
-                </div>
-
-                <div class="suggestion-point">
-                    <span>✓</span>
-                    <p>Share your training experience</p>
-                </div>
-
-                <div class="suggestion-point">
-                    <span>✓</span>
-                    <p>Suggest improvements to our services</p>
-                </div>
-
-                <div class="suggestion-point">
-                    <span>✓</span>
-                    <p>Propose a partnership or collaboration</p>
-                </div>
-
-            </div>
-
-        </div>
-
+            
 
         <!-- Feedback form -->
         <div class="suggestions-card">
@@ -4247,7 +4432,186 @@ document.querySelectorAll(".faq-question").forEach(function(button) {
 
 });
 </script>
+<!-- =========================================================
+     LANGUAGE TRANSLATION
+========================================================= -->
 
+<div class="language-selector">
+
+    <button
+        type="button"
+        class="language-icon"
+        onclick="toggleLanguageMenu()"
+        aria-label="Choose language">
+        🌐
+    </button>
+
+    <div
+        id="languageMenu"
+        class="language-menu">
+
+        <div id="google_translate_element"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     COOKIE CONSENT
+========================================================= -->
+
+<div
+    id="cookieBanner"
+    class="cookie-banner">
+
+    <div class="cookie-content">
+
+        <p>
+            We use cookies to improve your browsing experience,
+            remember your preferences and understand website usage.
+        </p>
+
+        <div class="cookie-buttons">
+
+            <button
+                type="button"
+                class="cookie-accept"
+                onclick="acceptCookies()">
+                Accept
+            </button>
+
+            <button
+                type="button"
+                class="cookie-reject"
+                onclick="rejectCookies()">
+                Reject
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     GOOGLE TRANSLATE
+========================================================= -->
+
+<script>
+
+function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement({
+
+        pageLanguage: 'en',
+
+        includedLanguages:
+            'en,ar,sw,so,fr,de,es,it,tr,pt,zh-CN,hi,ur,ru',
+
+        autoDisplay: false
+
+    }, 'google_translate_element');
+
+}
+
+
+/* ================= LANGUAGE MENU ================= */
+
+function toggleLanguageMenu() {
+
+    const menu =
+        document.getElementById("languageMenu");
+
+    if (menu.style.display === "block") {
+
+        menu.style.display = "none";
+
+    } else {
+
+        menu.style.display = "block";
+
+    }
+
+}
+
+
+/* Close language menu when clicking elsewhere */
+
+document.addEventListener("click", function(event) {
+
+    const selector =
+        document.querySelector(".language-selector");
+
+    if (!selector.contains(event.target)) {
+
+        document.getElementById("languageMenu")
+            .style.display = "none";
+
+    }
+
+});
+
+
+/* ================= COOKIE CONSENT ================= */
+
+function acceptCookies() {
+
+    localStorage.setItem(
+        "cookieConsent",
+        "accepted"
+    );
+
+    document.getElementById(
+        "cookieBanner"
+    ).style.display = "none";
+
+}
+
+
+function rejectCookies() {
+
+    localStorage.setItem(
+        "cookieConsent",
+        "rejected"
+    );
+
+    document.getElementById(
+        "cookieBanner"
+    ).style.display = "none";
+
+}
+
+
+/* Check cookie preference */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const consent =
+            localStorage.getItem(
+                "cookieConsent"
+            );
+
+        if (consent) {
+
+            document.getElementById(
+                "cookieBanner"
+            ).style.display = "none";
+
+        }
+
+    }
+);
+
+</script>
+
+
+<script
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 </body>
 
 
