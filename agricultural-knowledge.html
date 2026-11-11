@@ -200,7 +200,14 @@ header {
   color: var(--mid);
   font-weight: bold;
 }
-
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
 /* HERO */
 
 .hero {
@@ -937,12 +944,17 @@ html:not(.dimmed-mode) {
   <div class="navbar">
 
     <a href="index.html" class="brand">
-      <div class="brand-logo">🌱</div>
-      <div>
-        <h2>GADEH</h2>
-        <small>DIGITAL FARMER PORTAL</small>
-      </div>
-    </a>
+  <img
+    src="/images/gade_logo.png"
+    alt="GADEH Logo"
+    class="brand-logo"
+  >
+
+  <div>
+    
+    <small>DIGITAL FARMER PORTAL</small>
+  </div>
+</a>
 
     <button class="menu-toggle"
       id="menuToggle"

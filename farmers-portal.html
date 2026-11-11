@@ -795,6 +795,33 @@ html {
 html:not(.dimmed-mode) {
   filter: none;
 }
+.brand-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-text h2 {
+    color: var(--green);
+    font-size: 19px;
+    margin: 0;
+}
+
+.brand-text small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    color: var(--grey);
+}
 </style>
 </head>
 
@@ -813,12 +840,19 @@ html:not(.dimmed-mode) {
   <div class="navbar">
 
     <a href="index.html" class="brand">
-      <div class="brand-logo">🌱</div>
-      <div>
-        <h2>GADEH</h2>
-        <small>DIGITAL FARMER PORTAL</small>
-      </div>
-    </a>
+
+    <img
+        src="gadeh_logo.png"
+        alt="GADEH Logo"
+        class="brand-logo"
+    >
+
+    <div class="brand-text">
+        
+        <small>GARISSA AGRO-DIGITAL EMPOWERMENT HUB</small>
+    </div>
+
+</a>
 
     <button class="menu-toggle" id="menuToggle">☰</button>
 

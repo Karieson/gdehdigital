@@ -69,11 +69,20 @@
     }
 
     .logo {
-      color: var(--green);
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
 
     .logo span {
       display: block;
@@ -495,9 +504,9 @@ html:not(.dimmed-mode) {
     <div class="header-inner">
 
       <a href="index.html" class="logo">
-        GADEH
-        <span>DIGITAL FARMING</span>
-      </a>
+    <img src="gadeh_logo.png" alt="GADEH Logo" class="logo-image">
+    <span>DIGITAL FARMING</span>
+</a>
 
       <button class="menu-toggle" id="menuToggle"
         aria-label="Toggle navigation"

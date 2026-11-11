@@ -83,12 +83,13 @@
       gap: 20px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-width: 220px;
-    }
+    .brand-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
 
     .brand-mark {
       width: 45px;
@@ -709,22 +710,27 @@ html:not(.dimmed-mode) {
 <body>
 
   <!-- TOP BAR -->
-  <div class="topbar">
+<div class="topbar">
     <span>GADEH | Garissa Agro-Digital Empowerment Hub</span>
     <span>Digital Farmer Empowerment • Garissa, Kenya</span>
-  </div>
+</div>
 
-  <!-- HEADER -->
-  <header class="site-header">
+<!-- HEADER -->
+<header class="site-header">
     <div class="nav-container">
 
-      <a href="index.html" class="brand">
-        <div class="brand-mark">G</div>
-        <div class="brand-name">
-          <strong>GADEH</strong>
-          <span>Digital Farmer Portal</span>
-        </div>
-      </a>
+        <a href="index.html" class="brand">
+            <img
+                src="gadeh_logo.png"
+                alt="GADEH Logo"
+                class="brand-logo"
+            >
+
+            <div class="brand-name">
+                
+                <span>Digital Farmer Portal</span>
+            </div>
+        </a>
 
       <button class="menu-toggle"
         id="menuToggle"
