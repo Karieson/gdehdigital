@@ -1,0 +1,1652 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farming Guides | Agro-Digital Farmers Library</title>
+
+<meta name="description" content="Comprehensive practical farming guides covering land preparation, crop selection, planting, soil management, irrigation, pest control, harvesting, marketing and digital agriculture.">
+
+<style>
+:root {
+  --ivory: #FBFAF5;
+  --white: #FFFEFA;
+  --green: #386B45;
+  --green-dark: #254D32;
+  --green-light: #EAF1E8;
+  --gold: #B18A42;
+  --charcoal: #3F4742;
+  --grey: #737B76;
+  --light-grey: #E5E8E2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--charcoal);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.container {
+  width: min(100% - 36px, 1050px);
+  margin: auto;
+  padding: 35px 0 60px;
+}
+
+.top-accent {
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--green-dark),
+    var(--green),
+    #9EAE79,
+    var(--gold)
+  );
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.header {
+  background: var(--white);
+  border: 1px solid var(--light-grey);
+  border-left: 5px solid var(--green);
+  border-radius: 12px;
+  padding: 34px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.topic-label {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green-dark);
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  color: var(--green-dark);
+  font-size: clamp(16px, 5vw, 43px);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: var(--grey);
+  font-size: 15px;
+}
+
+section {
+  background: var(--white);
+  border: 1px solid var(--light-grey);
+  border-radius: 11px;
+  padding: 27px 29px;
+  margin: 27px 0;
+  scroll-margin-top: 20px;
+}
+
+h2 {
+  color: var(--green-dark);
+  font-size: 22px;
+  margin-bottom: 18px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+h3 {
+  color: var(--green);
+  font-size: 17px;
+  margin: 23px 0 9px;
+}
+
+h4 {
+  color: var(--green-dark);
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+p {
+  margin: 10px 0 14px;
+}
+
+strong {
+  color: #35483A;
+}
+
+ul, ol {
+  padding-left: 24px;
+  margin: 10px 0 16px;
+}
+
+li {
+  padding-left: 3px;
+  margin: 5px 0;
+}
+
+.muted {
+  color: var(--grey);
+}
+
+.note {
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+  border-radius: 7px;
+  padding: 14px 17px;
+  margin: 18px 0;
+}
+
+.warning {
+  background: #F5F1E6;
+  border-left: 4px solid var(--gold);
+  border-radius: 7px;
+  padding: 14px 17px;
+  margin: 18px 0;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid var(--light-grey);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+tbody tr:nth-child(even) {
+  background: #FCFCF8;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 17px;
+}
+
+.guide-card {
+  background: var(--white);
+  border: 1px solid var(--light-grey);
+  border-radius: 9px;
+  padding: 17px;
+}
+
+.guide-card h3 {
+  margin: 0 0 8px;
+}
+
+.guide-card p {
+  color: var(--grey);
+  font-size: 14px;
+  margin: 0;
+}
+
+.guide-card a {
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.guide-card a:hover {
+  color: var(--gold);
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px 22px;
+}
+
+.contents a {
+  color: var(--green);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contents a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.end-topic {
+  text-align: center;
+  background: var(--green-light);
+  border: 1px solid #D8E4D5;
+  color: var(--green-dark);
+  padding: 23px;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 30px;
+}
+
+footer {
+  text-align: center;
+  color: var(--grey);
+  font-size: 12px;
+  margin-top: 28px;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 620px) {
+  .container {
+    width: calc(100% - 22px);
+    padding-top: 18px;
+  }
+
+  .header, section {
+    padding: 20px 17px;
+  }
+
+  .guide-grid,
+  .contents {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    font-size: 11pt;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .header, section, .guide-card, .note, .warning {
+    break-inside: avoid;
+  }
+
+  table {
+    font-size: 10pt;
+  }
+}
+/* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+<div class="top-accent"></div>
+
+<header class="header">
+
+  <div class="eyebrow">
+    Agriculture • Digital Technology • Smart Farming
+  </div>
+
+  <span class="topic-label">
+    FARMERS LIBRARY
+  </span>
+
+  <h1>Comprehensive Farming Guides</h1>
+
+  <p class="subtitle">
+    Agro-Digital Farmers Library | Practical Agriculture,
+    Crop Production, Soil Management, Water Conservation,
+    Farm Technology and Agricultural Business
+  </p>
+
+</header>
+
+<!-- INTRODUCTION -->
+
+<section id="introduction">
+
+  <h2>1. Introduction to Farming</h2>
+
+  <p>
+    Farming is the practice of cultivating crops and raising
+    livestock to produce food, income, raw materials and other
+    agricultural products. It supports household livelihoods,
+    employment, food security and economic development.
+  </p>
+
+  <p>
+    Successful farming requires planning, knowledge, suitable
+    resources, proper management and continuous learning.
+    Farmers need to understand their land, soil, climate,
+    water availability, crops, pests, markets and production costs.
+  </p>
+
+  <p>
+    Modern agriculture combines traditional farming knowledge
+    with scientific research and digital technologies to improve
+    productivity, reduce losses and protect natural resources.
+  </p>
+
+  <div class="note">
+    <strong>Key principle:</strong>
+    Good farming is not simply about planting crops. It involves
+    managing the entire production process, from planning and
+    land preparation to harvesting, storage and marketing.
+  </div>
+
+</section>
+
+<!-- CONTENTS -->
+
+<section id="contents">
+
+  <h2>2. Farming Guides — Contents</h2>
+
+  <div class="contents">
+    <a href="#planning">3. Farm Planning</a>
+    <a href="#land">4. Land Preparation</a>
+    <a href="#soil">5. Soil Management</a>
+    <a href="#seeds">6. Seeds and Crop Selection</a>
+    <a href="#planting">7. Planting and Spacing</a>
+    <a href="#nutrition">8. Crop Nutrition</a>
+    <a href="#water">9. Water and Irrigation</a>
+    <a href="#weeds">10. Weed Management</a>
+    <a href="#pests">11. Pest Management</a>
+    <a href="#health">12. Crop Health</a>
+    <a href="#climate">13. Climate-Smart Farming</a>
+    <a href="#conservation">14. Soil and Water Conservation</a>
+    <a href="#digital">15. Digital Agriculture</a>
+    <a href="#harvesting">16. Harvesting</a>
+    <a href="#storage">17. Storage and Post-Harvest</a>
+    <a href="#marketing">18. Agricultural Marketing</a>
+    <a href="#records">19. Farm Records</a>
+    <a href="#business">20. Farm Business Management</a>
+    <a href="#safety">21. Farm Safety</a>
+    <a href="#mistakes">22. Common Farming Mistakes</a>
+    <a href="#glossary">23. Agricultural Glossary</a>
+    <a href="#questions">24. Review Questions</a>
+  </div>
+
+</section>
+
+<!-- FARM PLANNING -->
+
+<section id="planning">
+
+  <h2>3. Farm Planning</h2>
+
+  <p>
+    Farm planning is the process of deciding what to produce,
+    where to produce it, when to plant, which resources are
+    required and how the harvest will be sold or used.
+  </p>
+
+  <h3>3.1 Why farm planning is important</h3>
+
+  <ul>
+    <li>Helps farmers use available land efficiently.</li>
+    <li>Reduces unnecessary expenditure.</li>
+    <li>Supports timely purchase of seeds and inputs.</li>
+    <li>Helps estimate expected production and income.</li>
+    <li>Identifies water, labour and equipment requirements.</li>
+    <li>Helps farmers prepare for climate and market risks.</li>
+  </ul>
+
+  <h3>3.2 Important planning considerations</h3>
+
+  <ol>
+    <li><strong>Land:</strong> Determine the size, location, soil type and condition of the farm.</li>
+    <li><strong>Climate:</strong> Understand rainfall, temperature, wind and seasonal changes.</li>
+    <li><strong>Water:</strong> Identify reliable and safe sources of irrigation water.</li>
+    <li><strong>Crop choice:</strong> Select crops suitable for local conditions and market demand.</li>
+    <li><strong>Budget:</strong> Estimate costs of seeds, labour, equipment, transport and water.</li>
+    <li><strong>Market:</strong> Identify potential buyers before production.</li>
+  </ol>
+
+  <h3>3.3 Preparing a simple farm plan</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Planning item</th>
+          <th>Information to record</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Farm location</td><td>Village, area or geographical coordinates</td></tr>
+        <tr><td>Farm size</td><td>Total area available for production</td></tr>
+        <tr><td>Crop selection</td><td>Names and varieties of intended crops</td></tr>
+        <tr><td>Water source</td><td>Rainfall, river, borehole, well or stored water</td></tr>
+        <tr><td>Planting period</td><td>Expected planting dates</td></tr>
+        <tr><td>Budget</td><td>Estimated production expenses</td></tr>
+        <tr><td>Market</td><td>Buyers, collection points and selling prices</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- LAND PREPARATION -->
+
+<section id="land">
+
+  <h2>4. Land Preparation</h2>
+
+  <p>
+    Land preparation involves making the soil suitable for
+    planting and supporting healthy crop establishment.
+    Good preparation improves seed placement, root development
+    and field management.
+  </p>
+
+  <h3>4.1 Main land preparation activities</h3>
+
+  <ul>
+    <li>Remove harmful weeds and unwanted vegetation.</li>
+    <li>Collect rubbish, stones and unsuitable materials.</li>
+    <li>Prepare the soil through appropriate tillage.</li>
+    <li>Incorporate suitable organic matter where available.</li>
+    <li>Level or shape the land according to the irrigation method.</li>
+    <li>Prepare planting beds, ridges, furrows or basins where required.</li>
+  </ul>
+
+  <h3>4.2 Common land preparation methods</h3>
+
+  <h4>Manual preparation</h4>
+  <p>
+    Farmers use hand tools such as hoes, forks, spades and
+    rakes. It is suitable for small farms and gardens.
+  </p>
+
+  <h4>Animal-powered preparation</h4>
+  <p>
+    Draught animals may pull suitable ploughing equipment
+    to prepare fields where the terrain and soil conditions
+    allow their use.
+  </p>
+
+  <h4>Mechanical preparation</h4>
+  <p>
+    Tractors and other agricultural machinery are used for
+    larger farms. Equipment should be selected according
+    to soil conditions and the intended crop.
+  </p>
+
+  <div class="warning">
+    <strong>Important:</strong>
+    Excessive tillage can damage soil structure, increase
+    erosion and reduce soil moisture. Choose the minimum
+    suitable soil disturbance for the farming system.
+  </div>
+
+</section>
+
+<!-- SOIL MANAGEMENT -->
+
+<section id="soil">
+
+  <h2>5. Soil Management</h2>
+
+  <p>
+    Soil is a major natural resource in crop production.
+    It provides plants with physical support, water, air
+    and essential nutrients.
+  </p>
+
+  <h3>5.1 Main soil types</h3>
+
+  <h4>Sandy soil</h4>
+  <p>
+    Sandy soil has relatively large particles and drains
+    quickly. It is generally easy to work but may lose
+    water and nutrients rapidly.
+  </p>
+
+  <h4>Clay soil</h4>
+  <p>
+    Clay soil contains very small particles. It can retain
+    considerable water and nutrients but may drain slowly
+    and become difficult to work when wet.
+  </p>
+
+  <h4>Loam soil</h4>
+  <p>
+    Loam contains a balanced mixture of sand, silt and clay.
+    Many crops grow well in suitable loam soils because
+    they can retain moisture while allowing drainage.
+  </p>
+
+  <h3>5.2 Maintaining soil fertility</h3>
+
+  <ul>
+    <li>Apply compost and well-decomposed manure.</li>
+    <li>Use suitable fertilizers based on soil requirements.</li>
+    <li>Practice crop rotation.</li>
+    <li>Grow suitable legumes to support soil fertility.</li>
+    <li>Maintain crop residues where appropriate.</li>
+    <li>Prevent soil erosion and unnecessary disturbance.</li>
+  </ul>
+
+  <h3>5.3 Soil testing</h3>
+
+  <p>
+    Soil testing helps determine important properties such
+    as soil pH, nutrient availability and salinity. Test
+    results help farmers select appropriate soil amendments
+    and fertilizer applications.
+  </p>
+
+  <div class="note">
+    Soil should be tested using a representative sample.
+    Where possible, seek guidance from an agricultural
+    extension officer or an accredited soil laboratory.
+  </div>
+
+</section>
+
+<!-- SEEDS -->
+
+<section id="seeds">
+
+  <h2>6. Seeds and Crop Selection</h2>
+
+  <p>
+    Choosing suitable seeds is one of the most important
+    decisions in crop production. Seed quality influences
+    germination, crop establishment, maturity and yield.
+  </p>
+
+  <h3>6.1 Characteristics of good-quality seeds</h3>
+
+  <ul>
+    <li>High germination capacity.</li>
+    <li>Free from visible insect damage and disease.</li>
+    <li>Properly stored and labelled.</li>
+    <li>Suitable for the intended growing conditions.</li>
+    <li>Obtained from reliable and approved suppliers.</li>
+    <li>Appropriate maturity period for the production season.</li>
+  </ul>
+
+  <h3>6.2 Factors affecting crop selection</h3>
+
+  <ul>
+    <li>Local climate and seasonal rainfall.</li>
+    <li>Soil type and fertility.</li>
+    <li>Availability of irrigation water.</li>
+    <li>Resistance or tolerance to relevant pests and diseases.</li>
+    <li>Crop maturity period.</li>
+    <li>Local food preferences and market demand.</li>
+    <li>Expected production costs and selling prices.</li>
+  </ul>
+
+  <h3>6.3 Examples of crops</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Crop group</th>
+          <th>Examples</th>
+          <th>Important consideration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Cereals</td><td>Maize, sorghum, millet</td><td>Rainfall, soil fertility and variety selection</td></tr>
+        <tr><td>Legumes</td><td>Beans, cowpeas, green grams</td><td>Drainage, suitable varieties and crop rotation</td></tr>
+        <tr><td>Vegetables</td><td>Tomatoes, onions, kale, spinach</td><td>Water management and pest monitoring</td></tr>
+        <tr><td>Fruits</td><td>Watermelon, mango, pawpaw</td><td>Suitable climate, spacing and long-term management</td></tr>
+        <tr><td>Fodder</td><td>Suitable grasses and legumes</td><td>Livestock requirements and water availability</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- PLANTING -->
+
+<section id="planting">
+
+  <h2>7. Planting and Crop Spacing</h2>
+
+  <p>
+    Planting is the process of placing seeds or seedlings
+    into prepared soil under suitable conditions.
+    Correct planting supports uniform crop establishment.
+  </p>
+
+  <h3>7.1 Planting methods</h3>
+
+  <ul>
+    <li><strong>Direct seeding:</strong> Seeds are planted directly in the field.</li>
+    <li><strong>Transplanting:</strong> Seedlings are raised in a nursery and moved to the field.</li>
+    <li><strong>Broadcasting:</strong> Seeds are spread across the prepared soil surface.</li>
+    <li><strong>Row planting:</strong> Seeds are planted in organised rows.</li>
+    <li><strong>Hill planting:</strong> Seeds are placed in selected planting stations.</li>
+  </ul>
+
+  <h3>7.2 Importance of correct spacing</h3>
+
+  <ul>
+    <li>Reduces competition for sunlight, water and nutrients.</li>
+    <li>Improves air movement around plants.</li>
+    <li>Supports easier weeding and crop inspection.</li>
+    <li>Allows efficient irrigation and field operations.</li>
+    <li>May reduce favourable conditions for some diseases.</li>
+  </ul>
+
+  <h3>7.3 Planting depth</h3>
+
+  <p>
+    Planting depth depends on seed size, soil type, moisture
+    and crop requirements. Seeds planted too deeply may
+    struggle to emerge, while shallow seeds may dry out
+    or be exposed to birds and other hazards.
+  </p>
+
+  <div class="warning">
+    Always follow the recommended planting depth and spacing
+    for the selected crop variety. There is no single spacing
+    suitable for all crops.
+  </div>
+
+</section>
+
+<!-- NUTRITION -->
+
+<section id="nutrition">
+
+  <h2>8. Crop Nutrition and Fertilizer Management</h2>
+
+  <p>
+    Plants require essential nutrients to develop roots,
+    leaves, stems, flowers, fruits and seeds. Nutrient
+    deficiencies can reduce growth and crop production.
+  </p>
+
+  <h3>8.1 Major plant nutrients</h3>
+
+  <ul>
+    <li><strong>Nitrogen (N):</strong> Supports leafy and vegetative growth.</li>
+    <li><strong>Phosphorus (P):</strong> Supports root development and energy transfer.</li>
+    <li><strong>Potassium (K):</strong> Supports water regulation and general plant functions.</li>
+  </ul>
+
+  <h3>8.2 Secondary and micronutrients</h3>
+
+  <p>
+    Plants also require nutrients such as calcium, magnesium,
+    sulphur, iron, zinc, boron, manganese and copper.
+    Requirements vary according to the crop and soil.
+  </p>
+
+  <h3>8.3 Organic nutrient sources</h3>
+
+  <ul>
+    <li>Well-decomposed animal manure.</li>
+    <li>Compost made from suitable organic materials.</li>
+    <li>Green manure crops.</li>
+    <li>Appropriate crop residues.</li>
+  </ul>
+
+  <h3>8.4 Responsible fertilizer application</h3>
+
+  <ol>
+    <li>Test the soil where possible.</li>
+    <li>Identify the crop's nutrient requirements.</li>
+    <li>Select an appropriate fertilizer.</li>
+    <li>Follow recommended application rates.</li>
+    <li>Apply at the correct crop growth stage.</li>
+    <li>Prevent fertilizer from entering water sources.</li>
+    <li>Record the product, quantity and application date.</li>
+  </ol>
+
+</section>
+
+<!-- WATER -->
+
+<section id="water">
+
+  <h2>9. Water Management and Irrigation</h2>
+
+  <p>
+    Water is essential for seed germination, nutrient
+    movement, photosynthesis and crop development.
+    Proper water management helps crops survive dry
+    periods and supports reliable production.
+  </p>
+
+  <h3>9.1 Common irrigation methods</h3>
+
+  <h4>Surface irrigation</h4>
+  <p>
+    Water moves across the soil surface through basins,
+    borders or furrows. Proper land preparation and
+    water control are important.
+  </p>
+
+  <h4>Drip irrigation</h4>
+  <p>
+    Water is delivered slowly near plant roots through
+    emitters or drip lines. Filtration and regular
+    maintenance help prevent blockages.
+  </p>
+
+  <h4>Sprinkler irrigation</h4>
+  <p>
+    Water is sprayed through nozzles and distributed
+    over crops in droplets. Wind and operating pressure
+    can affect distribution.
+  </p>
+
+  <h4>Manual irrigation</h4>
+  <p>
+    Water is applied using watering cans, buckets
+    or hosepipes. It is useful for small gardens and
+    nursery operations.
+  </p>
+
+  <h3>9.2 Water conservation practices</h3>
+
+  <ul>
+    <li>Use suitable irrigation systems.</li>
+    <li>Repair leaking pipes and damaged fittings.</li>
+    <li>Apply mulch to reduce evaporation.</li>
+    <li>Harvest and store rainwater where feasible.</li>
+    <li>Monitor soil moisture before irrigation.</li>
+    <li>Maintain drainage and avoid waterlogging.</li>
+    <li>Schedule irrigation according to crop needs.</li>
+  </ul>
+
+  <div class="note">
+    Efficient irrigation means applying the right amount of
+    water at the right time and in the right place. Excessive
+    irrigation wastes water and can damage soil and crops.
+  </div>
+
+</section>
+
+<!-- WEEDS -->
+
+<section id="weeds">
+
+  <h2>10. Weed Management</h2>
+
+  <p>
+    Weeds are unwanted plants growing where crops are
+    cultivated. They compete with crops for water, sunlight,
+    nutrients and growing space.
+  </p>
+
+  <h3>10.1 Problems caused by weeds</h3>
+
+  <ul>
+    <li>Reduced crop growth and production.</li>
+    <li>Competition for soil moisture and nutrients.</li>
+    <li>Interference with harvesting.</li>
+    <li>Some weeds host pests and plant diseases.</li>
+    <li>Increased production and labour costs.</li>
+  </ul>
+
+  <h3>10.2 Weed control methods</h3>
+
+  <h4>Manual control</h4>
+  <p>Removing weeds by hand or using appropriate hand tools.</p>
+
+  <h4>Mechanical control</h4>
+  <p>Using equipment to cultivate, cut or remove weeds.</p>
+
+  <h4>Cultural control</h4>
+  <p>
+    Using crop rotation, mulching, suitable crop spacing
+    and competitive crop varieties.
+  </p>
+
+  <h4>Chemical control</h4>
+  <p>
+    Applying approved herbicides according to the crop,
+    weed species and product label.
+  </p>
+
+  <div class="warning">
+    Herbicides must be used carefully. Follow label instructions,
+    protective equipment requirements, re-entry periods and
+    pre-harvest intervals. Avoid spraying in unsuitable wind
+    conditions or near sensitive crops and water sources.
+  </div>
+
+</section>
+
+<!-- PESTS -->
+
+<section id="pests">
+
+  <h2>11. Agricultural Pests and Integrated Pest Management</h2>
+
+  <p>
+    Agricultural pests are organisms that damage crops
+    or interfere with agricultural production. They may
+    include insects, mites, rodents, birds and other harmful
+    organisms.
+  </p>
+
+  <h3>11.1 Examples of crop pests</h3>
+
+  <ul>
+    <li>Aphids.</li>
+    <li>Whiteflies.</li>
+    <li>Cutworms.</li>
+    <li>Fall armyworms.</li>
+    <li>Fruit flies.</li>
+    <li>Red spider mites.</li>
+    <li>Rodents and birds.</li>
+  </ul>
+
+  <h3>11.2 Common signs of pest damage</h3>
+
+  <ul>
+    <li>Holes in leaves and stems.</li>
+    <li>Curled or distorted leaves.</li>
+    <li>Damaged fruits and seeds.</li>
+    <li>Chewed seedlings.</li>
+    <li>Sticky substances on plant surfaces.</li>
+    <li>Visible insects, eggs or larvae.</li>
+  </ul>
+
+  <h3>11.3 Integrated Pest Management (IPM)</h3>
+
+  <p>
+    Integrated Pest Management is an approach that combines
+    different control methods to keep pest populations at
+    acceptable levels while reducing unnecessary pesticide use.
+  </p>
+
+  <ol>
+    <li><strong>Monitoring:</strong> Inspect crops regularly.</li>
+    <li><strong>Identification:</strong> Identify the pest correctly.</li>
+    <li><strong>Prevention:</strong> Use healthy seeds and good field practices.</li>
+    <li><strong>Biological control:</strong> Protect useful natural enemies.</li>
+    <li><strong>Physical control:</strong> Remove or trap pests where suitable.</li>
+    <li><strong>Cultural control:</strong> Rotate crops and manage crop residues.</li>
+    <li><strong>Chemical control:</strong> Use approved pesticides only when justified.</li>
+  </ol>
+
+  <div class="note">
+    Correct pest identification should come before treatment.
+    Not every insect found on a farm is harmful; some insects
+    are beneficial pollinators or natural enemies of pests.
+  </div>
+
+</section>
+
+<!-- CROP HEALTH -->
+
+<section id="health">
+
+  <h2>12. Crop Health and Disease Management</h2>
+
+  <p>
+    Crop health refers to the overall condition of plants
+    and their ability to grow, develop and produce normally.
+    Healthy crops are better able to tolerate environmental
+    stress and produce quality harvests.
+  </p>
+
+  <h3>12.1 Common causes of crop diseases</h3>
+
+  <ul>
+    <li>Fungi.</li>
+    <li>Bacteria.</li>
+    <li>Viruses.</li>
+    <li>Nematodes.</li>
+    <li>Environmental and nutrient disorders that resemble disease symptoms.</li>
+  </ul>
+
+  <h3>12.2 Common warning signs</h3>
+
+  <ul>
+    <li>Yellowing leaves.</li>
+    <li>Wilting plants.</li>
+    <li>Leaf spots and lesions.</li>
+    <li>Root decay.</li>
+    <li>Stunted growth.</li>
+    <li>Unusual fruit or stem damage.</li>
+  </ul>
+
+  <h3>12.3 Prevention and management</h3>
+
+  <ul>
+    <li>Use healthy seeds and seedlings.</li>
+    <li>Choose suitable resistant varieties where available.</li>
+    <li>Maintain proper plant spacing.</li>
+    <li>Manage irrigation and field drainage.</li>
+    <li>Remove severely infected plant material safely.</li>
+    <li>Clean tools and equipment.</li>
+    <li>Seek professional diagnosis when symptoms are unclear.</li>
+  </ul>
+
+</section>
+
+<!-- CLIMATE -->
+
+<section id="climate">
+
+  <h2>13. Climate-Smart Farming</h2>
+
+  <p>
+    Climate-smart agriculture involves farming approaches
+    that improve productivity, strengthen resilience to
+    climate change and, where possible, reduce greenhouse
+    gas emissions.
+  </p>
+
+  <h3>13.1 Climate-related farming challenges</h3>
+
+  <ul>
+    <li>Unpredictable rainfall.</li>
+    <li>Prolonged drought.</li>
+    <li>High temperatures.</li>
+    <li>Flooding and soil erosion.</li>
+    <li>Changes in pest and disease patterns.</li>
+    <li>Reduced availability of water.</li>
+  </ul>
+
+  <h3>13.2 Climate-smart practices</h3>
+
+  <ul>
+    <li>Plant drought-tolerant crop varieties where suitable.</li>
+    <li>Use weather forecasts to support planting decisions.</li>
+    <li>Harvest and conserve rainwater.</li>
+    <li>Maintain soil organic matter.</li>
+    <li>Use appropriate irrigation systems.</li>
+    <li>Diversify crops and farm activities.</li>
+    <li>Protect trees and useful vegetation.</li>
+    <li>Adjust planting dates when seasonal information supports it.</li>
+  </ul>
+
+  <div class="note">
+    Farmers should combine weather forecasts, local observations
+    and agricultural advice rather than relying on a single
+    forecast to make major production decisions.
+  </div>
+
+</section>
+
+<!-- CONSERVATION -->
+
+<section id="conservation">
+
+  <h2>14. Soil and Water Conservation</h2>
+
+  <p>
+    Soil and water conservation involves protecting land
+    and water resources from degradation, erosion and waste.
+    It helps maintain long-term agricultural productivity.
+  </p>
+
+  <h3>14.1 Soil conservation practices</h3>
+
+  <ul>
+    <li>Mulching.</li>
+    <li>Contour farming on suitable slopes.</li>
+    <li>Terracing where appropriate.</li>
+    <li>Cover cropping.</li>
+    <li>Crop rotation.</li>
+    <li>Windbreaks and shelterbelts.</li>
+    <li>Maintaining suitable vegetation cover.</li>
+  </ul>
+
+  <h3>14.2 Water conservation practices</h3>
+
+  <ul>
+    <li>Rainwater harvesting.</li>
+    <li>Water storage in suitable tanks and reservoirs.</li>
+    <li>Efficient irrigation.</li>
+    <li>Repairing leaks.</li>
+    <li>Reducing unnecessary evaporation.</li>
+    <li>Protecting rivers, wells and boreholes from contamination.</li>
+  </ul>
+
+</section>
+
+<!-- DIGITAL -->
+
+<section id="digital">
+
+  <h2>15. Digital Agriculture and Smart Farming</h2>
+
+  <p>
+    Digital agriculture uses information and communication
+    technologies to collect, analyse and share agricultural
+    information. It helps farmers make better decisions
+    about production and farm management.
+  </p>
+
+  <h3>15.1 Important digital agriculture tools</h3>
+
+  <h4>Weather applications</h4>
+  <p>
+    Provide weather forecasts, rainfall information and
+    temperature estimates that can support farm planning.
+  </p>
+
+  <h4>Soil moisture sensors</h4>
+  <p>
+    Measure soil moisture at selected depths and help
+    farmers assess when irrigation may be necessary.
+  </p>
+
+  <h4>GPS and digital mapping</h4>
+  <p>
+    Help identify farm boundaries, map fields and record
+    geographical locations.
+  </p>
+
+  <h4>Satellite imagery</h4>
+  <p>
+    Can help monitor vegetation conditions, crop development
+    and changes in land cover.
+  </p>
+
+  <h4>Mobile agricultural platforms</h4>
+  <p>
+    Can provide farming information, extension advice,
+    market updates and communication between farmers
+    and agricultural service providers.
+  </p>
+
+  <h4>Digital farm records</h4>
+  <p>
+    Electronic records can help track planting dates,
+    input use, irrigation, labour, expenses, yields and sales.
+  </p>
+
+  <h3>15.2 Benefits of digital agriculture</h3>
+
+  <ul>
+    <li>Improved access to agricultural information.</li>
+    <li>Better farm planning and record keeping.</li>
+    <li>Early identification of possible production problems.</li>
+    <li>More informed irrigation decisions.</li>
+    <li>Improved market communication.</li>
+    <li>Monitoring crop conditions over time.</li>
+  </ul>
+
+  <div class="warning">
+    Digital information should be checked against actual field
+    conditions. Sensors require correct installation and
+    calibration, while satellite and weather information may
+    have limitations in local accuracy.
+  </div>
+
+</section>
+
+<!-- HARVESTING -->
+
+<section id="harvesting">
+
+  <h2>16. Harvesting and Crop Maturity</h2>
+
+  <p>
+    Harvesting is the process of collecting mature crops
+    from the field. Harvesting at the correct time helps
+    protect crop quality, reduce losses and improve market value.
+  </p>
+
+  <h3>16.1 Signs of crop maturity</h3>
+
+  <ul>
+    <li>Crop colour changes according to its maturity stage.</li>
+    <li>Fruits reach the required size and firmness.</li>
+    <li>Grains become mature and reach suitable moisture levels.</li>
+    <li>Leaves or stems show normal maturity changes.</li>
+    <li>Crop-specific maturity indicators are achieved.</li>
+  </ul>
+
+  <h3>16.2 Good harvesting practices</h3>
+
+  <ol>
+    <li>Use clean and suitable harvesting equipment.</li>
+    <li>Harvest at the recommended maturity stage.</li>
+    <li>Avoid unnecessary bruising and physical damage.</li>
+    <li>Separate damaged and diseased produce.</li>
+    <li>Use clean containers.</li>
+    <li>Move produce away from excessive heat where appropriate.</li>
+    <li>Record the quantity harvested.</li>
+  </ol>
+
+</section>
+
+<!-- STORAGE -->
+
+<section id="storage">
+
+  <h2>17. Storage and Post-Harvest Management</h2>
+
+  <p>
+    Post-harvest management covers the activities carried
+    out after harvesting to preserve quality and reduce
+    losses before produce reaches consumers or markets.
+  </p>
+
+  <h3>17.1 Causes of post-harvest losses</h3>
+
+  <ul>
+    <li>Poor handling and transport.</li>
+    <li>Insect and rodent damage.</li>
+    <li>Excess moisture.</li>
+    <li>Unhygienic storage facilities.</li>
+    <li>High temperatures and unsuitable humidity.</li>
+    <li>Delayed marketing.</li>
+    <li>Poor packaging.</li>
+  </ul>
+
+  <h3>17.2 Good storage practices</h3>
+
+  <ul>
+    <li>Clean and inspect storage facilities.</li>
+    <li>Dry grains to safe moisture levels for the intended storage period.</li>
+    <li>Use suitable bags and containers.</li>
+    <li>Keep produce off damp floors.</li>
+    <li>Control insects and rodents safely.</li>
+    <li>Inspect stored produce regularly.</li>
+    <li>Use older stock first where appropriate.</li>
+  </ul>
+
+  <div class="warning">
+    Produce intended for storage must be adequately dried
+    and protected. Safe grain moisture levels depend on
+    the crop, storage conditions and intended storage duration.
+  </div>
+
+</section>
+
+<!-- MARKETING -->
+
+<section id="marketing">
+
+  <h2>18. Agricultural Marketing</h2>
+
+  <p>
+    Agricultural marketing involves moving farm products
+    from producers to consumers through activities such
+    as sorting, grading, packaging, transportation,
+    pricing and selling.
+  </p>
+
+  <h3>18.1 Understanding the market</h3>
+
+  <ul>
+    <li>Identify potential customers and buyers.</li>
+    <li>Understand demand and seasonal price changes.</li>
+    <li>Compare prices in different markets.</li>
+    <li>Identify quality and packaging requirements.</li>
+    <li>Estimate transport and handling costs.</li>
+    <li>Consider collective marketing through farmer groups.</li>
+  </ul>
+
+  <h3>18.2 Value addition</h3>
+
+  <p>
+    Value addition means improving a product's market value
+    through processing, sorting, grading, packaging,
+    preservation or other appropriate activities.
+  </p>
+
+  <p>Examples include:</p>
+
+  <ul>
+    <li>Cleaning and grading grains.</li>
+    <li>Drying suitable fruits and vegetables.</li>
+    <li>Packaging produce for different market segments.</li>
+    <li>Processing selected crops into food products.</li>
+  </ul>
+
+</section>
+
+<!-- RECORDS -->
+
+<section id="records">
+
+  <h2>19. Farm Records and Data Management</h2>
+
+  <p>
+    Farm records are written or digital documents that
+    describe agricultural activities, inputs, production,
+    expenses and sales.
+  </p>
+
+  <h3>19.1 Important farm records</h3>
+
+  <ul>
+    <li>Farm planning records.</li>
+    <li>Seed purchase and planting records.</li>
+    <li>Fertilizer and pesticide application records.</li>
+    <li>Irrigation and rainfall records.</li>
+    <li>Labour and equipment records.</li>
+    <li>Harvest and yield records.</li>
+    <li>Storage and marketing records.</li>
+    <li>Income and expenditure records.</li>
+  </ul>
+
+  <h3>19.2 Sample farm activity record</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Farm activity</th>
+          <th>Crop</th>
+          <th>Inputs used</th>
+          <th>Quantity</th>
+          <th>Observations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01/11/2026</td>
+          <td>Land preparation</td>
+          <td>Tomato</td>
+          <td>Hand tools</td>
+          <td>1 plot</td>
+          <td>Soil prepared</td>
+        </tr>
+        <tr>
+          <td>05/11/2026</td>
+          <td>Transplanting</td>
+          <td>Tomato</td>
+          <td>Seedlings</td>
+          <td>Recorded by farmer</td>
+          <td>Plant establishment monitored</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="muted">
+    These are illustrative examples, not actual farm records.
+    Farmers should enter their own dates, quantities and observations.
+  </p>
+
+</section>
+
+<!-- BUSINESS -->
+
+<section id="business">
+
+  <h2>20. Farm Business and Financial Management</h2>
+
+  <p>
+    A farm is also an economic activity. Farmers need
+    to understand production costs, revenue, profit,
+    investment and financial risks.
+  </p>
+
+  <h3>20.1 Common farm expenses</h3>
+
+  <ul>
+    <li>Seeds and seedlings.</li>
+    <li>Fertilizers and soil amendments.</li>
+    <li>Water and irrigation expenses.</li>
+    <li>Labour costs.</li>
+    <li>Tools and machinery.</li>
+    <li>Transport and packaging.</li>
+    <li>Storage and marketing expenses.</li>
+  </ul>
+
+  <h3>20.2 Understanding farm profit</h3>
+
+  <p>
+    Farm profit is calculated by subtracting total production
+    and business costs from total revenue.
+  </p>
+
+  <div class="note">
+    <strong>Farm profit = Total revenue − Total costs</strong>
+  </div>
+
+  <p>
+    For example, if a farmer receives KSh 50,000 from produce
+    sales and spends KSh 35,000 on production and marketing,
+    the estimated profit is KSh 15,000.
+  </p>
+
+  <h3>20.3 Importance of budgeting</h3>
+
+  <ul>
+    <li>Helps control unnecessary spending.</li>
+    <li>Identifies expected capital requirements.</li>
+    <li>Supports investment decisions.</li>
+    <li>Helps compare production costs and income.</li>
+    <li>Improves financial planning.</li>
+  </ul>
+
+</section>
+
+<!-- SAFETY -->
+
+<section id="safety">
+
+  <h2>21. Farm Safety and Environmental Protection</h2>
+
+  <p>
+    Agricultural work involves risks from machinery,
+    chemicals, tools, electricity, animals and environmental
+    conditions. Safety measures protect farmers, workers,
+    consumers and the environment.
+  </p>
+
+  <h3>21.1 Chemical safety</h3>
+
+  <ul>
+    <li>Read and follow product labels.</li>
+    <li>Use the recommended protective equipment.</li>
+    <li>Store chemicals in secure, labelled containers.</li>
+    <li>Keep chemicals away from children and food.</li>
+    <li>Never reuse chemical containers for drinking water.</li>
+    <li>Dispose of empty containers according to approved guidance.</li>
+  </ul>
+
+  <h3>21.2 Machinery and equipment safety</h3>
+
+  <ul>
+    <li>Inspect equipment before operation.</li>
+    <li>Use machinery only after proper training.</li>
+    <li>Switch off equipment before maintenance.</li>
+    <li>Keep children away from operating machinery.</li>
+    <li>Use safe electrical connections for pumps and equipment.</li>
+  </ul>
+
+  <h3>21.3 Environmental protection</h3>
+
+  <ul>
+    <li>Protect rivers, wells and boreholes from pollution.</li>
+    <li>Avoid unnecessary chemical application.</li>
+    <li>Prevent soil erosion and land degradation.</li>
+    <li>Manage agricultural waste responsibly.</li>
+    <li>Use water efficiently.</li>
+    <li>Protect useful insects and natural vegetation.</li>
+  </ul>
+
+</section>
+
+<!-- MISTAKES -->
+
+<section id="mistakes">
+
+  <h2>22. Common Farming Mistakes to Avoid</h2>
+
+  <ol>
+    <li>Planting without understanding soil and climate conditions.</li>
+    <li>Using poor-quality or unsuitable seeds.</li>
+    <li>Planting at incorrect depth or spacing.</li>
+    <li>Applying fertilizer without considering crop requirements.</li>
+    <li>Over-irrigating or allowing crops to suffer water stress.</li>
+    <li>Ignoring early signs of pests and diseases.</li>
+    <li>Using pesticides without identifying the problem.</li>
+    <li>Failing to keep farm records.</li>
+    <li>Harvesting too early or too late.</li>
+    <li>Storing produce in unsuitable conditions.</li>
+    <li>Producing crops without understanding market demand.</li>
+    <li>Ignoring weather forecasts and seasonal risks.</li>
+  </ol>
+
+</section>
+
+<!-- GLOSSARY -->
+
+<section id="glossary">
+
+  <h2>23. Agricultural Glossary</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Term</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Agronomy</td><td>The science and practice of crop production and soil management.</td></tr>
+        <tr><td>Germination</td><td>The process through which a seed begins to grow.</td></tr>
+        <tr><td>Seedling</td><td>A young plant that has developed from a seed.</td></tr>
+        <tr><td>Fertilizer</td><td>A material used to supply plant nutrients.</td></tr>
+        <tr><td>Compost</td><td>Decomposed organic material used to improve soil.</td></tr>
+        <tr><td>Mulching</td><td>Covering soil with suitable materials to protect it.</td></tr>
+        <tr><td>Irrigation</td><td>Artificial application of water to crops.</td></tr>
+        <tr><td>Weed</td><td>An unwanted plant growing in a cultivated area.</td></tr>
+        <tr><td>Pest</td><td>An organism that damages crops or agricultural products.</td></tr>
+        <tr><td>Crop rotation</td><td>Growing different crops in a planned sequence on the same land.</td></tr>
+        <tr><td>Yield</td><td>The quantity of agricultural produce harvested from a given area.</td></tr>
+        <tr><td>Post-harvest</td><td>Activities carried out after harvesting.</td></tr>
+        <tr><td>IPM</td><td>Integrated Pest Management.</td></tr>
+        <tr><td>Soil fertility</td><td>The ability of soil to supply essential nutrients for plant growth.</td></tr>
+        <tr><td>Climate-smart agriculture</td><td>Approaches that support productivity, resilience and environmental sustainability.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- QUESTIONS -->
+
+<section id="questions">
+
+  <h2>24. Review Questions and Knowledge Check</h2>
+
+  <p>
+    Use these questions to assess your understanding
+    of the farming guides.
+  </p>
+
+  <h3>Section A: General farming knowledge</h3>
+
+  <ol>
+    <li>What is farming?</li>
+    <li>Why is farm planning important?</li>
+    <li>Identify three factors to consider when selecting crops.</li>
+    <li>What are the major differences between sandy, clay and loam soils?</li>
+    <li>Why is quality seed important?</li>
+  </ol>
+
+  <h3>Section B: Crop production</h3>
+
+  <ol>
+    <li>Explain the importance of correct planting spacing.</li>
+    <li>Identify the three major plant nutrients.</li>
+    <li>What is integrated pest management?</li>
+    <li>Give four signs of crop disease.</li>
+    <li>Why should farmers monitor weeds?</li>
+  </ol>
+
+  <h3>Section C: Water and climate</h3>
+
+  <ol>
+    <li>What is irrigation?</li>
+    <li>Identify three irrigation methods.</li>
+    <li>Explain two ways of conserving water.</li>
+    <li>What is climate-smart agriculture?</li>
+    <li>How can weather information help farmers?</li>
+  </ol>
+
+  <h3>Section D: Harvesting and business</h3>
+
+  <ol>
+    <li>Why is harvesting at the correct maturity stage important?</li>
+    <li>Identify four causes of post-harvest losses.</li>
+    <li>What is agricultural marketing?</li>
+    <li>Why should farmers maintain production records?</li>
+    <li>How is farm profit calculated?</li>
+  </ol>
+
+  <div class="note">
+    <strong>Practical assignment:</strong>
+    Prepare a simple farm plan for one crop. Include the
+    crop variety, land size, soil conditions, water source,
+    planting period, expected costs, pest management plan
+    and intended market.
+  </div>
+
+</section>
+
+<!-- CONCLUSION -->
+
+<section id="conclusion">
+
+  <h2>25. Conclusion</h2>
+
+  <p>
+    Successful farming depends on informed decisions,
+    proper resource management and continuous learning.
+    Farmers who understand soil, seeds, water, crop health,
+    climate, harvesting and markets are better equipped
+    to manage production challenges.
+  </p>
+
+  <p>
+    Digital agriculture provides additional opportunities
+    through weather information, mobile learning, farm
+    records, sensors, mapping and market communication.
+    Combining these tools with practical field knowledge
+    can support more productive and sustainable farming.
+  </p>
+
+  <p>
+    Farmers are encouraged to observe their fields,
+    maintain accurate records, seek extension advice
+    and adapt recommended practices to local conditions.
+  </p>
+
+</section>
+
+<div class="end-topic">
+  AGRO-DIGITAL FARMERS LIBRARY
+  <br>
+  <span class="muted">
+    Learn • Practise • Monitor • Improve • Grow
+  </span>
+</div>
+
+<footer>
+  AGRICULTURAL KNOWLEDGE AND DIGITAL FARMING EDUCATION
+  <br>
+  PRACTICAL GUIDANCE FOR SUSTAINABLE AGRICULTURE
+</footer>
+
+</main>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

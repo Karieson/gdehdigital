@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crop Health & Pest Management | GADEH</title>
+
+  <meta name="description"
+        content="Learn how to monitor crop health, identify possible pest and disease symptoms, prevent crop damage and practise safe integrated pest management with GADEH.">
+
+  <style>
+    :root {
+      --green: #214b35;
+      --dark-green: #173725;
+      --mid-green: #477b55;
+      --soft-green: #eaf1e9;
+      --gold: #d5a84b;
+      --ink: #26352b;
+      --grey: #69766d;
+      --ivory: #f7f8f4;
+      --white: #ffffff;
+      --border: #e3e9e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 9px 6%;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .site-header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 14px rgba(20, 50, 30, 0.06);
+    }
+
+    .nav-container {
+      min-height: 78px;
+      padding: 12px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+      border: 2px solid var(--gold);
+    }
+
+    .brand-name strong {
+      display: block;
+      color: var(--green);
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--grey);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--mid-green);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: 0;
+      background: var(--soft-green);
+      color: var(--green);
+      padding: 9px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(110deg,
+          rgba(23, 55, 37, 0.97),
+          rgba(33, 75, 53, 0.91)),
+        radial-gradient(circle at 85% 15%, #789b64, transparent 45%);
+      color: var(--white);
+      padding: 85px 6%;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark-green);
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .hero-button:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* GENERAL */
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--mid-green);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      background: var(--soft-green);
+      border-left: 4px solid var(--gold);
+      padding: 19px 22px;
+      border-radius: 4px;
+      margin-bottom: 35px;
+    }
+
+    .notice strong {
+      color: var(--green);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .notice p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    /* SEARCH */
+
+    .search-area {
+      margin-bottom: 30px;
+    }
+
+    .search-area label {
+      display: block;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 600px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      outline: none;
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .search-box:focus {
+      border-color: var(--mid-green);
+      box-shadow: 0 0 0 3px rgba(71, 123, 85, 0.1);
+    }
+
+    /* CONTENT CARDS */
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 9px 25px rgba(20, 50, 30, 0.07);
+    }
+
+    .topic-number {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .topic-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .topic-card p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .topic-card ul {
+      padding-left: 18px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .topic-card li {
+      margin-bottom: 6px;
+    }
+
+    .empty-message {
+      display: none;
+      color: var(--grey);
+      padding: 20px 0;
+      font-size: 14px;
+    }
+
+    /* FIELD SCOUTING */
+
+    .scouting-section {
+      background: var(--white);
+    }
+
+    .scouting-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    .scouting-list {
+      list-style: none;
+    }
+
+    .scouting-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    .scouting-list strong {
+      color: var(--green);
+    }
+
+    .scouting-note {
+      background: var(--soft-green);
+      padding: 25px;
+      border-radius: 7px;
+    }
+
+    .scouting-note h3 {
+      color: var(--green);
+      margin-bottom: 12px;
+      font-size: 19px;
+    }
+
+    .scouting-note p {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 12px;
+    }
+
+    /* IPM */
+
+    .ipm-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .ipm-item {
+      border-top: 3px solid var(--gold);
+      background: var(--white);
+      padding: 20px;
+    }
+
+    .ipm-item h3 {
+      font-size: 15px;
+      color: var(--green);
+      margin-bottom: 9px;
+    }
+
+    .ipm-item p {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    /* PESTICIDE SAFETY */
+
+    .safety-section {
+      background: var(--dark-green);
+      color: var(--white);
+    }
+
+    .safety-section .section-heading h2 {
+      color: var(--white);
+    }
+
+    .safety-section .section-heading p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 30px;
+    }
+
+    .safety-item {
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+      padding: 15px 0;
+    }
+
+    .safety-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .safety-item p {
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+    }
+
+    /* ADVISORY */
+
+    .advisory {
+      background: var(--soft-green);
+      padding: 55px 6%;
+      text-align: center;
+    }
+
+    .advisory-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .advisory h2 {
+      color: var(--green);
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .advisory p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .advisory a {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #122d1e;
+      color: var(--white);
+      padding: 35px 6% 20px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand strong {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 20px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.07);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .ipm-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 65px 6%;
+      }
+
+      .section {
+        padding: 55px 6%;
+      }
+
+      .topic-grid,
+      .scouting-grid,
+      .safety-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ipm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    /* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+    <span>Garissa Agro-Digital Empowerment Hub</span>
+    <span>Garissa County, Kenya</span>
+  </div>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <nav class="nav-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-mark">GADEH</div>
+
+        <div class="brand-name">
+          <strong>GADEH</strong>
+          <span>Digital Farmer Portal</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle"
+              id="navToggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="agricultural-knowledge.html">Knowledge Centre</a></li>
+        <li><a href="crop-health.html" class="active">Crop Health</a></li>
+        <li><a href="weather-climate.html">Weather & Climate</a></li>
+        <li><a href="water-irrigation.html">Water & Irrigation</a></li>
+        <li><a href="digital-learning.html">Digital Learning</a></li>
+        <li><a href="farmer-registration.html">Farmers</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">Agricultural Support and Advisory</div>
+
+      <h1>Crop Health & Pest Management</h1>
+
+      <p>
+        Protect your crops through early observation, responsible pest
+        management and informed agricultural practices. Learn how to
+        recognise warning signs, reduce crop losses and make better
+        decisions for healthier farms.
+      </p>
+
+      <a href="crop-pest.html" class="hero-button">
+        Explore Crop Health Guides
+      </a>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="notice">
+        <strong>Important agricultural advisory</strong>
+        <p>
+          This page provides general educational information. Crop symptoms
+          can have several causes, and the same symptom may indicate different
+          problems. Seek advice from a county agricultural extension officer
+          or qualified agronomist before applying treatment.
+        </p>
+      </div>
+
+      <div class="section-heading">
+        <div class="eyebrow">Healthy Crops, Stronger Harvests</div>
+
+        <h2>Understand the health of your crops</h2>
+
+        <p>
+          Regular field observation helps farmers notice changes early.
+          Identifying possible problems before they spread can help reduce
+          unnecessary expenses, protect yields and support sustainable
+          agricultural production.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CROP PROBLEMS -->
+
+  <section class="section" id="crop-problems">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Crop Monitoring</div>
+        <h2>Common crop warning signs</h2>
+
+        <p>
+          Learn what to observe when plants begin to show unusual changes.
+          These signs are starting points for investigation, not confirmed
+          diagnoses.
+        </p>
+      </div>
+
+      <div class="search-area">
+        <label for="topicSearch">Search crop health topics</label>
+
+        <input
+          type="search"
+          id="topicSearch"
+          class="search-box"
+          placeholder="Search symptoms, leaves, roots, wilting..."
+          aria-label="Search crop health topics">
+      </div>
+
+      <div class="topic-grid" id="topicGrid">
+
+        <article class="topic-card">
+          <div class="topic-number">01 — LEAF DAMAGE</div>
+
+          <h3>Holes, Chewing and Damaged Leaves</h3>
+
+          <p>
+            Irregular holes, missing leaf edges or visible feeding marks
+            may indicate insect activity or other sources of physical damage.
+          </p>
+
+          <ul>
+            <li>Inspect both upper and lower leaf surfaces.</li>
+            <li>Look for insects, eggs, larvae or droppings.</li>
+            <li>Check whether damage is spreading to new leaves.</li>
+          </ul>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-number">02 — LEAF COLOUR</div>
+
+          <h3>Yellowing or Discoloured Leaves</h3>
+
+          <p>
+            Changes in leaf colour may be associated with nutrient
+            deficiencies, water stress, root damage, pests or disease.
+          </p>
+
+          <ul>
+            <li>Observe whether older or younger leaves are affected.</li>
+            <li>Check soil moisture and drainage conditions.</li>
+            <li>Look for patterns across different plants.</li>
+          </ul>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-number">03 — WILTING</div>
+
+          <h3>Drooping and Wilting Plants</h3>
+
+          <p>
+            Wilting can occur when plants cannot take up enough water.
+            Root problems, pests, disease and extreme heat may also contribute.
+          </p>
+
+          <ul>
+            <li>Check soil moisture around affected plants.</li>
+            <li>Inspect stems and roots where appropriate.</li>
+            <li>Compare affected plants with healthy nearby plants.</li>
+          </ul>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-number">04 — LEAF SPOTS</div>
+
+          <h3>Spots, Patches and Unusual Marks</h3>
+
+          <p>
+            Dark, pale, dry or spreading marks on leaves may be linked
+            to disease, environmental stress or physical injury.
+          </p>
+
+          <ul>
+            <li>Record the size, colour and location of the spots.</li>
+            <li>Check whether new spots are appearing.</li>
+            <li>Avoid handling or moving affected plant material unnecessarily.</li>
+          </ul>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-number">05 — STEM AND ROOTS</div>
+
+          <h3>Weak Stems and Root Damage</h3>
+
+          <p>
+            Broken, discoloured or damaged stems and roots can interfere
+            with water and nutrient movement.
+          </p>
+
+          <ul>
+            <li>Look for unusual stem holes or soft areas.</li>
+            <li>Observe whether plants are easily falling over.</li>
+            <li>Check for root damage where safe and practical.</li>
+          </ul>
+        </article>
+
+        <article class="topic-card">
+          <div class="topic-number">06 — FLOWERS AND FRUITS</div>
+
+          <h3>Damaged Flowers and Fruits</h3>
+
+          <p>
+            Flower drop, fruit damage, holes or rotting may be associated
+            with insects, disease, poor pollination or environmental stress.
+          </p>
+
+          <ul>
+            <li>Inspect flowers and young fruits regularly.</li>
+            <li>Look for feeding marks or unusual growth.</li>
+            <li>Record when the damage first appeared.</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <p class="empty-message" id="emptyMessage">
+        No matching topics found. Try another search term.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FIELD SCOUTING -->
+
+  <section class="section scouting-section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Practical Farm Management</div>
+        <h2>How to inspect your farm</h2>
+
+        <p>
+          Field scouting means regularly checking crops for signs of pests,
+          disease, water stress and other production challenges.
+        </p>
+      </div>
+
+      <div class="scouting-grid">
+
+        <ul class="scouting-list">
+          <li>
+            <strong>1. Walk through the field.</strong>
+            Observe different sections rather than inspecting only the edges.
+          </li>
+
+          <li>
+            <strong>2. Examine several plants.</strong>
+            Compare healthy-looking plants with those showing unusual signs.
+          </li>
+
+          <li>
+            <strong>3. Inspect leaves carefully.</strong>
+            Check both sides of leaves, stems, flowers and fruits.
+          </li>
+
+          <li>
+            <strong>4. Check soil and water conditions.</strong>
+            Observe moisture, drainage and signs of water stress.
+          </li>
+
+          <li>
+            <strong>5. Record your observations.</strong>
+            Note the date, crop, affected area and changes over time.
+          </li>
+
+          <li>
+            <strong>6. Seek professional advice.</strong>
+            Consult an agricultural extension officer when the cause is unclear.
+          </li>
+        </ul>
+
+        <div class="scouting-note">
+          <h3>What information should you collect?</h3>
+
+          <p>
+            If you suspect a crop problem, collect useful information
+            before seeking advice.
+          </p>
+
+          <ul>
+            <li>Crop name and variety, if known.</li>
+            <li>Farm location and date symptoms were observed.</li>
+            <li>Clear photographs of affected plants.</li>
+            <li>Whether one plant, a small area or the whole field is affected.</li>
+            <li>Recent rainfall and irrigation activities.</li>
+            <li>Any fertilisers or crop protection products recently used.</li>
+          </ul>
+
+          <p style="margin-top:15px;">
+            Do not rely on a single photograph or symptom to confirm
+            a pest or disease diagnosis.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATED PEST MANAGEMENT -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Sustainable Crop Protection</div>
+
+        <h2>Integrated Pest Management (IPM)</h2>
+
+        <p>
+          Integrated Pest Management combines different methods to prevent
+          and manage crop pests while reducing unnecessary pesticide use
+          and protecting people, animals and the environment.
+        </p>
+      </div>
+
+      <div class="ipm-grid">
+
+        <div class="ipm-item">
+          <h3>Prevention</h3>
+          <p>
+            Use healthy planting materials, maintain field hygiene,
+            practise appropriate crop rotation and manage weeds.
+          </p>
+        </div>
+
+        <div class="ipm-item">
+          <h3>Monitoring</h3>
+          <p>
+            Inspect crops regularly and monitor pest populations and
+            crop damage before deciding on intervention.
+          </p>
+        </div>
+
+        <div class="ipm-item">
+          <h3>Non-chemical Control</h3>
+          <p>
+            Where appropriate, use physical, cultural and biological
+            control methods recommended by agricultural experts.
+          </p>
+        </div>
+
+        <div class="ipm-item">
+          <h3>Responsible Treatment</h3>
+          <p>
+            Use approved crop protection products only when necessary
+            and in accordance with professional advice and label directions.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PESTICIDE SAFETY -->
+
+  <section class="section safety-section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Responsible Crop Protection</div>
+
+        <h2>Safe pesticide use</h2>
+
+        <p>
+          Incorrect pesticide use can harm farmers, consumers, livestock,
+          beneficial insects and the environment. Always prioritise
+          prevention and seek professional guidance.
+        </p>
+      </div>
+
+      <div class="safety-grid">
+
+        <div class="safety-item">
+          <strong>Use approved products</strong>
+          <p>
+            Select only registered products approved for the specific crop
+            and target pest or disease in Kenya.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Read the product label</strong>
+          <p>
+            Follow all instructions, including application directions,
+            restrictions and safety precautions.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Wear protective equipment</strong>
+          <p>
+            Use the protective clothing and equipment specified on the
+            product label.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Avoid unsafe mixing</strong>
+          <p>
+            Never mix products unless the label explicitly permits it
+            and qualified guidance confirms compatibility.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Respect waiting periods</strong>
+          <p>
+            Observe the pre-harvest interval and restricted-entry period
+            stated on the product label.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Protect water and livestock</strong>
+          <p>
+            Prevent contamination of water sources and keep people and
+            animals away from treated areas as directed.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Store products securely</strong>
+          <p>
+            Keep products in their original labelled containers, locked
+            away from children, food, animal feed and water.
+          </p>
+        </div>
+
+        <div class="safety-item">
+          <strong>Dispose of containers safely</strong>
+          <p>
+            Follow label instructions and local disposal requirements.
+            Never reuse pesticide containers for household purposes.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FARMER ADVISORY -->
+
+  <section class="advisory">
+    <div class="advisory-inner">
+
+      <h2>Need help with a crop problem?</h2>
+
+      <p>
+        If your crops show unusual symptoms, seek advice from a qualified
+        agricultural extension officer. Share clear photographs and your
+        field observations to support a more informed assessment.
+      </p>
+
+      <a href="farmer-registration.html">
+        Visit Farmer Community
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <strong>GADEH</strong>
+        <p>Garissa Agro-Digital Empowerment Hub</p>
+        <p>Digital knowledge for stronger agricultural communities.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="agricultural-knowledge.html">Knowledge Centre</a>
+        <a href="weather-climate.html">Weather</a>
+        <a href="water-irrigation.html">Irrigation</a>
+        <a href="digital-learning.html">Learning</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="copyrightYear"></span>
+      Garissa Agro-Digital Empowerment Hub. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    // MOBILE NAVIGATION
+
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      navToggle.setAttribute("aria-expanded", isOpen);
+      navToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.textContent = "☰ Menu";
+      });
+    });
+
+
+    // CROP HEALTH TOPIC SEARCH
+
+    const topicSearch = document.getElementById("topicSearch");
+    const topicCards = document.querySelectorAll(".topic-card");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    topicSearch.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      topicCards.forEach(function (card) {
+        const cardText = card.textContent.toLowerCase();
+        const matches = cardText.includes(searchTerm);
+
+        card.style.display = matches ? "" : "none";
+
+        if (matches) {
+          visibleCount++;
+        }
+      });
+
+      emptyMessage.style.display =
+        visibleCount === 0 ? "block" : "none";
+    });
+
+
+    // COPYRIGHT YEAR
+
+    document.getElementById("copyrightYear").textContent =
+      new Date().getFullYear();
+  </script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

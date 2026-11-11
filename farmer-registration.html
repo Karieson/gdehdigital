@@ -1,0 +1,1662 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Farmer Registration & Community | GADEH</title>
+
+  <meta name="description"
+    content="Register as a farmer, connect with agricultural learning opportunities and participate in the GADEH Digital Farmer Community in Garissa, Kenya.">
+
+  <style>
+    :root {
+      --green: #214b35;
+      --dark-green: #173725;
+      --mid-green: #477b55;
+      --soft-green: #eaf1e9;
+      --gold: #d5a84b;
+      --ink: #26352b;
+      --grey: #69766d;
+      --ivory: #f7f8f4;
+      --white: #ffffff;
+      --border: #dfe6dc;
+      --shadow: 0 8px 25px rgba(23,55,37,.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      background: var(--dark-green);
+      color: white;
+      padding: 9px 6%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .site-header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+    }
+
+    .nav-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 220px;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 22px;
+      border-radius: 12px;
+    }
+
+    .brand-name strong {
+      display: block;
+      color: var(--green);
+      font-size: 16px;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--grey);
+      font-size: 11px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: bold;
+      transition: .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--mid-green);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--green);
+      color: white;
+      padding: 9px 13px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background:
+        linear-gradient(110deg, rgba(23,55,37,.97), rgba(33,75,53,.88)),
+        radial-gradient(circle at 85% 20%, #789c79, transparent 40%);
+      color: white;
+      padding: 82px 6%;
+    }
+
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(32px, 5vw, 51px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #e5eee5;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 21px;
+      border: none;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark-green);
+    }
+
+    .btn-gold:hover {
+      background: #e5bd68;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.7);
+      color: white;
+      margin-left: 8px;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green);
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 5%;
+    }
+
+    .section-heading {
+      max-width: 740px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading span {
+      color: var(--mid-green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(25px, 4vw, 34px);
+      line-height: 1.25;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+    }
+
+    .intro-card,
+    .benefit-card {
+      padding: 27px;
+      border-radius: 11px;
+    }
+
+    .intro-card {
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card h3,
+    .benefit-card h3 {
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .intro-card p,
+    .benefit-card p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-card {
+      background: var(--soft-green);
+      border-left: 4px solid var(--gold);
+    }
+
+    .benefit-card ul {
+      padding-left: 19px;
+      font-size: 13px;
+    }
+
+    .benefit-card li {
+      margin-bottom: 8px;
+    }
+
+    .soft-section {
+      background: var(--soft-green);
+    }
+
+    .form-container {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-header {
+      margin-bottom: 25px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-header h3 {
+      color: var(--green);
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .form-header p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .form-section-title {
+      color: var(--green);
+      font-size: 15px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+      margin: 25px 0 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .required {
+      color: #b03b36;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      outline: none;
+      background: var(--ivory);
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--mid-green);
+      background: white;
+    }
+
+    .form-group textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .field-note {
+      color: var(--grey);
+      font-size: 11px;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+    }
+
+    .choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      background: var(--ivory);
+      padding: 11px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .choice-item input {
+      accent-color: var(--green);
+      margin-top: 4px;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 23px;
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    .consent input {
+      accent-color: var(--green);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .form-submit {
+      margin-top: 23px;
+      width: 100%;
+      background: var(--green);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .form-submit:hover {
+      background: var(--dark-green);
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .form-message.success {
+      display: block;
+      background: var(--soft-green);
+      color: var(--green);
+      border-left: 4px solid var(--mid-green);
+    }
+
+    .form-message.error {
+      display: block;
+      background: #fff0ee;
+      color: #9b332d;
+      border-left: 4px solid #bd5148;
+    }
+
+    .demo-notice {
+      margin-top: 18px;
+      background: #fff8e8;
+      border-left: 4px solid var(--gold);
+      border-radius: 5px;
+      padding: 14px 17px;
+      color: #5d4b27;
+      font-size: 12px;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .community-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      transition: .25s;
+    }
+
+    .community-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+      border-color: var(--gold);
+    }
+
+    .community-icon {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-green);
+      border-radius: 11px;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .community-card h3 {
+      color: var(--green);
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .community-card p {
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    .enquiry-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .enquiry-container h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .enquiry-container > p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .cta {
+      background: var(--green);
+      color: white;
+      padding: 38px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: #e1eae1;
+      font-size: 13px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark-green);
+      padding: 11px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .disclaimer {
+      background: var(--dark-green);
+      color: white;
+      padding: 25px 6%;
+      text-align: center;
+    }
+
+    .disclaimer p {
+      max-width: 900px;
+      margin: auto;
+      color: #e0e9e0;
+      font-size: 12px;
+    }
+
+    footer {
+      background: #10291b;
+      color: white;
+      padding: 35px 6% 18px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #d5dfd6;
+      font-size: 12px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 25px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
+      color: #b9c8bc;
+      font-size: 11px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .community-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-container {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0 5px;
+        gap: 13px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 60px 6%;
+      }
+
+      .section {
+        padding: 48px 6%;
+      }
+
+      .intro-grid,
+      .form-grid,
+      .community-grid,
+      .choice-grid,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .form-container,
+      .enquiry-container {
+        padding: 21px;
+      }
+
+      .cta {
+        padding: 27px 20px;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+    /* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>GADEH | Garissa Agro-Digital Empowerment Hub</span>
+    <span>Digital Farmer Empowerment • Garissa, Kenya</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-name">
+          <strong>GADEH</strong>
+          <span>Digital Farmer Portal</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="agricultural-knowledge.html">Knowledge Centre</a>
+        <a href="crop-health.html">Crop Health</a>
+        <a href="weather-climate.html">Weather & Climate</a>
+        <a href="water-irrigation.html">Water & Irrigation</a>
+        <a href="digital-learning.html">Digital Learning</a>
+        <a href="farmer-registration.html" class="active">Farmer Registration</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <span class="eyebrow">Join the GADEH Farmer Community</span>
+
+      <h1>Register, Connect and Grow Together</h1>
+
+      <p>
+        Become part of a growing agricultural learning community.
+        Register your farming interests, access digital learning
+        opportunities and connect with initiatives supporting
+        agricultural and digital empowerment.
+      </p>
+
+      <a href="#registration" class="btn btn-gold">
+        Register as a Farmer
+      </a>
+
+      <a href="#community" class="btn btn-outline">
+        Explore Our Community
+      </a>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+
+    <div class="section-heading">
+      <span>Farmer Participation</span>
+      <h2>Building a Connected Farmer Community</h2>
+      <p>
+        The GADEH Digital Farmer Portal aims to make agricultural
+        knowledge, digital learning and community engagement
+        more accessible to farmers.
+      </p>
+    </div>
+
+    <div class="intro-grid">
+
+      <div class="intro-card">
+
+        <h3>About Farmer Registration</h3>
+
+        <p>
+          Farmer registration is intended to help GADEH understand
+          the agricultural interests and learning needs of
+          participating farmers.
+        </p>
+
+        <p>
+          Through the portal, farmers can express interest in
+          agricultural training, digital literacy, crop production,
+          livestock management, water conservation and other
+          relevant learning opportunities.
+        </p>
+
+        <p>
+          Registration is intended to support communication and
+          participation in future farmer-focused activities.
+          It does not automatically guarantee access to funding,
+          grants, inputs, employment or other benefits.
+        </p>
+
+      </div>
+
+      <div class="benefit-card">
+
+        <h3>Why Participate?</h3>
+
+        <ul>
+          <li>Access agricultural learning resources.</li>
+          <li>Develop digital skills for farming.</li>
+          <li>Identify relevant learning opportunities.</li>
+          <li>Share agricultural challenges and experiences.</li>
+          <li>Participate in community knowledge-sharing.</li>
+          <li>Express interest in future GADEH activities.</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section class="section soft-section" id="registration">
+
+    <div class="section-heading">
+      <span>Farmer Registration</span>
+      <h2>Farmer Information Form</h2>
+      <p>
+        Provide your basic information and describe your
+        agricultural activities and learning interests.
+      </p>
+    </div>
+
+    <div class="form-container">
+
+      <div class="form-header">
+        <h3>Farmer Registration Application</h3>
+        <p>
+          Fields marked with an asterisk (*) are required.
+          Please provide accurate information.
+        </p>
+      </div>
+
+      <form id="farmerRegistrationForm">
+
+        <!-- PERSONAL INFORMATION -->
+        <h4 class="form-section-title">
+          Section A — Personal Information
+        </h4>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="fullName">
+              Full Name <span class="required">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+              maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              Phone Number <span class="required">*</span>
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 07XXXXXXXX"
+              autocomplete="tel"
+              required
+              maxlength="20">
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="gender">
+              Gender
+            </label>
+
+            <select id="gender" name="gender">
+              <option value="">Select an option</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ageGroup">
+              Age Group
+            </label>
+
+            <select id="ageGroup" name="ageGroup">
+              <option value="">Select age group</option>
+              <option value="18-24">18–24 years</option>
+              <option value="25-34">25–34 years</option>
+              <option value="35-44">35–44 years</option>
+              <option value="45-54">45–54 years</option>
+              <option value="55+">55 years and above</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- LOCATION -->
+        <h4 class="form-section-title">
+          Section B — Location Information
+        </h4>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="county">
+              County <span class="required">*</span>
+            </label>
+
+            <select id="county" name="county" required>
+              <option value="">Select county</option>
+              <option value="Garissa">Garissa</option>
+              <option value="Wajir">Wajir</option>
+              <option value="Mandera">Mandera</option>
+              <option value="Isiolo">Isiolo</option>
+              <option value="Tana River">Tana River</option>
+              <option value="Marsabit">Marsabit</option>
+              <option value="Other">Other county</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="subCounty">
+              Sub-County
+            </label>
+
+            <input
+              type="text"
+              id="subCounty"
+              name="subCounty"
+              placeholder="Enter your sub-county">
+          </div>
+
+          <div class="form-group">
+            <label for="ward">
+              Ward
+            </label>
+
+            <input
+              type="text"
+              id="ward"
+              name="ward"
+              placeholder="Enter your ward">
+          </div>
+
+          <div class="form-group">
+            <label for="village">
+              Village or Area
+            </label>
+
+            <input
+              type="text"
+              id="village"
+              name="village"
+              placeholder="Enter your village or area">
+          </div>
+
+        </div>
+
+        <!-- FARM INFORMATION -->
+        <h4 class="form-section-title">
+          Section C — Agricultural Information
+        </h4>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="farmerType">
+              Farmer Category <span class="required">*</span>
+            </label>
+
+            <select id="farmerType" name="farmerType" required>
+              <option value="">Select farmer category</option>
+              <option value="Small-scale farmer">Small-scale farmer</option>
+              <option value="Medium-scale farmer">Medium-scale farmer</option>
+              <option value="Large-scale farmer">Large-scale farmer</option>
+              <option value="Pastoralist">Pastoralist</option>
+              <option value="Agro-pastoralist">Agro-pastoralist</option>
+              <option value="Youth interested in agriculture">
+                Youth interested in agriculture
+              </option>
+              <option value="Agricultural entrepreneur">
+                Agricultural entrepreneur
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="farmSize">
+              Approximate Farm Size
+            </label>
+
+            <select id="farmSize" name="farmSize">
+              <option value="">Select farm size</option>
+              <option value="Less than 1 acre">Less than 1 acre</option>
+              <option value="1-5 acres">1–5 acres</option>
+              <option value="6-10 acres">6–10 acres</option>
+              <option value="11-20 acres">11–20 acres</option>
+              <option value="More than 20 acres">More than 20 acres</option>
+              <option value="No fixed farm land">No fixed farm land</option>
+              <option value="Not applicable">Not applicable</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="farmingActivity">
+              Main Agricultural Activity
+            </label>
+
+            <select id="farmingActivity" name="farmingActivity">
+              <option value="">Select main activity</option>
+              <option value="Crop farming">Crop farming</option>
+              <option value="Livestock farming">Livestock farming</option>
+              <option value="Mixed farming">Mixed farming</option>
+              <option value="Horticulture">Horticulture</option>
+              <option value="Poultry farming">Poultry farming</option>
+              <option value="Agricultural business">Agricultural business</option>
+              <option value="Interested in starting farming">
+                Interested in starting farming
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="waterSource">
+              Main Water Source
+            </label>
+
+            <select id="waterSource" name="waterSource">
+              <option value="">Select water source</option>
+              <option value="River">River</option>
+              <option value="Borehole">Borehole</option>
+              <option value="Shallow well">Shallow well</option>
+              <option value="Rainwater harvesting">Rainwater harvesting</option>
+              <option value="Water supply">Water supply</option>
+              <option value="Water tanker">Water tanker</option>
+              <option value="Other">Other</option>
+              <option value="Not applicable">Not applicable</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="crops">
+              Crops or Livestock Kept
+            </label>
+
+            <textarea
+              id="crops"
+              name="crops"
+              placeholder="Example: tomatoes, watermelon, maize, goats, camels, cattle..."></textarea>
+          </div>
+
+        </div>
+
+        <!-- LEARNING INTERESTS -->
+        <h4 class="form-section-title">
+          Section D — Learning and Training Interests
+        </h4>
+
+        <p class="field-note" style="margin-bottom:14px;">
+          Select the subjects you would be interested in learning about.
+        </p>
+
+        <div class="choice-grid">
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Crop production">
+            <span>Crop production and farm planning</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Livestock management">
+            <span>Livestock management</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Crop health">
+            <span>Crop health and pest management</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Water management">
+            <span>Water and irrigation management</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Climate-smart agriculture">
+            <span>Climate-smart agriculture</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Digital literacy">
+            <span>Smartphone and computer literacy</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Agribusiness">
+            <span>Agribusiness and market access</span>
+          </label>
+
+          <label class="choice-item">
+            <input type="checkbox" name="interests" value="Digital agriculture">
+            <span>Digital agriculture and technology</span>
+          </label>
+
+        </div>
+
+        <!-- FARMER CHALLENGES -->
+        <h4 class="form-section-title">
+          Section E — Challenges and Additional Information
+        </h4>
+
+        <div class="form-grid">
+
+          <div class="form-group full">
+            <label for="challenges">
+              Main Agricultural Challenges
+            </label>
+
+            <textarea
+              id="challenges"
+              name="challenges"
+              placeholder="Describe the main challenges affecting your farming activities..."></textarea>
+          </div>
+
+          <div class="form-group full">
+            <label for="expectations">
+              What Would You Like to Gain from GADEH?
+            </label>
+
+            <textarea
+              id="expectations"
+              name="expectations"
+              placeholder="Describe the knowledge, skills or opportunities you are interested in..."></textarea>
+          </div>
+
+        </div>
+
+        <!-- CONSENT -->
+        <label class="consent">
+          <input
+            type="checkbox"
+            id="consent"
+            name="consent"
+            required>
+
+          <span>
+            I confirm that the information I have provided is
+            accurate to the best of my knowledge. I understand
+            that my information may be used for farmer registration
+            and communication purposes in accordance with the
+            applicable privacy notice. <span class="required">*</span>
+          </span>
+        </label>
+
+        <button type="submit" class="form-submit">
+          Submit Farmer Registration
+        </button>
+
+        <div class="form-message" id="registrationMessage"
+          role="status" aria-live="polite"></div>
+
+        
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="section" id="community">
+
+    <div class="section-heading">
+      <span>Community Engagement</span>
+      <h2>Participate in the GADEH Farmer Community</h2>
+      <p>
+        Community engagement creates opportunities for farmers
+        to exchange knowledge, identify shared challenges and
+        participate in agricultural learning activities.
+      </p>
+    </div>
+
+    <div class="community-grid">
+
+      <article class="community-card">
+        <div class="community-icon">🤝</div>
+        <h3>Knowledge Sharing</h3>
+        <p>
+          Encourage farmers to share practical experiences,
+          lessons and locally relevant agricultural knowledge.
+        </p>
+      </article>
+
+      <article class="community-card">
+        <div class="community-icon">🎓</div>
+        <h3>Learning Participation</h3>
+        <p>
+          Express interest in agricultural training,
+          digital literacy and community learning sessions.
+        </p>
+      </article>
+
+      <article class="community-card">
+        <div class="community-icon">🌱</div>
+        <h3>Farmer Engagement</h3>
+        <p>
+          Share agricultural concerns and ideas that can
+          inform future farmer-focused activities.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section class="section soft-section" id="enquiry">
+
+    <div class="section-heading">
+      <span>Communication and Feedback</span>
+      <h2>Send a Farmer Enquiry</h2>
+      <p>
+        Use this section to express a question, suggest a
+        learning topic or share feedback about the portal.
+      </p>
+    </div>
+
+    <div class="enquiry-container">
+
+      <h3>Farmer Enquiry and Feedback Form</h3>
+
+      <p>
+        Tell us what you would like to learn or what
+        agricultural information you need.
+      </p>
+
+      <form id="enquiryForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="enquiryName">
+              Your Name <span class="required">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="enquiryName"
+              name="name"
+              placeholder="Enter your name"
+              required
+              maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryPhone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="enquiryPhone"
+              name="phone"
+              placeholder="Enter your phone number"
+              maxlength="20">
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryType">
+              Enquiry Category <span class="required">*</span>
+            </label>
+
+            <select id="enquiryType" name="category" required>
+              <option value="">Select category</option>
+              <option value="Agricultural information">
+                Agricultural information
+              </option>
+              <option value="Training opportunity">
+                Training opportunity
+              </option>
+              <option value="Digital literacy">
+                Digital literacy
+              </option>
+              <option value="Farmer registration">
+                Farmer registration
+              </option>
+              <option value="Portal feedback">
+                Portal feedback
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryEmail">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="enquiryEmail"
+              name="email"
+              placeholder="Enter your email">
+          </div>
+
+          <div class="form-group full">
+            <label for="enquiryMessage">
+              Your Message <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="enquiryMessage"
+              name="message"
+              placeholder="Write your question, suggestion or feedback..."
+              required
+              maxlength="3000"></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="form-submit">
+          Submit Enquiry
+        </button>
+
+        <div class="form-message"
+          id="enquiryResponse"
+          role="status"
+          aria-live="polite"></div>
+
+        
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- LEARNING LINK -->
+  <section class="section">
+
+    <div class="cta">
+      <h2>Continue Your Agricultural Learning Journey</h2>
+
+      <p>
+        Explore the GADEH Digital Agricultural Learning Centre
+        for practical information on crop production, livestock,
+        climate, irrigation and digital farming skills.
+      </p>
+
+      <a href="digital-learning.html">
+        Explore Digital Learning
+      </a>
+    </div>
+
+  </section>
+
+  <!-- PRIVACY NOTICE -->
+  <section class="disclaimer">
+    <p>
+      <strong>Privacy and Data Notice:</strong>
+      Farmer information should only be collected through a
+      properly secured and operational registration system.
+      Before launching actual registration, GADEH should provide
+      an appropriate privacy notice explaining the purpose of
+      collection, access, retention, security and applicable
+      data protection rights under Kenyan law.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <h3>GADEH Digital Farmer Portal</h3>
+
+        <p>
+          Supporting farmers through digital knowledge,
+          practical agricultural learning and community
+          engagement.
+        </p>
+
+        <p style="margin-top:10px;">
+          Garissa Agro-Digital Empowerment Hub (GADEH)
+        </p>
+      </div>
+
+      <div>
+        <h3>Farmer Resources</h3>
+
+        <a href="agricultural-knowledge.html">Agricultural Knowledge</a>
+        <a href="crop-health.html">Crop Health</a>
+        <a href="weather-climate.html">Weather & Climate</a>
+        <a href="water-irrigation.html">Water & Irrigation</a>
+        <a href="digital-learning.html">Digital Learning</a>
+      </div>
+
+      <div>
+        <h3>Portal Navigation</h3>
+
+        <a href="index.html">Portal Homepage</a>
+        <a href="farmer-registration.html">Farmer Registration</a>
+        <a href="farmer-registration.html#enquiry">Farmer Enquiries</a>
+        <a href="index.html#contact">Contact GADEH</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span>
+      Garissa Agro-Digital Empowerment Hub.
+      All Rights Reserved.
+    </div>
+
+  </footer>
+
+  <script>
+
+    // =====================================
+    // MOBILE NAVIGATION
+    // =====================================
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = navLinks.classList.toggle("show");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        navLinks.classList.remove("show");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰ Menu";
+
+      });
+
+    });
+
+
+    // =====================================
+    // AUTOMATIC COPYRIGHT YEAR
+    // =====================================
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // =====================================
+// FARMER REGISTRATION — BACKEND
+// =====================================
+
+const registrationForm =
+    document.getElementById("farmerRegistrationForm");
+
+const registrationMessage =
+    document.getElementById("registrationMessage");
+
+if (registrationForm && registrationMessage) {
+
+    registrationForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        registrationMessage.className = "form-message";
+        registrationMessage.textContent = "";
+
+        if (!registrationForm.checkValidity()) {
+            registrationForm.reportValidity();
+            return;
+        }
+
+        const selectedInterests = Array.from(
+            registrationForm.querySelectorAll(
+                'input[name="interests"]:checked'
+            )
+        ).map(input => input.value);
+
+        if (selectedInterests.length === 0) {
+            registrationMessage.textContent =
+                "Please select at least one agricultural learning interest.";
+
+            registrationMessage.className = "form-message error";
+            return;
+        }
+
+        const formData = Object.fromEntries(
+            new FormData(registrationForm).entries()
+        );
+
+        formData.interests = selectedInterests;
+
+        formData.consent =
+            registrationForm.querySelector('[name="consent"]').checked;
+
+        const submitButton =
+            registrationForm.querySelector(".form-submit");
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        try {
+
+            const response = await fetch("/api/applications", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    result.message || "Registration submission failed."
+                );
+            }
+
+            registrationMessage.textContent =
+                "Registration submitted successfully! Your application number is: " +
+                result.applicationNumber;
+
+            registrationMessage.className = "form-message success";
+
+            registrationForm.reset();
+
+        } catch (error) {
+
+            registrationMessage.textContent =
+                error.message || "Unable to submit your application.";
+
+            registrationMessage.className = "form-message error";
+
+        } finally {
+
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Farmer Registration";
+
+        }
+
+    });
+
+}
+  </script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

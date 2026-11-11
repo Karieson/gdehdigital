@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Digital Agricultural Learning | GADEH</title>
+
+  <style>
+    :root {
+      --green: #214b35;
+      --dark: #173725;
+      --mid: #477b55;
+      --soft: #eaf1e9;
+      --gold: #d5a84b;
+      --ink: #26352b;
+      --grey: #69766d;
+      --ivory: #f7f8f4;
+      --white: #ffffff;
+      --line: #e2e8e0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 0 25px;
+    }
+
+    /* HEADER */
+
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--green);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--grey);
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--mid);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23, 55, 37, 0.96),
+          rgba(33, 75, 53, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85");
+
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+      padding: 95px 30px;
+    }
+
+    .hero-label {
+      color: #e8c878;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+      font-size: clamp(36px, 6vw, 65px);
+      line-height: 1.12;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #e2ebe3;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: #e8c878;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .section-label {
+      color: var(--mid);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.2;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      font-size: 15px;
+    }
+
+    /* INTRODUCTION */
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .intro-image img {
+      width: 100%;
+      display: block;
+      border-radius: 9px;
+    }
+
+    .intro-content h2 {
+      color: var(--green);
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .intro-content p {
+      color: var(--grey);
+      margin-bottom: 15px;
+    }
+
+    /* RESOURCE LIBRARY */
+
+    .resources {
+      background: var(--white);
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .resource-card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--mid);
+    }
+
+    .resource-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft);
+      color: var(--green);
+      border-radius: 7px;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .resource-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .resource-card p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .resource-card a {
+      color: var(--mid);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* VIDEO LIBRARY */
+
+    .video-section {
+      background: var(--soft);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .video-placeholder {
+      background: var(--green);
+      min-height: 190px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 45px;
+    }
+
+    .video-content {
+      padding: 20px;
+    }
+
+    .video-content h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .video-content p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .video-link {
+      display: inline-block;
+      color: var(--mid);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* PRACTICAL LEARNING */
+
+    .practical-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .practical-card {
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+      background: white;
+      border-radius: 6px;
+    }
+
+    .practical-card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .practical-card p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    /* CALL TO ACTION */
+
+    .learning-cta {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 65px 25px;
+    }
+
+    .learning-cta h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .learning-cta p {
+      color: #d5e2d7;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: #10291b;
+      color: #d5e2d7;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer strong {
+      color: white;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .resource-grid,
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 25px;
+        gap: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-content {
+        padding: 70px 25px;
+      }
+
+      .resource-grid,
+      .video-grid,
+      .practical-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+    }
+    /* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        GADEH
+        <span>DIGITAL FARMING</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#resources">Resources</a>
+        <a href="#video-library">Video Learning</a>
+        <a href="#practical">Practical Learning</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-label">
+        Digital Agricultural Learning Centre
+      </div>
+
+      <h1>
+        Learn, Grow and Improve Your Farming Practices
+      </h1>
+
+      <p>
+        Access agricultural knowledge, practical learning
+        materials and digital resources that support better
+        farming decisions, improved productivity and
+        climate-resilient agriculture.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#resources" class="btn btn-gold">
+          Explore Resources
+        </a>
+
+        <a href="#video-library" class="btn btn-outline">
+          Video Learning
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTRODUCTION -->
+
+  <section class="section">
+
+    <div class="container intro-grid">
+
+      <div class="intro-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80"
+          alt="Agricultural land and crop production">
+
+      </div>
+
+      <div class="intro-content">
+
+        <div class="section-label">
+          About the learning centre
+        </div>
+
+        <h2>Agricultural Knowledge for Every Farmer</h2>
+
+        <p>
+          The GADEH Digital Agricultural Learning Centre
+          provides accessible information to farmers,
+          agricultural learners and community members.
+        </p>
+
+        <p>
+          The learning centre covers crop production,
+          soil management, irrigation, crop health,
+          climate-smart agriculture, harvesting and
+          agricultural marketing.
+        </p>
+
+        <p>
+          Our goal is to make useful agricultural knowledge
+          easier to access and apply in everyday farming.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESOURCE LIBRARY -->
+
+  <section class="section resources" id="resources">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="section-label">Learning resources</div>
+
+        <h2>Explore Agricultural Resources</h2>
+
+        <p>
+          Explore organized agricultural guides and notes
+          covering essential farming topics.
+        </p>
+
+      </div>
+
+      <div class="resource-grid">
+
+        <article class="resource-card">
+
+          <div class="resource-icon">🌱</div>
+
+          <h3>Crop Production</h3>
+
+          <p>
+            Learn about crop selection, land preparation,
+            planting, crop spacing and field management.
+          </p>
+
+          <a href="farming-guides.html#planting">
+            Explore crop production →
+          </a>
+
+        </article>
+
+        <article class="resource-card">
+
+          <div class="resource-icon">🌿</div>
+
+          <h3>Soil Management</h3>
+
+          <p>
+            Understand soil fertility, soil conservation,
+            organic matter and soil improvement.
+          </p>
+
+          <a href="farming-guides.html#soil">
+            Explore soil management →
+          </a>
+
+        </article>
+
+        <article class="resource-card">
+
+          <div class="resource-icon">💧</div>
+
+          <h3>Water and Irrigation</h3>
+
+          <p>
+            Learn water conservation, irrigation systems
+            and efficient water application.
+          </p>
+
+          <a href="types-of-irrigation.html">
+            Explore irrigation →
+          </a>
+
+        </article>
+
+        <article class="resource-card">
+
+          <div class="resource-icon">🐛</div>
+
+          <h3>Crop Health and Protection</h3>
+
+          <p>
+            Understand pests, crop diseases, prevention
+            and integrated pest management.
+          </p>
+
+          <a href="crop-pest.html">
+            Explore crop protection →
+          </a>
+
+        </article>
+
+        <article class="resource-card">
+
+          <div class="resource-icon">🌦️</div>
+
+          <h3>Climate-Smart Agriculture</h3>
+
+          <p>
+            Explore changing weather patterns, adaptation
+            and climate-resilient farming.
+          </p>
+
+          <a href="weather-climate.html">
+            Explore climate learning →
+          </a>
+
+        </article>
+
+        <article class="resource-card">
+
+          <div class="resource-icon">📊</div>
+
+          <h3>Harvesting and Marketing</h3>
+
+          <p>
+            Learn harvesting practices, storage,
+            farm records and agricultural marketing.
+          </p>
+
+          <a href="farming-guides.html#harvesting">
+            Explore harvesting →
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEO LIBRARY -->
+
+  <section class="section video-section" id="video-library">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="section-label">Visual learning</div>
+
+        <h2>Video Learning Library</h2>
+
+        <p>
+          Use practical agricultural videos to understand
+          farming techniques and improve field practices.
+        </p>
+
+      </div>
+
+      <div class="video-grid">
+
+        <article class="video-card">
+
+          <div class="video-placeholder">▶</div>
+
+          <div class="video-content">
+
+            <h3>Land Preparation and Planting</h3>
+
+            <p>
+              Learn basic land preparation, seed selection
+              and proper planting techniques.
+            </p>
+
+            <a class="video-link"
+              href="https://www.youtube.com/results?search_query=land+preparation+and+crop+planting+agriculture"
+              target="_blank" rel="noopener">
+              Watch learning videos →
+            </a>
+
+          </div>
+
+        </article>
+
+        <article class="video-card">
+
+          <div class="video-placeholder">▶</div>
+
+          <div class="video-content">
+
+            <h3>Drip Irrigation Techniques</h3>
+
+            <p>
+              Understand drip irrigation, water efficiency
+              and practical irrigation management.
+            </p>
+
+            <a class="video-link"
+              href="https://www.youtube.com/results?search_query=drip+irrigation+practical+training"
+              target="_blank" rel="noopener">
+              Watch learning videos →
+            </a>
+
+          </div>
+
+        </article>
+
+        <article class="video-card">
+
+          <div class="video-placeholder">▶</div>
+
+          <div class="video-content">
+
+            <h3>Integrated Pest Management</h3>
+
+            <p>
+              Learn how to identify crop pests and apply
+              appropriate integrated pest management methods.
+            </p>
+
+            <a class="video-link"
+              href="https://www.youtube.com/results?search_query=integrated+pest+management+crop+protection"
+              target="_blank" rel="noopener">
+              Watch learning videos →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRACTICAL LEARNING -->
+
+  <section class="section" id="practical">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="section-label">Learning and application</div>
+
+        <h2>Practical Agricultural Learning</h2>
+
+        <p>
+          Agricultural learning becomes more useful when
+          knowledge is applied to real farming situations.
+        </p>
+
+      </div>
+
+      <div class="practical-grid">
+
+        <article class="practical-card">
+
+          <h3>01. Field-Based Learning</h3>
+
+          <p>
+            Apply agricultural knowledge through field
+            demonstrations, crop observations and practical
+            farming activities.
+          </p>
+
+        </article>
+
+        <article class="practical-card">
+
+          <h3>02. Farmer Knowledge Sharing</h3>
+
+          <p>
+            Encourage farmers to exchange experiences,
+            practical solutions and locally relevant
+            agricultural knowledge.
+          </p>
+
+        </article>
+
+        <article class="practical-card">
+
+          <h3>03. Digital Learning Materials</h3>
+
+          <p>
+            Access agricultural notes, guides and educational
+            resources through digital platforms.
+          </p>
+
+        </article>
+
+        <article class="practical-card">
+
+          <h3>04. Climate-Smart Practices</h3>
+
+          <p>
+            Explore practical approaches to water
+            conservation, soil protection and climate
+            adaptation.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CALL TO ACTION -->
+
+  <section class="learning-cta">
+
+    <h2>Keep Learning. Keep Growing.</h2>
+
+    <p>
+      Explore agricultural knowledge, improve your farming
+      practices and make informed decisions throughout
+      the farming season.
+    </p>
+
+    <a href="farming-guides.html" class="btn btn-gold">
+      Open Agricultural Library →
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <p>
+      <strong>GADEH Digital Farmer Portal</strong>
+    </p>
+
+    <p>
+      Agricultural knowledge, digital learning and
+      community farming information.
+    </p>
+
+    <p>
+      © <span id="year"></span> GADEH. All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+
+      navLinks.classList.toggle("open");
+
+      const expanded = navLinks.classList.contains("open");
+
+      menuToggle.setAttribute("aria-expanded", expanded);
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", function () {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      });
+
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

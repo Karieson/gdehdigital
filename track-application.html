@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Track your GADEH Community Farmers registration application.">
+
+    <title>Track Application | GADEH</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #F7F5F2;
+            color: #414141;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #874052;
+            color: #FFFFFF;
+            padding: 22px 6%;
+        }
+
+        header h1 {
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* MAIN */
+
+        main {
+            width: 92%;
+            max-width: 560px;
+            margin: 65px auto;
+            flex: 1;
+        }
+
+        /* TRACKING CARD */
+
+        .tracking-card {
+            background: #FFFFFF;
+            padding: 35px 28px;
+            border-radius: 12px;
+            box-shadow: 0 5px 22px rgba(0,0,0,0.06);
+        }
+
+        .tracking-card h2 {
+            color: #874052;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        /* FORM */
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #DDDDDD;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 18px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #874052;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background: #874052;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background: #6E3041;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* MESSAGES */
+
+        #trackingMessage {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .message-error {
+            color: #B3261E;
+        }
+
+        .message-success {
+            color: #176B32;
+        }
+
+        /* RESULT */
+
+        .result {
+            margin-top: 24px;
+            padding: 22px;
+            border-radius: 8px;
+            background: #F7F5F2;
+            display: none;
+        }
+
+        .result h3 {
+            color: #874052;
+            margin-bottom: 18px;
+            font-size: 18px;
+        }
+
+        .result p {
+            margin: 14px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .result strong {
+            color: #414141;
+        }
+
+        /* APPLICATION STATUS */
+
+        .status {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: capitalize;
+            background: #EEEEEE;
+        }
+
+        .status.pending {
+            background: #FFF0CC;
+            color: #805600;
+        }
+
+        .status.approved {
+            background: #D9F2DF;
+            color: #176B32;
+        }
+
+        .status.rejected {
+            background: #F8DADA;
+            color: #9B2525;
+        }
+
+        /* FARMER ACCOUNT */
+
+        .farmer-account {
+            display: none;
+            margin-top: 22px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #DCD3E8;
+            border-radius: 8px;
+        }
+
+        .farmer-account h3 {
+            color: #874052;
+            margin-bottom: 12px;
+        }
+
+        .farmer-id {
+            display: block;
+            padding: 13px;
+            margin: 12px 0;
+            background: #F7F5F2;
+            color: #874052;
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        .credential-notice {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        /* PENDING AND REJECTED INFORMATION */
+
+        .status-information {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 7px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .pending-information {
+            background: #FFF0CC;
+            color: #805600;
+        }
+
+        .rejected-information {
+            background: #F8DADA;
+            color: #9B2525;
+        }
+
+        /* LINKS */
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #874052;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            background: #874052;
+            color: #FFFFFF;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 480px) {
+
+            main {
+                margin: 35px auto;
+            }
+
+            .tracking-card {
+                padding: 27px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>GADEH</h1>
+
+        <p>Community Farmers Platform</p>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <section class="tracking-card">
+
+            <h2>Track Your Application</h2>
+
+            <p class="description">
+
+                Enter the application number you received
+                after submitting your farmer registration.
+
+            </p>
+
+
+            <!-- TRACKING FORM -->
+
+            <form id="trackingForm">
+
+                <label for="applicationNumber">
+
+                    Application Number
+
+                </label>
+
+                <input
+                    type="text"
+                    id="applicationNumber"
+                    name="applicationNumber"
+                    placeholder="Example: APP-46921"
+                    pattern="APP-[0-9]+"
+                    maxlength="30"
+                    required
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                    id="trackButton"
+                >
+
+                    Track Application
+
+                </button>
+
+            </form>
+
+
+            <!-- RESPONSE MESSAGE -->
+
+            <div
+                id="trackingMessage"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- APPLICATION RESULT -->
+
+            <div
+                class="result"
+                id="trackingResult"
+            >
+
+                <h3>Application Details</h3>
+
+                <p>
+
+                    <strong>Application Number:</strong>
+
+                    <span id="resultNumber"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Applicant Name:</strong>
+
+                    <span id="resultName"></span>
+
+                </p>
+
+                <p>
+
+                    <strong>Application Status:</strong>
+
+                    <span
+                        id="resultStatus"
+                        class="status"
+                    ></span>
+
+                </p>
+
+
+                <!-- APPROVED FARMER ACCOUNT -->
+
+                <div
+                    class="farmer-account"
+                    id="farmerAccount"
+                >
+
+                    <h3>Farmer Account Created</h3>
+
+                    <p>
+
+                        Congratulations! Your farmer
+                        registration has been approved.
+
+                    </p>
+
+                    <p>
+
+                        <strong>Your Farmer ID:</strong>
+
+                    </p>
+
+                    <span
+                        class="farmer-id"
+                        id="resultFarmerId"
+                    ></span>
+
+                    <p class="credential-notice">
+
+                        Your temporary password is provided
+                        securely by the GADEH administrator.
+
+                        Please contact the administrator to
+                        receive your login credentials.
+
+                        You must change your temporary
+                        password after your first login.
+
+                    </p>
+
+                </div>
+
+
+                <!-- PENDING INFORMATION -->
+
+                <div
+                    class="status-information pending-information"
+                    id="pendingInformation"
+                >
+
+                    Your application has been received and
+                    is awaiting administrative review.
+
+                    Please check again later.
+
+                </div>
+
+
+                <!-- REJECTED INFORMATION -->
+
+                <div
+                    class="status-information rejected-information"
+                    id="rejectedInformation"
+                >
+
+                    Unfortunately, your application has
+                    not been approved.
+
+                    Please contact the GADEH administration
+                    for further information.
+
+                </div>
+
+            </div>
+
+
+            <!-- HOMEPAGE LINK -->
+
+            <a
+                href="/"
+                class="back-link"
+            >
+
+                Back to Homepage
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 GADEH Community Farmers Platform
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // =====================================
+        // ELEMENTS
+        // =====================================
+
+        const trackingForm =
+            document.getElementById("trackingForm");
+
+        const trackingMessage =
+            document.getElementById("trackingMessage");
+
+        const trackingResult =
+            document.getElementById("trackingResult");
+
+        const trackButton =
+            document.getElementById("trackButton");
+
+        const farmerAccount =
+            document.getElementById("farmerAccount");
+
+        const pendingInformation =
+            document.getElementById("pendingInformation");
+
+        const rejectedInformation =
+            document.getElementById("rejectedInformation");
+
+
+        // =====================================
+        // RESET RESULTS
+        // =====================================
+
+        function resetResults() {
+
+            trackingResult.style.display = "none";
+
+            farmerAccount.style.display = "none";
+
+            pendingInformation.style.display = "none";
+
+            rejectedInformation.style.display = "none";
+
+            trackingMessage.textContent = "";
+
+            trackingMessage.className = "";
+
+        }
+
+
+        // =====================================
+        // TRACK APPLICATION
+        // =====================================
+
+        trackingForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+                resetResults();
+
+                // Validate form
+
+                if (!trackingForm.checkValidity()) {
+
+                    trackingForm.reportValidity();
+
+                    return;
+
+                }
+
+                // Get application number
+
+                const applicationNumber =
+                    document.getElementById(
+                        "applicationNumber"
+                    ).value.trim().toUpperCase();
+
+
+                // Loading state
+
+                trackButton.disabled = true;
+
+                trackButton.textContent = "Checking...";
+
+
+                try {
+
+                    // Send tracking request
+
+                    const response = await fetch(
+
+                        "/api/applications/" +
+                        encodeURIComponent(applicationNumber),
+
+                        {
+                            method: "GET",
+
+                            headers: {
+                                "Accept": "application/json"
+                            }
+
+                        }
+
+                    );
+
+
+                    const data = await response.json();
+
+
+                    // Handle errors
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            data.message ||
+                            "Application lookup failed."
+                        );
+
+                    }
+
+
+                    // =================================
+                    // DISPLAY APPLICATION DETAILS
+                    // =================================
+
+                    document.getElementById(
+                        "resultNumber"
+                    ).textContent = data.applicationNumber;
+
+
+                    document.getElementById(
+                        "resultName"
+                    ).textContent = data.fullName;
+
+
+                    const statusElement =
+                        document.getElementById(
+                            "resultStatus"
+                        );
+
+
+                    const status =
+                        String(data.status || "").toLowerCase();
+
+
+                    statusElement.textContent = data.status;
+
+
+                    statusElement.className =
+                        "status " + status;
+
+
+                    trackingResult.style.display = "block";
+
+
+                    // =================================
+                    // APPROVED APPLICATION
+                    // =================================
+
+                    if (status === "approved") {
+
+                        if (data.farmerId) {
+
+                            document.getElementById(
+                                "resultFarmerId"
+                            ).textContent = data.farmerId;
+
+                            farmerAccount.style.display = "block";
+
+                        } else {
+
+                            trackingMessage.textContent =
+                                "Your application is approved, but your farmer account details are not yet available. Please contact the administrator.";
+
+                            trackingMessage.className =
+                                "message-error";
+
+                        }
+
+                    }
+
+
+                    // =================================
+                    // PENDING APPLICATION
+                    // =================================
+
+                    else if (status === "pending") {
+
+                        pendingInformation.style.display =
+                            "block";
+
+                    }
+
+
+                    // =================================
+                    // REJECTED APPLICATION
+                    // =================================
+
+                    else if (status === "rejected") {
+
+                        rejectedInformation.style.display =
+                            "block";
+
+                    }
+
+
+                    // =================================
+                    // SUCCESS MESSAGE
+                    // =================================
+
+                    trackingMessage.textContent =
+                        "Application record found successfully.";
+
+                    trackingMessage.className =
+                        "message-success";
+
+                }
+
+
+                // =====================================
+                // ERROR HANDLING
+                // =====================================
+
+                catch (error) {
+
+                    trackingResult.style.display = "none";
+
+                    trackingMessage.textContent =
+                        error.message ||
+                        "Unable to retrieve application details.";
+
+                    trackingMessage.className =
+                        "message-error";
+
+                }
+
+
+                // =====================================
+                // RESTORE BUTTON
+                // =====================================
+
+                finally {
+
+                    trackButton.disabled = false;
+
+                    trackButton.textContent =
+                        "Track Application";
+
+                }
+
+            }
+
+        );
+
+    });
+
+    </script>
+
+</body>
+
+</html>
+

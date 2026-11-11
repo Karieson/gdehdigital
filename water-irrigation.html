@@ -1,0 +1,1514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Water & Irrigation Management | GADEH</title>
+
+  <meta name="description"
+    content="Learn practical water harvesting, irrigation management, water conservation and soil moisture practices through the GADEH Digital Farmer Portal.">
+
+  <style>
+    :root {
+      --green: #214b35;
+      --dark-green: #173725;
+      --mid-green: #477b55;
+      --soft-green: #eaf1e9;
+      --gold: #d5a84b;
+      --ink: #26352b;
+      --grey: #69766d;
+      --ivory: #f7f8f4;
+      --white: #ffffff;
+      --border: #dfe6dc;
+      --shadow: 0 8px 25px rgba(23, 55, 37, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 9px 6%;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .site-header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+    }
+
+    .nav-container {
+      max-width: 1250px;
+      margin: auto;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 220px;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: var(--green);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .brand-name strong {
+      display: block;
+      color: var(--green);
+      font-size: 16px;
+      letter-spacing: .3px;
+    }
+
+    .brand-name span {
+      color: var(--grey);
+      font-size: 11px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--mid-green);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 7px;
+      padding: 9px 13px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background:
+        linear-gradient(110deg, rgba(23,55,37,.96), rgba(33,75,53,.87)),
+        radial-gradient(circle at 85% 20%, #6c956f, transparent 40%);
+      color: var(--white);
+      padding: 85px 6%;
+    }
+
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #e5eee5;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 21px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 13px;
+      transition: .25s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark-green);
+    }
+
+    .btn-gold:hover {
+      background: #e5bd68;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.65);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green);
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 5%;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading span {
+      color: var(--mid-green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(25px, 4vw, 34px);
+      line-height: 1.25;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .intro-content,
+    .highlight-box {
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .intro-content {
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .intro-content h3,
+    .highlight-box h3 {
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .intro-content p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box {
+      background: var(--soft-green);
+      border-left: 4px solid var(--gold);
+    }
+
+    .highlight-box p {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .highlight-box ul {
+      margin: 14px 0 0 20px;
+      font-size: 13px;
+    }
+
+    .highlight-box li {
+      margin-bottom: 7px;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .topic-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      transition: .25s;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--gold);
+    }
+
+    .topic-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--soft-green);
+      border-radius: 12px;
+      font-size: 23px;
+      margin-bottom: 16px;
+    }
+
+    .topic-card h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .topic-card p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .topic-card ul {
+      padding-left: 18px;
+      margin-top: 12px;
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    .topic-card li {
+      margin-bottom: 6px;
+    }
+
+    .soft-section {
+      background: var(--soft-green);
+    }
+
+    .method-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .method {
+      background: white;
+      padding: 23px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .method h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .method p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .method-tag {
+      display: inline-block;
+      color: var(--mid-green);
+      background: var(--soft-green);
+      font-size: 10px;
+      font-weight: bold;
+      padding: 4px 9px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 10px;
+      padding: 21px;
+      border-top: 3px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: white;
+      font-weight: bold;
+      margin-bottom: 13px;
+    }
+
+    .step h3 {
+      color: var(--green);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    .notice {
+      background: #fff8e8;
+      border-left: 4px solid var(--gold);
+      padding: 18px 21px;
+      border-radius: 6px;
+      color: #5d4b27;
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    .checklist-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .checklist-container h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .checklist-container > p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 13px;
+      background: var(--ivory);
+      border-radius: 7px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .check-item input {
+      accent-color: var(--green);
+      margin-top: 4px;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .checklist-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .checklist-actions button {
+      border: none;
+      cursor: pointer;
+    }
+
+    .progress-text {
+      color: var(--mid-green);
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .resource-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .resource-link {
+      display: block;
+      padding: 19px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: .2s;
+    }
+
+    .resource-link:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .resource-link strong {
+      color: var(--green);
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .resource-link span {
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    .disclaimer {
+      background: var(--dark-green);
+      color: white;
+      padding: 27px 6%;
+      text-align: center;
+    }
+
+    .disclaimer p {
+      max-width: 900px;
+      margin: auto;
+      color: #e0e9e0;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #10291b;
+      color: white;
+      padding: 35px 6% 18px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #d5dfd6;
+      font-size: 12px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1150px;
+      margin: 25px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
+      color: #b9c8bc;
+      font-size: 11px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 11px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-container {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0 5px;
+        gap: 13px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 65px 6%;
+      }
+
+      .intro-grid,
+      .topic-grid,
+      .method-list,
+      .steps,
+      .checklist,
+      .resource-links,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 48px 6%;
+      }
+
+      .checklist-container {
+        padding: 20px;
+      }
+    }
+    /* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>GADEH | Garissa Agro-Digital Empowerment Hub</span>
+    <span>Digital Farmer Empowerment • Garissa, Kenya</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-mark">G</div>
+        <div class="brand-name">
+          <strong>GADEH</strong>
+          <span>Digital Farmer Portal</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="agricultural-knowledge.html">Knowledge Centre</a>
+        <a href="crop-health.html">Crop Health</a>
+        <a href="weather-climate.html">Weather & Climate</a>
+        <a href="water-irrigation.html" class="active">Water & Irrigation</a>
+        <a href="digital-learning.html">Digital Learning</a>
+        <a href="farmer-registration.html">Farmer Registration</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <span class="eyebrow">Farmer Knowledge Series</span>
+
+      <h1>Water & Irrigation Management</h1>
+
+      <p>
+        Learn practical ways to conserve water, improve irrigation
+        efficiency, harvest rainwater and protect soil moisture.
+        Better water management can help farmers strengthen
+        agricultural productivity in dry and changing climates.
+      </p>
+
+      <div class="hero-actions">
+  <a href="types-of-irrigation.html" class="btn btn-gold">
+    Explore Types of Irrigation
+  </a>
+</div>
+
+        <a href="#water-checklist" class="btn btn-outline">
+          Water Management Checklist
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+
+    <div class="section-heading">
+      <span>Understanding Water Management</span>
+      <h2>Every Drop Counts in Agriculture</h2>
+      <p>
+        Responsible water use is essential for farming, especially
+        in arid and semi-arid areas where rainfall can be limited
+        and unpredictable.
+      </p>
+    </div>
+
+    <div class="intro-grid">
+
+      <div class="intro-content">
+        <h3>Why Water Management Matters</h3>
+
+        <p>
+          Water supports seed germination, plant growth, nutrient
+          movement and crop development. Poor water management can
+          lead to crop stress, soil erosion, waterlogging and
+          unnecessary water losses.
+        </p>
+
+        <p>
+          Farmers can improve water efficiency by understanding
+          their water sources, choosing suitable irrigation methods,
+          maintaining irrigation equipment and protecting soil
+          moisture.
+        </p>
+
+        <p>
+          In Garissa and other dryland areas, water planning should
+          consider rainfall patterns, available water sources,
+          crop needs, soil conditions and the cost of irrigation.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Key Principles</h3>
+
+        <p>
+          Effective water management begins with practical
+          planning and regular observation.
+        </p>
+
+        <ul>
+          <li>Know your available water sources.</li>
+          <li>Reduce unnecessary water losses.</li>
+          <li>Use irrigation methods suited to your farm.</li>
+          <li>Protect soil moisture.</li>
+          <li>Maintain water storage and irrigation systems.</li>
+          <li>Seek local agricultural extension advice.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WATER MANAGEMENT TOPICS -->
+  <section class="section soft-section">
+
+    <div class="section-heading">
+      <span>Practical Farm Guidance</span>
+      <h2>Important Water Management Practices</h2>
+      <p>
+        Explore practical approaches that can help farmers
+        use available water more responsibly.
+      </p>
+    </div>
+
+    <div class="topic-grid">
+
+      <article class="topic-card">
+        <div class="topic-icon">💧</div>
+        <h3>Water Planning</h3>
+
+        <p>
+          Understand the amount, reliability and quality of water
+          available before deciding what and when to plant.
+        </p>
+
+        <ul>
+          <li>Identify available water sources.</li>
+          <li>Estimate seasonal availability.</li>
+          <li>Plan crops according to water resources.</li>
+        </ul>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🌧️</div>
+        <h3>Rainwater Harvesting</h3>
+
+        <p>
+          Collect and store suitable rainwater for later use
+          where local conditions and regulations permit.
+        </p>
+
+        <ul>
+          <li>Maintain roof and surface collection systems.</li>
+          <li>Use suitable storage facilities.</li>
+          <li>Protect stored water from contamination.</li>
+        </ul>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🌱</div>
+        <h3>Soil Moisture Conservation</h3>
+
+        <p>
+          Reduce moisture loss and improve the soil's ability
+          to retain water around crop roots.
+        </p>
+
+        <ul>
+          <li>Apply suitable organic mulch.</li>
+          <li>Improve soil organic matter.</li>
+          <li>Reduce unnecessary soil disturbance.</li>
+        </ul>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🚿</div>
+        <h3>Efficient Irrigation</h3>
+
+        <p>
+          Select an irrigation system that matches your crop,
+          soil, water supply, farm layout and available budget.
+        </p>
+
+        <ul>
+          <li>Consider drip irrigation.</li>
+          <li>Maintain pipes and water outlets.</li>
+          <li>Check for leaks and blockages.</li>
+        </ul>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🌾</div>
+        <h3>Crop Water Needs</h3>
+
+        <p>
+          Crop water requirements change according to crop type,
+          growth stage, weather and soil conditions.
+        </p>
+
+        <ul>
+          <li>Observe crop growth and stress.</li>
+          <li>Check soil moisture regularly.</li>
+          <li>Adjust irrigation as conditions change.</li>
+        </ul>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🔧</div>
+        <h3>System Maintenance</h3>
+
+        <p>
+          Regular inspection helps reduce water losses and
+          prevent avoidable irrigation interruptions.
+        </p>
+
+        <ul>
+          <li>Inspect pipes, joints and valves.</li>
+          <li>Clean filters where installed.</li>
+          <li>Repair leaks and damaged equipment.</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- IRRIGATION METHODS -->
+  <section class="section" id="irrigation-methods">
+
+    <div class="section-heading">
+      <span>Choosing the Right System</span>
+      <h2>Common Irrigation Methods</h2>
+      <p>
+        Different irrigation systems have different costs,
+        advantages and limitations. The most suitable option
+        depends on the farm and its water resources.
+      </p>
+    </div>
+
+    <div class="method-list">
+
+      <article class="method">
+        <span class="method-tag">Targeted water delivery</span>
+        <h3>Drip Irrigation</h3>
+
+        <p>
+          Drip irrigation delivers water slowly near plant roots
+          through pipes and emitters. It can reduce evaporation
+          and unnecessary wetting when correctly designed and
+          maintained. Filters and regular cleaning are important
+          to prevent blockage.
+        </p>
+      </article>
+
+      <article class="method">
+        <span class="method-tag">Surface irrigation</span>
+        <h3>Basin and Furrow Irrigation</h3>
+
+        <p>
+          Water is directed across prepared basins or furrows.
+          These methods may be suitable for certain crops and
+          field layouts, but poor land preparation can cause
+          uneven distribution, runoff and waterlogging.
+        </p>
+      </article>
+
+      <article class="method">
+        <span class="method-tag">Overhead application</span>
+        <h3>Sprinkler Irrigation</h3>
+
+        <p>
+          Sprinkler systems distribute water through spray
+          nozzles. Their suitability depends on wind conditions,
+          pressure, water quality, crop type and operating costs.
+          Wind can cause uneven water distribution.
+        </p>
+      </article>
+
+      <article class="method">
+        <span class="method-tag">Small-scale farming</span>
+        <h3>Manual and Watering Can Irrigation</h3>
+
+        <p>
+          Manual watering may be useful for small gardens,
+          nurseries and limited planting areas. Apply water
+          carefully near the root zone and avoid excessive
+          watering or unnecessary runoff.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      No irrigation method is automatically suitable for every
+      farm. Consider soil type, slope, crop requirements, water
+      availability, water quality, equipment costs and local
+      agricultural extension recommendations before investing.
+    </div>
+
+  </section>
+
+  <!-- WATER HARVESTING -->
+  <section class="section soft-section">
+
+    <div class="section-heading">
+      <span>Making Better Use of Rainfall</span>
+      <h2>Water Harvesting and Storage</h2>
+      <p>
+        Rainwater harvesting can help farmers capture available
+        rainfall and reduce dependence on other water sources.
+      </p>
+    </div>
+
+    <div class="topic-grid">
+
+      <article class="topic-card">
+        <div class="topic-icon">🏠</div>
+        <h3>Rooftop Rainwater Collection</h3>
+        <p>
+          Suitable roofs and gutters can direct rainfall into
+          storage tanks. Install screens and first-flush
+          arrangements where appropriate, and keep collection
+          surfaces and tanks clean.
+        </p>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🛢️</div>
+        <h3>Water Storage</h3>
+        <p>
+          Properly maintained tanks and reservoirs can store
+          water for later use. Cover storage where possible,
+          control access and inspect for leaks and contamination.
+        </p>
+      </article>
+
+      <article class="topic-card">
+        <div class="topic-icon">🌿</div>
+        <h3>Runoff Collection</h3>
+        <p>
+          Suitable farm structures can slow and collect surface
+          runoff. Design them according to land slope, soil
+          conditions and local technical guidance to avoid erosion.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      Water collected for irrigation should be assessed for its
+      intended use. Do not assume that harvested water is safe
+      for drinking or food preparation without appropriate
+      treatment and testing.
+    </div>
+
+  </section>
+
+  <!-- SOIL MOISTURE -->
+  <section class="section">
+
+    <div class="section-heading">
+      <span>Protecting Water in the Soil</span>
+      <h2>Practical Soil Moisture Conservation</h2>
+      <p>
+        Keeping moisture in the root zone can help crops cope
+        with dry conditions and reduce unnecessary irrigation.
+      </p>
+    </div>
+
+    <div class="method-list">
+
+      <article class="method">
+        <h3>1. Mulching</h3>
+        <p>
+          Use suitable dry plant materials or other appropriate
+          mulch to cover exposed soil. Mulching can reduce direct
+          evaporation, moderate soil temperature and suppress
+          some weeds. Keep unsuitable or diseased materials away
+          from crops.
+        </p>
+      </article>
+
+      <article class="method">
+        <h3>2. Improving Organic Matter</h3>
+        <p>
+          Properly managed compost and other organic materials
+          can improve soil structure and water retention.
+          Use mature, safe compost and avoid introducing
+          contaminated materials.
+        </p>
+      </article>
+
+      <article class="method">
+        <h3>3. Reducing Runoff</h3>
+        <p>
+          Appropriate planting layouts, contour practices and
+          soil cover can slow surface water movement and help
+          reduce erosion. Seek technical advice before constructing
+          earthworks or water channels.
+        </p>
+      </article>
+
+      <article class="method">
+        <h3>4. Managing Wind Exposure</h3>
+        <p>
+          Suitable windbreaks can reduce wind exposure around
+          farms. Select appropriate species and positions so
+          that windbreaks do not create excessive competition
+          for water with crops.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- IRRIGATION PLANNING -->
+  <section class="section soft-section">
+
+    <div class="section-heading">
+      <span>Planning Before Irrigation</span>
+      <h2>How to Manage Irrigation Responsibly</h2>
+      <p>
+        Irrigation decisions should be based on crop development,
+        soil moisture, weather and the capacity of the water system.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <article class="step">
+        <div class="step-number">1</div>
+        <h3>Check Soil Moisture</h3>
+        <p>
+          Inspect the soil in the crop root zone using an
+          appropriate observation or soil-moisture method.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">2</div>
+        <h3>Observe the Crop</h3>
+        <p>
+          Consider the crop species, growth stage and signs
+          of water stress. Wilting may have causes other than
+          insufficient water.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">3</div>
+        <h3>Consider Weather</h3>
+        <p>
+          Check recent rainfall and reliable weather information.
+          Avoid unnecessary irrigation when sufficient rainfall
+          has already reached the root zone.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">4</div>
+        <h3>Review the System</h3>
+        <p>
+          Check whether water is reaching the intended area
+          evenly and whether leaks, blockages or runoff are
+          occurring.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      There is no single irrigation timetable that works for
+      every crop and farm. Irrigation frequency and quantity
+      should be determined using local crop recommendations,
+      soil conditions, crop growth stage, weather and system
+      performance.
+    </div>
+
+  </section>
+
+  <!-- WATER MANAGEMENT CHECKLIST -->
+  <section class="section" id="water-checklist">
+
+    <div class="section-heading">
+      <span>Practical Farm Tool</span>
+      <h2>Water Management Checklist</h2>
+      <p>
+        Use this checklist to review important water management
+        practices on your farm. Select each item after checking
+        that the practice is in place.
+      </p>
+    </div>
+
+    <div class="checklist-container">
+
+      <h3>My Farm Water Management Review</h3>
+
+      <p>
+        Your selections are only used in this page to calculate
+        checklist progress. They are not submitted or saved to
+        a GADEH database.
+      </p>
+
+      <div class="checklist" id="waterChecklist">
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I know the main water sources available on my farm.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I have a plan for periods of limited rainfall.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>My water storage facilities are inspected regularly.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>My irrigation pipes, joints and outlets are checked for leaks.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I observe soil moisture before making irrigation decisions.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I consider crop growth stages when planning irrigation.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I use suitable soil moisture conservation practices.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I take steps to reduce unnecessary water runoff.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I keep harvested water storage areas protected from contamination.</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>I seek technical advice when water quality or irrigation problems arise.</span>
+        </label>
+
+      </div>
+
+      <div class="progress-text" id="progressText">
+        0 of 10 practices reviewed.
+      </div>
+
+      <div class="checklist-actions">
+
+        <button class="btn btn-gold" type="button" id="resetChecklist">
+          Reset Checklist
+        </button>
+
+        <button class="btn"
+          type="button"
+          id="printChecklist"
+          style="background:var(--green);color:white;">
+          Print Checklist
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RELATED LEARNING -->
+  <section class="section soft-section">
+
+    <div class="section-heading">
+      <span>Continue Learning</span>
+      <h2>Explore Other Farmer Resources</h2>
+      <p>
+        Build your agricultural knowledge by exploring
+        other learning sections of the GADEH Digital Farmer Portal.
+      </p>
+    </div>
+
+    <div class="resource-links">
+
+      <a href="agricultural-knowledge.html" class="resource-link">
+        <strong>Agricultural Knowledge Centre</strong>
+        <span>Explore crop production, planting and farm planning.</span>
+      </a>
+
+      <a href="crop-health.html" class="resource-link">
+        <strong>Crop Health & Pest Management</strong>
+        <span>Learn about crop symptoms and responsible pest management.</span>
+      </a>
+
+      <a href="weather-climate.html" class="resource-link">
+        <strong>Weather & Climate Centre</strong>
+        <span>Understand weather risks and climate-smart farming.</span>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="disclaimer">
+    <p>
+      <strong>Educational Notice:</strong>
+      This page provides general agricultural learning information.
+      Irrigation requirements, water quality and suitable farm
+      practices vary according to local conditions. Consult a
+      qualified agricultural or irrigation extension officer
+      before making major farm investments or technical decisions.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <h3>GADEH Digital Farmer Portal</h3>
+        <p>
+          Supporting farmers through digital knowledge,
+          practical agricultural learning and access to
+          relevant information.
+        </p>
+        <p style="margin-top:10px;">
+          Garissa Agro-Digital Empowerment Hub (GADEH)
+        </p>
+      </div>
+
+      <div>
+        <h3>Farmer Resources</h3>
+        <a href="agricultural-knowledge.html">Agricultural Knowledge</a>
+        <a href="crop-health.html">Crop Health</a>
+        <a href="weather-climate.html">Weather & Climate</a>
+        <a href="water-irrigation.html">Water & Irrigation</a>
+      </div>
+
+      <div>
+        <h3>Portal Navigation</h3>
+        <a href="index.html">Portal Homepage</a>
+        <a href="digital-learning.html">Digital Learning</a>
+        <a href="farmer-registration.html">Farmer Registration</a>
+        <a href="index.html#contact">Contact GADEH</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Garissa Agro-Digital Empowerment Hub.
+      All Rights Reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    // =====================================
+    // MOBILE NAVIGATION
+    // =====================================
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("show");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰ Menu";
+      });
+    });
+
+
+    // =====================================
+    // AUTOMATIC COPYRIGHT YEAR
+    // =====================================
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // =====================================
+    // WATER MANAGEMENT CHECKLIST
+    // =====================================
+
+    const checklist = document.querySelectorAll(
+      "#waterChecklist input[type='checkbox']"
+    );
+
+    const progressText = document.getElementById("progressText");
+
+    function updateProgress() {
+      const total = checklist.length;
+
+      const completed = Array.from(checklist).filter(function (item) {
+        return item.checked;
+      }).length;
+
+      progressText.textContent =
+        completed + " of " + total + " practices reviewed.";
+    }
+
+    checklist.forEach(function (item) {
+      item.addEventListener("change", updateProgress);
+    });
+
+
+    // =====================================
+    // RESET CHECKLIST
+    // =====================================
+
+    document.getElementById("resetChecklist")
+      .addEventListener("click", function () {
+
+        checklist.forEach(function (item) {
+          item.checked = false;
+        });
+
+        updateProgress();
+      });
+
+
+    // =====================================
+    // PRINT CHECKLIST
+    // =====================================
+
+    document.getElementById("printChecklist")
+      .addEventListener("click", function () {
+        window.print();
+      });
+
+  </script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

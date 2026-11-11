@@ -1,0 +1,1950 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weather & Climate Centre | GADEH</title>
+
+  <meta name="description"
+        content="Explore weather awareness, rainfall planning, drought preparedness and climate-smart agricultural practices through the GADEH Digital Farmer Portal.">
+
+  <style>
+    :root {
+      --green: #214b35;
+      --dark-green: #173725;
+      --mid-green: #477b55;
+      --soft-green: #eaf1e9;
+      --gold: #d5a84b;
+      --ink: #26352b;
+      --grey: #69766d;
+      --ivory: #f7f8f4;
+      --white: #ffffff;
+      --border: #e3e9e1;
+      --sky: #eaf2f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* TOP BAR */
+
+    .topbar {
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 9px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 3px 14px rgba(20, 50, 30, 0.06);
+    }
+
+    .nav-container {
+      min-height: 78px;
+      padding: 12px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .brand-name strong {
+      display: block;
+      color: var(--green);
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .brand-name span {
+      display: block;
+      color: var(--grey);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--mid-green);
+    }
+
+    .nav-toggle {
+      display: none;
+      padding: 9px 12px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--soft-green);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(110deg,
+          rgba(23, 55, 37, 0.97),
+          rgba(33, 75, 53, 0.89));
+      color: var(--white);
+      padding: 85px 6%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(213, 168, 75, 0.25);
+      border-radius: 50%;
+      right: -100px;
+      top: -180px;
+      box-shadow:
+        0 0 0 35px rgba(213, 168, 75, 0.04),
+        0 0 0 75px rgba(213, 168, 75, 0.03);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(33px, 5vw, 55px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 730px;
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-bottom: 27px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark-green);
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .hero-button:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 70px 6%;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 730px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--mid-green);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      font-size: 14px;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      background: var(--soft-green);
+      border-left: 4px solid var(--gold);
+      padding: 19px 22px;
+      border-radius: 4px;
+      margin-bottom: 35px;
+    }
+
+    .notice strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .notice p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    /* WEATHER PANEL */
+
+    .weather-section {
+      background: var(--white);
+    }
+
+    .weather-panel {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .weather-panel-header {
+      background: var(--green);
+      color: var(--white);
+      padding: 22px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .weather-panel-header h3 {
+      font-size: 19px;
+    }
+
+    .weather-panel-header span {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .weather-content {
+      padding: 30px;
+    }
+
+    .weather-placeholder {
+      text-align: center;
+      max-width: 680px;
+      margin: auto;
+      padding: 15px 0;
+    }
+
+    .weather-icon {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      background: var(--sky);
+      border-radius: 50%;
+      color: var(--green);
+      font-size: 36px;
+    }
+
+    .weather-placeholder h3 {
+      color: var(--green);
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .weather-placeholder p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .status-label {
+      display: inline-block;
+      background: #f5ecd7;
+      color: #76571b;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .weather-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .weather-feature {
+      background: var(--white);
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .weather-feature strong {
+      display: block;
+      color: var(--green);
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .weather-feature span {
+      color: var(--grey);
+      font-size: 12px;
+    }
+
+    /* WEATHER ELEMENTS */
+
+    .weather-elements {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .element-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 23px;
+    }
+
+    .element-number {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .element-card h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .element-card p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    /* SEASONAL PLANNING */
+
+    .planning-section {
+      background: var(--white);
+    }
+
+    .planning-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .planning-card {
+      padding: 25px;
+      background: var(--ivory);
+      border-left: 3px solid var(--gold);
+      border-radius: 5px;
+    }
+
+    .planning-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .planning-card p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .planning-card ul {
+      padding-left: 18px;
+      font-size: 13px;
+    }
+
+    .planning-card li {
+      margin-bottom: 7px;
+    }
+
+    /* CLIMATE CHALLENGES */
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .challenge-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 23px;
+      border-radius: 7px;
+    }
+
+    .challenge-card h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .challenge-card p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .challenge-card strong {
+      display: block;
+      color: var(--mid-green);
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    /* CLIMATE SMART */
+
+    .climate-section {
+      background: var(--dark-green);
+      color: var(--white);
+    }
+
+    .climate-section .section-heading h2 {
+      color: var(--white);
+    }
+
+    .climate-section .section-heading p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .climate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px 30px;
+    }
+
+    .climate-item {
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .climate-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .climate-item p {
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+    }
+
+    /* FARMER CHECKLIST */
+
+    .checklist-section {
+      background: var(--white);
+    }
+
+    .checklist {
+      max-width: 800px;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .checklist h3 {
+      color: var(--green);
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .checklist > p {
+      color: var(--grey);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .checklist label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .checklist input {
+      margin-top: 4px;
+      accent-color: var(--green);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .checklist label:has(input:checked) span {
+      text-decoration: line-through;
+      color: var(--grey);
+    }
+
+    .checklist-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .checklist-actions button {
+      border: 0;
+      padding: 10px 16px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .reset-button {
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .print-button {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* ADVISORY */
+
+    .advisory {
+      background: var(--soft-green);
+      padding: 55px 6%;
+      text-align: center;
+    }
+
+    .advisory-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .advisory h2 {
+      color: var(--green);
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .advisory p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .advisory a {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #122d1e;
+      color: var(--white);
+      padding: 35px 6% 20px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand strong {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 6%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.07);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .weather-elements,
+      .challenge-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 65px 6%;
+      }
+
+      .section {
+        padding: 55px 6%;
+      }
+
+      .weather-elements,
+      .weather-features,
+      .planning-grid,
+      .challenge-grid,
+      .climate-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .weather-content {
+        padding: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .site-header,
+      .hero-button,
+      .advisory,
+      footer,
+      .checklist-actions {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .section {
+        padding: 25px 0;
+      }
+
+      .checklist {
+        max-width: 100%;
+      }
+    }
+    
+/* =====================================================
+   GADEH LIVE WEATHER FORECAST
+===================================================== */
+
+.weather-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#weatherLocation {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+#weatherTemperature {
+    display: block;
+    font-size: 2.5rem;
+    margin: 12px 0;
+}
+
+#weatherIcon {
+    font-size: 3.5rem;
+}
+
+.weather-forecast {
+    margin-top: 30px;
+}
+
+#weatherForecastList {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+    );
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.forecast-day {
+    padding: 16px;
+    border-radius: 8px;
+    background: #f7f5f2;
+}
+
+.forecast-details {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.forecast-icon {
+    font-size: 2rem;
+}
+
+.weather-attribution {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.weather-attribution a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+    .weather-panel-header {
+        align-items: stretch;
+    }
+
+    #weatherLocation {
+        width: 100%;
+    }
+
+    #weatherForecastList {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+
+  <div class="topbar">
+    <span>Garissa Agro-Digital Empowerment Hub</span>
+    <span>Garissa County, Kenya</span>
+  </div>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <nav class="nav-container">
+
+      <a href="index.html" class="brand">
+        <div class="brand-mark">GADEH</div>
+
+        <div class="brand-name">
+          <strong>GADEH</strong>
+          <span>Digital Farmer Portal</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle"
+              id="navToggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false">
+        ☰ Menu
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="agricultural-knowledge.html">Knowledge Centre</a></li>
+        <li><a href="crop-health.html">Crop Health</a></li>
+        <li><a href="weather-climate.html" class="active">Weather & Climate</a></li>
+        <li><a href="water-irrigation.html">Water & Irrigation</a></li>
+        <li><a href="digital-learning.html">Digital Learning</a></li>
+        <li><a href="farmer-registration.html">Farmers</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">Weather Awareness and Climate Resilience</div>
+
+      <h1>Weather & Climate Centre</h1>
+
+      <p>
+        Make informed farming decisions through weather awareness,
+        rainfall planning and climate-smart agricultural practices.
+        Prepare your farm for changing weather conditions and strengthen
+        resilience against drought and other climate-related challenges.
+      </p>
+
+      <a href="#weather-information" class="hero-button">
+        Explore Weather Information
+      </a>
+
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="notice">
+        <strong>Weather information and forecast accuracy</strong>
+        <p>
+          Weather conditions can change quickly. This page currently provides
+          educational guidance and a space for future live weather integration.
+          It does not display verified real-time forecasts. Consult official
+          Kenya Meteorological Department advisories before making important
+          weather-dependent decisions.
+        </p>
+      </div>
+
+      <div class="section-heading">
+        <div class="eyebrow">Climate Information for Farmers</div>
+
+        <h2>Understand the weather. Plan your farming.</h2>
+
+        <p>
+          Weather and climate influence planting, irrigation, crop growth,
+          harvesting and livestock management. Understanding local weather
+          information can help farmers prepare for changing conditions and
+          reduce avoidable agricultural losses.
+        </p>
+      </div>
+
+    </div>
+  </section>
+<section>
+  <!-- WEATHER INFORMATION -->
+
+  <section class="section weather-section" id="weather-information">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Weather Monitoring</div>
+
+        <h2>Local Weather Information</h2>
+
+        <p>
+          A future live weather service will help farmers access location-based
+          forecasts, rainfall information and weather alerts.
+        </p>
+      </div>
+
+      
+<div class="weather-panel-header">
+
+    <div>
+        <h3>Garissa Agricultural Weather Centre</h3>
+        <span id="weatherUpdateStatus">Connecting to weather service...</span>
+    </div>
+
+    <select id="weatherLocation" aria-label="Select weather location">
+        <option value="garissa">Garissa</option>
+        <option value="wajir">Wajir</option>
+        <option value="mandera">Mandera</option>
+        <option value="isiolo">Isiolo</option>
+        <option value="moyale">Moyale</option>
+    </select>
+
+</div>
+
+<div class="weather-content">
+
+    <div class="weather-placeholder">
+
+        <div class="weather-icon" id="weatherIcon">☀</div>
+
+        <h3 id="weatherCondition">Loading weather...</h3>
+
+        <p id="weatherLocationName">Garissa, Kenya</p>
+
+        <strong id="weatherTemperature">-- °C</strong>
+
+        <p id="weatherFeelsLike">Feels like -- °C</p>
+
+        <span class="status-label" id="weatherStatus">
+            RETRIEVING LIVE WEATHER DATA
+        </span>
+
+    </div>
+
+    <div class="weather-features">
+
+        <div class="weather-feature">
+            <strong>Humidity</strong>
+            <span id="weatherHumidity">--%</span>
+        </div>
+
+        <div class="weather-feature">
+            <strong>Rainfall</strong>
+            <span id="weatherRainfall">-- mm</span>
+        </div>
+
+        <div class="weather-feature">
+            <strong>Wind Speed</strong>
+            <span id="weatherWind">-- km/h</span>
+        </div>
+
+        <div class="weather-feature">
+            <strong>Rain Probability</strong>
+            <span id="weatherRainProbability">--%</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="weather-forecast">
+
+    <h3>Five-Day Weather Forecast</h3>
+
+    <div id="weatherForecastList">
+        <p>Loading forecast...</p>
+    </div>
+
+</div>
+
+<p class="weather-attribution">
+    Weather data provided by
+    <a href="https://open-meteo.com/" target="_blank" rel="noopener">
+        Open-Meteo
+    </a>.
+    Forecast information is model-based and may change.
+</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WEATHER ELEMENTS -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Understanding Weather</div>
+
+        <h2>Important weather information for farmers</h2>
+
+        <p>
+          These weather elements can influence farm activities,
+          crop development and agricultural productivity.
+        </p>
+      </div>
+
+      <div class="weather-elements">
+
+        <article class="element-card">
+          <div class="element-number">01 — RAINFALL</div>
+
+          <h3>Rainfall Patterns</h3>
+
+          <p>
+            Rainfall amount, timing and distribution influence soil moisture,
+            planting decisions, water availability and crop development.
+            A short period of rain does not necessarily mean that enough
+            water is available for the entire growing season.
+          </p>
+        </article>
+
+        <article class="element-card">
+          <div class="element-number">02 — TEMPERATURE</div>
+
+          <h3>Temperature Changes</h3>
+
+          <p>
+            High temperatures can increase water loss from soil and plants.
+            Temperature conditions also influence germination, flowering
+            and crop development.
+          </p>
+        </article>
+
+        <article class="element-card">
+          <div class="element-number">03 — WIND</div>
+
+          <h3>Wind Conditions</h3>
+
+          <p>
+            Strong winds can damage crops, increase evaporation and affect
+            irrigation. Wind conditions should also be considered before
+            any pesticide application.
+          </p>
+        </article>
+
+        <article class="element-card">
+          <div class="element-number">04 — HUMIDITY</div>
+
+          <h3>Air Humidity</h3>
+
+          <p>
+            Humidity influences moisture conditions around plants and can
+            affect the development of certain crop diseases.
+          </p>
+        </article>
+
+        <article class="element-card">
+          <div class="element-number">05 — DROUGHT</div>
+
+          <h3>Drought Conditions</h3>
+
+          <p>
+            Extended periods of insufficient rainfall can reduce soil
+            moisture, affect crop growth and place pressure on agricultural
+            water supplies.
+          </p>
+        </article>
+
+        <article class="element-card">
+          <div class="element-number">06 — EXTREME EVENTS</div>
+
+          <h3>Heavy Rain and Flooding</h3>
+
+          <p>
+            Intense rainfall can cause waterlogging, soil erosion and
+            damage to farms. Farmers should consider drainage and
+            appropriate flood preparedness.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASONAL PLANNING -->
+
+  <section class="section planning-section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Agricultural Planning</div>
+
+        <h2>Plan your farm around seasonal conditions</h2>
+
+        <p>
+          Agricultural decisions should consider reliable seasonal forecasts,
+          local rainfall observations, available water and advice from
+          agricultural extension officers.
+        </p>
+      </div>
+
+      <div class="planning-grid">
+
+        <article class="planning-card">
+          <h3>Before the Planting Season</h3>
+
+          <p>
+            Prepare your farm and review available weather information
+            before committing resources to planting.
+          </p>
+
+          <ul>
+            <li>Review official seasonal rainfall advisories.</li>
+            <li>Prepare land according to soil and crop requirements.</li>
+            <li>Check seed quality and availability.</li>
+            <li>Assess water availability and irrigation options.</li>
+            <li>Develop a realistic farm production plan.</li>
+          </ul>
+        </article>
+
+        <article class="planning-card">
+          <h3>During the Growing Season</h3>
+
+          <p>
+            Monitor crop development and adjust farm activities
+            according to changing weather and soil conditions.
+          </p>
+
+          <ul>
+            <li>Monitor rainfall and soil moisture.</li>
+            <li>Manage irrigation according to crop needs.</li>
+            <li>Watch for signs of drought or waterlogging.</li>
+            <li>Inspect crops for pests and diseases.</li>
+            <li>Record farm observations and activities.</li>
+          </ul>
+        </article>
+
+        <article class="planning-card">
+          <h3>During Dry Conditions</h3>
+
+          <p>
+            Plan carefully when rainfall is limited and water resources
+            become more difficult to access.
+          </p>
+
+          <ul>
+            <li>Prioritise efficient water use.</li>
+            <li>Use mulching where suitable.</li>
+            <li>Maintain water harvesting structures.</li>
+            <li>Consider suitable drought-tolerant crops.</li>
+            <li>Seek advice before changing planting plans.</li>
+          </ul>
+        </article>
+
+        <article class="planning-card">
+          <h3>Before and During Heavy Rainfall</h3>
+
+          <p>
+            Prepare for possible runoff, flooding and excessive
+            water accumulation around crops.
+          </p>
+
+          <ul>
+            <li>Inspect drainage channels.</li>
+            <li>Protect exposed soil against erosion.</li>
+            <li>Secure farm equipment and supplies.</li>
+            <li>Monitor waterlogged areas.</li>
+            <li>Follow official flood and safety advisories.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIMATE CHALLENGES -->
+
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Climate Risk Awareness</div>
+
+        <h2>Climate-related challenges in farming</h2>
+
+        <p>
+          Farmers in arid and semi-arid environments may face several
+          interconnected climate challenges. Understanding these risks
+          helps communities prepare and adapt.
+        </p>
+      </div>
+
+      <div class="challenge-grid">
+
+        <article class="challenge-card">
+          <h3>Prolonged Dry Periods</h3>
+
+          <p>
+            Extended periods without sufficient rainfall can reduce
+            crop productivity and limit water availability.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Improve water conservation, consider suitable crop choices
+            and follow seasonal agricultural advice.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Unpredictable Rainfall</h3>
+
+          <p>
+            Changes in rainfall timing and distribution can make it
+            difficult to plan planting and other farm activities.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Follow updated official forecasts and avoid relying on
+            assumptions about rainfall dates.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>High Temperatures</h3>
+
+          <p>
+            High temperatures may increase evaporation and create
+            heat stress for crops and livestock.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Improve soil moisture conservation and use appropriate
+            shade and water management practices.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Soil Erosion</h3>
+
+          <p>
+            Heavy rainfall and surface runoff can remove fertile
+            topsoil and damage agricultural land.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Maintain suitable ground cover, manage runoff and
+            use appropriate soil conservation practices.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Water Shortages</h3>
+
+          <p>
+            Limited access to water can affect irrigation,
+            household needs and livestock production.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Explore rainwater harvesting, efficient irrigation
+            and responsible water storage.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Crop and Livestock Stress</h3>
+
+          <p>
+            Changing climate conditions may increase pressure
+            on crops, pasture and livestock resources.
+          </p>
+
+          <strong>Possible response</strong>
+          <p>
+            Strengthen farm planning and seek local agricultural
+            and livestock extension support.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIMATE SMART AGRICULTURE -->
+
+  <section class="section climate-section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Building Agricultural Resilience</div>
+
+        <h2>Climate-smart agricultural practices</h2>
+
+        <p>
+          Climate-smart agriculture promotes practices that improve
+          agricultural productivity, strengthen resilience and support
+          responsible management of natural resources.
+        </p>
+      </div>
+
+      <div class="climate-grid">
+
+        <div class="climate-item">
+          <strong>Soil Moisture Conservation</strong>
+          <p>
+            Use appropriate mulching, ground cover and soil management
+            techniques to reduce unnecessary moisture loss.
+          </p>
+        </div>
+
+        <div class="climate-item">
+          <strong>Efficient Irrigation</strong>
+          <p>
+            Consider suitable irrigation methods that deliver water
+            efficiently and reduce avoidable losses.
+          </p>
+        </div>
+
+        <div class="climate-item">
+          <strong>Water Harvesting</strong>
+          <p>
+            Explore appropriate rainwater harvesting and storage
+            systems to improve water availability.
+          </p>
+        </div>
+
+        <div class="climate-item">
+          <strong>Suitable Crop Selection</strong>
+          <p>
+            Choose crops and varieties that are appropriate for local
+            soil, water availability and seasonal conditions.
+          </p>
+        </div>
+
+        <div class="climate-item">
+          <strong>Agroforestry and Tree Planting</strong>
+          <p>
+            Where suitable, integrate trees into farming systems
+            to support land protection and environmental resilience.
+          </p>
+        </div>
+
+        <div class="climate-item">
+          <strong>Farm Diversification</strong>
+          <p>
+            Consider suitable diversification strategies to reduce
+            dependence on a single agricultural activity.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FARMER CHECKLIST -->
+
+  <section class="section checklist-section">
+    <div class="section-inner">
+
+      <div class="section-heading">
+        <div class="eyebrow">Practical Farmer Tool</div>
+
+        <h2>Weather and farm planning checklist</h2>
+
+        <p>
+          Use this checklist to organise important weather-related
+          farm preparation activities. Tick each task as you complete it.
+        </p>
+      </div>
+
+      <div class="checklist">
+
+        <h3>My Farm Preparedness Checklist</h3>
+
+        <p>
+          This checklist works in your browser. It does not submit
+          or permanently save information to GADEH.
+        </p>
+
+        <label>
+          <input type="checkbox">
+          <span>I have checked the latest available official weather advisory.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I have reviewed the seasonal rainfall outlook.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I have assessed water availability for my farm.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I have prepared appropriate soil and water conservation measures.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I have checked farm drainage and possible runoff risks.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I have reviewed my planting and irrigation plans.</span>
+        </label>
+
+        <label>
+          <input type="checkbox">
+          <span>I know where to access local agricultural extension advice.</span>
+        </label>
+
+        <div class="checklist-actions">
+
+          <button type="button"
+                  class="reset-button"
+                  id="resetChecklist">
+            Reset Checklist
+          </button>
+
+          <button type="button"
+                  class="print-button"
+                  id="printChecklist">
+            Print Checklist
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FARMER SUPPORT -->
+
+  <section class="advisory">
+    <div class="advisory-inner">
+
+      <h2>Strengthen your farm's climate resilience</h2>
+
+      <p>
+        Access agricultural learning materials, explore water management
+        practices and connect with the GADEH farmer community to support
+        informed agricultural decision-making.
+      </p>
+
+      <a href="water-irrigation.html">
+        Explore Water & Irrigation
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <strong>GADEH</strong>
+        <p>Garissa Agro-Digital Empowerment Hub</p>
+        <p>Digital knowledge for stronger agricultural communities.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="agricultural-knowledge.html">Knowledge Centre</a>
+        <a href="crop-health.html">Crop Health</a>
+        <a href="water-irrigation.html">Irrigation</a>
+        <a href="digital-learning.html">Learning</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="copyrightYear"></span>
+      Garissa Agro-Digital Empowerment Hub. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    // MOBILE NAVIGATION
+
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      navToggle.setAttribute("aria-expanded", isOpen);
+      navToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.textContent = "☰ Menu";
+      });
+    });
+
+
+    // FARMER CHECKLIST RESET
+
+    const checklistItems = document.querySelectorAll(
+      '.checklist input[type="checkbox"]'
+    );
+
+    document.getElementById("resetChecklist")
+      .addEventListener("click", function () {
+
+        checklistItems.forEach(function (item) {
+          item.checked = false;
+        });
+
+      });
+
+
+    // PRINT CHECKLIST
+
+    document.getElementById("printChecklist")
+      .addEventListener("click", function () {
+        window.print();
+      });
+
+
+    // COPYRIGHT YEAR
+
+    document.getElementById("copyrightYear").textContent =
+      new Date().getFullYear();
+  </script>
+<script>
+/* =====================================================
+   GADEH — LIVE WEATHER DISPLAY
+===================================================== */
+
+const weatherLocationSelect =
+    document.getElementById("weatherLocation");
+
+
+function getWeatherDescription(code) {
+
+    const descriptions = {
+        0:  ["Clear Sky", "☀"],
+        1:  ["Mainly Clear", "🌤"],
+        2:  ["Partly Cloudy", "⛅"],
+        3:  ["Overcast", "☁"],
+        45: ["Fog", "🌫"],
+        48: ["Depositing Rime Fog", "🌫"],
+        51: ["Light Drizzle", "🌦"],
+        53: ["Moderate Drizzle", "🌦"],
+        55: ["Dense Drizzle", "🌧"],
+        56: ["Freezing Drizzle", "🌧"],
+        57: ["Heavy Freezing Drizzle", "🌧"],
+        61: ["Slight Rain", "🌦"],
+        63: ["Moderate Rain", "🌧"],
+        65: ["Heavy Rain", "🌧"],
+        66: ["Freezing Rain", "🌧"],
+        67: ["Heavy Freezing Rain", "🌧"],
+        71: ["Slight Snow", "🌨"],
+        73: ["Moderate Snow", "🌨"],
+        75: ["Heavy Snow", "❄"],
+        77: ["Snow Grains", "❄"],
+        80: ["Slight Rain Showers", "🌦"],
+        81: ["Moderate Rain Showers", "🌧"],
+        82: ["Violent Rain Showers", "⛈"],
+        85: ["Snow Showers", "🌨"],
+        86: ["Heavy Snow Showers", "🌨"],
+        95: ["Thunderstorm", "⛈"],
+        96: ["Thunderstorm with Hail", "⛈"],
+        99: ["Severe Thunderstorm with Hail", "⛈"]
+    };
+
+    return descriptions[code] || ["Weather Unavailable", "🌤"];
+}
+
+
+/* LOAD WEATHER */
+
+async function loadWeather(location = "garissa") {
+
+    const status = document.getElementById("weatherUpdateStatus");
+
+    const weatherStatus = document.getElementById("weatherStatus");
+
+    status.textContent = "Updating weather information...";
+
+    weatherStatus.textContent = "RETRIEVING WEATHER DATA";
+
+    try {
+
+        const response = await fetch(
+            `/api/weather?location=${encodeURIComponent(location)}`
+        );
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(
+                data.message || "Weather information unavailable."
+            );
+        }
+
+        const current = data.weather.current;
+
+        const daily = data.weather.daily;
+
+        const dailyProbability =
+            daily.precipitation_probability_max[0];
+
+        const condition = getWeatherDescription(
+            current.weather_code
+        );
+
+        document.getElementById("weatherIcon").textContent =
+            condition[1];
+
+        document.getElementById("weatherCondition").textContent =
+            condition[0];
+
+        document.getElementById("weatherLocationName").textContent =
+            `${data.location.name}, Kenya`;
+
+        document.getElementById("weatherTemperature").textContent =
+            `${Math.round(current.temperature_2m)} °C`;
+
+        document.getElementById("weatherFeelsLike").textContent =
+            `Feels like ${Math.round(current.apparent_temperature)} °C`;
+
+        document.getElementById("weatherHumidity").textContent =
+            `${current.relative_humidity_2m}%`;
+
+        document.getElementById("weatherRainfall").textContent =
+            `${Number(current.precipitation).toFixed(1)} mm`;
+
+        document.getElementById("weatherWind").textContent =
+            `${Number(current.wind_speed_10m).toFixed(1)} km/h`;
+
+        document.getElementById("weatherRainProbability").textContent =
+            dailyProbability == null
+                ? "Unavailable"
+                : `${dailyProbability}%`;
+
+        weatherStatus.textContent =
+            "WEATHER DATA AVAILABLE";
+
+        status.textContent =
+            `Updated ${new Date(data.fetchedAt).toLocaleTimeString(
+                "en-KE",
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            )}`;
+
+        renderWeatherForecast(daily);
+
+    } catch (error) {
+
+        console.error("Weather display error:", error);
+
+        status.textContent = "Weather service unavailable";
+
+        weatherStatus.textContent = "WEATHER DATA UNAVAILABLE";
+
+        document.getElementById("weatherCondition").textContent =
+            "Unable to load weather";
+
+        document.getElementById("weatherTemperature").textContent =
+            "-- °C";
+
+        document.getElementById("weatherFeelsLike").textContent =
+            "Please try again later.";
+
+    }
+
+}
+
+
+/* FIVE-DAY FORECAST */
+
+function renderWeatherForecast(daily) {
+
+    const container =
+        document.getElementById("weatherForecastList");
+
+    container.replaceChildren();
+
+    daily.time.forEach((date, index) => {
+
+        const condition = getWeatherDescription(
+            daily.weather_code[index]
+        );
+
+        const day = document.createElement("article");
+
+        day.className = "forecast-day";
+
+        const dateLabel = new Date(
+            `${date}T12:00:00`
+        ).toLocaleDateString("en-KE", {
+            weekday: "short",
+            day: "numeric",
+            month: "short"
+        });
+
+        const rainfall = daily.precipitation_sum[index];
+
+        const rainProbability =
+            daily.precipitation_probability_max[index];
+
+        const details = document.createElement("div");
+
+        details.className = "forecast-details";
+
+        const heading = document.createElement("strong");
+        heading.textContent = dateLabel;
+
+        const icon = document.createElement("span");
+        icon.className = "forecast-icon";
+        icon.textContent = condition[1];
+
+        const description = document.createElement("span");
+        description.textContent = condition[0];
+
+        const temperature = document.createElement("strong");
+
+        temperature.textContent =
+            `${Math.round(daily.temperature_2m_max[index])}° / ` +
+            `${Math.round(daily.temperature_2m_min[index])}°C`;
+
+        const rain = document.createElement("span");
+
+        rain.textContent =
+            `Rain: ${rainfall == null ? "--" : rainfall.toFixed(1)} mm`;
+
+        const probability = document.createElement("span");
+
+        probability.textContent =
+            `Chance: ${rainProbability == null ? "--" : rainProbability}%`;
+
+        details.append(
+            heading,
+            icon,
+            description,
+            temperature,
+            rain,
+            probability
+        );
+
+        day.appendChild(details);
+
+        container.appendChild(day);
+
+    });
+
+}
+
+
+/* LOCATION SELECTION */
+
+weatherLocationSelect.addEventListener("change", function () {
+
+    loadWeather(this.value);
+
+});
+
+
+/* INITIAL WEATHER */
+
+loadWeather(weatherLocationSelect.value);
+
+
+/* REFRESH EVERY 10 MINUTES */
+
+setInterval(function () {
+
+    loadWeather(weatherLocationSelect.value);
+
+}, 10 * 60 * 1000);
+</script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

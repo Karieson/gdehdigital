@@ -1,0 +1,1770 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#214b35">
+
+<title>Digital Farmer Portal | GADEH</title>
+
+<style>
+:root {
+  --green: #214b35;
+  --dark: #173725;
+  --mid: #477b55;
+  --soft: #eaf1e9;
+  --gold: #d5a84b;
+  --ink: #26352b;
+  --grey: #69766d;
+  --ivory: #f7f8f4;
+  --white: #fff;
+  --line: #e2e8e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* TOP BAR */
+
+.topbar {
+  background: var(--dark);
+  color: white;
+  padding: 8px 5%;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* HEADER */
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  background: var(--green);
+  color: white;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.brand h2 {
+  color: var(--green);
+  font-size: 19px;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--grey);
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #46564a;
+}
+
+.nav-links a:hover {
+  color: var(--mid);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #253629;
+}
+
+.btn-outline {
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: transparent;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--green);
+  font-size: 27px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 530px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18,48,31,.95),
+      rgba(23,55,37,.78),
+      rgba(23,55,37,.25)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-actions .text-link {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #d5a84b;
+  color: #173725;
+  border: 1px solid #d5a84b;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-actions .text-link:hover {
+  background: #e8c878;
+  border-color: #e8c878;
+  transform: translateY(-2px);
+}
+
+.hero-actions .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: 0.3s ease;
+}
+
+.hero-actions .btn-outline:hover {
+  background: #ffffff;
+  color: #214b35;
+  transform: translateY(-2px);
+}
+  .hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 75px 30px;
+}
+
+.hero-label {
+  color: #e8c878;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 700px;
+  font-size: clamp(36px, 6vw, 68px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 600px;
+  color: #e2ebe3;
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+
+
+.hero-note {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #d5e2d7;
+}
+
+/* QUICK SERVICES */
+
+.quick-strip {
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.quick-item {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-right: 1px solid var(--line);
+}
+
+.quick-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+
+.quick-item strong {
+  display: block;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.quick-item small {
+  color: var(--grey);
+  font-size: 11px;
+}
+
+/* GENERAL SECTIONS */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.section {
+  padding: 75px 0;
+}
+
+.section-label {
+  color: var(--mid);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  font-size: clamp(27px, 4vw, 39px);
+  color: var(--green);
+  margin: 10px 0;
+}
+
+.section-intro {
+  color: var(--grey);
+  max-width: 650px;
+  margin-bottom: 30px;
+}
+
+/* SERVICE CARDS */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: white;
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  transition: .25s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(30,60,40,.09);
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--soft);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  color: var(--green);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.text-link {
+  color: var(--mid);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* RESOURCE LIBRARY */
+
+.resources {
+  background: #edf3ec;
+}
+
+.search-box {
+  max-width: 650px;
+  display: flex;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 9px;
+  margin-bottom: 28px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.resource-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.resource-content {
+  padding: 21px;
+}
+
+.tag {
+  color: var(--mid);
+  background: var(--soft);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.resource-content h3 {
+  color: var(--green);
+  font-size: 17px;
+  margin: 15px 0 8px;
+}
+
+.resource-content p {
+  color: var(--grey);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.empty-message {
+  display: none;
+  color: var(--grey);
+  margin-top: 20px;
+}
+
+/* WEATHER */
+
+.weather-panel {
+  background: var(--green);
+  color: white;
+  padding: 40px;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.weather-panel h2 {
+  color: white;
+}
+
+.weather-panel p {
+  color: #dce8dd;
+  margin: 15px 0 22px;
+}
+
+.weather-note {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 13px;
+  color: #e2ebe3;
+}
+
+.weather-note strong {
+  display: block;
+  color: #e8c878;
+  margin-bottom: 10px;
+}
+
+/* LEARNING */
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.learning-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.learning-card h3 {
+  color: var(--green);
+  margin: 12px 0;
+}
+
+.learning-card p {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+/* REGISTRATION */
+
+.registration {
+  background: #eaf1e9;
+}
+
+.registration-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.registration-info p {
+  color: var(--grey);
+  margin-top: 15px;
+}
+
+.registration-info ul {
+  padding-left: 20px;
+  margin-top: 20px;
+  color: #4d6253;
+}
+
+.registration-info li {
+  margin: 10px 0;
+}
+
+.form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(28,55,37,.08);
+}
+
+.form-card h3 {
+  color: var(--green);
+  margin-bottom: 6px;
+}
+
+.form-card > p {
+  color: var(--grey);
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: #405346;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid #dce5dc;
+  border-radius: 9px;
+  padding: 12px;
+  background: #fbfcfa;
+  outline: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--mid);
+}
+
+.form-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-message {
+  display: none;
+  background: #fff4dd;
+  color: #75571d;
+  border-radius: 9px;
+  padding: 13px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 50px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 35px;
+}
+
+footer h3,
+footer h4 {
+  margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+  color: #c4d2c6;
+  font-size: 13px;
+}
+
+footer a {
+  display: block;
+  margin: 9px 0;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,.15);
+  margin-top: 35px;
+  padding-top: 18px;
+  color: #b8c9bb;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .service-grid,
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 680px) {
+  .topbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topbar span:last-child {
+    display: none;
+  }
+
+  .navbar {
+    padding: 13px 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero {
+    min-height: 480px;
+  }
+
+  .hero-content {
+    padding: 65px 22px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-item {
+    padding: 15px 10px;
+  }
+
+  .quick-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .service-grid,
+  .resource-grid,
+  .learning-grid,
+  .registration-layout,
+  .weather-panel,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 23px;
+  }
+
+  .weather-panel {
+    padding: 25px;
+  }
+
+  .form-card {
+    padding: 21px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+}
+/* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+  <span>Digital agricultural knowledge for stronger communities</span>
+  <span>Garissa County, Kenya</span>
+</div>
+
+<!-- HEADER -->
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html" class="brand">
+      <div class="brand-logo">🌱</div>
+      <div>
+        <h2>GADEH</h2>
+        <small>DIGITAL FARMER PORTAL</small>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+
+
+    <a href="index.html">Home</a>
+    <a href="agricultural-library.html">
+        Agricultural Library
+    </a>
+
+    <a href="types-of-irrigation.html">
+        Irrigation Notes
+    </a>
+
+    <a href="water-irrigation.html">
+        Water Irrigation
+    </a>
+
+    <a href="crop-pest.html">
+        Crop Pest Notes
+    </a>
+
+    <a href="crop-health.html">
+        Crop Health
+    </a>
+
+    <a href="crop-production.html">
+        Crop Production
+    </a>
+
+    <a href="weather-climate.html">
+        Weather & Climate
+    </a>
+
+    <a href="digital-learning.html">
+        Digital Learning
+    </a>
+
+    <a href="farmers-portal.html">
+        Farmers Portal
+    </a>
+
+    <a href="farmer-registration.html">
+        Registration
+    </a>
+
+    <a href="track-application.html">
+        Track Application
+    </a>
+
+</nav>
+  
+
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      Garissa Agro-Digital Empowerment Hub
+    </div>
+
+    <h1>Knowledge and digital tools for better farming.</h1>
+
+    <p>
+      Access practical agricultural information, explore
+      sustainable farming methods, learn water-smart techniques
+      and connect with a growing community of farmers.
+    </p>
+
+    <div class="hero-actions">
+      <a href="agricultural-library.html" class="text-link">
+  Open Agricultural Library 
+</a>
+
+      <a href="farmer-registration.html" class="btn btn-outline">
+        Register as a Farmer
+      </a>
+    </div>
+
+    <div class="hero-note">
+      Agricultural information is open to everyone.
+      Farmer registration is optional.
+    </div>
+
+  </div>
+
+</section>
+
+<!-- QUICK INFORMATION -->
+
+<div class="quick-strip">
+
+  <div class="quick-grid">
+
+    <div class="quick-item">
+      <div class="quick-icon">🌾</div>
+      <div>
+        <strong>Farming Knowledge</strong>
+        <small>Practical crop information</small>
+      </div>
+    </div>
+
+    <div class="quick-item">
+      <div class="quick-icon">💧</div>
+      <div>
+        <strong>Water Conservation</strong>
+        <small>Efficient irrigation</small>
+      </div>
+    </div>
+
+    <div class="quick-item">
+      <div class="quick-icon">📱</div>
+      <div>
+        <strong>Digital Learning</strong>
+        <small>Resources on your phone</small>
+      </div>
+    </div>
+
+    <div class="quick-item">
+      <div class="quick-icon">🤝</div>
+      <div>
+        <strong>Farmer Community</strong>
+        <small>Registration and engagement</small>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FARMER SERVICES -->
+
+<section class="section" id="services">
+
+  <div class="container">
+
+    <div class="section-label">Explore the portal</div>
+
+    <h2>Farmer Services</h2>
+
+    <p class="section-intro">
+      Access practical agricultural knowledge, digital learning
+      materials, crop protection information and water-management
+      resources designed to support farmers and agricultural
+      communities.
+    </p>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-icon">🌱</div>
+
+        <h3>Agricultural Knowledge Centre</h3>
+
+        <p>
+          Explore crop production, land preparation, soil
+          management, seed selection, planting, farm planning,
+          harvesting, yields and sustainable agriculture.
+        </p>
+
+        <a href="farming-guides.html" class="text-link">
+          Open Agricultural Library →
+        </a>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-icon">🐛</div>
+
+        <h3>Crop Health and Pest Management</h3>
+
+        <p>
+          Learn about common crop pests, insect identification,
+          crop damage, plant diseases, prevention and integrated
+          pest management practices.
+        </p>
+
+        <a href="crop-pest.html" class="text-link">
+          Explore Crop Protection →
+        </a>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-icon">🌦️</div>
+
+        <h3>Weather and Climate Information</h3>
+
+        <p>
+          Explore rainfall patterns, climate change, drought
+          adaptation, weather-related farming decisions and
+          climate-smart agricultural practices.
+        </p>
+
+        <a href="weather-climate.html" class="text-link">
+          Visit Climate Centre →
+        </a>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-icon">💧</div>
+
+        <h3>Water and Irrigation Management</h3>
+
+        <p>
+          Understand drip irrigation, sprinkler irrigation,
+          surface irrigation, water harvesting, irrigation
+          planning and efficient water conservation.
+        </p>
+
+        <a href="types-of-irrigation.html" class="text-link">
+          Explore Irrigation Methods →
+        </a>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-icon">👩🏽‍🌾</div>
+
+        <h3>Farmer Registration</h3>
+
+        <p>
+          Register your interest, share your farming location,
+          identify your agricultural needs and express interest
+          in future training and community activities.
+        </p>
+
+        <a href="farmer-registration.html" class="text-link">
+          Register as a Farmer →
+        </a>
+      </article>
+
+
+      <article class="service-card">
+        <div class="service-icon">🎓</div>
+
+        <h3>Digital Agricultural Learning</h3>
+
+        <p>
+          Access digital agricultural lessons, educational
+          materials, practical demonstrations and learning
+          resources for improved farming knowledge.
+        </p>
+
+        <a href="digital-learning.html" class="text-link">
+          Open Digital Learning →
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESOURCE LIBRARY -->
+
+<section class="section resources" id="resources">
+
+  <div class="container">
+
+    <div class="section-label">Learn and apply</div>
+
+    <h2>Agricultural Resource Library</h2>
+
+    <p class="section-intro">
+      Explore practical agricultural notes and reference
+      materials covering crop production, soil health,
+      irrigation, crop protection, climate and farm management.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="search"
+        id="guideSearch"
+        placeholder="Search crops, soil, irrigation, pests..."
+        aria-label="Search agricultural resources"
+      >
+
+      <button class="btn btn-primary" id="searchButton">
+        Search
+      </button>
+
+    </div>
+
+
+    <div class="resource-grid" id="resourceGrid">
+
+
+      <!-- SOIL MANAGEMENT -->
+
+      <article class="resource-card"
+        data-search="soil preparation soil health soil fertility compost organic matter soil conservation land management">
+
+        <img
+          src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80"
+          alt="Healthy agricultural soil">
+
+        <div class="resource-content">
+
+          <span class="tag">Soil Management</span>
+
+          <h3>Building Healthier Soil</h3>
+
+          <p>
+            Learn about soil preparation, soil fertility,
+            organic matter, composting, soil conservation
+            and practices that support healthy crop growth.
+          </p>
+
+          <a href="farming-guides.html#soil" class="text-link">
+            Read Soil Management Notes →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- WATER MANAGEMENT -->
+
+      <article class="resource-card"
+        data-search="drip irrigation sprinkler irrigation surface irrigation water management water conservation water harvesting irrigation methods">
+
+        <img
+          src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80"
+          alt="Agricultural irrigation">
+
+        <div class="resource-content">
+
+          <span class="tag">Water Management</span>
+
+          <h3>Efficient Irrigation Methods</h3>
+
+          <p>
+            Explore different irrigation systems, water-use
+            planning, efficient watering techniques and
+            methods of reducing agricultural water loss.
+          </p>
+
+          <a href="types-of-irrigation.html" class="text-link">
+            Read Irrigation Notes →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- CROP PROTECTION -->
+
+      <article class="resource-card"
+        data-search="crop pests crop pest identification insect pests crop diseases pest control integrated pest management IPM crop protection">
+
+        <img
+  src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=900&q=80"
+  alt="Crop health inspection">
+
+        <div class="resource-content">
+
+          <span class="tag">Crop Protection</span>
+
+          <h3>Recognising Crop Pests and Diseases</h3>
+
+          <p>
+            Learn about common agricultural pests, early
+            identification, crop damage, plant diseases
+            and responsible pest-control practices.
+          </p>
+
+          <a href="crop-pest.html" class="text-link">
+            Read Crop Pest Notes →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- CLIMATE-SMART FARMING -->
+
+      <article class="resource-card"
+        data-search="climate smart agriculture dryland farming climate adaptation drought rainfall climate change sustainable farming">
+
+        <img
+          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80"
+          alt="Natural agricultural landscape">
+
+        <div class="resource-content">
+
+          <span class="tag">Climate-Smart Farming</span>
+
+          <h3>Adapting Farming to Dry Conditions</h3>
+
+          <p>
+            Explore climate adaptation, drought preparedness,
+            rainfall variability, water conservation and
+            sustainable dryland farming practices.
+          </p>
+
+          <a href="weather-climate.html" class="text-link">
+            Explore Climate Information →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- CROP PRODUCTION -->
+
+      <article class="resource-card"
+        data-search="crop planting seeds crop production seed selection crop varieties land preparation growing crops cultivation">
+
+        <img
+          src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=900&q=80"
+          alt="Agricultural field">
+
+        <div class="resource-content">
+
+          <span class="tag">Crop Production</span>
+
+          <h3>Planning a Crop-Growing Season</h3>
+
+          <p>
+            Understand crop selection, seed quality,
+            land preparation, planting schedules and
+            practical crop-production planning.
+          </p>
+
+          <a href="farming-guides.html#seeds" class="text-link">
+            Read Crop Production Notes →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- FARM PLANNING -->
+
+      <article class="resource-card"
+        data-search="farm records farm planning digital records farm management agricultural costs inputs yields production marketing">
+
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+          alt="Crop farming">
+
+        <div class="resource-content">
+
+          <span class="tag">Farm Planning</span>
+
+          <h3>Keeping Simple Farm Records</h3>
+
+          <p>
+            Learn how to record farm activities, agricultural
+            inputs, production costs, harvests, yields and
+            marketing information.
+          </p>
+
+          <a href="farming-guides.html#records" class="text-link">
+            Explore Farm Records →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <p class="empty-message" id="emptyMessage">
+      No matching topics found. Try another agricultural keyword.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- WEATHER -->
+
+<section class="section" id="weather">
+
+  <div class="container">
+
+    <div class="weather-panel">
+
+      <div>
+
+        <div class="section-label" style="color:#e8c878">
+          Plan with better information
+        </div>
+
+        <h2>Weather and Climate Centre</h2>
+
+        <p>
+          Understand how weather and climate conditions
+          influence agricultural production. Explore rainfall
+          patterns, drought preparedness, seasonal planning
+          and climate-smart farming practices.
+        </p>
+
+        <a href="weather-climate.html" class="btn btn-gold">
+          Explore Weather and Climate →
+        </a>
+
+      </div>
+
+
+      <div class="weather-note">
+
+        <strong>Weather Integration Pending</strong>
+
+        Live weather forecasts and location-specific
+        agricultural advisories will be connected to a
+        trusted weather data provider during backend
+        development.
+
+        For current weather and rainfall advisories,
+        consult official meteorological sources.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- DIGITAL LEARNING -->
+
+<section class="section" id="learning">
+
+  <div class="container">
+
+    <div class="section-label">Build practical skills</div>
+
+    <h2>Digital Agricultural Learning</h2>
+
+    <p class="section-intro">
+      Develop practical agricultural knowledge through
+      accessible digital materials, structured learning
+      resources and educational demonstrations.
+    </p>
+
+    <div class="learning-grid">
+
+
+      <!-- AGRICULTURAL LIBRARY -->
+
+      <article class="learning-card">
+
+        <div class="service-icon">📖</div>
+
+        <h3>Agricultural Guides and Notes</h3>
+
+        <p>
+          Access comprehensive agricultural notes covering
+          crop production, soil management, seeds, planting,
+          crop nutrition, harvesting, yields, storage
+          and farm marketing.
+        </p>
+
+        <a href="farming-guides.html" class="text-link">
+          Open Agricultural Library →
+        </a>
+
+      </article>
+
+
+      <!-- DIGITAL LESSONS -->
+
+      <article class="learning-card">
+
+        <div class="service-icon">▶️</div>
+
+        <h3>Videos and Practical Lessons</h3>
+
+        <p>
+          Explore digital agricultural lessons and practical
+          demonstrations covering crop production, irrigation,
+          crop protection and modern farming skills.
+        </p>
+
+        <a href="digital-learning.html" class="text-link">
+          Visit Digital Learning Centre →
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FARMER REGISTRATION -->
+
+<section class="section registration" id="register">
+
+  <div class="container registration-layout">
+
+    <div class="registration-info">
+
+      <div class="section-label">Join the community</div>
+
+      <h2>Farmer Registration</h2>
+
+      <p>
+        Register your interest in GADEH agricultural
+        information, digital learning and community
+        farming activities.
+      </p>
+
+      <ul>
+        <li>Share your farming interests.</li>
+        <li>Express interest in agricultural training.</li>
+        <li>Help identify community learning needs.</li>
+        <li>Connect with future farming activities.</li>
+      </ul>
+
+    </div>
+
+    <form class="form-card" id="farmerForm">
+
+      <h3>Farmer Interest Form</h3>
+
+      <p>
+        Complete the details below to express your interest.
+      </p>
+
+      <div class="form-grid">
+
+        <div class="form-field">
+          <label for="fullName">Full Name *</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            required
+            placeholder="Enter full name">
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="+254...">
+        </div>
+
+        <div class="form-field">
+          <label for="county">County *</label>
+          <select id="county" name="county" required>
+            <option value="">Select county</option>
+            <option>Garissa</option>
+            <option>Wajir</option>
+            <option>Mandera</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="location">Ward / Area</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Village or ward">
+        </div>
+
+        <div class="form-field">
+          <label for="interest">Farming Interest *</label>
+          <select id="interest" name="interest" required>
+            <option value="">Select interest</option>
+            <option>Crop Production</option>
+            <option>Horticulture / Vegetables</option>
+            <option>Water-Efficient Irrigation</option>
+            <option>Soil and Land Management</option>
+            <option>Climate-Smart Agriculture</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="experience">Farming Experience</label>
+          <select id="experience" name="experience">
+            <option value="">Select experience</option>
+            <option>Starting Out</option>
+            <option>Less than 2 years</option>
+            <option>2–5 years</option>
+            <option>More than 5 years</option>
+          </select>
+        </div>
+
+        <div class="form-field full">
+          <label for="needs">
+            What agricultural information or training would help you?
+          </label>
+
+          <textarea
+            id="needs"
+            name="needs"
+            placeholder="Tell us about your agricultural interests..."></textarea>
+        </div>
+
+        <div class="form-field full">
+
+          <button type="submit" class="btn btn-primary">
+            Submit Farmer Interest
+          </button>
+
+          <div class="form-message" id="formMessage"></div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>GADEH Digital Farmer Portal</h3>
+
+        <p>
+          Garissa Agro-Digital Empowerment Hub promotes
+          digital skills and practical agricultural
+          knowledge for stronger communities.
+        </p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="#services">Farmer Services</a>
+        <a href="agricultural-knowledge.html">Agricultural Guides</a>
+        <a href="weather-climate.html">Weather and Climate</a>
+        <a href="digital-learning.html">Digital Learning</a>
+      </div>
+
+      <div>
+        <h4>Community</h4>
+        <a href="#register">Farmer Enquiry</a>
+        <a href="cdbackend.onrender.com/index.htnl">Community Engagement</a>
+        <a href="#home">Back to Top ↑</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span>
+      Garissa Agro-Digital Empowerment Hub.
+      All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+// MOBILE NAVIGATION
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("open");
+
+  menuToggle.textContent =
+    navLinks.classList.contains("open") ? "×" : "☰";
+
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("open");
+    menuToggle.textContent = "☰";
+
+  });
+
+});
+
+
+// RESOURCE SEARCH
+
+const searchInput =
+  document.getElementById("guideSearch");
+
+const resourceCards =
+  document.querySelectorAll(".resource-card");
+
+const emptyMessage =
+  document.getElementById("emptyMessage");
+
+function searchGuides() {
+
+  const term = searchInput.value.toLowerCase().trim();
+
+  let visible = 0;
+
+  resourceCards.forEach(card => {
+
+    const searchable =
+      (card.dataset.search + " " + card.innerText).toLowerCase();
+
+    const match = searchable.includes(term);
+
+    card.style.display = match ? "" : "none";
+
+    if (match) visible++;
+
+  });
+
+  emptyMessage.style.display =
+    visible ? "none" : "block";
+
+}
+
+document.getElementById("searchButton")
+  .addEventListener("click", searchGuides);
+
+searchInput.addEventListener("input", searchGuides);
+
+searchInput.addEventListener("keydown", event => {
+
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchGuides();
+  }
+
+});
+
+
+// FRONTEND REGISTRATION DEMONSTRATION
+
+document.getElementById("farmerForm")
+  .addEventListener("submit", event => {
+
+    event.preventDefault();
+
+    const message =
+      document.getElementById("formMessage");
+
+    message.textContent =
+      "Thank you for your interest. This demonstration form is not yet connected to the GADEH database. Your information has not been saved or transmitted.";
+
+    message.style.display = "block";
+
+  });
+
+
+// COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>

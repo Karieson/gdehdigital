@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#214b35">
+
+<meta name="description"
+content="Explore practical agricultural knowledge, crop production, soil management, planting and farm planning through the GADEH Digital Farmer Portal.">
+
+<title>Agricultural Knowledge Centre | GADEH</title>
+
+<style>
+:root {
+  --green: #214b35;
+  --dark: #173725;
+  --mid: #477b55;
+  --soft: #eaf1e9;
+  --gold: #d5a84b;
+  --ink: #26352b;
+  --grey: #69766d;
+  --ivory: #f7f8f4;
+  --white: #fff;
+  --line: #e2e8e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* TOP BAR */
+
+.topbar {
+  background: var(--dark);
+  color: white;
+  padding: 8px 5%;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* HEADER */
+
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  background: var(--green);
+  color: white;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+
+.brand h2 {
+  color: var(--green);
+  font-size: 19px;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--grey);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: bold;
+  color: #46564a;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--mid);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: var(--green);
+  font-size: 27px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #253629;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--green);
+}
+
+/* BREADCRUMB */
+
+.breadcrumb {
+  background: #edf3ec;
+  padding: 13px 25px;
+  font-size: 12px;
+  color: var(--grey);
+}
+
+.breadcrumb .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.breadcrumb a {
+  color: var(--mid);
+  font-weight: bold;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18,48,31,.95),
+      rgba(23,55,37,.80),
+      rgba(23,55,37,.25)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 70px 30px;
+}
+
+.hero-label {
+  color: #e8c878;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 720px;
+  font-size: clamp(35px, 6vw, 61px);
+  line-height: 1.12;
+  margin: 18px 0;
+}
+
+.hero p {
+  max-width: 620px;
+  color: #e2ebe3;
+  font-size: 16px;
+  margin-bottom: 27px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-note {
+  margin-top: 22px;
+  font-size: 12px;
+  color: #d5e2d7;
+}
+
+/* GENERAL */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 25px;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section-label {
+  color: var(--mid);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section h2 {
+  font-size: clamp(27px, 4vw, 38px);
+  color: var(--green);
+  margin: 9px 0;
+  line-height: 1.25;
+}
+
+.section-intro {
+  color: var(--grey);
+  max-width: 700px;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* INTRODUCTION */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.intro-text p {
+  color: var(--grey);
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+.intro-image {
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 300px;
+}
+
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.intro-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 22px;
+}
+
+.intro-point {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 13px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* TOPIC NAVIGATION */
+
+.topic-section {
+  background: #edf3ec;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.topic-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 20px;
+  transition: .25s;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  border-color: #b6cbb8;
+}
+
+.topic-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.topic-card h3 {
+  color: var(--green);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.topic-card p {
+  color: var(--grey);
+  font-size: 12px;
+}
+
+/* GUIDES */
+
+.guide-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 470px;
+  display: flex;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 9px;
+  font-size: 13px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.guide-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(30,60,40,.08);
+}
+
+.guide-card img {
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+}
+
+.guide-content {
+  padding: 22px;
+}
+
+.tag {
+  color: var(--mid);
+  background: var(--soft);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.guide-content h3 {
+  color: var(--green);
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 13px 0 8px;
+}
+
+.guide-content p {
+  color: var(--grey);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.text-link {
+  color: var(--mid);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.text-link:hover {
+  color: var(--dark);
+}
+
+.empty-message {
+  display: none;
+  padding: 25px;
+  text-align: center;
+  color: var(--grey);
+}
+
+/* FARMING PRINCIPLES */
+
+.principles {
+  background: var(--green);
+  color: white;
+}
+
+.principles .section-label {
+  color: #e8c878;
+}
+
+.principles .section h2 {
+  color: white;
+}
+
+.principles .section-intro {
+  color: #d5e2d7;
+}
+
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.principle-card {
+  padding: 24px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 14px;
+}
+
+.principle-card span {
+  font-size: 27px;
+}
+
+.principle-card h3 {
+  color: #f1d58e;
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+
+.principle-card p {
+  color: #dce8dd;
+  font-size: 13px;
+}
+
+/* PRACTICAL STEPS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 22px;
+}
+
+.step-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: white;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.step h3 {
+  color: var(--green);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: var(--grey);
+  font-size: 12px;
+}
+
+/* FIELD ADVICE */
+
+.advice-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  background: #edf3ec;
+  border-radius: 18px;
+  padding: 35px;
+}
+
+.advice-panel h2 {
+  color: var(--green);
+  font-size: 27px;
+  margin: 10px 0;
+}
+
+.advice-panel p {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.advice-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.advice-list li {
+  background: white;
+  padding: 13px 15px;
+  border-radius: 9px;
+  color: #405346;
+  font-size: 13px;
+}
+
+.advice-list li::before {
+  content: "✓";
+  color: var(--mid);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* EXTERNAL LEARNING */
+
+.external-box {
+  border-left: 4px solid var(--gold);
+  background: white;
+  padding: 23px;
+  border-radius: 0 12px 12px 0;
+  margin-top: 25px;
+}
+
+.external-box h3 {
+  color: var(--green);
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.external-box p {
+  color: var(--grey);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* CTA */
+
+.cta {
+  background:
+    linear-gradient(rgba(23,55,37,.94), rgba(23,55,37,.94)),
+    url("https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+  padding: 65px 25px;
+  text-align: center;
+  color: white;
+}
+
+.cta h2 {
+  font-size: clamp(26px, 4vw, 36px);
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: #dce8dd;
+  max-width: 650px;
+  margin: auto auto 23px;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 48px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 35px;
+}
+
+footer h3,
+footer h4 {
+  margin-bottom: 14px;
+}
+
+footer p,
+footer a {
+  color: #c4d2c6;
+  font-size: 13px;
+}
+
+footer a {
+  display: block;
+  margin: 8px 0;
+}
+
+footer a:hover {
+  color: white;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255,255,255,.15);
+  margin-top: 30px;
+  padding-top: 17px;
+  color: #b8c9bb;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 950px) {
+  .nav-links {
+    gap: 11px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .topic-grid,
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 680px) {
+  .topbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topbar span:last-child {
+    display: none;
+  }
+
+  .navbar {
+    padding: 12px 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .hero-content {
+    padding: 55px 22px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .intro-grid,
+  .guide-grid,
+  .principle-grid,
+  .advice-panel,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topic-grid,
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro-image,
+  .intro-image img {
+    min-height: 230px;
+  }
+
+  .advice-panel {
+    padding: 23px;
+  }
+
+  .guide-card img {
+    height: 175px;
+  }
+}
+
+@media(max-width: 420px) {
+  .topic-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .search-box .btn {
+    padding: 10px 13px;
+  }
+}
+
+/* GUIDE CARD HIGHLIGHTS */
+
+.guide-highlights {
+  margin: 14px 0 18px;
+  padding-left: 19px;
+  color: var(--grey);
+  font-size: 13px;
+}
+
+.guide-highlights li {
+  margin: 5px 0;
+}
+
+/* SEARCH RESULTS */
+
+.search-results {
+  margin-top: 18px;
+}
+
+.search-result {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--light-grey);
+  border-left: 4px solid var(--green);
+  border-radius: 9px;
+  padding: 15px 18px;
+  margin-bottom: 11px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.search-result:hover {
+  border-left-color: var(--gold);
+  transform: translateX(4px);
+}
+
+.search-result h3 {
+  color: var(--green-dark);
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.search-result p {
+  color: var(--grey);
+  font-size: 13px;
+  margin: 0;
+}
+
+.search-message {
+  color: var(--grey);
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.empty-message[hidden] {
+  display: none;
+}
+
+/* GUIDE CARD LINKS */
+
+.guide-content .text-link,
+.principle-card .text-link,
+.external-box .text-link {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+/* ACCESSIBILITY */
+
+.topic-card:focus-visible,
+.search-result:focus-visible,
+.guide-card a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+/* =========================
+   STRONG GLOBAL DIMMING
+========================= */
+
+html.dimmed-mode {
+  filter: brightness(0.55) contrast(0.90);
+}
+
+html {
+  transition: filter 0.35s ease;
+}
+
+html:not(.dimmed-mode) {
+  filter: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+  <span>Practical agricultural knowledge for stronger communities</span>
+  <span>Garissa County, Kenya</span>
+</div>
+
+<!-- HEADER -->
+
+<header>
+  <div class="navbar">
+
+    <a href="index.html" class="brand">
+      <div class="brand-logo">🌱</div>
+      <div>
+        <h2>GADEH</h2>
+        <small>DIGITAL FARMER PORTAL</small>
+      </div>
+    </a>
+
+    <button class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="agricultural-knowledge.html" class="active">
+        Knowledge Centre
+      </a>
+      <a href="crop-health.html">Crop Health</a>
+      <a href="weather-climate.html">Weather</a>
+      <a href="water-irrigation.html">Irrigation</a>
+      <a href="digital-learning.html">Learning</a>
+      <a href="farmer-registration.html">Register</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">Home</a>
+    &nbsp; / &nbsp;
+    Agricultural Knowledge Centre
+  </div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      GADEH Agricultural Knowledge Centre
+    </div>
+
+    <h1>Practical knowledge for productive and sustainable farming.</h1>
+
+    <p>
+      Explore crop production, soil management, planting
+      practices and farm planning. Access useful agricultural
+      information to support informed decisions throughout
+      the farming season.
+    </p>
+
+    <div class="hero-actions">
+
+      <a href="farming-guides.html" class="btn btn-gold">
+  Explore Farming Guides →
+</a>
+
+      <a href="farmer-registration.html" class="btn btn-outline">
+        Join the Farmer Community
+      </a>
+
+    </div>
+
+    <div class="hero-note">
+      Open agricultural learning resources for farmers and communities.
+    </div>
+
+  </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+  <div class="container intro-grid">
+
+    <div class="intro-text">
+
+      <div class="section-label">Agricultural knowledge</div>
+
+      <h2>Supporting better farming decisions</h2>
+
+      <p>
+        Agriculture depends on many connected factors,
+        including soil conditions, water availability,
+        suitable crops, planting practices and effective
+        farm management.
+      </p>
+
+      <p>
+        The GADEH Agricultural Knowledge Centre brings
+        practical farming information together in one
+        accessible digital space. Farmers can explore
+        learning topics and identify practices that may
+        be suitable for their own farms.
+      </p>
+
+      <p>
+        Our approach encourages sustainable land management,
+        responsible use of resources and continuous learning.
+      </p>
+
+      <div class="intro-points">
+
+        <div class="intro-point">🌱 Crop production</div>
+        <div class="intro-point">🌍 Soil conservation</div>
+        <div class="intro-point">💧 Water efficiency</div>
+        <div class="intro-point">📋 Farm planning</div>
+
+      </div>
+
+    </div>
+
+    <div class="intro-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=85"
+        alt="Agricultural farmland and crop fields">
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- KNOWLEDGE TOPICS -->
+
+<section class="section topic-section">
+
+  <div class="container">
+
+    <div class="section-label">Explore knowledge areas</div>
+
+    <h2>What would you like to learn?</h2>
+
+    <p class="section-intro">
+      Explore key agricultural topics and build your
+      understanding of practical crop farming.
+    </p>
+
+    <div class="topic-grid">
+
+  <a href="farming-guides.html#seeds" class="topic-card">
+    <div class="topic-icon">🌾</div>
+    <h3>Crop Production</h3>
+    <p>Crop selection, seeds, planting and crop care.</p>
+  </a>
+
+  <a href="farming-guides.html#soil" class="topic-card">
+    <div class="topic-icon">🌱</div>
+    <h3>Soil Management</h3>
+    <p>Soil health, organic matter and fertility.</p>
+  </a>
+
+  <a href="farming-guides.html#planting" class="topic-card">
+    <div class="topic-icon">🌿</div>
+    <h3>Planting Practices</h3>
+    <p>Planting preparation, spacing and timing.</p>
+  </a>
+
+  <a href="farming-guides.html#planning" class="topic-card">
+    <div class="topic-icon">📋</div>
+    <h3>Farm Planning</h3>
+    <p>Farm records, budgeting and seasonal planning.</p>
+  </a>
+
+</div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     AGRICULTURAL LEARNING GUIDES
+========================================= -->
+
+<section class="section" id="guides">
+
+  <div class="container">
+
+    <div class="section-label">Agro-Digital Learning Centre</div>
+
+    <h2>Agricultural Learning Guides</h2>
+
+    <p class="section-intro">
+      Access practical agricultural knowledge and detailed
+      learning notes covering crop production, soil health,
+      irrigation, water conservation, pests, crop protection
+      and sustainable farming practices.
+    </p>
+
+    <!-- SEARCH TOOLBAR -->
+
+    <div class="guide-toolbar">
+
+      <div class="search-box">
+
+        <input
+          type="search"
+          id="guideSearch"
+          placeholder="Search farming topics, pests, irrigation..."
+          aria-label="Search agricultural learning materials">
+
+        <button class="btn btn-primary" id="searchButton">
+          Search
+        </button>
+
+      </div>
+
+      <div
+        id="guideSearchResults"
+        class="search-results"
+        aria-live="polite">
+      </div>
+
+    </div>
+
+    <!-- MAIN GUIDE CARDS -->
+
+    <div class="guide-grid" id="guideGrid">
+
+      <!-- COMPREHENSIVE FARMING GUIDES -->
+
+      <article class="guide-card"
+        data-search="farming guides crop production seeds crop selection soil management fertility planting farm planning records budgeting harvesting yields storage marketing climate digital agriculture">
+
+        <img
+          src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?auto=format&fit=crop&w=900&q=80"
+          alt="Agricultural crop production field">
+
+        <div class="guide-content">
+
+          <span class="tag">Comprehensive Farming</span>
+
+          <h3>Farming Guides and Agricultural Notes</h3>
+
+          <p>
+            Explore comprehensive farming notes covering
+            crop production, land preparation, seeds,
+            soil management, planting, crop nutrition,
+            harvesting, yields, storage and agricultural
+            marketing.
+          </p>
+
+          <ul class="guide-highlights">
+            <li>Crop production and crop selection</li>
+            <li>Soil health and fertility management</li>
+            <li>Planting practices and farm planning</li>
+            <li>Harvesting, yields and marketing</li>
+          </ul>
+
+          <a href="farming-guides.html" class="text-link">
+            Explore Farming Guides →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- IRRIGATION GUIDES -->
+
+      <article class="guide-card"
+        data-search="irrigation water management water conservation drip irrigation sprinkler surface irrigation water supply soil moisture water harvesting irrigation scheduling">
+
+        <img
+          src="https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=900&q=80"
+          alt="Water being used for agricultural irrigation">
+
+        <div class="guide-content">
+
+          <span class="tag">Water and Irrigation</span>
+
+          <h3>Types of Irrigation and Water Management</h3>
+
+          <p>
+            Learn about different irrigation systems,
+            their applications, advantages, limitations
+            and practical approaches to managing water
+            efficiently in agriculture.
+          </p>
+
+          <ul class="guide-highlights">
+            <li>Drip irrigation</li>
+            <li>Sprinkler irrigation</li>
+            <li>Surface and furrow irrigation</li>
+            <li>Water conservation and scheduling</li>
+          </ul>
+
+          <a href="types-of-irrigation.html" class="text-link">
+            Explore Irrigation Guides →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- CROP PEST GUIDES -->
+
+      <article class="guide-card"
+        data-search="agricultural pests crop pests insects aphids whiteflies fall armyworms cutworms fruit flies crop damage pest identification pest prevention integrated pest management IPM pesticides crop protection">
+
+        <img
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80"
+          alt="Agricultural crops and farming landscape">
+
+        <div class="guide-content">
+
+          <span class="tag">Crop Protection</span>
+
+          <h3>Agricultural Pests and Crop Protection</h3>
+
+          <p>
+            Understand common agricultural pests,
+            how they damage crops, how to identify
+            early warning signs and how to apply
+            responsible pest management practices.
+          </p>
+
+          <ul class="guide-highlights">
+            <li>Common crop pests and identification</li>
+            <li>Signs and symptoms of pest damage</li>
+            <li>Prevention and control methods</li>
+            <li>Integrated Pest Management (IPM)</li>
+          </ul>
+
+          <a href="crop-pest.html" class="text-link">
+            Explore Crop Pest Guides →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <p class="empty-message" id="emptyMessage" hidden>
+      No matching agricultural topics found.
+      Try another search.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     FARMING KNOWLEDGE HIGHLIGHTS
+========================================= -->
+
+<section class="section topic-section" id="farming-knowledge">
+
+  <div class="container">
+
+    <div class="section-label">Learning Area 01</div>
+
+    <h2>Crop Production and Farm Management</h2>
+
+    <p class="section-intro">
+      Learn how to plan agricultural activities,
+      select suitable crops, manage soil resources
+      and improve farm productivity.
+    </p>
+
+    <div class="principle-grid">
+
+      <article class="principle-card">
+
+        <span>🌾</span>
+
+        <h3>Crop Production</h3>
+
+        <p>
+          Understand crop selection, seed quality,
+          land preparation, planting and crop
+          management throughout the growing season.
+        </p>
+
+        <a href="farming-guides.html#seeds" class="text-link">
+          Read Crop Production Notes →
+        </a>
+
+      </article>
+
+      <article class="principle-card">
+
+        <span>🌱</span>
+
+        <h3>Soil Management</h3>
+
+        <p>
+          Learn about soil types, soil fertility,
+          organic matter, composting, soil testing
+          and sustainable soil management.
+        </p>
+
+        <a href="farming-guides.html#soil" class="text-link">
+          Read Soil Management Notes →
+        </a>
+
+      </article>
+
+      <article class="principle-card">
+
+        <span>📋</span>
+
+        <h3>Farm Planning</h3>
+
+        <p>
+          Explore farm budgeting, crop planning,
+          production records, labour management
+          and agricultural business decisions.
+        </p>
+
+        <a href="farming-guides.html#planning" class="text-link">
+          Read Farm Planning Notes →
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     WATER AND IRRIGATION
+========================================= -->
+
+<section class="section topic-section" id="water-learning">
+
+  <div class="container">
+
+    <div class="section-label">Learning Area 02</div>
+
+    <h2>Water Management and Irrigation</h2>
+
+    <p class="section-intro">
+      Water is essential for crop establishment,
+      growth and production. Understanding irrigation
+      methods helps farmers make better use of
+      available water resources.
+    </p>
+
+    <div class="advice-panel">
+
+      <div>
+
+        <h2>Use water efficiently. Protect every drop.</h2>
+
+        <p>
+          Farmers can improve water management by selecting
+          suitable irrigation systems, monitoring soil
+          moisture, maintaining irrigation equipment
+          and reducing unnecessary water losses.
+        </p>
+
+        <p style="margin-top:13px">
+          The most appropriate irrigation method depends
+          on crop requirements, soil characteristics,
+          water availability, farm size and available
+          resources.
+        </p>
+
+        <a href="types-of-irrigation.html" class="text-link">
+          Study Types of Irrigation →
+        </a>
+
+      </div>
+
+      <ul class="advice-list">
+
+        <li>Understand different irrigation systems.</li>
+
+        <li>Learn about drip and sprinkler irrigation.</li>
+
+        <li>Explore surface and furrow irrigation.</li>
+
+        <li>Monitor soil moisture and crop water needs.</li>
+
+        <li>Maintain pipes, pumps and irrigation equipment.</li>
+
+        <li>Practise water conservation.</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     AGRICULTURAL PESTS AND CROP PROTECTION
+========================================= -->
+
+<section class="section topic-section" id="crop-protection">
+
+  <div class="container">
+
+    <div class="section-label">Learning Area 03</div>
+
+    <h2>Agricultural Pests and Crop Protection</h2>
+
+    <p class="section-intro">
+      Crop pests can damage leaves, stems, roots,
+      flowers, fruits and seeds. Early identification
+      and appropriate management help protect
+      agricultural production.
+    </p>
+
+    <div class="steps">
+
+      <article class="step">
+
+        <div class="step-number">1</div>
+
+        <h3>Identify Pests</h3>
+
+        <p>
+          Learn to recognise common agricultural pests
+          and distinguish harmful organisms from
+          beneficial insects.
+        </p>
+
+      </article>
+
+      <article class="step">
+
+        <div class="step-number">2</div>
+
+        <h3>Inspect Crops</h3>
+
+        <p>
+          Regularly inspect leaves, stems, roots
+          and fruits for visible pests and damage.
+        </p>
+
+      </article>
+
+      <article class="step">
+
+        <div class="step-number">3</div>
+
+        <h3>Prevent Damage</h3>
+
+        <p>
+          Apply appropriate crop management practices,
+          field sanitation and preventive measures.
+        </p>
+
+      </article>
+
+      <article class="step">
+
+        <div class="step-number">4</div>
+
+        <h3>Manage Pests</h3>
+
+        <p>
+          Use suitable integrated pest management
+          approaches and responsible crop protection
+          methods.
+        </p>
+
+      </article>
+
+    </div>
+
+    <div class="external-box">
+
+      <h3>Learn before applying pest treatments</h3>
+
+      <p>
+        Correct identification is important before
+        selecting a control method. Avoid unnecessary
+        pesticide application and follow approved
+        product instructions whenever pesticides
+        are required.
+      </p>
+
+      <a href="crop-pest.html" class="text-link">
+        Explore Agricultural Pest Notes →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     FURTHER LEARNING
+========================================= -->
+
+<section class="section topic-section" id="further-learning">
+
+  <div class="container">
+
+    <div class="section-label">Continue Learning</div>
+
+    <h2>Explore the Agricultural Knowledge Library</h2>
+
+    <p class="section-intro">
+      Continue learning through detailed agricultural
+      notes and practical guides available in the
+      Agro-Digital Farmers Library.
+    </p>
+
+    <div class="topic-grid">
+
+      <a href="farming-guides.html#planting" class="topic-card">
+
+        <div class="topic-icon">🌿</div>
+
+        <h3>Planting Practices</h3>
+
+        <p>
+          Learn about planting preparation,
+          seed selection, spacing and timing.
+        </p>
+
+      </a>
+
+      <a href="farming-guides.html#nutrition" class="topic-card">
+
+        <div class="topic-icon">🧪</div>
+
+        <h3>Crop Nutrition</h3>
+
+        <p>
+          Explore plant nutrients, organic fertilisers
+          and responsible fertilizer management.
+        </p>
+
+      </a>
+
+      <a href="farming-guides.html#harvesting" class="topic-card">
+
+        <div class="topic-icon">🌾</div>
+
+        <h3>Harvesting and Yields</h3>
+
+        <p>
+          Understand crop maturity, harvesting
+          practices and production yields.
+        </p>
+
+      </a>
+
+      <a href="farming-guides.html#marketing" class="topic-card">
+
+        <div class="topic-icon">📈</div>
+
+        <h3>Marketing and Farm Business</h3>
+
+        <p>
+          Learn about agricultural markets,
+          sales, budgeting and farm profitability.
+        </p>
+
+      </a>
+
+      <a href="types-of-irrigation.html" class="topic-card">
+
+        <div class="topic-icon">💧</div>
+
+        <h3>Irrigation Methods</h3>
+
+        <p>
+          Compare irrigation systems and learn
+          about efficient agricultural water use.
+        </p>
+
+      </a>
+
+      <a href="crop-pest.html" class="topic-card">
+
+        <div class="topic-icon">🐛</div>
+
+        <h3>Pest Management</h3>
+
+        <p>
+          Explore pest identification, prevention
+          and integrated crop protection.
+        </p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     FARMER REGISTRATION CTA
+========================================= -->
+
+<section class="cta">
+
+  <h2>Grow Your Agricultural Knowledge.</h2>
+
+  <p>
+    Join the GADEH Farmer Portal community and
+    express interest in agricultural learning,
+    digital resources and future community
+    farming activities.
+  </p>
+
+  <a href="farmer-registration.html" class="btn btn-gold">
+    Register as a Farmer →
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>GADEH Digital Farmer Portal</h3>
+
+        <p>
+          Garissa Agro-Digital Empowerment Hub promotes
+          digital skills and practical agricultural
+          knowledge for stronger communities.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h4>Farmer Services</h4>
+
+        <a href="agricultural-knowledge.html">
+          Agricultural Knowledge
+        </a>
+
+        <a href="crop-health.html">Crop Health</a>
+
+        <a href="weather-climate.html">Weather and Climate</a>
+
+        <a href="water-irrigation.html">Water Management</a>
+
+      </div>
+
+      <div>
+
+        <h4>Community</h4>
+
+        <a href="farmer-registration.html">
+          Farmer Registration
+        </a>
+
+        <a href="digital-learning.html">
+          Digital Learning
+        </a>
+
+        <a href="index.html">Portal Homepage</a>
+
+        <a href="#home">Back to Top ↑</a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © <span id="year"></span>
+      Garissa Agro-Digital Empowerment Hub.
+      All rights reserved.
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ==========================================
+  // 1. MOBILE NAVIGATION
+  // ==========================================
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", function () {
+
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.textContent = isOpen ? "×" : "☰";
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", function () {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+      });
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 2. AGRICULTURAL SEARCH ELEMENTS
+  // ==========================================
+
+  const searchInput = document.getElementById("guideSearch");
+  const searchButton = document.getElementById("searchButton");
+  const resultsContainer = document.getElementById("guideSearchResults");
+  const emptyMessage = document.getElementById("emptyMessage");
+
+  if (!searchInput || !searchButton || !resultsContainer) {
+    return;
+  }
+
+
+  // ==========================================
+  // 3. AGRICULTURAL LEARNING DOCUMENTS
+  // ==========================================
+
+  const guideFiles = [
+    "farming-guides.html",
+    "types-of-irrigation.html",
+    "crop-pest.html"
+  ];
+
+  let searchableSections = [];
+
+
+  // ==========================================
+  // 4. RELATED AGRICULTURAL KEYWORDS
+  // ==========================================
+
+  const relatedTerms = {
+
+    crop: [
+      "crop", "crops", "crop production",
+      "crop farming", "cultivation",
+      "planting", "seeds", "seed selection",
+      "crop varieties", "growing crops",
+      "harvesting", "yield", "yields",
+      "crop nutrition", "fertilizer",
+      "soil", "crop health",
+      "crop pests", "pest control",
+      "crop diseases", "weed control"
+    ],
+
+    water: [
+      "water", "irrigation", "watering",
+      "water management", "water supply",
+      "water conservation", "water harvesting",
+      "rainfall", "drought", "soil moisture",
+      "drainage", "water efficiency",
+      "irrigation methods", "drip irrigation",
+      "sprinkler irrigation", "flood irrigation",
+      "surface irrigation", "furrow irrigation"
+    ],
+
+    irrigation: [
+      "irrigation", "water", "watering",
+      "drip irrigation", "sprinkler irrigation",
+      "surface irrigation", "furrow irrigation",
+      "flood irrigation", "basin irrigation",
+      "micro irrigation", "water management",
+      "irrigation systems", "irrigation methods",
+      "water conservation", "soil moisture"
+    ],
+
+    pest: [
+      "pest", "pests", "crop pest",
+      "crop pests", "insects", "insect pests",
+      "insect infestation", "crop damage",
+      "pest identification", "pest management",
+      "pest prevention", "pest control",
+      "integrated pest management",
+      "IPM", "biological control",
+      "chemical control", "organic pest control",
+      "plant diseases", "crop protection"
+    ],
+
+    soil: [
+      "soil", "soil fertility", "soil health",
+      "soil management", "soil preparation",
+      "soil conservation", "soil erosion",
+      "soil moisture", "soil nutrients",
+      "organic matter", "compost",
+      "fertilizer", "land preparation"
+    ],
+
+    climate: [
+      "climate", "climate change",
+      "weather", "drought", "rainfall",
+      "temperature", "flooding",
+      "climate-smart agriculture",
+      "adaptation", "resilience"
+    ],
+
+    harvest: [
+      "harvest", "harvesting", "yields",
+      "yield", "crop maturity",
+      "post-harvest", "storage",
+      "marketing", "crop quality",
+      "produce handling"
+    ],
+
+    disease: [
+      "disease", "diseases", "crop disease",
+      "plant disease", "plant health",
+      "crop health", "fungal disease",
+      "bacterial disease", "viral disease",
+      "disease prevention", "crop protection"
+    ]
+
+  };
+
+
+  // ==========================================
+  // 5. NORMALIZE SEARCH TEXT
+  // ==========================================
+
+  function normalizeText(text) {
+
+    return String(text || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  }
+
+
+  // ==========================================
+  // 6. LOAD ALL THREE HTML DOCUMENTS
+  // ==========================================
+
+  async function loadGuides() {
+
+    resultsContainer.innerHTML = `
+      <p class="search-message">
+        Loading agricultural learning materials...
+      </p>
+    `;
+
+    const documents = await Promise.all(
+
+      guideFiles.map(async file => {
+
+        try {
+
+          const response = await fetch(file);
+
+          if (!response.ok) {
+            throw new Error("Could not load " + file);
+          }
+
+          const html = await response.text();
+
+          const parser = new DOMParser();
+
+          const doc = parser.parseFromString(
+            html,
+            "text/html"
+          );
+
+          // Find all sections with IDs, including nested sections.
+
+          let sections = Array.from(
+            doc.querySelectorAll("section[id]")
+          );
+
+          // Fallback for pages using other ID-based content blocks.
+
+          if (sections.length === 0) {
+
+            sections = Array.from(
+              doc.querySelectorAll("main [id], article [id]")
+            ).filter(element =>
+              element.children.length > 0
+            );
+
+          }
+
+          // If no searchable sections exist, search the whole document.
+
+          if (sections.length === 0) {
+
+            return [{
+              file: file,
+              id: "",
+              title: doc.title || file,
+              content: normalizeText(
+                doc.body.textContent
+              )
+            }];
+
+          }
+
+          return sections.map(section => {
+
+            const titleElement = section.querySelector(
+              "h1, h2, h3, h4"
+            );
+
+            const title =
+              titleElement?.textContent.trim() ||
+              section.id.replace(/-/g, " ");
+
+            const content = normalizeText(
+              section.textContent
+            );
+
+            return {
+
+              file: file,
+
+              id: section.id,
+
+              title: title,
+
+              content: content,
+
+              searchable: normalizeText(
+                title + " " +
+                section.id.replace(/-/g, " ") + " " +
+                content
+              )
+
+            };
+
+          });
+
+        } catch (error) {
+
+          console.error("Guide loading error:", error);
+
+          return [];
+
+        }
+
+      })
+
+    );
+
+    searchableSections = documents.flat();
+
+    if (searchableSections.length === 0) {
+
+      resultsContainer.innerHTML = `
+        <p class="search-message">
+          Agricultural materials could not be loaded.
+          Please check your file names and server.
+        </p>
+      `;
+
+      return;
+
+    }
+
+    resultsContainer.innerHTML = `
+      <p class="search-message">
+        Search across farming guides, irrigation methods,
+        crop pests and other agricultural topics.
+      </p>
+    `;
+
+  }
+
+
+  // ==========================================
+  // 7. EXPAND SEARCH INTO RELATED TERMS
+  // ==========================================
+
+  function getSearchGroups(query) {
+
+    const stopWords = [
+      "the", "and", "of", "for",
+      "in", "on", "to", "a", "an",
+      "is", "are", "how", "what",
+      "types", "type", "methods", "method"
+    ];
+
+    const words = normalizeText(query)
+      .split(" ")
+      .filter(word =>
+        word.length > 1 && !stopWords.includes(word)
+      );
+
+    const groups = [];
+
+    words.forEach(word => {
+
+      // Find related agricultural terms.
+
+      const key = word.endsWith("s")
+        ? word.slice(0, -1)
+        : word;
+
+      const matches = relatedTerms[key];
+
+      const terms = matches
+        ? [word, ...matches]
+        : [word];
+
+      groups.push(
+        [...new Set(terms.map(normalizeText))]
+      );
+
+    });
+
+    return groups;
+
+  }
+
+
+  // ==========================================
+  // 8. CALCULATE SEARCH RELEVANCE
+  // ==========================================
+
+  function calculateScore(section, query, groups) {
+
+    const text = section.searchable ||
+      normalizeText(
+        section.title + " " + section.content
+      );
+
+    const title = normalizeText(section.title);
+
+    let score = 0;
+
+    // Exact phrase matches receive extra priority.
+
+    if (text.includes(query)) {
+      score += 12;
+    }
+
+    if (title.includes(query)) {
+      score += 20;
+    }
+
+    let matchedGroups = 0;
+
+    groups.forEach(group => {
+
+      let groupMatched = false;
+
+      group.forEach(term => {
+
+        if (text.includes(term)) {
+
+          groupMatched = true;
+
+          score += 2;
+
+          if (title.includes(term)) {
+            score += 5;
+          }
+
+        }
+
+      });
+
+      if (groupMatched) {
+        matchedGroups++;
+      }
+
+    });
+
+    // Give higher priority to sections matching all search words.
+
+    if (groups.length > 1) {
+
+      score += matchedGroups * 4;
+
+      if (matchedGroups === groups.length) {
+        score += 15;
+      }
+
+    }
+
+    return {
+      score: score,
+      matchedGroups: matchedGroups
+    };
+
+  }
+
+
+  // ==========================================
+  // 9. CREATE RELEVANT SEARCH RESULTS
+  // ==========================================
+
+  function searchGuides() {
+
+    const query = normalizeText(searchInput.value);
+
+    resultsContainer.innerHTML = "";
+
+    if (emptyMessage) {
+      emptyMessage.hidden = true;
+    }
+
+    if (!query) {
+
+      resultsContainer.innerHTML = `
+        <p class="search-message">
+          Enter an agricultural keyword to search the learning library.
+        </p>
+      `;
+
+      return;
+
+    }
+
+    if (searchableSections.length === 0) {
+
+      resultsContainer.innerHTML = `
+        <p class="search-message">
+          Learning materials are still loading. Please try again.
+        </p>
+      `;
+
+      return;
+
+    }
+
+    const groups = getSearchGroups(query);
+
+    const results = searchableSections
+
+      .map(section => {
+
+        const ranking = calculateScore(
+          section,
+          query,
+          groups
+        );
+
+        return {
+          ...section,
+          score: ranking.score,
+          matchedGroups: ranking.matchedGroups
+        };
+
+      })
+
+      .filter(section => section.score > 0)
+
+      .sort((a, b) => b.score - a.score);
+
+
+    // No matching information.
+
+    if (results.length === 0) {
+
+      if (emptyMessage) {
+        emptyMessage.hidden = false;
+      }
+
+      resultsContainer.innerHTML = `
+        <p class="search-message">
+          No matching agricultural notes found for
+          "${query}". Try words such as crops, soil,
+          irrigation, water, pests or harvesting.
+        </p>
+      `;
+
+      return;
+
+    }
+
+
+    // Display number of matches.
+
+    const resultCount = document.createElement("p");
+
+    resultCount.className = "search-message";
+
+    resultCount.textContent =
+      results.length +
+      " relevant agricultural section(s) found.";
+
+    resultsContainer.appendChild(resultCount);
+
+
+    // Display each matching section.
+
+    results.forEach(section => {
+
+      const link = document.createElement("a");
+
+      link.className = "search-result";
+
+      link.href = section.id
+        ? section.file + "#" + encodeURIComponent(section.id)
+        : section.file;
+
+      const heading = document.createElement("h3");
+
+      heading.textContent = section.title;
+
+      const description = document.createElement("p");
+
+      const content = section.content;
+
+      description.textContent =
+        content.substring(0, 220) +
+        (content.length > 220 ? "..." : "");
+
+      const source = document.createElement("small");
+
+      source.className = "search-source";
+
+      source.textContent = section.file;
+
+      link.appendChild(heading);
+
+      link.appendChild(description);
+
+      link.appendChild(source);
+
+      resultsContainer.appendChild(link);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 10. SEARCH BUTTON
+  // ==========================================
+
+  searchButton.addEventListener("click", searchGuides);
+
+
+  // ==========================================
+  // 11. ENTER KEY
+  // ==========================================
+
+  searchInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+      event.preventDefault();
+
+      searchGuides();
+
+    }
+
+  });
+
+
+  // ==========================================
+  // 12. LOAD LEARNING MATERIALS
+  // ==========================================
+
+  loadGuides();
+
+});
+</script>
+
+
+
+<script>
+
+// COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+<script>
+
+/* =========================
+   AUTOMATIC TIME-BASED
+   DIMMED MODE
+========================= */
+
+function setDimmedMode(enabled) {
+
+  document.documentElement.classList.toggle(
+    "dimmed-mode",
+    enabled
+  );
+
+}
+
+
+/* =========================
+   CHECK LOCAL TIME
+========================= */
+
+function updateDimmedMode() {
+
+  const now = new Date();
+
+  const currentHour = now.getHours();
+
+  /*
+     6:00 AM – 5:59 PM
+     DIMMING OFF
+
+     6:00 PM – 5:59 AM
+     DIMMING ON
+  */
+
+  const isNightTime =
+    currentHour >= 18 || currentHour < 6;
+
+  setDimmedMode(isNightTime);
+
+}
+
+
+/* =========================
+   INITIAL CHECK
+========================= */
+
+updateDimmedMode();
+
+
+/* =========================
+   AUTOMATIC UPDATES
+   EVERY 60 SECONDS
+========================= */
+
+setInterval(function () {
+
+  updateDimmedMode();
+
+}, 60000);
+
+</script>
+</body>
+</html>
