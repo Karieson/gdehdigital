@@ -55,91 +55,235 @@ input {
 }
 
 /* =====================================
-   HEADER
+   PROFESSIONAL GADEH HEADER
 ===================================== */
 
 .site-header {
-  background: var(--white);
-  border-bottom: 1px solid #e7ebe5;
+  background: #ffffff;
+  border-bottom: 1px solid #e5ebe4;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 3px 12px rgba(23,55,37,.045);
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: auto;
-  padding: 15px 5%;
+  min-height: 88px;
+  padding: 10px 4%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
+
+/* BRAND */
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
+/* LOGO */
+
 .brand-logo {
-  width: 60px;
-  height: auto;
+  width: 67px;
+  height: 67px;
+  min-width: 67px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 2px solid #d5a84b;
   border-radius: 50%;
-  
-  color: var(--white);
-  display: grid;
-  place-items: center;
-  font-weight: bold;
-  font-size: 15px;
-  border: 3px solid var(--gold);
+
+  padding: 4px;
+  overflow: hidden;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+}
+
+/* BRAND TYPOGRAPHY */
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
 .brand-text strong {
-  display: block;
-  color: var(--green);
-  font-size: 17px;
-  letter-spacing: .5px;
+  color: #214b35;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+}
+
+.brand-text span {
+  color: #477b55;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
 }
 
 .brand-text small {
-  color: var(--grey);
-  font-size: 10px;
-  letter-spacing: 1.2px;
+  color: #89938a;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 3px;
 }
+
+/* NAVIGATION */
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 21px;
+  justify-content: flex-end;
+  gap: 17px;
 }
 
 .nav-links a {
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 600;
+  color: #26352b;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
   transition: .3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--mid-green);
+  color: #477b55;
 }
 
+/* REGISTRATION BUTTON */
+
 .nav-links .register-link {
-  background: var(--green);
-  color: var(--white);
-  padding: 9px 15px;
+  background: #214b35;
+  color: #ffffff;
+  padding: 11px 15px;
   border-radius: 5px;
+  transition: .3s;
 }
+
+.nav-links .register-link:hover {
+  background: #d5a84b;
+  color: #173725;
+}
+
+/* MOBILE MENU BUTTON */
 
 .menu-toggle {
   display: none;
+  background: #eaf1e9;
   border: none;
-  background: none;
-  color: var(--green);
-  font-size: 26px;
+  color: #214b35;
+  font-size: 25px;
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+
+  .header-inner {
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .brand-logo {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+  }
+
+  .brand-text strong {
+    font-size: 20px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
+
+  .header-inner {
+    min-height: 78px;
+    padding: 9px 5%;
+    flex-wrap: wrap;
+  }
+
+  .brand-logo {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+  }
+
+  .brand-text strong {
+    font-size: 20px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 5px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 8px;
+    font-size: 13px;
+    border-top: 1px solid #edf0eb;
+  }
+
+  .nav-links .register-link {
+    text-align: center;
+    margin-top: 8px;
+  }
+
 }
 
 /* =====================================
@@ -750,25 +894,35 @@ html:not(.dimmed-mode) {
 
   <div class="header-inner">
 
+    <!-- GADEH BRAND -->
     <a href="index.html" class="brand">
 
-  <div class="brand-logo">
-    <img src="gadeh_logo.png" alt="GADEH Logo">
-  </div>
+      <div class="brand-logo">
+        <img src="gadeh_logo.png"
+             alt="GADEH Official Logo">
+      </div>
 
-  <div class="brand-text">
+      <div class="brand-text">
 
-    <small>GARISSA AGRO-DIGITAL EMPOWERMENT HUB</small>
-  </div>
+        <strong>GADEH</strong>
 
-</a>
+        <span>GARISSA AGRO-DIGITAL</span>
 
+        <small>EMPOWERMENT HUB</small>
+
+      </div>
+
+    </a>
+
+    <!-- MOBILE MENU -->
     <button class="menu-toggle"
             id="menuToggle"
-            aria-label="Open navigation">
+            aria-label="Toggle navigation"
+            aria-expanded="false">
       ☰
     </button>
 
+    <!-- NAVIGATION -->
     <nav class="nav-links" id="navLinks">
 
       <a href="index.html">Home</a>
@@ -777,9 +931,7 @@ html:not(.dimmed-mode) {
         Agricultural Knowledge
       </a>
 
-      <a href="crop-health.html">
-        Crop Health
-      </a>
+      <a href="crop-health.html">Crop Health</a>
 
       <a href="weather-climate.html">
         Weather & Climate
@@ -1682,10 +1834,30 @@ const navLinks = document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", function () {
 
-  navLinks.classList.toggle("show");
+  const isOpen = navLinks.classList.toggle("show");
 
-  menuToggle.textContent =
-    navLinks.classList.contains("show") ? "×" : "☰";
+  menuToggle.textContent = isOpen ? "×" : "☰";
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+});
+
+// Close menu after selecting a navigation link
+
+navLinks.querySelectorAll("a").forEach(function(link) {
+
+  link.addEventListener("click", function() {
+
+    navLinks.classList.remove("show");
+
+    menuToggle.textContent = "☰";
+
+    menuToggle.setAttribute("aria-expanded", "false");
+
+  });
 
 });
 
