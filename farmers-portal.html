@@ -1006,7 +1006,55 @@ html:not(.dimmed-mode) {
     grid-column: auto;
   }
 }
+/* COMMUNITY PAGE BUTTON */
+.community-page-link {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px;
+}
 
+.community-page-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #16833b, #0b642c);
+    color: #ffffff !important;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.community-page-btn:hover {
+    background: #084d24;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.community-page-note {
+    color: #69766d;
+    font-size: 13px;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    .community-page-link {
+        margin-top: 25px;
+        padding: 15px 10px;
+    }
+
+    .community-page-btn {
+        width: 90%;
+        max-width: 300px;
+        padding: 14px 18px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
 </style>
 </head>
 
@@ -1078,7 +1126,7 @@ html:not(.dimmed-mode) {
     </a>
 
     <a href="https://community-farmers-backend.onrender.com/community-login">
-    Community Portal
+    Community Farmers Page
 </a>
 
     <a href="farmer-registration.html">
@@ -1639,6 +1687,7 @@ html:not(.dimmed-mode) {
         </a>
 
       </article>
+      
 
     </div>
 
@@ -1655,7 +1704,9 @@ html:not(.dimmed-mode) {
 
     <div class="section-heading">
       <span>Community Engagement</span>
+
       <h2>Participate in the GADEH Farmer Community</h2>
+
       <p>
         Community engagement creates opportunities for farmers
         to exchange knowledge, identify shared challenges and
@@ -1691,6 +1742,26 @@ html:not(.dimmed-mode) {
           inform future farmer-focused activities.
         </p>
       </article>
+
+    </div>
+
+    <!-- COMMUNITY PAGE BUTTON -->
+
+    <div style="text-align:center; margin-top:35px;">
+
+      <a
+        href="https://community-farmers-backend.onrender.com/community-login"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Visit Community Page 
+
+      </a>
+
+      <p style="color:#69766d; font-size:13px; margin-top:12px;">
+        Connect with the GADEH Farmer Community online.
+      </p>
 
     </div>
 
