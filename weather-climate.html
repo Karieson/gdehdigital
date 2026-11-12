@@ -90,7 +90,14 @@
       gap: 12px;
       min-width: 0;
     }
-
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
     .brand-mark {
       width: 46px;
       height: 46px;
@@ -777,6 +784,7 @@
       }
     }
     
+
 /* =====================================================
    GADEH LIVE WEATHER FORECAST
 ===================================================== */
@@ -789,25 +797,75 @@
     flex-wrap: wrap;
 }
 
+/* WEATHER LOCATION SELECTOR */
+
 #weatherLocation {
-    padding: 10px 14px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: white;
-    font: inherit;
-    color: inherit;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
+    width: auto;
+    min-width: 180px;
+    max-width: 100%;
+    min-height: 44px;
+
+    padding: 10px 38px 10px 14px;
+
+    border: 1px solid #cbd8ce;
+    border-radius: 8px;
+
+    background-color: #ffffff;
+    color: #214b35;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
     cursor: pointer;
+
+    appearance: auto;
+    -webkit-appearance: menulist;
+
+    position: relative;
+    z-index: 10;
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
 }
+
+#weatherLocation:hover {
+    border-color: #477b55;
+}
+
+#weatherLocation:focus {
+    outline: none;
+    border-color: #214b35;
+    box-shadow: 0 0 0 3px rgba(33, 75, 53, 0.15);
+}
+
+#weatherLocation option {
+    background: #ffffff;
+    color: #214b35;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* CURRENT TEMPERATURE */
 
 #weatherTemperature {
     display: block;
     font-size: 2.5rem;
+    font-weight: 700;
+    color: #214b35;
     margin: 12px 0;
 }
 
 #weatherIcon {
+    display: inline-block;
     font-size: 3.5rem;
 }
+
+/* WEATHER FORECAST */
 
 .weather-forecast {
     margin-top: 30px;
@@ -825,8 +883,16 @@
 
 .forecast-day {
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #f7f5f2;
+    border: 1px solid #e2e8e0;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(33, 75, 53, 0.08);
 }
 
 .forecast-details {
@@ -839,6 +905,8 @@
     font-size: 2rem;
 }
 
+/* WEATHER ATTRIBUTION */
+
 .weather-attribution {
     margin-top: 20px;
     font-size: 0.8rem;
@@ -846,25 +914,56 @@
 }
 
 .weather-attribution a {
-    color: inherit;
+    color: #477b55;
     text-decoration: underline;
 }
+
+.weather-attribution a:hover {
+    color: #173725;
+}
+
+/* MOBILE RESPONSIVENESS */
 
 @media (max-width: 600px) {
 
     .weather-panel-header {
         align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
     }
 
     #weatherLocation {
         width: 100%;
+        max-width: 100%;
+        min-height: 46px;
+    }
+
+    #weatherTemperature {
+        font-size: 2.2rem;
+    }
+
+    #weatherIcon {
+        font-size: 3rem;
     }
 
     #weatherForecastList {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .forecast-day {
+        padding: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    #weatherForecastList {
+        grid-template-columns: 1fr;
     }
 
 }
+
 
 /* =========================
    STRONG GLOBAL DIMMING
@@ -899,13 +998,17 @@ html:not(.dimmed-mode) {
     <nav class="nav-container">
 
       <a href="index.html" class="brand">
-        <div class="brand-mark">GADEH</div>
+  <img
+    src="/images/gade_logo.png"
+    alt="GADEH Logo"
+    class="brand-logo"
+  >
 
-        <div class="brand-name">
-          <strong>GADEH</strong>
-          <span>Digital Farmer Portal</span>
-        </div>
-      </a>
+  <div>
+
+    <small>DIGITAL FARMER PORTAL</small>
+  </div>
+</a>
 
       <button class="nav-toggle"
               id="navToggle"
@@ -1634,14 +1737,21 @@ html:not(.dimmed-mode) {
     document.getElementById("copyrightYear").textContent =
       new Date().getFullYear();
   </script>
+
 <script>
 /* =====================================================
    GADEH — LIVE WEATHER DISPLAY
+   Connected to Render Backend
 ===================================================== */
+
+const API_BASE_URL =
+    "https://community-farmers-backend.onrender.com";
 
 const weatherLocationSelect =
     document.getElementById("weatherLocation");
 
+
+/* WEATHER DESCRIPTIONS */
 
 function getWeatherDescription(code) {
 
@@ -1676,7 +1786,8 @@ function getWeatherDescription(code) {
         99: ["Severe Thunderstorm with Hail", "⛈"]
     };
 
-    return descriptions[code] || ["Weather Unavailable", "🌤"];
+    return descriptions[code] ||
+        ["Weather Unavailable", "🌤"];
 }
 
 
@@ -1684,34 +1795,38 @@ function getWeatherDescription(code) {
 
 async function loadWeather(location = "garissa") {
 
-    const status = document.getElementById("weatherUpdateStatus");
+    const status =
+        document.getElementById("weatherUpdateStatus");
 
-    const weatherStatus = document.getElementById("weatherStatus");
+    const weatherStatus =
+        document.getElementById("weatherStatus");
 
-    status.textContent = "Updating weather information...";
+    status.textContent =
+        "Updating weather information...";
 
-    weatherStatus.textContent = "RETRIEVING WEATHER DATA";
+    weatherStatus.textContent =
+        "RETRIEVING WEATHER DATA";
 
     try {
 
         const response = await fetch(
-            `/api/weather?location=${encodeURIComponent(location)}`
+            `${API_BASE_URL}/api/weather?location=${encodeURIComponent(location)}`
         );
 
         const data = await response.json();
 
         if (!response.ok || !data.success) {
             throw new Error(
-                data.message || "Weather information unavailable."
+                data.message ||
+                "Weather information unavailable."
             );
         }
 
         const current = data.weather.current;
-
         const daily = data.weather.daily;
 
         const dailyProbability =
-            daily.precipitation_probability_max[0];
+            daily.precipitation_probability_max?.[0];
 
         const condition = getWeatherDescription(
             current.weather_code
@@ -1764,9 +1879,11 @@ async function loadWeather(location = "garissa") {
 
         console.error("Weather display error:", error);
 
-        status.textContent = "Weather service unavailable";
+        status.textContent =
+            "Weather service unavailable";
 
-        weatherStatus.textContent = "WEATHER DATA UNAVAILABLE";
+        weatherStatus.textContent =
+            "WEATHER DATA UNAVAILABLE";
 
         document.getElementById("weatherCondition").textContent =
             "Unable to load weather";
@@ -1776,6 +1893,24 @@ async function loadWeather(location = "garissa") {
 
         document.getElementById("weatherFeelsLike").textContent =
             "Please try again later.";
+
+        document.getElementById("weatherIcon").textContent =
+            "🌤";
+
+        document.getElementById("weatherHumidity").textContent =
+            "--";
+
+        document.getElementById("weatherRainfall").textContent =
+            "--";
+
+        document.getElementById("weatherWind").textContent =
+            "--";
+
+        document.getElementById("weatherRainProbability").textContent =
+            "--";
+
+        document.getElementById("weatherForecastList")
+            .replaceChildren();
 
     }
 
@@ -1809,37 +1944,48 @@ function renderWeatherForecast(daily) {
             month: "short"
         });
 
-        const rainfall = daily.precipitation_sum[index];
+        const rainfall =
+            daily.precipitation_sum[index];
 
         const rainProbability =
             daily.precipitation_probability_max[index];
 
-        const details = document.createElement("div");
+        const details =
+            document.createElement("div");
 
         details.className = "forecast-details";
 
-        const heading = document.createElement("strong");
+        const heading =
+            document.createElement("strong");
+
         heading.textContent = dateLabel;
 
-        const icon = document.createElement("span");
+        const icon =
+            document.createElement("span");
+
         icon.className = "forecast-icon";
         icon.textContent = condition[1];
 
-        const description = document.createElement("span");
+        const description =
+            document.createElement("span");
+
         description.textContent = condition[0];
 
-        const temperature = document.createElement("strong");
+        const temperature =
+            document.createElement("strong");
 
         temperature.textContent =
             `${Math.round(daily.temperature_2m_max[index])}° / ` +
             `${Math.round(daily.temperature_2m_min[index])}°C`;
 
-        const rain = document.createElement("span");
+        const rain =
+            document.createElement("span");
 
         rain.textContent =
-            `Rain: ${rainfall == null ? "--" : rainfall.toFixed(1)} mm`;
+            `Rain: ${rainfall == null ? "--" : Number(rainfall).toFixed(1)} mm`;
 
-        const probability = document.createElement("span");
+        const probability =
+            document.createElement("span");
 
         probability.textContent =
             `Chance: ${rainProbability == null ? "--" : rainProbability}%`;
@@ -1864,26 +2010,39 @@ function renderWeatherForecast(daily) {
 
 /* LOCATION SELECTION */
 
-weatherLocationSelect.addEventListener("change", function () {
+if (weatherLocationSelect) {
 
-    loadWeather(this.value);
+    weatherLocationSelect.addEventListener(
+        "change",
+        function () {
+            loadWeather(this.value);
+        }
+    );
 
-});
+}
 
 
 /* INITIAL WEATHER */
 
-loadWeather(weatherLocationSelect.value);
+if (weatherLocationSelect) {
+
+    loadWeather(weatherLocationSelect.value || "garissa");
+
+}
 
 
-/* REFRESH EVERY 10 MINUTES */
+/* AUTOMATIC REFRESH EVERY 10 MINUTES */
 
 setInterval(function () {
 
-    loadWeather(weatherLocationSelect.value);
+    if (weatherLocationSelect) {
+        loadWeather(weatherLocationSelect.value || "garissa");
+    }
 
 }, 10 * 60 * 1000);
+
 </script>
+
 <script>
 
 /* =========================

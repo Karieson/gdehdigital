@@ -822,6 +822,191 @@ html:not(.dimmed-mode) {
     letter-spacing: 1.2px;
     color: var(--grey);
 }
+
+/* COMMUNITY ENGAGEMENT */
+
+.section-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 35px;
+}
+
+.section-heading span {
+  color: var(--mid);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  color: var(--green);
+  font-size: clamp(27px, 4vw, 39px);
+  margin: 10px 0;
+}
+
+.section-heading p {
+  color: var(--grey);
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.community-card {
+  background: white;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: .25s;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(30,60,40,.09);
+}
+
+.community-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--soft);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  margin-bottom: 16px;
+}
+
+.community-card h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.community-card p {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+/* ENQUIRY FORM */
+
+.soft-section {
+  background: #eaf1e9;
+}
+
+.enquiry-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 32px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(28,55,37,.08);
+}
+
+.enquiry-container h3 {
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.enquiry-container > p {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #405346;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dce5dc;
+  border-radius: 9px;
+  background: #fbfcfa;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--mid);
+}
+
+.form-group textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.required {
+  color: #c0392b;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 20px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background: var(--dark);
+}
+
+.form-message.success {
+  display: block;
+  background: #e5f5e8;
+  color: #246b37;
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 9px;
+}
+
+.form-message.error {
+  display: block;
+  background: #fdeaea;
+  color: #a52b2b;
+  padding: 13px;
+  margin-top: 15px;
+  border-radius: 9px;
+}
+
+/* MOBILE */
+
+@media(max-width:680px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-container {
+    padding: 21px;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+}
+
 </style>
 </head>
 
@@ -1461,135 +1646,188 @@ html:not(.dimmed-mode) {
 
 </section>
 
-<!-- FARMER REGISTRATION -->
 
-<section class="section registration" id="register">
+<!-- COMMUNITY ENGAGEMENT -->
 
-  <div class="container registration-layout">
+<section class="section" id="community">
 
-    <div class="registration-info">
+  <div class="container">
 
-      <div class="section-label">Join the community</div>
-
-      <h2>Farmer Registration</h2>
-
+    <div class="section-heading">
+      <span>Community Engagement</span>
+      <h2>Participate in the GADEH Farmer Community</h2>
       <p>
-        Register your interest in GADEH agricultural
-        information, digital learning and community
-        farming activities.
+        Community engagement creates opportunities for farmers
+        to exchange knowledge, identify shared challenges and
+        participate in agricultural learning activities.
       </p>
-
-      <ul>
-        <li>Share your farming interests.</li>
-        <li>Express interest in agricultural training.</li>
-        <li>Help identify community learning needs.</li>
-        <li>Connect with future farming activities.</li>
-      </ul>
-
     </div>
 
-    <form class="form-card" id="farmerForm">
+    <div class="community-grid">
 
-      <h3>Farmer Interest Form</h3>
+      <article class="community-card">
+        <div class="community-icon">🤝</div>
+        <h3>Knowledge Sharing</h3>
+        <p>
+          Encourage farmers to share practical experiences,
+          lessons and locally relevant agricultural knowledge.
+        </p>
+      </article>
 
-      <p>
-        Complete the details below to express your interest.
-      </p>
+      <article class="community-card">
+        <div class="community-icon">🎓</div>
+        <h3>Learning Participation</h3>
+        <p>
+          Express interest in agricultural training,
+          digital literacy and community learning sessions.
+        </p>
+      </article>
 
-      <div class="form-grid">
+      <article class="community-card">
+        <div class="community-icon">🌱</div>
+        <h3>Farmer Engagement</h3>
+        <p>
+          Share agricultural concerns and ideas that can
+          inform future farmer-focused activities.
+        </p>
+      </article>
 
-        <div class="form-field">
-          <label for="fullName">Full Name *</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            required
-            placeholder="Enter full name">
-        </div>
-
-        <div class="form-field">
-          <label for="phone">Phone Number *</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            required
-            placeholder="+254...">
-        </div>
-
-        <div class="form-field">
-          <label for="county">County *</label>
-          <select id="county" name="county" required>
-            <option value="">Select county</option>
-            <option>Garissa</option>
-            <option>Wajir</option>
-            <option>Mandera</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="location">Ward / Area</label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            placeholder="Village or ward">
-        </div>
-
-        <div class="form-field">
-          <label for="interest">Farming Interest *</label>
-          <select id="interest" name="interest" required>
-            <option value="">Select interest</option>
-            <option>Crop Production</option>
-            <option>Horticulture / Vegetables</option>
-            <option>Water-Efficient Irrigation</option>
-            <option>Soil and Land Management</option>
-            <option>Climate-Smart Agriculture</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="experience">Farming Experience</label>
-          <select id="experience" name="experience">
-            <option value="">Select experience</option>
-            <option>Starting Out</option>
-            <option>Less than 2 years</option>
-            <option>2–5 years</option>
-            <option>More than 5 years</option>
-          </select>
-        </div>
-
-        <div class="form-field full">
-          <label for="needs">
-            What agricultural information or training would help you?
-          </label>
-
-          <textarea
-            id="needs"
-            name="needs"
-            placeholder="Tell us about your agricultural interests..."></textarea>
-        </div>
-
-        <div class="form-field full">
-
-          <button type="submit" class="btn btn-primary">
-            Submit Farmer Interest
-          </button>
-
-          <div class="form-message" id="formMessage"></div>
-
-        </div>
-
-      </div>
-
-    </form>
+    </div>
 
   </div>
 
 </section>
+
+
+<!-- FARMER ENQUIRY AND FEEDBACK -->
+
+<section class="section soft-section" id="enquiry">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span>Communication and Feedback</span>
+      <h2>Send a Farmer Enquiry</h2>
+      <p>
+        Use this section to express a question, suggest a
+        learning topic or share feedback about the portal.
+      </p>
+    </div>
+
+    <div class="enquiry-container">
+
+      <h3>Farmer Enquiry and Feedback Form</h3>
+
+      <p>
+        Tell us what you would like to learn or what
+        agricultural information you need.
+      </p>
+
+      <form id="enquiryForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="enquiryName">
+              Your Name <span class="required">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="enquiryName"
+              name="name"
+              placeholder="Enter your name"
+              required
+              maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryPhone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="enquiryPhone"
+              name="phone"
+              placeholder="Enter your phone number"
+              maxlength="20">
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryType">
+              Enquiry Category
+              <span class="required">*</span>
+            </label>
+
+            <select id="enquiryType" name="category" required>
+              <option value="">Select category</option>
+              <option value="Agricultural information">
+                Agricultural information
+              </option>
+              <option value="Training opportunity">
+                Training opportunity
+              </option>
+              <option value="Digital literacy">
+                Digital literacy
+              </option>
+              <option value="Farmer registration">
+                Farmer registration
+              </option>
+              <option value="Portal feedback">
+                Portal feedback
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="enquiryEmail">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="enquiryEmail"
+              name="email"
+              placeholder="Enter your email">
+          </div>
+
+          <div class="form-group full">
+            <label for="enquiryMessage">
+              Your Message
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="enquiryMessage"
+              name="message"
+              placeholder="Write your question, suggestion or feedback..."
+              required
+              maxlength="3000"></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="form-submit">
+          Submit Enquiry
+        </button>
+
+        <div
+          class="form-message"
+          id="enquiryResponse"
+          role="status"
+          aria-live="polite">
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <!-- FOOTER -->
 

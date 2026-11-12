@@ -1217,173 +1217,7 @@ html:not(.dimmed-mode) {
 
   </section>
 
-  <!-- COMMUNITY -->
-  <section class="section" id="community">
-
-    <div class="section-heading">
-      <span>Community Engagement</span>
-      <h2>Participate in the GADEH Farmer Community</h2>
-      <p>
-        Community engagement creates opportunities for farmers
-        to exchange knowledge, identify shared challenges and
-        participate in agricultural learning activities.
-      </p>
-    </div>
-
-    <div class="community-grid">
-
-      <article class="community-card">
-        <div class="community-icon">🤝</div>
-        <h3>Knowledge Sharing</h3>
-        <p>
-          Encourage farmers to share practical experiences,
-          lessons and locally relevant agricultural knowledge.
-        </p>
-      </article>
-
-      <article class="community-card">
-        <div class="community-icon">🎓</div>
-        <h3>Learning Participation</h3>
-        <p>
-          Express interest in agricultural training,
-          digital literacy and community learning sessions.
-        </p>
-      </article>
-
-      <article class="community-card">
-        <div class="community-icon">🌱</div>
-        <h3>Farmer Engagement</h3>
-        <p>
-          Share agricultural concerns and ideas that can
-          inform future farmer-focused activities.
-        </p>
-      </article>
-
-    </div>
-
-  </section>
-
-  <!-- ENQUIRY FORM -->
-  <section class="section soft-section" id="enquiry">
-
-    <div class="section-heading">
-      <span>Communication and Feedback</span>
-      <h2>Send a Farmer Enquiry</h2>
-      <p>
-        Use this section to express a question, suggest a
-        learning topic or share feedback about the portal.
-      </p>
-    </div>
-
-    <div class="enquiry-container">
-
-      <h3>Farmer Enquiry and Feedback Form</h3>
-
-      <p>
-        Tell us what you would like to learn or what
-        agricultural information you need.
-      </p>
-
-      <form id="enquiryForm">
-
-        <div class="form-grid">
-
-          <div class="form-group">
-            <label for="enquiryName">
-              Your Name <span class="required">*</span>
-            </label>
-
-            <input
-              type="text"
-              id="enquiryName"
-              name="name"
-              placeholder="Enter your name"
-              required
-              maxlength="100">
-          </div>
-
-          <div class="form-group">
-            <label for="enquiryPhone">
-              Phone Number
-            </label>
-
-            <input
-              type="tel"
-              id="enquiryPhone"
-              name="phone"
-              placeholder="Enter your phone number"
-              maxlength="20">
-          </div>
-
-          <div class="form-group">
-            <label for="enquiryType">
-              Enquiry Category <span class="required">*</span>
-            </label>
-
-            <select id="enquiryType" name="category" required>
-              <option value="">Select category</option>
-              <option value="Agricultural information">
-                Agricultural information
-              </option>
-              <option value="Training opportunity">
-                Training opportunity
-              </option>
-              <option value="Digital literacy">
-                Digital literacy
-              </option>
-              <option value="Farmer registration">
-                Farmer registration
-              </option>
-              <option value="Portal feedback">
-                Portal feedback
-              </option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="enquiryEmail">
-              Email Address
-            </label>
-
-            <input
-              type="email"
-              id="enquiryEmail"
-              name="email"
-              placeholder="Enter your email">
-          </div>
-
-          <div class="form-group full">
-            <label for="enquiryMessage">
-              Your Message <span class="required">*</span>
-            </label>
-
-            <textarea
-              id="enquiryMessage"
-              name="message"
-              placeholder="Write your question, suggestion or feedback..."
-              required
-              maxlength="3000"></textarea>
-          </div>
-
-        </div>
-
-        <button type="submit" class="form-submit">
-          Submit Enquiry
-        </button>
-
-        <div class="form-message"
-          id="enquiryResponse"
-          role="status"
-          aria-live="polite"></div>
-
-        
-
-      </form>
-
-    </div>
-
-  </section>
+  
 
   <!-- LEARNING LINK -->
   <section class="section">
@@ -1503,11 +1337,16 @@ html:not(.dimmed-mode) {
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+</script>
+<script>
 
-
-    // =====================================
-// FARMER REGISTRATION — BACKEND
 // =====================================
+// FARMER REGISTRATION — BACKEND
+// COMMUNITY FARMERS API
+// =====================================
+
+const API_BASE_URL =
+    "https://community-farmers-backend.onrender.com";
 
 const registrationForm =
     document.getElementById("farmerRegistrationForm");
@@ -1560,13 +1399,16 @@ if (registrationForm && registrationMessage) {
 
         try {
 
-            const response = await fetch("/api/applications", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
+            const response = await fetch(
+                `${API_BASE_URL}/api/applications`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
 
             const result = await response.json();
 
@@ -1580,7 +1422,8 @@ if (registrationForm && registrationMessage) {
                 "Registration submitted successfully! Your application number is: " +
                 result.applicationNumber;
 
-            registrationMessage.className = "form-message success";
+            registrationMessage.className =
+                "form-message success";
 
             registrationForm.reset();
 
@@ -1589,19 +1432,23 @@ if (registrationForm && registrationMessage) {
             registrationMessage.textContent =
                 error.message || "Unable to submit your application.";
 
-            registrationMessage.className = "form-message error";
+            registrationMessage.className =
+                "form-message error";
 
         } finally {
 
             submitButton.disabled = false;
-            submitButton.textContent = "Submit Farmer Registration";
+
+            submitButton.textContent =
+                "Submit Farmer Registration";
 
         }
 
     });
 
 }
-  </script>
+</script>
+    
 <script>
 
 /* =========================
